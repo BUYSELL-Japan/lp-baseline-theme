@@ -49,12 +49,12 @@ export default function Header() {
               </span>
             </motion.div>
 
-            <nav className="hidden md:flex items-center gap-4">
+            <nav className="hidden md:flex items-center gap-6">
               {headerData.navigation.map((item) => (
                 <motion.button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`text-sm font-medium transition-colors whitespace-nowrap ${
+                  className={`text-base font-medium transition-colors whitespace-nowrap ${
                     scrolled
                       ? 'text-gray-700 hover:text-teal-600'
                       : 'text-white hover:text-teal-300'

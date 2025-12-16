@@ -1,2 +1,0 @@
-# Netlifyでのワイルドカードサブドメインのホスト名キャプチャ
-/* /stores/:subdomain_name/index.html 200 Host=:subdomain_name.global-reaches.com

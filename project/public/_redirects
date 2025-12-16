@@ -1,0 +1,3 @@
+# ワイルドカードサブドメインを店舗IDに基づいたパスにルーティング
+# :subdomain_name には、*.global-reaches.com の * の部分が入ります。
+https://:subdomain_name.global-reaches.com/* /stores/:subdomain_name/index.html 200

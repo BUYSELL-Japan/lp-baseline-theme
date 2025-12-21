@@ -7,6 +7,10 @@ export default function FAQ() {
   const faqData = useFAQData();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
+  if (!faqData.sectionTitle || faqData.items.length === 0) {
+    return null;
+  }
+
   return (
     <section id="faq" className="py-24 px-4 bg-gradient-to-b from-white to-gray-50">
       <div className="max-w-4xl mx-auto">

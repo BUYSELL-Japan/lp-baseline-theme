@@ -5,6 +5,10 @@ import { useNewsData } from '../contexts/PageDataContext';
 export default function News() {
   const newsData = useNewsData();
 
+  if (!newsData.sectionTitle || newsData.items.length === 0) {
+    return null;
+  }
+
   return (
     <section id="news" className="py-24 px-4 bg-gradient-to-b from-amber-50/30 to-white">
       <div className="max-w-6xl mx-auto">

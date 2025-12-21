@@ -135,6 +135,10 @@ export default function Menu() {
     alt: item.name,
   }));
 
+  if (!menuData.sectionTitle || menuData.items.length === 0) {
+    return null;
+  }
+
   return (
     <section id="menu" className="py-24 bg-gradient-to-b from-amber-50/30 to-white">
       <div className="max-w-7xl mx-auto px-4">

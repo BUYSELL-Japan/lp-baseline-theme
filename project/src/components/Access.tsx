@@ -5,6 +5,10 @@ import { useAccessData } from '../contexts/PageDataContext';
 export default function Access() {
   const accessData = useAccessData();
 
+  if (!accessData.sectionTitle) {
+    return null;
+  }
+
   return (
     <section id="access" className="py-24 px-4 bg-gradient-to-b from-teal-50/30 to-white">
       <div className="max-w-6xl mx-auto">

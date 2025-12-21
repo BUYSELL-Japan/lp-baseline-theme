@@ -71,6 +71,10 @@ export default function Gallery() {
     alt: img.caption,
   }));
 
+  if (!galleryData.sectionTitle || galleryData.images.length === 0) {
+    return null;
+  }
+
   return (
     <section id="gallery" className="py-24 px-4 bg-gradient-to-b from-white to-gray-50">
       <div className="max-w-7xl mx-auto">

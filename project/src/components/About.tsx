@@ -58,6 +58,10 @@ function FeatureCard({ feature, index }: { feature: AboutFeature; index: number 
 export default function About() {
   const aboutData = useAboutData();
 
+  if (!aboutData.sectionTitle || aboutData.features.length === 0) {
+    return null;
+  }
+
   return (
     <section id="about" className="py-24 px-4 bg-gradient-to-b from-white to-amber-50/30">
       <div className="max-w-6xl mx-auto">

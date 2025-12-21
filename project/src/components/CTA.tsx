@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
 import { Phone, Mail } from 'lucide-react';
-import { ctaData } from '../data/content';
+import { useCTAData } from '../contexts/PageDataContext';
 
 export default function CTA() {
+  const ctaData = useCTAData();
+
   return (
     <section className="relative py-24 px-4 overflow-hidden">
       <div className="absolute inset-0">

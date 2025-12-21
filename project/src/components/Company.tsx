@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
 import { Building2, History, Heart } from 'lucide-react';
-import { companyData } from '../data/content';
+import { useCompanyData } from '../contexts/PageDataContext';
 
 export default function Company() {
+  const companyData = useCompanyData();
+
   return (
     <section id="company" className="py-24 px-4 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-6xl mx-auto">

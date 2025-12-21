@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Clock, MapPin, Phone, Mail } from 'lucide-react';
-import { storeInfoData } from '../data/content';
+import { useStoreInfoData } from '../contexts/PageDataContext';
 
 const iconMap = {
   MapPin,
@@ -10,6 +10,8 @@ const iconMap = {
 };
 
 export default function StoreInfo() {
+  const storeInfoData = useStoreInfoData();
+
   return (
     <section id="store" className="py-24 px-4 bg-gradient-to-b from-white to-teal-50/30">
       <div className="max-w-6xl mx-auto">

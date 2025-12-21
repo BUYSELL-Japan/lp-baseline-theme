@@ -1,9 +1,10 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
-import { faqData } from '../data/content';
+import { useFAQData } from '../contexts/PageDataContext';
 
 export default function FAQ() {
+  const faqData = useFAQData();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (

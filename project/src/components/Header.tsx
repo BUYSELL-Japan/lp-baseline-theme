@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Waves, Menu, X } from 'lucide-react';
-import { headerData } from '../data/content';
+import { useHeaderData } from '../contexts/PageDataContext';
 
 export default function Header() {
+  const headerData = useHeaderData();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 

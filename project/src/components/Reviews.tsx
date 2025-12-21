@@ -1,9 +1,10 @@
 import { motion } from 'framer-motion';
 import { Star } from 'lucide-react';
-import { reviewsData } from '../data/content';
+import { useReviewsData } from '../contexts/PageDataContext';
 import { useRef, useState, useEffect } from 'react';
 
 export default function Reviews() {
+  const reviewsData = useReviewsData();
   const scrollRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 

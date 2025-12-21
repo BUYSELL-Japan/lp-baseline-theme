@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Waves, Facebook, Instagram, Twitter } from 'lucide-react';
-import { footerData } from '../data/content';
+import { useFooterData } from '../contexts/PageDataContext';
 
 const socialIconMap = {
   Facebook,
@@ -9,6 +9,7 @@ const socialIconMap = {
 };
 
 export default function Footer() {
+  const footerData = useFooterData();
   const currentYear = new Date().getFullYear();
 
   return (

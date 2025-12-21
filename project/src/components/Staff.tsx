@@ -1,7 +1,9 @@
 import { motion } from 'framer-motion';
-import { staffData } from '../data/content';
+import { useStaffData } from '../contexts/PageDataContext';
 
 export default function Staff() {
+  const staffData = useStaffData();
+
   return (
     <section id="staff" className="py-24 px-4 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-6xl mx-auto">

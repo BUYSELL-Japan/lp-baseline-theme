@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
 import { Check, Star } from 'lucide-react';
-import { pricingData } from '../data/content';
+import { usePricingData } from '../contexts/PageDataContext';
 
 export default function Pricing() {
+  const pricingData = usePricingData();
+
   return (
     <section id="pricing" className="py-24 px-4 bg-gradient-to-b from-white to-teal-50/30">
       <div className="max-w-7xl mx-auto">

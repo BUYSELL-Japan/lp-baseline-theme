@@ -1,9 +1,10 @@
 import { motion } from 'framer-motion';
 import { useState, useRef, useEffect } from 'react';
-import { galleryData } from '../data/content';
+import { useGalleryData } from '../contexts/PageDataContext';
 import Lightbox from './Lightbox';
 
 export default function Gallery() {
+  const galleryData = useGalleryData();
   const [selectedCategory, setSelectedCategory] = useState('すべて');
   const scrollRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);

@@ -1,9 +1,10 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { Send } from 'lucide-react';
-import { contactData } from '../data/content';
+import { useContactData } from '../contexts/PageDataContext';
 
 export default function Contact() {
+  const contactData = useContactData();
   const [focused, setFocused] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     name: '',

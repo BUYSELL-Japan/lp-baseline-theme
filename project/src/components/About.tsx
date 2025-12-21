@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { aboutData } from '../data/content';
+import { useAboutData } from '../contexts/PageDataContext';
 import type { AboutFeature } from '../data/types';
 
 function FeatureCard({ feature, index }: { feature: AboutFeature; index: number }) {
@@ -56,6 +56,8 @@ function FeatureCard({ feature, index }: { feature: AboutFeature; index: number 
 }
 
 export default function About() {
+  const aboutData = useAboutData();
+
   return (
     <section id="about" className="py-24 px-4 bg-gradient-to-b from-white to-amber-50/30">
       <div className="max-w-6xl mx-auto">

@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
 import { Calendar, Tag } from 'lucide-react';
-import { newsData } from '../data/content';
+import { useNewsData } from '../contexts/PageDataContext';
 
 export default function News() {
+  const newsData = useNewsData();
+
   return (
     <section id="news" className="py-24 px-4 bg-gradient-to-b from-amber-50/30 to-white">
       <div className="max-w-6xl mx-auto">

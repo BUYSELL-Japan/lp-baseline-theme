@@ -1,9 +1,10 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { ChevronDown } from 'lucide-react';
-import { heroData } from '../data/content';
+import { useHeroData } from '../contexts/PageDataContext';
 
 export default function Hero() {
+  const heroData = useHeroData();
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,

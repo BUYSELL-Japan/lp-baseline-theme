@@ -1,6 +1,6 @@
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
-import { menuData } from '../data/content';
+import { useMenuData } from '../contexts/PageDataContext';
 import type { MenuItem as MenuItemType } from '../data/types';
 import Lightbox from './Lightbox';
 
@@ -80,6 +80,7 @@ function MenuItem({ item, index, onImageClick }: { item: MenuItemType; index: nu
 }
 
 export default function Menu() {
+  const menuData = useMenuData();
   const scrollRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);

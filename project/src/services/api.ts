@@ -9,6 +9,27 @@ export interface LandingPageContent {
   [key: string]: any;
 }
 
+function isDynamoDBFormat(data: any): boolean {
+  if (!data || typeof data !== 'object') return false;
+
+  const keys = Object.keys(data);
+  if (keys.length === 0) return false;
+
+  const dynamoTypes = ['S', 'N', 'B', 'SS', 'NS', 'BS', 'M', 'L', 'NULL', 'BOOL'];
+
+  for (const key of keys) {
+    const value = data[key];
+    if (value && typeof value === 'object') {
+      const valueKeys = Object.keys(value);
+      if (valueKeys.length === 1 && dynamoTypes.includes(valueKeys[0])) {
+        return true;
+      }
+    }
+  }
+
+  return false;
+}
+
 export async function fetchStoreContent(storeId: string): Promise<LandingPageContent | null> {
   try {
     const response = await fetch(`${API_BASE_URL}/${storeId}`);
@@ -20,11 +41,18 @@ export async function fetchStoreContent(storeId: string): Promise<LandingPageCon
 
     const rawData = await response.json();
     console.log('Raw API Response:', rawData);
+    console.log('Raw API Response type:', typeof rawData);
+    console.log('Raw API Response keys:', Object.keys(rawData));
 
-    const unmarshalled = unmarshall(rawData);
-    console.log('Unmarshalled data:', unmarshalled);
-
-    return unmarshalled;
+    if (isDynamoDBFormat(rawData)) {
+      console.log('Detected DynamoDB format, unmarshalling...');
+      const unmarshalled = unmarshall(rawData);
+      console.log('Unmarshalled data:', unmarshalled);
+      return unmarshalled;
+    } else {
+      console.log('Data is already in plain format, using as-is');
+      return rawData;
+    }
   } catch (error) {
     console.error('Error fetching store content:', error);
     return null;

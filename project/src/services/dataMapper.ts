@@ -55,6 +55,70 @@ export interface PageData {
   company: CompanyData | null;
 }
 
+function isNestedStructure(data: any): boolean {
+  if (!data || typeof data !== 'object') return false;
+  return 'header' in data || 'hero' in data || 'menu' in data;
+}
+
+function convertFlatToNested(flatData: any): any {
+  const nested: any = {};
+
+  for (const [key, value] of Object.entries(flatData)) {
+    const parts = key.split('_');
+    let current = nested;
+
+    for (let i = 0; i < parts.length - 1; i++) {
+      const part = parts[i];
+
+      if (part === 'Item' && i > 0 && !isNaN(Number(parts[i + 1]))) {
+        const arrayKey = parts[i - 1].toLowerCase();
+        if (!current[arrayKey]) current[arrayKey] = [];
+
+        const index = parseInt(parts[i + 1]) - 1;
+        if (!current[arrayKey][index]) current[arrayKey][index] = {};
+
+        const remainingKey = parts.slice(i + 2).join('_');
+        if (remainingKey) {
+          current[arrayKey][index][remainingKey] = value;
+        }
+        break;
+      }
+
+      if (part === 'Nav' && i > 0 && !isNaN(Number(parts[i + 1]))) {
+        const parentKey = 'navigation';
+        if (!current[parentKey]) current[parentKey] = [];
+
+        const index = parseInt(parts[i + 1]) - 1;
+        if (!current[parentKey][index]) current[parentKey][index] = {};
+
+        const remainingKey = parts.slice(i + 2).join('_');
+        if (remainingKey) {
+          current[parentKey][index][remainingKey] = value;
+        }
+        break;
+      }
+
+      const lowerPart = part.charAt(0).toLowerCase() + part.slice(1);
+      if (i === 0) {
+        if (!current[lowerPart]) current[lowerPart] = {};
+        current = current[lowerPart];
+      } else {
+        if (!current[lowerPart]) current[lowerPart] = {};
+        current = current[lowerPart];
+      }
+    }
+
+    if (parts.length === 2 || (parts.length > 2 && parts[1] !== 'Item' && parts[1] !== 'Nav')) {
+      const lastPart = parts[parts.length - 1];
+      if (!parts.includes('Item') && !parts.includes('Nav')) {
+        current[lastPart] = value;
+      }
+    }
+  }
+
+  return nested;
+}
+
 export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
   try {
     let contentData = dynamoData;
@@ -66,6 +130,12 @@ export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
     }
 
     console.log('Content data for mapping:', contentData);
+
+    if (!isNestedStructure(contentData)) {
+      console.log('Converting flat structure to nested');
+      contentData = convertFlatToNested(contentData);
+      console.log('Converted nested data:', contentData);
+    }
 
     return {
       header: contentData.header || null,

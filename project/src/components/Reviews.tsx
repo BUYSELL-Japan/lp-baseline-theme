@@ -8,6 +8,8 @@ export default function Reviews() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  if (!reviewsData) return null;
+
   useEffect(() => {
     const handleScroll = () => {
       if (scrollRef.current) {

@@ -5,6 +5,8 @@ import { useCompanyData } from '../contexts/PageDataContext';
 export default function Company() {
   const companyData = useCompanyData();
 
+  if (!companyData) return null;
+
   if (!companyData.sectionTitle) {
     return null;
   }

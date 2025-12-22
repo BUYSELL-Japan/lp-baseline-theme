@@ -5,6 +5,8 @@ import { useAccessData } from '../contexts/PageDataContext';
 export default function Access() {
   const accessData = useAccessData();
 
+  if (!accessData) return null;
+
   if (!accessData.sectionTitle) {
     return null;
   }

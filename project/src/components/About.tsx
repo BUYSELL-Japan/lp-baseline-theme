@@ -58,6 +58,8 @@ function FeatureCard({ feature, index }: { feature: AboutFeature; index: number 
 export default function About() {
   const aboutData = useAboutData();
 
+  if (!aboutData) return null;
+
   if (!aboutData.sectionTitle || aboutData.features.length === 0) {
     return null;
   }

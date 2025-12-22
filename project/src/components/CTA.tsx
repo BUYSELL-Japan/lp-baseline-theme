@@ -5,6 +5,8 @@ import { useCTAData } from '../contexts/PageDataContext';
 export default function CTA() {
   const ctaData = useCTAData();
 
+  if (!ctaData) return null;
+
   return (
     <section className="relative py-24 px-4 overflow-hidden">
       <div className="absolute inset-0">

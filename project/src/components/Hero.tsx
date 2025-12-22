@@ -2,17 +2,25 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { useHeroData } from '../contexts/PageDataContext';
+import { useLanguage } from '../contexts/LanguageContext';
+import { getLocalizedValue } from '../utils/i18n';
 
 export default function Hero() {
   const heroData = useHeroData();
+  const { language } = useLanguage();
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start start', 'end start'],
   });
 
+  if (!heroData) return null;
+
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
+
+  const title = getLocalizedValue(heroData, 'title', language);
+  const subtitle = getLocalizedValue(heroData, 'subtitle', language);
 
   return (
     <div ref={ref} className="relative h-screen overflow-hidden">
@@ -44,10 +52,10 @@ export default function Hero() {
               textShadow: '0 4px 20px rgba(0,0,0,0.5)',
             }}
           >
-            {heroData.title.split('\n').map((line, i) => (
+            {title.split('\n').map((line: string, i: number) => (
               <span key={i}>
                 {line}
-                {i < heroData.title.split('\n').length - 1 && <br />}
+                {i < title.split('\n').length - 1 && <br />}
               </span>
             ))}
           </motion.h1>
@@ -60,7 +68,7 @@ export default function Hero() {
               textShadow: '0 2px 10px rgba(0,0,0,0.5)',
             }}
           >
-            {heroData.subtitle}
+            {subtitle}
           </motion.p>
         </motion.div>
 

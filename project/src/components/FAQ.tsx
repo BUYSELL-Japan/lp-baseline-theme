@@ -7,6 +7,8 @@ export default function FAQ() {
   const faqData = useFAQData();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
+  if (!faqData) return null;
+
   if (!faqData.sectionTitle || faqData.items.length === 0) {
     return null;
   }

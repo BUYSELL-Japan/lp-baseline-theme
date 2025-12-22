@@ -12,6 +12,8 @@ const iconMap = {
 export default function StoreInfo() {
   const storeInfoData = useStoreInfoData();
 
+  if (!storeInfoData) return null;
+
   return (
     <section id="store" className="py-24 px-4 bg-gradient-to-b from-white to-teal-50/30">
       <div className="max-w-6xl mx-auto">

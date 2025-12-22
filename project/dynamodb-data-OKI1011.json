@@ -1,0 +1,214 @@
+{
+  "StoreID": "OKI1011",
+  "Status": "Published",
+  "UpdatedAt": "2025-12-22T00:00:00Z",
+  "ContentData": {
+    "header": {
+      "logo": {
+        "text": "沖縄商店"
+      },
+      "navigation": [
+        {
+          "id": "about",
+          "label": "私たちについて"
+        },
+        {
+          "id": "menu",
+          "label": "商品"
+        },
+        {
+          "id": "gallery",
+          "label": "ギャラリー"
+        },
+        {
+          "id": "access",
+          "label": "アクセス"
+        },
+        {
+          "id": "contact",
+          "label": "お問い合わせ"
+        }
+      ]
+    },
+    "hero": {
+      "backgroundImage": "https://images.pexels.com/photos/1007426/pexels-photo-1007426.jpeg",
+      "title": "沖縄の想いを世界へ",
+      "subtitle": "Yuimaru Shipで届ける沖縄の心",
+      "description": "単なるお土産ではなく、あなたの想いを形にして届けます。",
+      "cta": {
+        "primary": {
+          "text": "商品を見る",
+          "link": "#menu"
+        },
+        "secondary": {
+          "text": "お問い合わせ",
+          "link": "#contact"
+        }
+      }
+    },
+    "about": {
+      "title": "沖縄商店について",
+      "subtitle": "私たちの想い",
+      "description": "沖縄商店は、沖縄の豊かな文化と伝統を世界に届けることを使命としています。地元の職人と協力し、心を込めて作られた商品をYuimaru Shipを通じてお届けします。",
+      "features": [
+        {
+          "icon": "Heart",
+          "title": "想いを届ける",
+          "description": "一つ一つの商品に込められた作り手の想いを大切にお届けします。"
+        },
+        {
+          "icon": "Package",
+          "title": "確かな品質",
+          "description": "厳選された沖縄の特産品のみを取り扱っています。"
+        },
+        {
+          "icon": "Globe",
+          "title": "世界へ発信",
+          "description": "沖縄の魅力を世界中のお客様にお届けします。"
+        }
+      ]
+    },
+    "menu": {
+      "title": "商品ラインナップ",
+      "subtitle": "厳選された沖縄の逸品",
+      "description": "地元の職人が丹精込めて作った商品をご用意しています",
+      "categories": [
+        {
+          "id": "food",
+          "name": "食品",
+          "items": [
+            {
+              "name": "沖縄黒糖",
+              "description": "サトウキビ100%の純黒糖。ミネラルたっぷりで自然な甘さが特徴です。",
+              "price": "¥800",
+              "image": "https://images.pexels.com/photos/4226893/pexels-photo-4226893.jpeg",
+              "tags": ["人気", "自然食品"]
+            },
+            {
+              "name": "島唐辛子",
+              "description": "沖縄の伝統的な調味料。ピリッとした辛さが料理を引き立てます。",
+              "price": "¥650",
+              "image": "https://images.pexels.com/photos/1437595/pexels-photo-1437595.jpeg",
+              "tags": ["調味料"]
+            }
+          ]
+        },
+        {
+          "id": "craft",
+          "name": "工芸品",
+          "items": [
+            {
+              "name": "琉球ガラス",
+              "description": "職人が一つ一つ手作りする美しい琉球ガラス。鮮やかな色合いが特徴です。",
+              "price": "¥3,500",
+              "image": "https://images.pexels.com/photos/6207876/pexels-photo-6207876.jpeg",
+              "tags": ["人気", "手作り"]
+            },
+            {
+              "name": "やちむん",
+              "description": "沖縄の伝統的な焼き物。温かみのある色と手触りが魅力です。",
+              "price": "¥4,200",
+              "image": "https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg",
+              "tags": ["伝統工芸"]
+            }
+          ]
+        }
+      ]
+    },
+    "gallery": {
+      "title": "ギャラリー",
+      "subtitle": "沖縄の美しい風景と商品",
+      "images": [
+        {
+          "url": "https://images.pexels.com/photos/1007426/pexels-photo-1007426.jpeg",
+          "alt": "沖縄の美しい海",
+          "caption": "エメラルドグリーンの海"
+        },
+        {
+          "url": "https://images.pexels.com/photos/6207876/pexels-photo-6207876.jpeg",
+          "alt": "琉球ガラス",
+          "caption": "職人手作りの琉球ガラス"
+        },
+        {
+          "url": "https://images.pexels.com/photos/4226893/pexels-photo-4226893.jpeg",
+          "alt": "黒糖",
+          "caption": "サトウキビから作る純黒糖"
+        },
+        {
+          "url": "https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg",
+          "alt": "やちむん",
+          "caption": "伝統的なやちむん"
+        }
+      ]
+    },
+    "access": {
+      "title": "アクセス",
+      "subtitle": "お店への行き方",
+      "address": "〒900-0000 沖縄県那覇市国際通り1-2-3",
+      "phone": "098-123-4567",
+      "email": "info@okinawa-shoten.com",
+      "hours": "10:00 - 19:00（定休日：水曜日）",
+      "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3579.0123456789!2d127.6789!3d26.2123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDEyJzQ0LjMiTiAxMjfCsDQwJzQ0LjEiRQ!5e0!3m2!1sja!2sjp!4v1234567890"
+    },
+    "contact": {
+      "title": "お問い合わせ",
+      "subtitle": "お気軽にご連絡ください",
+      "description": "商品に関するご質問やご注文については、お電話またはメールでお気軽にお問い合わせください。",
+      "methods": [
+        {
+          "icon": "Phone",
+          "title": "電話",
+          "value": "098-123-4567",
+          "description": "営業時間内にお電話ください"
+        },
+        {
+          "icon": "Mail",
+          "title": "メール",
+          "value": "info@okinawa-shoten.com",
+          "description": "24時間受付中"
+        },
+        {
+          "icon": "MapPin",
+          "title": "住所",
+          "value": "〒900-0000 沖縄県那覇市国際通り1-2-3",
+          "description": "国際通り沿い"
+        }
+      ]
+    },
+    "footer": {
+      "logo": {
+        "text": "沖縄商店"
+      },
+      "description": "沖縄の心を世界へ届けるYuimaru Ship",
+      "social": [
+        {
+          "platform": "facebook",
+          "url": "https://facebook.com/okinawa-shoten"
+        },
+        {
+          "platform": "instagram",
+          "url": "https://instagram.com/okinawa_shoten"
+        },
+        {
+          "platform": "twitter",
+          "url": "https://twitter.com/okinawa_shoten"
+        }
+      ],
+      "links": [
+        {
+          "title": "会社概要",
+          "url": "#company"
+        },
+        {
+          "title": "プライバシーポリシー",
+          "url": "#privacy"
+        },
+        {
+          "title": "利用規約",
+          "url": "#terms"
+        }
+      ],
+      "copyright": "© 2025 沖縄商店. All rights reserved."
+    }
+  }
+}

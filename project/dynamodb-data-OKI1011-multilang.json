@@ -1,0 +1,454 @@
+{
+  "StoreID": "OKI1011",
+  "Status": "Published",
+  "UpdatedAt": "2025-12-22T00:00:00Z",
+  "ContentData": {
+    "header": {
+      "logo": {
+        "text_ja": "沖縄商店",
+        "text_en": "Okinawa Shop",
+        "text_zh-tw": "沖繩商店",
+        "text_ko": "오키나와 상점"
+      },
+      "navigation": [
+        {
+          "id": "about",
+          "label_ja": "私たちについて",
+          "label_en": "About",
+          "label_zh-tw": "關於我們",
+          "label_ko": "소개"
+        },
+        {
+          "id": "menu",
+          "label_ja": "商品",
+          "label_en": "Products",
+          "label_zh-tw": "商品",
+          "label_ko": "상품"
+        },
+        {
+          "id": "gallery",
+          "label_ja": "ギャラリー",
+          "label_en": "Gallery",
+          "label_zh-tw": "畫廊",
+          "label_ko": "갤러리"
+        },
+        {
+          "id": "access",
+          "label_ja": "アクセス",
+          "label_en": "Access",
+          "label_zh-tw": "交通",
+          "label_ko": "오시는 길"
+        },
+        {
+          "id": "contact",
+          "label_ja": "お問い合わせ",
+          "label_en": "Contact",
+          "label_zh-tw": "聯絡我們",
+          "label_ko": "문의하기"
+        }
+      ]
+    },
+    "hero": {
+      "backgroundImage": "https://images.pexels.com/photos/1007426/pexels-photo-1007426.jpeg",
+      "title_ja": "沖縄の想いを世界へ",
+      "title_en": "Okinawan Spirit to the World",
+      "title_zh-tw": "將沖繩的心意傳遞到世界",
+      "title_ko": "오키나와의 마음을 세계로",
+      "subtitle_ja": "Yuimaru Shipで届ける沖縄の心",
+      "subtitle_en": "Delivering Okinawan Heart with Yuimaru Ship",
+      "subtitle_zh-tw": "透過Yuimaru Ship傳遞沖繩的心",
+      "subtitle_ko": "Yuimaru Ship으로 전하는 오키나와의 마음",
+      "description_ja": "単なるお土産ではなく、あなたの想いを形にして届けます。",
+      "description_en": "Not just souvenirs, we deliver your feelings in tangible form.",
+      "description_zh-tw": "不僅僅是紀念品，我們將您的心意化為實體傳遞。",
+      "description_ko": "단순한 기념품이 아닌, 당신의 마음을 형태로 전달합니다.",
+      "cta": {
+        "primary": {
+          "text_ja": "商品を見る",
+          "text_en": "View Products",
+          "text_zh-tw": "查看商品",
+          "text_ko": "상품 보기",
+          "link": "#menu"
+        },
+        "secondary": {
+          "text_ja": "お問い合わせ",
+          "text_en": "Contact Us",
+          "text_zh-tw": "聯絡我們",
+          "text_ko": "문의하기",
+          "link": "#contact"
+        }
+      }
+    },
+    "about": {
+      "sectionTitle_ja": "沖縄商店について",
+      "sectionTitle_en": "About Okinawa Shop",
+      "sectionTitle_zh-tw": "關於沖繩商店",
+      "sectionTitle_ko": "오키나와 상점 소개",
+      "sectionSubtitle_ja": "私たちの想い",
+      "sectionSubtitle_en": "Our Philosophy",
+      "sectionSubtitle_zh-tw": "我們的理念",
+      "sectionSubtitle_ko": "우리의 마음",
+      "description_ja": "沖縄商店は、沖縄の豊かな文化と伝統を世界に届けることを使命としています。地元の職人と協力し、心を込めて作られた商品をYuimaru Shipを通じてお届けします。",
+      "description_en": "Okinawa Shop's mission is to bring Okinawa's rich culture and traditions to the world. We collaborate with local artisans to deliver heartfelt products through Yuimaru Ship.",
+      "description_zh-tw": "沖繩商店的使命是將沖繩豐富的文化和傳統傳遞到世界。我們與當地工匠合作，透過Yuimaru Ship提供用心製作的商品。",
+      "description_ko": "오키나와 상점은 오키나와의 풍부한 문화와 전통을 세계에 전하는 것을 사명으로 하고 있습니다. 현지 장인들과 협력하여 정성껏 만든 상품을 Yuimaru Ship을 통해 전달합니다.",
+      "features": [
+        {
+          "icon": "Heart",
+          "title_ja": "想いを届ける",
+          "title_en": "Deliver Feelings",
+          "title_zh-tw": "傳遞心意",
+          "title_ko": "마음 전달",
+          "description_ja": "一つ一つの商品に込められた作り手の想いを大切にお届けします。",
+          "description_en": "We carefully deliver the feelings that artisans put into each product.",
+          "description_zh-tw": "我們珍惜每件商品中製作者的心意並將其傳遞。",
+          "description_ko": "하나하나의 상품에 담긴 제작자의 마음을 소중히 전달합니다."
+        },
+        {
+          "icon": "Package",
+          "title_ja": "確かな品質",
+          "title_en": "Quality Assurance",
+          "title_zh-tw": "可靠的品質",
+          "title_ko": "확실한 품질",
+          "description_ja": "厳選された沖縄の特産品のみを取り扱っています。",
+          "description_en": "We only handle carefully selected Okinawan specialties.",
+          "description_zh-tw": "我們只處理精選的沖繩特產。",
+          "description_ko": "엄선된 오키나와 특산품만을 취급합니다."
+        },
+        {
+          "icon": "Globe",
+          "title_ja": "世界へ発信",
+          "title_en": "Global Reach",
+          "title_zh-tw": "傳遞到世界",
+          "title_ko": "세계로 발신",
+          "description_ja": "沖縄の魅力を世界中のお客様にお届けします。",
+          "description_en": "We deliver the charm of Okinawa to customers worldwide.",
+          "description_zh-tw": "我們將沖繩的魅力傳遞給全球客戶。",
+          "description_ko": "오키나와의 매력을 전 세계 고객에게 전달합니다."
+        }
+      ]
+    },
+    "menu": {
+      "title_ja": "商品ラインナップ",
+      "title_en": "Product Lineup",
+      "title_zh-tw": "商品陣容",
+      "title_ko": "상품 라인업",
+      "subtitle_ja": "厳選された沖縄の逸品",
+      "subtitle_en": "Carefully Selected Okinawan Masterpieces",
+      "subtitle_zh-tw": "精選沖繩精品",
+      "subtitle_ko": "엄선된 오키나와의 명품",
+      "description_ja": "地元の職人が丹精込めて作った商品をご用意しています",
+      "description_en": "We offer products carefully crafted by local artisans",
+      "description_zh-tw": "我們提供當地工匠精心製作的商品",
+      "description_ko": "현지 장인이 정성껏 만든 상품을 준비했습니다",
+      "categories": [
+        {
+          "id": "food",
+          "name_ja": "食品",
+          "name_en": "Food",
+          "name_zh-tw": "食品",
+          "name_ko": "식품",
+          "items": [
+            {
+              "name_ja": "沖縄黒糖",
+              "name_en": "Okinawa Brown Sugar",
+              "name_zh-tw": "沖繩黑糖",
+              "name_ko": "오키나와 흑설탕",
+              "description_ja": "サトウキビ100%の純黒糖。ミネラルたっぷりで自然な甘さが特徴です。",
+              "description_en": "100% pure brown sugar from sugarcane. Rich in minerals with natural sweetness.",
+              "description_zh-tw": "100%甘蔗純黑糖。富含礦物質，具有天然甜味。",
+              "description_ko": "사탕수수 100% 순수 흑설탕. 미네랄이 풍부하고 자연스러운 단맛이 특징입니다.",
+              "price": "¥800",
+              "image": "https://images.pexels.com/photos/4226893/pexels-photo-4226893.jpeg",
+              "tags_ja": ["人気", "自然食品"],
+              "tags_en": ["Popular", "Natural Food"],
+              "tags_zh-tw": ["熱門", "天然食品"],
+              "tags_ko": ["인기", "자연식품"]
+            },
+            {
+              "name_ja": "島唐辛子",
+              "name_en": "Island Chili Pepper",
+              "name_zh-tw": "島辣椒",
+              "name_ko": "섬 고추",
+              "description_ja": "沖縄の伝統的な調味料。ピリッとした辛さが料理を引き立てます。",
+              "description_en": "Traditional Okinawan seasoning. Spicy flavor enhances your dishes.",
+              "description_zh-tw": "沖繩傳統調味料。辛辣的味道能提升菜餚風味。",
+              "description_ko": "오키나와의 전통 조미료. 매콤한 맛이 요리를 돋보이게 합니다.",
+              "price": "¥650",
+              "image": "https://images.pexels.com/photos/1437595/pexels-photo-1437595.jpeg",
+              "tags_ja": ["調味料"],
+              "tags_en": ["Seasoning"],
+              "tags_zh-tw": ["調味料"],
+              "tags_ko": ["조미료"]
+            }
+          ]
+        },
+        {
+          "id": "craft",
+          "name_ja": "工芸品",
+          "name_en": "Crafts",
+          "name_zh-tw": "工藝品",
+          "name_ko": "공예품",
+          "items": [
+            {
+              "name_ja": "琉球ガラス",
+              "name_en": "Ryukyu Glass",
+              "name_zh-tw": "琉球玻璃",
+              "name_ko": "류큐 유리",
+              "description_ja": "職人が一つ一つ手作りする美しい琉球ガラス。鮮やかな色合いが特徴です。",
+              "description_en": "Beautiful Ryukyu glass handcrafted by artisans. Features vibrant colors.",
+              "description_zh-tw": "工匠手工製作的美麗琉球玻璃。以鮮豔的色彩為特色。",
+              "description_ko": "장인이 하나하나 수작업으로 만드는 아름다운 류큐 유리. 선명한 색상이 특징입니다.",
+              "price": "¥3,500",
+              "image": "https://images.pexels.com/photos/6207876/pexels-photo-6207876.jpeg",
+              "tags_ja": ["人気", "手作り"],
+              "tags_en": ["Popular", "Handmade"],
+              "tags_zh-tw": ["熱門", "手工"],
+              "tags_ko": ["인기", "수제"]
+            },
+            {
+              "name_ja": "やちむん",
+              "name_en": "Yachimun Pottery",
+              "name_zh-tw": "燒製陶器",
+              "name_ko": "야치문 도자기",
+              "description_ja": "沖縄の伝統的な焼き物。温かみのある色と手触りが魅力です。",
+              "description_en": "Traditional Okinawan pottery. Warm colors and pleasant texture.",
+              "description_zh-tw": "沖繩傳統陶器。溫暖的色彩和質感是其魅力所在。",
+              "description_ko": "오키나와의 전통 도자기. 따뜻한 색감과 촉감이 매력적입니다.",
+              "price": "¥4,200",
+              "image": "https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg",
+              "tags_ja": ["伝統工芸"],
+              "tags_en": ["Traditional Craft"],
+              "tags_zh-tw": ["傳統工藝"],
+              "tags_ko": ["전통 공예"]
+            }
+          ]
+        }
+      ]
+    },
+    "gallery": {
+      "sectionTitle_ja": "ギャラリー",
+      "sectionTitle_en": "Gallery",
+      "sectionTitle_zh-tw": "畫廊",
+      "sectionTitle_ko": "갤러리",
+      "sectionSubtitle_ja": "沖縄の美しい風景と商品",
+      "sectionSubtitle_en": "Beautiful Scenery and Products of Okinawa",
+      "sectionSubtitle_zh-tw": "沖繩的美麗風景與商品",
+      "sectionSubtitle_ko": "오키나와의 아름다운 풍경과 상품",
+      "categories": ["すべて", "風景", "商品", "店舗"],
+      "images": [
+        {
+          "url": "https://images.pexels.com/photos/1007426/pexels-photo-1007426.jpeg",
+          "alt_ja": "沖縄の美しい海",
+          "alt_en": "Beautiful Okinawan Sea",
+          "alt_zh-tw": "美麗的沖繩海洋",
+          "alt_ko": "아름다운 오키나와 바다",
+          "caption_ja": "エメラルドグリーンの海",
+          "caption_en": "Emerald Green Sea",
+          "caption_zh-tw": "翡翠綠的海洋",
+          "caption_ko": "에메랄드빛 바다",
+          "category": "風景"
+        },
+        {
+          "url": "https://images.pexels.com/photos/6207876/pexels-photo-6207876.jpeg",
+          "alt_ja": "琉球ガラス",
+          "alt_en": "Ryukyu Glass",
+          "alt_zh-tw": "琉球玻璃",
+          "alt_ko": "류큐 유리",
+          "caption_ja": "職人手作りの琉球ガラス",
+          "caption_en": "Handcrafted Ryukyu Glass",
+          "caption_zh-tw": "工匠手工琉球玻璃",
+          "caption_ko": "장인이 만든 류큐 유리",
+          "category": "商品"
+        },
+        {
+          "url": "https://images.pexels.com/photos/4226893/pexels-photo-4226893.jpeg",
+          "alt_ja": "黒糖",
+          "alt_en": "Brown Sugar",
+          "alt_zh-tw": "黑糖",
+          "alt_ko": "흑설탕",
+          "caption_ja": "サトウキビから作る純黒糖",
+          "caption_en": "Pure Brown Sugar from Sugarcane",
+          "caption_zh-tw": "甘蔗製成的純黑糖",
+          "caption_ko": "사탕수수로 만든 순수 흑설탕",
+          "category": "商品"
+        },
+        {
+          "url": "https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg",
+          "alt_ja": "やちむん",
+          "alt_en": "Yachimun Pottery",
+          "alt_zh-tw": "燒製陶器",
+          "alt_ko": "야치문 도자기",
+          "caption_ja": "伝統的なやちむん",
+          "caption_en": "Traditional Yachimun",
+          "caption_zh-tw": "傳統燒製陶器",
+          "caption_ko": "전통 야치문",
+          "category": "商品"
+        }
+      ]
+    },
+    "access": {
+      "sectionTitle_ja": "アクセス",
+      "sectionTitle_en": "Access",
+      "sectionTitle_zh-tw": "交通",
+      "sectionTitle_ko": "오시는 길",
+      "sectionSubtitle_ja": "お店への行き方",
+      "sectionSubtitle_en": "How to Get Here",
+      "sectionSubtitle_zh-tw": "如何前往",
+      "sectionSubtitle_ko": "오시는 방법",
+      "address": "〒900-0000 沖縄県那覇市国際通り1-2-3",
+      "phone": "098-123-4567",
+      "email": "info@okinawa-shoten.com",
+      "hours_ja": "10:00 - 19:00（定休日：水曜日）",
+      "hours_en": "10:00 - 19:00 (Closed on Wednesdays)",
+      "hours_zh-tw": "10:00 - 19:00（週三休息）",
+      "hours_ko": "10:00 - 19:00 (수요일 휴무)",
+      "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3579.0123456789!2d127.6789!3d26.2123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDEyJzQ0LjMiTiAxMjfCsDQwJzQ0LjEiRQ!5e0!3m2!1sja!2sjp!4v1234567890",
+      "parking": {
+        "title_ja": "駐車場",
+        "title_en": "Parking",
+        "title_zh-tw": "停車場",
+        "title_ko": "주차장",
+        "description_ja": "専用駐車場あり",
+        "description_en": "Dedicated parking available",
+        "description_zh-tw": "設有專用停車場",
+        "description_ko": "전용 주차장 있음",
+        "spaces": "5台",
+        "notes_ja": "満車の場合は近隣のコインパーキングをご利用ください",
+        "notes_en": "Please use nearby coin parking if full",
+        "notes_zh-tw": "如停車場滿位，請使用附近的投幣停車場",
+        "notes_ko": "만차시 인근 유료주차장을 이용해주세요"
+      },
+      "transportation": {
+        "title_ja": "公共交通機関",
+        "title_en": "Public Transportation",
+        "title_zh-tw": "公共交通",
+        "title_ko": "대중교통",
+        "methods": [
+          {
+            "type_ja": "モノレール",
+            "type_en": "Monorail",
+            "type_zh-tw": "單軌電車",
+            "type_ko": "모노레일",
+            "description_ja": "県庁前駅より徒歩5分",
+            "description_en": "5 min walk from Kenchomae Station",
+            "description_zh-tw": "從縣廳前站步行5分鐘",
+            "description_ko": "현청 앞역에서 도보 5분"
+          },
+          {
+            "type_ja": "バス",
+            "type_en": "Bus",
+            "type_zh-tw": "公車",
+            "type_ko": "버스",
+            "description_ja": "国際通り下車すぐ",
+            "description_en": "Right at Kokusai-dori stop",
+            "description_zh-tw": "國際通下車即達",
+            "description_ko": "국제거리 하차 바로"
+          }
+        ]
+      }
+    },
+    "contact": {
+      "title_ja": "お問い合わせ",
+      "title_en": "Contact Us",
+      "title_zh-tw": "聯絡我們",
+      "title_ko": "문의하기",
+      "subtitle_ja": "お気軽にご連絡ください",
+      "subtitle_en": "Feel Free to Contact Us",
+      "subtitle_zh-tw": "歡迎隨時聯絡",
+      "subtitle_ko": "편하게 연락주세요",
+      "description_ja": "商品に関するご質問やご注文については、お電話またはメールでお気軽にお問い合わせください。",
+      "description_en": "For questions about products or orders, please feel free to contact us by phone or email.",
+      "description_zh-tw": "有關商品的問題或訂單，請隨時透過電話或電子郵件與我們聯繫。",
+      "description_ko": "상품 문의나 주문에 관해서는 전화나 이메일로 편하게 문의해주세요.",
+      "methods": [
+        {
+          "icon": "Phone",
+          "title_ja": "電話",
+          "title_en": "Phone",
+          "title_zh-tw": "電話",
+          "title_ko": "전화",
+          "value": "098-123-4567",
+          "description_ja": "営業時間内にお電話ください",
+          "description_en": "Please call during business hours",
+          "description_zh-tw": "請於營業時間內致電",
+          "description_ko": "영업시간 내 전화주세요"
+        },
+        {
+          "icon": "Mail",
+          "title_ja": "メール",
+          "title_en": "Email",
+          "title_zh-tw": "電子郵件",
+          "title_ko": "이메일",
+          "value": "info@okinawa-shoten.com",
+          "description_ja": "24時間受付中",
+          "description_en": "Available 24/7",
+          "description_zh-tw": "24小時受理",
+          "description_ko": "24시간 접수"
+        },
+        {
+          "icon": "MapPin",
+          "title_ja": "住所",
+          "title_en": "Address",
+          "title_zh-tw": "地址",
+          "title_ko": "주소",
+          "value": "〒900-0000 沖縄県那覇市国際通り1-2-3",
+          "description_ja": "国際通り沿い",
+          "description_en": "Along Kokusai-dori",
+          "description_zh-tw": "位於國際通",
+          "description_ko": "국제거리변"
+        }
+      ]
+    },
+    "footer": {
+      "logo": {
+        "text_ja": "沖縄商店",
+        "text_en": "Okinawa Shop",
+        "text_zh-tw": "沖繩商店",
+        "text_ko": "오키나와 상점"
+      },
+      "description_ja": "沖縄の心を世界へ届けるYuimaru Ship",
+      "description_en": "Yuimaru Ship - Delivering Okinawan Heart to the World",
+      "description_zh-tw": "將沖繩的心傳遞到世界的Yuimaru Ship",
+      "description_ko": "오키나와의 마음을 세계로 전하는 Yuimaru Ship",
+      "social": [
+        {
+          "platform": "facebook",
+          "url": "https://facebook.com/okinawa-shoten"
+        },
+        {
+          "platform": "instagram",
+          "url": "https://instagram.com/okinawa_shoten"
+        },
+        {
+          "platform": "twitter",
+          "url": "https://twitter.com/okinawa_shoten"
+        }
+      ],
+      "links": [
+        {
+          "title_ja": "会社概要",
+          "title_en": "Company",
+          "title_zh-tw": "公司概要",
+          "title_ko": "회사 개요",
+          "url": "#company"
+        },
+        {
+          "title_ja": "プライバシーポリシー",
+          "title_en": "Privacy Policy",
+          "title_zh-tw": "隱私政策",
+          "title_ko": "개인정보처리방침",
+          "url": "#privacy"
+        },
+        {
+          "title_ja": "利用規約",
+          "title_en": "Terms of Service",
+          "title_zh-tw": "使用條款",
+          "title_ko": "이용약관",
+          "url": "#terms"
+        }
+      ],
+      "copyright": "© 2025 沖縄商店. All rights reserved."
+    }
+  }
+}

@@ -37,22 +37,22 @@ import {
 } from '../data/content';
 
 export interface PageData {
-  header: HeaderData;
-  hero: HeroData;
-  about: AboutData;
-  menu: MenuData;
-  storeInfo: StoreInfoData;
-  contact: ContactData;
-  footer: FooterData;
-  gallery: GalleryData;
-  staff: StaffData;
-  reviews: ReviewsData;
-  news: NewsData;
-  access: AccessData;
-  faq: FAQData;
-  cta: CTAData;
-  pricing: PricingData;
-  company: CompanyData;
+  header: HeaderData | null;
+  hero: HeroData | null;
+  about: AboutData | null;
+  menu: MenuData | null;
+  storeInfo: StoreInfoData | null;
+  contact: ContactData | null;
+  footer: FooterData | null;
+  gallery: GalleryData | null;
+  staff: StaffData | null;
+  reviews: ReviewsData | null;
+  news: NewsData | null;
+  access: AccessData | null;
+  faq: FAQData | null;
+  cta: CTAData | null;
+  pricing: PricingData | null;
+  company: CompanyData | null;
 }
 
 export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
@@ -68,22 +68,22 @@ export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
     console.log('Content data for mapping:', contentData);
 
     return {
-      header: contentData.header || defaultHeaderData,
-      hero: contentData.hero || defaultHeroData,
-      about: contentData.about || defaultAboutData,
-      menu: contentData.menu || defaultMenuData,
-      storeInfo: contentData.storeInfo || defaultStoreInfoData,
-      contact: contentData.contact || defaultContactData,
-      footer: contentData.footer || defaultFooterData,
-      gallery: contentData.gallery || defaultGalleryData,
-      staff: contentData.staff || defaultStaffData,
-      reviews: contentData.reviews || defaultReviewsData,
-      news: contentData.news || defaultNewsData,
-      access: contentData.access || defaultAccessData,
-      faq: contentData.faq || defaultFAQData,
-      cta: contentData.cta || defaultCTAData,
-      pricing: contentData.pricing || defaultPricingData,
-      company: contentData.company || defaultCompanyData,
+      header: contentData.header || null,
+      hero: contentData.hero || null,
+      about: contentData.about || null,
+      menu: contentData.menu || null,
+      storeInfo: contentData.storeInfo || null,
+      contact: contentData.contact || null,
+      footer: contentData.footer || null,
+      gallery: contentData.gallery || null,
+      staff: contentData.staff || null,
+      reviews: contentData.reviews || null,
+      news: contentData.news || null,
+      access: contentData.access || null,
+      faq: contentData.faq || null,
+      cta: contentData.cta || null,
+      pricing: contentData.pricing || null,
+      company: contentData.company || null,
     };
   } catch (error) {
     console.error('Error mapping DynamoDB data:', error);
@@ -93,21 +93,21 @@ export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
 
 export function getDefaultPageData(): PageData {
   return {
-    header: defaultHeaderData,
-    hero: defaultHeroData,
-    about: defaultAboutData,
-    menu: defaultMenuData,
-    storeInfo: defaultStoreInfoData,
-    contact: defaultContactData,
-    footer: defaultFooterData,
-    gallery: defaultGalleryData,
-    staff: defaultStaffData,
-    reviews: defaultReviewsData,
-    news: defaultNewsData,
-    access: defaultAccessData,
-    faq: defaultFAQData,
-    cta: defaultCTAData,
-    pricing: defaultPricingData,
-    company: defaultCompanyData,
+    header: null,
+    hero: null,
+    about: null,
+    menu: null,
+    storeInfo: null,
+    contact: null,
+    footer: null,
+    gallery: null,
+    staff: null,
+    reviews: null,
+    news: null,
+    access: null,
+    faq: null,
+    cta: null,
+    pricing: null,
+    company: null,
   };
 }

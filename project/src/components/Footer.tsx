@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
 import { Waves, Facebook, Instagram, Twitter } from 'lucide-react';
 import { useFooterData } from '../contexts/PageDataContext';
+import { useLanguage } from '../contexts/LanguageContext';
+import { getLocalizedValue } from '../utils/i18n';
 
 const socialIconMap = {
   Facebook,
@@ -10,7 +12,10 @@ const socialIconMap = {
 
 export default function Footer() {
   const footerData = useFooterData();
+  const { language } = useLanguage();
   const currentYear = new Date().getFullYear();
+
+  if (!footerData) return null;
 
   return (
     <footer className="relative bg-gradient-to-b from-teal-900 to-teal-950 text-white overflow-hidden">
@@ -45,13 +50,13 @@ export default function Footer() {
           >
             <div className="flex items-center gap-2 mb-4">
               <Waves className="w-8 h-8" />
-              <span className="text-2xl font-bold">{footerData.logo}</span>
+              <span className="text-2xl font-bold">{getLocalizedValue(footerData.logo, 'text', language)}</span>
             </div>
             <p className="text-teal-200 leading-relaxed">
-              {footerData.description.split('\n').map((line, i) => (
+              {getLocalizedValue(footerData, 'description', language).split('\n').map((line: string, i: number) => (
                 <span key={i}>
                   {line}
-                  {i < footerData.description.split('\n').length - 1 && <br />}
+                  {i < getLocalizedValue(footerData, 'description', language).split('\n').length - 1 && <br />}
                 </span>
               ))}
             </p>

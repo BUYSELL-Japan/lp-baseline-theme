@@ -11,6 +11,8 @@ export default function Gallery() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
 
+  if (!galleryData) return null;
+
   const filteredImages = selectedCategory === 'すべて'
     ? galleryData.images
     : galleryData.images.filter(img => img.category === selectedCategory);

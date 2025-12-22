@@ -5,6 +5,8 @@ import { usePricingData } from '../contexts/PageDataContext';
 export default function Pricing() {
   const pricingData = usePricingData();
 
+  if (!pricingData) return null;
+
   if (!pricingData.sectionTitle || pricingData.plans.length === 0) {
     return null;
   }

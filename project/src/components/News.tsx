@@ -5,6 +5,8 @@ import { useNewsData } from '../contexts/PageDataContext';
 export default function News() {
   const newsData = useNewsData();
 
+  if (!newsData) return null;
+
   if (!newsData.sectionTitle || newsData.items.length === 0) {
     return null;
   }

@@ -83,22 +83,22 @@ function App() {
   return (
     <PageDataProvider data={pageData}>
       <div className="min-h-screen bg-white">
-        <Header />
-        <Hero />
-        <About />
-        <Menu />
-        <Pricing />
-        <CTA />
-        <Gallery />
-        <Staff />
-        <Reviews />
-        <News />
-        <StoreInfo />
-        <Company />
-        <Access />
-        <FAQ />
-        <Contact />
-        <Footer />
+        {pageData.header && <Header />}
+        {pageData.hero && <Hero />}
+        {pageData.about && <About />}
+        {pageData.menu && <Menu />}
+        {pageData.pricing && <Pricing />}
+        {pageData.cta && <CTA />}
+        {pageData.gallery && <Gallery />}
+        {pageData.staff && <Staff />}
+        {pageData.reviews && <Reviews />}
+        {pageData.news && <News />}
+        {pageData.storeInfo && <StoreInfo />}
+        {pageData.company && <Company />}
+        {pageData.access && <Access />}
+        {pageData.faq && <FAQ />}
+        {pageData.contact && <Contact />}
+        {pageData.footer && <Footer />}
       </div>
     </PageDataProvider>
   );

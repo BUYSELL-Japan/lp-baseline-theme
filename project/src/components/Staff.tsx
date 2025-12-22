@@ -4,6 +4,8 @@ import { useStaffData } from '../contexts/PageDataContext';
 export default function Staff() {
   const staffData = useStaffData();
 
+  if (!staffData) return null;
+
   if (!staffData.sectionTitle || staffData.members.length === 0) {
     return null;
   }

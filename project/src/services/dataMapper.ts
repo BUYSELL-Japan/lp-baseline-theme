@@ -57,25 +57,33 @@ export interface PageData {
 
 export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
   try {
-    const parsedData = typeof dynamoData === 'string' ? JSON.parse(dynamoData) : dynamoData;
+    let contentData = dynamoData;
+
+    if (dynamoData.ContentData) {
+      contentData = typeof dynamoData.ContentData === 'string'
+        ? JSON.parse(dynamoData.ContentData)
+        : dynamoData.ContentData;
+    }
+
+    console.log('Content data for mapping:', contentData);
 
     return {
-      header: parsedData.header || defaultHeaderData,
-      hero: parsedData.hero || defaultHeroData,
-      about: parsedData.about || defaultAboutData,
-      menu: parsedData.menu || defaultMenuData,
-      storeInfo: parsedData.storeInfo || defaultStoreInfoData,
-      contact: parsedData.contact || defaultContactData,
-      footer: parsedData.footer || defaultFooterData,
-      gallery: parsedData.gallery || defaultGalleryData,
-      staff: parsedData.staff || defaultStaffData,
-      reviews: parsedData.reviews || defaultReviewsData,
-      news: parsedData.news || defaultNewsData,
-      access: parsedData.access || defaultAccessData,
-      faq: parsedData.faq || defaultFAQData,
-      cta: parsedData.cta || defaultCTAData,
-      pricing: parsedData.pricing || defaultPricingData,
-      company: parsedData.company || defaultCompanyData,
+      header: contentData.header || defaultHeaderData,
+      hero: contentData.hero || defaultHeroData,
+      about: contentData.about || defaultAboutData,
+      menu: contentData.menu || defaultMenuData,
+      storeInfo: contentData.storeInfo || defaultStoreInfoData,
+      contact: contentData.contact || defaultContactData,
+      footer: contentData.footer || defaultFooterData,
+      gallery: contentData.gallery || defaultGalleryData,
+      staff: contentData.staff || defaultStaffData,
+      reviews: contentData.reviews || defaultReviewsData,
+      news: contentData.news || defaultNewsData,
+      access: contentData.access || defaultAccessData,
+      faq: contentData.faq || defaultFAQData,
+      cta: contentData.cta || defaultCTAData,
+      pricing: contentData.pricing || defaultPricingData,
+      company: contentData.company || defaultCompanyData,
     };
   } catch (error) {
     console.error('Error mapping DynamoDB data:', error);

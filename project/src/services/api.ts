@@ -1,8 +1,11 @@
+import { unmarshall } from '@aws-sdk/util-dynamodb';
+
 const API_BASE_URL = 'https://2sznhxhcd8.execute-api.ap-southeast-2.amazonaws.com/dev/lp/content';
 
 export interface LandingPageContent {
   storeId: string;
   subdomainName: string;
+  ContentData?: any;
   [key: string]: any;
 }
 
@@ -15,8 +18,13 @@ export async function fetchStoreContent(storeId: string): Promise<LandingPageCon
       return null;
     }
 
-    const data = await response.json();
-    return data;
+    const rawData = await response.json();
+    console.log('Raw API Response:', rawData);
+
+    const unmarshalled = unmarshall(rawData);
+    console.log('Unmarshalled data:', unmarshalled);
+
+    return unmarshalled;
   } catch (error) {
     console.error('Error fetching store content:', error);
     return null;

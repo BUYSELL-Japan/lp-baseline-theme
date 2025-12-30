@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Clock, MapPin, Phone, Mail } from 'lucide-react';
 import { useStoreInfoData } from '../contexts/PageDataContext';
+import { useLocalize } from '../hooks/useLocalize';
 
 const iconMap = {
   MapPin,
@@ -11,6 +12,7 @@ const iconMap = {
 
 export default function StoreInfo() {
   const storeInfoData = useStoreInfoData();
+  const { t } = useLocalize();
 
   if (!storeInfoData) return null;
 
@@ -24,7 +26,7 @@ export default function StoreInfo() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">{storeInfoData.sectionTitle}</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">{t(storeInfoData, 'sectionTitle')}</h2>
           <div className="w-24 h-1 bg-teal-600 mx-auto" />
         </motion.div>
 
@@ -50,8 +52,8 @@ export default function StoreInfo() {
                     <IconComponent className="w-6 h-6 text-teal-600" />
                   </motion.div>
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
-                    <p className="text-gray-700 leading-relaxed">{item.content}</p>
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">{t(item, 'title')}</h3>
+                    <p className="text-gray-700 leading-relaxed">{t(item, 'content')}</p>
                   </div>
                 </div>
               </motion.div>
@@ -69,12 +71,12 @@ export default function StoreInfo() {
           <div className="aspect-video bg-gray-200 relative">
             <img
               src={storeInfoData.mainImage}
-              alt="店内の様子"
+              alt={t(storeInfoData, 'mainImageCaption')}
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
             <div className="absolute bottom-6 left-6 text-white">
-              <p className="text-2xl font-bold">{storeInfoData.mainImageCaption}</p>
+              <p className="text-2xl font-bold">{t(storeInfoData, 'mainImageCaption')}</p>
             </div>
           </div>
         </motion.div>

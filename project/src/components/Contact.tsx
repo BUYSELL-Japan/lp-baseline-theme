@@ -2,9 +2,11 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { Send } from 'lucide-react';
 import { useContactData } from '../contexts/PageDataContext';
+import { useLocalize } from '../hooks/useLocalize';
 
 export default function Contact() {
   const contactData = useContactData();
+  const { t } = useLocalize();
   const [focused, setFocused] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     name: '',
@@ -38,11 +40,11 @@ export default function Contact() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            {contactData.sectionTitle}
+            {t(contactData, 'sectionTitle')}
           </h2>
           <div className="w-24 h-1 bg-teal-600 mx-auto mb-6" />
           <p className="text-xl text-gray-700">
-            {contactData.sectionSubtitle}
+            {t(contactData, 'sectionSubtitle')}
           </p>
         </motion.div>
 
@@ -57,7 +59,7 @@ export default function Contact() {
           <div className="space-y-6">
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                {contactData.fields.name}
+                {t(contactData.fields, 'name')}
               </label>
               <motion.input
                 type="text"
@@ -79,7 +81,7 @@ export default function Contact() {
 
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                {contactData.fields.email}
+                {t(contactData.fields, 'email')}
               </label>
               <motion.input
                 type="email"
@@ -101,7 +103,7 @@ export default function Contact() {
 
             <div>
               <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
-                {contactData.fields.subject}
+                {t(contactData.fields, 'subject')}
               </label>
               <motion.input
                 type="text"
@@ -123,7 +125,7 @@ export default function Contact() {
 
             <div>
               <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                {contactData.fields.message}
+                {t(contactData.fields, 'message')}
               </label>
               <motion.textarea
                 id="message"
@@ -151,7 +153,7 @@ export default function Contact() {
               transition={{ duration: 0.2 }}
             >
               <Send className="w-5 h-5" />
-              {contactData.submitButton}
+              {t(contactData, 'submitButton')}
             </motion.button>
           </div>
         </motion.form>

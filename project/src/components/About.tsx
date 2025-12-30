@@ -2,12 +2,14 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { useAboutData } from '../contexts/PageDataContext';
+import { useLocalize } from '../hooks/useLocalize';
 import type { AboutFeature } from '../data/types';
 
 function FeatureCard({ feature, index }: { feature: AboutFeature; index: number }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
   const isEven = index % 2 === 0;
+  const { t } = useLocalize();
 
   return (
     <motion.div
@@ -25,7 +27,7 @@ function FeatureCard({ feature, index }: { feature: AboutFeature; index: number 
         <div className="relative overflow-hidden rounded-2xl shadow-2xl">
           <motion.img
             src={feature.image}
-            alt={feature.title}
+            alt={t(feature, 'title')}
             className="w-full h-80 object-cover"
             whileHover={{ scale: 1.1 }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
@@ -40,7 +42,7 @@ function FeatureCard({ feature, index }: { feature: AboutFeature; index: number 
           animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: isEven ? -20 : 20 }}
           transition={{ duration: 0.6, delay: index * 0.2 + 0.2 }}
         >
-          {feature.title}
+          {t(feature, 'title')}
         </motion.h3>
         <motion.p
           className="text-lg text-gray-700 leading-relaxed"
@@ -48,7 +50,7 @@ function FeatureCard({ feature, index }: { feature: AboutFeature; index: number 
           animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: isEven ? -20 : 20 }}
           transition={{ duration: 0.6, delay: index * 0.2 + 0.4 }}
         >
-          {feature.description}
+          {t(feature, 'description')}
         </motion.p>
       </div>
     </motion.div>
@@ -57,10 +59,13 @@ function FeatureCard({ feature, index }: { feature: AboutFeature; index: number 
 
 export default function About() {
   const aboutData = useAboutData();
+  const { t } = useLocalize();
 
   if (!aboutData) return null;
 
-  if (!aboutData.sectionTitle || aboutData.features.length === 0) {
+  const sectionTitle = t(aboutData, 'sectionTitle');
+
+  if (!sectionTitle || aboutData.features.length === 0) {
     return null;
   }
 
@@ -75,7 +80,7 @@ export default function About() {
           className="text-center mb-20"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            {aboutData.sectionTitle}
+            {sectionTitle}
           </h2>
           <div className="w-24 h-1 bg-teal-600 mx-auto" />
         </motion.div>

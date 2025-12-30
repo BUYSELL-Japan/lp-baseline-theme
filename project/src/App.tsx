@@ -18,6 +18,7 @@ import Footer from './components/Footer';
 import { fetchStoreContent, getSubdomainFromHostname, getStoreIdFromPath } from './services/api';
 import { mapDynamoDBDataToPageData, getDefaultPageData, type PageData } from './services/dataMapper';
 import { PageDataProvider } from './contexts/PageDataContext';
+import { LanguageProvider } from './contexts/LanguageContext';
 
 function App() {
   const [pageData, setPageData] = useState<PageData>(getDefaultPageData());
@@ -29,6 +30,7 @@ function App() {
       try {
         const subdomain = getSubdomainFromHostname(window.location.hostname);
         const pathStoreId = getStoreIdFromPath();
+        const isDevelopment = import.meta.env.DEV;
 
         let storeId: string | null = null;
 
@@ -45,12 +47,30 @@ function App() {
             const mappedData = mapDynamoDBDataToPageData(data);
             setPageData(mappedData);
           } else {
+            if (isDevelopment) {
+              console.log('Using default data in development mode');
+              setPageData(getDefaultPageData());
+            } else {
+              setError('Store not found');
+            }
+          }
+        } else {
+          if (isDevelopment) {
+            console.log('No storeId found, using default data in development mode');
+            setPageData(getDefaultPageData());
+          } else {
             setError('Store not found');
           }
         }
       } catch (err) {
         console.error('Error loading store data:', err);
-        setError('Failed to load store data');
+        const isDevelopment = import.meta.env.DEV;
+        if (isDevelopment) {
+          console.log('Error occurred, using default data in development mode');
+          setPageData(getDefaultPageData());
+        } else {
+          setError('Failed to load store data');
+        }
       } finally {
         setIsLoading(false);
       }
@@ -81,26 +101,28 @@ function App() {
   }
 
   return (
-    <PageDataProvider data={pageData}>
-      <div className="min-h-screen bg-white">
-        {pageData.header && <Header />}
-        {pageData.hero && <Hero />}
-        {pageData.about && <About />}
-        {pageData.menu && <Menu />}
-        {pageData.pricing && <Pricing />}
-        {pageData.cta && <CTA />}
-        {pageData.gallery && <Gallery />}
-        {pageData.staff && <Staff />}
-        {pageData.reviews && <Reviews />}
-        {pageData.news && <News />}
-        {pageData.storeInfo && <StoreInfo />}
-        {pageData.company && <Company />}
-        {pageData.access && <Access />}
-        {pageData.faq && <FAQ />}
-        {pageData.contact && <Contact />}
-        {pageData.footer && <Footer />}
-      </div>
-    </PageDataProvider>
+    <LanguageProvider>
+      <PageDataProvider data={pageData}>
+        <div className="min-h-screen bg-white">
+          {pageData.header && <Header />}
+          {pageData.hero && <Hero />}
+          {pageData.about && <About />}
+          {pageData.menu && <Menu />}
+          {pageData.pricing && <Pricing />}
+          {pageData.cta && <CTA />}
+          {pageData.gallery && <Gallery />}
+          {pageData.staff && <Staff />}
+          {pageData.reviews && <Reviews />}
+          {pageData.news && <News />}
+          {pageData.storeInfo && <StoreInfo />}
+          {pageData.company && <Company />}
+          {pageData.access && <Access />}
+          {pageData.faq && <FAQ />}
+          {pageData.contact && <Contact />}
+          {pageData.footer && <Footer />}
+        </div>
+      </PageDataProvider>
+    </LanguageProvider>
   );
 }
 

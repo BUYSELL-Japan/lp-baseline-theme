@@ -1,10 +1,12 @@
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
 import { useMenuData } from '../contexts/PageDataContext';
+import { useLocalize } from '../hooks/useLocalize';
 import type { MenuItem as MenuItemType } from '../data/types';
 import Lightbox from './Lightbox';
 
 function MenuItem({ item, index, onImageClick }: { item: MenuItemType; index: number; onImageClick: () => void }) {
+  const { t } = useLocalize();
   const cardRef = useRef<HTMLDivElement>(null);
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
@@ -56,7 +58,7 @@ function MenuItem({ item, index, onImageClick }: { item: MenuItemType; index: nu
         <div className="relative overflow-hidden h-56 cursor-pointer" onClick={onImageClick} style={{ pointerEvents: 'auto' }}>
           <motion.img
             src={item.image}
-            alt={item.name}
+            alt={t(item, 'name')}
             className="w-full h-full object-cover pointer-events-none"
             whileHover={{ scale: 1.15 }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
@@ -66,13 +68,13 @@ function MenuItem({ item, index, onImageClick }: { item: MenuItemType; index: nu
             className="absolute top-4 right-4 bg-teal-600 text-white px-4 py-2 rounded-full font-bold text-lg shadow-lg pointer-events-none"
             style={{ transform: 'translateZ(50px)' }}
           >
-            {item.price}
+            {t(item, 'price', item.price)}
           </motion.div>
         </div>
 
         <div className="p-6">
-          <h3 className="text-2xl font-bold text-gray-900 mb-2">{item.name}</h3>
-          <p className="text-gray-600 leading-relaxed">{item.description}</p>
+          <h3 className="text-2xl font-bold text-gray-900 mb-2">{t(item, 'name')}</h3>
+          <p className="text-gray-600 leading-relaxed">{t(item, 'description')}</p>
         </div>
       </motion.div>
     </motion.div>
@@ -81,6 +83,7 @@ function MenuItem({ item, index, onImageClick }: { item: MenuItemType; index: nu
 
 export default function Menu() {
   const menuData = useMenuData();
+  const { t } = useLocalize();
   const scrollRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -134,10 +137,13 @@ export default function Menu() {
 
   const lightboxImages = menuData.items.map((item) => ({
     src: item.image,
-    alt: item.name,
+    alt: t(item, 'name'),
   }));
 
-  if (!menuData.sectionTitle || menuData.items.length === 0) {
+  const sectionTitle = t(menuData, 'sectionTitle');
+  const sectionSubtitle = t(menuData, 'sectionSubtitle');
+
+  if (!sectionTitle || menuData.items.length === 0) {
     return null;
   }
 
@@ -151,9 +157,9 @@ export default function Menu() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">{menuData.sectionTitle}</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">{sectionTitle}</h2>
           <div className="w-24 h-1 bg-teal-600 mx-auto mb-6" />
-          <p className="text-xl text-gray-700">{menuData.sectionSubtitle}</p>
+          <p className="text-xl text-gray-700">{sectionSubtitle}</p>
         </motion.div>
 
         <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-8">

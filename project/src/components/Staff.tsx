@@ -1,12 +1,17 @@
 import { motion } from 'framer-motion';
 import { useStaffData } from '../contexts/PageDataContext';
+import { useLocalize } from '../hooks/useLocalize';
 
 export default function Staff() {
   const staffData = useStaffData();
+  const { getText } = useLocalize();
 
   if (!staffData) return null;
 
-  if (!staffData.sectionTitle || staffData.members.length === 0) {
+  const sectionTitle = getText(staffData.sectionTitle);
+  const sectionSubtitle = getText(staffData.sectionSubtitle);
+
+  if (!sectionTitle || staffData.members.length === 0) {
     return null;
   }
 
@@ -21,10 +26,10 @@ export default function Staff() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            {staffData.sectionTitle}
+            {sectionTitle}
           </h2>
           <div className="w-24 h-1 bg-teal-600 mx-auto mb-6" />
-          <p className="text-xl text-gray-700">{staffData.sectionSubtitle}</p>
+          <p className="text-xl text-gray-700">{sectionSubtitle}</p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -41,17 +46,17 @@ export default function Staff() {
               <div className="aspect-square bg-gray-200 relative overflow-hidden">
                 <motion.img
                   src={member.image}
-                  alt={member.name}
+                  alt={getText(member.name)}
                   className="w-full h-full object-cover"
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.4 }}
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-1">{member.name}</h3>
-                <p className="text-teal-600 font-medium mb-3">{member.role}</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-1">{getText(member.name)}</h3>
+                <p className="text-teal-600 font-medium mb-3">{getText(member.role)}</p>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  {member.description}
+                  {getText(member.description)}
                 </p>
               </div>
             </motion.div>

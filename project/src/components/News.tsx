@@ -1,13 +1,18 @@
 import { motion } from 'framer-motion';
 import { Calendar, Tag } from 'lucide-react';
 import { useNewsData } from '../contexts/PageDataContext';
+import { useLocalize } from '../hooks/useLocalize';
 
 export default function News() {
   const newsData = useNewsData();
+  const { getText } = useLocalize();
 
   if (!newsData) return null;
 
-  if (!newsData.sectionTitle || newsData.items.length === 0) {
+  const sectionTitle = getText(newsData.sectionTitle);
+  const sectionSubtitle = getText(newsData.sectionSubtitle);
+
+  if (!sectionTitle || newsData.items.length === 0) {
     return null;
   }
 
@@ -22,10 +27,10 @@ export default function News() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            {newsData.sectionTitle}
+            {sectionTitle}
           </h2>
           <div className="w-24 h-1 bg-teal-600 mx-auto mb-6" />
-          <p className="text-xl text-gray-700">{newsData.sectionSubtitle}</p>
+          <p className="text-xl text-gray-700">{sectionSubtitle}</p>
         </motion.div>
 
         <div className="space-y-6">
@@ -45,18 +50,18 @@ export default function News() {
                     <Calendar className="w-6 h-6 text-teal-600" />
                   </div>
                   <div>
-                    <p className="text-sm text-gray-500">{item.date}</p>
+                    <p className="text-sm text-gray-500">{getText(item.date)}</p>
                     <span className="inline-flex items-center gap-1 px-3 py-1 bg-teal-600 text-white text-xs rounded-full mt-1">
                       <Tag className="w-3 h-3" />
-                      {item.category}
+                      {getText(item.category)}
                     </span>
                   </div>
                 </div>
                 <div className="flex-grow">
                   <h3 className="text-xl font-bold text-gray-900 mb-2">
-                    {item.title}
+                    {getText(item.title)}
                   </h3>
-                  <p className="text-gray-700 leading-relaxed">{item.content}</p>
+                  <p className="text-gray-700 leading-relaxed">{getText(item.content)}</p>
                 </div>
               </div>
             </motion.div>

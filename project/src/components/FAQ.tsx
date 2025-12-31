@@ -2,14 +2,19 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { useFAQData } from '../contexts/PageDataContext';
+import { useLocalize } from '../hooks/useLocalize';
 
 export default function FAQ() {
   const faqData = useFAQData();
+  const { getText } = useLocalize();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   if (!faqData) return null;
 
-  if (!faqData.sectionTitle || faqData.items.length === 0) {
+  const sectionTitle = getText(faqData.sectionTitle);
+  const sectionSubtitle = getText(faqData.sectionSubtitle);
+
+  if (!sectionTitle || faqData.items.length === 0) {
     return null;
   }
 
@@ -24,10 +29,10 @@ export default function FAQ() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            {faqData.sectionTitle}
+            {sectionTitle}
           </h2>
           <div className="w-24 h-1 bg-teal-600 mx-auto mb-6" />
-          <p className="text-xl text-gray-700">{faqData.sectionSubtitle}</p>
+          <p className="text-xl text-gray-700">{sectionSubtitle}</p>
         </motion.div>
 
         <div className="space-y-4">
@@ -47,7 +52,7 @@ export default function FAQ() {
                 whileTap={{ scale: 0.99 }}
               >
                 <h3 className="text-lg font-bold text-gray-900 pr-4">
-                  {item.question}
+                  {getText(item.question)}
                 </h3>
                 <motion.div
                   animate={{ rotate: openIndex === index ? 180 : 0 }}
@@ -68,7 +73,7 @@ export default function FAQ() {
                 className="overflow-hidden"
               >
                 <div className="px-6 pb-6 pt-2">
-                  <p className="text-gray-700 leading-relaxed">{item.answer}</p>
+                  <p className="text-gray-700 leading-relaxed">{getText(item.answer)}</p>
                 </div>
               </motion.div>
             </motion.div>

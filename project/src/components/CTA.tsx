@@ -1,9 +1,11 @@
 import { motion } from 'framer-motion';
 import { Phone, Mail } from 'lucide-react';
 import { useCTAData } from '../contexts/PageDataContext';
+import { useLocalize } from '../hooks/useLocalize';
 
 export default function CTA() {
   const ctaData = useCTAData();
+  const { getText } = useLocalize();
 
   if (!ctaData) return null;
 
@@ -26,14 +28,14 @@ export default function CTA() {
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            {ctaData.sectionTitle}
+            {getText(ctaData.sectionTitle)}
           </h2>
           <div className="w-24 h-1 bg-white mx-auto mb-6" />
           <p className="text-xl text-white/90 mb-3">
-            {ctaData.sectionSubtitle}
+            {getText(ctaData.sectionSubtitle)}
           </p>
           <p className="text-lg text-white/80 mb-12 max-w-2xl mx-auto leading-relaxed">
-            {ctaData.description}
+            {getText(ctaData.description)}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -58,7 +60,7 @@ export default function CTA() {
                 ) : (
                   <Mail className="w-5 h-5" />
                 )}
-                {button.text}
+                {getText(button.text)}
               </motion.a>
             ))}
           </div>

@@ -1,8 +1,7 @@
 import { motion } from 'framer-motion';
 import { Waves, Facebook, Instagram, Twitter } from 'lucide-react';
 import { useFooterData } from '../contexts/PageDataContext';
-import { useLanguage } from '../contexts/LanguageContext';
-import { getLocalizedValue } from '../utils/i18n';
+import { useLocalize } from '../hooks/useLocalize';
 
 const socialIconMap = {
   Facebook,
@@ -12,22 +11,13 @@ const socialIconMap = {
 
 export default function Footer() {
   const footerData = useFooterData();
-  const { language } = useLanguage();
+  const { getText, t } = useLocalize();
   const currentYear = new Date().getFullYear();
 
   if (!footerData) return null;
 
-  let logoText = getLocalizedValue(footerData.logo, 'text', language);
-  if (typeof logoText === 'object') {
-    logoText = logoText[language] || logoText['ja'] || logoText[Object.keys(logoText)[0]] || '';
-  }
-  logoText = String(logoText || '');
-
-  let description = getLocalizedValue(footerData, 'description', language);
-  if (typeof description === 'object') {
-    description = description[language] || description['ja'] || description[Object.keys(description)[0]] || '';
-  }
-  description = String(description || '');
+  const logoText = t(footerData.logo, 'text', '');
+  const description = getText(footerData.description);
 
   return (
     <footer className="relative bg-gradient-to-b from-teal-900 to-teal-950 text-white overflow-hidden">
@@ -80,10 +70,10 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <h3 className="text-xl font-bold mb-4">{footerData.businessHours.title}</h3>
-            <p className="text-teal-200">{footerData.businessHours.days}</p>
-            <p className="text-teal-200">{footerData.businessHours.hours}</p>
-            <p className="text-teal-200 text-sm mt-2">{footerData.businessHours.closedDay}</p>
+            <h3 className="text-xl font-bold mb-4">{getText(footerData.businessHours.title)}</h3>
+            <p className="text-teal-200">{getText(footerData.businessHours.days)}</p>
+            <p className="text-teal-200">{getText(footerData.businessHours.hours)}</p>
+            <p className="text-teal-200 text-sm mt-2">{getText(footerData.businessHours.closedDay)}</p>
           </motion.div>
 
           <motion.div
@@ -92,7 +82,7 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h3 className="text-xl font-bold mb-4">{footerData.social.title}</h3>
+            <h3 className="text-xl font-bold mb-4">{getText(footerData.social.title)}</h3>
             <div className="flex gap-4">
               {footerData.social.links.map((social, index) => {
                 const IconComponent = socialIconMap[social.platform as keyof typeof socialIconMap];
@@ -119,7 +109,7 @@ export default function Footer() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="border-t border-teal-800 pt-8 text-center"
         >
-          <p className="text-teal-300">&copy; {currentYear} {footerData.copyright}</p>
+          <p className="text-teal-300">&copy; {currentYear} {getText(footerData.copyright)}</p>
         </motion.div>
       </div>
     </footer>

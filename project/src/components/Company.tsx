@@ -1,13 +1,18 @@
 import { motion } from 'framer-motion';
 import { Building2, History, Heart } from 'lucide-react';
 import { useCompanyData } from '../contexts/PageDataContext';
+import { useLocalize } from '../hooks/useLocalize';
 
 export default function Company() {
   const companyData = useCompanyData();
+  const { getText } = useLocalize();
 
   if (!companyData) return null;
 
-  if (!companyData.sectionTitle) {
+  const sectionTitle = getText(companyData.sectionTitle);
+  const sectionSubtitle = getText(companyData.sectionSubtitle);
+
+  if (!sectionTitle) {
     return null;
   }
 
@@ -22,10 +27,10 @@ export default function Company() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            {companyData.sectionTitle}
+            {sectionTitle}
           </h2>
           <div className="w-24 h-1 bg-teal-600 mx-auto mb-6" />
-          <p className="text-xl text-gray-700">{companyData.sectionSubtitle}</p>
+          <p className="text-xl text-gray-700">{sectionSubtitle}</p>
         </motion.div>
 
         <div className="space-y-12">
@@ -41,11 +46,11 @@ export default function Company() {
                 <Heart className="w-8 h-8 text-teal-600" />
               </div>
               <h3 className="text-3xl font-bold text-gray-900">
-                {companyData.philosophy.title}
+                {getText(companyData.philosophy.title)}
               </h3>
             </div>
             <p className="text-gray-700 text-lg leading-relaxed">
-              {companyData.philosophy.content}
+              {getText(companyData.philosophy.content)}
             </p>
           </motion.div>
 
@@ -61,7 +66,7 @@ export default function Company() {
                 <History className="w-8 h-8 text-teal-600" />
               </div>
               <h3 className="text-3xl font-bold text-gray-900">
-                {companyData.history.title}
+                {getText(companyData.history.title)}
               </h3>
             </div>
 
@@ -82,9 +87,9 @@ export default function Company() {
                     </div>
                     <div className="bg-gray-50 rounded-xl p-4 hover:bg-gray-100 transition-colors">
                       <div className="font-bold text-teal-600 text-lg mb-1">
-                        {item.year}
+                        {getText(item.year)}
                       </div>
-                      <div className="text-gray-700">{item.event}</div>
+                      <div className="text-gray-700">{getText(item.event)}</div>
                     </div>
                   </motion.div>
                 ))}
@@ -104,7 +109,7 @@ export default function Company() {
                 <Building2 className="w-8 h-8 text-teal-600" />
               </div>
               <h3 className="text-3xl font-bold text-gray-900">
-                {companyData.companyInfo.title}
+                {getText(companyData.companyInfo.title)}
               </h3>
             </div>
 
@@ -119,9 +124,9 @@ export default function Company() {
                   className="flex flex-col md:flex-row md:items-start gap-2"
                 >
                   <div className="font-bold text-teal-600 min-w-[120px]">
-                    {item.label}
+                    {getText(item.label)}
                   </div>
-                  <div className="text-gray-700 flex-1">{item.value}</div>
+                  <div className="text-gray-700 flex-1">{getText(item.value)}</div>
                 </motion.div>
               ))}
             </div>

@@ -1,13 +1,18 @@
 import { motion } from 'framer-motion';
 import { MapPin, Car, Train } from 'lucide-react';
 import { useAccessData } from '../contexts/PageDataContext';
+import { useLocalize } from '../hooks/useLocalize';
 
 export default function Access() {
   const accessData = useAccessData();
+  const { getText } = useLocalize();
 
   if (!accessData) return null;
 
-  if (!accessData.sectionTitle) {
+  const sectionTitle = getText(accessData.sectionTitle);
+  const sectionSubtitle = getText(accessData.sectionSubtitle);
+
+  if (!sectionTitle) {
     return null;
   }
 
@@ -22,10 +27,10 @@ export default function Access() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            {accessData.sectionTitle}
+            {sectionTitle}
           </h2>
           <div className="w-24 h-1 bg-teal-600 mx-auto mb-6" />
-          <p className="text-xl text-gray-700">{accessData.sectionSubtitle}</p>
+          <p className="text-xl text-gray-700">{sectionSubtitle}</p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
@@ -42,7 +47,7 @@ export default function Access() {
               </div>
               <div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">住所</h3>
-                <p className="text-gray-700 text-lg">{accessData.address}</p>
+                <p className="text-gray-700 text-lg">{getText(accessData.address)}</p>
               </div>
             </div>
 
@@ -53,13 +58,13 @@ export default function Access() {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">
-                    {accessData.parking.title}
+                    {getText(accessData.parking.title)}
                   </h3>
-                  <p className="text-gray-700 mb-2">{accessData.parking.description}</p>
+                  <p className="text-gray-700 mb-2">{getText(accessData.parking.description)}</p>
                   <p className="text-teal-600 font-bold text-lg mb-2">
-                    駐車可能台数: {accessData.parking.spaces}
+                    駐車可能台数: {getText(accessData.parking.spaces)}
                   </p>
-                  <p className="text-sm text-gray-600">{accessData.parking.notes}</p>
+                  <p className="text-sm text-gray-600">{getText(accessData.parking.notes)}</p>
                 </div>
               </div>
             </div>
@@ -71,15 +76,15 @@ export default function Access() {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-4">
-                    {accessData.transportation.title}
+                    {getText(accessData.transportation.title)}
                   </h3>
                   <div className="space-y-3">
                     {accessData.transportation.methods.map((method, index) => (
                       <div key={index} className="flex items-start gap-3">
                         <div className="w-2 h-2 bg-teal-600 rounded-full mt-2 flex-shrink-0" />
                         <div>
-                          <span className="font-bold text-gray-900">{method.type}:</span>
-                          <span className="text-gray-700 ml-2">{method.description}</span>
+                          <span className="font-bold text-gray-900">{getText(method.type)}:</span>
+                          <span className="text-gray-700 ml-2">{getText(method.description)}</span>
                         </div>
                       </div>
                     ))}

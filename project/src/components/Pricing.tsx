@@ -1,13 +1,18 @@
 import { motion } from 'framer-motion';
 import { Check, Star } from 'lucide-react';
 import { usePricingData } from '../contexts/PageDataContext';
+import { useLocalize } from '../hooks/useLocalize';
 
 export default function Pricing() {
   const pricingData = usePricingData();
+  const { getText } = useLocalize();
 
   if (!pricingData) return null;
 
-  if (!pricingData.sectionTitle || pricingData.plans.length === 0) {
+  const sectionTitle = getText(pricingData.sectionTitle);
+  const sectionSubtitle = getText(pricingData.sectionSubtitle);
+
+  if (!sectionTitle || pricingData.plans.length === 0) {
     return null;
   }
 
@@ -22,10 +27,10 @@ export default function Pricing() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            {pricingData.sectionTitle}
+            {sectionTitle}
           </h2>
           <div className="w-24 h-1 bg-teal-600 mx-auto mb-6" />
-          <p className="text-xl text-gray-700">{pricingData.sectionSubtitle}</p>
+          <p className="text-xl text-gray-700">{sectionSubtitle}</p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
@@ -52,15 +57,15 @@ export default function Pricing() {
 
               <div className="p-8">
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                  {plan.name}
+                  {getText(plan.name)}
                 </h3>
                 <p className="text-gray-600 text-sm mb-6 min-h-[40px]">
-                  {plan.description}
+                  {getText(plan.description)}
                 </p>
 
                 <div className="mb-6">
                   <div className="text-4xl font-bold text-teal-600">
-                    {plan.price}
+                    {getText(plan.price)}
                   </div>
                   <div className="text-sm text-gray-500">税込</div>
                 </div>
@@ -70,7 +75,7 @@ export default function Pricing() {
                     {plan.features.map((feature, idx) => (
                       <li key={idx} className="flex items-start gap-3">
                         <Check className="w-5 h-5 text-teal-600 flex-shrink-0 mt-0.5" />
-                        <span className="text-gray-700 text-sm">{feature}</span>
+                        <span className="text-gray-700 text-sm">{getText(feature)}</span>
                       </li>
                     ))}
                   </ul>
@@ -103,7 +108,7 @@ export default function Pricing() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-center text-sm text-gray-600"
           >
-            {pricingData.note}
+            {getText(pricingData.note)}
           </motion.div>
         )}
       </div>

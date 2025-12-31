@@ -1,10 +1,12 @@
 import { motion } from 'framer-motion';
 import { Star } from 'lucide-react';
 import { useReviewsData } from '../contexts/PageDataContext';
+import { useLocalize } from '../hooks/useLocalize';
 import { useRef, useState, useEffect } from 'react';
 
 export default function Reviews() {
   const reviewsData = useReviewsData();
+  const { getText } = useLocalize();
   const scrollRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -37,7 +39,10 @@ export default function Reviews() {
     }
   };
 
-  if (!reviewsData.sectionTitle || reviewsData.reviews.length === 0) {
+  const sectionTitle = getText(reviewsData.sectionTitle);
+  const sectionSubtitle = getText(reviewsData.sectionSubtitle);
+
+  if (!sectionTitle || reviewsData.reviews.length === 0) {
     return null;
   }
 
@@ -52,10 +57,10 @@ export default function Reviews() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            {reviewsData.sectionTitle}
+            {sectionTitle}
           </h2>
           <div className="w-24 h-1 bg-teal-600 mx-auto mb-6" />
-          <p className="text-xl text-gray-700">{reviewsData.sectionSubtitle}</p>
+          <p className="text-xl text-gray-700">{sectionSubtitle}</p>
         </motion.div>
 
         <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -76,8 +81,8 @@ export default function Reviews() {
                   className="w-14 h-14 rounded-full object-cover"
                 />
                 <div>
-                  <h3 className="font-bold text-gray-900">{review.name}</h3>
-                  <p className="text-sm text-gray-500">{review.date}</p>
+                  <h3 className="font-bold text-gray-900">{getText(review.name)}</h3>
+                  <p className="text-sm text-gray-500">{getText(review.date)}</p>
                 </div>
               </div>
 
@@ -94,7 +99,7 @@ export default function Reviews() {
                 ))}
               </div>
 
-              <p className="text-gray-700 leading-relaxed">{review.comment}</p>
+              <p className="text-gray-700 leading-relaxed">{getText(review.comment)}</p>
             </motion.div>
           ))}
         </div>
@@ -121,8 +126,8 @@ export default function Reviews() {
                       className="w-14 h-14 rounded-full object-cover"
                     />
                     <div>
-                      <h3 className="font-bold text-gray-900">{review.name}</h3>
-                      <p className="text-sm text-gray-500">{review.date}</p>
+                      <h3 className="font-bold text-gray-900">{getText(review.name)}</h3>
+                      <p className="text-sm text-gray-500">{getText(review.date)}</p>
                     </div>
                   </div>
 
@@ -139,7 +144,7 @@ export default function Reviews() {
                     ))}
                   </div>
 
-                  <p className="text-gray-700 leading-relaxed">{review.comment}</p>
+                  <p className="text-gray-700 leading-relaxed">{getText(review.comment)}</p>
                 </div>
               </motion.div>
             ))}

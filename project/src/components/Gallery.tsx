@@ -1,10 +1,12 @@
 import { motion } from 'framer-motion';
 import { useState, useRef, useEffect } from 'react';
 import { useGalleryData } from '../contexts/PageDataContext';
+import { useLocalize } from '../hooks/useLocalize';
 import Lightbox from './Lightbox';
 
 export default function Gallery() {
   const galleryData = useGalleryData();
+  const { getText } = useLocalize();
   const [selectedCategory, setSelectedCategory] = useState('すべて');
   const scrollRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -15,7 +17,7 @@ export default function Gallery() {
 
   const filteredImages = selectedCategory === 'すべて'
     ? galleryData.images
-    : galleryData.images.filter(img => img.category === selectedCategory);
+    : galleryData.images.filter(img => getText(img.category) === selectedCategory);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -70,10 +72,13 @@ export default function Gallery() {
 
   const lightboxImages = filteredImages.map((img) => ({
     src: img.url,
-    alt: img.caption,
+    alt: getText(img.caption),
   }));
 
-  if (!galleryData.sectionTitle || galleryData.images.length === 0) {
+  const sectionTitle = getText(galleryData.sectionTitle);
+  const sectionSubtitle = getText(galleryData.sectionSubtitle);
+
+  if (!sectionTitle || galleryData.images.length === 0) {
     return null;
   }
 
@@ -88,10 +93,10 @@ export default function Gallery() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            {galleryData.sectionTitle}
+            {sectionTitle}
           </h2>
           <div className="w-24 h-1 bg-teal-600 mx-auto mb-6" />
-          <p className="text-xl text-gray-700">{galleryData.sectionSubtitle}</p>
+          <p className="text-xl text-gray-700">{sectionSubtitle}</p>
         </motion.div>
 
         <motion.div
@@ -101,21 +106,24 @@ export default function Gallery() {
           transition={{ duration: 0.6 }}
           className="flex flex-wrap justify-center gap-3 mb-12"
         >
-          {galleryData.categories.map((category) => (
-            <motion.button
-              key={category}
-              onClick={() => setSelectedCategory(category)}
-              className={`px-6 py-3 rounded-full font-medium transition-all ${
-                selectedCategory === category
-                  ? 'bg-teal-600 text-white shadow-lg'
-                  : 'bg-white text-gray-700 hover:bg-gray-100 shadow'
-              }`}
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              {category}
-            </motion.button>
-          ))}
+          {galleryData.categories.map((category, idx) => {
+            const categoryText = getText(category);
+            return (
+              <motion.button
+                key={idx}
+                onClick={() => setSelectedCategory(categoryText)}
+                className={`px-6 py-3 rounded-full font-medium transition-all ${
+                  selectedCategory === categoryText
+                    ? 'bg-teal-600 text-white shadow-lg'
+                    : 'bg-white text-gray-700 hover:bg-gray-100 shadow'
+                }`}
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                {categoryText}
+              </motion.button>
+            );
+          })}
         </motion.div>
 
         <motion.div
@@ -137,14 +145,14 @@ export default function Gallery() {
               <div className="aspect-square bg-gray-200 relative overflow-hidden">
                 <img
                   src={image.url}
-                  alt={image.caption}
+                  alt={getText(image.caption)}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <p className="text-white text-lg font-bold">{image.caption}</p>
+                    <p className="text-white text-lg font-bold">{getText(image.caption)}</p>
                     <span className="inline-block mt-2 px-3 py-1 bg-teal-600 text-white text-sm rounded-full">
-                      {image.category}
+                      {getText(image.category)}
                     </span>
                   </div>
                 </div>
@@ -172,14 +180,14 @@ export default function Gallery() {
                   <div className="aspect-square bg-gray-200 relative overflow-hidden">
                     <img
                       src={image.url}
-                      alt={image.caption}
+                      alt={getText(image.caption)}
                       className="w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent">
                       <div className="absolute bottom-0 left-0 right-0 p-6">
-                        <p className="text-white text-lg font-bold">{image.caption}</p>
+                        <p className="text-white text-lg font-bold">{getText(image.caption)}</p>
                         <span className="inline-block mt-2 px-3 py-1 bg-teal-600 text-white text-sm rounded-full">
-                          {image.category}
+                          {getText(image.category)}
                         </span>
                       </div>
                     </div>

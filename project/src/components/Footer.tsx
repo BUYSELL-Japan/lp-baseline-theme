@@ -17,6 +17,18 @@ export default function Footer() {
 
   if (!footerData) return null;
 
+  let logoText = getLocalizedValue(footerData.logo, 'text', language);
+  if (typeof logoText === 'object') {
+    logoText = logoText[language] || logoText['ja'] || logoText[Object.keys(logoText)[0]] || '';
+  }
+  logoText = String(logoText || '');
+
+  let description = getLocalizedValue(footerData, 'description', language);
+  if (typeof description === 'object') {
+    description = description[language] || description['ja'] || description[Object.keys(description)[0]] || '';
+  }
+  description = String(description || '');
+
   return (
     <footer className="relative bg-gradient-to-b from-teal-900 to-teal-950 text-white overflow-hidden">
       <div className="absolute inset-0 opacity-10">
@@ -50,13 +62,13 @@ export default function Footer() {
           >
             <div className="flex items-center gap-2 mb-4">
               <Waves className="w-8 h-8" />
-              <span className="text-2xl font-bold">{getLocalizedValue(footerData.logo, 'text', language)}</span>
+              <span className="text-2xl font-bold">{logoText}</span>
             </div>
             <p className="text-teal-200 leading-relaxed">
-              {getLocalizedValue(footerData, 'description', language).split('\n').map((line: string, i: number) => (
+              {description.split('\n').map((line: string, i: number) => (
                 <span key={i}>
                   {line}
-                  {i < getLocalizedValue(footerData, 'description', language).split('\n').length - 1 && <br />}
+                  {i < description.split('\n').length - 1 && <br />}
                 </span>
               ))}
             </p>

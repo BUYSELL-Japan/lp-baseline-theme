@@ -52,26 +52,39 @@ export default function Header() {
             >
               <Waves className={`w-8 h-8 ${scrolled || mobileMenuOpen ? 'text-teal-600' : 'text-white'}`} />
               <span className={`text-2xl font-bold ${scrolled || mobileMenuOpen ? 'text-gray-900' : 'text-white'}`}>
-                {getLocalizedValue(headerData.logo, 'text', language)}
+                {(() => {
+                  let logoText = getLocalizedValue(headerData.logo, 'text', language);
+                  if (typeof logoText === 'object') {
+                    logoText = logoText[language] || logoText['ja'] || logoText[Object.keys(logoText)[0]] || '';
+                  }
+                  return String(logoText || '');
+                })()}
               </span>
             </motion.div>
 
             <nav className="hidden md:flex items-center gap-6">
-              {headerData.navigation.map((item) => (
-                <motion.button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className={`text-base font-medium transition-colors whitespace-nowrap ${
-                    scrolled
-                      ? 'text-gray-700 hover:text-teal-600'
-                      : 'text-white hover:text-teal-300'
-                  }`}
-                  whileHover={{ y: -2 }}
-                  whileTap={{ y: 0 }}
-                >
-                  {getLocalizedValue(item, 'label', language)}
-                </motion.button>
-              ))}
+              {headerData.navigation.map((item) => {
+                let label = getLocalizedValue(item, 'label', language);
+                if (typeof label === 'object') {
+                  label = label[language] || label['ja'] || label[Object.keys(label)[0]] || '';
+                }
+                label = String(label || '');
+                return (
+                  <motion.button
+                    key={item.id}
+                    onClick={() => scrollToSection(item.id)}
+                    className={`text-base font-medium transition-colors whitespace-nowrap ${
+                      scrolled
+                        ? 'text-gray-700 hover:text-teal-600'
+                        : 'text-white hover:text-teal-300'
+                    }`}
+                    whileHover={{ y: -2 }}
+                    whileTap={{ y: 0 }}
+                  >
+                    {label}
+                  </motion.button>
+                );
+              })}
 
               <div className="relative">
                 <motion.button
@@ -168,19 +181,26 @@ export default function Header() {
               transition={{ duration: 0.3, ease: 'easeOut' }}
             >
               <div className="px-4 py-6 space-y-1">
-                {headerData.navigation.map((item, index) => (
-                  <motion.button
-                    key={item.id}
-                    onClick={() => scrollToSection(item.id)}
-                    className="block w-full text-left px-4 py-4 text-lg font-medium text-gray-900 hover:bg-teal-50 hover:text-teal-600 rounded-xl transition-colors"
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.3, delay: index * 0.05 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    {getLocalizedValue(item, 'label', language)}
-                  </motion.button>
-                ))}
+                {headerData.navigation.map((item, index) => {
+                  let label = getLocalizedValue(item, 'label', language);
+                  if (typeof label === 'object') {
+                    label = label[language] || label['ja'] || label[Object.keys(label)[0]] || '';
+                  }
+                  label = String(label || '');
+                  return (
+                    <motion.button
+                      key={item.id}
+                      onClick={() => scrollToSection(item.id)}
+                      className="block w-full text-left px-4 py-4 text-lg font-medium text-gray-900 hover:bg-teal-50 hover:text-teal-600 rounded-xl transition-colors"
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.3, delay: index * 0.05 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      {label}
+                    </motion.button>
+                  );
+                })}
               </div>
             </motion.nav>
           </>

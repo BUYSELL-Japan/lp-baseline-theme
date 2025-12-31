@@ -5,8 +5,21 @@ export function getLocalizedValue<T extends Record<string, any>>(
   key: string,
   language: Language
 ): any {
-  const localizedKey = `${key}_${language}`;
+  if (!obj) return '';
 
+  const value = obj[key];
+
+  if (value && typeof value === 'object' && !Array.isArray(value)) {
+    if (value[language] !== undefined) {
+      return value[language];
+    }
+    if (value['ja'] !== undefined) {
+      return value['ja'];
+    }
+    return value[Object.keys(value)[0]] || '';
+  }
+
+  const localizedKey = `${key}_${language}`;
   if (obj[localizedKey] !== undefined) {
     return obj[localizedKey];
   }
@@ -16,7 +29,7 @@ export function getLocalizedValue<T extends Record<string, any>>(
     return obj[fallbackKey];
   }
 
-  return obj[key];
+  return value || '';
 }
 
 export function localizeObject<T extends Record<string, any>>(

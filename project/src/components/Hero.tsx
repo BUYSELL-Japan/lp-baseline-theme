@@ -19,8 +19,18 @@ export default function Hero() {
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
-  const title = getLocalizedValue(heroData, 'title', language);
-  const subtitle = getLocalizedValue(heroData, 'subtitle', language);
+  let title = getLocalizedValue(heroData, 'title', language);
+  let subtitle = getLocalizedValue(heroData, 'subtitle', language);
+
+  if (typeof title === 'object') {
+    title = title[language] || title['ja'] || title[Object.keys(title)[0]] || '';
+  }
+  if (typeof subtitle === 'object') {
+    subtitle = subtitle[language] || subtitle['ja'] || subtitle[Object.keys(subtitle)[0]] || '';
+  }
+
+  title = String(title || '');
+  subtitle = String(subtitle || '');
 
   return (
     <div ref={ref} className="relative h-screen overflow-hidden">
@@ -31,7 +41,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60 z-10" />
         <img
           src={heroData.backgroundImage}
-          alt="沖縄そば"
+          alt="Hero background"
           className="w-full h-full object-cover"
         />
       </motion.div>

@@ -179,6 +179,8 @@ export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
     console.log('Converting multilingual fields');
     contentData = convertMultilingualFields(contentData);
     console.log('Converted multilingual data:', contentData);
+    console.log('Header after conversion:', JSON.stringify(contentData.header, null, 2));
+    console.log('Footer after conversion:', JSON.stringify(contentData.footer, null, 2));
 
     const pageData = {
       header: contentData.header || null,

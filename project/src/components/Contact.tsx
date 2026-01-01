@@ -19,7 +19,7 @@ export default function Contact() {
 
   const sectionTitle = t(contactData, 'sectionTitle');
 
-  if (!sectionTitle) {
+  if (!sectionTitle || !contactData.fields) {
     return null;
   }
 

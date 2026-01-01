@@ -60,6 +60,37 @@ function isNestedStructure(data: any): boolean {
   return 'header' in data || 'hero' in data || 'menu' in data;
 }
 
+function convertMultilingualFields(obj: any): any {
+  if (!obj || typeof obj !== 'object') return obj;
+
+  if (Array.isArray(obj)) {
+    return obj.map(item => convertMultilingualFields(item));
+  }
+
+  const result: any = {};
+  const fieldGroups: { [key: string]: { [lang: string]: any } } = {};
+
+  for (const [key, value] of Object.entries(obj)) {
+    const match = key.match(/^(.+)_(ja|en|ko|zh-tw)$/);
+
+    if (match) {
+      const [, fieldName, lang] = match;
+      if (!fieldGroups[fieldName]) {
+        fieldGroups[fieldName] = {};
+      }
+      fieldGroups[fieldName][lang] = value;
+    } else {
+      result[key] = typeof value === 'object' ? convertMultilingualFields(value) : value;
+    }
+  }
+
+  for (const [fieldName, langs] of Object.entries(fieldGroups)) {
+    result[fieldName] = langs;
+  }
+
+  return result;
+}
+
 function convertFlatToNested(flatData: any): any {
   const nested: any = {};
 
@@ -136,6 +167,10 @@ export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
       contentData = convertFlatToNested(contentData);
       console.log('Converted nested data:', contentData);
     }
+
+    console.log('Converting multilingual fields');
+    contentData = convertMultilingualFields(contentData);
+    console.log('Converted multilingual data:', contentData);
 
     return {
       header: contentData.header || null,

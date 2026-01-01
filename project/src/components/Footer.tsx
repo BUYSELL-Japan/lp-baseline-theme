@@ -16,6 +16,10 @@ export default function Footer() {
 
   if (!footerData) return null;
 
+  if (!footerData.businessHours || !footerData.social || !footerData.social.links || !Array.isArray(footerData.social.links)) {
+    return null;
+  }
+
   const logoText = t(footerData.logo, 'text', '');
   const description = getText(footerData.description);
 

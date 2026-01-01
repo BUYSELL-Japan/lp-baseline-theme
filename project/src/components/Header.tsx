@@ -12,7 +12,7 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
 
-  if (!headerData) return null;
+  if (!headerData || !headerData.navigation || !Array.isArray(headerData.navigation)) return null;
 
   useEffect(() => {
     const handleScroll = () => {

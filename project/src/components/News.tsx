@@ -5,12 +5,18 @@ import { useLocalize } from '../hooks/useLocalize';
 
 export default function News() {
   const newsData = useNewsData();
-  const { getText } = useLocalize();
+  const { getText, language } = useLocalize();
 
   if (!newsData) return null;
 
+  console.log('News data:', newsData);
+  console.log('Current language:', language);
+  console.log('sectionSubtitle raw:', newsData.sectionSubtitle);
+
   const sectionTitle = getText(newsData.sectionTitle);
   const sectionSubtitle = getText(newsData.sectionSubtitle);
+
+  console.log('sectionSubtitle getText result:', sectionSubtitle);
 
   if (!sectionTitle || !newsData.items || newsData.items.length === 0) {
     return null;

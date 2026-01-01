@@ -60,6 +60,34 @@ function isNestedStructure(data: any): boolean {
   return 'header' in data || 'hero' in data || 'menu' in data;
 }
 
+function ensureMultilingual(field: any): any {
+  if (!field || typeof field !== 'object' || Array.isArray(field)) {
+    return field;
+  }
+
+  const languages = ['ja', 'en', 'ko', 'zh-tw'];
+  const hasLanguageKeys = languages.some(lang => lang in field);
+
+  if (!hasLanguageKeys) {
+    return field;
+  }
+
+  const result: any = {};
+  const availableLanguages = languages.filter(lang => lang in field && field[lang]);
+
+  if (availableLanguages.length === 0) {
+    return field;
+  }
+
+  const fallbackValue = field[availableLanguages[0]];
+
+  for (const lang of languages) {
+    result[lang] = field[lang] || fallbackValue;
+  }
+
+  return result;
+}
+
 function convertMultilingualFields(obj: any): any {
   if (!obj || typeof obj !== 'object') return obj;
 
@@ -81,7 +109,7 @@ function convertMultilingualFields(obj: any): any {
       fieldGroups[fieldName][lang] = value;
     } else {
       if (typeof value === 'object' && value !== null && !Array.isArray(value)) {
-        result[key] = convertMultilingualFields(value);
+        result[key] = ensureMultilingual(convertMultilingualFields(value));
       } else if (Array.isArray(value)) {
         result[key] = value.map(item => convertMultilingualFields(item));
       } else {
@@ -92,7 +120,7 @@ function convertMultilingualFields(obj: any): any {
 
   for (const [fieldName, langs] of Object.entries(fieldGroups)) {
     if (Object.keys(langs).length > 0) {
-      result[fieldName] = langs;
+      result[fieldName] = ensureMultilingual(langs);
     }
   }
 
@@ -208,9 +236,7 @@ export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
     };
 
     console.log('Final page data:', pageData);
-    console.log('Header navigation:', pageData.header?.navigation);
-    console.log('Footer businessHours:', pageData.footer?.businessHours);
-    console.log('Footer social links:', pageData.footer?.social?.links);
+    console.log('News section:', JSON.stringify(pageData.news, null, 2));
 
     return pageData;
   } catch (error) {

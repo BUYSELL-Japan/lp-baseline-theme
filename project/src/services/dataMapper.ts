@@ -179,26 +179,32 @@ export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
     console.log('Converting multilingual fields');
     contentData = convertMultilingualFields(contentData);
     console.log('Converted multilingual data:', contentData);
-    console.log('Header after conversion:', JSON.stringify(contentData.header, null, 2));
-    console.log('Footer after conversion:', JSON.stringify(contentData.footer, null, 2));
+
+    const extractTranslatedData = (section: any, key: string) => {
+      if (!section) return null;
+      if (section.translatedData && section.translatedData[key]) {
+        return section.translatedData[key];
+      }
+      return section;
+    };
 
     const pageData = {
-      header: contentData.header || null,
-      hero: contentData.hero || null,
-      about: contentData.about || null,
-      menu: contentData.menu || null,
-      storeInfo: contentData.storeInfo || null,
-      contact: contentData.contact || null,
-      footer: contentData.footer || null,
-      gallery: contentData.gallery || null,
-      staff: contentData.staff || null,
-      reviews: contentData.reviews || null,
-      news: contentData.news || null,
-      access: contentData.access || null,
-      faq: contentData.faq || null,
-      cta: contentData.cta || null,
-      pricing: contentData.pricing || null,
-      company: contentData.company || null,
+      header: extractTranslatedData(contentData.header, 'header'),
+      hero: extractTranslatedData(contentData.hero, 'hero'),
+      about: extractTranslatedData(contentData.about, 'about'),
+      menu: extractTranslatedData(contentData.menu, 'menu'),
+      storeInfo: extractTranslatedData(contentData.storeInfo, 'storeInfo'),
+      contact: extractTranslatedData(contentData.contact, 'contact'),
+      footer: extractTranslatedData(contentData.footer, 'footer'),
+      gallery: extractTranslatedData(contentData.gallery, 'gallery'),
+      staff: extractTranslatedData(contentData.staff, 'staff'),
+      reviews: extractTranslatedData(contentData.reviews, 'reviews'),
+      news: extractTranslatedData(contentData.news, 'news'),
+      access: extractTranslatedData(contentData.access, 'access'),
+      faq: extractTranslatedData(contentData.faq, 'faq'),
+      cta: extractTranslatedData(contentData.cta, 'cta'),
+      pricing: extractTranslatedData(contentData.pricing, 'pricing'),
+      company: extractTranslatedData(contentData.company, 'company'),
     };
 
     console.log('Final page data:', pageData);

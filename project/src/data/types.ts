@@ -1,3 +1,10 @@
+export interface LocalizedText {
+  ja: string;
+  en: string;
+  zh: string;
+  ko: string;
+}
+
 export interface HeaderData {
   logo: {
     text: string;
@@ -67,18 +74,18 @@ export interface ContactData {
 
 export interface FooterData {
   logo: string;
-  description: string;
+  description: LocalizedText | string;
   businessHours: {
-    title: string;
-    days: string;
-    hours: string;
-    closedDay: string;
+    title: LocalizedText | string;
+    days: LocalizedText | string;
+    hours: LocalizedText | string;
+    closedDay: LocalizedText | string;
   };
   social: {
-    title: string;
+    title: LocalizedText | string;
     links: SocialLink[];
   };
-  copyright: string;
+  copyright: LocalizedText | string;
 }
 
 export interface SocialLink {
@@ -100,9 +107,9 @@ export interface GalleryData {
 }
 
 export interface StaffMember {
-  name: string;
-  role: string;
-  description: string;
+  name: LocalizedText | string;
+  role: LocalizedText | string;
+  description: LocalizedText | string;
   image: string;
 }
 
@@ -113,10 +120,10 @@ export interface StaffData {
 }
 
 export interface Review {
-  name: string;
+  name: LocalizedText | string;
   rating: number;
-  comment: string;
-  date: string;
+  comment: LocalizedText | string;
+  date: LocalizedText | string;
   avatar: string;
 }
 
@@ -127,10 +134,10 @@ export interface ReviewsData {
 }
 
 export interface NewsItem {
-  date: string;
-  category: string;
-  title: string;
-  content: string;
+  date: LocalizedText | string;
+  category: LocalizedText | string;
+  title: LocalizedText | string;
+  content: LocalizedText | string;
 }
 
 export interface NewsData {
@@ -181,7 +188,7 @@ export interface CTAData {
 }
 
 export interface CTAButton {
-  text: string;
+  text: LocalizedText | string;
   link: string;
   type: 'primary' | 'secondary';
 }
@@ -219,11 +226,11 @@ export interface CompanyData {
 }
 
 export interface HistoryItem {
-  year: string;
-  event: string;
+  year: LocalizedText | string;
+  event: LocalizedText | string;
 }
 
 export interface CompanyInfoItem {
-  label: string;
-  value: string;
+  label: LocalizedText | string;
+  value: LocalizedText | string;
 }

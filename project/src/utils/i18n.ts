@@ -1,5 +1,78 @@
 import type { Language } from '../contexts/LanguageContext';
 
+export const staticTranslations: Record<string, Record<Language, string>> = {
+  all: {
+    ja: 'すべて',
+    en: 'All',
+    zh: '全部',
+    ko: '모두',
+  },
+  popular: {
+    ja: '人気',
+    en: 'Popular',
+    zh: '热门',
+    ko: '인기',
+  },
+  taxIncluded: {
+    ja: '税込',
+    en: 'Tax Included',
+    zh: '含税',
+    ko: '세금 포함',
+  },
+  bookingContact: {
+    ja: 'ご予約・お問い合わせ',
+    en: 'Book / Contact',
+    zh: '预约・咨询',
+    ko: '예약・문의',
+  },
+  address: {
+    ja: '住所',
+    en: 'Address',
+    zh: '地址',
+    ko: '주소',
+  },
+  parkingSpaces: {
+    ja: '駐車可能台数',
+    en: 'Parking Spaces',
+    zh: '停车位',
+    ko: '주차 가능 대수',
+  },
+  storeMap: {
+    ja: '店舗地図',
+    en: 'Store Map',
+    zh: '店铺地图',
+    ko: '매장 지도',
+  },
+  showItem: {
+    ja: 'を表示',
+    en: '',
+    zh: '',
+    ko: '',
+  },
+  menu: {
+    ja: 'メニュー',
+    en: 'Menu',
+    zh: '菜单',
+    ko: '메뉴',
+  },
+  image: {
+    ja: '画像',
+    en: 'Image',
+    zh: '图片',
+    ko: '이미지',
+  },
+  review: {
+    ja: 'レビュー',
+    en: 'Review',
+    zh: '评论',
+    ko: '리뷰',
+  },
+};
+
+export function translate(key: string, language: Language): string {
+  return staticTranslations[key]?.[language] || staticTranslations[key]?.['ja'] || '';
+}
+
 export function getLocalizedValue<T extends Record<string, any>>(
   obj: T,
   key: string,

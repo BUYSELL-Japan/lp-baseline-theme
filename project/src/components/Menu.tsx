@@ -2,6 +2,8 @@ import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
 import { useMenuData } from '../contexts/PageDataContext';
 import { useLocalize } from '../hooks/useLocalize';
+import { useLanguage } from '../contexts/LanguageContext';
+import { translate } from '../utils/i18n';
 import type { MenuItem as MenuItemType } from '../data/types';
 import Lightbox from './Lightbox';
 
@@ -84,6 +86,7 @@ function MenuItem({ item, index, onImageClick }: { item: MenuItemType; index: nu
 export default function Menu() {
   const menuData = useMenuData();
   const { t } = useLocalize();
+  const { language } = useLanguage();
   const scrollRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -131,6 +134,13 @@ export default function Menu() {
     setLightboxIndex((prev) => (prev > 0 ? prev - 1 : menuData.items.length - 1));
   };
 
+  const sectionTitle = t(menuData, 'sectionTitle');
+  const sectionSubtitle = t(menuData, 'sectionSubtitle');
+
+  if (!sectionTitle || !menuData.items || !Array.isArray(menuData.items) || menuData.items.length === 0) {
+    return null;
+  }
+
   const goToNext = () => {
     setLightboxIndex((prev) => (prev < menuData.items.length - 1 ? prev + 1 : 0));
   };
@@ -139,13 +149,6 @@ export default function Menu() {
     src: item.image,
     alt: t(item, 'name'),
   }));
-
-  const sectionTitle = t(menuData, 'sectionTitle');
-  const sectionSubtitle = t(menuData, 'sectionSubtitle');
-
-  if (!sectionTitle || menuData.items.length === 0) {
-    return null;
-  }
 
   return (
     <section id="menu" className="py-24 bg-gradient-to-b from-amber-50/30 to-white">
@@ -189,7 +192,7 @@ export default function Menu() {
                     ? 'bg-teal-600 w-8'
                     : 'bg-gray-300 hover:bg-gray-400'
                 }`}
-                aria-label={`メニュー ${index + 1} を表示`}
+                aria-label={`${translate('menu', language)} ${index + 1}${translate('showItem', language)}`}
               />
             ))}
           </div>

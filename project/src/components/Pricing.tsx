@@ -2,17 +2,20 @@ import { motion } from 'framer-motion';
 import { Check, Star } from 'lucide-react';
 import { usePricingData } from '../contexts/PageDataContext';
 import { useLocalize } from '../hooks/useLocalize';
+import { useLanguage } from '../contexts/LanguageContext';
+import { translate } from '../utils/i18n';
 
 export default function Pricing() {
   const pricingData = usePricingData();
   const { getText } = useLocalize();
+  const { language } = useLanguage();
 
   if (!pricingData) return null;
 
   const sectionTitle = getText(pricingData.sectionTitle);
   const sectionSubtitle = getText(pricingData.sectionSubtitle);
 
-  if (!sectionTitle || pricingData.plans.length === 0) {
+  if (!sectionTitle || !pricingData.plans || !Array.isArray(pricingData.plans) || pricingData.plans.length === 0) {
     return null;
   }
 
@@ -50,7 +53,7 @@ export default function Pricing() {
                 <div className="absolute top-0 right-0 bg-teal-600 text-white px-6 py-2 rounded-bl-2xl">
                   <div className="flex items-center gap-1">
                     <Star className="w-4 h-4 fill-current" />
-                    <span className="font-bold text-sm">人気</span>
+                    <span className="font-bold text-sm">{translate('popular', language)}</span>
                   </div>
                 </div>
               )}
@@ -67,12 +70,12 @@ export default function Pricing() {
                   <div className="text-4xl font-bold text-teal-600">
                     {getText(plan.price)}
                   </div>
-                  <div className="text-sm text-gray-500">税込</div>
+                  <div className="text-sm text-gray-500">{translate('taxIncluded', language)}</div>
                 </div>
 
                 <div className="border-t border-gray-200 pt-6">
                   <ul className="space-y-3">
-                    {plan.features.map((feature, idx) => (
+                    {plan.features && Array.isArray(plan.features) && plan.features.map((feature, idx) => (
                       <li key={idx} className="flex items-start gap-3">
                         <Check className="w-5 h-5 text-teal-600 flex-shrink-0 mt-0.5" />
                         <span className="text-gray-700 text-sm">{getText(feature)}</span>
@@ -93,7 +96,7 @@ export default function Pricing() {
                       : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
                   }`}
                 >
-                  ご予約・お問い合わせ
+                  {translate('bookingContact', language)}
                 </motion.a>
               </div>
             </motion.div>

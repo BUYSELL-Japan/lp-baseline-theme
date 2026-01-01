@@ -32,6 +32,10 @@ export default function Hero() {
   title = String(title || '');
   subtitle = String(subtitle || '');
 
+  if (!title && !subtitle && !heroData.backgroundImage) {
+    return null;
+  }
+
   return (
     <div ref={ref} className="relative h-screen overflow-hidden">
       <motion.div

@@ -9,6 +9,12 @@ export default function CTA() {
 
   if (!ctaData) return null;
 
+  const sectionTitle = getText(ctaData.sectionTitle);
+
+  if (!sectionTitle || !ctaData.buttons || !Array.isArray(ctaData.buttons) || ctaData.buttons.length === 0) {
+    return null;
+  }
+
   return (
     <section className="relative py-24 px-4 overflow-hidden">
       <div className="absolute inset-0">

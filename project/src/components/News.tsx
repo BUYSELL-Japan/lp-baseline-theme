@@ -12,7 +12,7 @@ export default function News() {
   const sectionTitle = getText(newsData.sectionTitle);
   const sectionSubtitle = getText(newsData.sectionSubtitle);
 
-  if (!sectionTitle || newsData.items.length === 0) {
+  if (!sectionTitle || !newsData.items || newsData.items.length === 0) {
     return null;
   }
 

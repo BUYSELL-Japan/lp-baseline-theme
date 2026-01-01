@@ -2,11 +2,14 @@ import { motion } from 'framer-motion';
 import { Star } from 'lucide-react';
 import { useReviewsData } from '../contexts/PageDataContext';
 import { useLocalize } from '../hooks/useLocalize';
+import { useLanguage } from '../contexts/LanguageContext';
+import { translate } from '../utils/i18n';
 import { useRef, useState, useEffect } from 'react';
 
 export default function Reviews() {
   const reviewsData = useReviewsData();
   const { getText } = useLocalize();
+  const { language } = useLanguage();
   const scrollRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -42,7 +45,7 @@ export default function Reviews() {
   const sectionTitle = getText(reviewsData.sectionTitle);
   const sectionSubtitle = getText(reviewsData.sectionSubtitle);
 
-  if (!sectionTitle || reviewsData.reviews.length === 0) {
+  if (!sectionTitle || !reviewsData.reviews || reviewsData.reviews.length === 0) {
     return null;
   }
 
@@ -160,7 +163,7 @@ export default function Reviews() {
                     ? 'bg-teal-600 w-8'
                     : 'bg-gray-300 hover:bg-gray-400'
                 }`}
-                aria-label={`レビュー ${index + 1} を表示`}
+                aria-label={`${translate('review', language)} ${index + 1}${translate('showItem', language)}`}
               />
             ))}
           </div>

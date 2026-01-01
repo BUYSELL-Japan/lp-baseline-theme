@@ -2,10 +2,13 @@ import { motion } from 'framer-motion';
 import { MapPin, Car, Train } from 'lucide-react';
 import { useAccessData } from '../contexts/PageDataContext';
 import { useLocalize } from '../hooks/useLocalize';
+import { useLanguage } from '../contexts/LanguageContext';
+import { translate } from '../utils/i18n';
 
 export default function Access() {
   const accessData = useAccessData();
   const { getText } = useLocalize();
+  const { language } = useLanguage();
 
   if (!accessData) return null;
 
@@ -46,7 +49,7 @@ export default function Access() {
                 <MapPin className="w-6 h-6 text-teal-600" />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">住所</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{translate('address', language)}</h3>
                 <p className="text-gray-700 text-lg">{getText(accessData.address)}</p>
               </div>
             </div>
@@ -62,7 +65,7 @@ export default function Access() {
                   </h3>
                   <p className="text-gray-700 mb-2">{getText(accessData.parking.description)}</p>
                   <p className="text-teal-600 font-bold text-lg mb-2">
-                    駐車可能台数: {getText(accessData.parking.spaces)}
+                    {translate('parkingSpaces', language)}: {getText(accessData.parking.spaces)}
                   </p>
                   <p className="text-sm text-gray-600">{getText(accessData.parking.notes)}</p>
                 </div>
@@ -79,7 +82,7 @@ export default function Access() {
                     {getText(accessData.transportation.title)}
                   </h3>
                   <div className="space-y-3">
-                    {accessData.transportation.methods.map((method, index) => (
+                    {accessData.transportation.methods && Array.isArray(accessData.transportation.methods) && accessData.transportation.methods.map((method, index) => (
                       <div key={index} className="flex items-start gap-3">
                         <div className="w-2 h-2 bg-teal-600 rounded-full mt-2 flex-shrink-0" />
                         <div>
@@ -110,7 +113,7 @@ export default function Access() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="店舗地図"
+                title={translate('storeMap', language)}
               />
             </div>
           </motion.div>

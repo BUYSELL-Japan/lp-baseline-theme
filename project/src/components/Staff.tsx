@@ -11,7 +11,7 @@ export default function Staff() {
   const sectionTitle = getText(staffData.sectionTitle);
   const sectionSubtitle = getText(staffData.sectionSubtitle);
 
-  if (!sectionTitle || staffData.members.length === 0) {
+  if (!sectionTitle || !staffData.members || staffData.members.length === 0) {
     return null;
   }
 

@@ -12,7 +12,11 @@ export default function Company() {
   const sectionTitle = getText(companyData.sectionTitle);
   const sectionSubtitle = getText(companyData.sectionSubtitle);
 
-  if (!sectionTitle) {
+  const hasPhilosophy = companyData.philosophy && getText(companyData.philosophy.title);
+  const hasHistory = companyData.history && companyData.history.timeline && Array.isArray(companyData.history.timeline) && companyData.history.timeline.length > 0;
+  const hasCompanyInfo = companyData.companyInfo && companyData.companyInfo.items && Array.isArray(companyData.companyInfo.items) && companyData.companyInfo.items.length > 0;
+
+  if (!sectionTitle || (!hasPhilosophy && !hasHistory && !hasCompanyInfo)) {
     return null;
   }
 
@@ -34,7 +38,8 @@ export default function Company() {
         </motion.div>
 
         <div className="space-y-12">
-          <motion.div
+          {hasPhilosophy && (
+            <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -53,8 +58,10 @@ export default function Company() {
               {getText(companyData.philosophy.content)}
             </p>
           </motion.div>
+          )}
 
-          <motion.div
+          {hasHistory && (
+            <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -96,8 +103,10 @@ export default function Company() {
               </div>
             </div>
           </motion.div>
+          )}
 
-          <motion.div
+          {hasCompanyInfo && (
+            <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -131,6 +140,7 @@ export default function Company() {
               ))}
             </div>
           </motion.div>
+          )}
         </div>
       </div>
     </section>

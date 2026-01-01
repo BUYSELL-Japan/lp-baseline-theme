@@ -2,12 +2,16 @@ import { motion } from 'framer-motion';
 import { useState, useRef, useEffect } from 'react';
 import { useGalleryData } from '../contexts/PageDataContext';
 import { useLocalize } from '../hooks/useLocalize';
+import { useLanguage } from '../contexts/LanguageContext';
+import { translate } from '../utils/i18n';
 import Lightbox from './Lightbox';
 
 export default function Gallery() {
   const galleryData = useGalleryData();
   const { getText } = useLocalize();
-  const [selectedCategory, setSelectedCategory] = useState('すべて');
+  const { language } = useLanguage();
+  const allCategory = translate('all', language);
+  const [selectedCategory, setSelectedCategory] = useState(allCategory);
   const scrollRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -15,7 +19,11 @@ export default function Gallery() {
 
   if (!galleryData) return null;
 
-  const filteredImages = selectedCategory === 'すべて'
+  if (!galleryData.images || !Array.isArray(galleryData.images)) {
+    return null;
+  }
+
+  const filteredImages = selectedCategory === allCategory
     ? galleryData.images
     : galleryData.images.filter(img => getText(img.category) === selectedCategory);
 
@@ -106,7 +114,7 @@ export default function Gallery() {
           transition={{ duration: 0.6 }}
           className="flex flex-wrap justify-center gap-3 mb-12"
         >
-          {galleryData.categories.map((category, idx) => {
+          {galleryData.categories && Array.isArray(galleryData.categories) && galleryData.categories.map((category, idx) => {
             const categoryText = getText(category);
             return (
               <motion.button
@@ -207,7 +215,7 @@ export default function Gallery() {
                     ? 'bg-teal-600 w-8'
                     : 'bg-gray-300 hover:bg-gray-400'
                 }`}
-                aria-label={`画像 ${index + 1} を表示`}
+                aria-label={`${translate('image', language)} ${index + 1}${translate('showItem', language)}`}
               />
             ))}
           </div>

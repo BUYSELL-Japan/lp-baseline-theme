@@ -17,6 +17,12 @@ export default function Contact() {
 
   if (!contactData) return null;
 
+  const sectionTitle = t(contactData, 'sectionTitle');
+
+  if (!sectionTitle) {
+    return null;
+  }
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Form submitted:', formData);

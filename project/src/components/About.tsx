@@ -65,7 +65,7 @@ export default function About() {
 
   const sectionTitle = t(aboutData, 'sectionTitle');
 
-  if (!sectionTitle || aboutData.features.length === 0) {
+  if (!sectionTitle || !aboutData.features || !Array.isArray(aboutData.features) || aboutData.features.length === 0) {
     return null;
   }
 

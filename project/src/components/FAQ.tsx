@@ -14,7 +14,7 @@ export default function FAQ() {
   const sectionTitle = getText(faqData.sectionTitle);
   const sectionSubtitle = getText(faqData.sectionSubtitle);
 
-  if (!sectionTitle || faqData.items.length === 0) {
+  if (!sectionTitle || !faqData.items || !Array.isArray(faqData.items) || faqData.items.length === 0) {
     return null;
   }
 

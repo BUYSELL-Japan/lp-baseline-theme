@@ -80,12 +80,20 @@ function convertMultilingualFields(obj: any): any {
       }
       fieldGroups[fieldName][lang] = value;
     } else {
-      result[key] = typeof value === 'object' ? convertMultilingualFields(value) : value;
+      if (typeof value === 'object' && value !== null && !Array.isArray(value)) {
+        result[key] = convertMultilingualFields(value);
+      } else if (Array.isArray(value)) {
+        result[key] = value.map(item => convertMultilingualFields(item));
+      } else {
+        result[key] = value;
+      }
     }
   }
 
   for (const [fieldName, langs] of Object.entries(fieldGroups)) {
-    result[fieldName] = langs;
+    if (Object.keys(langs).length > 0) {
+      result[fieldName] = langs;
+    }
   }
 
   return result;
@@ -172,7 +180,7 @@ export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
     contentData = convertMultilingualFields(contentData);
     console.log('Converted multilingual data:', contentData);
 
-    return {
+    const pageData = {
       header: contentData.header || null,
       hero: contentData.hero || null,
       about: contentData.about || null,
@@ -190,6 +198,13 @@ export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
       pricing: contentData.pricing || null,
       company: contentData.company || null,
     };
+
+    console.log('Final page data:', pageData);
+    console.log('Header navigation:', pageData.header?.navigation);
+    console.log('Footer businessHours:', pageData.footer?.businessHours);
+    console.log('Footer social links:', pageData.footer?.social?.links);
+
+    return pageData;
   } catch (error) {
     console.error('Error mapping DynamoDB data:', error);
     return getDefaultPageData();

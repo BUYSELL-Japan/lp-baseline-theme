@@ -186,6 +186,91 @@ function convertFlatToNested(flatData: any): any {
   return nested;
 }
 
+function transformMenuData(menuData: any): MenuData | null {
+  if (!menuData) return null;
+
+  const transformed: any = {
+    sectionTitle: menuData.title || menuData.sectionTitle,
+    sectionSubtitle: menuData.subtitle || menuData.sectionSubtitle,
+    description: menuData.description,
+  };
+
+  if (menuData.categories && Array.isArray(menuData.categories)) {
+    const allItems: any[] = [];
+    menuData.categories.forEach((category: any) => {
+      if (category.items && Array.isArray(category.items)) {
+        allItems.push(...category.items);
+      }
+    });
+    transformed.items = allItems;
+  } else if (menuData.items && Array.isArray(menuData.items)) {
+    transformed.items = menuData.items;
+  }
+
+  return transformed;
+}
+
+function transformContactData(contactData: any): ContactData | null {
+  if (!contactData) return null;
+
+  const transformed: any = {
+    sectionTitle: contactData.title || contactData.sectionTitle,
+    sectionSubtitle: contactData.subtitle || contactData.sectionSubtitle,
+    description: contactData.description,
+    submitButton: contactData.submitButton || {
+      ja: '送信',
+      en: 'Send',
+      'zh-tw': '發送',
+      ko: '보내기'
+    },
+    fields: {
+      name: { ja: '名前', en: 'Name', 'zh-tw': '姓名', ko: '이름' },
+      email: { ja: 'メールアドレス', en: 'Email', 'zh-tw': '電子郵件', ko: '이메일' },
+      subject: { ja: '件名', en: 'Subject', 'zh-tw': '主題', ko: '제목' },
+      message: { ja: 'メッセージ', en: 'Message', 'zh-tw': '訊息', ko: '메시지' }
+    }
+  };
+
+  if (contactData.methods && Array.isArray(contactData.methods)) {
+    transformed.methods = contactData.methods;
+  }
+
+  return transformed;
+}
+
+function transformGalleryData(galleryData: any): GalleryData | null {
+  if (!galleryData) return null;
+
+  const categoryMap: { [key: string]: any } = {
+    'すべて': { ja: 'すべて', en: 'All', 'zh-tw': '全部', ko: '전체' },
+    '風景': { ja: '風景', en: 'Scenery', 'zh-tw': '風景', ko: '풍경' },
+    '商品': { ja: '商品', en: 'Products', 'zh-tw': '商品', ko: '상품' },
+    '店舗': { ja: '店舗', en: 'Store', 'zh-tw': '店舖', ko: '매장' }
+  };
+
+  const transformed: any = {
+    sectionTitle: galleryData.sectionTitle,
+    sectionSubtitle: galleryData.sectionSubtitle,
+    images: galleryData.images ? galleryData.images.map((img: any) => ({
+      ...img,
+      category: typeof img.category === 'string'
+        ? (categoryMap[img.category] || { ja: img.category, en: img.category, 'zh-tw': img.category, ko: img.category })
+        : img.category
+    })) : []
+  };
+
+  if (galleryData.categories && Array.isArray(galleryData.categories)) {
+    transformed.categories = galleryData.categories.map((cat: string) => {
+      if (typeof cat === 'string') {
+        return categoryMap[cat] || { ja: cat, en: cat, 'zh-tw': cat, ko: cat };
+      }
+      return cat;
+    });
+  }
+
+  return transformed;
+}
+
 export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
   try {
     let contentData = dynamoData;
@@ -216,15 +301,19 @@ export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
       return section;
     };
 
+    const menuData = transformMenuData(contentData.menu);
+    const contactData = transformContactData(contentData.contact);
+    const galleryData = transformGalleryData(contentData.gallery);
+
     const pageData = {
       header: extractTranslatedData(contentData.header, 'header'),
       hero: extractTranslatedData(contentData.hero, 'hero'),
       about: extractTranslatedData(contentData.about, 'about'),
-      menu: extractTranslatedData(contentData.menu, 'menu'),
+      menu: menuData,
       storeInfo: extractTranslatedData(contentData.storeInfo, 'storeInfo'),
-      contact: extractTranslatedData(contentData.contact, 'contact'),
+      contact: contactData,
       footer: extractTranslatedData(contentData.footer, 'footer'),
-      gallery: extractTranslatedData(contentData.gallery, 'gallery'),
+      gallery: galleryData,
       staff: extractTranslatedData(contentData.staff, 'staff'),
       reviews: extractTranslatedData(contentData.reviews, 'reviews'),
       news: extractTranslatedData(contentData.news, 'news'),
@@ -236,7 +325,9 @@ export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
     };
 
     console.log('Final page data:', pageData);
-    console.log('News section:', JSON.stringify(pageData.news, null, 2));
+    console.log('Menu section:', JSON.stringify(pageData.menu, null, 2));
+    console.log('Contact section:', JSON.stringify(pageData.contact, null, 2));
+    console.log('Gallery section:', JSON.stringify(pageData.gallery, null, 2));
 
     return pageData;
   } catch (error) {

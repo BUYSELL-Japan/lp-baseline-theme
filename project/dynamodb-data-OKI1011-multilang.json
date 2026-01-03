@@ -26,6 +26,20 @@
           "label_ko": "상품"
         },
         {
+          "id": "pricing",
+          "label_ja": "プラン",
+          "label_en": "Plans",
+          "label_zh-tw": "方案",
+          "label_ko": "플랜"
+        },
+        {
+          "id": "staff",
+          "label_ja": "スタッフ",
+          "label_en": "Team",
+          "label_zh-tw": "團隊",
+          "label_ko": "팀"
+        },
+        {
           "id": "gallery",
           "label_ja": "ギャラリー",
           "label_en": "Gallery",
@@ -397,6 +411,215 @@
           "description_en": "Along Kokusai-dori",
           "description_zh-tw": "位於國際通",
           "description_ko": "국제거리변"
+        }
+      ]
+    },
+    "pricing": {
+      "sectionTitle_ja": "料金プラン",
+      "sectionTitle_en": "Pricing Plans",
+      "sectionTitle_zh-tw": "價格方案",
+      "sectionTitle_ko": "가격 플랜",
+      "sectionSubtitle_ja": "お客様のニーズに合わせた最適なプランをご用意",
+      "sectionSubtitle_en": "Choose the Perfect Plan for Your Needs",
+      "sectionSubtitle_zh-tw": "選擇最適合您需求的方案",
+      "sectionSubtitle_ko": "고객님의 필요에 맞는 최적의 플랜",
+      "plans": [
+        {
+          "name_ja": "ベーシック",
+          "name_en": "Basic",
+          "name_zh-tw": "基礎",
+          "name_ko": "베이직",
+          "description_ja": "初めての方におすすめ",
+          "description_en": "Perfect for First-Time Customers",
+          "description_zh-tw": "適合首次客戶",
+          "description_ko": "처음 이용하시는 분께 추천",
+          "price_ja": "¥3,000",
+          "price_en": "$30",
+          "price_zh-tw": "NT$900",
+          "price_ko": "₩35,000",
+          "features": [
+            {
+              "text_ja": "厳選商品3点",
+              "text_en": "3 Selected Products",
+              "text_zh-tw": "精選商品3件",
+              "text_ko": "엄선 상품 3개"
+            },
+            {
+              "text_ja": "送料無料",
+              "text_en": "Free Shipping",
+              "text_zh-tw": "免運費",
+              "text_ko": "무료 배송"
+            },
+            {
+              "text_ja": "お試しパンフレット",
+              "text_en": "Sample Brochure",
+              "text_zh-tw": "試用小冊子",
+              "text_ko": "체험 팜플렛"
+            }
+          ]
+        },
+        {
+          "name_ja": "スタンダード",
+          "name_en": "Standard",
+          "name_zh-tw": "標準",
+          "name_ko": "스탠다드",
+          "description_ja": "一番人気のプラン",
+          "description_en": "Most Popular Plan",
+          "description_zh-tw": "最受歡迎的方案",
+          "description_ko": "가장 인기있는 플랜",
+          "price_ja": "¥5,000",
+          "price_en": "$50",
+          "price_zh-tw": "NT$1,500",
+          "price_ko": "₩60,000",
+          "isPopular": true,
+          "features": [
+            {
+              "text_ja": "厳選商品5点",
+              "text_en": "5 Selected Products",
+              "text_zh-tw": "精選商品5件",
+              "text_ko": "엄선 상품 5개"
+            },
+            {
+              "text_ja": "送料無料",
+              "text_en": "Free Shipping",
+              "text_zh-tw": "免運費",
+              "text_ko": "무료 배송"
+            },
+            {
+              "text_ja": "限定レシピ集",
+              "text_en": "Exclusive Recipe Book",
+              "text_zh-tw": "限定食譜集",
+              "text_ko": "한정 레시피북"
+            },
+            {
+              "text_ja": "10%ポイント還元",
+              "text_en": "10% Points Back",
+              "text_zh-tw": "10%點數回饋",
+              "text_ko": "10% 포인트 적립"
+            }
+          ]
+        },
+        {
+          "name_ja": "プレミアム",
+          "name_en": "Premium",
+          "name_zh-tw": "高級",
+          "name_ko": "프리미엄",
+          "description_ja": "最高級の沖縄体験",
+          "description_en": "Ultimate Okinawan Experience",
+          "description_zh-tw": "最高級的沖繩體驗",
+          "description_ko": "최고급 오키나와 체험",
+          "price_ja": "¥8,000",
+          "price_en": "$80",
+          "price_zh-tw": "NT$2,400",
+          "price_ko": "₩95,000",
+          "features": [
+            {
+              "text_ja": "厳選商品8点",
+              "text_en": "8 Selected Products",
+              "text_zh-tw": "精選商品8件",
+              "text_ko": "엄선 상품 8개"
+            },
+            {
+              "text_ja": "送料無料",
+              "text_en": "Free Shipping",
+              "text_zh-tw": "免運費",
+              "text_ko": "무료 배송"
+            },
+            {
+              "text_ja": "限定レシピ集",
+              "text_en": "Exclusive Recipe Book",
+              "text_zh-tw": "限定食譜集",
+              "text_ko": "한정 레시피북"
+            },
+            {
+              "text_ja": "15%ポイント還元",
+              "text_en": "15% Points Back",
+              "text_zh-tw": "15%點數回饋",
+              "text_ko": "15% 포인트 적립"
+            },
+            {
+              "text_ja": "会員限定商品",
+              "text_en": "Members-Only Products",
+              "text_zh-tw": "會員限定商品",
+              "text_ko": "회원 전용 상품"
+            }
+          ]
+        }
+      ],
+      "note_ja": "※すべて税込価格です。定期購入も承っております。",
+      "note_en": "※All prices include tax. Subscription available.",
+      "note_zh-tw": "※所有價格均含稅。也接受定期訂購。",
+      "note_ko": "※모든 가격은 세금 포함입니다. 정기 구매도 가능합니다."
+    },
+    "staff": {
+      "sectionTitle_ja": "スタッフ紹介",
+      "sectionTitle_en": "Our Team",
+      "sectionTitle_zh-tw": "團隊介紹",
+      "sectionTitle_ko": "스태프 소개",
+      "sectionSubtitle_ja": "沖縄の魅力をお届けする私たちのチーム",
+      "sectionSubtitle_en": "Dedicated Team Bringing Okinawa to You",
+      "sectionSubtitle_zh-tw": "為您呈現沖繩魅力的團隊",
+      "sectionSubtitle_ko": "오키나와의 매력을 전하는 우리 팀",
+      "members": [
+        {
+          "name_ja": "新垣 美咲",
+          "name_en": "Misaki Arakaki",
+          "name_zh-tw": "新垣 美咲",
+          "name_ko": "아라카키 미사키",
+          "role_ja": "代表取締役",
+          "role_en": "CEO",
+          "role_zh-tw": "執行長",
+          "role_ko": "대표이사",
+          "description_ja": "沖縄生まれ沖縄育ち。沖縄の素晴らしさを世界に伝えることを使命としています。",
+          "description_en": "Born and raised in Okinawa. Dedicated to sharing Okinawa's wonders with the world.",
+          "description_zh-tw": "在沖繩出生和成長。致力於向世界傳達沖繩的美好。",
+          "description_ko": "오키나와 토박이. 오키나와의 매력을 세계에 전하는 것이 사명입니다.",
+          "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg"
+        },
+        {
+          "name_ja": "比嘉 大輔",
+          "name_en": "Daisuke Higa",
+          "name_zh-tw": "比嘉 大輔",
+          "name_ko": "히가 다이스케",
+          "role_ja": "商品開発マネージャー",
+          "role_en": "Product Manager",
+          "role_zh-tw": "商品開發經理",
+          "role_ko": "상품 개발 매니저",
+          "description_ja": "沖縄の伝統食材を現代風にアレンジする商品開発のスペシャリスト。",
+          "description_en": "Specialist in developing modern interpretations of traditional Okinawan ingredients.",
+          "description_zh-tw": "將沖繩傳統食材現代化改良的商品開發專家。",
+          "description_ko": "오키나와 전통 식재료를 현대적으로 재해석하는 상품 개발 전문가.",
+          "image": "https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg"
+        },
+        {
+          "name_ja": "宮城 さくら",
+          "name_en": "Sakura Miyagi",
+          "name_zh-tw": "宮城 櫻",
+          "name_ko": "미야기 사쿠라",
+          "role_ja": "カスタマーサポート",
+          "role_en": "Customer Support",
+          "role_zh-tw": "客服",
+          "role_ko": "고객 지원",
+          "description_ja": "お客様の笑顔のために、心を込めたサポートを提供しています。",
+          "description_en": "Providing heartfelt support to bring smiles to our customers.",
+          "description_zh-tw": "為了客戶的笑容，提供真心誠意的支援。",
+          "description_ko": "고객님의 미소를 위해 정성을 다한 지원을 제공합니다.",
+          "image": "https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg"
+        },
+        {
+          "name_ja": "玉城 健太",
+          "name_en": "Kenta Tamaki",
+          "name_zh-tw": "玉城 健太",
+          "name_ko": "다마키 켄타",
+          "role_ja": "配送マネージャー",
+          "role_en": "Logistics Manager",
+          "role_zh-tw": "物流經理",
+          "role_ko": "배송 매니저",
+          "description_ja": "新鮮な商品を迅速かつ丁寧にお届けすることに情熱を注いでいます。",
+          "description_en": "Passionate about delivering fresh products quickly and carefully.",
+          "description_zh-tw": "熱衷於快速且仔細地配送新鮮商品。",
+          "description_ko": "신선한 상품을 신속하고 정성스럽게 배송하는 것에 열정을 쏟고 있습니다.",
+          "image": "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg"
         }
       ]
     },

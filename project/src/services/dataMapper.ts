@@ -189,23 +189,11 @@ function convertFlatToNested(flatData: any): any {
 function transformMenuData(menuData: any): MenuData | null {
   if (!menuData) return null;
 
-  const transformed: any = {};
-
-  if (menuData.title) {
-    transformed.sectionTitle = menuData.title;
-  } else if (menuData.sectionTitle) {
-    transformed.sectionTitle = menuData.sectionTitle;
-  }
-
-  if (menuData.subtitle) {
-    transformed.sectionSubtitle = menuData.subtitle;
-  } else if (menuData.sectionSubtitle) {
-    transformed.sectionSubtitle = menuData.sectionSubtitle;
-  }
-
-  if (menuData.description) {
-    transformed.description = menuData.description;
-  }
+  const transformed: any = {
+    sectionTitle: menuData.title || menuData.sectionTitle,
+    sectionSubtitle: menuData.subtitle || menuData.sectionSubtitle,
+    description: menuData.description,
+  };
 
   if (menuData.categories && Array.isArray(menuData.categories)) {
     const allItems: any[] = [];
@@ -226,6 +214,9 @@ function transformContactData(contactData: any): ContactData | null {
   if (!contactData) return null;
 
   const transformed: any = {
+    sectionTitle: contactData.title || contactData.sectionTitle,
+    sectionSubtitle: contactData.subtitle || contactData.sectionSubtitle,
+    description: contactData.description,
     submitButton: contactData.submitButton || {
       ja: '送信',
       en: 'Send',
@@ -239,22 +230,6 @@ function transformContactData(contactData: any): ContactData | null {
       message: { ja: 'メッセージ', en: 'Message', 'zh-tw': '訊息', ko: '메시지' }
     }
   };
-
-  if (contactData.title) {
-    transformed.sectionTitle = contactData.title;
-  } else if (contactData.sectionTitle) {
-    transformed.sectionTitle = contactData.sectionTitle;
-  }
-
-  if (contactData.subtitle) {
-    transformed.sectionSubtitle = contactData.subtitle;
-  } else if (contactData.sectionSubtitle) {
-    transformed.sectionSubtitle = contactData.sectionSubtitle;
-  }
-
-  if (contactData.description) {
-    transformed.description = contactData.description;
-  }
 
   if (contactData.methods && Array.isArray(contactData.methods)) {
     transformed.methods = contactData.methods;
@@ -274,6 +249,8 @@ function transformGalleryData(galleryData: any): GalleryData | null {
   };
 
   const transformed: any = {
+    sectionTitle: galleryData.sectionTitle,
+    sectionSubtitle: galleryData.sectionSubtitle,
     images: galleryData.images ? galleryData.images.map((img: any) => ({
       ...img,
       category: typeof img.category === 'string'
@@ -281,14 +258,6 @@ function transformGalleryData(galleryData: any): GalleryData | null {
         : img.category
     })) : []
   };
-
-  if (galleryData.sectionTitle) {
-    transformed.sectionTitle = galleryData.sectionTitle;
-  }
-
-  if (galleryData.sectionSubtitle) {
-    transformed.sectionSubtitle = galleryData.sectionSubtitle;
-  }
 
   if (galleryData.categories && Array.isArray(galleryData.categories)) {
     transformed.categories = galleryData.categories.map((cat: string) => {
@@ -305,19 +274,11 @@ function transformGalleryData(galleryData: any): GalleryData | null {
 function transformPricingData(pricingData: any): PricingData | null {
   if (!pricingData) return null;
 
-  const transformed: any = {};
-
-  if (pricingData.sectionTitle) {
-    transformed.sectionTitle = pricingData.sectionTitle;
-  }
-
-  if (pricingData.sectionSubtitle) {
-    transformed.sectionSubtitle = pricingData.sectionSubtitle;
-  }
-
-  if (pricingData.note) {
-    transformed.note = pricingData.note;
-  }
+  const transformed: any = {
+    sectionTitle: pricingData.sectionTitle,
+    sectionSubtitle: pricingData.sectionSubtitle,
+    note: pricingData.note,
+  };
 
   if (pricingData.plans && Array.isArray(pricingData.plans)) {
     transformed.plans = pricingData.plans;
@@ -329,15 +290,10 @@ function transformPricingData(pricingData: any): PricingData | null {
 function transformStaffData(staffData: any): StaffData | null {
   if (!staffData) return null;
 
-  const transformed: any = {};
-
-  if (staffData.sectionTitle) {
-    transformed.sectionTitle = staffData.sectionTitle;
-  }
-
-  if (staffData.sectionSubtitle) {
-    transformed.sectionSubtitle = staffData.sectionSubtitle;
-  }
+  const transformed: any = {
+    sectionTitle: staffData.sectionTitle,
+    sectionSubtitle: staffData.sectionSubtitle,
+  };
 
   if (staffData.members && Array.isArray(staffData.members)) {
     transformed.members = staffData.members;
@@ -349,23 +305,12 @@ function transformStaffData(staffData: any): StaffData | null {
 function transformAccessData(accessData: any): AccessData | null {
   if (!accessData) return null;
 
-  const transformed: any = {};
-
-  if (accessData.sectionTitle) {
-    transformed.sectionTitle = accessData.sectionTitle;
-  }
-
-  if (accessData.sectionSubtitle) {
-    transformed.sectionSubtitle = accessData.sectionSubtitle;
-  }
-
-  if (accessData.address) {
-    transformed.address = accessData.address;
-  }
-
-  if (accessData.mapEmbedUrl) {
-    transformed.mapEmbedUrl = accessData.mapEmbedUrl;
-  }
+  const transformed: any = {
+    sectionTitle: accessData.sectionTitle,
+    sectionSubtitle: accessData.sectionSubtitle,
+    address: accessData.address,
+    mapEmbedUrl: accessData.mapEmbedUrl,
+  };
 
   if (accessData.parking) {
     transformed.parking = accessData.parking;

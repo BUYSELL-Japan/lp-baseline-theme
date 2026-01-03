@@ -24,7 +24,7 @@ export default function Footer() {
   const description = getText(footerData.description);
 
   return (
-    <footer className="relative bg-gradient-to-b from-teal-800 to-teal-900 text-white overflow-hidden">
+    <footer className="relative bg-gradient-to-b from-teal-900 to-teal-950 text-white overflow-hidden">
       <div className="absolute inset-0 opacity-10">
         <svg className="w-full h-32" viewBox="0 0 1200 120" preserveAspectRatio="none">
           <motion.path
@@ -94,7 +94,7 @@ export default function Footer() {
                   <motion.a
                     key={index}
                     href={social.url}
-                    className="bg-teal-700 p-3 rounded-full hover:bg-teal-600 transition-colors"
+                    className="bg-teal-800 p-3 rounded-full hover:bg-teal-700 transition-colors"
                     whileHover={{ scale: 1.1, y: -3 }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -111,7 +111,7 @@ export default function Footer() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="border-t border-teal-700 pt-8 text-center"
+          className="border-t border-teal-800 pt-8 text-center"
         >
           <p className="text-teal-300">&copy; {currentYear} {getText(footerData.copyright)}</p>
         </motion.div>

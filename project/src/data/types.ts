@@ -1,7 +1,7 @@
 export interface LocalizedText {
   ja: string;
   en: string;
-  'zh-tw': string;
+  zh: string;
   ko: string;
 }
 

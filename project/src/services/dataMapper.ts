@@ -243,7 +243,7 @@ function transformGalleryData(galleryData: any): GalleryData | null {
 
   const categoryMap: { [key: string]: any } = {
     'すべて': { ja: 'すべて', en: 'All', 'zh-tw': '全部', ko: '전체' },
-    '風景': { ja: '風景', en: 'Scenery', 'zh-tw': '風景', ko: '풍경' },
+    '風景': { ja: '風景', en: 'Scenery', 'zh-tw': '風景', ko: '풍景' },
     '商品': { ja: '商品', en: 'Products', 'zh-tw': '商品', ko: '상품' },
     '店舗': { ja: '店舗', en: 'Store', 'zh-tw': '店舖', ko: '매장' }
   };
@@ -266,6 +266,58 @@ function transformGalleryData(galleryData: any): GalleryData | null {
       }
       return cat;
     });
+  }
+
+  return transformed;
+}
+
+function transformPricingData(pricingData: any): PricingData | null {
+  if (!pricingData) return null;
+
+  const transformed: any = {
+    sectionTitle: pricingData.sectionTitle,
+    sectionSubtitle: pricingData.sectionSubtitle,
+    note: pricingData.note,
+  };
+
+  if (pricingData.plans && Array.isArray(pricingData.plans)) {
+    transformed.plans = pricingData.plans;
+  }
+
+  return transformed;
+}
+
+function transformStaffData(staffData: any): StaffData | null {
+  if (!staffData) return null;
+
+  const transformed: any = {
+    sectionTitle: staffData.sectionTitle,
+    sectionSubtitle: staffData.sectionSubtitle,
+  };
+
+  if (staffData.members && Array.isArray(staffData.members)) {
+    transformed.members = staffData.members;
+  }
+
+  return transformed;
+}
+
+function transformAccessData(accessData: any): AccessData | null {
+  if (!accessData) return null;
+
+  const transformed: any = {
+    sectionTitle: accessData.sectionTitle,
+    sectionSubtitle: accessData.sectionSubtitle,
+    address: accessData.address,
+    mapEmbedUrl: accessData.mapEmbedUrl,
+  };
+
+  if (accessData.parking) {
+    transformed.parking = accessData.parking;
+  }
+
+  if (accessData.transportation) {
+    transformed.transportation = accessData.transportation;
   }
 
   return transformed;
@@ -304,6 +356,9 @@ export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
     const menuData = transformMenuData(contentData.menu);
     const contactData = transformContactData(contentData.contact);
     const galleryData = transformGalleryData(contentData.gallery);
+    const pricingData = transformPricingData(contentData.pricing);
+    const staffData = transformStaffData(contentData.staff);
+    const accessData = transformAccessData(contentData.access);
 
     const pageData = {
       header: extractTranslatedData(contentData.header, 'header'),
@@ -314,13 +369,13 @@ export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
       contact: contactData,
       footer: extractTranslatedData(contentData.footer, 'footer'),
       gallery: galleryData,
-      staff: extractTranslatedData(contentData.staff, 'staff'),
+      staff: staffData,
       reviews: extractTranslatedData(contentData.reviews, 'reviews'),
       news: extractTranslatedData(contentData.news, 'news'),
-      access: extractTranslatedData(contentData.access, 'access'),
+      access: accessData,
       faq: extractTranslatedData(contentData.faq, 'faq'),
       cta: extractTranslatedData(contentData.cta, 'cta'),
-      pricing: extractTranslatedData(contentData.pricing, 'pricing'),
+      pricing: pricingData,
       company: extractTranslatedData(contentData.company, 'company'),
     };
 
@@ -328,6 +383,9 @@ export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
     console.log('Menu section:', JSON.stringify(pageData.menu, null, 2));
     console.log('Contact section:', JSON.stringify(pageData.contact, null, 2));
     console.log('Gallery section:', JSON.stringify(pageData.gallery, null, 2));
+    console.log('Pricing section:', JSON.stringify(pageData.pricing, null, 2));
+    console.log('Staff section:', JSON.stringify(pageData.staff, null, 2));
+    console.log('Access section:', JSON.stringify(pageData.access, null, 2));
 
     return pageData;
   } catch (error) {

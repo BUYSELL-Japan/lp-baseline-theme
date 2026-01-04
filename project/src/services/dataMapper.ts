@@ -349,6 +349,14 @@ export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
 
     contentData = convertMultilingualFields(contentData);
 
+    console.log('🔍 ContentData Structure:', {
+      menu: contentData.menu,
+      pricing: contentData.pricing,
+      staff: contentData.staff,
+      gallery: contentData.gallery,
+      access: contentData.access
+    });
+
     const extractTranslatedData = (section: any, key: string) => {
       if (!section) return null;
       if (section.translatedData && section.translatedData[key]) {

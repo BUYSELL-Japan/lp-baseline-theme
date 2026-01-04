@@ -80,7 +80,7 @@ export default function Reviews() {
               <div className="flex items-center gap-4 mb-4">
                 <img
                   src={review.avatar}
-                  alt={review.name}
+                  alt={getText(review.name)}
                   className="w-14 h-14 rounded-full object-cover"
                 />
                 <div>
@@ -125,7 +125,7 @@ export default function Reviews() {
                   <div className="flex items-center gap-4 mb-4">
                     <img
                       src={review.avatar}
-                      alt={review.name}
+                      alt={getText(review.name)}
                       className="w-14 h-14 rounded-full object-cover"
                     />
                     <div>

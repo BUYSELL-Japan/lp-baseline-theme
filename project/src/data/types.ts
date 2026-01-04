@@ -1,7 +1,7 @@
 export interface LocalizedText {
   ja: string;
   en: string;
-  zh: string;
+  'zh-tw': string;
   ko: string;
 }
 
@@ -151,6 +151,7 @@ export interface AccessData {
   sectionSubtitle: string;
   address: string;
   mapEmbedUrl: string;
+  hours?: string;
   parking: {
     title: string;
     description: string;

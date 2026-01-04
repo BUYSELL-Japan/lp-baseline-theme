@@ -48,10 +48,10 @@ export async function fetchStoreContent(storeId: string): Promise<LandingPageCon
       console.log('Detected DynamoDB format, unmarshalling...');
       const unmarshalled = unmarshall(rawData);
       console.log('Unmarshalled data:', unmarshalled);
-      return unmarshalled;
+      return unmarshalled as LandingPageContent;
     } else {
       console.log('Data is already in plain format, using as-is');
-      return rawData;
+      return rawData as LandingPageContent;
     }
   } catch (error) {
     console.error('Error fetching store content:', error);

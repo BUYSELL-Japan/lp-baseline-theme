@@ -109,7 +109,7 @@ function convertMultilingualFields(obj: any): any {
       fieldGroups[fieldName][lang] = value;
     } else {
       if (typeof value === 'object' && value !== null && !Array.isArray(value)) {
-        result[key] = ensureMultilingual(convertMultilingualFields(value));
+        result[key] = convertMultilingualFields(value);
       } else if (Array.isArray(value)) {
         result[key] = value.map(item => convertMultilingualFields(item));
       } else {
@@ -192,8 +192,8 @@ function transformMenuData(menuData: any): MenuData | null {
   }
 
   const transformed: any = {
-    sectionTitle: menuData.title || menuData.sectionTitle,
-    sectionSubtitle: menuData.subtitle || menuData.sectionSubtitle,
+    sectionTitle: menuData.sectionTitle || menuData.title,
+    sectionSubtitle: menuData.sectionSubtitle || menuData.subtitle,
     description: menuData.description,
   };
 
@@ -201,7 +201,12 @@ function transformMenuData(menuData: any): MenuData | null {
     const allItems: any[] = [];
     menuData.categories.forEach((category: any) => {
       if (category.items && Array.isArray(category.items)) {
-        allItems.push(...category.items);
+        category.items.forEach((item: any) => {
+          allItems.push({
+            ...item,
+            category: category.name || category.id
+          });
+        });
       }
     });
     transformed.items = allItems;
@@ -216,8 +221,8 @@ function transformContactData(contactData: any): ContactData | null {
   if (!contactData) return null;
 
   const transformed: any = {
-    sectionTitle: contactData.title || contactData.sectionTitle,
-    sectionSubtitle: contactData.subtitle || contactData.sectionSubtitle,
+    sectionTitle: contactData.sectionTitle || contactData.title,
+    sectionSubtitle: contactData.sectionSubtitle || contactData.subtitle,
     description: contactData.description,
     submitButton: contactData.submitButton || {
       ja: '送信',
@@ -253,10 +258,12 @@ function transformGalleryData(galleryData: any): GalleryData | null {
   };
 
   const transformed: any = {
-    sectionTitle: galleryData.sectionTitle,
-    sectionSubtitle: galleryData.sectionSubtitle,
+    sectionTitle: galleryData.sectionTitle || galleryData.title,
+    sectionSubtitle: galleryData.sectionSubtitle || galleryData.subtitle,
     images: galleryData.images ? galleryData.images.map((img: any) => ({
-      ...img,
+      url: img.url,
+      alt: img.alt,
+      caption: img.caption,
       category: typeof img.category === 'string'
         ? (categoryMap[img.category] || { ja: img.category, en: img.category, 'zh-tw': img.category, ko: img.category })
         : img.category
@@ -264,7 +271,7 @@ function transformGalleryData(galleryData: any): GalleryData | null {
   };
 
   if (galleryData.categories && Array.isArray(galleryData.categories)) {
-    transformed.categories = galleryData.categories.map((cat: string) => {
+    transformed.categories = galleryData.categories.map((cat: any) => {
       if (typeof cat === 'string') {
         return categoryMap[cat] || { ja: cat, en: cat, 'zh-tw': cat, ko: cat };
       }
@@ -316,10 +323,11 @@ function transformAccessData(accessData: any): AccessData | null {
   }
 
   const transformed: any = {
-    sectionTitle: accessData.sectionTitle,
-    sectionSubtitle: accessData.sectionSubtitle,
+    sectionTitle: accessData.sectionTitle || accessData.title,
+    sectionSubtitle: accessData.sectionSubtitle || accessData.subtitle,
     address: accessData.address,
     mapEmbedUrl: accessData.mapEmbedUrl,
+    hours: accessData.hours
   };
 
   if (accessData.parking) {
@@ -373,25 +381,30 @@ export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
     const accessData = transformAccessData(contentData.access);
 
     const pageData = {
-      header: extractTranslatedData(contentData.header, 'header'),
-      hero: extractTranslatedData(contentData.hero, 'hero'),
-      about: extractTranslatedData(contentData.about, 'about'),
+      header: contentData.header || extractTranslatedData(contentData.header, 'header'),
+      hero: contentData.hero || extractTranslatedData(contentData.hero, 'hero'),
+      about: contentData.about || extractTranslatedData(contentData.about, 'about'),
       menu: menuData,
-      storeInfo: extractTranslatedData(contentData.storeInfo, 'storeInfo'),
+      storeInfo: contentData.storeInfo || extractTranslatedData(contentData.storeInfo, 'storeInfo'),
       contact: contactData,
-      footer: extractTranslatedData(contentData.footer, 'footer'),
+      footer: contentData.footer || extractTranslatedData(contentData.footer, 'footer'),
       gallery: galleryData,
       staff: staffData,
-      reviews: extractTranslatedData(contentData.reviews, 'reviews'),
-      news: extractTranslatedData(contentData.news, 'news'),
+      reviews: contentData.reviews || extractTranslatedData(contentData.reviews, 'reviews'),
+      news: contentData.news || extractTranslatedData(contentData.news, 'news'),
       access: accessData,
-      faq: extractTranslatedData(contentData.faq, 'faq'),
-      cta: extractTranslatedData(contentData.cta, 'cta'),
+      faq: contentData.faq || extractTranslatedData(contentData.faq, 'faq'),
+      cta: contentData.cta || extractTranslatedData(contentData.cta, 'cta'),
       pricing: pricingData,
-      company: extractTranslatedData(contentData.company, 'company'),
+      company: contentData.company || extractTranslatedData(contentData.company, 'company'),
     };
 
     console.log('📊 DynamoDB Data Mapped:', {
+      header: {
+        hasLogo: !!pageData.header?.logo,
+        navigationCount: pageData.header?.navigation?.length || 0,
+        navigationSample: pageData.header?.navigation?.[0]
+      },
       menu: { hasTitle: !!menuData?.sectionTitle, itemsCount: menuData?.items?.length || 0 },
       pricing: { hasTitle: !!pricingData?.sectionTitle, plansCount: pricingData?.plans?.length || 0 },
       staff: { hasTitle: !!staffData?.sectionTitle, membersCount: staffData?.members?.length || 0 },

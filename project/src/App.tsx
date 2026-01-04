@@ -32,41 +32,54 @@ function App() {
         const pathStoreId = getStoreIdFromPath();
         const isDevelopment = import.meta.env.DEV;
 
+        console.log('[App] Hostname:', window.location.hostname);
+        console.log('[App] Pathname:', window.location.pathname);
+        console.log('[App] Subdomain:', subdomain);
+        console.log('[App] Path StoreId:', pathStoreId);
+        console.log('[App] Is Development:', isDevelopment);
+
         let storeId: string | null = null;
 
         if (pathStoreId) {
           storeId = pathStoreId;
+          console.log('[App] Using pathStoreId:', storeId);
         } else if (subdomain && subdomain !== 'www') {
           storeId = subdomain;
+          console.log('[App] Using subdomain as storeId:', storeId);
         }
 
         if (storeId) {
+          console.log('[App] Fetching data for storeId:', storeId);
           const data = await fetchStoreContent(storeId);
 
           if (data) {
+            console.log('[App] Data fetched successfully, mapping...');
             const mappedData = mapDynamoDBDataToPageData(data);
+            console.log('[App] Setting mapped data');
             setPageData(mappedData);
           } else {
+            console.log('[App] No data returned from API');
             if (isDevelopment) {
-              console.log('Using default data in development mode');
+              console.log('[App] Using default data in development mode');
               setPageData(getDefaultPageData());
             } else {
               setError('Store not found');
             }
           }
         } else {
+          console.log('[App] No storeId found');
           if (isDevelopment) {
-            console.log('No storeId found, using default data in development mode');
+            console.log('[App] No storeId found, using default data in development mode');
             setPageData(getDefaultPageData());
           } else {
             setError('Store not found');
           }
         }
       } catch (err) {
-        console.error('Error loading store data:', err);
+        console.error('[App] Error loading store data:', err);
         const isDevelopment = import.meta.env.DEV;
         if (isDevelopment) {
-          console.log('Error occurred, using default data in development mode');
+          console.log('[App] Error occurred, using default data in development mode');
           setPageData(getDefaultPageData());
         } else {
           setError('Failed to load store data');

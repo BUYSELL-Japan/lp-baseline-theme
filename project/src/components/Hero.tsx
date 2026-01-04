@@ -14,13 +14,22 @@ export default function Hero() {
     offset: ['start start', 'end start'],
   });
 
-  if (!heroData) return null;
+  console.log('[Hero] heroData:', heroData);
+  console.log('[Hero] language:', language);
+
+  if (!heroData) {
+    console.log('[Hero] No heroData, returning null');
+    return null;
+  }
 
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
   let title = getLocalizedValue(heroData, 'title', language);
   let subtitle = getLocalizedValue(heroData, 'subtitle', language);
+
+  console.log('[Hero] Raw title:', title);
+  console.log('[Hero] Raw subtitle:', subtitle);
 
   if (typeof title === 'object') {
     title = title[language] || title['ja'] || title[Object.keys(title)[0]] || '';
@@ -32,7 +41,12 @@ export default function Hero() {
   title = String(title || '');
   subtitle = String(subtitle || '');
 
+  console.log('[Hero] Processed title:', title);
+  console.log('[Hero] Processed subtitle:', subtitle);
+  console.log('[Hero] backgroundImage:', heroData.backgroundImage);
+
   if (!title && !subtitle && !heroData.backgroundImage) {
+    console.log('[Hero] No content to display, returning null');
     return null;
   }
 

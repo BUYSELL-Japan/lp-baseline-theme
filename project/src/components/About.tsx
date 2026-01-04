@@ -61,11 +61,20 @@ export default function About() {
   const aboutData = useAboutData();
   const { t } = useLocalize();
 
-  if (!aboutData) return null;
+  console.log('[About] aboutData:', aboutData);
+
+  if (!aboutData) {
+    console.log('[About] No aboutData, returning null');
+    return null;
+  }
 
   const sectionTitle = t(aboutData, 'sectionTitle');
 
+  console.log('[About] sectionTitle:', sectionTitle);
+  console.log('[About] features:', aboutData.features);
+
   if (!sectionTitle || !aboutData.features || !Array.isArray(aboutData.features) || aboutData.features.length === 0) {
+    console.log('[About] Missing required data, returning null');
     return null;
   }
 

@@ -90,7 +90,12 @@ export default function Menu() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  if (!menuData) return null;
+  console.log('[Menu] menuData:', menuData);
+
+  if (!menuData) {
+    console.log('[Menu] No menuData, returning null');
+    return null;
+  }
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
 

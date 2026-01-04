@@ -365,11 +365,37 @@ export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
       access: contentData.access
     });
 
-    const extractTranslatedData = (section: any, key: string) => {
-      if (!section) return null;
-      if (section.translatedData && section.translatedData[key]) {
-        return section.translatedData[key];
+    const extractTranslatedData = (section: any, sectionName: string) => {
+      console.log(`🔍 Extracting ${sectionName}:`, section);
+
+      if (!section) {
+        console.log(`⚠️ ${sectionName} is null/undefined`);
+        return null;
       }
+
+      if (section.translatedData) {
+        console.log(`✅ ${sectionName} has translatedData wrapper`);
+
+        if (section.translatedData[sectionName]) {
+          console.log(`✅ Found ${sectionName} inside translatedData.${sectionName}`);
+          return section.translatedData[sectionName];
+        }
+
+        if (section.translatedData.success !== undefined) {
+          console.log(`✅ ${sectionName} is already unwrapped in translatedData`);
+          return section.translatedData;
+        }
+
+        console.log(`⚠️ ${sectionName} translatedData structure is unexpected:`, Object.keys(section.translatedData));
+        return section.translatedData;
+      }
+
+      if (section.success !== undefined && section[sectionName]) {
+        console.log(`✅ ${sectionName} has success flag, extracting ${sectionName} key`);
+        return section[sectionName];
+      }
+
+      console.log(`✅ ${sectionName} using as-is (no wrapper)`);
       return section;
     };
 
@@ -381,35 +407,78 @@ export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
     const accessData = transformAccessData(contentData.access);
 
     const pageData = {
-      header: contentData.header || extractTranslatedData(contentData.header, 'header'),
-      hero: contentData.hero || extractTranslatedData(contentData.hero, 'hero'),
-      about: contentData.about || extractTranslatedData(contentData.about, 'about'),
+      header: extractTranslatedData(contentData.header, 'header'),
+      hero: extractTranslatedData(contentData.hero, 'hero'),
+      about: extractTranslatedData(contentData.about, 'about'),
       menu: menuData,
-      storeInfo: contentData.storeInfo || extractTranslatedData(contentData.storeInfo, 'storeInfo'),
+      storeInfo: extractTranslatedData(contentData.storeInfo, 'storeInfo'),
       contact: contactData,
-      footer: contentData.footer || extractTranslatedData(contentData.footer, 'footer'),
+      footer: extractTranslatedData(contentData.footer, 'footer'),
       gallery: galleryData,
       staff: staffData,
-      reviews: contentData.reviews || extractTranslatedData(contentData.reviews, 'reviews'),
-      news: contentData.news || extractTranslatedData(contentData.news, 'news'),
+      reviews: extractTranslatedData(contentData.reviews, 'reviews'),
+      news: extractTranslatedData(contentData.news, 'news'),
       access: accessData,
-      faq: contentData.faq || extractTranslatedData(contentData.faq, 'faq'),
-      cta: contentData.cta || extractTranslatedData(contentData.cta, 'cta'),
+      faq: extractTranslatedData(contentData.faq, 'faq'),
+      cta: extractTranslatedData(contentData.cta, 'cta'),
       pricing: pricingData,
-      company: contentData.company || extractTranslatedData(contentData.company, 'company'),
+      company: extractTranslatedData(contentData.company, 'company'),
     };
 
     console.log('📊 DynamoDB Data Mapped:', {
       header: {
+        exists: !!pageData.header,
         hasLogo: !!pageData.header?.logo,
         navigationCount: pageData.header?.navigation?.length || 0,
         navigationSample: pageData.header?.navigation?.[0]
       },
-      menu: { hasTitle: !!menuData?.sectionTitle, itemsCount: menuData?.items?.length || 0 },
-      pricing: { hasTitle: !!pricingData?.sectionTitle, plansCount: pricingData?.plans?.length || 0 },
-      staff: { hasTitle: !!staffData?.sectionTitle, membersCount: staffData?.members?.length || 0 },
-      gallery: { hasTitle: !!galleryData?.sectionTitle, imagesCount: galleryData?.images?.length || 0 },
-      access: { hasTitle: !!accessData?.sectionTitle, hasAddress: !!accessData?.address }
+      hero: {
+        exists: !!pageData.hero,
+        hasTitle: !!pageData.hero?.title,
+        keys: pageData.hero ? Object.keys(pageData.hero) : []
+      },
+      about: {
+        exists: !!pageData.about,
+        keys: pageData.about ? Object.keys(pageData.about) : []
+      },
+      menu: {
+        exists: !!menuData,
+        hasTitle: !!menuData?.sectionTitle,
+        itemsCount: menuData?.items?.length || 0
+      },
+      pricing: {
+        exists: !!pricingData,
+        hasTitle: !!pricingData?.sectionTitle,
+        plansCount: pricingData?.plans?.length || 0
+      },
+      staff: {
+        exists: !!staffData,
+        hasTitle: !!staffData?.sectionTitle,
+        membersCount: staffData?.members?.length || 0
+      },
+      gallery: {
+        exists: !!galleryData,
+        hasTitle: !!galleryData?.sectionTitle,
+        imagesCount: galleryData?.images?.length || 0
+      },
+      access: {
+        exists: !!accessData,
+        hasTitle: !!accessData?.sectionTitle,
+        hasAddress: !!accessData?.address
+      },
+      news: {
+        exists: !!pageData.news,
+        hasTitle: !!pageData.news?.sectionTitle,
+        itemsCount: pageData.news?.items?.length || 0
+      },
+      reviews: {
+        exists: !!pageData.reviews,
+        keys: pageData.reviews ? Object.keys(pageData.reviews) : []
+      },
+      footer: {
+        exists: !!pageData.footer,
+        keys: pageData.footer ? Object.keys(pageData.footer) : []
+      }
     });
 
     return pageData;

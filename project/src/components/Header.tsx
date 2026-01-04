@@ -12,7 +12,12 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
 
+  console.log('[Header] headerData:', headerData);
+  console.log('[Header] Has navigation?', !!headerData?.navigation);
+  console.log('[Header] Is array?', Array.isArray(headerData?.navigation));
+
   if (!headerData || !headerData.navigation || !Array.isArray(headerData.navigation)) {
+    console.log('[Header] Returning null - missing data');
     return null;
   }
 

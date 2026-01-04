@@ -187,10 +187,7 @@ function convertFlatToNested(flatData: any): any {
 }
 
 function transformMenuData(menuData: any): MenuData | null {
-  console.log('[transformMenuData] Input:', JSON.stringify(menuData, null, 2));
-
   if (!menuData) {
-    console.log('[transformMenuData] No menu data, returning null');
     return null;
   }
 
@@ -201,24 +198,17 @@ function transformMenuData(menuData: any): MenuData | null {
   };
 
   if (menuData.categories && Array.isArray(menuData.categories)) {
-    console.log('[transformMenuData] Found categories:', menuData.categories.length);
     const allItems: any[] = [];
     menuData.categories.forEach((category: any) => {
       if (category.items && Array.isArray(category.items)) {
-        console.log('[transformMenuData] Category has items:', category.items.length);
         allItems.push(...category.items);
       }
     });
     transformed.items = allItems;
-    console.log('[transformMenuData] Total items extracted:', allItems.length);
   } else if (menuData.items && Array.isArray(menuData.items)) {
-    console.log('[transformMenuData] Using direct items:', menuData.items.length);
     transformed.items = menuData.items;
-  } else {
-    console.log('[transformMenuData] No items found');
   }
 
-  console.log('[transformMenuData] Output:', JSON.stringify(transformed, null, 2));
   return transformed;
 }
 
@@ -251,10 +241,7 @@ function transformContactData(contactData: any): ContactData | null {
 }
 
 function transformGalleryData(galleryData: any): GalleryData | null {
-  console.log('[transformGalleryData] Input:', JSON.stringify(galleryData, null, 2));
-
   if (!galleryData) {
-    console.log('[transformGalleryData] No gallery data, returning null');
     return null;
   }
 
@@ -289,10 +276,7 @@ function transformGalleryData(galleryData: any): GalleryData | null {
 }
 
 function transformPricingData(pricingData: any): PricingData | null {
-  console.log('[transformPricingData] Input:', JSON.stringify(pricingData, null, 2));
-
   if (!pricingData) {
-    console.log('[transformPricingData] No pricing data, returning null');
     return null;
   }
 
@@ -310,10 +294,7 @@ function transformPricingData(pricingData: any): PricingData | null {
 }
 
 function transformStaffData(staffData: any): StaffData | null {
-  console.log('[transformStaffData] Input:', JSON.stringify(staffData, null, 2));
-
   if (!staffData) {
-    console.log('[transformStaffData] No staff data, returning null');
     return null;
   }
 
@@ -330,10 +311,7 @@ function transformStaffData(staffData: any): StaffData | null {
 }
 
 function transformAccessData(accessData: any): AccessData | null {
-  console.log('[transformAccessData] Input:', JSON.stringify(accessData, null, 2));
-
   if (!accessData) {
-    console.log('[transformAccessData] No access data, returning null');
     return null;
   }
 
@@ -365,17 +343,11 @@ export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
         : dynamoData.ContentData;
     }
 
-    console.log('Content data for mapping:', contentData);
-
     if (!isNestedStructure(contentData)) {
-      console.log('Converting flat structure to nested');
       contentData = convertFlatToNested(contentData);
-      console.log('Converted nested data:', contentData);
     }
 
-    console.log('Converting multilingual fields');
     contentData = convertMultilingualFields(contentData);
-    console.log('Converted multilingual data:', contentData);
 
     const extractTranslatedData = (section: any, key: string) => {
       if (!section) return null;
@@ -411,13 +383,13 @@ export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
       company: extractTranslatedData(contentData.company, 'company'),
     };
 
-    console.log('Final page data:', pageData);
-    console.log('Menu section:', JSON.stringify(pageData.menu, null, 2));
-    console.log('Contact section:', JSON.stringify(pageData.contact, null, 2));
-    console.log('Gallery section:', JSON.stringify(pageData.gallery, null, 2));
-    console.log('Pricing section:', JSON.stringify(pageData.pricing, null, 2));
-    console.log('Staff section:', JSON.stringify(pageData.staff, null, 2));
-    console.log('Access section:', JSON.stringify(pageData.access, null, 2));
+    console.log('📊 DynamoDB Data Mapped:', {
+      menu: { hasTitle: !!menuData?.sectionTitle, itemsCount: menuData?.items?.length || 0 },
+      pricing: { hasTitle: !!pricingData?.sectionTitle, plansCount: pricingData?.plans?.length || 0 },
+      staff: { hasTitle: !!staffData?.sectionTitle, membersCount: staffData?.members?.length || 0 },
+      gallery: { hasTitle: !!galleryData?.sectionTitle, imagesCount: galleryData?.images?.length || 0 },
+      access: { hasTitle: !!accessData?.sectionTitle, hasAddress: !!accessData?.address }
+    });
 
     return pageData;
   } catch (error) {

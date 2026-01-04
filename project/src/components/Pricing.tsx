@@ -15,13 +15,7 @@ export default function Pricing() {
   const sectionTitle = getText(pricingData.sectionTitle);
   const sectionSubtitle = getText(pricingData.sectionSubtitle);
 
-  console.log('[Pricing] pricingData:', pricingData);
-  console.log('[Pricing] sectionTitle:', sectionTitle);
-  console.log('[Pricing] plans:', pricingData?.plans);
-  console.log('[Pricing] plans length:', pricingData?.plans?.length);
-
   if (!sectionTitle || !pricingData.plans || !Array.isArray(pricingData.plans) || pricingData.plans.length === 0) {
-    console.log('[Pricing] Returning null - sectionTitle:', !!sectionTitle, 'plans:', !!pricingData.plans, 'isArray:', Array.isArray(pricingData?.plans), 'length:', pricingData?.plans?.length);
     return null;
   }
 

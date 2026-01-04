@@ -86,12 +86,7 @@ export default function Gallery() {
   const sectionTitle = getText(galleryData.sectionTitle);
   const sectionSubtitle = getText(galleryData.sectionSubtitle);
 
-  console.log('[Gallery] galleryData:', galleryData);
-  console.log('[Gallery] sectionTitle:', sectionTitle);
-  console.log('[Gallery] images length:', galleryData?.images?.length);
-
   if (!sectionTitle || galleryData.images.length === 0) {
-    console.log('[Gallery] Returning null - sectionTitle:', !!sectionTitle, 'images length:', galleryData?.images?.length);
     return null;
   }
 

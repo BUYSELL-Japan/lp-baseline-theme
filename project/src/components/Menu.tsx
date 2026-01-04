@@ -137,14 +137,7 @@ export default function Menu() {
   const sectionTitle = t(menuData, 'sectionTitle');
   const sectionSubtitle = t(menuData, 'sectionSubtitle');
 
-  console.log('[Menu] menuData:', menuData);
-  console.log('[Menu] sectionTitle:', sectionTitle);
-  console.log('[Menu] sectionSubtitle:', sectionSubtitle);
-  console.log('[Menu] items:', menuData?.items);
-  console.log('[Menu] items length:', menuData?.items?.length);
-
   if (!sectionTitle || !menuData.items || !Array.isArray(menuData.items) || menuData.items.length === 0) {
-    console.log('[Menu] Returning null - sectionTitle:', !!sectionTitle, 'items:', !!menuData.items, 'isArray:', Array.isArray(menuData?.items), 'length:', menuData?.items?.length);
     return null;
   }
 

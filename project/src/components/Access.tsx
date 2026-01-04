@@ -15,12 +15,21 @@ export default function Access() {
   const sectionTitle = getText(accessData.sectionTitle);
   const sectionSubtitle = getText(accessData.sectionSubtitle);
 
+  console.log('[Access] accessData:', accessData);
+  console.log('[Access] sectionTitle:', sectionTitle);
+  console.log('[Access] parking:', accessData?.parking);
+  console.log('[Access] transportation:', accessData?.transportation);
+
   if (!sectionTitle) {
+    console.log('[Access] Returning null - no sectionTitle');
     return null;
   }
 
   const hasParking = accessData.parking && typeof accessData.parking === 'object';
   const hasTransportation = accessData.transportation && typeof accessData.transportation === 'object';
+
+  console.log('[Access] hasParking:', hasParking);
+  console.log('[Access] hasTransportation:', hasTransportation);
 
   return (
     <section id="access" className="py-24 px-4 bg-gradient-to-b from-teal-50/30 to-white">

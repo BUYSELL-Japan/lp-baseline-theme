@@ -12,7 +12,14 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
 
-  if (!headerData || !headerData.navigation || !Array.isArray(headerData.navigation)) return null;
+  console.log('[Header] headerData:', headerData);
+  console.log('[Header] has navigation:', !!headerData?.navigation);
+  console.log('[Header] navigation is array:', Array.isArray(headerData?.navigation));
+
+  if (!headerData || !headerData.navigation || !Array.isArray(headerData.navigation)) {
+    console.log('[Header] Returning null - missing data');
+    return null;
+  }
 
   useEffect(() => {
     const handleScroll = () => {

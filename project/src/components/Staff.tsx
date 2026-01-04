@@ -11,7 +11,13 @@ export default function Staff() {
   const sectionTitle = getText(staffData.sectionTitle);
   const sectionSubtitle = getText(staffData.sectionSubtitle);
 
+  console.log('[Staff] staffData:', staffData);
+  console.log('[Staff] sectionTitle:', sectionTitle);
+  console.log('[Staff] members:', staffData?.members);
+  console.log('[Staff] members length:', staffData?.members?.length);
+
   if (!sectionTitle || !staffData.members || staffData.members.length === 0) {
+    console.log('[Staff] Returning null - sectionTitle:', !!sectionTitle, 'members:', !!staffData.members, 'length:', staffData?.members?.length);
     return null;
   }
 

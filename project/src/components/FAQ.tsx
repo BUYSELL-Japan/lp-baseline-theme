@@ -9,12 +9,21 @@ export default function FAQ() {
   const { getText } = useLocalize();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-  if (!faqData) return null;
+  console.log('[FAQ] faqData:', faqData);
+
+  if (!faqData) {
+    console.log('[FAQ] No faqData, returning null');
+    return null;
+  }
 
   const sectionTitle = getText(faqData.sectionTitle);
   const sectionSubtitle = getText(faqData.sectionSubtitle);
 
+  console.log('[FAQ] sectionTitle:', sectionTitle);
+  console.log('[FAQ] items:', faqData.items);
+
   if (!sectionTitle || !faqData.items || !Array.isArray(faqData.items) || faqData.items.length === 0) {
+    console.log('[FAQ] Missing required data, returning null');
     return null;
   }
 

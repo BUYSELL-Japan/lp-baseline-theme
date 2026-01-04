@@ -7,18 +7,25 @@ export default function News() {
   const newsData = useNewsData();
   const { getText, language } = useLocalize();
 
-  if (!newsData) return null;
+  console.log('[News] newsData:', newsData);
 
-  console.log('News data:', newsData);
-  console.log('Current language:', language);
-  console.log('sectionSubtitle raw:', newsData.sectionSubtitle);
+  if (!newsData) {
+    console.log('[News] No newsData, returning null');
+    return null;
+  }
+
+  console.log('[News] Current language:', language);
+  console.log('[News] sectionSubtitle raw:', newsData.sectionSubtitle);
 
   const sectionTitle = getText(newsData.sectionTitle);
   const sectionSubtitle = getText(newsData.sectionSubtitle);
 
-  console.log('sectionSubtitle getText result:', sectionSubtitle);
+  console.log('[News] sectionTitle:', sectionTitle);
+  console.log('[News] sectionSubtitle:', sectionSubtitle);
+  console.log('[News] items:', newsData.items);
 
   if (!sectionTitle || !newsData.items || newsData.items.length === 0) {
+    console.log('[News] Missing required data, returning null');
     return null;
   }
 

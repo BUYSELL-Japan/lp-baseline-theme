@@ -13,7 +13,12 @@ export default function Reviews() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  if (!reviewsData) return null;
+  console.log('[Reviews] reviewsData:', reviewsData);
+
+  if (!reviewsData) {
+    console.log('[Reviews] No reviewsData, returning null');
+    return null;
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,7 +50,12 @@ export default function Reviews() {
   const sectionTitle = getText(reviewsData.sectionTitle);
   const sectionSubtitle = getText(reviewsData.sectionSubtitle);
 
+  console.log('[Reviews] sectionTitle:', sectionTitle);
+  console.log('[Reviews] sectionSubtitle:', sectionSubtitle);
+  console.log('[Reviews] reviews:', reviewsData.reviews);
+
   if (!sectionTitle || !reviewsData.reviews || reviewsData.reviews.length === 0) {
+    console.log('[Reviews] Missing required data, returning null');
     return null;
   }
 

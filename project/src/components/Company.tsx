@@ -7,7 +7,12 @@ export default function Company() {
   const companyData = useCompanyData();
   const { getText } = useLocalize();
 
-  if (!companyData) return null;
+  console.log('[Company] companyData:', companyData);
+
+  if (!companyData) {
+    console.log('[Company] No companyData, returning null');
+    return null;
+  }
 
   const sectionTitle = getText(companyData.sectionTitle);
   const sectionSubtitle = getText(companyData.sectionSubtitle);

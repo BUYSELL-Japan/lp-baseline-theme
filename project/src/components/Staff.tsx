@@ -6,12 +6,21 @@ export default function Staff() {
   const staffData = useStaffData();
   const { getText } = useLocalize();
 
-  if (!staffData) return null;
+  console.log('[Staff] staffData:', staffData);
+
+  if (!staffData) {
+    console.log('[Staff] No staffData, returning null');
+    return null;
+  }
 
   const sectionTitle = getText(staffData.sectionTitle);
   const sectionSubtitle = getText(staffData.sectionSubtitle);
 
+  console.log('[Staff] sectionTitle:', sectionTitle);
+  console.log('[Staff] members:', staffData.members);
+
   if (!sectionTitle || !staffData.members || staffData.members.length === 0) {
+    console.log('[Staff] Missing required data, returning null');
     return null;
   }
 

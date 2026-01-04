@@ -10,12 +10,21 @@ export default function Access() {
   const { getText } = useLocalize();
   const { language } = useLanguage();
 
-  if (!accessData) return null;
+  console.log('[Access] accessData:', accessData);
+
+  if (!accessData) {
+    console.log('[Access] No accessData, returning null');
+    return null;
+  }
 
   const sectionTitle = getText(accessData.sectionTitle);
   const sectionSubtitle = getText(accessData.sectionSubtitle);
 
+  console.log('[Access] sectionTitle:', sectionTitle);
+  console.log('[Access] address:', accessData.address);
+
   if (!sectionTitle) {
+    console.log('[Access] Missing sectionTitle, returning null');
     return null;
   }
 

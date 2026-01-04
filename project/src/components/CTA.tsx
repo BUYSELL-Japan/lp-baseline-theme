@@ -7,11 +7,20 @@ export default function CTA() {
   const ctaData = useCTAData();
   const { getText } = useLocalize();
 
-  if (!ctaData) return null;
+  console.log('[CTA] ctaData:', ctaData);
+
+  if (!ctaData) {
+    console.log('[CTA] No ctaData, returning null');
+    return null;
+  }
 
   const sectionTitle = getText(ctaData.sectionTitle);
 
+  console.log('[CTA] sectionTitle:', sectionTitle);
+  console.log('[CTA] buttons:', ctaData.buttons);
+
   if (!sectionTitle || !ctaData.buttons || !Array.isArray(ctaData.buttons) || ctaData.buttons.length === 0) {
+    console.log('[CTA] Missing required data, returning null');
     return null;
   }
 

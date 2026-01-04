@@ -14,11 +14,20 @@ export default function StoreInfo() {
   const storeInfoData = useStoreInfoData();
   const { t } = useLocalize();
 
-  if (!storeInfoData) return null;
+  console.log('[StoreInfo] storeInfoData:', storeInfoData);
+
+  if (!storeInfoData) {
+    console.log('[StoreInfo] No storeInfoData, returning null');
+    return null;
+  }
 
   const sectionTitle = t(storeInfoData, 'sectionTitle');
 
+  console.log('[StoreInfo] sectionTitle:', sectionTitle);
+  console.log('[StoreInfo] items:', storeInfoData.items);
+
   if (!sectionTitle || !storeInfoData.items || !Array.isArray(storeInfoData.items) || storeInfoData.items.length === 0) {
+    console.log('[StoreInfo] Missing required data, returning null');
     return null;
   }
 

@@ -17,9 +17,15 @@ export default function Gallery() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
 
-  if (!galleryData) return null;
+  console.log('[Gallery] galleryData:', galleryData);
+
+  if (!galleryData) {
+    console.log('[Gallery] No galleryData, returning null');
+    return null;
+  }
 
   if (!galleryData.images || !Array.isArray(galleryData.images)) {
+    console.log('[Gallery] Missing images array, returning null');
     return null;
   }
 

@@ -10,12 +10,21 @@ export default function Pricing() {
   const { getText } = useLocalize();
   const { language } = useLanguage();
 
-  if (!pricingData) return null;
+  console.log('[Pricing] pricingData:', pricingData);
+
+  if (!pricingData) {
+    console.log('[Pricing] No pricingData, returning null');
+    return null;
+  }
 
   const sectionTitle = getText(pricingData.sectionTitle);
   const sectionSubtitle = getText(pricingData.sectionSubtitle);
 
+  console.log('[Pricing] sectionTitle:', sectionTitle);
+  console.log('[Pricing] plans:', pricingData.plans);
+
   if (!sectionTitle || !pricingData.plans || !Array.isArray(pricingData.plans) || pricingData.plans.length === 0) {
+    console.log('[Pricing] Missing required data, returning null');
     return null;
   }
 

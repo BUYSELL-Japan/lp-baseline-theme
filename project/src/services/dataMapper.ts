@@ -288,8 +288,8 @@ function transformPricingData(pricingData: any): PricingData | null {
   }
 
   const transformed: any = {
-    sectionTitle: pricingData.sectionTitle,
-    sectionSubtitle: pricingData.sectionSubtitle,
+    sectionTitle: pricingData.sectionTitle || pricingData.title,
+    sectionSubtitle: pricingData.sectionSubtitle || pricingData.subtitle,
     note: pricingData.note,
   };
 
@@ -306,8 +306,8 @@ function transformStaffData(staffData: any): StaffData | null {
   }
 
   const transformed: any = {
-    sectionTitle: staffData.sectionTitle,
-    sectionSubtitle: staffData.sectionSubtitle,
+    sectionTitle: staffData.sectionTitle || staffData.title,
+    sectionSubtitle: staffData.sectionSubtitle || staffData.subtitle,
   };
 
   if (staffData.members && Array.isArray(staffData.members)) {
@@ -373,21 +373,40 @@ export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
         return null;
       }
 
+      let extractedData: any = null;
+
       if (section.translatedData) {
         console.log(`✅ ${sectionName} has translatedData wrapper`);
 
         if (section.translatedData[sectionName]) {
           console.log(`✅ Found ${sectionName} inside translatedData.${sectionName}`);
-          return section.translatedData[sectionName];
-        }
-
-        if (section.translatedData.success !== undefined) {
+          extractedData = section.translatedData[sectionName];
+        } else if (section.translatedData.success !== undefined) {
           console.log(`✅ ${sectionName} is already unwrapped in translatedData`);
-          return section.translatedData;
+          extractedData = section.translatedData;
+        } else {
+          console.log(`⚠️ ${sectionName} translatedData structure is unexpected:`, Object.keys(section.translatedData));
+          extractedData = section.translatedData;
         }
 
-        console.log(`⚠️ ${sectionName} translatedData structure is unexpected:`, Object.keys(section.translatedData));
-        return section.translatedData;
+        const topLevelArrayKeys = ['items', 'reviews', 'members', 'images', 'plans', 'features', 'navigation'];
+        const topLevelData: any = {};
+        let hasTopLevelData = false;
+
+        for (const key of topLevelArrayKeys) {
+          if (section[key] !== undefined && section[key] !== null) {
+            console.log(`✅ Merging top-level ${key} into ${sectionName}`);
+            topLevelData[key] = section[key];
+            hasTopLevelData = true;
+          }
+        }
+
+        if (hasTopLevelData) {
+          extractedData = { ...extractedData, ...topLevelData };
+          console.log(`✅ Merged data for ${sectionName}:`, Object.keys(extractedData));
+        }
+
+        return extractedData;
       }
 
       if (section.success !== undefined && section[sectionName]) {
@@ -399,12 +418,12 @@ export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
       return section;
     };
 
-    const menuData = transformMenuData(contentData.menu);
-    const contactData = transformContactData(contentData.contact);
-    const galleryData = transformGalleryData(contentData.gallery);
-    const pricingData = transformPricingData(contentData.pricing);
-    const staffData = transformStaffData(contentData.staff);
-    const accessData = transformAccessData(contentData.access);
+    const menuData = transformMenuData(extractTranslatedData(contentData.menu, 'menu'));
+    const contactData = transformContactData(extractTranslatedData(contentData.contact, 'contact'));
+    const galleryData = transformGalleryData(extractTranslatedData(contentData.gallery, 'gallery'));
+    const pricingData = transformPricingData(extractTranslatedData(contentData.pricing, 'pricing'));
+    const staffData = transformStaffData(extractTranslatedData(contentData.staff, 'staff'));
+    const accessData = transformAccessData(extractTranslatedData(contentData.access, 'access'));
 
     const pageData = {
       header: extractTranslatedData(contentData.header, 'header'),

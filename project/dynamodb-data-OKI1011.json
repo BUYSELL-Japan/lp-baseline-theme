@@ -17,6 +17,14 @@
           "label": "商品"
         },
         {
+          "id": "pricing",
+          "label": "プラン"
+        },
+        {
+          "id": "staff",
+          "label": "スタッフ"
+        },
+        {
           "id": "gallery",
           "label": "ギャラリー"
         },
@@ -47,8 +55,8 @@
       }
     },
     "about": {
-      "title": "沖縄商店について",
-      "subtitle": "私たちの想い",
+      "sectionTitle": "沖縄商店について",
+      "sectionSubtitle": "私たちの想い",
       "description": "沖縄商店は、沖縄の豊かな文化と伝統を世界に届けることを使命としています。地元の職人と協力し、心を込めて作られた商品をYuimaru Shipを通じてお届けします。",
       "features": [
         {
@@ -69,8 +77,8 @@
       ]
     },
     "menu": {
-      "title": "商品ラインナップ",
-      "subtitle": "厳選された沖縄の逸品",
+      "sectionTitle": "商品ラインナップ",
+      "sectionSubtitle": "厳選された沖縄の逸品",
       "description": "地元の職人が丹精込めて作った商品をご用意しています",
       "categories": [
         {
@@ -116,8 +124,9 @@
       ]
     },
     "gallery": {
-      "title": "ギャラリー",
-      "subtitle": "沖縄の美しい風景と商品",
+      "sectionTitle": "ギャラリー",
+      "sectionSubtitle": "沖縄の美しい風景と商品",
+      "categories": ["すべて", "風景", "商品", "店舗"],
       "images": [
         {
           "url": "https://images.pexels.com/photos/1007426/pexels-photo-1007426.jpeg",
@@ -141,18 +150,108 @@
         }
       ]
     },
+    "pricing": {
+      "sectionTitle": "料金プラン",
+      "sectionSubtitle": "お客様のニーズに合わせた最適なプランをご用意",
+      "plans": [
+        {
+          "name": "ベーシック",
+          "description": "初めての方におすすめ",
+          "price": "¥3,000",
+          "features": [
+            { "text": "厳選商品3点" },
+            { "text": "送料無料" },
+            { "text": "お試しパンフレット" }
+          ]
+        },
+        {
+          "name": "スタンダード",
+          "description": "一番人気のプラン",
+          "price": "¥5,000",
+          "isPopular": true,
+          "features": [
+            { "text": "厳選商品5点" },
+            { "text": "送料無料" },
+            { "text": "限定レシピ集" },
+            { "text": "10%ポイント還元" }
+          ]
+        },
+        {
+          "name": "プレミアム",
+          "description": "最高級の沖縄体験",
+          "price": "¥8,000",
+          "features": [
+            { "text": "厳選商品8点" },
+            { "text": "送料無料" },
+            { "text": "限定レシピ集" },
+            { "text": "15%ポイント還元" },
+            { "text": "会員限定商品" }
+          ]
+        }
+      ],
+      "note": "※すべて税込価格です。定期購入も承っております。"
+    },
+    "staff": {
+      "sectionTitle": "スタッフ紹介",
+      "sectionSubtitle": "沖縄の魅力をお届けする私たちのチーム",
+      "members": [
+        {
+          "name": "新垣 美咲",
+          "role": "代表取締役",
+          "description": "沖縄生まれ沖縄育ち。沖縄の素晴らしさを世界に伝えることを使命としています。",
+          "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg"
+        },
+        {
+          "name": "比嘉 大輔",
+          "role": "商品開発マネージャー",
+          "description": "沖縄の伝統食材を現代風にアレンジする商品開発のスペシャリスト。",
+          "image": "https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg"
+        },
+        {
+          "name": "宮城 さくら",
+          "role": "カスタマーサポート",
+          "description": "お客様の笑顔のために、心を込めたサポートを提供しています。",
+          "image": "https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg"
+        },
+        {
+          "name": "玉城 健太",
+          "role": "配送マネージャー",
+          "description": "新鮮な商品を迅速かつ丁寧にお届けすることに情熱を注いでいます。",
+          "image": "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg"
+        }
+      ]
+    },
     "access": {
-      "title": "アクセス",
-      "subtitle": "お店への行き方",
+      "sectionTitle": "アクセス",
+      "sectionSubtitle": "お店への行き方",
       "address": "〒900-0000 沖縄県那覇市国際通り1-2-3",
       "phone": "098-123-4567",
       "email": "info@okinawa-shoten.com",
       "hours": "10:00 - 19:00（定休日：水曜日）",
-      "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3579.0123456789!2d127.6789!3d26.2123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDEyJzQ0LjMiTiAxMjfCsDQwJzQ0LjEiRQ!5e0!3m2!1sja!2sjp!4v1234567890"
+      "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3579.0123456789!2d127.6789!3d26.2123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDEyJzQ0LjMiTiAxMjfCsDQwJzQ0LjEiRQ!5e0!3m2!1sja!2sjp!4v1234567890",
+      "parking": {
+        "title": "駐車場",
+        "description": "専用駐車場あり",
+        "spaces": "5台",
+        "notes": "満車の場合は近隣のコインパーキングをご利用ください"
+      },
+      "transportation": {
+        "title": "公共交通機関",
+        "methods": [
+          {
+            "type": "モノレール",
+            "description": "県庁前駅より徒歩5分"
+          },
+          {
+            "type": "バス",
+            "description": "国際通り下車すぐ"
+          }
+        ]
+      }
     },
     "contact": {
-      "title": "お問い合わせ",
-      "subtitle": "お気軽にご連絡ください",
+      "sectionTitle": "お問い合わせ",
+      "sectionSubtitle": "お気軽にご連絡ください",
       "description": "商品に関するご質問やご注文については、お電話またはメールでお気軽にお問い合わせください。",
       "methods": [
         {

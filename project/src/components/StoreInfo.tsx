@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Clock, MapPin, Phone, Mail } from 'lucide-react';
 import { useStoreInfoData } from '../contexts/PageDataContext';
 import { useLocalize } from '../hooks/useLocalize';
+import SectionError from './SectionError';
 
 const iconMap = {
   MapPin,
@@ -17,8 +18,8 @@ export default function StoreInfo() {
   console.log('[StoreInfo] storeInfoData:', storeInfoData);
 
   if (!storeInfoData) {
-    console.log('[StoreInfo] No storeInfoData, returning null');
-    return null;
+    console.log('[StoreInfo] No storeInfoData');
+    return <SectionError sectionName="Store Info" error="No store information data available" data={storeInfoData} />;
   }
 
   const sectionTitle = t(storeInfoData, 'sectionTitle');
@@ -26,9 +27,13 @@ export default function StoreInfo() {
   console.log('[StoreInfo] sectionTitle:', sectionTitle);
   console.log('[StoreInfo] items:', storeInfoData.items);
 
-  if (!sectionTitle || !storeInfoData.items || !Array.isArray(storeInfoData.items) || storeInfoData.items.length === 0) {
-    console.log('[StoreInfo] Missing required data, returning null');
-    return null;
+  if (!sectionTitle) {
+    return <SectionError sectionName="Store Info" error="Missing section title" data={storeInfoData} />;
+  }
+
+  if (!storeInfoData.items || !Array.isArray(storeInfoData.items) || storeInfoData.items.length === 0) {
+    console.log('[StoreInfo] Missing items array');
+    return <SectionError sectionName="Store Info" error="No store information items found. Expected 'items' array in data." data={storeInfoData} />;
   }
 
   return (

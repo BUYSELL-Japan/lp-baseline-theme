@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Calendar, Tag } from 'lucide-react';
 import { useNewsData } from '../contexts/PageDataContext';
 import { useLocalize } from '../hooks/useLocalize';
+import SectionError from './SectionError';
 
 export default function News() {
   const newsData = useNewsData();
@@ -10,8 +11,8 @@ export default function News() {
   console.log('[News] newsData:', newsData);
 
   if (!newsData) {
-    console.log('[News] No newsData, returning null');
-    return null;
+    console.log('[News] No newsData');
+    return <SectionError sectionName="News" error="No news data available" data={newsData} />;
   }
 
   console.log('[News] Current language:', language);
@@ -24,9 +25,13 @@ export default function News() {
   console.log('[News] sectionSubtitle:', sectionSubtitle);
   console.log('[News] items:', newsData.items);
 
-  if (!sectionTitle || !newsData.items || newsData.items.length === 0) {
-    console.log('[News] Missing required data, returning null');
-    return null;
+  if (!sectionTitle) {
+    return <SectionError sectionName="News" error="Missing section title" data={newsData} />;
+  }
+
+  if (!newsData.items || newsData.items.length === 0) {
+    console.log('[News] Missing items array');
+    return <SectionError sectionName="News" error="No news items found. Expected 'items' array in data." data={newsData} />;
   }
 
   return (

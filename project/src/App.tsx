@@ -15,6 +15,7 @@ import Access from './components/Access';
 import FAQ from './components/FAQ';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import ErrorBoundary from './components/ErrorBoundary';
 import { fetchStoreContent, getSubdomainFromHostname, getStoreIdFromPath } from './services/api';
 import { mapDynamoDBDataToPageData, getDefaultPageData, type PageData } from './services/dataMapper';
 import { PageDataProvider } from './contexts/PageDataContext';
@@ -114,28 +115,30 @@ function App() {
   }
 
   return (
-    <LanguageProvider>
-      <PageDataProvider data={pageData}>
-        <div className="min-h-screen bg-white">
-          {pageData.header && <Header />}
-          {pageData.hero && <Hero />}
-          {pageData.about && <About />}
-          {pageData.menu && <Menu />}
-          {pageData.pricing && <Pricing />}
-          {pageData.cta && <CTA />}
-          {pageData.gallery && <Gallery />}
-          {pageData.staff && <Staff />}
-          {pageData.reviews && <Reviews />}
-          {pageData.news && <News />}
-          {pageData.storeInfo && <StoreInfo />}
-          {pageData.company && <Company />}
-          {pageData.access && <Access />}
-          {pageData.faq && <FAQ />}
-          {pageData.contact && <Contact />}
-          {pageData.footer && <Footer />}
-        </div>
-      </PageDataProvider>
-    </LanguageProvider>
+    <ErrorBoundary>
+      <LanguageProvider>
+        <PageDataProvider data={pageData}>
+          <div className="min-h-screen bg-white">
+            {pageData.header && <Header />}
+            {pageData.hero && <Hero />}
+            {pageData.about && <About />}
+            {pageData.menu && <Menu />}
+            {pageData.pricing && <Pricing />}
+            {pageData.cta && <CTA />}
+            {pageData.gallery && <Gallery />}
+            {pageData.staff && <Staff />}
+            {pageData.reviews && <Reviews />}
+            {pageData.news && <News />}
+            {pageData.storeInfo && <StoreInfo />}
+            {pageData.company && <Company />}
+            {pageData.access && <Access />}
+            {pageData.faq && <FAQ />}
+            {pageData.contact && <Contact />}
+            {pageData.footer && <Footer />}
+          </div>
+        </PageDataProvider>
+      </LanguageProvider>
+    </ErrorBoundary>
   );
 }
 

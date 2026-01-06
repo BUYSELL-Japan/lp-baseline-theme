@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Phone, Mail } from 'lucide-react';
 import { useCTAData } from '../contexts/PageDataContext';
 import { useLocalize } from '../hooks/useLocalize';
+import SectionError from './SectionError';
 
 export default function CTA() {
   const ctaData = useCTAData();
@@ -10,8 +11,8 @@ export default function CTA() {
   console.log('[CTA] ctaData:', ctaData);
 
   if (!ctaData) {
-    console.log('[CTA] No ctaData, returning null');
-    return null;
+    console.log('[CTA] No ctaData');
+    return <SectionError sectionName="CTA" error="No CTA data available" data={ctaData} />;
   }
 
   const sectionTitle = getText(ctaData.sectionTitle);
@@ -19,9 +20,13 @@ export default function CTA() {
   console.log('[CTA] sectionTitle:', sectionTitle);
   console.log('[CTA] buttons:', ctaData.buttons);
 
-  if (!sectionTitle || !ctaData.buttons || !Array.isArray(ctaData.buttons) || ctaData.buttons.length === 0) {
-    console.log('[CTA] Missing required data, returning null');
-    return null;
+  if (!sectionTitle) {
+    return <SectionError sectionName="CTA" error="Missing section title" data={ctaData} />;
+  }
+
+  if (!ctaData.buttons || !Array.isArray(ctaData.buttons) || ctaData.buttons.length === 0) {
+    console.log('[CTA] Missing buttons array');
+    return <SectionError sectionName="CTA" error="No CTA buttons found. Expected 'buttons' array in data." data={ctaData} />;
   }
 
   return (

@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Building2, History, Heart } from 'lucide-react';
 import { useCompanyData } from '../contexts/PageDataContext';
 import { useLocalize } from '../hooks/useLocalize';
+import SectionError from './SectionError';
 
 export default function Company() {
   const companyData = useCompanyData();
@@ -10,8 +11,8 @@ export default function Company() {
   console.log('[Company] companyData:', companyData);
 
   if (!companyData) {
-    console.log('[Company] No companyData, returning null');
-    return null;
+    console.log('[Company] No companyData');
+    return <SectionError sectionName="Company" error="No company data available" data={companyData} />;
   }
 
   const sectionTitle = getText(companyData.sectionTitle);
@@ -21,8 +22,12 @@ export default function Company() {
   const hasHistory = companyData.history && companyData.history.timeline && Array.isArray(companyData.history.timeline) && companyData.history.timeline.length > 0;
   const hasCompanyInfo = companyData.companyInfo && companyData.companyInfo.items && Array.isArray(companyData.companyInfo.items) && companyData.companyInfo.items.length > 0;
 
-  if (!sectionTitle || (!hasPhilosophy && !hasHistory && !hasCompanyInfo)) {
-    return null;
+  if (!sectionTitle) {
+    return <SectionError sectionName="Company" error="Missing section title" data={companyData} />;
+  }
+
+  if (!hasPhilosophy && !hasHistory && !hasCompanyInfo) {
+    return <SectionError sectionName="Company" error="No company content found. Expected at least one of: philosophy, history, or companyInfo." data={companyData} />;
   }
 
   return (

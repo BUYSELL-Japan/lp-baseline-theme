@@ -4,6 +4,7 @@ import { usePricingData } from '../contexts/PageDataContext';
 import { useLocalize } from '../hooks/useLocalize';
 import { useLanguage } from '../contexts/LanguageContext';
 import { translate } from '../utils/i18n';
+import SectionError from './SectionError';
 
 export default function Pricing() {
   const pricingData = usePricingData();
@@ -13,8 +14,8 @@ export default function Pricing() {
   console.log('[Pricing] pricingData:', pricingData);
 
   if (!pricingData) {
-    console.log('[Pricing] No pricingData, returning null');
-    return null;
+    console.log('[Pricing] No pricingData');
+    return <SectionError sectionName="Pricing" error="No pricing data available" data={pricingData} />;
   }
 
   const sectionTitle = getText(pricingData.sectionTitle);
@@ -23,9 +24,13 @@ export default function Pricing() {
   console.log('[Pricing] sectionTitle:', sectionTitle);
   console.log('[Pricing] plans:', pricingData.plans);
 
-  if (!sectionTitle || !pricingData.plans || !Array.isArray(pricingData.plans) || pricingData.plans.length === 0) {
-    console.log('[Pricing] Missing required data, returning null');
-    return null;
+  if (!sectionTitle) {
+    return <SectionError sectionName="Pricing" error="Missing section title" data={pricingData} />;
+  }
+
+  if (!pricingData.plans || !Array.isArray(pricingData.plans) || pricingData.plans.length === 0) {
+    console.log('[Pricing] Missing plans array');
+    return <SectionError sectionName="Pricing" error="No pricing plans found. Expected 'plans' array in data." data={pricingData} />;
   }
 
   return (

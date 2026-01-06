@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { useFAQData } from '../contexts/PageDataContext';
 import { useLocalize } from '../hooks/useLocalize';
+import SectionError from './SectionError';
 
 export default function FAQ() {
   const faqData = useFAQData();
@@ -12,8 +13,8 @@ export default function FAQ() {
   console.log('[FAQ] faqData:', faqData);
 
   if (!faqData) {
-    console.log('[FAQ] No faqData, returning null');
-    return null;
+    console.log('[FAQ] No faqData');
+    return <SectionError sectionName="FAQ" error="No FAQ data available" data={faqData} />;
   }
 
   const sectionTitle = getText(faqData.sectionTitle);
@@ -22,9 +23,13 @@ export default function FAQ() {
   console.log('[FAQ] sectionTitle:', sectionTitle);
   console.log('[FAQ] items:', faqData.items);
 
-  if (!sectionTitle || !faqData.items || !Array.isArray(faqData.items) || faqData.items.length === 0) {
-    console.log('[FAQ] Missing required data, returning null');
-    return null;
+  if (!sectionTitle) {
+    return <SectionError sectionName="FAQ" error="Missing section title" data={faqData} />;
+  }
+
+  if (!faqData.items || !Array.isArray(faqData.items) || faqData.items.length === 0) {
+    console.log('[FAQ] Missing items array');
+    return <SectionError sectionName="FAQ" error="No FAQ items found. Expected 'items' array in data." data={faqData} />;
   }
 
   return (

@@ -6,6 +6,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { translate } from '../utils/i18n';
 import type { MenuItem as MenuItemType } from '../data/types';
 import Lightbox from './Lightbox';
+import SectionError from './SectionError';
 
 function MenuItem({ item, index, onImageClick }: { item: MenuItemType; index: number; onImageClick: () => void }) {
   const { t } = useLocalize();
@@ -93,8 +94,8 @@ export default function Menu() {
   console.log('[Menu] menuData:', menuData);
 
   if (!menuData) {
-    console.log('[Menu] No menuData, returning null');
-    return null;
+    console.log('[Menu] No menuData');
+    return <SectionError sectionName="Menu" error="No menu data available" data={menuData} />;
   }
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
@@ -142,8 +143,12 @@ export default function Menu() {
   const sectionTitle = t(menuData, 'sectionTitle');
   const sectionSubtitle = t(menuData, 'sectionSubtitle');
 
-  if (!sectionTitle || !menuData.items || !Array.isArray(menuData.items) || menuData.items.length === 0) {
-    return null;
+  if (!sectionTitle) {
+    return <SectionError sectionName="Menu" error="Missing section title" data={menuData} />;
+  }
+
+  if (!menuData.items || !Array.isArray(menuData.items) || menuData.items.length === 0) {
+    return <SectionError sectionName="Menu" error="No menu items found. Expected 'items' array in data." data={menuData} />;
   }
 
   const goToNext = () => {

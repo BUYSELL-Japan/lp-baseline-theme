@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useStaffData } from '../contexts/PageDataContext';
 import { useLocalize } from '../hooks/useLocalize';
+import SectionError from './SectionError';
 
 export default function Staff() {
   const staffData = useStaffData();
@@ -9,8 +10,8 @@ export default function Staff() {
   console.log('[Staff] staffData:', staffData);
 
   if (!staffData) {
-    console.log('[Staff] No staffData, returning null');
-    return null;
+    console.log('[Staff] No staffData');
+    return <SectionError sectionName="Staff" error="No staff data available" data={staffData} />;
   }
 
   const sectionTitle = getText(staffData.sectionTitle);
@@ -19,9 +20,13 @@ export default function Staff() {
   console.log('[Staff] sectionTitle:', sectionTitle);
   console.log('[Staff] members:', staffData.members);
 
-  if (!sectionTitle || !staffData.members || staffData.members.length === 0) {
-    console.log('[Staff] Missing required data, returning null');
-    return null;
+  if (!sectionTitle) {
+    return <SectionError sectionName="Staff" error="Missing section title" data={staffData} />;
+  }
+
+  if (!staffData.members || staffData.members.length === 0) {
+    console.log('[Staff] Missing members array');
+    return <SectionError sectionName="Staff" error="No staff members found. Expected 'members' array in data." data={staffData} />;
   }
 
   return (

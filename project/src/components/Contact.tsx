@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Send } from 'lucide-react';
 import { useContactData } from '../contexts/PageDataContext';
 import { useLocalize } from '../hooks/useLocalize';
+import SectionError from './SectionError';
 
 export default function Contact() {
   const contactData = useContactData();
@@ -15,12 +16,18 @@ export default function Contact() {
     message: '',
   });
 
-  if (!contactData) return null;
+  if (!contactData) {
+    return <SectionError sectionName="Contact" error="No contact data available" data={contactData} />;
+  }
 
   const sectionTitle = t(contactData, 'sectionTitle');
 
-  if (!sectionTitle || !contactData.fields) {
-    return null;
+  if (!sectionTitle) {
+    return <SectionError sectionName="Contact" error="Missing section title" data={contactData} />;
+  }
+
+  if (!contactData.fields) {
+    return <SectionError sectionName="Contact" error="Missing contact form fields data" data={contactData} />;
   }
 
   const handleSubmit = (e: React.FormEvent) => {

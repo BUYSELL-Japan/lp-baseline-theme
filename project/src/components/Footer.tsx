@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Waves, Facebook, Instagram, Twitter } from 'lucide-react';
 import { useFooterData } from '../contexts/PageDataContext';
 import { useLocalize } from '../hooks/useLocalize';
+import SectionError from './SectionError';
 
 const socialIconMap = {
   Facebook,
@@ -14,10 +15,16 @@ export default function Footer() {
   const { getText, t } = useLocalize();
   const currentYear = new Date().getFullYear();
 
-  if (!footerData) return null;
+  if (!footerData) {
+    return <SectionError sectionName="Footer" error="No footer data available" data={footerData} />;
+  }
 
-  if (!footerData.businessHours || !footerData.social || !footerData.social.links || !Array.isArray(footerData.social.links)) {
-    return null;
+  if (!footerData.businessHours) {
+    return <SectionError sectionName="Footer" error="Missing business hours data" data={footerData} />;
+  }
+
+  if (!footerData.social || !footerData.social.links || !Array.isArray(footerData.social.links)) {
+    return <SectionError sectionName="Footer" error="Missing social links data" data={footerData} />;
   }
 
   const logoText = t(footerData.logo, 'text', '');

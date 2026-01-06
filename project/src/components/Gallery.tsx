@@ -5,6 +5,7 @@ import { useLocalize } from '../hooks/useLocalize';
 import { useLanguage } from '../contexts/LanguageContext';
 import { translate } from '../utils/i18n';
 import Lightbox from './Lightbox';
+import SectionError from './SectionError';
 
 export default function Gallery() {
   const galleryData = useGalleryData();
@@ -20,13 +21,13 @@ export default function Gallery() {
   console.log('[Gallery] galleryData:', galleryData);
 
   if (!galleryData) {
-    console.log('[Gallery] No galleryData, returning null');
-    return null;
+    console.log('[Gallery] No galleryData');
+    return <SectionError sectionName="Gallery" error="No gallery data available" data={galleryData} />;
   }
 
   if (!galleryData.images || !Array.isArray(galleryData.images)) {
-    console.log('[Gallery] Missing images array, returning null');
-    return null;
+    console.log('[Gallery] Missing images array');
+    return <SectionError sectionName="Gallery" error="No gallery images found. Expected 'images' array in data." data={galleryData} />;
   }
 
   const filteredImages = selectedCategory === allCategory

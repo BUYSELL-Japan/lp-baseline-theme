@@ -187,7 +187,13 @@ function convertFlatToNested(flatData: any): any {
 }
 
 function transformMenuData(menuData: any): MenuData | null {
-  if (!menuData) {
+  if (!menuData || typeof menuData !== 'object') {
+    console.log('[transformMenuData] Invalid input, returning null');
+    return null;
+  }
+
+  if (!menuData.sectionTitle && !menuData.title) {
+    console.log('[transformMenuData] Missing title, returning null');
     return null;
   }
 
@@ -195,6 +201,7 @@ function transformMenuData(menuData: any): MenuData | null {
     sectionTitle: menuData.sectionTitle || menuData.title,
     sectionSubtitle: menuData.sectionSubtitle || menuData.subtitle,
     description: menuData.description,
+    items: []
   };
 
   if (menuData.categories && Array.isArray(menuData.categories)) {
@@ -214,11 +221,24 @@ function transformMenuData(menuData: any): MenuData | null {
     transformed.items = menuData.items;
   }
 
+  if (transformed.items.length === 0) {
+    console.log('[transformMenuData] No items found, returning null');
+    return null;
+  }
+
   return transformed;
 }
 
 function transformContactData(contactData: any): ContactData | null {
-  if (!contactData) return null;
+  if (!contactData || typeof contactData !== 'object') {
+    console.log('[transformContactData] Invalid input, returning null');
+    return null;
+  }
+
+  if (!contactData.sectionTitle && !contactData.title) {
+    console.log('[transformContactData] Missing title, returning null');
+    return null;
+  }
 
   const transformed: any = {
     sectionTitle: contactData.sectionTitle || contactData.title,
@@ -230,7 +250,7 @@ function transformContactData(contactData: any): ContactData | null {
       'zh-tw': '發送',
       ko: '보내기'
     },
-    fields: {
+    fields: contactData.fields || {
       name: { ja: '名前', en: 'Name', 'zh-tw': '姓名', ko: '이름' },
       email: { ja: 'メールアドレス', en: 'Email', 'zh-tw': '電子郵件', ko: '이메일' },
       subject: { ja: '件名', en: 'Subject', 'zh-tw': '主題', ko: '제목' },
@@ -246,7 +266,13 @@ function transformContactData(contactData: any): ContactData | null {
 }
 
 function transformGalleryData(galleryData: any): GalleryData | null {
-  if (!galleryData) {
+  if (!galleryData || typeof galleryData !== 'object') {
+    console.log('[transformGalleryData] Invalid input, returning null');
+    return null;
+  }
+
+  if (!galleryData.sectionTitle && !galleryData.title) {
+    console.log('[transformGalleryData] Missing title, returning null');
     return null;
   }
 
@@ -257,17 +283,26 @@ function transformGalleryData(galleryData: any): GalleryData | null {
     '店舗': { ja: '店舗', en: 'Store', 'zh-tw': '店舖', ko: '매장' }
   };
 
+  const images = galleryData.images && Array.isArray(galleryData.images)
+    ? galleryData.images.map((img: any) => ({
+        url: img.url,
+        alt: img.alt,
+        caption: img.caption,
+        category: typeof img.category === 'string'
+          ? (categoryMap[img.category] || { ja: img.category, en: img.category, 'zh-tw': img.category, ko: img.category })
+          : img.category
+      }))
+    : [];
+
+  if (images.length === 0) {
+    console.log('[transformGalleryData] No images found, returning null');
+    return null;
+  }
+
   const transformed: any = {
     sectionTitle: galleryData.sectionTitle || galleryData.title,
     sectionSubtitle: galleryData.sectionSubtitle || galleryData.subtitle,
-    images: galleryData.images ? galleryData.images.map((img: any) => ({
-      url: img.url,
-      alt: img.alt,
-      caption: img.caption,
-      category: typeof img.category === 'string'
-        ? (categoryMap[img.category] || { ja: img.category, en: img.category, 'zh-tw': img.category, ko: img.category })
-        : img.category
-    })) : []
+    images
   };
 
   if (galleryData.categories && Array.isArray(galleryData.categories)) {
@@ -283,7 +318,20 @@ function transformGalleryData(galleryData: any): GalleryData | null {
 }
 
 function transformPricingData(pricingData: any): PricingData | null {
-  if (!pricingData) {
+  if (!pricingData || typeof pricingData !== 'object') {
+    console.log('[transformPricingData] Invalid input, returning null');
+    return null;
+  }
+
+  if (!pricingData.sectionTitle && !pricingData.title) {
+    console.log('[transformPricingData] Missing title, returning null');
+    return null;
+  }
+
+  const plans = pricingData.plans && Array.isArray(pricingData.plans) ? pricingData.plans : [];
+
+  if (plans.length === 0) {
+    console.log('[transformPricingData] No plans found, returning null');
     return null;
   }
 
@@ -291,34 +339,47 @@ function transformPricingData(pricingData: any): PricingData | null {
     sectionTitle: pricingData.sectionTitle || pricingData.title,
     sectionSubtitle: pricingData.sectionSubtitle || pricingData.subtitle,
     note: pricingData.note,
+    plans
   };
-
-  if (pricingData.plans && Array.isArray(pricingData.plans)) {
-    transformed.plans = pricingData.plans;
-  }
 
   return transformed;
 }
 
 function transformStaffData(staffData: any): StaffData | null {
-  if (!staffData) {
+  if (!staffData || typeof staffData !== 'object') {
+    console.log('[transformStaffData] Invalid input, returning null');
+    return null;
+  }
+
+  if (!staffData.sectionTitle && !staffData.title) {
+    console.log('[transformStaffData] Missing title, returning null');
+    return null;
+  }
+
+  const members = staffData.members && Array.isArray(staffData.members) ? staffData.members : [];
+
+  if (members.length === 0) {
+    console.log('[transformStaffData] No members found, returning null');
     return null;
   }
 
   const transformed: any = {
     sectionTitle: staffData.sectionTitle || staffData.title,
     sectionSubtitle: staffData.sectionSubtitle || staffData.subtitle,
+    members
   };
-
-  if (staffData.members && Array.isArray(staffData.members)) {
-    transformed.members = staffData.members;
-  }
 
   return transformed;
 }
 
 function transformAccessData(accessData: any): AccessData | null {
-  if (!accessData) {
+  if (!accessData || typeof accessData !== 'object') {
+    console.log('[transformAccessData] Invalid input, returning null');
+    return null;
+  }
+
+  if (!accessData.sectionTitle && !accessData.title) {
+    console.log('[transformAccessData] Missing title, returning null');
     return null;
   }
 
@@ -368,8 +429,8 @@ export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
     const extractTranslatedData = (section: any, sectionName: string) => {
       console.log(`🔍 Extracting ${sectionName}:`, section);
 
-      if (!section) {
-        console.log(`⚠️ ${sectionName} is null/undefined`);
+      if (!section || typeof section !== 'object') {
+        console.log(`⚠️ ${sectionName} is null/undefined or not an object`);
         return null;
       }
 
@@ -405,17 +466,20 @@ export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
           extractedData = { ...extractedData, ...topLevelData };
           console.log(`✅ Merged data for ${sectionName}:`, Object.keys(extractedData));
         }
-
-        return extractedData;
-      }
-
-      if (section.success !== undefined && section[sectionName]) {
+      } else if (section.success !== undefined && section[sectionName]) {
         console.log(`✅ ${sectionName} has success flag, extracting ${sectionName} key`);
-        return section[sectionName];
+        extractedData = section[sectionName];
+      } else {
+        console.log(`✅ ${sectionName} using as-is (no wrapper)`);
+        extractedData = section;
       }
 
-      console.log(`✅ ${sectionName} using as-is (no wrapper)`);
-      return section;
+      if (!extractedData || (typeof extractedData === 'object' && Object.keys(extractedData).length === 0)) {
+        console.log(`⚠️ ${sectionName} extracted data is empty, returning null`);
+        return null;
+      }
+
+      return extractedData;
     };
 
     const menuData = transformMenuData(extractTranslatedData(contentData.menu, 'menu'));

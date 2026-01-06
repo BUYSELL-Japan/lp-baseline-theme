@@ -1,13 +1,17 @@
 import { motion } from 'framer-motion';
-import { Waves, Facebook, Instagram, Twitter } from 'lucide-react';
+import { Waves, Facebook, Instagram, Twitter, Linkedin, Youtube, MessageCircle, Share2, HelpCircle } from 'lucide-react';
 import { useFooterData } from '../contexts/PageDataContext';
 import { useLocalize } from '../hooks/useLocalize';
 import SectionError from './SectionError';
 
-const socialIconMap = {
-  Facebook,
-  Instagram,
-  Twitter,
+const socialIconMap: Record<string, any> = {
+  facebook: Facebook,
+  instagram: Instagram,
+  twitter: Twitter,
+  linkedin: Linkedin,
+  youtube: Youtube,
+  line: MessageCircle,
+  tiktok: Share2,
 };
 
 export default function Footer() {
@@ -96,7 +100,13 @@ export default function Footer() {
             <h3 className="text-xl font-bold mb-4">{getText(footerData.social.title)}</h3>
             <div className="flex gap-4">
               {footerData.social.links.map((social, index) => {
-                const IconComponent = socialIconMap[social.platform as keyof typeof socialIconMap];
+                const platformKey = (social.platform || '').toLowerCase();
+                const IconComponent = socialIconMap[platformKey] || HelpCircle;
+
+                if (!socialIconMap[platformKey]) {
+                  console.warn(`[Footer] Unknown social platform: "${social.platform}", using default icon`);
+                }
+
                 return (
                   <motion.a
                     key={index}

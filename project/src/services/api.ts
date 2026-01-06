@@ -30,31 +30,64 @@ function isDynamoDBFormat(data: any): boolean {
   return false;
 }
 
+function deepUnmarshall(data: any): any {
+  if (!data || typeof data !== 'object') {
+    return data;
+  }
+
+  if (Array.isArray(data)) {
+    return data.map(item => deepUnmarshall(item));
+  }
+
+  if (isDynamoDBFormat(data)) {
+    console.log('[deepUnmarshall] Found DynamoDB format, unmarshalling:', Object.keys(data));
+    const unmarshalled = unmarshall(data);
+    return deepUnmarshall(unmarshalled);
+  }
+
+  const result: any = {};
+  for (const [key, value] of Object.entries(data)) {
+    if (value && typeof value === 'object') {
+      result[key] = deepUnmarshall(value);
+    } else {
+      result[key] = value;
+    }
+  }
+
+  return result;
+}
+
 export async function fetchStoreContent(storeId: string): Promise<LandingPageContent | null> {
   try {
+    console.log(`[API] Fetching content for storeId: ${storeId}`);
     const response = await fetch(`${API_BASE_URL}/${storeId}`);
 
     if (!response.ok) {
-      console.error(`Failed to fetch store content: ${response.status}`);
+      console.error(`[API] Failed to fetch store content: ${response.status}`);
       return null;
     }
 
     const rawData = await response.json();
-    console.log('Raw API Response:', rawData);
-    console.log('Raw API Response type:', typeof rawData);
-    console.log('Raw API Response keys:', Object.keys(rawData));
+    console.log('[API] Raw API Response:', rawData);
+    console.log('[API] Raw API Response type:', typeof rawData);
+    console.log('[API] Raw API Response keys:', Object.keys(rawData));
 
-    if (isDynamoDBFormat(rawData)) {
-      console.log('Detected DynamoDB format, unmarshalling...');
-      const unmarshalled = unmarshall(rawData);
-      console.log('Unmarshalled data:', unmarshalled);
-      return unmarshalled as LandingPageContent;
-    } else {
-      console.log('Data is already in plain format, using as-is');
-      return rawData as LandingPageContent;
+    const processedData = deepUnmarshall(rawData);
+    console.log('[API] After deep unmarshall:', processedData);
+    console.log('[API] Processed data keys:', Object.keys(processedData));
+
+    if (processedData.ContentData) {
+      console.log('[API] ContentData found, type:', typeof processedData.ContentData);
+      if (typeof processedData.ContentData === 'string') {
+        console.log('[API] ContentData is string, parsing...');
+        processedData.ContentData = JSON.parse(processedData.ContentData);
+      }
+      console.log('[API] ContentData keys:', Object.keys(processedData.ContentData || {}));
     }
+
+    return processedData as LandingPageContent;
   } catch (error) {
-    console.error('Error fetching store content:', error);
+    console.error('[API] Error fetching store content:', error);
     return null;
   }
 }

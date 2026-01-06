@@ -323,12 +323,19 @@ function transformPricingData(pricingData: any): PricingData | null {
     return null;
   }
 
+  console.log('[transformPricingData] Input data:', {
+    keys: Object.keys(pricingData),
+    hasPlans: !!pricingData.plans,
+    plansType: Array.isArray(pricingData.plans) ? 'array' : typeof pricingData.plans,
+    plansLength: pricingData.plans?.length
+  });
+
   if (!pricingData.sectionTitle && !pricingData.title) {
     console.log('[transformPricingData] Missing title, returning null');
     return null;
   }
 
-  const plans = pricingData.plans && Array.isArray(pricingData.plans) ? pricingData.plans : [];
+  let plans = pricingData.plans && Array.isArray(pricingData.plans) ? pricingData.plans : [];
 
   if (plans.length === 0) {
     console.log('[transformPricingData] No plans found, returning null');
@@ -342,6 +349,11 @@ function transformPricingData(pricingData: any): PricingData | null {
     plans
   };
 
+  console.log('[transformPricingData] Transformed output:', {
+    hasTitle: !!transformed.sectionTitle,
+    plansCount: transformed.plans?.length
+  });
+
   return transformed;
 }
 
@@ -351,12 +363,19 @@ function transformStaffData(staffData: any): StaffData | null {
     return null;
   }
 
+  console.log('[transformStaffData] Input data:', {
+    keys: Object.keys(staffData),
+    hasMembers: !!staffData.members,
+    membersType: Array.isArray(staffData.members) ? 'array' : typeof staffData.members,
+    membersLength: staffData.members?.length
+  });
+
   if (!staffData.sectionTitle && !staffData.title) {
     console.log('[transformStaffData] Missing title, returning null');
     return null;
   }
 
-  const members = staffData.members && Array.isArray(staffData.members) ? staffData.members : [];
+  let members = staffData.members && Array.isArray(staffData.members) ? staffData.members : [];
 
   if (members.length === 0) {
     console.log('[transformStaffData] No members found, returning null');
@@ -368,6 +387,11 @@ function transformStaffData(staffData: any): StaffData | null {
     sectionSubtitle: staffData.sectionSubtitle || staffData.subtitle,
     members
   };
+
+  console.log('[transformStaffData] Transformed output:', {
+    hasTitle: !!transformed.sectionTitle,
+    membersCount: transformed.members?.length
+  });
 
   return transformed;
 }
@@ -402,14 +426,60 @@ function transformAccessData(accessData: any): AccessData | null {
   return transformed;
 }
 
+function transformReviewsData(reviewsData: any): ReviewsData | null {
+  if (!reviewsData || typeof reviewsData !== 'object') {
+    console.log('[transformReviewsData] Invalid input, returning null');
+    return null;
+  }
+
+  console.log('[transformReviewsData] Input data:', {
+    keys: Object.keys(reviewsData),
+    hasReviews: !!reviewsData.reviews,
+    reviewsType: Array.isArray(reviewsData.reviews) ? 'array' : typeof reviewsData.reviews,
+    reviewsLength: reviewsData.reviews?.length
+  });
+
+  if (!reviewsData.sectionTitle && !reviewsData.title) {
+    console.log('[transformReviewsData] Missing title, returning null');
+    return null;
+  }
+
+  let reviews = reviewsData.reviews && Array.isArray(reviewsData.reviews) ? reviewsData.reviews : [];
+
+  if (reviews.length === 0) {
+    console.log('[transformReviewsData] No reviews found, returning null');
+    return null;
+  }
+
+  const transformed: any = {
+    sectionTitle: reviewsData.sectionTitle || reviewsData.title,
+    sectionSubtitle: reviewsData.sectionSubtitle || reviewsData.subtitle,
+    reviews
+  };
+
+  console.log('[transformReviewsData] Transformed output:', {
+    hasTitle: !!transformed.sectionTitle,
+    reviewsCount: transformed.reviews?.length
+  });
+
+  return transformed;
+}
+
 export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
   try {
+    console.log('[mapDynamoDBDataToPageData] Input dynamoData:', {
+      keys: Object.keys(dynamoData || {}),
+      hasContentData: !!dynamoData?.ContentData,
+      contentDataType: typeof dynamoData?.ContentData
+    });
+
     let contentData = dynamoData;
 
     if (dynamoData.ContentData) {
       contentData = typeof dynamoData.ContentData === 'string'
         ? JSON.parse(dynamoData.ContentData)
         : dynamoData.ContentData;
+      console.log('[mapDynamoDBDataToPageData] ContentData extracted, keys:', Object.keys(contentData || {}));
     }
 
     if (!isNestedStructure(contentData)) {
@@ -444,7 +514,8 @@ export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
           extractedData = section.translatedData[sectionName];
         } else if (section.translatedData.success !== undefined) {
           console.log(`✅ ${sectionName} is already unwrapped in translatedData`);
-          extractedData = section.translatedData;
+          const { success, ...rest } = section.translatedData;
+          extractedData = rest;
         } else {
           console.log(`⚠️ ${sectionName} translatedData structure is unexpected:`, Object.keys(section.translatedData));
           extractedData = section.translatedData;
@@ -479,6 +550,26 @@ export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
         return null;
       }
 
+      const doubleNestedKeys = ['reviews', 'items', 'members', 'plans', 'images', 'features'];
+      for (const key of doubleNestedKeys) {
+        if (extractedData[key] && extractedData[key][key] && Array.isArray(extractedData[key][key])) {
+          console.log(`🔧 ${sectionName}: Fixing double-nested ${key} (${key}.${key})`);
+          extractedData[key] = extractedData[key][key];
+        }
+      }
+
+      console.log(`✅ ${sectionName} final extracted data:`, {
+        keys: Object.keys(extractedData),
+        hasItems: !!extractedData.items,
+        hasReviews: !!extractedData.reviews,
+        hasMembers: !!extractedData.members,
+        hasPlans: !!extractedData.plans,
+        itemsCount: extractedData.items?.length,
+        reviewsCount: extractedData.reviews?.length,
+        membersCount: extractedData.members?.length,
+        plansCount: extractedData.plans?.length,
+      });
+
       return extractedData;
     };
 
@@ -488,6 +579,23 @@ export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
     const pricingData = transformPricingData(extractTranslatedData(contentData.pricing, 'pricing'));
     const staffData = transformStaffData(extractTranslatedData(contentData.staff, 'staff'));
     const accessData = transformAccessData(extractTranslatedData(contentData.access, 'access'));
+    const reviewsDataTransformed = transformReviewsData(extractTranslatedData(contentData.reviews, 'reviews'));
+
+    let footerExtracted = extractTranslatedData(contentData.footer, 'footer');
+
+    if (footerExtracted && footerExtracted.social) {
+      if (Array.isArray(footerExtracted.social)) {
+        console.log('[mapDynamoDBDataToPageData] Footer social is array, converting to object with links');
+        footerExtracted.social = {
+          title: footerExtracted.socialTitle || { ja: 'SNSでフォロー', en: 'Follow Us', 'zh-tw': '追蹤我們', ko: '팔로우' },
+          links: footerExtracted.social
+        };
+      } else if (footerExtracted.social.links && Array.isArray(footerExtracted.social.links)) {
+        console.log('[mapDynamoDBDataToPageData] Footer social.links is already correct format');
+      } else {
+        console.log('[mapDynamoDBDataToPageData] Footer social structure unexpected:', footerExtracted.social);
+      }
+    }
 
     const pageData = {
       header: extractTranslatedData(contentData.header, 'header'),
@@ -496,10 +604,10 @@ export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
       menu: menuData,
       storeInfo: extractTranslatedData(contentData.storeInfo, 'storeInfo'),
       contact: contactData,
-      footer: extractTranslatedData(contentData.footer, 'footer'),
+      footer: footerExtracted,
       gallery: galleryData,
       staff: staffData,
-      reviews: extractTranslatedData(contentData.reviews, 'reviews'),
+      reviews: reviewsDataTransformed,
       news: extractTranslatedData(contentData.news, 'news'),
       access: accessData,
       faq: extractTranslatedData(contentData.faq, 'faq'),
@@ -556,6 +664,8 @@ export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
       },
       reviews: {
         exists: !!pageData.reviews,
+        hasTitle: !!pageData.reviews?.sectionTitle,
+        reviewsCount: pageData.reviews?.reviews?.length || 0,
         keys: pageData.reviews ? Object.keys(pageData.reviews) : []
       },
       footer: {

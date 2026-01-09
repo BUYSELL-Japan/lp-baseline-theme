@@ -22,10 +22,6 @@ export default function Company() {
   const hasHistory = companyData.history && companyData.history.timeline && Array.isArray(companyData.history.timeline) && companyData.history.timeline.length > 0;
   const hasCompanyInfo = companyData.companyInfo && companyData.companyInfo.items && Array.isArray(companyData.companyInfo.items) && companyData.companyInfo.items.length > 0;
 
-  if (!sectionTitle) {
-    return <SectionError sectionName="Company" error="Missing section title" data={companyData} />;
-  }
-
   if (!hasPhilosophy && !hasHistory && !hasCompanyInfo) {
     return <SectionError sectionName="Company" error="No company content found. Expected at least one of: philosophy, history, or companyInfo." data={companyData} />;
   }
@@ -33,19 +29,27 @@ export default function Company() {
   return (
     <section id="company" className="py-24 px-4 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-6xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            {sectionTitle}
-          </h2>
-          <div className="w-24 h-1 bg-teal-600 mx-auto mb-6" />
-          <p className="text-xl text-gray-700">{sectionSubtitle}</p>
-        </motion.div>
+        {(sectionTitle || sectionSubtitle) && (
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            {sectionTitle && (
+              <>
+                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                  {sectionTitle}
+                </h2>
+                <div className="w-24 h-1 bg-teal-600 mx-auto mb-6" />
+              </>
+            )}
+            {sectionSubtitle && (
+              <p className="text-xl text-gray-700">{sectionSubtitle}</p>
+            )}
+          </motion.div>
+        )}
 
         <div className="space-y-12">
           {hasPhilosophy && (

@@ -25,8 +25,8 @@ export default function Hero() {
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
-  let title = getLocalizedValue(heroData, 'title', language);
-  let subtitle = getLocalizedValue(heroData, 'subtitle', language);
+  let title = getLocalizedValue(heroData, 'sectionTitle', language) || getLocalizedValue(heroData, 'title', language);
+  let subtitle = getLocalizedValue(heroData, 'sectionSubtitle', language) || getLocalizedValue(heroData, 'subtitle', language);
 
   console.log('[Hero] Raw title:', title);
   console.log('[Hero] Raw subtitle:', subtitle);

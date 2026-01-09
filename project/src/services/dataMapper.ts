@@ -396,6 +396,79 @@ function transformStaffData(staffData: any): StaffData | null {
   return transformed;
 }
 
+function transformStoreInfoData(storeInfoData: any): StoreInfoData | null {
+  if (!storeInfoData || typeof storeInfoData !== 'object') {
+    console.log('[transformStoreInfoData] Invalid input, returning null');
+    return null;
+  }
+
+  console.log('[transformStoreInfoData] Input data:', {
+    keys: Object.keys(storeInfoData),
+    hasItems: !!storeInfoData.items,
+    itemsType: Array.isArray(storeInfoData.items) ? 'array' : typeof storeInfoData.items,
+    itemsLength: storeInfoData.items?.length,
+    firstItem: storeInfoData.items?.[0]
+  });
+
+  if (!storeInfoData.sectionTitle && !storeInfoData.title) {
+    console.log('[transformStoreInfoData] Missing title, returning null');
+    return null;
+  }
+
+  let items = storeInfoData.items && Array.isArray(storeInfoData.items) ? storeInfoData.items : [];
+
+  if (items.length === 0) {
+    console.log('[transformStoreInfoData] No items found, returning null');
+    return null;
+  }
+
+  const iconMapping = [
+    { icon: 'MapPin', title: { ja: '所在地', en: 'Address', 'zh-tw': '地址', ko: '주소' } },
+    { icon: 'Clock', title: { ja: '営業時間', en: 'Business Hours', 'zh-tw': '營業時間', ko: '영업 시간' } },
+    { icon: 'Phone', title: { ja: '電話番号', en: 'Phone', 'zh-tw': '電話', ko: '전화' } },
+    { icon: 'Mail', title: { ja: 'メール', en: 'Email', 'zh-tw': '電子郵件', ko: '이메일' } }
+  ];
+
+  const transformedItems = items.map((item: any, index: number) => {
+    if (item.icon && item.title && item.content) {
+      console.log(`[transformStoreInfoData] Item ${index} already structured`);
+      return item;
+    }
+
+    const languages = ['ja', 'en', 'ko', 'zh-tw'];
+    const hasLanguageKeys = languages.some(lang => lang in item);
+
+    if (hasLanguageKeys && index < iconMapping.length) {
+      console.log(`[transformStoreInfoData] Item ${index} is plain multilingual text, converting to structured format`);
+      const mapping = iconMapping[index];
+      return {
+        icon: mapping.icon,
+        title: mapping.title,
+        content: item
+      };
+    }
+
+    console.log(`[transformStoreInfoData] Item ${index} format unknown, using as-is`);
+    return item;
+  });
+
+  const transformed: any = {
+    sectionTitle: storeInfoData.sectionTitle || storeInfoData.title,
+    sectionSubtitle: storeInfoData.sectionSubtitle || storeInfoData.subtitle,
+    mainImage: storeInfoData.mainImage,
+    mainImageCaption: storeInfoData.mainImageCaption,
+    items: transformedItems
+  };
+
+  console.log('[transformStoreInfoData] Transformed output:', {
+    hasTitle: !!transformed.sectionTitle,
+    itemsCount: transformed.items?.length,
+    firstItemStructure: transformed.items?.[0]
+  });
+
+  return transformed;
+}
+
 function transformAccessData(accessData: any): AccessData | null {
   if (!accessData || typeof accessData !== 'object') {
     console.log('[transformAccessData] Invalid input, returning null');
@@ -578,6 +651,7 @@ export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
     const galleryData = transformGalleryData(extractTranslatedData(contentData.gallery, 'gallery'));
     const pricingData = transformPricingData(extractTranslatedData(contentData.pricing, 'pricing'));
     const staffData = transformStaffData(extractTranslatedData(contentData.staff, 'staff'));
+    const storeInfoData = transformStoreInfoData(extractTranslatedData(contentData.storeInfo, 'storeInfo'));
     const accessData = transformAccessData(extractTranslatedData(contentData.access, 'access'));
     const reviewsDataTransformed = transformReviewsData(extractTranslatedData(contentData.reviews, 'reviews'));
 
@@ -602,7 +676,7 @@ export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
       hero: extractTranslatedData(contentData.hero, 'hero'),
       about: extractTranslatedData(contentData.about, 'about'),
       menu: menuData,
-      storeInfo: extractTranslatedData(contentData.storeInfo, 'storeInfo'),
+      storeInfo: storeInfoData,
       contact: contactData,
       footer: footerExtracted,
       gallery: galleryData,

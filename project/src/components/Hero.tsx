@@ -4,10 +4,12 @@ import { ChevronDown } from 'lucide-react';
 import { useHeroData } from '../contexts/PageDataContext';
 import { useLanguage } from '../contexts/LanguageContext';
 import { getLocalizedValue } from '../utils/i18n';
+import { useLocalize } from '../hooks/useLocalize';
 
 export default function Hero() {
   const heroData = useHeroData();
   const { language } = useLanguage();
+  const { getText } = useLocalize();
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -58,7 +60,7 @@ export default function Hero() {
       >
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60 z-10" />
         <img
-          src={heroData.backgroundImage}
+          src={getText(heroData.backgroundImage)}
           alt="Hero background"
           className="w-full h-full object-cover"
         />

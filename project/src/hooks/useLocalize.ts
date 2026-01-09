@@ -12,14 +12,14 @@ export function useLocalize() {
     }
 
     if (typeof field === 'object' && field !== null && !Array.isArray(field)) {
-      if (field[language] !== undefined && field[language] !== null) {
+      if (field[language] !== undefined && field[language] !== null && field[language] !== '') {
         return String(field[language]);
       }
-      if (field['ja'] !== undefined && field['ja'] !== null) {
+      if (field['ja'] !== undefined && field['ja'] !== null && field['ja'] !== '') {
         return String(field['ja']);
       }
       const firstKey = Object.keys(field)[0];
-      if (firstKey && field[firstKey] !== undefined && field[firstKey] !== null) {
+      if (firstKey && field[firstKey] !== undefined && field[firstKey] !== null && field[firstKey] !== '') {
         return String(field[firstKey]);
       }
     }

@@ -59,7 +59,7 @@ export default function Staff() {
             >
               <div className="aspect-square bg-gray-200 relative overflow-hidden">
                 <motion.img
-                  src={member.image}
+                  src={getText(member.image)}
                   alt={getText(member.name)}
                   className="w-full h-full object-cover"
                   whileHover={{ scale: 1.1 }}

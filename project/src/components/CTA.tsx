@@ -33,7 +33,7 @@ export default function CTA() {
     <section className="relative py-24 px-4 overflow-hidden">
       <div className="absolute inset-0">
         <img
-          src={ctaData.backgroundImage}
+          src={getText(ctaData.backgroundImage)}
           alt="Background"
           className="w-full h-full object-cover"
         />

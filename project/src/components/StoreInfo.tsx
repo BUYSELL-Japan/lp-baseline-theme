@@ -13,7 +13,7 @@ const iconMap: Record<string, any> = {
 
 export default function StoreInfo() {
   const storeInfoData = useStoreInfoData();
-  const { t, getText } = useLocalize();
+  const { t } = useLocalize();
 
   console.log('[StoreInfo] storeInfoData:', storeInfoData);
 
@@ -96,7 +96,7 @@ export default function StoreInfo() {
         >
           <div className="aspect-video bg-gray-200 relative">
             <img
-              src={getText(storeInfoData.mainImage)}
+              src={storeInfoData.mainImage}
               alt={t(storeInfoData, 'mainImageCaption')}
               className="w-full h-full object-cover"
             />

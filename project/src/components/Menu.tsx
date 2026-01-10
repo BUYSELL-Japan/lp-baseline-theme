@@ -9,7 +9,7 @@ import Lightbox from './Lightbox';
 import SectionError from './SectionError';
 
 function MenuItem({ item, index, onImageClick }: { item: MenuItemType; index: number; onImageClick: () => void }) {
-  const { t, getText } = useLocalize();
+  const { t } = useLocalize();
   const cardRef = useRef<HTMLDivElement>(null);
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
@@ -60,7 +60,7 @@ function MenuItem({ item, index, onImageClick }: { item: MenuItemType; index: nu
       >
         <div className="relative overflow-hidden h-56 cursor-pointer" onClick={onImageClick} style={{ pointerEvents: 'auto' }}>
           <motion.img
-            src={getText(item.image)}
+            src={item.image}
             alt={t(item, 'name')}
             className="w-full h-full object-cover pointer-events-none"
             whileHover={{ scale: 1.15 }}
@@ -86,7 +86,7 @@ function MenuItem({ item, index, onImageClick }: { item: MenuItemType; index: nu
 
 export default function Menu() {
   const menuData = useMenuData();
-  const { t, getText } = useLocalize();
+  const { t } = useLocalize();
   const { language } = useLanguage();
   const scrollRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -156,7 +156,7 @@ export default function Menu() {
   };
 
   const lightboxImages = menuData.items.map((item) => ({
-    src: getText(item.image),
+    src: item.image,
     alt: t(item, 'name'),
   }));
 

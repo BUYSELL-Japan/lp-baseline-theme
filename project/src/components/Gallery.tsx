@@ -86,7 +86,7 @@ export default function Gallery() {
   };
 
   const lightboxImages = filteredImages.map((img) => ({
-    src: getText(img.url),
+    src: img.url,
     alt: getText(img.caption),
   }));
 
@@ -159,7 +159,7 @@ export default function Gallery() {
             >
               <div className="aspect-square bg-gray-200 relative overflow-hidden">
                 <img
-                  src={getText(image.url)}
+                  src={image.url}
                   alt={getText(image.caption)}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
@@ -194,7 +194,7 @@ export default function Gallery() {
                 <div className="group relative rounded-2xl overflow-hidden shadow-lg cursor-pointer">
                   <div className="aspect-square bg-gray-200 relative overflow-hidden">
                     <img
-                      src={getText(image.url)}
+                      src={image.url}
                       alt={getText(image.caption)}
                       className="w-full h-full object-cover"
                     />

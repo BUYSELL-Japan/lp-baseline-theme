@@ -9,7 +9,7 @@ function FeatureCard({ feature, index }: { feature: AboutFeature; index: number 
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
   const isEven = index % 2 === 0;
-  const { t, getText } = useLocalize();
+  const { t } = useLocalize();
 
   return (
     <motion.div
@@ -26,7 +26,7 @@ function FeatureCard({ feature, index }: { feature: AboutFeature; index: number 
       >
         <div className="relative overflow-hidden rounded-2xl shadow-2xl">
           <motion.img
-            src={getText(feature.image)}
+            src={feature.image}
             alt={t(feature, 'title')}
             className="w-full h-80 object-cover"
             whileHover={{ scale: 1.1 }}

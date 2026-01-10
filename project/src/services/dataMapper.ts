@@ -436,7 +436,9 @@ function transformStoreInfoData(storeInfoData: any): StoreInfoData | null {
     }
 
     const languages = ['ja', 'en', 'ko', 'zh-tw'];
-    const hasLanguageKeys = languages.some(lang => lang in item);
+    const hasLanguageKeys = typeof item === 'object' && item !== null && !Array.isArray(item)
+      ? languages.some(lang => lang in item)
+      : false;
 
     if (hasLanguageKeys && index < iconMapping.length) {
       console.log(`[transformStoreInfoData] Item ${index} is plain multilingual text, converting to structured format`);

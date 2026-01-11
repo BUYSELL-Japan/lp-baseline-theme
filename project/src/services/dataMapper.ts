@@ -278,21 +278,27 @@ function transformGalleryData(galleryData: any): GalleryData | null {
 
   const categoryMap: { [key: string]: any } = {
     'すべて': { ja: 'すべて', en: 'All', 'zh-tw': '全部', ko: '전체' },
-    '風景': { ja: '風景', en: 'Scenery', 'zh-tw': '風景', ko: '풍景' },
+    '風景': { ja: '風景', en: 'Scenery', 'zh-tw': '風景', ko: '풍경' },
     '商品': { ja: '商品', en: 'Products', 'zh-tw': '商品', ko: '상품' },
-    '店舗': { ja: '店舗', en: 'Store', 'zh-tw': '店舖', ko: '매장' }
+    '店舗': { ja: '店舗', en: 'Store', 'zh-tw': '店舖', ko: '매장' },
+    '料理': { ja: '料理', en: 'Cuisine', 'zh-tw': '料理', ko: '요리' }
   };
 
   const images = galleryData.images && Array.isArray(galleryData.images)
-    ? galleryData.images.map((img: any) => ({
-        url: img.url,
-        alt: img.alt,
-        caption: img.caption,
-        category: typeof img.category === 'string'
-          ? (categoryMap[img.category] || { ja: img.category, en: img.category, 'zh-tw': img.category, ko: img.category })
-          : img.category
-      }))
+    ? galleryData.images.map((img: any) => {
+        console.log('[transformGalleryData] Processing image:', img);
+        return {
+          url: img.url,
+          alt: img.alt || img.caption,
+          caption: img.caption,
+          category: typeof img.category === 'string'
+            ? (categoryMap[img.category] || { ja: img.category, en: img.category, 'zh-tw': img.category, ko: img.category })
+            : img.category
+        };
+      })
     : [];
+
+  console.log('[transformGalleryData] Transformed images:', images);
 
   if (images.length === 0) {
     console.log('[transformGalleryData] No images found, returning null');

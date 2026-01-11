@@ -278,10 +278,9 @@ function transformGalleryData(galleryData: any): GalleryData | null {
 
   const categoryMap: { [key: string]: any } = {
     'すべて': { ja: 'すべて', en: 'All', 'zh-tw': '全部', ko: '전체' },
-    '風景': { ja: '風景', en: 'Scenery', 'zh-tw': '風景', ko: '풍경' },
-    '商品': { ja: '商品', en: 'Products', 'zh-tw': '商品', ko: '상품' },
-    '店舗': { ja: '店舗', en: 'Store', 'zh-tw': '店舖', ko: '매장' },
-    '料理': { ja: '料理', en: 'Cuisine', 'zh-tw': '料理', ko: '요리' }
+    '料理': { ja: '料理', en: 'Cuisine', 'zh-tw': '料理', ko: '요리' },
+    '店内': { ja: '店内', en: 'Interior', 'zh-tw': '店內', ko: '매장' },
+    'イベント': { ja: 'イベント', en: 'Events', 'zh-tw': '活動', ko: '이벤트' }
   };
 
   const images = galleryData.images && Array.isArray(galleryData.images)

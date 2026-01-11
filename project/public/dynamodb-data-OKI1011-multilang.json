@@ -249,7 +249,7 @@
       "sectionSubtitle_en": "Beautiful Scenery and Products of Okinawa",
       "sectionSubtitle_zh-tw": "沖繩的美麗風景與商品",
       "sectionSubtitle_ko": "오키나와의 아름다운 풍경과 상품",
-      "categories": ["すべて", "風景", "商品", "店舗"],
+      "categories": ["料理", "店内", "イベント"],
       "images": [
         {
           "url": "https://images.pexels.com/photos/1007426/pexels-photo-1007426.jpeg",
@@ -261,7 +261,7 @@
           "caption_en": "Emerald Green Sea",
           "caption_zh-tw": "翡翠綠的海洋",
           "caption_ko": "에메랄드빛 바다",
-          "category": "風景"
+          "category": "イベント"
         },
         {
           "url": "https://images.pexels.com/photos/6207876/pexels-photo-6207876.jpeg",
@@ -273,7 +273,7 @@
           "caption_en": "Handcrafted Ryukyu Glass",
           "caption_zh-tw": "工匠手工琉球玻璃",
           "caption_ko": "장인이 만든 류큐 유리",
-          "category": "商品"
+          "category": "店内"
         },
         {
           "url": "https://images.pexels.com/photos/4226893/pexels-photo-4226893.jpeg",
@@ -285,7 +285,7 @@
           "caption_en": "Pure Brown Sugar from Sugarcane",
           "caption_zh-tw": "甘蔗製成的純黑糖",
           "caption_ko": "사탕수수로 만든 순수 흑설탕",
-          "category": "商品"
+          "category": "料理"
         },
         {
           "url": "https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg",
@@ -297,7 +297,7 @@
           "caption_en": "Traditional Yachimun",
           "caption_zh-tw": "傳統燒製陶器",
           "caption_ko": "전통 야치문",
-          "category": "商品"
+          "category": "店内"
         }
       ]
     },

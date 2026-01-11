@@ -70,7 +70,7 @@ export default function Header() {
             </motion.div>
 
             <nav className="hidden md:flex items-center gap-6">
-              {headerData.navigation.map((item) => {
+              {headerData.navigation.filter(item => item.id !== 'cta').map((item) => {
                 let label = getLocalizedValue(item, 'label', language);
                 if (typeof label === 'object') {
                   label = label[language] || label['ja'] || label[Object.keys(label)[0]] || '';
@@ -188,7 +188,7 @@ export default function Header() {
               transition={{ duration: 0.3, ease: 'easeOut' }}
             >
               <div className="px-4 py-6 space-y-1">
-                {headerData.navigation.map((item, index) => {
+                {headerData.navigation.filter(item => item.id !== 'cta').map((item, index) => {
                   let label = getLocalizedValue(item, 'label', language);
                   if (typeof label === 'object') {
                     label = label[language] || label['ja'] || label[Object.keys(label)[0]] || '';

@@ -18,6 +18,10 @@ export default function Gallery() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
 
+  useEffect(() => {
+    setSelectedCategory(translate('all', language));
+  }, [language]);
+
   console.log('[Gallery] galleryData:', galleryData);
 
   if (!galleryData) {

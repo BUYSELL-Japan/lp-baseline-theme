@@ -311,12 +311,26 @@ function transformGalleryData(galleryData: any): GalleryData | null {
   };
 
   if (galleryData.categories && Array.isArray(galleryData.categories)) {
-    transformed.categories = galleryData.categories.map((cat: any) => {
-      if (typeof cat === 'string') {
-        return categoryMap[cat] || { ja: cat, en: cat, 'zh-tw': cat, ko: cat };
-      }
-      return cat;
-    });
+    const allCategoryVariants = ['すべて', 'All', '全部', '전체', 'all'];
+    transformed.categories = galleryData.categories
+      .filter((cat: any) => {
+        if (typeof cat === 'string') {
+          return !allCategoryVariants.includes(cat);
+        }
+        if (typeof cat === 'object' && cat !== null) {
+          const values = Object.values(cat);
+          return !values.some(val =>
+            typeof val === 'string' && allCategoryVariants.includes(val)
+          );
+        }
+        return true;
+      })
+      .map((cat: any) => {
+        if (typeof cat === 'string') {
+          return categoryMap[cat] || { ja: cat, en: cat, 'zh-tw': cat, ko: cat };
+        }
+        return cat;
+      });
   }
 
   return transformed;
@@ -678,23 +692,25 @@ export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
       }
     }
 
+    const defaultData = getDefaultPageData();
+
     const pageData = {
-      header: extractTranslatedData(contentData.header, 'header'),
-      hero: extractTranslatedData(contentData.hero, 'hero'),
-      about: extractTranslatedData(contentData.about, 'about'),
-      menu: menuData,
-      storeInfo: storeInfoData,
-      contact: contactData,
-      footer: footerExtracted,
-      gallery: galleryData,
-      staff: staffData,
-      reviews: reviewsDataTransformed,
-      news: extractTranslatedData(contentData.news, 'news'),
-      access: accessData,
-      faq: extractTranslatedData(contentData.faq, 'faq'),
-      cta: extractTranslatedData(contentData.cta, 'cta'),
-      pricing: pricingData,
-      company: extractTranslatedData(contentData.company, 'company'),
+      header: extractTranslatedData(contentData.header, 'header') || defaultData.header,
+      hero: extractTranslatedData(contentData.hero, 'hero') || defaultData.hero,
+      about: extractTranslatedData(contentData.about, 'about') || defaultData.about,
+      menu: menuData || defaultData.menu,
+      storeInfo: storeInfoData || defaultData.storeInfo,
+      contact: contactData || defaultData.contact,
+      footer: footerExtracted || defaultData.footer,
+      gallery: galleryData || defaultData.gallery,
+      staff: staffData || defaultData.staff,
+      reviews: reviewsDataTransformed || defaultData.reviews,
+      news: extractTranslatedData(contentData.news, 'news') || defaultData.news,
+      access: accessData || defaultData.access,
+      faq: extractTranslatedData(contentData.faq, 'faq') || defaultData.faq,
+      cta: extractTranslatedData(contentData.cta, 'cta') || defaultData.cta,
+      pricing: pricingData || defaultData.pricing,
+      company: extractTranslatedData(contentData.company, 'company') || defaultData.company,
     };
 
     console.log('📊 DynamoDB Data Mapped:', {

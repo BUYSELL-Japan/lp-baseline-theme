@@ -20,18 +20,11 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   if (!footerData) {
-    return <SectionError sectionName="Footer" error="No footer data available" data={footerData} />;
+    console.error('[Footer] No footer data available');
+    return null;
   }
 
-  if (!footerData.businessHours) {
-    return <SectionError sectionName="Footer" error="Missing business hours data" data={footerData} />;
-  }
-
-  if (!footerData.social || !footerData.social.links || !Array.isArray(footerData.social.links)) {
-    return <SectionError sectionName="Footer" error="Missing social links data" data={footerData} />;
-  }
-
-  const logoText = t(footerData.logo, 'text', '');
+  const logoText = typeof footerData.logo === 'string' ? footerData.logo : t(footerData.logo, 'text', '');
   const description = getText(footerData.description);
 
   return (
@@ -79,48 +72,52 @@ export default function Footer() {
             </p>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-          >
-            <h3 className="text-xl font-bold mb-4">{getText(footerData.businessHours.title)}</h3>
-            <p className="text-teal-200">{getText(footerData.businessHours.days)}</p>
-            <p className="text-teal-200">{getText(footerData.businessHours.hours)}</p>
-            <p className="text-teal-200 text-sm mt-2">{getText(footerData.businessHours.closedDay)}</p>
-          </motion.div>
+          {footerData.businessHours && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
+              <h3 className="text-xl font-bold mb-4">{getText(footerData.businessHours.title)}</h3>
+              <p className="text-teal-200">{getText(footerData.businessHours.days)}</p>
+              <p className="text-teal-200">{getText(footerData.businessHours.hours)}</p>
+              <p className="text-teal-200 text-sm mt-2">{getText(footerData.businessHours.closedDay)}</p>
+            </motion.div>
+          )}
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <h3 className="text-xl font-bold mb-4">{getText(footerData.social.title)}</h3>
-            <div className="flex gap-4">
-              {footerData.social.links.map((social, index) => {
-                const platformKey = (social.platform || '').toLowerCase();
-                const IconComponent = socialIconMap[platformKey] || HelpCircle;
+          {footerData.social && footerData.social.links && Array.isArray(footerData.social.links) && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <h3 className="text-xl font-bold mb-4">{getText(footerData.social.title)}</h3>
+              <div className="flex gap-4">
+                {footerData.social.links.map((social, index) => {
+                  const platformKey = (social.platform || '').toLowerCase();
+                  const IconComponent = socialIconMap[platformKey] || HelpCircle;
 
-                if (!socialIconMap[platformKey]) {
-                  console.warn(`[Footer] Unknown social platform: "${social.platform}", using default icon`);
-                }
+                  if (!socialIconMap[platformKey]) {
+                    console.warn(`[Footer] Unknown social platform: "${social.platform}", using default icon`);
+                  }
 
-                return (
-                  <motion.a
-                    key={index}
-                    href={social.url}
-                    className="bg-teal-800 p-3 rounded-full hover:bg-teal-700 transition-colors"
-                    whileHover={{ scale: 1.1, y: -3 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <IconComponent className="w-5 h-5" />
-                  </motion.a>
-                );
-              })}
-            </div>
-          </motion.div>
+                  return (
+                    <motion.a
+                      key={index}
+                      href={social.url}
+                      className="bg-teal-800 p-3 rounded-full hover:bg-teal-700 transition-colors"
+                      whileHover={{ scale: 1.1, y: -3 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <IconComponent className="w-5 h-5" />
+                    </motion.a>
+                  );
+                })}
+              </div>
+            </motion.div>
+          )}
         </div>
 
         <motion.div

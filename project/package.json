@@ -4,17 +4,20 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build && tsx scripts/prerender.js",
-    "build:client": "vite build",
-    "prerender": "tsx scripts/prerender.js",
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "typecheck": "tsc --noEmit -p tsconfig.app.json"
+    "typecheck": "tsc --noEmit -p tsconfig.app.json",
+    "dev:legacy": "vite",
+    "build:legacy": "vite build && tsx scripts/prerender.js"
   },
   "dependencies": {
+    "@astrojs/react": "^4.4.2",
+    "@astrojs/tailwind": "^6.0.2",
     "@aws-sdk/util-dynamodb": "^3.956.0",
     "@supabase/supabase-js": "^2.57.4",
+    "astro": "^5.16.8",
     "framer-motion": "^12.23.24",
     "lucide-react": "^0.344.0",
     "react": "^18.3.1",

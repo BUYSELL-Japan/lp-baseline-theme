@@ -2,6 +2,13 @@ import { unmarshall } from '@aws-sdk/util-dynamodb';
 
 const API_BASE_URL = 'https://2sznhxhcd8.execute-api.ap-southeast-2.amazonaws.com/dev/lp/content';
 
+function isLocalDevelopment(): boolean {
+  if (typeof import.meta !== 'undefined' && import.meta.env) {
+    return import.meta.env.MODE === 'development';
+  }
+  return false;
+}
+
 export interface LandingPageContent {
   storeId: string;
   subdomainName: string;
@@ -60,14 +67,36 @@ function deepUnmarshall(data: any): any {
 export async function fetchStoreContent(storeId: string): Promise<LandingPageContent | null> {
   try {
     console.log(`[API] Fetching content for storeId: ${storeId}`);
-    const response = await fetch(`${API_BASE_URL}/${storeId}`);
+    const useLocalData = isLocalDevelopment();
+    console.log(`[API] USE_LOCAL_DATA: ${useLocalData}`);
 
-    if (!response.ok) {
-      console.error(`[API] Failed to fetch store content: ${response.status}`);
-      return null;
+    let rawData;
+
+    if (useLocalData) {
+      console.log('[API] Using local sample data');
+      const response = await fetch('/dynamodb-data-OKI1011-multilang.json');
+      if (!response.ok) {
+        console.error(`[API] Failed to fetch local data: ${response.status}`);
+        return null;
+      }
+      const localData = await response.json();
+      rawData = {
+        storeId: storeId,
+        subdomainName: 'teststore',
+        ContentData: localData
+      };
+    } else {
+      console.log('[API] Fetching from production API');
+      const response = await fetch(`${API_BASE_URL}/${storeId}`);
+
+      if (!response.ok) {
+        console.error(`[API] Failed to fetch store content: ${response.status}`);
+        return null;
+      }
+
+      rawData = await response.json();
     }
 
-    const rawData = await response.json();
     console.log('[API] Raw API Response:', rawData);
     console.log('[API] Raw API Response type:', typeof rawData);
     console.log('[API] Raw API Response keys:', Object.keys(rawData));

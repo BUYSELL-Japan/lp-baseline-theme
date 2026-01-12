@@ -1,0 +1,36 @@
+---
+import { fetchStoreContentAtBuildTime, getStoreList } from '../../../services/buildTimeApi';
+import { mapDynamoDBDataToPageData } from '../../../services/dataMapper';
+import Layout from '../../../layouts/Layout.astro';
+import StorePage from '../../../components/StorePage';
+
+export async function getStaticPaths() {
+  const storeList = await getStoreList();
+
+  const paths = await Promise.all(
+    storeList.map(async (storeId) => {
+      const storeContent = await fetchStoreContentAtBuildTime(storeId);
+
+      if (!storeContent) {
+        console.warn(`Failed to fetch content for store: ${storeId}`);
+        return null;
+      }
+
+      const pageData = mapDynamoDBDataToPageData(storeContent);
+
+      return {
+        params: { storeId },
+        props: { pageData, storeId },
+      };
+    })
+  );
+
+  return paths.filter(Boolean);
+}
+
+const { pageData, storeId } = Astro.props;
+---
+
+<Layout title={pageData.header?.siteName || 'Store'}>
+  <StorePage client:only="react" pageData={pageData} />
+</Layout>

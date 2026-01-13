@@ -278,21 +278,26 @@ function transformGalleryData(galleryData: any): GalleryData | null {
 
   const categoryMap: { [key: string]: any } = {
     'すべて': { ja: 'すべて', en: 'All', 'zh-tw': '全部', ko: '전체' },
-    '風景': { ja: '風景', en: 'Scenery', 'zh-tw': '風景', ko: '풍景' },
-    '商品': { ja: '商品', en: 'Products', 'zh-tw': '商品', ko: '상품' },
-    '店舗': { ja: '店舗', en: 'Store', 'zh-tw': '店舖', ko: '매장' }
+    '料理': { ja: '料理', en: 'Cuisine', 'zh-tw': '料理', ko: '요리' },
+    '店内': { ja: '店内', en: 'Interior', 'zh-tw': '店內', ko: '매장' },
+    'イベント': { ja: 'イベント', en: 'Events', 'zh-tw': '活動', ko: '이벤트' }
   };
 
   const images = galleryData.images && Array.isArray(galleryData.images)
-    ? galleryData.images.map((img: any) => ({
-        url: img.url,
-        alt: img.alt,
-        caption: img.caption,
-        category: typeof img.category === 'string'
-          ? (categoryMap[img.category] || { ja: img.category, en: img.category, 'zh-tw': img.category, ko: img.category })
-          : img.category
-      }))
+    ? galleryData.images.map((img: any) => {
+        console.log('[transformGalleryData] Processing image:', img);
+        return {
+          url: img.url,
+          alt: img.alt || img.caption,
+          caption: img.caption,
+          category: typeof img.category === 'string'
+            ? (categoryMap[img.category] || { ja: img.category, en: img.category, 'zh-tw': img.category, ko: img.category })
+            : img.category
+        };
+      })
     : [];
+
+  console.log('[transformGalleryData] Transformed images:', images);
 
   if (images.length === 0) {
     console.log('[transformGalleryData] No images found, returning null');
@@ -306,12 +311,26 @@ function transformGalleryData(galleryData: any): GalleryData | null {
   };
 
   if (galleryData.categories && Array.isArray(galleryData.categories)) {
-    transformed.categories = galleryData.categories.map((cat: any) => {
-      if (typeof cat === 'string') {
-        return categoryMap[cat] || { ja: cat, en: cat, 'zh-tw': cat, ko: cat };
-      }
-      return cat;
-    });
+    const allCategoryVariants = ['すべて', 'All', '全部', '전체', 'all'];
+    transformed.categories = galleryData.categories
+      .filter((cat: any) => {
+        if (typeof cat === 'string') {
+          return !allCategoryVariants.includes(cat);
+        }
+        if (typeof cat === 'object' && cat !== null) {
+          const values = Object.values(cat);
+          return !values.some(val =>
+            typeof val === 'string' && allCategoryVariants.includes(val)
+          );
+        }
+        return true;
+      })
+      .map((cat: any) => {
+        if (typeof cat === 'string') {
+          return categoryMap[cat] || { ja: cat, en: cat, 'zh-tw': cat, ko: cat };
+        }
+        return cat;
+      });
   }
 
   return transformed;
@@ -323,12 +342,19 @@ function transformPricingData(pricingData: any): PricingData | null {
     return null;
   }
 
+  console.log('[transformPricingData] Input data:', {
+    keys: Object.keys(pricingData),
+    hasPlans: !!pricingData.plans,
+    plansType: Array.isArray(pricingData.plans) ? 'array' : typeof pricingData.plans,
+    plansLength: pricingData.plans?.length
+  });
+
   if (!pricingData.sectionTitle && !pricingData.title) {
     console.log('[transformPricingData] Missing title, returning null');
     return null;
   }
 
-  const plans = pricingData.plans && Array.isArray(pricingData.plans) ? pricingData.plans : [];
+  let plans = pricingData.plans && Array.isArray(pricingData.plans) ? pricingData.plans : [];
 
   if (plans.length === 0) {
     console.log('[transformPricingData] No plans found, returning null');
@@ -342,6 +368,11 @@ function transformPricingData(pricingData: any): PricingData | null {
     plans
   };
 
+  console.log('[transformPricingData] Transformed output:', {
+    hasTitle: !!transformed.sectionTitle,
+    plansCount: transformed.plans?.length
+  });
+
   return transformed;
 }
 
@@ -351,12 +382,19 @@ function transformStaffData(staffData: any): StaffData | null {
     return null;
   }
 
+  console.log('[transformStaffData] Input data:', {
+    keys: Object.keys(staffData),
+    hasMembers: !!staffData.members,
+    membersType: Array.isArray(staffData.members) ? 'array' : typeof staffData.members,
+    membersLength: staffData.members?.length
+  });
+
   if (!staffData.sectionTitle && !staffData.title) {
     console.log('[transformStaffData] Missing title, returning null');
     return null;
   }
 
-  const members = staffData.members && Array.isArray(staffData.members) ? staffData.members : [];
+  let members = staffData.members && Array.isArray(staffData.members) ? staffData.members : [];
 
   if (members.length === 0) {
     console.log('[transformStaffData] No members found, returning null');
@@ -368,6 +406,86 @@ function transformStaffData(staffData: any): StaffData | null {
     sectionSubtitle: staffData.sectionSubtitle || staffData.subtitle,
     members
   };
+
+  console.log('[transformStaffData] Transformed output:', {
+    hasTitle: !!transformed.sectionTitle,
+    membersCount: transformed.members?.length
+  });
+
+  return transformed;
+}
+
+function transformStoreInfoData(storeInfoData: any): StoreInfoData | null {
+  if (!storeInfoData || typeof storeInfoData !== 'object') {
+    console.log('[transformStoreInfoData] Invalid input, returning null');
+    return null;
+  }
+
+  console.log('[transformStoreInfoData] Input data:', {
+    keys: Object.keys(storeInfoData),
+    hasItems: !!storeInfoData.items,
+    itemsType: Array.isArray(storeInfoData.items) ? 'array' : typeof storeInfoData.items,
+    itemsLength: storeInfoData.items?.length,
+    firstItem: storeInfoData.items?.[0]
+  });
+
+  if (!storeInfoData.sectionTitle && !storeInfoData.title) {
+    console.log('[transformStoreInfoData] Missing title, returning null');
+    return null;
+  }
+
+  let items = storeInfoData.items && Array.isArray(storeInfoData.items) ? storeInfoData.items : [];
+
+  if (items.length === 0) {
+    console.log('[transformStoreInfoData] No items found, returning null');
+    return null;
+  }
+
+  const iconMapping = [
+    { icon: 'MapPin', title: { ja: '所在地', en: 'Address', 'zh-tw': '地址', ko: '주소' } },
+    { icon: 'Clock', title: { ja: '営業時間', en: 'Business Hours', 'zh-tw': '營業時間', ko: '영업 시간' } },
+    { icon: 'Phone', title: { ja: '電話番号', en: 'Phone', 'zh-tw': '電話', ko: '전화' } },
+    { icon: 'Mail', title: { ja: 'メール', en: 'Email', 'zh-tw': '電子郵件', ko: '이메일' } }
+  ];
+
+  const transformedItems = items.map((item: any, index: number) => {
+    if (item.icon && item.title && item.content) {
+      console.log(`[transformStoreInfoData] Item ${index} already structured`);
+      return item;
+    }
+
+    const languages = ['ja', 'en', 'ko', 'zh-tw'];
+    const hasLanguageKeys = typeof item === 'object' && item !== null && !Array.isArray(item)
+      ? languages.some(lang => lang in item)
+      : false;
+
+    if (hasLanguageKeys && index < iconMapping.length) {
+      console.log(`[transformStoreInfoData] Item ${index} is plain multilingual text, converting to structured format`);
+      const mapping = iconMapping[index];
+      return {
+        icon: mapping.icon,
+        title: mapping.title,
+        content: item
+      };
+    }
+
+    console.log(`[transformStoreInfoData] Item ${index} format unknown, using as-is`);
+    return item;
+  });
+
+  const transformed: any = {
+    sectionTitle: storeInfoData.sectionTitle || storeInfoData.title,
+    sectionSubtitle: storeInfoData.sectionSubtitle || storeInfoData.subtitle,
+    mainImage: storeInfoData.mainImage,
+    mainImageCaption: storeInfoData.mainImageCaption,
+    items: transformedItems
+  };
+
+  console.log('[transformStoreInfoData] Transformed output:', {
+    hasTitle: !!transformed.sectionTitle,
+    itemsCount: transformed.items?.length,
+    firstItemStructure: transformed.items?.[0]
+  });
 
   return transformed;
 }
@@ -402,14 +520,60 @@ function transformAccessData(accessData: any): AccessData | null {
   return transformed;
 }
 
+function transformReviewsData(reviewsData: any): ReviewsData | null {
+  if (!reviewsData || typeof reviewsData !== 'object') {
+    console.log('[transformReviewsData] Invalid input, returning null');
+    return null;
+  }
+
+  console.log('[transformReviewsData] Input data:', {
+    keys: Object.keys(reviewsData),
+    hasReviews: !!reviewsData.reviews,
+    reviewsType: Array.isArray(reviewsData.reviews) ? 'array' : typeof reviewsData.reviews,
+    reviewsLength: reviewsData.reviews?.length
+  });
+
+  if (!reviewsData.sectionTitle && !reviewsData.title) {
+    console.log('[transformReviewsData] Missing title, returning null');
+    return null;
+  }
+
+  let reviews = reviewsData.reviews && Array.isArray(reviewsData.reviews) ? reviewsData.reviews : [];
+
+  if (reviews.length === 0) {
+    console.log('[transformReviewsData] No reviews found, returning null');
+    return null;
+  }
+
+  const transformed: any = {
+    sectionTitle: reviewsData.sectionTitle || reviewsData.title,
+    sectionSubtitle: reviewsData.sectionSubtitle || reviewsData.subtitle,
+    reviews
+  };
+
+  console.log('[transformReviewsData] Transformed output:', {
+    hasTitle: !!transformed.sectionTitle,
+    reviewsCount: transformed.reviews?.length
+  });
+
+  return transformed;
+}
+
 export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
   try {
+    console.log('[mapDynamoDBDataToPageData] Input dynamoData:', {
+      keys: Object.keys(dynamoData || {}),
+      hasContentData: !!dynamoData?.ContentData,
+      contentDataType: typeof dynamoData?.ContentData
+    });
+
     let contentData = dynamoData;
 
     if (dynamoData.ContentData) {
       contentData = typeof dynamoData.ContentData === 'string'
         ? JSON.parse(dynamoData.ContentData)
         : dynamoData.ContentData;
+      console.log('[mapDynamoDBDataToPageData] ContentData extracted, keys:', Object.keys(contentData || {}));
     }
 
     if (!isNestedStructure(contentData)) {
@@ -444,7 +608,8 @@ export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
           extractedData = section.translatedData[sectionName];
         } else if (section.translatedData.success !== undefined) {
           console.log(`✅ ${sectionName} is already unwrapped in translatedData`);
-          extractedData = section.translatedData;
+          const { success, ...rest } = section.translatedData;
+          extractedData = rest;
         } else {
           console.log(`⚠️ ${sectionName} translatedData structure is unexpected:`, Object.keys(section.translatedData));
           extractedData = section.translatedData;
@@ -479,6 +644,26 @@ export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
         return null;
       }
 
+      const doubleNestedKeys = ['reviews', 'items', 'members', 'plans', 'images', 'features'];
+      for (const key of doubleNestedKeys) {
+        if (extractedData[key] && extractedData[key][key] && Array.isArray(extractedData[key][key])) {
+          console.log(`🔧 ${sectionName}: Fixing double-nested ${key} (${key}.${key})`);
+          extractedData[key] = extractedData[key][key];
+        }
+      }
+
+      console.log(`✅ ${sectionName} final extracted data:`, {
+        keys: Object.keys(extractedData),
+        hasItems: !!extractedData.items,
+        hasReviews: !!extractedData.reviews,
+        hasMembers: !!extractedData.members,
+        hasPlans: !!extractedData.plans,
+        itemsCount: extractedData.items?.length,
+        reviewsCount: extractedData.reviews?.length,
+        membersCount: extractedData.members?.length,
+        plansCount: extractedData.plans?.length,
+      });
+
       return extractedData;
     };
 
@@ -487,25 +672,45 @@ export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
     const galleryData = transformGalleryData(extractTranslatedData(contentData.gallery, 'gallery'));
     const pricingData = transformPricingData(extractTranslatedData(contentData.pricing, 'pricing'));
     const staffData = transformStaffData(extractTranslatedData(contentData.staff, 'staff'));
+    const storeInfoData = transformStoreInfoData(extractTranslatedData(contentData.storeInfo, 'storeInfo'));
     const accessData = transformAccessData(extractTranslatedData(contentData.access, 'access'));
+    const reviewsDataTransformed = transformReviewsData(extractTranslatedData(contentData.reviews, 'reviews'));
+
+    let footerExtracted = extractTranslatedData(contentData.footer, 'footer');
+
+    if (footerExtracted && footerExtracted.social) {
+      if (Array.isArray(footerExtracted.social)) {
+        console.log('[mapDynamoDBDataToPageData] Footer social is array, converting to object with links');
+        footerExtracted.social = {
+          title: footerExtracted.socialTitle || { ja: 'SNSでフォロー', en: 'Follow Us', 'zh-tw': '追蹤我們', ko: '팔로우' },
+          links: footerExtracted.social
+        };
+      } else if (footerExtracted.social.links && Array.isArray(footerExtracted.social.links)) {
+        console.log('[mapDynamoDBDataToPageData] Footer social.links is already correct format');
+      } else {
+        console.log('[mapDynamoDBDataToPageData] Footer social structure unexpected:', footerExtracted.social);
+      }
+    }
+
+    const defaultData = getDefaultPageData();
 
     const pageData = {
-      header: extractTranslatedData(contentData.header, 'header'),
-      hero: extractTranslatedData(contentData.hero, 'hero'),
-      about: extractTranslatedData(contentData.about, 'about'),
-      menu: menuData,
-      storeInfo: extractTranslatedData(contentData.storeInfo, 'storeInfo'),
-      contact: contactData,
-      footer: extractTranslatedData(contentData.footer, 'footer'),
-      gallery: galleryData,
-      staff: staffData,
-      reviews: extractTranslatedData(contentData.reviews, 'reviews'),
-      news: extractTranslatedData(contentData.news, 'news'),
-      access: accessData,
-      faq: extractTranslatedData(contentData.faq, 'faq'),
-      cta: extractTranslatedData(contentData.cta, 'cta'),
-      pricing: pricingData,
-      company: extractTranslatedData(contentData.company, 'company'),
+      header: extractTranslatedData(contentData.header, 'header') || defaultData.header,
+      hero: extractTranslatedData(contentData.hero, 'hero') || defaultData.hero,
+      about: extractTranslatedData(contentData.about, 'about') || defaultData.about,
+      menu: menuData || defaultData.menu,
+      storeInfo: storeInfoData || defaultData.storeInfo,
+      contact: contactData || defaultData.contact,
+      footer: footerExtracted || defaultData.footer,
+      gallery: galleryData || defaultData.gallery,
+      staff: staffData || defaultData.staff,
+      reviews: reviewsDataTransformed || defaultData.reviews,
+      news: extractTranslatedData(contentData.news, 'news') || defaultData.news,
+      access: accessData || defaultData.access,
+      faq: extractTranslatedData(contentData.faq, 'faq') || defaultData.faq,
+      cta: extractTranslatedData(contentData.cta, 'cta') || defaultData.cta,
+      pricing: pricingData || defaultData.pricing,
+      company: extractTranslatedData(contentData.company, 'company') || defaultData.company,
     };
 
     console.log('📊 DynamoDB Data Mapped:', {
@@ -556,6 +761,8 @@ export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
       },
       reviews: {
         exists: !!pageData.reviews,
+        hasTitle: !!pageData.reviews?.sectionTitle,
+        reviewsCount: pageData.reviews?.reviews?.length || 0,
         keys: pageData.reviews ? Object.keys(pageData.reviews) : []
       },
       footer: {

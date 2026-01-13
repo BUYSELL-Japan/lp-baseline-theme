@@ -16,10 +16,12 @@ export default function Header() {
   console.log('[Header] Has navigation?', !!headerData?.navigation);
   console.log('[Header] Is array?', Array.isArray(headerData?.navigation));
 
-  if (!headerData || !headerData.navigation || !Array.isArray(headerData.navigation)) {
+  if (!headerData) {
     console.log('[Header] Returning null - missing data');
     return null;
   }
+
+  const navigation = Array.isArray(headerData.navigation) ? headerData.navigation : [];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -70,7 +72,7 @@ export default function Header() {
             </motion.div>
 
             <nav className="hidden md:flex items-center gap-6">
-              {headerData.navigation.map((item) => {
+              {navigation.map((item) => {
                 let label = getLocalizedValue(item, 'label', language);
                 if (typeof label === 'object') {
                   label = label[language] || label['ja'] || label[Object.keys(label)[0]] || '';
@@ -188,7 +190,7 @@ export default function Header() {
               transition={{ duration: 0.3, ease: 'easeOut' }}
             >
               <div className="px-4 py-6 space-y-1">
-                {headerData.navigation.map((item, index) => {
+                {navigation.map((item, index) => {
                   let label = getLocalizedValue(item, 'label', language);
                   if (typeof label === 'object') {
                     label = label[language] || label['ja'] || label[Object.keys(label)[0]] || '';

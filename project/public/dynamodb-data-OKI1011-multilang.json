@@ -1,0 +1,677 @@
+{
+  "StoreID": "OKI1011",
+  "Status": "Published",
+  "UpdatedAt": "2025-12-22T00:00:00Z",
+  "ContentData": {
+    "header": {
+      "logo": {
+        "text_ja": "沖縄商店",
+        "text_en": "Okinawa Shop",
+        "text_zh-tw": "沖繩商店",
+        "text_ko": "오키나와 상점"
+      },
+      "navigation": [
+        {
+          "id": "about",
+          "label_ja": "私たちについて",
+          "label_en": "About",
+          "label_zh-tw": "關於我們",
+          "label_ko": "소개"
+        },
+        {
+          "id": "menu",
+          "label_ja": "商品",
+          "label_en": "Products",
+          "label_zh-tw": "商品",
+          "label_ko": "상품"
+        },
+        {
+          "id": "pricing",
+          "label_ja": "プラン",
+          "label_en": "Plans",
+          "label_zh-tw": "方案",
+          "label_ko": "플랜"
+        },
+        {
+          "id": "staff",
+          "label_ja": "スタッフ",
+          "label_en": "Team",
+          "label_zh-tw": "團隊",
+          "label_ko": "팀"
+        },
+        {
+          "id": "gallery",
+          "label_ja": "ギャラリー",
+          "label_en": "Gallery",
+          "label_zh-tw": "畫廊",
+          "label_ko": "갤러리"
+        },
+        {
+          "id": "access",
+          "label_ja": "アクセス",
+          "label_en": "Access",
+          "label_zh-tw": "交通",
+          "label_ko": "오시는 길"
+        },
+        {
+          "id": "contact",
+          "label_ja": "お問い合わせ",
+          "label_en": "Contact",
+          "label_zh-tw": "聯絡我們",
+          "label_ko": "문의하기"
+        }
+      ]
+    },
+    "hero": {
+      "backgroundImage": "https://images.pexels.com/photos/1007426/pexels-photo-1007426.jpeg",
+      "title_ja": "沖縄の想いを世界へ",
+      "title_en": "Okinawan Spirit to the World",
+      "title_zh-tw": "將沖繩的心意傳遞到世界",
+      "title_ko": "오키나와의 마음을 세계로",
+      "subtitle_ja": "Yuimaru Shipで届ける沖縄の心",
+      "subtitle_en": "Delivering Okinawan Heart with Yuimaru Ship",
+      "subtitle_zh-tw": "透過Yuimaru Ship傳遞沖繩的心",
+      "subtitle_ko": "Yuimaru Ship으로 전하는 오키나와의 마음",
+      "description_ja": "単なるお土産ではなく、あなたの想いを形にして届けます。",
+      "description_en": "Not just souvenirs, we deliver your feelings in tangible form.",
+      "description_zh-tw": "不僅僅是紀念品，我們將您的心意化為實體傳遞。",
+      "description_ko": "단순한 기념품이 아닌, 당신의 마음을 형태로 전달합니다.",
+      "cta": {
+        "primary": {
+          "text_ja": "商品を見る",
+          "text_en": "View Products",
+          "text_zh-tw": "查看商品",
+          "text_ko": "상품 보기",
+          "link": "#menu"
+        },
+        "secondary": {
+          "text_ja": "お問い合わせ",
+          "text_en": "Contact Us",
+          "text_zh-tw": "聯絡我們",
+          "text_ko": "문의하기",
+          "link": "#contact"
+        }
+      }
+    },
+    "about": {
+      "sectionTitle_ja": "沖縄商店について",
+      "sectionTitle_en": "About Okinawa Shop",
+      "sectionTitle_zh-tw": "關於沖繩商店",
+      "sectionTitle_ko": "오키나와 상점 소개",
+      "sectionSubtitle_ja": "私たちの想い",
+      "sectionSubtitle_en": "Our Philosophy",
+      "sectionSubtitle_zh-tw": "我們的理念",
+      "sectionSubtitle_ko": "우리의 마음",
+      "description_ja": "沖縄商店は、沖縄の豊かな文化と伝統を世界に届けることを使命としています。地元の職人と協力し、心を込めて作られた商品をYuimaru Shipを通じてお届けします。",
+      "description_en": "Okinawa Shop's mission is to bring Okinawa's rich culture and traditions to the world. We collaborate with local artisans to deliver heartfelt products through Yuimaru Ship.",
+      "description_zh-tw": "沖繩商店的使命是將沖繩豐富的文化和傳統傳遞到世界。我們與當地工匠合作，透過Yuimaru Ship提供用心製作的商品。",
+      "description_ko": "오키나와 상점은 오키나와의 풍부한 문화와 전통을 세계에 전하는 것을 사명으로 하고 있습니다. 현지 장인들과 협력하여 정성껏 만든 상품을 Yuimaru Ship을 통해 전달합니다.",
+      "features": [
+        {
+          "icon": "Heart",
+          "title_ja": "想いを届ける",
+          "title_en": "Deliver Feelings",
+          "title_zh-tw": "傳遞心意",
+          "title_ko": "마음 전달",
+          "description_ja": "一つ一つの商品に込められた作り手の想いを大切にお届けします。",
+          "description_en": "We carefully deliver the feelings that artisans put into each product.",
+          "description_zh-tw": "我們珍惜每件商品中製作者的心意並將其傳遞。",
+          "description_ko": "하나하나의 상품에 담긴 제작자의 마음을 소중히 전달합니다."
+        },
+        {
+          "icon": "Package",
+          "title_ja": "確かな品質",
+          "title_en": "Quality Assurance",
+          "title_zh-tw": "可靠的品質",
+          "title_ko": "확실한 품질",
+          "description_ja": "厳選された沖縄の特産品のみを取り扱っています。",
+          "description_en": "We only handle carefully selected Okinawan specialties.",
+          "description_zh-tw": "我們只處理精選的沖繩特產。",
+          "description_ko": "엄선된 오키나와 특산품만을 취급합니다."
+        },
+        {
+          "icon": "Globe",
+          "title_ja": "世界へ発信",
+          "title_en": "Global Reach",
+          "title_zh-tw": "傳遞到世界",
+          "title_ko": "세계로 발신",
+          "description_ja": "沖縄の魅力を世界中のお客様にお届けします。",
+          "description_en": "We deliver the charm of Okinawa to customers worldwide.",
+          "description_zh-tw": "我們將沖繩的魅力傳遞給全球客戶。",
+          "description_ko": "오키나와의 매력을 전 세계 고객에게 전달합니다."
+        }
+      ]
+    },
+    "menu": {
+      "title_ja": "商品ラインナップ",
+      "title_en": "Product Lineup",
+      "title_zh-tw": "商品陣容",
+      "title_ko": "상품 라인업",
+      "subtitle_ja": "厳選された沖縄の逸品",
+      "subtitle_en": "Carefully Selected Okinawan Masterpieces",
+      "subtitle_zh-tw": "精選沖繩精品",
+      "subtitle_ko": "엄선된 오키나와의 명품",
+      "description_ja": "地元の職人が丹精込めて作った商品をご用意しています",
+      "description_en": "We offer products carefully crafted by local artisans",
+      "description_zh-tw": "我們提供當地工匠精心製作的商品",
+      "description_ko": "현지 장인이 정성껏 만든 상품을 준비했습니다",
+      "categories": [
+        {
+          "id": "food",
+          "name_ja": "食品",
+          "name_en": "Food",
+          "name_zh-tw": "食品",
+          "name_ko": "식품",
+          "items": [
+            {
+              "name_ja": "沖縄黒糖",
+              "name_en": "Okinawa Brown Sugar",
+              "name_zh-tw": "沖繩黑糖",
+              "name_ko": "오키나와 흑설탕",
+              "description_ja": "サトウキビ100%の純黒糖。ミネラルたっぷりで自然な甘さが特徴です。",
+              "description_en": "100% pure brown sugar from sugarcane. Rich in minerals with natural sweetness.",
+              "description_zh-tw": "100%甘蔗純黑糖。富含礦物質，具有天然甜味。",
+              "description_ko": "사탕수수 100% 순수 흑설탕. 미네랄이 풍부하고 자연스러운 단맛이 특징입니다.",
+              "price": "¥800",
+              "image": "https://images.pexels.com/photos/4226893/pexels-photo-4226893.jpeg",
+              "tags_ja": ["人気", "自然食品"],
+              "tags_en": ["Popular", "Natural Food"],
+              "tags_zh-tw": ["熱門", "天然食品"],
+              "tags_ko": ["인기", "자연식품"]
+            },
+            {
+              "name_ja": "島唐辛子",
+              "name_en": "Island Chili Pepper",
+              "name_zh-tw": "島辣椒",
+              "name_ko": "섬 고추",
+              "description_ja": "沖縄の伝統的な調味料。ピリッとした辛さが料理を引き立てます。",
+              "description_en": "Traditional Okinawan seasoning. Spicy flavor enhances your dishes.",
+              "description_zh-tw": "沖繩傳統調味料。辛辣的味道能提升菜餚風味。",
+              "description_ko": "오키나와의 전통 조미료. 매콤한 맛이 요리를 돋보이게 합니다.",
+              "price": "¥650",
+              "image": "https://images.pexels.com/photos/1437595/pexels-photo-1437595.jpeg",
+              "tags_ja": ["調味料"],
+              "tags_en": ["Seasoning"],
+              "tags_zh-tw": ["調味料"],
+              "tags_ko": ["조미료"]
+            }
+          ]
+        },
+        {
+          "id": "craft",
+          "name_ja": "工芸品",
+          "name_en": "Crafts",
+          "name_zh-tw": "工藝品",
+          "name_ko": "공예품",
+          "items": [
+            {
+              "name_ja": "琉球ガラス",
+              "name_en": "Ryukyu Glass",
+              "name_zh-tw": "琉球玻璃",
+              "name_ko": "류큐 유리",
+              "description_ja": "職人が一つ一つ手作りする美しい琉球ガラス。鮮やかな色合いが特徴です。",
+              "description_en": "Beautiful Ryukyu glass handcrafted by artisans. Features vibrant colors.",
+              "description_zh-tw": "工匠手工製作的美麗琉球玻璃。以鮮豔的色彩為特色。",
+              "description_ko": "장인이 하나하나 수작업으로 만드는 아름다운 류큐 유리. 선명한 색상이 특징입니다.",
+              "price": "¥3,500",
+              "image": "https://images.pexels.com/photos/6207876/pexels-photo-6207876.jpeg",
+              "tags_ja": ["人気", "手作り"],
+              "tags_en": ["Popular", "Handmade"],
+              "tags_zh-tw": ["熱門", "手工"],
+              "tags_ko": ["인기", "수제"]
+            },
+            {
+              "name_ja": "やちむん",
+              "name_en": "Yachimun Pottery",
+              "name_zh-tw": "燒製陶器",
+              "name_ko": "야치문 도자기",
+              "description_ja": "沖縄の伝統的な焼き物。温かみのある色と手触りが魅力です。",
+              "description_en": "Traditional Okinawan pottery. Warm colors and pleasant texture.",
+              "description_zh-tw": "沖繩傳統陶器。溫暖的色彩和質感是其魅力所在。",
+              "description_ko": "오키나와의 전통 도자기. 따뜻한 색감과 촉감이 매력적입니다.",
+              "price": "¥4,200",
+              "image": "https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg",
+              "tags_ja": ["伝統工芸"],
+              "tags_en": ["Traditional Craft"],
+              "tags_zh-tw": ["傳統工藝"],
+              "tags_ko": ["전통 공예"]
+            }
+          ]
+        }
+      ]
+    },
+    "gallery": {
+      "sectionTitle_ja": "ギャラリー",
+      "sectionTitle_en": "Gallery",
+      "sectionTitle_zh-tw": "畫廊",
+      "sectionTitle_ko": "갤러리",
+      "sectionSubtitle_ja": "沖縄の美しい風景と商品",
+      "sectionSubtitle_en": "Beautiful Scenery and Products of Okinawa",
+      "sectionSubtitle_zh-tw": "沖繩的美麗風景與商品",
+      "sectionSubtitle_ko": "오키나와의 아름다운 풍경과 상품",
+      "categories": ["料理", "店内", "イベント"],
+      "images": [
+        {
+          "url": "https://images.pexels.com/photos/1007426/pexels-photo-1007426.jpeg",
+          "alt_ja": "沖縄の美しい海",
+          "alt_en": "Beautiful Okinawan Sea",
+          "alt_zh-tw": "美麗的沖繩海洋",
+          "alt_ko": "아름다운 오키나와 바다",
+          "caption_ja": "エメラルドグリーンの海",
+          "caption_en": "Emerald Green Sea",
+          "caption_zh-tw": "翡翠綠的海洋",
+          "caption_ko": "에메랄드빛 바다",
+          "category": "イベント"
+        },
+        {
+          "url": "https://images.pexels.com/photos/6207876/pexels-photo-6207876.jpeg",
+          "alt_ja": "琉球ガラス",
+          "alt_en": "Ryukyu Glass",
+          "alt_zh-tw": "琉球玻璃",
+          "alt_ko": "류큐 유리",
+          "caption_ja": "職人手作りの琉球ガラス",
+          "caption_en": "Handcrafted Ryukyu Glass",
+          "caption_zh-tw": "工匠手工琉球玻璃",
+          "caption_ko": "장인이 만든 류큐 유리",
+          "category": "店内"
+        },
+        {
+          "url": "https://images.pexels.com/photos/4226893/pexels-photo-4226893.jpeg",
+          "alt_ja": "黒糖",
+          "alt_en": "Brown Sugar",
+          "alt_zh-tw": "黑糖",
+          "alt_ko": "흑설탕",
+          "caption_ja": "サトウキビから作る純黒糖",
+          "caption_en": "Pure Brown Sugar from Sugarcane",
+          "caption_zh-tw": "甘蔗製成的純黑糖",
+          "caption_ko": "사탕수수로 만든 순수 흑설탕",
+          "category": "料理"
+        },
+        {
+          "url": "https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg",
+          "alt_ja": "やちむん",
+          "alt_en": "Yachimun Pottery",
+          "alt_zh-tw": "燒製陶器",
+          "alt_ko": "야치문 도자기",
+          "caption_ja": "伝統的なやちむん",
+          "caption_en": "Traditional Yachimun",
+          "caption_zh-tw": "傳統燒製陶器",
+          "caption_ko": "전통 야치문",
+          "category": "店内"
+        }
+      ]
+    },
+    "access": {
+      "sectionTitle_ja": "アクセス",
+      "sectionTitle_en": "Access",
+      "sectionTitle_zh-tw": "交通",
+      "sectionTitle_ko": "오시는 길",
+      "sectionSubtitle_ja": "お店への行き方",
+      "sectionSubtitle_en": "How to Get Here",
+      "sectionSubtitle_zh-tw": "如何前往",
+      "sectionSubtitle_ko": "오시는 방법",
+      "address": "〒900-0000 沖縄県那覇市国際通り1-2-3",
+      "phone": "098-123-4567",
+      "email": "info@okinawa-shoten.com",
+      "hours_ja": "10:00 - 19:00（定休日：水曜日）",
+      "hours_en": "10:00 - 19:00 (Closed on Wednesdays)",
+      "hours_zh-tw": "10:00 - 19:00（週三休息）",
+      "hours_ko": "10:00 - 19:00 (수요일 휴무)",
+      "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3579.0123456789!2d127.6789!3d26.2123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDEyJzQ0LjMiTiAxMjfCsDQwJzQ0LjEiRQ!5e0!3m2!1sja!2sjp!4v1234567890",
+      "parking": {
+        "title_ja": "駐車場",
+        "title_en": "Parking",
+        "title_zh-tw": "停車場",
+        "title_ko": "주차장",
+        "description_ja": "専用駐車場あり",
+        "description_en": "Dedicated parking available",
+        "description_zh-tw": "設有專用停車場",
+        "description_ko": "전용 주차장 있음",
+        "spaces": "5台",
+        "notes_ja": "満車の場合は近隣のコインパーキングをご利用ください",
+        "notes_en": "Please use nearby coin parking if full",
+        "notes_zh-tw": "如停車場滿位，請使用附近的投幣停車場",
+        "notes_ko": "만차시 인근 유료주차장을 이용해주세요"
+      },
+      "transportation": {
+        "title_ja": "公共交通機関",
+        "title_en": "Public Transportation",
+        "title_zh-tw": "公共交通",
+        "title_ko": "대중교통",
+        "methods": [
+          {
+            "type_ja": "モノレール",
+            "type_en": "Monorail",
+            "type_zh-tw": "單軌電車",
+            "type_ko": "모노레일",
+            "description_ja": "県庁前駅より徒歩5分",
+            "description_en": "5 min walk from Kenchomae Station",
+            "description_zh-tw": "從縣廳前站步行5分鐘",
+            "description_ko": "현청 앞역에서 도보 5분"
+          },
+          {
+            "type_ja": "バス",
+            "type_en": "Bus",
+            "type_zh-tw": "公車",
+            "type_ko": "버스",
+            "description_ja": "国際通り下車すぐ",
+            "description_en": "Right at Kokusai-dori stop",
+            "description_zh-tw": "國際通下車即達",
+            "description_ko": "국제거리 하차 바로"
+          }
+        ]
+      }
+    },
+    "contact": {
+      "title_ja": "お問い合わせ",
+      "title_en": "Contact Us",
+      "title_zh-tw": "聯絡我們",
+      "title_ko": "문의하기",
+      "subtitle_ja": "お気軽にご連絡ください",
+      "subtitle_en": "Feel Free to Contact Us",
+      "subtitle_zh-tw": "歡迎隨時聯絡",
+      "subtitle_ko": "편하게 연락주세요",
+      "description_ja": "商品に関するご質問やご注文については、お電話またはメールでお気軽にお問い合わせください。",
+      "description_en": "For questions about products or orders, please feel free to contact us by phone or email.",
+      "description_zh-tw": "有關商品的問題或訂單，請隨時透過電話或電子郵件與我們聯繫。",
+      "description_ko": "상품 문의나 주문에 관해서는 전화나 이메일로 편하게 문의해주세요.",
+      "methods": [
+        {
+          "icon": "Phone",
+          "title_ja": "電話",
+          "title_en": "Phone",
+          "title_zh-tw": "電話",
+          "title_ko": "전화",
+          "value": "098-123-4567",
+          "description_ja": "営業時間内にお電話ください",
+          "description_en": "Please call during business hours",
+          "description_zh-tw": "請於營業時間內致電",
+          "description_ko": "영업시간 내 전화주세요"
+        },
+        {
+          "icon": "Mail",
+          "title_ja": "メール",
+          "title_en": "Email",
+          "title_zh-tw": "電子郵件",
+          "title_ko": "이메일",
+          "value": "info@okinawa-shoten.com",
+          "description_ja": "24時間受付中",
+          "description_en": "Available 24/7",
+          "description_zh-tw": "24小時受理",
+          "description_ko": "24시간 접수"
+        },
+        {
+          "icon": "MapPin",
+          "title_ja": "住所",
+          "title_en": "Address",
+          "title_zh-tw": "地址",
+          "title_ko": "주소",
+          "value": "〒900-0000 沖縄県那覇市国際通り1-2-3",
+          "description_ja": "国際通り沿い",
+          "description_en": "Along Kokusai-dori",
+          "description_zh-tw": "位於國際通",
+          "description_ko": "국제거리변"
+        }
+      ]
+    },
+    "pricing": {
+      "sectionTitle_ja": "料金プラン",
+      "sectionTitle_en": "Pricing Plans",
+      "sectionTitle_zh-tw": "價格方案",
+      "sectionTitle_ko": "가격 플랜",
+      "sectionSubtitle_ja": "お客様のニーズに合わせた最適なプランをご用意",
+      "sectionSubtitle_en": "Choose the Perfect Plan for Your Needs",
+      "sectionSubtitle_zh-tw": "選擇最適合您需求的方案",
+      "sectionSubtitle_ko": "고객님의 필요에 맞는 최적의 플랜",
+      "plans": [
+        {
+          "name_ja": "ベーシック",
+          "name_en": "Basic",
+          "name_zh-tw": "基礎",
+          "name_ko": "베이직",
+          "description_ja": "初めての方におすすめ",
+          "description_en": "Perfect for First-Time Customers",
+          "description_zh-tw": "適合首次客戶",
+          "description_ko": "처음 이용하시는 분께 추천",
+          "price_ja": "¥3,000",
+          "price_en": "$30",
+          "price_zh-tw": "NT$900",
+          "price_ko": "₩35,000",
+          "features": [
+            {
+              "text_ja": "厳選商品3点",
+              "text_en": "3 Selected Products",
+              "text_zh-tw": "精選商品3件",
+              "text_ko": "엄선 상품 3개"
+            },
+            {
+              "text_ja": "送料無料",
+              "text_en": "Free Shipping",
+              "text_zh-tw": "免運費",
+              "text_ko": "무료 배송"
+            },
+            {
+              "text_ja": "お試しパンフレット",
+              "text_en": "Sample Brochure",
+              "text_zh-tw": "試用小冊子",
+              "text_ko": "체험 팜플렛"
+            }
+          ]
+        },
+        {
+          "name_ja": "スタンダード",
+          "name_en": "Standard",
+          "name_zh-tw": "標準",
+          "name_ko": "스탠다드",
+          "description_ja": "一番人気のプラン",
+          "description_en": "Most Popular Plan",
+          "description_zh-tw": "最受歡迎的方案",
+          "description_ko": "가장 인기있는 플랜",
+          "price_ja": "¥5,000",
+          "price_en": "$50",
+          "price_zh-tw": "NT$1,500",
+          "price_ko": "₩60,000",
+          "isPopular": true,
+          "features": [
+            {
+              "text_ja": "厳選商品5点",
+              "text_en": "5 Selected Products",
+              "text_zh-tw": "精選商品5件",
+              "text_ko": "엄선 상품 5개"
+            },
+            {
+              "text_ja": "送料無料",
+              "text_en": "Free Shipping",
+              "text_zh-tw": "免運費",
+              "text_ko": "무료 배송"
+            },
+            {
+              "text_ja": "限定レシピ集",
+              "text_en": "Exclusive Recipe Book",
+              "text_zh-tw": "限定食譜集",
+              "text_ko": "한정 레시피북"
+            },
+            {
+              "text_ja": "10%ポイント還元",
+              "text_en": "10% Points Back",
+              "text_zh-tw": "10%點數回饋",
+              "text_ko": "10% 포인트 적립"
+            }
+          ]
+        },
+        {
+          "name_ja": "プレミアム",
+          "name_en": "Premium",
+          "name_zh-tw": "高級",
+          "name_ko": "프리미엄",
+          "description_ja": "最高級の沖縄体験",
+          "description_en": "Ultimate Okinawan Experience",
+          "description_zh-tw": "最高級的沖繩體驗",
+          "description_ko": "최고급 오키나와 체험",
+          "price_ja": "¥8,000",
+          "price_en": "$80",
+          "price_zh-tw": "NT$2,400",
+          "price_ko": "₩95,000",
+          "features": [
+            {
+              "text_ja": "厳選商品8点",
+              "text_en": "8 Selected Products",
+              "text_zh-tw": "精選商品8件",
+              "text_ko": "엄선 상품 8개"
+            },
+            {
+              "text_ja": "送料無料",
+              "text_en": "Free Shipping",
+              "text_zh-tw": "免運費",
+              "text_ko": "무료 배송"
+            },
+            {
+              "text_ja": "限定レシピ集",
+              "text_en": "Exclusive Recipe Book",
+              "text_zh-tw": "限定食譜集",
+              "text_ko": "한정 레시피북"
+            },
+            {
+              "text_ja": "15%ポイント還元",
+              "text_en": "15% Points Back",
+              "text_zh-tw": "15%點數回饋",
+              "text_ko": "15% 포인트 적립"
+            },
+            {
+              "text_ja": "会員限定商品",
+              "text_en": "Members-Only Products",
+              "text_zh-tw": "會員限定商品",
+              "text_ko": "회원 전용 상품"
+            }
+          ]
+        }
+      ],
+      "note_ja": "※すべて税込価格です。定期購入も承っております。",
+      "note_en": "※All prices include tax. Subscription available.",
+      "note_zh-tw": "※所有價格均含稅。也接受定期訂購。",
+      "note_ko": "※모든 가격은 세금 포함입니다. 정기 구매도 가능합니다."
+    },
+    "staff": {
+      "sectionTitle_ja": "スタッフ紹介",
+      "sectionTitle_en": "Our Team",
+      "sectionTitle_zh-tw": "團隊介紹",
+      "sectionTitle_ko": "스태프 소개",
+      "sectionSubtitle_ja": "沖縄の魅力をお届けする私たちのチーム",
+      "sectionSubtitle_en": "Dedicated Team Bringing Okinawa to You",
+      "sectionSubtitle_zh-tw": "為您呈現沖繩魅力的團隊",
+      "sectionSubtitle_ko": "오키나와의 매력을 전하는 우리 팀",
+      "members": [
+        {
+          "name_ja": "新垣 美咲",
+          "name_en": "Misaki Arakaki",
+          "name_zh-tw": "新垣 美咲",
+          "name_ko": "아라카키 미사키",
+          "role_ja": "代表取締役",
+          "role_en": "CEO",
+          "role_zh-tw": "執行長",
+          "role_ko": "대표이사",
+          "description_ja": "沖縄生まれ沖縄育ち。沖縄の素晴らしさを世界に伝えることを使命としています。",
+          "description_en": "Born and raised in Okinawa. Dedicated to sharing Okinawa's wonders with the world.",
+          "description_zh-tw": "在沖繩出生和成長。致力於向世界傳達沖繩的美好。",
+          "description_ko": "오키나와 토박이. 오키나와의 매력을 세계에 전하는 것이 사명입니다.",
+          "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg"
+        },
+        {
+          "name_ja": "比嘉 大輔",
+          "name_en": "Daisuke Higa",
+          "name_zh-tw": "比嘉 大輔",
+          "name_ko": "히가 다이스케",
+          "role_ja": "商品開発マネージャー",
+          "role_en": "Product Manager",
+          "role_zh-tw": "商品開發經理",
+          "role_ko": "상품 개발 매니저",
+          "description_ja": "沖縄の伝統食材を現代風にアレンジする商品開発のスペシャリスト。",
+          "description_en": "Specialist in developing modern interpretations of traditional Okinawan ingredients.",
+          "description_zh-tw": "將沖繩傳統食材現代化改良的商品開發專家。",
+          "description_ko": "오키나와 전통 식재료를 현대적으로 재해석하는 상품 개발 전문가.",
+          "image": "https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg"
+        },
+        {
+          "name_ja": "宮城 さくら",
+          "name_en": "Sakura Miyagi",
+          "name_zh-tw": "宮城 櫻",
+          "name_ko": "미야기 사쿠라",
+          "role_ja": "カスタマーサポート",
+          "role_en": "Customer Support",
+          "role_zh-tw": "客服",
+          "role_ko": "고객 지원",
+          "description_ja": "お客様の笑顔のために、心を込めたサポートを提供しています。",
+          "description_en": "Providing heartfelt support to bring smiles to our customers.",
+          "description_zh-tw": "為了客戶的笑容，提供真心誠意的支援。",
+          "description_ko": "고객님의 미소를 위해 정성을 다한 지원을 제공합니다.",
+          "image": "https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg"
+        },
+        {
+          "name_ja": "玉城 健太",
+          "name_en": "Kenta Tamaki",
+          "name_zh-tw": "玉城 健太",
+          "name_ko": "다마키 켄타",
+          "role_ja": "配送マネージャー",
+          "role_en": "Logistics Manager",
+          "role_zh-tw": "物流經理",
+          "role_ko": "배송 매니저",
+          "description_ja": "新鮮な商品を迅速かつ丁寧にお届けすることに情熱を注いでいます。",
+          "description_en": "Passionate about delivering fresh products quickly and carefully.",
+          "description_zh-tw": "熱衷於快速且仔細地配送新鮮商品。",
+          "description_ko": "신선한 상품을 신속하고 정성스럽게 배송하는 것에 열정을 쏟고 있습니다.",
+          "image": "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg"
+        }
+      ]
+    },
+    "footer": {
+      "logo": {
+        "text_ja": "沖縄商店",
+        "text_en": "Okinawa Shop",
+        "text_zh-tw": "沖繩商店",
+        "text_ko": "오키나와 상점"
+      },
+      "description_ja": "沖縄の心を世界へ届けるYuimaru Ship",
+      "description_en": "Yuimaru Ship - Delivering Okinawan Heart to the World",
+      "description_zh-tw": "將沖繩的心傳遞到世界的Yuimaru Ship",
+      "description_ko": "오키나와의 마음을 세계로 전하는 Yuimaru Ship",
+      "social": [
+        {
+          "platform": "facebook",
+          "url": "https://facebook.com/okinawa-shoten"
+        },
+        {
+          "platform": "instagram",
+          "url": "https://instagram.com/okinawa_shoten"
+        },
+        {
+          "platform": "twitter",
+          "url": "https://twitter.com/okinawa_shoten"
+        }
+      ],
+      "links": [
+        {
+          "title_ja": "会社概要",
+          "title_en": "Company",
+          "title_zh-tw": "公司概要",
+          "title_ko": "회사 개요",
+          "url": "#company"
+        },
+        {
+          "title_ja": "プライバシーポリシー",
+          "title_en": "Privacy Policy",
+          "title_zh-tw": "隱私政策",
+          "title_ko": "개인정보처리방침",
+          "url": "#privacy"
+        },
+        {
+          "title_ja": "利用規約",
+          "title_en": "Terms of Service",
+          "title_zh-tw": "使用條款",
+          "title_ko": "이용약관",
+          "url": "#terms"
+        }
+      ],
+      "copyright": "© 2025 沖縄商店. All rights reserved."
+    }
+  }
+}

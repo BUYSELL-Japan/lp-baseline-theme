@@ -39,6 +39,24 @@ function App() {
         console.log('[App] Path StoreId:', pathStoreId);
         console.log('[App] Is Development:', isDevelopment);
 
+        if (isDevelopment && !pathStoreId) {
+          console.log('[App] Development mode without storeId, loading local JSON data...');
+          try {
+            const response = await fetch('/dynamodb-data-OKI1011-multilang.json');
+            if (response.ok) {
+              const localData = await response.json();
+              console.log('[App] Local JSON loaded:', localData);
+              const mappedData = mapDynamoDBDataToPageData(localData);
+              console.log('[App] Setting mapped local data');
+              setPageData(mappedData);
+              setIsLoading(false);
+              return;
+            }
+          } catch (localErr) {
+            console.log('[App] Could not load local JSON, falling back to API or default');
+          }
+        }
+
         let storeId: string | null = null;
 
         if (pathStoreId) {

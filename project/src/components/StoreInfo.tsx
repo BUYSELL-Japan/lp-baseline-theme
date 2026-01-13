@@ -1,14 +1,14 @@
 import { motion } from 'framer-motion';
-import { Clock, MapPin, Phone, Mail } from 'lucide-react';
+import { Clock, MapPin, Phone, Mail, HelpCircle } from 'lucide-react';
 import { useStoreInfoData } from '../contexts/PageDataContext';
 import { useLocalize } from '../hooks/useLocalize';
 import SectionError from './SectionError';
 
-const iconMap = {
-  MapPin,
-  Clock,
-  Phone,
-  Mail,
+const iconMap: Record<string, any> = {
+  mappin: MapPin,
+  clock: Clock,
+  phone: Phone,
+  mail: Mail,
 };
 
 export default function StoreInfo() {
@@ -52,7 +52,13 @@ export default function StoreInfo() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           {storeInfoData.items.map((item, index) => {
-            const IconComponent = iconMap[item.icon as keyof typeof iconMap];
+            const iconKey = (item.icon || '').toLowerCase();
+            const IconComponent = iconMap[iconKey] || HelpCircle;
+
+            if (!iconMap[iconKey]) {
+              console.warn(`[StoreInfo] Unknown icon: "${item.icon}", using default icon`);
+            }
+
             return (
               <motion.div
                 key={index}

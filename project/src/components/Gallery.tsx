@@ -12,11 +12,15 @@ export default function Gallery() {
   const { getText } = useLocalize();
   const { language } = useLanguage();
   const allCategory = translate('all', language);
-  const [selectedCategory, setSelectedCategory] = useState(allCategory);
+  const [selectedCategoryIndex, setSelectedCategoryIndex] = useState<number>(0);
   const scrollRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
+
+  useEffect(() => {
+    setSelectedCategoryIndex(0);
+  }, [language]);
 
   console.log('[Gallery] galleryData:', galleryData);
 
@@ -30,9 +34,21 @@ export default function Gallery() {
     return <SectionError sectionName="Gallery" error="No gallery images found. Expected 'images' array in data." data={galleryData} />;
   }
 
-  const filteredImages = selectedCategory === allCategory
+  const categories = galleryData.categories && Array.isArray(galleryData.categories)
+    ? galleryData.categories
+    : [];
+
+  const selectedCategoryObj = selectedCategoryIndex === 0
+    ? null
+    : categories[selectedCategoryIndex - 1];
+
+  const filteredImages = selectedCategoryIndex === 0
     ? galleryData.images
-    : galleryData.images.filter(img => getText(img.category) === selectedCategory);
+    : galleryData.images.filter(img => {
+        const imgCategoryText = getText(img.category);
+        const selectedCategoryText = getText(selectedCategoryObj);
+        return imgCategoryText === selectedCategoryText;
+      });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -56,7 +72,7 @@ export default function Gallery() {
     if (scrollRef.current) {
       scrollRef.current.scrollTo({ left: 0 });
     }
-  }, [selectedCategory]);
+  }, [selectedCategoryIndex]);
 
   const scrollToIndex = (index: number) => {
     if (scrollRef.current) {
@@ -121,14 +137,28 @@ export default function Gallery() {
           transition={{ duration: 0.6 }}
           className="flex flex-wrap justify-center gap-3 mb-12"
         >
-          {galleryData.categories && Array.isArray(galleryData.categories) && galleryData.categories.map((category, idx) => {
+          <motion.button
+            key={0}
+            onClick={() => setSelectedCategoryIndex(0)}
+            className={`px-6 py-3 rounded-full font-medium transition-all ${
+              selectedCategoryIndex === 0
+                ? 'bg-teal-600 text-white shadow-lg'
+                : 'bg-white text-gray-700 hover:bg-gray-100 shadow'
+            }`}
+            whileHover={{ scale: 1.05, y: -2 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            {allCategory}
+          </motion.button>
+          {categories.map((category, idx) => {
             const categoryText = getText(category);
+            const categoryIndex = idx + 1;
             return (
               <motion.button
-                key={idx}
-                onClick={() => setSelectedCategory(categoryText)}
+                key={categoryIndex}
+                onClick={() => setSelectedCategoryIndex(categoryIndex)}
                 className={`px-6 py-3 rounded-full font-medium transition-all ${
-                  selectedCategory === categoryText
+                  selectedCategoryIndex === categoryIndex
                     ? 'bg-teal-600 text-white shadow-lg'
                     : 'bg-white text-gray-700 hover:bg-gray-100 shadow'
                 }`}

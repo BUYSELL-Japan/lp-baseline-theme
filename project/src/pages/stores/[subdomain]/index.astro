@@ -8,19 +8,19 @@ export async function getStaticPaths() {
   const storeList = await getStoreList();
 
   const paths = await Promise.all(
-    storeList.map(async (storeId) => {
+    storeList.map(async ({ storeId, subdomain }) => {
       const storeContent = await fetchStoreContentAtBuildTime(storeId);
 
       if (!storeContent) {
-        console.warn(`Failed to fetch content for store: ${storeId}`);
+        console.warn(`Failed to fetch content for store: ${storeId} (subdomain: ${subdomain})`);
         return null;
       }
 
       const pageData = mapDynamoDBDataToPageData(storeContent);
 
       return {
-        params: { storeId },
-        props: { pageData, storeId },
+        params: { subdomain },
+        props: { pageData, storeId, subdomain },
       };
     })
   );
@@ -28,7 +28,7 @@ export async function getStaticPaths() {
   return paths.filter(Boolean);
 }
 
-const { pageData, storeId } = Astro.props;
+const { pageData, storeId, subdomain } = Astro.props;
 ---
 
 <Layout title={pageData.header?.siteName || 'Store'}>

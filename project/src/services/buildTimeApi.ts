@@ -3,12 +3,18 @@ import { readFileSync } from 'fs';
 import { join } from 'path';
 
 const API_BASE_URL = 'https://2sznhxhcd8.execute-api.ap-southeast-2.amazonaws.com/dev/lp/content';
+const STORE_LIST_API_URL = 'https://2sznhxhcd8.execute-api.ap-southeast-2.amazonaws.com/dev/lp/stores';
 
 export interface LandingPageContent {
   storeId: string;
   subdomainName: string;
   ContentData?: any;
   [key: string]: any;
+}
+
+export interface StoreInfo {
+  storeId: string;
+  subdomain: string;
 }
 
 function isDynamoDBFormat(data: any): boolean {
@@ -102,27 +108,36 @@ export async function fetchStoreContentAtBuildTime(storeId: string): Promise<Lan
   }
 }
 
-export async function getStoreList(): Promise<string[]> {
+export async function getStoreList(): Promise<StoreInfo[]> {
   const useStaticList = process.env.USE_STATIC_STORE_LIST === 'true';
 
   if (useStaticList) {
     const storeListEnv = process.env.STORE_LIST || 'OKI1011';
-    return storeListEnv.split(',').map(s => s.trim());
+    return storeListEnv.split(',').map(s => ({
+      storeId: s.trim(),
+      subdomain: s.trim().toLowerCase()
+    }));
   }
 
   try {
-    const listEndpoint = process.env.STORE_LIST_API_ENDPOINT || `${API_BASE_URL}/list`;
-    const response = await fetch(listEndpoint);
+    const response = await fetch(STORE_LIST_API_URL);
 
     if (!response.ok) {
       console.warn('[BuildTime API] Failed to fetch store list, using default');
-      return ['OKI1011'];
+      return [{ storeId: 'OKI1011', subdomain: 'oki1011' }];
     }
 
     const data = await response.json();
-    return data.stores || ['OKI1011'];
+
+    if (data.stores && Array.isArray(data.stores)) {
+      console.log(`[BuildTime API] Fetched ${data.count || data.stores.length} stores`);
+      return data.stores;
+    }
+
+    console.warn('[BuildTime API] Invalid response format, using default');
+    return [{ storeId: 'OKI1011', subdomain: 'oki1011' }];
   } catch (error) {
     console.error('[BuildTime API] Error fetching store list:', error);
-    return ['OKI1011'];
+    return [{ storeId: 'OKI1011', subdomain: 'oki1011' }];
   }
 }

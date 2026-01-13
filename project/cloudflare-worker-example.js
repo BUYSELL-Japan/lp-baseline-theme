@@ -2,6 +2,7 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     const hostname = url.hostname;
+    const pathname = url.pathname;
 
     const parts = hostname.split('.');
 
@@ -9,8 +10,15 @@ export default {
       const subdomain = parts[0];
 
       if (subdomain !== 'www') {
-        const newPath = `/stores/${subdomain}${url.pathname}`;
-        const newUrl = new URL(newPath, `https://${parts.slice(1).join('.')}`);
+        let targetPath;
+
+        if (pathname.startsWith('/_astro/')) {
+          targetPath = pathname;
+        } else {
+          targetPath = `/stores/${subdomain}${pathname}`;
+        }
+
+        const newUrl = new URL(targetPath, `https://${parts.slice(1).join('.')}`);
         newUrl.search = url.search;
         newUrl.hash = url.hash;
 
@@ -24,12 +32,14 @@ export default {
           });
         }
 
-        return new Response('Store not found', {
-          status: 404,
-          headers: {
-            'Content-Type': 'text/html;charset=UTF-8',
-          },
-        });
+        if (!pathname.startsWith('/_astro/')) {
+          return new Response('Store not found', {
+            status: 404,
+            headers: {
+              'Content-Type': 'text/html;charset=UTF-8',
+            },
+          });
+        }
       }
     }
 

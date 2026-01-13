@@ -12,10 +12,14 @@ export default defineConfig({
   output: 'static',
   build: {
     format: 'directory',
+    assets: '_astro',
   },
   vite: {
     ssr: {
       noExternal: ['framer-motion'],
+    },
+    build: {
+      assetsInlineLimit: 0,
     },
   },
 });

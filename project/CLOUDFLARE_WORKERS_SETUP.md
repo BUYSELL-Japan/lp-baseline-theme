@@ -1,18 +1,19 @@
 # CloudFlare Workers Setup Guide
 
-This guide explains how to set up CloudFlare Workers for subdomain routing to display DynamoDB data.
+This guide explains how to set up CloudFlare Workers for subdomain routing with static site generation (SSG).
 
 ## Overview
 
-The application fetches landing page data from DynamoDB via API Gateway based on the subdomain. CloudFlare Workers route subdomain traffic to your application.
+The application uses Astro to generate static HTML pages for each store at build time. CloudFlare Workers route subdomain traffic to the corresponding static files.
 
 ## Architecture
 
-1. User visits `teststore.yourdomain.com`
-2. CloudFlare Worker intercepts the request
-3. Worker proxies the request to your main application
-4. React app detects subdomain and fetches corresponding data from API Gateway
-5. Data is displayed dynamically
+1. **Build time**: Astro fetches store list from API and generates static pages at `/stores/{subdomain}/`
+2. **Runtime**: User visits `okinawa-shoten.yourdomain.com`
+3. CloudFlare Worker intercepts the request
+4. Worker routes `okinawa-shoten.yourdomain.com/` to `/stores/okinawa-shoten/index.html`
+5. Worker routes `*.yourdomain.com/_astro/*` to `/_astro/*` (shared assets)
+6. Static HTML with pre-rendered data is served instantly
 
 ## CloudFlare Workers Setup
 
@@ -28,7 +29,11 @@ The application fetches landing page data from DynamoDB via API Gateway based on
 
 Copy the code from `cloudflare-worker-example.js` and paste it into the Worker editor.
 
-Replace `https://yourdomain.com/index.html` with your actual domain where the React app is hosted.
+The worker handles two types of requests:
+1. **Store pages**: `subdomain.yourdomain.com/` → `/stores/subdomain/index.html`
+2. **Static assets**: `subdomain.yourdomain.com/_astro/file.js` → `/_astro/file.js`
+
+This allows all subdomains to share the same `_astro` directory containing JavaScript and CSS files.
 
 ### Step 3: Configure Routes
 
@@ -46,99 +51,158 @@ Ensure your DNS is configured correctly:
 
 ## How It Works
 
-### Frontend (React App)
+### Build Time (Astro SSG)
 
-The React app includes logic to:
-
-1. **Detect subdomain**: Extract the subdomain from `window.location.hostname`
-2. **Fetch data**: Call API Gateway with the subdomain as `storeId`
+1. **Fetch store list**:
    ```
-   https://2sznhxhcd8.execute-api.ap-southeast-2.amazonaws.com/dev/lp/content/{storeId}
+   GET https://2sznhxhcd8.execute-api.ap-southeast-2.amazonaws.com/dev/lp/stores
    ```
-3. **Display data**: Render components with fetched data using React Context
+   Returns: `{ count: 2, stores: [{ storeId: "OKI1011", subdomain: "okinawa-shoten" }, ...] }`
 
-### API Gateway & DynamoDB
+2. **Generate pages**: For each store, Astro:
+   - Fetches content using `storeId` from `/lp/content/{storeId}`
+   - Generates static HTML at `/stores/{subdomain}/index.html`
+   - Shares assets in `/_astro/` directory
 
-- Each store has a unique `storeId` in DynamoDB
-- The JSON data includes a `SubdomainName` field
-- API Gateway endpoint returns the complete landing page data for a given `storeId`
-
-## Testing
-
-### Local Testing
-
-1. Edit your `/etc/hosts` file (or `C:\Windows\System32\drivers\etc\hosts` on Windows):
+3. **Output structure**:
    ```
-   127.0.0.1 teststore.localhost
-   127.0.0.1 anotherstore.localhost
+   dist/
+   ├── _astro/           # Shared JS/CSS assets
+   │   ├── StorePage.js
+   │   ├── client.js
+   │   └── ...
+   └── stores/
+       ├── okinawa-shoten/
+       │   └── index.html
+       └── tokyo-ramen/
+           └── index.html
    ```
 
-2. Run the development server:
+### Runtime (CloudFlare Workers)
+
+The worker routes requests based on subdomain:
+- `okinawa-shoten.yourdomain.com/` → serves `/stores/okinawa-shoten/index.html`
+- `okinawa-shoten.yourdomain.com/_astro/StorePage.js` → serves `/_astro/StorePage.js`
+
+### API Endpoints
+
+- **Store list**: `GET /lp/stores` - Returns array of `{ storeId, subdomain }`
+- **Store content**: `GET /lp/content/{storeId}` - Returns complete page data for a store
+
+## Building and Deploying
+
+### Build the Site
+
+```bash
+npm run build
+```
+
+This generates static files in the `dist/` directory.
+
+### Deploy to CloudFlare Pages
+
+1. Connect your repository to CloudFlare Pages
+2. Set build settings:
+   - **Build command**: `npm run build`
+   - **Build output directory**: `dist`
+3. Deploy the site
+
+### Configure the Worker
+
+1. In CloudFlare Pages, go to Settings → Functions
+2. Add the Worker code from `cloudflare-worker-example.js`
+3. Or create a separate Worker and attach it to your domain
+
+### Testing
+
+1. **Local testing**: Build and preview locally
    ```bash
-   npm run dev
+   npm run build
+   npm run preview
    ```
+   Access stores directly: `http://localhost:4321/stores/okinawa-shoten/`
 
-3. Visit `http://teststore.localhost:5173` in your browser
-
-### Production Testing
-
-1. Deploy your React app to your hosting service
-2. Configure CloudFlare Workers as described above
-3. Visit `https://teststore.yourdomain.com`
+2. **Production testing**: Visit your subdomain
+   ```
+   https://okinawa-shoten.yourdomain.com
+   ```
 
 ## Data Structure
 
-### Expected DynamoDB/API Response Format
+### Store List Response
 
 ```json
 {
-  "storeId": "teststore",
-  "subdomainName": "teststore",
-  "header": {
-    "logo": { "text": "Store Name" },
-    "navigation": [...]
-  },
-  "hero": {
-    "title": "Welcome",
-    "subtitle": "...",
-    "backgroundImage": "..."
-  },
-  "about": { ... },
-  "menu": { ... },
-  "pricing": { ... },
-  "gallery": { ... },
-  "staff": { ... },
-  "reviews": { ... },
-  "news": { ... },
-  "storeInfo": { ... },
-  "company": { ... },
-  "access": { ... },
-  "faq": { ... },
-  "cta": { ... },
-  "contact": { ... },
-  "footer": { ... }
+  "count": 2,
+  "stores": [
+    { "storeId": "OKI1011", "subdomain": "okinawa-shoten" },
+    { "storeId": "TOKYO001", "subdomain": "tokyo-ramen" }
+  ]
 }
 ```
 
-## Fallback Behavior
+### Store Content Response
 
-If no subdomain is detected or data fetch fails, the app displays default content from `src/data/content.ts`.
+```json
+{
+  "storeId": "OKI1011",
+  "subdomainName": "okinawa-shoten",
+  "ContentData": {
+    "header": { ... },
+    "hero": { ... },
+    "about": { ... },
+    "menu": { ... },
+    "pricing": { ... },
+    "gallery": { ... },
+    "staff": { ... },
+    "reviews": { ... },
+    "news": { ... },
+    "storeInfo": { ... },
+    "company": { ... },
+    "access": { ... },
+    "faq": { ... },
+    "cta": { ... },
+    "contact": { ... },
+    "footer": { ... }
+  }
+}
+```
+
+## Environment Variables
+
+Configure these in `.env` for local development:
+
+```env
+# Use fallback local data instead of API
+USE_FALLBACK_DATA=true
+
+# Use static store list instead of API
+USE_STATIC_STORE_LIST=true
+STORE_LIST=OKI1011,TOKYO001
+```
+
+For production builds, set `USE_FALLBACK_DATA=false` to fetch from the API.
 
 ## Troubleshooting
 
-### Issue: Subdomain not detected
-- Check DNS configuration
-- Verify CloudFlare Worker is active
-- Inspect browser console for errors
+### Issue: 404 on subdomain
+- **Check Worker deployment**: Verify the Worker is active and attached to your domain
+- **Check DNS**: Ensure wildcard DNS (`*.yourdomain.com`) is configured
+- **Check build output**: Verify `/stores/{subdomain}/` directory exists in `dist/`
 
-### Issue: Data not loading
-- Verify API Gateway endpoint is accessible
-- Check CORS settings on API Gateway
-- Inspect Network tab in browser DevTools
+### Issue: Assets not loading (blank page)
+- **Check `_astro` path**: Verify `/_astro/` files are accessible
+- **Check Worker code**: Ensure Worker correctly routes `/_astro/*` requests
+- **Check browser console**: Look for 404 errors on JS/CSS files
 
-### Issue: 404 errors
-- Ensure your hosting service supports SPA routing
-- Check CloudFlare Worker route configuration
+### Issue: Build fails to fetch store list
+- **Check API endpoint**: Verify `/lp/stores` endpoint is accessible
+- **Check network**: Ensure build environment can reach API Gateway
+- **Use fallback**: Set `USE_STATIC_STORE_LIST=true` and `STORE_LIST=...` in `.env`
+
+### Issue: Content not updated after API changes
+- **Rebuild required**: Static site must be rebuilt to fetch latest data
+- **Clear cache**: Clear CloudFlare cache after redeployment
 
 ## Additional Resources
 

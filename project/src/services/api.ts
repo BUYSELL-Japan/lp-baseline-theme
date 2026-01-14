@@ -81,9 +81,9 @@ export async function fetchStoreContent(storeId: string): Promise<LandingPageCon
       }
       const localData = await response.json();
       rawData = {
-        storeId: storeId,
-        subdomainName: 'teststore',
-        ContentData: localData
+        ...localData,
+        storeId: storeId || localData.StoreID,
+        subdomainName: 'teststore'
       };
     } else {
       console.log('[API] Fetching from production API');
@@ -95,6 +95,13 @@ export async function fetchStoreContent(storeId: string): Promise<LandingPageCon
       }
 
       rawData = await response.json();
+      console.log('[API] Raw production API response:', {
+        keys: Object.keys(rawData),
+        hasContentData: !!rawData.ContentData,
+        contentDataType: typeof rawData.ContentData,
+        contentDataKeys: rawData.ContentData ? Object.keys(rawData.ContentData).slice(0, 10) : null,
+        sampleContentData: rawData.ContentData ? JSON.stringify(rawData.ContentData).substring(0, 200) : null
+      });
     }
 
     console.log('[API] Raw API Response:', rawData);

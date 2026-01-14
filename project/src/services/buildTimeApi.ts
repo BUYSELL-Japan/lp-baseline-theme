@@ -77,9 +77,9 @@ export async function fetchStoreContentAtBuildTime(storeId: string): Promise<Lan
       const localPath = join(process.cwd(), 'public', 'dynamodb-data-OKI1011-multilang.json');
       const localData = JSON.parse(readFileSync(localPath, 'utf-8'));
       rawData = {
-        storeId: storeId,
-        subdomainName: 'teststore',
-        ...localData
+        ...localData,
+        storeId: storeId || localData.StoreID,
+        subdomainName: 'teststore'
       };
     } else {
       console.log('[BuildTime API] Fetching from production API');
@@ -91,6 +91,13 @@ export async function fetchStoreContentAtBuildTime(storeId: string): Promise<Lan
       }
 
       rawData = await response.json();
+      console.log('[BuildTime API] Raw production API response:', {
+        keys: Object.keys(rawData),
+        hasContentData: !!rawData.ContentData,
+        contentDataType: typeof rawData.ContentData,
+        contentDataKeys: rawData.ContentData ? Object.keys(rawData.ContentData).slice(0, 10) : null,
+        sampleContentData: rawData.ContentData ? JSON.stringify(rawData.ContentData).substring(0, 200) : null
+      });
     }
 
     const processedData = deepUnmarshall(rawData);

@@ -109,16 +109,25 @@ export async function fetchStoreContentAtBuildTime(storeId: string): Promise<Lan
 }
 
 export async function getStoreList(): Promise<StoreInfo[]> {
+  console.log('[BuildTime API] getStoreList called');
+  console.log('[BuildTime API] USE_STATIC_STORE_LIST:', process.env.USE_STATIC_STORE_LIST);
+  console.log('[BuildTime API] STORE_LIST:', process.env.STORE_LIST);
+
   const useStaticList = process.env.USE_STATIC_STORE_LIST === 'true';
+  console.log('[BuildTime API] useStaticList:', useStaticList);
 
   if (useStaticList) {
     const storeListEnv = process.env.STORE_LIST || 'OKI1011';
-    return storeListEnv.split(',').map(s => ({
+    console.log('[BuildTime API] Using static store list:', storeListEnv);
+    const stores = storeListEnv.split(',').map(s => ({
       storeId: s.trim(),
       subdomain: s.trim().toLowerCase()
     }));
+    console.log('[BuildTime API] Parsed stores:', stores);
+    return stores;
   }
 
+  console.log('[BuildTime API] Fetching from API:', STORE_LIST_API_URL);
   try {
     const response = await fetch(STORE_LIST_API_URL);
 

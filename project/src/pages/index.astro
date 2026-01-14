@@ -1,0 +1,19 @@
+---
+import { fetchStoreContentAtBuildTime } from '../services/buildTimeApi';
+import { mapDynamoDBDataToPageData } from '../services/dataMapper';
+import Layout from '../layouts/Layout.astro';
+import StorePage from '../components/StorePage';
+
+const defaultStoreId = 'OKI1011';
+const storeContent = await fetchStoreContentAtBuildTime(defaultStoreId);
+
+if (!storeContent) {
+  throw new Error(`Failed to fetch content for default store: ${defaultStoreId}`);
+}
+
+const pageData = mapDynamoDBDataToPageData(storeContent);
+---
+
+<Layout title={pageData.header?.siteName || 'Store'}>
+  <StorePage client:only="react" pageData={pageData} />
+</Layout>

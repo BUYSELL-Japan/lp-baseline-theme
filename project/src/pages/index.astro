@@ -1,19 +1,15 @@
 ---
-import { fetchStoreContentAtBuildTime } from '../services/buildTimeApi';
-import { mapDynamoDBDataToPageData } from '../services/dataMapper';
 import Layout from '../layouts/Layout.astro';
-import StorePage from '../components/StorePage';
 
-const defaultStoreId = 'OKI1011';
-const storeContent = await fetchStoreContentAtBuildTime(defaultStoreId);
-
-if (!storeContent) {
-  throw new Error(`Failed to fetch content for default store: ${defaultStoreId}`);
-}
-
-const pageData = mapDynamoDBDataToPageData(storeContent);
+const response = Astro.response;
+response.status = 404;
 ---
 
-<Layout title={pageData.header?.siteName || 'Store'}>
-  <StorePage client:only="react" pageData={pageData} />
+<Layout title="Page Not Found">
+  <div class="min-h-screen flex items-center justify-center bg-gray-50">
+    <div class="text-center">
+      <h1 class="text-6xl font-bold text-gray-900 mb-4">404</h1>
+      <p class="text-xl text-gray-600">Page Not Found</p>
+    </div>
+  </div>
 </Layout>

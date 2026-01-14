@@ -55,6 +55,35 @@ export interface PageData {
   company: CompanyData | null;
 }
 
+function isValidImageUrl(url: any): boolean {
+  if (!url || typeof url !== 'string') {
+    return false;
+  }
+
+  const validDomains = [
+    'lp-store-images.s3.ap-southeast-2.amazonaws.com',
+    'lp-store-images.s3.amazonaws.com',
+    'images.pexels.com',
+    'images.unsplash.com',
+    'source.unsplash.com',
+  ];
+
+  try {
+    const urlObj = new URL(url);
+    const hostname = urlObj.hostname;
+
+    const isValid = validDomains.some(domain => hostname.includes(domain)) ||
+                    url.startsWith('https://') ||
+                    url.startsWith('http://');
+
+    console.log(`[isValidImageUrl] URL: ${url}, Valid: ${isValid}, Hostname: ${hostname}`);
+    return isValid;
+  } catch (e) {
+    console.log(`[isValidImageUrl] Invalid URL format: ${url}`);
+    return false;
+  }
+}
+
 function isNestedStructure(data: any): boolean {
   if (!data || typeof data !== 'object') return false;
   return 'header' in data || 'hero' in data || 'menu' in data;
@@ -209,6 +238,13 @@ function transformMenuData(menuData: any): MenuData | null {
     menuData.categories.forEach((category: any) => {
       if (category.items && Array.isArray(category.items)) {
         category.items.forEach((item: any) => {
+          console.log('[transformMenuData] Item image URL:', item.image);
+          console.log('[transformMenuData] Item URL is S3:', item.image?.includes('lp-store-images.s3'));
+
+          if (item.image && !isValidImageUrl(item.image)) {
+            console.warn(`[transformMenuData] Invalid image URL for item:`, item.name, item.image);
+          }
+
           allItems.push({
             ...item,
             category: category.name || category.id
@@ -218,6 +254,14 @@ function transformMenuData(menuData: any): MenuData | null {
     });
     transformed.items = allItems;
   } else if (menuData.items && Array.isArray(menuData.items)) {
+    menuData.items.forEach((item: any) => {
+      console.log('[transformMenuData] Item image URL:', item.image);
+      console.log('[transformMenuData] Item URL is S3:', item.image?.includes('lp-store-images.s3'));
+
+      if (item.image && !isValidImageUrl(item.image)) {
+        console.warn(`[transformMenuData] Invalid image URL for item:`, item.name, item.image);
+      }
+    });
     transformed.items = menuData.items;
   }
 
@@ -284,17 +328,27 @@ function transformGalleryData(galleryData: any): GalleryData | null {
   };
 
   const images = galleryData.images && Array.isArray(galleryData.images)
-    ? galleryData.images.map((img: any) => {
-        console.log('[transformGalleryData] Processing image:', img);
-        return {
-          url: img.url,
-          alt: img.alt || img.caption,
-          caption: img.caption,
-          category: typeof img.category === 'string'
-            ? (categoryMap[img.category] || { ja: img.category, en: img.category, 'zh-tw': img.category, ko: img.category })
-            : img.category
-        };
-      })
+    ? galleryData.images
+        .map((img: any) => {
+          console.log('[transformGalleryData] Processing image:', img);
+          console.log('[transformGalleryData] Image URL:', img.url);
+          console.log('[transformGalleryData] URL is S3:', img.url?.includes('lp-store-images.s3'));
+
+          if (!isValidImageUrl(img.url)) {
+            console.warn(`[transformGalleryData] Invalid or missing image URL, skipping:`, img.url);
+            return null;
+          }
+
+          return {
+            url: img.url,
+            alt: img.alt || img.caption,
+            caption: img.caption,
+            category: typeof img.category === 'string'
+              ? (categoryMap[img.category] || { ja: img.category, en: img.category, 'zh-tw': img.category, ko: img.category })
+              : img.category
+          };
+        })
+        .filter((img): img is NonNullable<typeof img> => img !== null)
     : [];
 
   console.log('[transformGalleryData] Transformed images:', images);
@@ -400,6 +454,15 @@ function transformStaffData(staffData: any): StaffData | null {
     console.log('[transformStaffData] No members found, returning null');
     return null;
   }
+
+  members.forEach((member: any, index: number) => {
+    console.log(`[transformStaffData] Member ${index} image URL:`, member.image);
+    console.log(`[transformStaffData] Member ${index} URL is S3:`, member.image?.includes('lp-store-images.s3'));
+
+    if (member.image && !isValidImageUrl(member.image)) {
+      console.warn(`[transformStaffData] Invalid image URL for member ${index}:`, member.name, member.image);
+    }
+  });
 
   const transformed: any = {
     sectionTitle: staffData.sectionTitle || staffData.title,
@@ -694,9 +757,19 @@ export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
 
     const defaultData = getDefaultPageData();
 
+    const heroExtracted = extractTranslatedData(contentData.hero, 'hero');
+    if (heroExtracted?.backgroundImage) {
+      console.log('[mapDynamoDBDataToPageData] Hero backgroundImage:', heroExtracted.backgroundImage);
+      console.log('[mapDynamoDBDataToPageData] Hero backgroundImage is S3:', heroExtracted.backgroundImage?.includes('lp-store-images.s3'));
+
+      if (!isValidImageUrl(heroExtracted.backgroundImage)) {
+        console.warn('[mapDynamoDBDataToPageData] Invalid hero backgroundImage URL:', heroExtracted.backgroundImage);
+      }
+    }
+
     const pageData = {
       header: extractTranslatedData(contentData.header, 'header') || defaultData.header,
-      hero: extractTranslatedData(contentData.hero, 'hero') || defaultData.hero,
+      hero: heroExtracted || defaultData.hero,
       about: extractTranslatedData(contentData.about, 'about') || defaultData.about,
       menu: menuData || defaultData.menu,
       storeInfo: storeInfoData || defaultData.storeInfo,

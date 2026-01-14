@@ -79,7 +79,7 @@ export async function fetchStoreContentAtBuildTime(storeId: string): Promise<Lan
       rawData = {
         storeId: storeId,
         subdomainName: 'teststore',
-        ContentData: localData
+        ...localData
       };
     } else {
       console.log('[BuildTime API] Fetching from production API');

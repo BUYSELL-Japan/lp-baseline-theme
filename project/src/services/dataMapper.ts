@@ -87,6 +87,8 @@ function isValidImageUrl(url: any): boolean {
     'lp-store-images.s3.amazonaws.com',
     's3.ap-southeast-2.amazonaws.com',
     's3.amazonaws.com',
+    'cloudfront.net',
+    'd1bgs7tj36vb93.cloudfront.net',
     'images.pexels.com',
     'images.unsplash.com',
     'source.unsplash.com',

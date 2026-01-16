@@ -37,7 +37,7 @@ export default function StoreInfo() {
   }
 
   return (
-    <section id="store" className="py-24 px-4 bg-gradient-to-b from-white to-teal-50/30">
+    <section id="storeInfo" className="py-24 px-4 bg-gradient-to-b from-white to-teal-50/30">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

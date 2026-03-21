@@ -827,23 +827,35 @@ export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
 
     const useFallback = process.env.USE_FALLBACK_DATA === 'true';
 
+    const getSectionData = (sectionKey: string, extractedData: any, defaultSectionData: any) => {
+      if (useFallback) return extractedData || defaultSectionData;
+      
+      // DBにセクションキーすら存在しない＝まだ一度も保存されていない初期状態
+      if (contentData[sectionKey] === undefined) {
+        return defaultSectionData; // サンプルダミーデータを表示
+      }
+      
+      // DBにセクションキーが存在する（空オブジェクト {} などで保存された）＝管理者が意図的に空にした
+      return extractedData || null; // 非表示にする
+    };
+
     const pageData = {
-      header: extractTranslatedData(contentData.header, 'header') || (useFallback ? defaultData.header : null),
-      hero: heroExtracted || (useFallback ? defaultData.hero : null),
-      about: extractTranslatedData(contentData.about, 'about') || (useFallback ? defaultData.about : null),
-      menu: menuData || (useFallback ? defaultData.menu : null),
-      storeInfo: storeInfoData || (useFallback ? defaultData.storeInfo : null),
-      contact: contactData || (useFallback ? defaultData.contact : null),
-      footer: footerExtracted || (useFallback ? defaultData.footer : null),
-      gallery: galleryData || (useFallback ? defaultData.gallery : null),
-      staff: staffData || (useFallback ? defaultData.staff : null),
-      reviews: reviewsDataTransformed || (useFallback ? defaultData.reviews : null),
-      news: extractTranslatedData(contentData.news, 'news') || (useFallback ? defaultData.news : null),
-      access: accessData || (useFallback ? defaultData.access : null),
-      faq: extractTranslatedData(contentData.faq, 'faq') || (useFallback ? defaultData.faq : null),
-      cta: extractTranslatedData(contentData.cta, 'cta') || (useFallback ? defaultData.cta : null),
-      pricing: pricingData || (useFallback ? defaultData.pricing : null),
-      company: extractTranslatedData(contentData.company, 'company') || (useFallback ? defaultData.company : null),
+      header: getSectionData('header', extractTranslatedData(contentData.header, 'header'), defaultData.header),
+      hero: getSectionData('hero', heroExtracted, defaultData.hero),
+      about: getSectionData('about', extractTranslatedData(contentData.about, 'about'), defaultData.about),
+      menu: getSectionData('menu', menuData, defaultData.menu),
+      storeInfo: getSectionData('storeInfo', storeInfoData, defaultData.storeInfo),
+      contact: getSectionData('contact', contactData, defaultData.contact),
+      footer: getSectionData('footer', footerExtracted, defaultData.footer),
+      gallery: getSectionData('gallery', galleryData, defaultData.gallery),
+      staff: getSectionData('staff', staffData, defaultData.staff),
+      reviews: getSectionData('reviews', reviewsDataTransformed, defaultData.reviews),
+      news: getSectionData('news', extractTranslatedData(contentData.news, 'news'), defaultData.news),
+      access: getSectionData('access', accessData, defaultData.access),
+      faq: getSectionData('faq', extractTranslatedData(contentData.faq, 'faq'), defaultData.faq),
+      cta: getSectionData('cta', extractTranslatedData(contentData.cta, 'cta'), defaultData.cta),
+      pricing: getSectionData('pricing', pricingData, defaultData.pricing),
+      company: getSectionData('company', extractTranslatedData(contentData.company, 'company'), defaultData.company),
     };
 
     console.log('📊 DynamoDB Data Mapped:', {

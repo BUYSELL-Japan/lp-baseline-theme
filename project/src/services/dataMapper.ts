@@ -825,23 +825,25 @@ export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
       }
     }
 
+    const useFallback = process.env.USE_FALLBACK_DATA === 'true';
+
     const pageData = {
-      header: extractTranslatedData(contentData.header, 'header') || defaultData.header,
-      hero: heroExtracted || defaultData.hero,
-      about: extractTranslatedData(contentData.about, 'about') || defaultData.about,
-      menu: menuData || defaultData.menu,
-      storeInfo: storeInfoData || defaultData.storeInfo,
-      contact: contactData || defaultData.contact,
-      footer: footerExtracted || defaultData.footer,
-      gallery: galleryData || defaultData.gallery,
-      staff: staffData || defaultData.staff,
-      reviews: reviewsDataTransformed || defaultData.reviews,
-      news: extractTranslatedData(contentData.news, 'news') || defaultData.news,
-      access: accessData || defaultData.access,
-      faq: extractTranslatedData(contentData.faq, 'faq') || defaultData.faq,
-      cta: extractTranslatedData(contentData.cta, 'cta') || defaultData.cta,
-      pricing: pricingData || defaultData.pricing,
-      company: extractTranslatedData(contentData.company, 'company') || defaultData.company,
+      header: extractTranslatedData(contentData.header, 'header') || (useFallback ? defaultData.header : null),
+      hero: heroExtracted || (useFallback ? defaultData.hero : null),
+      about: extractTranslatedData(contentData.about, 'about') || (useFallback ? defaultData.about : null),
+      menu: menuData || (useFallback ? defaultData.menu : null),
+      storeInfo: storeInfoData || (useFallback ? defaultData.storeInfo : null),
+      contact: contactData || (useFallback ? defaultData.contact : null),
+      footer: footerExtracted || (useFallback ? defaultData.footer : null),
+      gallery: galleryData || (useFallback ? defaultData.gallery : null),
+      staff: staffData || (useFallback ? defaultData.staff : null),
+      reviews: reviewsDataTransformed || (useFallback ? defaultData.reviews : null),
+      news: extractTranslatedData(contentData.news, 'news') || (useFallback ? defaultData.news : null),
+      access: accessData || (useFallback ? defaultData.access : null),
+      faq: extractTranslatedData(contentData.faq, 'faq') || (useFallback ? defaultData.faq : null),
+      cta: extractTranslatedData(contentData.cta, 'cta') || (useFallback ? defaultData.cta : null),
+      pricing: pricingData || (useFallback ? defaultData.pricing : null),
+      company: extractTranslatedData(contentData.company, 'company') || (useFallback ? defaultData.company : null),
     };
 
     console.log('📊 DynamoDB Data Mapped:', {

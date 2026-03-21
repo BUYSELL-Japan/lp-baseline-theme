@@ -52,15 +52,15 @@ export default function Header() {
         transition={{ duration: 0.6, ease: 'easeOut' }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20">
+          <div className="flex flex-wrap items-center justify-between min-h-[5rem] py-4 gap-y-4">
             <motion.div
-              className="flex items-center gap-2 cursor-pointer z-50"
+              className="flex items-start gap-3 cursor-pointer z-50 w-full md:w-auto md:max-w-[40%] pr-16 md:pr-0"
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
             >
-              <Waves className={`w-8 h-8 ${scrolled || mobileMenuOpen ? 'text-teal-600' : 'text-white'}`} />
-              <span className={`text-2xl font-bold ${scrolled || mobileMenuOpen ? 'text-gray-900' : 'text-white'}`}>
+              <Waves className={`w-8 h-8 shrink-0 mt-1 ${scrolled || mobileMenuOpen ? 'text-teal-600' : 'text-white'}`} />
+              <span className={`text-xl md:text-2xl font-bold leading-tight break-words whitespace-normal ${scrolled || mobileMenuOpen ? 'text-gray-900' : 'text-white'}`}>
                 {(() => {
                   let logoText = getLocalizedValue(headerData.logo, 'text', language);
                   if (typeof logoText === 'object') {
@@ -71,7 +71,7 @@ export default function Header() {
               </span>
             </motion.div>
 
-            <nav className="hidden md:flex items-center gap-6">
+            <nav className="hidden md:flex flex-wrap items-center justify-end gap-x-4 lg:gap-x-6 gap-y-2 flex-1 min-w-[300px]">
               {navigation.map((item) => {
                 let label = getLocalizedValue(item, 'label', language);
                 if (typeof label === 'object') {
@@ -151,7 +151,7 @@ export default function Header() {
               </div>
             </nav>
 
-            <div className="md:hidden flex items-center gap-2">
+            <div className="md:hidden flex items-center gap-2 absolute top-4 right-4 z-50">
               <motion.button
                 onClick={() => setLanguageMenuOpen(!languageMenuOpen)}
                 className={`z-50 p-2 ${scrolled || mobileMenuOpen ? 'text-gray-900' : 'text-white'}`}

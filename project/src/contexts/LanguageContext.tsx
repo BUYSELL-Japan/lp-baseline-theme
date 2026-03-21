@@ -5,18 +5,28 @@ export type Language = 'ja' | 'en' | 'zh-tw' | 'ko';
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
+  basePath: string;
 }
 
 const LanguageContext = createContext<LanguageContextType>({
   language: 'ja',
   setLanguage: () => {},
+  basePath: '/',
 });
 
-export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguage] = useState<Language>('ja');
+export function LanguageProvider({ 
+  children, 
+  initialLanguage = 'ja', 
+  basePath = '/' 
+}: { 
+  children: ReactNode; 
+  initialLanguage?: Language;
+  basePath?: string;
+}) {
+  const [language, setLanguage] = useState<Language>(initialLanguage);
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage }}>
+    <LanguageContext.Provider value={{ language, setLanguage, basePath }}>
       {children}
     </LanguageContext.Provider>
   );

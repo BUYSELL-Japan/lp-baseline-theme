@@ -21,12 +21,14 @@ import { LanguageProvider } from '../contexts/LanguageContext';
 
 interface StorePageProps {
   pageData: PageData;
+  initialLanguage?: 'ja' | 'en' | 'zh-tw' | 'ko';
+  basePath?: string;
 }
 
-export default function StorePage({ pageData }: StorePageProps) {
+export default function StorePage({ pageData, initialLanguage = 'ja', basePath = '/' }: StorePageProps) {
   return (
     <ErrorBoundary>
-      <LanguageProvider>
+      <LanguageProvider initialLanguage={initialLanguage} basePath={basePath}>
         <PageDataProvider data={pageData}>
           <div className="min-h-screen bg-white">
             {pageData.header && <Header />}

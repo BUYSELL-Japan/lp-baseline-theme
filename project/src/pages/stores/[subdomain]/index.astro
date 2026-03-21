@@ -10,14 +10,9 @@ export async function getStaticPaths() {
   const paths = await Promise.all(
     storeList.map(async ({ storeId, subdomain }) => {
       const storeContent = await fetchStoreContentAtBuildTime(storeId);
-
-      if (!storeContent) {
-        console.warn(`Failed to fetch content for store: ${storeId} (subdomain: ${subdomain})`);
-        return null;
-      }
+      if (!storeContent) return null;
 
       const pageData = mapDynamoDBDataToPageData(storeContent);
-
       return {
         params: { subdomain },
         props: { pageData, storeId, subdomain },
@@ -29,8 +24,31 @@ export async function getStaticPaths() {
 }
 
 const { pageData, storeId, subdomain } = Astro.props;
+
+// 動的SEOメタタグ生成（日本語用）
+const getLocalText = (field: any, lang: string = 'ja') => {
+  if (!field) return '';
+  if (typeof field === 'string') return field;
+  return field[lang] || field['ja'] || '';
+};
+
+const storeName = getLocalText(pageData.header?.logo?.text, 'ja') || 'Store';
+const heroCatch = getLocalText(pageData.hero?.sectionTitle, 'ja');
+const metaTitle = heroCatch ? `${storeName} | ${heroCatch}` : storeName;
+
+const heroDesc = getLocalText(pageData.hero?.sectionSubtitle, 'ja');
+const aboutDesc = getLocalText(pageData.about?.features?.[0]?.description, 'ja');
+const metaDescription = `${heroDesc ? heroDesc + '。' : ''}${aboutDesc}`.substring(0, 150);
+
+const currentPath = `/stores/${subdomain}/`;
+const alternateLinks = [
+  { lang: 'ja', href: currentPath },
+  { lang: 'en', href: `${currentPath}en/` },
+  { lang: 'ko', href: `${currentPath}ko/` },
+  { lang: 'zh-tw', href: `${currentPath}zh-tw/` },
+];
 ---
 
-<Layout title={pageData.header?.siteName || 'Store'}>
-  <StorePage client:only="react" pageData={pageData} />
+<Layout title={metaTitle} description={metaDescription} lang="ja" alternateLinks={alternateLinks}>
+  <StorePage client:only="react" pageData={pageData} initialLanguage="ja" basePath={currentPath} />
 </Layout>

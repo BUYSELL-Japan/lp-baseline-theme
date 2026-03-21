@@ -7,7 +7,7 @@ import { getLocalizedValue } from '../utils/i18n';
 
 export default function Header() {
   const headerData = useHeaderData();
-  const { language, setLanguage } = useLanguage();
+  const { language, basePath } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
@@ -128,21 +128,17 @@ export default function Header() {
                         transition={{ duration: 0.2 }}
                       >
                         {(Object.keys(languageNames) as Language[]).map((lang) => (
-                          <motion.button
+                          <a
                             key={lang}
-                            onClick={() => {
-                              setLanguage(lang);
-                              setLanguageMenuOpen(false);
-                            }}
+                            href={`${basePath}${lang === 'ja' ? '' : lang + '/'}`}
                             className={`block w-full text-left px-4 py-3 text-sm transition-colors ${
                               language === lang
                                 ? 'bg-teal-50 text-teal-600 font-bold'
                                 : 'text-gray-700 hover:bg-gray-50'
                             }`}
-                            whileHover={{ x: 4 }}
                           >
                             {languageNames[lang]}
-                          </motion.button>
+                          </a>
                         ))}
                       </motion.div>
                     </>
@@ -234,21 +230,17 @@ export default function Header() {
               transition={{ duration: 0.2 }}
             >
               {(Object.keys(languageNames) as Language[]).map((lang) => (
-                <motion.button
+                <a
                   key={lang}
-                  onClick={() => {
-                    setLanguage(lang);
-                    setLanguageMenuOpen(false);
-                  }}
+                  href={`${basePath}${lang === 'ja' ? '' : lang + '/'}`}
                   className={`block w-full text-left px-6 py-3 text-base transition-colors ${
                     language === lang
                       ? 'bg-teal-50 text-teal-600 font-bold'
                       : 'text-gray-700 hover:bg-gray-50'
                   }`}
-                  whileHover={{ x: 4 }}
                 >
                   {languageNames[lang]}
-                </motion.button>
+                </a>
               ))}
             </motion.div>
           </>

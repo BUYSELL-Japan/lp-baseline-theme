@@ -1,0 +1,57 @@
+---
+import { fetchStoreContentAtBuildTime, getStoreList } from '../../../../services/buildTimeApi';
+import { mapDynamoDBDataToPageData } from '../../../../services/dataMapper';
+import Layout from '../../../../layouts/Layout.astro';
+import StorePage from '../../../../components/StorePage';
+import type { Language } from '../../../../contexts/LanguageContext';
+
+export async function getStaticPaths() {
+  const storeList = await getStoreList();
+  const languages = ['en', 'ko', 'zh-tw'];
+
+  const paths = await Promise.all(
+    storeList.map(async ({ storeId, subdomain }) => {
+      const storeContent = await fetchStoreContentAtBuildTime(storeId);
+      if (!storeContent) return [];
+
+      const pageData = mapDynamoDBDataToPageData(storeContent);
+      
+      return languages.map(lang => ({
+        params: { subdomain, lang },
+        props: { pageData, storeId, subdomain, lang },
+      }));
+    })
+  );
+
+  return paths.flat().filter(Boolean);
+}
+
+const { pageData, storeId, subdomain, lang } = Astro.props;
+
+// 動的SEOメタタグ生成（各言語用）
+const getLocalText = (field: any, targetLang: string) => {
+  if (!field) return '';
+  if (typeof field === 'string') return field;
+  return field[targetLang] || field['en'] || field['ja'] || '';
+};
+
+const storeName = getLocalText(pageData.header?.logo?.text, lang) || 'Store';
+const heroCatch = getLocalText(pageData.hero?.sectionTitle, lang);
+const metaTitle = heroCatch ? `${storeName} | ${heroCatch}` : storeName;
+
+const heroDesc = getLocalText(pageData.hero?.sectionSubtitle, lang);
+const aboutDesc = getLocalText(pageData.about?.features?.[0]?.description, lang);
+const metaDescription = `${heroDesc ? heroDesc + ' ' : ''}${aboutDesc}`.substring(0, 150);
+
+const currentPath = `/stores/${subdomain}/`;
+const alternateLinks = [
+  { lang: 'ja', href: currentPath },
+  { lang: 'en', href: `${currentPath}en/` },
+  { lang: 'ko', href: `${currentPath}ko/` },
+  { lang: 'zh-tw', href: `${currentPath}zh-tw/` },
+];
+---
+
+<Layout title={metaTitle} description={metaDescription} lang={lang} alternateLinks={alternateLinks}>
+  <StorePage client:only="react" pageData={pageData} initialLanguage={lang as Language} basePath={currentPath} />
+</Layout>

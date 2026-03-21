@@ -116,6 +116,20 @@ function isNestedStructure(data: any): boolean {
   return 'header' in data || 'hero' in data || 'menu' in data;
 }
 
+function isSectionEmpty(obj: any): boolean {
+  if (obj === null || obj === undefined) return true;
+  if (typeof obj === 'string') return obj.trim().length === 0;
+  if (typeof obj === 'number' || typeof obj === 'boolean') return false;
+  if (Array.isArray(obj)) {
+    return obj.every(isSectionEmpty);
+  }
+  if (typeof obj === 'object') {
+    if (Object.keys(obj).length === 0) return true;
+    return Object.values(obj).every(isSectionEmpty);
+  }
+  return true;
+}
+
 function ensureMultilingual(field: any): any {
   if (!field || typeof field !== 'object' || Array.isArray(field)) {
     return field;
@@ -828,15 +842,22 @@ export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
     const useFallback = process.env.USE_FALLBACK_DATA === 'true';
 
     const getSectionData = (sectionKey: string, extractedData: any, defaultSectionData: any) => {
+      // 完全に未知のセクションはデフォルトフォールバックをONにしているかによって判断（ユーザがわざと消したか判断不能なため）
       if (useFallback) return extractedData || defaultSectionData;
-      
-      // DBにセクションキーすら存在しない＝まだ一度も保存されていない初期状態
+
       if (contentData[sectionKey] === undefined) {
-        return defaultSectionData; // サンプルダミーデータを表示
+        return defaultSectionData; // まだ一度も保存されていない＝ダミーデータを表示
       }
-      
-      // DBにセクションキーが存在する（空オブジェクト {} などで保存された）＝管理者が意図的に空にした
-      return extractedData || null; // 非表示にする
+
+      // 取得した元データ自体が再帰的にすべて空文字列や空配列などであれば非表示とする
+      if (isSectionEmpty(contentData[sectionKey])) {
+        return null;
+      }
+
+      // データが存在する場合はバリデーション結果（extractedData）を返す。
+      // もしextractedDataがnull（変なデータ構成でtransform弾かれた場合）であっても、
+      // ユーザがせっかく入力した項目がすべて消えないよう、最低限のフォールバックとして元データを渡す
+      return extractedData || contentData[sectionKey];
     };
 
     const pageData = {

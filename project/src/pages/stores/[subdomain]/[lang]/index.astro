@@ -10,12 +10,16 @@ export async function getStaticPaths() {
   const languages = ['en', 'ko', 'zh-tw'];
 
   const paths = await Promise.all(
-    storeList.map(async ({ storeId, subdomain }) => {
+    storeList.map(async ({ storeId, subdomain, contact_email }) => {
       const storeContent = await fetchStoreContentAtBuildTime(storeId);
       if (!storeContent) return [];
 
       const pageData = mapDynamoDBDataToPageData(storeContent);
-      
+      // Storesテーブルの contact_email を pageData に注入する
+      if (contact_email) {
+        pageData.contactEmail = contact_email;
+      }
+
       return languages.map(lang => ({
         params: { subdomain, lang },
         props: { pageData, storeId, subdomain, lang },

@@ -15,6 +15,7 @@ export interface LandingPageContent {
 export interface StoreInfo {
   storeId: string;
   subdomain: string;
+  contact_email?: string;
 }
 
 function isDynamoDBFormat(data: any): boolean {

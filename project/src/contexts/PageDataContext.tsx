@@ -46,6 +46,11 @@ export function useContactData() {
   return contact;
 }
 
+export function useContactEmail() {
+  const { contactEmail } = useContext(PageDataContext);
+  return contactEmail || '';
+}
+
 export function useFooterData() {
   const { footer } = useContext(PageDataContext);
   return footer;

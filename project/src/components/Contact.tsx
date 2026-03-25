@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import { Send, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
-import { useContactData } from '../contexts/PageDataContext';
+import { useContactData, useContactEmail } from '../contexts/PageDataContext';
 import { useLocalize } from '../hooks/useLocalize';
 import SectionError from './SectionError';
 
@@ -12,6 +12,7 @@ type SubmitStatus = 'idle' | 'sending' | 'success' | 'error';
 
 export default function Contact() {
   const contactData = useContactData();
+  const contactEmail = useContactEmail();
   const { t } = useLocalize();
   const [focused, setFocused] = useState<string | null>(null);
   const [submitStatus, setSubmitStatus] = useState<SubmitStatus>('idle');
@@ -58,6 +59,8 @@ export default function Contact() {
           ...formData,
           // ハニーポットの値も一緒に送信（Lambda側でチェックする）
           website: honeypot,
+          // 店舗ごとのメールアドレスをLambdaに渡す
+          targetEmail: contactEmail,
         }),
       });
 

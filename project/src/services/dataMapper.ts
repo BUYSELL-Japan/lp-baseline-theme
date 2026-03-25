@@ -53,6 +53,7 @@ export interface PageData {
   cta: CTAData | null;
   pricing: PricingData | null;
   company: CompanyData | null;
+  contactEmail?: string; // DynamoDB Stores の contact_email
 }
 
 function extractImageUrl(value: any): string | null {
@@ -877,6 +878,8 @@ export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
       cta: getSectionData('cta', extractTranslatedData(contentData.cta, 'cta'), defaultData.cta),
       pricing: getSectionData('pricing', pricingData, defaultData.pricing),
       company: getSectionData('company', extractTranslatedData(contentData.company, 'company'), defaultData.company),
+      // DynamoDB Stores テーブルの contact_email を格納
+      contactEmail: (dynamoData.contact_email as string) || '',
     };
 
     console.log('📊 DynamoDB Data Mapped:', {

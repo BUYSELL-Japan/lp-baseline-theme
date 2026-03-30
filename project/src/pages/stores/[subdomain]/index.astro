@@ -1,8 +1,10 @@
 ---
 import { fetchStoreContentAtBuildTime, getStoreList } from '../../../services/buildTimeApi';
 import { mapDynamoDBDataToPageData } from '../../../services/dataMapper';
-import Layout from '../../../layouts/Layout.astro';
-import StorePage from '../../../components/StorePage';
+import Layout from '../../../../layouts/Layout.astro';
+import StorePage from '../../../../components/StorePage';
+import Theme2StorePage from '../../../../components/Theme2StorePage';
+import Theme3StorePage from '../../../../components/Theme3StorePage';
 
 export async function getStaticPaths() {
   const storeList = await getStoreList();
@@ -28,6 +30,7 @@ export async function getStaticPaths() {
 }
 
 const { pageData, storeId, subdomain } = Astro.props;
+const currentTheme = pageData.settings?.theme || 'theme1';
 
 // 動的SEOメタタグ生成（日本語用）
 const getLocalText = (field: any, lang: string = 'ja') => {
@@ -54,5 +57,7 @@ const alternateLinks = [
 ---
 
 <Layout title={metaTitle} description={metaDescription} lang="ja" alternateLinks={alternateLinks}>
-  <StorePage client:only="react" pageData={pageData} initialLanguage="ja" basePath={currentPath} />
+  {currentTheme === 'theme1' && <StorePage client:only="react" pageData={pageData} initialLanguage="ja" basePath={currentPath} />}
+  {currentTheme === 'theme2' && <Theme2StorePage client:only="react" pageData={pageData} initialLanguage="ja" basePath={currentPath} />}
+  {currentTheme === 'theme3' && <Theme3StorePage client:only="react" pageData={pageData} initialLanguage="ja" basePath={currentPath} />}
 </Layout>

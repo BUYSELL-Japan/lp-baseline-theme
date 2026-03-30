@@ -14,7 +14,8 @@ import type {
   FAQData,
   CTAData,
   PricingData,
-  CompanyData
+  CompanyData,
+  SettingsData
 } from '../data/types';
 
 import {
@@ -34,6 +35,7 @@ import {
   ctaData as defaultCTAData,
   pricingData as defaultPricingData,
   companyData as defaultCompanyData,
+  settingsData as defaultSettingsData,
 } from '../data/content';
 
 export interface PageData {
@@ -53,6 +55,7 @@ export interface PageData {
   cta: CTAData | null;
   pricing: PricingData | null;
   company: CompanyData | null;
+  settings?: SettingsData | null;
   contactEmail?: string; // DynamoDB Stores の contact_email
 }
 
@@ -878,6 +881,7 @@ export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
       cta: getSectionData('cta', extractTranslatedData(contentData.cta, 'cta'), defaultData.cta),
       pricing: getSectionData('pricing', pricingData, defaultData.pricing),
       company: getSectionData('company', extractTranslatedData(contentData.company, 'company'), defaultData.company),
+      settings: getSectionData('settings', extractTranslatedData(contentData.settings, 'settings'), defaultData.settings),
       // DynamoDB Stores テーブルの contact_email を格納
       contactEmail: (dynamoData.contact_email as string) || '',
     };
@@ -965,5 +969,6 @@ export function getDefaultPageData(): PageData {
     cta: defaultCTAData,
     pricing: defaultPricingData,
     company: defaultCompanyData,
+    settings: defaultSettingsData,
   };
 }

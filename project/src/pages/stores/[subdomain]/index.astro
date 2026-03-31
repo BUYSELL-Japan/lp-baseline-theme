@@ -47,7 +47,7 @@ const heroDesc = getLocalText(pageData.hero?.sectionSubtitle, 'ja');
 const aboutDesc = getLocalText(pageData.about?.features?.[0]?.description, 'ja');
 const metaDescription = `${heroDesc ? heroDesc + '。' : ''}${aboutDesc}`.substring(0, 150);
 
-const currentPath = `/stores/${subdomain}/`;
+const currentPath = `/`;
 const alternateLinks = [
   { lang: 'ja', href: currentPath },
   { lang: 'en', href: `${currentPath}en/` },

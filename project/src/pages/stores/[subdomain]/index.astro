@@ -1,10 +1,10 @@
 ---
 import { fetchStoreContentAtBuildTime, getStoreList } from '../../../services/buildTimeApi';
 import { mapDynamoDBDataToPageData } from '../../../services/dataMapper';
-import Layout from '../../../../layouts/Layout.astro';
-import StorePage from '../../../../components/StorePage';
-import Theme2StorePage from '../../../../components/Theme2StorePage';
-import Theme3StorePage from '../../../../components/Theme3StorePage';
+import Layout from '../../../layouts/Layout.astro';
+import StorePage from '../../../components/StorePage';
+import Theme2StorePage from '../../../components/Theme2StorePage';
+import Theme3StorePage from '../../../components/Theme3StorePage';
 
 export async function getStaticPaths() {
   const storeList = await getStoreList();

@@ -14,7 +14,8 @@ import type {
   FAQData,
   CTAData,
   PricingData,
-  CompanyData
+  CompanyData,
+  SettingsData
 } from './types';
 
 export const headerData: HeaderData = {
@@ -523,4 +524,8 @@ export const footerData: FooterData = {
     ],
   },
   copyright: '琉球そば. All rights reserved.',
+};
+
+export const settingsData: SettingsData = {
+  theme: 'theme1',
 };

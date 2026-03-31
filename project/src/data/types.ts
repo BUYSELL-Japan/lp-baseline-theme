@@ -235,3 +235,7 @@ export interface CompanyInfoItem {
   label: LocalizedText | string;
   value: LocalizedText | string;
 }
+
+export interface SettingsData {
+  theme: 'theme1' | 'theme2' | 'theme3';
+}

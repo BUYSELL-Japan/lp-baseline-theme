@@ -1,3 +1,23 @@
+import React from 'react';
+// Theme 3 specific components — ALL sections
+import Header from './themes/theme3/Header';
+import Hero from './themes/theme3/Hero';
+import About from './themes/theme3/About';
+import Menu from './themes/theme3/Menu';
+import Pricing from './themes/theme3/Pricing';
+import CTA from './themes/theme3/CTA';
+import Gallery from './themes/theme3/Gallery';
+import Staff from './themes/theme3/Staff';
+import Reviews from './themes/theme3/Reviews';
+import News from './themes/theme3/News';
+import StoreInfo from './themes/theme3/StoreInfo';
+import Company from './themes/theme3/Company';
+import Access from './themes/theme3/Access';
+import FAQ from './themes/theme3/FAQ';
+import Contact from './themes/theme3/Contact';
+import Footer from './themes/theme3/Footer';
+
+import ErrorBoundary from './ErrorBoundary';
 import type { PageData } from '../services/dataMapper';
 import { PageDataProvider } from '../contexts/PageDataContext';
 import { LanguageProvider } from '../contexts/LanguageContext';
@@ -9,31 +29,32 @@ interface StorePageProps {
 }
 
 export default function Theme3StorePage({ pageData, initialLanguage = 'ja', basePath = '/' }: StorePageProps) {
-  // 動的言語取得
-  const getLocalText = (field: any, lang: string = 'ja') => {
-    if (!field) return '';
-    if (typeof field === 'string') return field;
-    return field[lang] || field['ja'] || '';
-  };
-
-  const storeName = getLocalText(pageData.header?.logo?.text);
-
   return (
-    <LanguageProvider initialLanguage={initialLanguage} basePath={basePath}>
-      <PageDataProvider data={pageData}>
-        <div className="min-h-screen bg-stone-100 text-stone-800 flex items-center justify-center p-8 font-serif">
-          <div className="max-w-xl mx-auto text-center space-y-6">
-            <h1 className="text-5xl font-light tracking-wide text-amber-800">Theme 3: Elegant</h1>
-            <p className="text-xl text-stone-600">ここは {storeName} のTheme 3ページ（モック）です。</p>
-            <div className="p-8 bg-white rounded shadow-sm border border-stone-200">
-              <p className="text-sm text-stone-500 leading-relaxed">
-                管理画面で「Theme 3」が選択されると、Astroのビルドプロセスを通じ、現在ご覧のエレガントなレイアウトファイルが使用されて静的ページが生成されます。<br/>
-                ※後続のステップで専用デザインに差し替えます。
-              </p>
-            </div>
+    <ErrorBoundary>
+      <LanguageProvider initialLanguage={initialLanguage} basePath={basePath}>
+        <PageDataProvider data={pageData}>
+          <div className="min-h-screen bg-stone-50 text-stone-800">
+            {pageData.header && <Header />}
+            <main>
+              {pageData.hero && <Hero />}
+              {pageData.about && <About />}
+              {pageData.menu && <Menu />}
+              {pageData.pricing && <Pricing />}
+              {pageData.cta && <CTA />}
+              {pageData.gallery && <Gallery />}
+              {pageData.staff && <Staff />}
+              {pageData.reviews && <Reviews />}
+              {pageData.news && <News />}
+              {pageData.storeInfo && <StoreInfo />}
+              {pageData.company && <Company />}
+              {pageData.access && <Access />}
+              {pageData.faq && <FAQ />}
+              {pageData.contact && <Contact />}
+            </main>
+            {pageData.footer && <Footer />}
           </div>
-        </div>
-      </PageDataProvider>
-    </LanguageProvider>
+        </PageDataProvider>
+      </LanguageProvider>
+    </ErrorBoundary>
   );
 }

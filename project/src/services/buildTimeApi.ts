@@ -16,6 +16,7 @@ export interface StoreInfo {
   storeId: string;
   subdomain: string;
   contact_email?: string;
+  templateId?: string;
 }
 
 function isDynamoDBFormat(data: any): boolean {
@@ -129,7 +130,8 @@ export async function getStoreList(): Promise<StoreInfo[]> {
     console.log('[BuildTime API] Using static store list:', storeListEnv);
     const stores = storeListEnv.split(',').map(s => ({
       storeId: s.trim(),
-      subdomain: s.trim().toLowerCase()
+      subdomain: s.trim().toLowerCase(),
+      templateId: process.env.DEFAULT_TEMPLATE_ID || 'theme1',
     }));
     console.log('[BuildTime API] Parsed stores:', stores);
     return stores;

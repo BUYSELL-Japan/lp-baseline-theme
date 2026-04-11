@@ -1,3 +1,25 @@
+import React from 'react';
+// Theme 2 specific components
+import Header from './themes/theme2/Header';
+import Hero from './themes/theme2/Hero';
+import About from './themes/theme2/About';
+import Menu from './themes/theme2/Menu';
+import Pricing from './themes/theme2/Pricing';
+import Footer from './themes/theme2/Footer';
+
+// Shared components (reuse Theme 1 for now)
+import CTA from './CTA';
+import Gallery from './Gallery';
+import Staff from './Staff';
+import Reviews from './Reviews';
+import News from './News';
+import StoreInfo from './StoreInfo';
+import Company from './Company';
+import Access from './Access';
+import FAQ from './FAQ';
+import Contact from './Contact';
+
+import ErrorBoundary from './ErrorBoundary';
 import type { PageData } from '../services/dataMapper';
 import { PageDataProvider } from '../contexts/PageDataContext';
 import { LanguageProvider } from '../contexts/LanguageContext';
@@ -9,31 +31,32 @@ interface StorePageProps {
 }
 
 export default function Theme2StorePage({ pageData, initialLanguage = 'ja', basePath = '/' }: StorePageProps) {
-  // 動的言語取得（日本語向け）
-  const getLocalText = (field: any, lang: string = 'ja') => {
-    if (!field) return '';
-    if (typeof field === 'string') return field;
-    return field[lang] || field['ja'] || '';
-  };
-
-  const storeName = getLocalText(pageData.header?.logo?.text);
-
   return (
-    <LanguageProvider initialLanguage={initialLanguage} basePath={basePath}>
-      <PageDataProvider data={pageData}>
-        <div className="min-h-screen bg-slate-900 text-slate-100 flex items-center justify-center p-8">
-          <div className="max-w-xl mx-auto text-center space-y-6">
-            <h1 className="text-5xl font-extrabold tracking-tight">Theme 2: Modern</h1>
-            <p className="text-xl text-slate-400">ここは {storeName} のTheme 2ページ（モック）です。</p>
-            <div className="p-6 bg-slate-800 rounded-2xl border border-slate-700 shadow-xl">
-              <p className="text-sm text-slate-300">
-                管理画面で「Theme 2」が選択されると、Astroのビルドプロセスを通じ、現在ご覧のレイアウトファイルが使用されて静的ページが生成されます。<br/>
-                ※後続のステップで実際のおしゃれなデザインコンポーネントに差し替えます。
-              </p>
-            </div>
+    <ErrorBoundary>
+      <LanguageProvider initialLanguage={initialLanguage} basePath={basePath}>
+        <PageDataProvider data={pageData}>
+          <div className="min-h-screen bg-slate-950 text-slate-50 selection:bg-blue-500/30 font-sans">
+            {pageData.header && <Header />}
+            <main>
+              {pageData.hero && <Hero />}
+              {pageData.about && <About />}
+              {pageData.menu && <Menu />}
+              {pageData.pricing && <Pricing />}
+              {pageData.cta && <CTA />}
+              {pageData.gallery && <Gallery />}
+              {pageData.staff && <Staff />}
+              {pageData.reviews && <Reviews />}
+              {pageData.news && <News />}
+              {pageData.storeInfo && <StoreInfo />}
+              {pageData.company && <Company />}
+              {pageData.access && <Access />}
+              {pageData.faq && <FAQ />}
+              {pageData.contact && <Contact />}
+            </main>
+            {pageData.footer && <Footer />}
           </div>
-        </div>
-      </PageDataProvider>
-    </LanguageProvider>
+        </PageDataProvider>
+      </LanguageProvider>
+    </ErrorBoundary>
   );
 }

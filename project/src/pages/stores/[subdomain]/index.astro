@@ -10,15 +10,27 @@ export async function getStaticPaths() {
   const storeList = await getStoreList();
 
   const paths = await Promise.all(
-    storeList.map(async ({ storeId, subdomain, contact_email }) => {
+    storeList.map(async ({ storeId, subdomain, contact_email, templateId }) => {
       const storeContent = await fetchStoreContentAtBuildTime(storeId);
       if (!storeContent) return null;
 
       const pageData = mapDynamoDBDataToPageData(storeContent);
-      // Storesテーブルの contact_email を pageData に注入する
+
+      // DynamoDB Stores テーブルの contact_email を注入
       if (contact_email) {
         pageData.contactEmail = contact_email;
       }
+
+      // DynamoDB Stores テーブルの templateId を settings.theme に注入
+      // ContentData 内に templateId があればそちらを優先
+      const contentTemplateId = storeContent?.templateId || storeContent?.ContentData?.templateId;
+      const resolvedTheme = contentTemplateId || templateId || 'theme1';
+      if (!pageData.settings) {
+        pageData.settings = { theme: resolvedTheme } as any;
+      } else {
+        (pageData.settings as any).theme = resolvedTheme;
+      }
+
       return {
         params: { subdomain },
         props: { pageData, storeId, subdomain },

@@ -1,0 +1,30 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ThemeGallery from '../components/ThemeGallery';
+import * as mockData from '../data/content';
+import type { PageData } from '../services/dataMapper';
+
+const pageData: PageData = {
+  header: mockData.headerData,
+  hero: mockData.heroData,
+  about: mockData.aboutData,
+  menu: mockData.menuData,
+  storeInfo: mockData.storeInfoData,
+  contact: mockData.contactData,
+  footer: mockData.footerData,
+  gallery: mockData.galleryData,
+  staff: mockData.staffData,
+  reviews: mockData.reviewsData,
+  news: mockData.newsData,
+  access: mockData.accessData,
+  faq: mockData.faqData,
+  cta: mockData.ctaData,
+  pricing: mockData.pricingData,
+  company: mockData.companyData,
+  settings: mockData.settingsData,
+};
+---
+
+<Layout title="Template Preview" description="Experience our templates">
+  <ThemeGallery client:only="react" pageData={pageData} />
+</Layout>

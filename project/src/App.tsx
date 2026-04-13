@@ -1,28 +1,14 @@
 import { useState, useEffect } from 'react';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import About from './components/About';
-import Menu from './components/Menu';
-import Pricing from './components/Pricing';
-import CTA from './components/CTA';
-import Gallery from './components/Gallery';
-import Staff from './components/Staff';
-import Reviews from './components/Reviews';
-import News from './components/News';
-import StoreInfo from './components/StoreInfo';
-import Company from './components/Company';
-import Access from './components/Access';
-import FAQ from './components/FAQ';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
-import ErrorBoundary from './components/ErrorBoundary';
-import { fetchStoreContent, getSubdomainFromHostname, getStoreIdFromPath } from './services/api';
+import StorePage from './components/StorePage';
+import Theme2StorePage from './components/Theme2StorePage';
+import Theme3StorePage from './components/Theme3StorePage';
+import { fetchStoreContent, getSubdomainFromHostname, getStoreIdFromPath, getStoreInfo } from './services/api';
 import { mapDynamoDBDataToPageData, getDefaultPageData, type PageData } from './services/dataMapper';
-import { PageDataProvider } from './contexts/PageDataContext';
-import { LanguageProvider } from './contexts/LanguageContext';
 
 function App() {
   const [pageData, setPageData] = useState<PageData>(getDefaultPageData());
+  const [templateId, setTemplateId] = useState<string>('theme1');
+
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -69,7 +55,14 @@ function App() {
 
         if (storeId) {
           console.log('[App] Fetching data for storeId:', storeId);
-          const data = await fetchStoreContent(storeId);
+          // 並行リクエストでコンテンツと設定(テーマ)を両方取得
+          const [data, settings] = await Promise.all([
+            fetchStoreContent(storeId),
+            getStoreInfo(storeId)
+          ]);
+
+          console.log('[App] Settings fetched:', settings);
+          setTemplateId(settings.templateId);
 
           if (data) {
             console.log('[App] Data fetched successfully, mapping...');
@@ -132,32 +125,19 @@ function App() {
     );
   }
 
-  return (
-    <ErrorBoundary>
-      <LanguageProvider>
-        <PageDataProvider data={pageData}>
-          <div className="min-h-screen bg-white">
-            {pageData.header && <Header />}
-            {pageData.hero && <Hero />}
-            {pageData.about && <About />}
-            {pageData.menu && <Menu />}
-            {pageData.pricing && <Pricing />}
-            {pageData.cta && <CTA />}
-            {pageData.gallery && <Gallery />}
-            {pageData.staff && <Staff />}
-            {pageData.reviews && <Reviews />}
-            {pageData.news && <News />}
-            {pageData.storeInfo && <StoreInfo />}
-            {pageData.company && <Company />}
-            {pageData.access && <Access />}
-            {pageData.faq && <FAQ />}
-            {pageData.contact && <Contact />}
-            {pageData.footer && <Footer />}
-          </div>
-        </PageDataProvider>
-      </LanguageProvider>
-    </ErrorBoundary>
-  );
+  const renderTheme = () => {
+    switch (templateId) {
+      case 'theme2':
+        return <Theme2StorePage pageData={pageData} />;
+      case 'theme3':
+        return <Theme3StorePage pageData={pageData} />;
+      case 'theme1':
+      default:
+        return <StorePage pageData={pageData} />;
+    }
+  };
+
+  return renderTheme();
 }
 
 export default App;

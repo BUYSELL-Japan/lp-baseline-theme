@@ -1,6 +1,7 @@
 import { unmarshall } from '@aws-sdk/util-dynamodb';
 
 const API_BASE_URL = 'https://2sznhxhcd8.execute-api.ap-southeast-2.amazonaws.com/dev/lp/content';
+const SETTINGS_ENDPOINT = 'https://2sznhxhcd8.execute-api.ap-southeast-2.amazonaws.com/dev/lp/settings';
 
 function isLocalDevelopment(): boolean {
   if (typeof import.meta !== 'undefined' && import.meta.env) {
@@ -146,4 +147,16 @@ export function getStoreIdFromPath(): string | null {
   }
 
   return null;
+}
+
+export async function getStoreInfo(storeId: string): Promise<{ templateId: string }> {
+  try {
+    const response = await fetch(`${SETTINGS_ENDPOINT}/${storeId}`);
+    if (!response.ok) return { templateId: 'theme1' };
+    const result = await response.json();
+    return { templateId: result.templateId || result.template_id || 'theme1' };
+  } catch (error) {
+    console.error('Error fetching store settings:', error);
+    return { templateId: 'theme1' };
+  }
 }

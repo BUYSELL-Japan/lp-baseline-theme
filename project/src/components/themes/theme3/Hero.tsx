@@ -70,7 +70,7 @@ export default function Hero() {
             onClick={(e) => { e.preventDefault(); document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' }); }}
             className="px-12 py-4 border border-white/60 text-white font-serif text-sm tracking-[0.25em] hover:bg-white hover:text-stone-900 transition-all duration-500"
           >
-            {t(heroData.cta, 'text') || 'Discover'}
+            {t((heroData as any).cta, 'text') || 'Discover'}
           </a>
           <a
             href="#contact"

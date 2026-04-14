@@ -13,7 +13,7 @@ export default function Hero() {
 
   const title = getLocalizedValue(heroData, 'title', language);
   const subtitle = getLocalizedValue(heroData, 'subtitle', language);
-  const ctaText = getLocalizedValue(heroData.cta, 'text', language);
+  const ctaText = getLocalizedValue((heroData as any).cta, 'text', language);
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-slate-950">

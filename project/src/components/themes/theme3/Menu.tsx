@@ -21,7 +21,7 @@ export default function Menu() {
   const grouped: { category: string; items: typeof menuData.items }[] = [];
   const categoryMap = new Map<string, typeof menuData.items>();
   menuData.items.forEach((item) => {
-    const catRaw = item.category;
+    const catRaw = (item as any).category;
     const catKey = catRaw
       ? typeof catRaw === 'object'
         ? catRaw['ja'] || catRaw['en'] || Object.values(catRaw)[0] || 'メニュー'

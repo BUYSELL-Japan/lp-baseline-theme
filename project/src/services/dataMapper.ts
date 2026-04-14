@@ -402,7 +402,7 @@ function transformGalleryData(galleryData: any): GalleryData | null {
               : img.category
           };
         })
-        .filter((img): img is NonNullable<typeof img> => img !== null)
+        .filter((img: any): img is NonNullable<typeof img> => img !== null)
     : [];
 
   console.log('[transformGalleryData] Transformed images:', images);

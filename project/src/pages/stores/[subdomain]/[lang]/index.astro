@@ -25,7 +25,9 @@ export async function getStaticPaths() {
       // DynamoDB Stores テーブルの templateId を settings.theme に注入
       // ContentData 内に templateId があればそちらを優先
       const contentTemplateId = storeContent?.templateId || storeContent?.ContentData?.templateId;
-      const resolvedTheme = contentTemplateId || templateId || 'theme1';
+      const themeFromSettings = (pageData.settings as any)?.theme;
+      const resolvedTheme = contentTemplateId || (themeFromSettings && themeFromSettings !== 'theme1' ? themeFromSettings : null) || templateId || 'theme1';
+
       if (!pageData.settings) {
         pageData.settings = { theme: resolvedTheme } as any;
       } else {

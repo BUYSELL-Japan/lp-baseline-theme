@@ -38,7 +38,7 @@ export default function Header() {
       <div className="max-w-6xl mx-auto px-8 flex items-center justify-between">
         {/* Logo — Centered-look with elegant serif */}
         <motion.div
-          className="cursor-pointer"
+          className="cursor-pointer shrink-0"
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           whileHover={{ opacity: 0.7 }}
           transition={{ duration: 0.3 }}
@@ -52,8 +52,8 @@ export default function Header() {
           </span>
         </motion.div>
 
-        {/* Desktop Nav — Minimal, spaced */}
-        <nav className="hidden md:flex items-center gap-10">
+        {/* Desktop Nav — Minimal, spaced, wrap enabled for multiple languages */}
+        <nav className="hidden lg:flex flex-wrap items-center justify-end gap-x-6 xl:gap-x-10 gap-y-2 max-w-full">
           {navigation.map((item) => (
             <button
               key={item.id}
@@ -84,7 +84,7 @@ export default function Header() {
 
         {/* Mobile Toggle */}
         <button
-          className={`md:hidden transition-colors ${scrolled ? 'text-stone-800' : 'text-white'}`}
+          className={`lg:hidden transition-colors ${scrolled ? 'text-stone-800' : 'text-white'}`}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -98,8 +98,9 @@ export default function Header() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-0 right-0 bg-stone-50 border-b border-stone-200 py-8 px-8 flex flex-col gap-5 shadow-lg md:hidden"
+            className="absolute top-full left-0 right-0 bg-stone-50 border-b border-stone-200 py-8 px-8 flex flex-col gap-5 shadow-lg lg:hidden"
           >
+
             {navigation.map((item) => (
               <button
                 key={item.id}

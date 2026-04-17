@@ -23,10 +23,7 @@ export default function About() {
           <h2 className="font-serif text-5xl md:text-7xl text-stone-100 font-light leading-[1.1] tracking-wide max-w-lg">
             {t(aboutData, 'sectionTitle')}
           </h2>
-          <div className="shrink-0">
-            <div className="w-16 h-px bg-amber-500 mb-3" />
-            <span className="font-serif text-xs tracking-[0.4em] uppercase text-amber-500">Our Philosophy</span>
-          </div>
+
         </motion.div>
       </div>
 

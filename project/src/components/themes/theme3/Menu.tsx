@@ -6,7 +6,7 @@ import Lightbox from '../../Lightbox';
 
 export default function Menu() {
   const menuData = useMenuData();
-  const { t } = useLocalize();
+  const { t, translate } = useLocalize();
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
 
@@ -17,6 +17,8 @@ export default function Menu() {
     alt: t(item, 'name'),
   }));
 
+  const defaultCategory = translate('menu');
+
   // Group items by category if available, else show all as one group
   const grouped: { category: string; items: typeof menuData.items }[] = [];
   const categoryMap = new Map<string, typeof menuData.items>();
@@ -24,9 +26,9 @@ export default function Menu() {
     const catRaw = (item as any).category;
     const catKey = catRaw
       ? typeof catRaw === 'object'
-        ? catRaw['ja'] || catRaw['en'] || Object.values(catRaw)[0] || 'メニュー'
+        ? catRaw[language] || catRaw['ja'] || catRaw['en'] || Object.values(catRaw)[0] || defaultCategory
         : String(catRaw)
-      : 'メニュー';
+      : defaultCategory;
     if (!categoryMap.has(catKey)) categoryMap.set(catKey, []);
     categoryMap.get(catKey)!.push(item);
   });
@@ -35,7 +37,7 @@ export default function Menu() {
       grouped.push({ category, items });
     });
   } else {
-    grouped.push({ category: 'メニュー', items: menuData.items });
+    grouped.push({ category: defaultCategory, items: menuData.items });
   }
 
   return (
@@ -68,7 +70,6 @@ export default function Menu() {
           className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-stone-300 pb-10"
         >
           <div>
-            <span className="font-serif text-xs tracking-[0.4em] uppercase text-amber-700 mb-4 block">Our Menu</span>
             <h2 className="font-serif text-5xl md:text-6xl text-stone-800 font-light tracking-wide">
               {t(menuData, 'sectionTitle')}
             </h2>

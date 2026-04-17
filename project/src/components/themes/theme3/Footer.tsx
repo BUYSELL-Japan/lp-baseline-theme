@@ -50,33 +50,31 @@ export default function Footer() {
             </div>
           )}
 
-          <div>
-            <h3 className="font-serif text-xs tracking-[0.3em] uppercase text-amber-500/80 mb-5">Follow Us</h3>
-            <div className="flex justify-center gap-5">
-              {footerData.social?.links?.map((social, index) => {
-                const platformKey = (social.platform || '').toLowerCase();
-                const IconComponent = socialIconMap[platformKey] || HelpCircle;
-                return (
-                  <motion.a
-                    key={index}
-                    href={social.url}
-                    whileHover={{ y: -3 }}
-                    className="text-stone-400 hover:text-amber-400 transition-colors"
-                  >
-                    <IconComponent className="w-5 h-5" />
-                  </motion.a>
-                );
-              })}
+          {footerData.social && footerData.social.links && (
+            <div>
+              <h3 className="font-serif text-xs tracking-[0.3em] uppercase text-amber-500/80 mb-5">
+                {getText(footerData.social.title)}
+              </h3>
+              <div className="flex justify-center gap-5">
+                {footerData.social.links.map((social, index) => {
+                  const platformKey = (social.platform || '').toLowerCase();
+                  const IconComponent = socialIconMap[platformKey] || HelpCircle;
+                  return (
+                    <motion.a
+                      key={index}
+                      href={social.url}
+                      whileHover={{ y: -3 }}
+                      className="text-stone-400 hover:text-amber-400 transition-colors"
+                    >
+                      <IconComponent className="w-5 h-5" />
+                    </motion.a>
+                  );
+                })}
+              </div>
             </div>
-          </div>
-
-          <div>
-            <h3 className="font-serif text-xs tracking-[0.3em] uppercase text-amber-500/80 mb-5">Access</h3>
-            <p className="font-serif text-stone-400 text-sm leading-loose">
-              ご来店をお待ちしております
-            </p>
-          </div>
+          )}
         </div>
+
 
         <div className="pt-8 border-t border-stone-700 text-center">
           <p className="font-serif text-stone-600 text-xs tracking-[0.2em]">

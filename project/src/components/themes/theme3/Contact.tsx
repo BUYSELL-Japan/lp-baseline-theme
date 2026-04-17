@@ -10,7 +10,7 @@ type SubmitStatus = 'idle' | 'sending' | 'success' | 'error';
 export default function Contact() {
   const contactData = useContactData();
   const contactEmail = useContactEmail();
-  const { t } = useLocalize();
+  const { t, translate } = useLocalize();
   const [submitStatus, setSubmitStatus] = useState<SubmitStatus>('idle');
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
   const [honeypot, setHoneypot] = useState('');
@@ -67,21 +67,8 @@ export default function Contact() {
           <div className="w-8 h-px bg-amber-700 mx-auto mt-8" />
         </motion.div>
 
-        {/* Two-column layout: info left, form right */}
-        <div className="grid md:grid-cols-[1fr_2fr] gap-16 items-start">
-          {/* Left column — decorative text */}
-          <div className="md:sticky md:top-32">
-            <p className="font-serif text-stone-500 text-base leading-loose mb-8">
-              ご質問・ご予約はお気軽にお問い合わせください。
-            </p>
-            <div className="w-8 h-px bg-amber-700 mb-8" />
-            <div className="space-y-4">
-              <p className="font-serif text-xs tracking-[0.3em] uppercase text-amber-700">Response</p>
-              <p className="font-serif text-stone-700 text-sm leading-loose">2営業日以内にご返信いたします</p>
-            </div>
-          </div>
-
-          {/* Right column — minimal form */}
+        {/* Form layout — centered for theme alignment */}
+        <div className="max-w-3xl mx-auto">
           <motion.form
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -160,18 +147,19 @@ export default function Contact() {
               {submitStatus === 'success' && (
                 <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                   className="font-serif text-sm text-stone-500 tracking-wide">
-                  お問い合わせを受け付けました。ありがとうございます。
+                  {translate('contactSuccess')}
                 </motion.p>
               )}
               {submitStatus === 'error' && (
                 <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                   className="font-serif text-sm text-red-500 tracking-wide">
-                  送信に失敗しました。しばらくしてからもう一度お試しください。
+                  {translate('contactError')}
                 </motion.p>
               )}
             </AnimatePresence>
           </motion.form>
         </div>
+
       </div>
     </section>
   );

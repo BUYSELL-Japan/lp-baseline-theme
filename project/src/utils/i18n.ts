@@ -67,7 +67,20 @@ export const staticTranslations: Record<string, Record<Language, string>> = {
     'zh-tw': '評論',
     ko: '리뷰',
   },
+  contactSuccess: {
+    ja: 'お問い合わせを受け付けました。ありがとうございます。',
+    en: 'Thank you for your inquiry. We have received it.',
+    'zh-tw': '您的諮詢已收到。謝謝。',
+    ko: '문의가 접수되었습니다. 감사합니다.',
+  },
+  contactError: {
+    ja: '送信に失敗しました。しばらくしてからもう一度お試しください。',
+    en: 'Failed to send. Please try again after a while.',
+    'zh-tw': '發送失敗。請稍後再試。',
+    ko: '전송에 실패했습니다. 잠시 후 다시 시도해 주세요.',
+  },
 };
+
 
 export function translate(key: string, language: Language): string {
   return staticTranslations[key]?.[language] || staticTranslations[key]?.['ja'] || '';

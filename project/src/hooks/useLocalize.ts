@@ -1,5 +1,5 @@
 import { useLanguage } from '../contexts/LanguageContext';
-import { getLocalizedValue } from '../utils/i18n';
+import { getLocalizedValue, translate } from '../utils/i18n';
 
 export function useLocalize() {
   const { language } = useLanguage();
@@ -33,5 +33,9 @@ export function useLocalize() {
     return getText(value) || fallback;
   }
 
-  return { t, getText, language };
+  function trans(key: string): string {
+    return translate(key, language);
+  }
+
+  return { t, getText, translate: trans, language };
 }

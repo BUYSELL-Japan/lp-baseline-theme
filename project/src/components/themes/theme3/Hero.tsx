@@ -59,27 +59,7 @@ export default function Hero() {
           {subtitle}
         </motion.p>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.2 }}
-          className="flex flex-col sm:flex-row gap-6 justify-center"
-        >
-          <a
-            href="#about"
-            onClick={(e) => { e.preventDefault(); document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' }); }}
-            className="px-12 py-4 border border-white/60 text-white font-serif text-sm tracking-[0.25em] hover:bg-white hover:text-stone-900 transition-all duration-500"
-          >
-            {t((heroData as any).cta, 'text') || 'Discover'}
-          </a>
-          <a
-            href="#contact"
-            onClick={(e) => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); }}
-            className="px-12 py-4 bg-amber-700/80 text-white font-serif text-sm tracking-[0.25em] hover:bg-amber-700 transition-all duration-500"
-          >
-            ご予約
-          </a>
-        </motion.div>
+
       </div>
 
       {/* Elegant scroll indicator */}

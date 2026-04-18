@@ -1,18 +1,34 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Theme4StorePage from '../../components/Theme4StorePage';
-import { getStoreData } from '../../services/dynamoService';
-import { mapDynamoToPageData } from '../../services/dataMapper';
+import * as mockData from '../../data/content';
+import type { PageData } from '../../services/dataMapper';
 
-// デモ用のデータ取得（デフォルトで最初の店舗データを使用）
-const storeData = await getStoreData('demo-store');
-const pageData = mapDynamoToPageData(storeData);
+const pageData: PageData = {
+  header: mockData.headerData,
+  hero: mockData.heroData,
+  about: mockData.aboutData,
+  menu: mockData.menuData,
+  storeInfo: mockData.storeInfoData,
+  contact: mockData.contactData,
+  footer: mockData.footerData,
+  gallery: mockData.galleryData,
+  staff: mockData.staffData,
+  reviews: mockData.reviewsData,
+  news: mockData.newsData,
+  access: mockData.accessData,
+  faq: mockData.faqData,
+  cta: mockData.ctaData,
+  pricing: mockData.pricingData,
+  company: mockData.companyData,
+  settings: mockData.settingsData,
+};
 
 const title = "Theme 4 (Tropical) - Preview";
 ---
 
 <Layout title={title}>
-  <Theme4StorePage pageData={pageData} initialLanguage="ja" basePath="/demo/theme4" client:load />
+  <Theme4StorePage client:only="react" pageData={pageData} initialLanguage="ja" basePath="/demo/theme4" />
 </Layout>
 
 <style is:global>

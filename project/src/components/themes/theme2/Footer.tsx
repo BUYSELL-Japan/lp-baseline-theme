@@ -27,7 +27,9 @@ export default function Footer() {
   return (
     <footer className="bg-slate-950 text-white pt-24 pb-12 px-6 border-t border-slate-900">
       <div className="max-w-7xl mx-auto">
+        {/* Grid: Logo + sections */}
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-16 mb-20">
+          {/* Logo & description */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-8 group">
               <div className="w-12 h-12 bg-blue-600 rounded-2xl flex items-center justify-center rotate-12 group-hover:rotate-0 transition-transform duration-500">
@@ -40,6 +42,7 @@ export default function Footer() {
             </p>
           </div>
 
+          {/* Business hours */}
           {footerData.businessHours && (
             <div>
               <h3 className="text-sm font-black uppercase tracking-[0.2em] text-blue-500 mb-8">
@@ -53,6 +56,7 @@ export default function Footer() {
             </div>
           )}
 
+          {/* Social links */}
           {footerData.social?.links && (
             <div>
               <h3 className="text-sm font-black uppercase tracking-[0.2em] text-blue-500 mb-8">
@@ -70,14 +74,16 @@ export default function Footer() {
                       whileTap={{ scale: 0.9 }}
                       className="w-12 h-12 bg-slate-900 border border-slate-800 rounded-2xl flex items-center justify-center hover:bg-slate-800 hover:border-blue-500/50 transition-colors"
                     >
-                      <IconComponent className="w-5 h-5 text-slate-400 group-hover:text-blue-500" />
+                      <IconComponent className="w-5 h-5 text-slate-400" />
                     </motion.a>
                   );
                 })}
               </div>
             </div>
           )}
+        </div>{/* end grid */}
 
+        {/* Copyright */}
         <div className="pt-12 border-t border-slate-900">
           <p className="text-slate-600 text-sm font-bold tracking-widest uppercase">
             &copy; {currentYear} {getText(footerData.copyright)}

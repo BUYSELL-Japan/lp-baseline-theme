@@ -1,23 +1,21 @@
 import React from 'react';
-// Theme 2 specific components
+// Theme 2 specific components (all)
 import Header from './themes/theme2/Header';
 import Hero from './themes/theme2/Hero';
 import About from './themes/theme2/About';
 import Menu from './themes/theme2/Menu';
 import Pricing from './themes/theme2/Pricing';
+import CTA from './themes/theme2/CTA';
+import Gallery from './themes/theme2/Gallery';
+import Staff from './themes/theme2/Staff';
+import Reviews from './themes/theme2/Reviews';
+import News from './themes/theme2/News';
+import StoreInfo from './themes/theme2/StoreInfo';
+import Company from './themes/theme2/Company';
+import Access from './themes/theme2/Access';
+import FAQ from './themes/theme2/FAQ';
+import Contact from './themes/theme2/Contact';
 import Footer from './themes/theme2/Footer';
-
-// Shared components (reuse Theme 1 for now)
-import CTA from './CTA';
-import Gallery from './Gallery';
-import Staff from './Staff';
-import Reviews from './Reviews';
-import News from './News';
-import StoreInfo from './StoreInfo';
-import Company from './Company';
-import Access from './Access';
-import FAQ from './FAQ';
-import Contact from './Contact';
 
 import ErrorBoundary from './ErrorBoundary';
 import type { PageData } from '../services/dataMapper';

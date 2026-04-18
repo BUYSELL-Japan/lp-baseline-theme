@@ -73,10 +73,6 @@ export default function CTA() {
           </motion.div>
         </div>
       </div>
-    </section>
-  );
-}
-
       {/* Tropical Floating Elements (Decorative) */}
       <div className="absolute top-10 left-10 w-32 h-32 bg-yellow-400/20 rounded-full blur-3xl animate-pulse" />
       <div className="absolute bottom-10 right-10 w-48 h-48 bg-red-600/20 rounded-full blur-3xl animate-pulse" />

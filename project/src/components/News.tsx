@@ -6,7 +6,7 @@ import SectionError from './SectionError';
 
 export default function News() {
   const newsData = useNewsData();
-  const { getText, language } = useLocalize();
+  const { getText, getCategory, language } = useLocalize();
 
   console.log('[News] newsData:', newsData);
 
@@ -71,7 +71,7 @@ export default function News() {
                     <p className="text-sm text-gray-500">{getText(item.date)}</p>
                     <span className="inline-flex items-center gap-1 px-3 py-1 bg-teal-600 text-white text-xs rounded-full mt-1">
                       <Tag className="w-3 h-3" />
-                      {getText(item.category)}
+                      {getCategory(item.category)}
                     </span>
                   </div>
                 </div>

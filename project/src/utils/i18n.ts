@@ -81,6 +81,76 @@ export const staticTranslations: Record<string, Record<Language, string>> = {
   },
 };
 
+// ニュースカテゴリの翻訳マップ
+// Admin UI で入力（または選択）された日本語の文字列をキーとして多言語翻訳を返す
+export const newsCategoryMap: Record<string, Record<Language, string>> = {
+  'お知らせ': {
+    ja: 'お知らせ',
+    en: 'News',
+    'zh-tw': '最新消息',
+    ko: '공지사항',
+  },
+  '営業情報': {
+    ja: '営業情報',
+    en: 'Business Info',
+    'zh-tw': '營業資訊',
+    ko: '영업 정보',
+  },
+  '新メニュー': {
+    ja: '新メニュー',
+    en: 'New Menu',
+    'zh-tw': '新菜單',
+    ko: '새 메뉴',
+  },
+  'イベント': {
+    ja: 'イベント',
+    en: 'Event',
+    'zh-tw': '活動',
+    ko: '이벤트',
+  },
+  'キャンペーン': {
+    ja: 'キャンペーン',
+    en: 'Campaign',
+    'zh-tw': '活動優惠',
+    ko: '캠페인',
+  },
+  'スタッフ': {
+    ja: 'スタッフ',
+    en: 'Staff',
+    'zh-tw': '員工',
+    ko: '직원',
+  },
+  'メディア': {
+    ja: 'メディア',
+    en: 'Media',
+    'zh-tw': '媒體',
+    ko: '미디어',
+  },
+};
+
+/**
+ * ニュースカテゴリを現在の言語に翻訳して返す。
+ * マップにないカテゴリは、多言語オブジェクトなら通常の getText で処理し、
+ * 文字列ならそのままフォールバックとして返す。
+ */
+export function getNewsCategory(category: any, language: Language): string {
+  if (!category) return '';
+
+  // 既に多言語オブジェクトの場合は通常の取得
+  if (typeof category === 'object' && category !== null) {
+    return category[language] ?? category['ja'] ?? '';
+  }
+
+  // 文字列の場合はマップで変換
+  const str = String(category);
+  const mapped = newsCategoryMap[str];
+  if (mapped) {
+    return mapped[language] ?? mapped['ja'] ?? str;
+  }
+
+  // マップにない場合はそのまま返す
+  return str;
+}
 
 export function translate(key: string, language: Language): string {
   return staticTranslations[key]?.[language] || staticTranslations[key]?.['ja'] || '';

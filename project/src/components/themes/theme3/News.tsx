@@ -5,7 +5,7 @@ import { useLocalize } from '../../../hooks/useLocalize';
 
 export default function News() {
   const newsData = useNewsData();
-  const { getText } = useLocalize();
+  const { getText, getCategory } = useLocalize();
 
   if (!newsData || !newsData.items || newsData.items.length === 0) return null;
 
@@ -49,7 +49,7 @@ export default function News() {
                   {getText(item.date)}
                 </p>
                 <span className="font-serif text-xs tracking-[0.2em] uppercase text-amber-700 border-b border-amber-700/40 pb-0.5">
-                  {getText(item.category)}
+                  {getCategory(item.category)}
                 </span>
               </div>
 

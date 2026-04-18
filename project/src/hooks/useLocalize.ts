@@ -1,5 +1,5 @@
 import { useLanguage } from '../contexts/LanguageContext';
-import { getLocalizedValue, translate } from '../utils/i18n';
+import { getLocalizedValue, translate, getNewsCategory } from '../utils/i18n';
 
 export function useLocalize() {
   const { language } = useLanguage();
@@ -37,5 +37,9 @@ export function useLocalize() {
     return translate(key, language);
   }
 
-  return { t, getText, translate: trans, language };
+  function getCategory(category: any): string {
+    return getNewsCategory(category, language);
+  }
+
+  return { t, getText, translate: trans, getCategory, language };
 }

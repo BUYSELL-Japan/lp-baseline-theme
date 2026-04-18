@@ -50,12 +50,12 @@ export default function Staff() {
                 {String(index + 1).padStart(2, '0')}
               </span>
 
-              {/* Photo — small, square, monochrome → color on hover */}
-              <div className="w-20 h-20 md:w-full aspect-square overflow-hidden shrink-0">
+              {/* Photo */}
+              <div className="w-20 h-28 md:w-40 md:h-52 overflow-hidden shrink-0 rounded-sm">
                 <img
                   src={member.image}
                   alt={getText(member.name)}
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                  className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
                 />
               </div>
 

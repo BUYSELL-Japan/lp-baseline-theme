@@ -17,74 +17,86 @@ export default function StoreInfo() {
   if (!storeInfoData || !storeInfoData.items) return null;
 
   return (
-    <section id="storeInfo" className="py-32 px-6 bg-white relative">
-      <div className="max-w-6xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-24"
-        >
-          <span className="text-red-600 font-black uppercase tracking-[0.3em] text-sm block mb-4">Location & Details</span>
-          <h2 className="text-5xl md:text-8xl font-black text-rose-900 mb-6 italic tracking-tighter">
-            {t(storeInfoData, 'sectionTitle')}
-          </h2>
-          <div className="w-24 h-2 bg-gradient-to-r from-red-600 to-yellow-400 mx-auto rounded-full" />
-        </motion.div>
+    <section id="storeInfo" className="py-32 px-6 bg-white relative overflow-hidden">
+      {/* Background Decor */}
+      <div className="absolute top-0 right-0 w-[500px] h-px bg-red-600/10 rotate-45 translate-x-1/2" />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20">
-          {storeInfoData.items.map((item, index) => {
-            const iconKey = (item.icon || '').toLowerCase();
-            const IconComponent = iconMap[iconKey] || HelpCircle;
+      <div className="max-w-[1200px] mx-auto relative z-10">
+        <div className="flex flex-col lg:flex-row gap-20 items-center">
+          
+          {/* Info Cards Side */}
+          <div className="w-full lg:w-1/2">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="mb-20"
+            >
+              <h2 className="text-6xl md:text-9xl font-black text-rose-950 mb-8 italic tracking-tighter leading-none">
+                {t(storeInfoData, 'sectionTitle')}
+              </h2>
+              <div className="w-32 h-6 bg-yellow-400 rounded-full" />
+            </motion.div>
 
-            return (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.02 }}
-                className="bg-amber-50 p-10 rounded-[3rem] flex items-start gap-6 border-2 border-transparent hover:border-yellow-400 transition-all duration-300 shadow-[0_10px_30px_rgba(251,191,36,0.05)]"
-              >
-                <div className="bg-red-600 p-4 rounded-2xl shadow-lg shadow-red-500/20">
-                  <IconComponent className="w-6 h-6 text-yellow-200" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-black text-rose-900 mb-2 tracking-tight">
-                    {t(item, 'title')}
-                  </h3>
-                  <p className="text-lg font-bold text-orange-950/60 leading-relaxed italic">
-                    {t(item, 'content')}
-                  </p>
-                </div>
-              </motion.div>
-            );
-          })}
-        </div>
+            <div className="space-y-6">
+              {storeInfoData.items.map((item, index) => {
+                const iconKey = (item.icon || '').toLowerCase();
+                const IconComponent = iconMap[iconKey] || HelpCircle;
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          className="rounded-[3.5rem] overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.1)] p-4 bg-white"
-        >
-          <div className="aspect-video rounded-[3rem] overflow-hidden relative">
-            <img
-              src={storeInfoData.mainImage}
-              alt={t(storeInfoData, 'mainImageCaption')}
-              className="w-full h-full object-cover transition-transform duration-1000 hover:scale-110"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-red-900/60 via-transparent to-transparent" />
-            <div className="absolute bottom-10 left-10">
-              <span className="px-4 py-1.5 bg-yellow-400 text-rose-900 text-[10px] font-black uppercase tracking-widest rounded-full shadow-lg block mb-3 w-fit">
-                Featured View
-              </span>
-              <p className="text-4xl font-black text-white italic tracking-tight drop-shadow-lg">
-                {t(storeInfoData, 'mainImageCaption')}
-              </p>
+                return (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                    className="flex items-center gap-8 p-8 bg-amber-50 rounded-[3rem] border-2 border-transparent hover:border-red-500 transition-all duration-300"
+                  >
+                    <div className="w-16 h-16 bg-red-600 rounded-[1.5rem] flex items-center justify-center shadow-xl rotate-3">
+                      <IconComponent className="w-8 h-8 text-yellow-200" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-black text-rose-950 uppercase tracking-tighter italic">
+                        {t(item, 'title')}
+                      </h3>
+                      <p className="text-lg font-bold text-orange-950/60 leading-tight">
+                        {t(item, 'content')}
+                      </p>
+                    </div>
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
-        </motion.div>
+
+          {/* Image Side - Offset & Floating */}
+          <div className="w-full lg:w-1/2 relative">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="relative z-10 p-4 bg-white rounded-[4rem] shadow-2xl -rotate-2"
+            >
+              <div className="aspect-[4/5] rounded-[3.5rem] overflow-hidden">
+                <img
+                  src={storeInfoData.mainImage}
+                  alt={t(storeInfoData, 'mainImageCaption')}
+                  className="w-full h-full object-cover transition-transform duration-[2s] hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-rose-950/80 via-transparent to-transparent opacity-60" />
+                <div className="absolute bottom-12 left-12 right-12">
+                  <p className="text-3xl font-black text-white italic tracking-tighter leading-tight drop-shadow-2xl">
+                    {t(storeInfoData, 'mainImageCaption')}
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+            
+            {/* Background Blob behind image */}
+            <div className="absolute -top-12 -right-12 w-full h-full bg-yellow-400 opacity-20 rounded-[4rem] -z-10 rotate-3" />
+          </div>
+
+        </div>
       </div>
     </section>
   );

@@ -14,52 +14,58 @@ export default function Staff() {
   return (
     <section id="staff" className="py-32 px-6 bg-amber-50 relative overflow-hidden">
       {/* Background Decor */}
-      <div className="absolute top-1/2 left-0 w-64 h-64 bg-red-100 rounded-full blur-[80px] -translate-x-1/2" />
+      <div className="absolute top-1/2 left-0 w-full h-64 bg-red-600 opacity-[0.03] -rotate-3 -translate-y-1/2" />
 
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-[1200px] mx-auto relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-24"
+          className="mb-32 max-w-2xl"
         >
-          <span className="text-red-600 font-black uppercase tracking-[0.3em] text-sm block mb-4">Our Family</span>
-          <h2 className="text-5xl md:text-8xl font-black text-rose-900 mb-6 italic tracking-tighter">
+          <h2 className="text-6xl md:text-9xl font-black text-rose-950 mb-8 italic tracking-tighter leading-none">
             {sectionTitle}
           </h2>
-          <p className="text-xl md:text-2xl font-bold text-orange-950/60 max-w-2xl mx-auto">
-            {sectionSubtitle}
-          </p>
+          <div className="w-32 h-6 bg-yellow-400 rounded-full" />
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16">
           {staffData.members.map((member, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              whileHover={{ y: -10 }}
-              className="bg-white rounded-[3rem] p-3 shadow-[0_15px_40px_rgba(251,191,36,0.1)] group transition-all duration-300 hover:shadow-[0_20px_60px_rgba(239,68,68,0.15)]"
+              transition={{ duration: 0.8, delay: index * 0.1 }}
+              className={`relative group ${
+                index % 2 === 0 ? 'lg:-translate-y-12' : 'lg:translate-y-12'
+              }`}
             >
-              <div className="aspect-[4/5] rounded-[2.5rem] overflow-hidden relative">
-                <img
-                  src={member.image}
-                  alt={getText(member.name)}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-red-900/40 via-transparent to-transparent" />
-              </div>
-              <div className="p-8 text-center">
-                <div className="inline-block px-4 py-1.5 bg-yellow-400 text-rose-900 text-[10px] font-black uppercase tracking-widest rounded-full mb-4 shadow-sm">
-                  {getText(member.role)}
+              <div className="relative z-10 bg-white rounded-[4rem] p-4 shadow-2xl transition-transform duration-500 group-hover:-rotate-2">
+                <div className="relative aspect-[3/4] overflow-hidden rounded-[3.5rem]">
+                  <img
+                    src={member.image}
+                    alt={getText(member.name)}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  {/* Overlay info */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-red-600/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8 text-white">
+                    <h4 className="text-xl font-bold">{getText(member.role)}</h4>
+                  </div>
                 </div>
-                <h3 className="text-2xl font-black text-rose-900 mb-2">{getText(member.name)}</h3>
-                <p className="text-sm font-bold text-orange-950/50 leading-relaxed italic">
-                  "{getText(member.description)}"
-                </p>
+                <div className="p-8 text-center">
+                  <h3 className="text-3xl font-black text-rose-950 italic tracking-tighter">
+                    {getText(member.name)}
+                  </h3>
+                  <div className="mt-4 flex justify-center gap-1">
+                    <div className="w-8 h-1 bg-red-600 rounded-full" />
+                    <div className="w-2 h-1 bg-yellow-400 rounded-full" />
+                  </div>
+                </div>
               </div>
+
+              {/* Background Decor */}
+              <div className="absolute -inset-4 bg-yellow-400 opacity-0 group-hover:opacity-20 rounded-[4.5rem] blur-2xl transition-opacity -z-10" />
             </motion.div>
           ))}
         </div>

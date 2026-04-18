@@ -17,108 +17,94 @@ export default function Access() {
 
   return (
     <section id="access" className="py-32 px-6 bg-amber-50 relative overflow-hidden">
-      <div className="max-w-6xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          className="text-center mb-24"
-        >
-          <span className="text-red-600 font-black uppercase tracking-[0.3em] text-sm block mb-4">Visit Us</span>
-          <h2 className="text-5xl md:text-8xl font-black text-rose-900 mb-6 italic tracking-tighter">
-            {sectionTitle}
-          </h2>
-          <p className="text-xl md:text-2xl font-bold text-orange-950/60">
-            {sectionSubtitle}
-          </p>
-        </motion.div>
+      {/* Background Decor */}
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
+        <div className="absolute top-0 right-0 w-[60vw] h-[60vw] bg-yellow-400 opacity-10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2" />
+      </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
-          {/* Info Side */}
+      <div className="max-w-[1400px] mx-auto relative z-10">
+        <div className="flex flex-col lg:flex-row gap-16 lg:gap-0 items-center">
+          
+          {/* Map Side - Large & Floating */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="w-full lg:w-2/3 relative z-10"
+          >
+            <div className="aspect-video lg:aspect-[16/10] bg-white rounded-[4rem] p-4 shadow-2xl rotate-1">
+              <div className="w-full h-full rounded-[3.5rem] overflow-hidden grayscale hover:grayscale-0 transition-all duration-1000 border-4 border-red-100">
+                <iframe
+                  src={accessData.mapEmbedUrl}
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title={translate('storeMap', language)}
+                />
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Info Side - Overlapping Card */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="space-y-8"
+            className="w-full lg:w-2/5 lg:-ml-24 relative z-20"
           >
-            <div className="bg-white rounded-[3rem] p-10 shadow-[0_20px_60px_rgba(239,68,68,0.05)] border-4 border-white">
-              <div className="flex items-start gap-6">
-                <div className="p-4 bg-red-600 rounded-2xl shadow-lg shadow-red-500/20">
-                  <MapPin className="w-6 h-6 text-yellow-200" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-black text-rose-900 mb-3 tracking-tight italic">
-                    {translate('address', language)}
-                  </h3>
-                  <p className="text-xl font-bold text-orange-950/70 leading-relaxed italic">
-                    {getText(accessData.address)}
-                  </p>
-                </div>
+            <div className="bg-white rounded-[4rem] p-12 md:p-16 shadow-[0_40px_100px_rgba(220,38,38,0.15)] border-4 border-white rotate-[-1deg]">
+              <div className="mb-12">
+                <h2 className="text-5xl md:text-7xl font-black text-rose-950 mb-6 italic tracking-tighter leading-none">
+                  {sectionTitle}
+                </h2>
+                <div className="w-24 h-4 bg-red-600 rounded-full" />
               </div>
 
-              {accessData.parking && (
-                <div className="mt-10 pt-10 border-t-2 border-orange-50 space-y-4">
-                  <div className="flex items-center gap-3">
-                    <Car className="w-6 h-6 text-red-600" />
-                    <h4 className="text-xl font-black text-rose-900">{getText(accessData.parking.title)}</h4>
+              <div className="space-y-12">
+                <div className="flex items-start gap-8">
+                  <div className="w-16 h-16 bg-red-600 rounded-[1.5rem] flex items-center justify-center shadow-xl shrink-0">
+                    <MapPin className="w-8 h-8 text-yellow-200" />
                   </div>
-                  <p className="text-sm font-bold text-orange-950/50 italic leading-relaxed">
-                    {getText(accessData.parking.description)}
-                  </p>
-                  {accessData.parking.spaces && (
-                    <div className="inline-block px-4 py-1 bg-yellow-400 rounded-full text-rose-900 text-xs font-black uppercase tracking-widest">
-                      {translate('parkingSpaces', language)}: {getText(accessData.parking.spaces)}
-                    </div>
-                  )}
+                  <div>
+                    <h3 className="text-sm font-black text-red-600 uppercase tracking-[0.3em] mb-3">
+                      {translate('address', language)}
+                    </h3>
+                    <p className="text-2xl font-black text-rose-950 leading-tight italic">
+                      {getText(accessData.address)}
+                    </p>
+                  </div>
                 </div>
-              )}
-            </div>
 
-            {accessData.transportation && (
-              <div className="bg-white rounded-[3.5rem] p-10 shadow-[0_20px_60px_rgba(251,191,36,0.05)] border-4 border-white">
-                <div className="flex items-center gap-4 mb-8">
-                  <div className="p-4 bg-yellow-400 rounded-2xl shadow-lg">
-                    <Train className="w-6 h-6 text-rose-900" />
-                  </div>
-                  <h3 className="text-2xl font-black text-rose-900 italic tracking-tight">
-                    {getText(accessData.transportation.title)}
-                  </h3>
-                </div>
-                <div className="space-y-6">
-                  {accessData.transportation.methods?.map((method, idx) => (
-                    <div key={idx} className="flex gap-4 group">
-                      <div className="w-2 h-10 bg-red-600/20 rounded-full group-hover:bg-red-600 transition-colors shrink-0" />
-                      <div>
-                        <span className="block text-xs font-black uppercase tracking-wider text-red-600 mb-1">{getText(method.type)}</span>
-                        <p className="text-lg font-bold text-orange-950/70">{getText(method.description)}</p>
+                {accessData.transportation && (
+                  <div className="pt-10 border-t-2 border-orange-50">
+                    <div className="flex items-center gap-4 mb-8">
+                      <div className="w-12 h-12 bg-yellow-400 rounded-xl flex items-center justify-center">
+                        <Train className="w-6 h-6 text-rose-950" />
                       </div>
+                      <h4 className="text-2xl font-black text-rose-950 italic">
+                        {getText(accessData.transportation.title)}
+                      </h4>
                     </div>
-                  ))}
-                </div>
+                    <div className="space-y-6">
+                      {accessData.transportation.methods?.map((method, idx) => (
+                        <div key={idx} className="flex gap-4">
+                          <div className="w-1.5 h-12 bg-red-600/20 rounded-full shrink-0" />
+                          <div>
+                            <span className="block text-[10px] font-black uppercase tracking-widest text-red-600 mb-1">{getText(method.type)}</span>
+                            <p className="text-lg font-bold text-orange-950/60 leading-tight">{getText(method.description)}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
-            )}
-          </motion.div>
-
-          {/* Map Side */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="bg-white rounded-[4rem] shadow-[0_30px_80px_rgba(239,68,68,0.1)] overflow-hidden p-4 group"
-          >
-            <div className="aspect-square bg-amber-50 rounded-[3.5rem] overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-1000 border-4 border-red-600/10 group-hover:border-red-600/30">
-              <iframe
-                src={accessData.mapEmbedUrl}
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title={translate('storeMap', language)}
-              />
             </div>
           </motion.div>
+
         </div>
       </div>
     </section>

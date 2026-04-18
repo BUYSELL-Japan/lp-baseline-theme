@@ -12,73 +12,70 @@ export default function CTA() {
   const sectionTitle = getText(ctaData.sectionTitle);
 
   return (
-    <section className="relative py-40 px-6 overflow-hidden">
+    <section className="relative py-48 px-6 overflow-hidden bg-rose-950">
       <div className="absolute inset-0">
         <img
           src={ctaData.backgroundImage}
           alt="Background"
-          className="w-full h-full object-cover scale-110 blur-sm brightness-75 transition-all duration-[20s] animate-pulse"
+          className="w-full h-full object-cover scale-110 blur-sm opacity-30"
         />
-        {/* Dynamic Tropical Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-tr from-red-600/90 via-orange-500/80 to-yellow-400/70 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-gradient-to-tr from-red-600/60 to-transparent" />
       </div>
 
-      <div className="relative max-w-5xl mx-auto text-center">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <div className="inline-flex items-center gap-3 mb-8">
-            <div className="w-12 h-1 bg-white/40 rounded-full" />
-            <span className="text-white font-black uppercase tracking-[0.4em] text-xs">Join the Paradise</span>
-            <div className="w-12 h-1 bg-white/40 rounded-full" />
-          </div>
-          
-          <h2 className="text-6xl md:text-8xl font-black text-white mb-8 italic tracking-tighter drop-shadow-2xl">
-            {sectionTitle}
-          </h2>
-          
-          <p className="text-2xl md:text-3xl font-bold text-yellow-200 mb-6 drop-shadow-lg">
-            {getText(ctaData.sectionSubtitle)}
-          </p>
-          
-          <p className="text-xl text-white/90 mb-16 max-w-3xl mx-auto leading-relaxed font-bold italic">
-            {getText(ctaData.description)}
-          </p>
+      <div className="relative max-w-7xl mx-auto">
+        <div className="flex flex-col lg:flex-row items-center gap-16">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="flex-1 text-left"
+          >
+            <h2 className="text-6xl md:text-9xl font-black text-white mb-12 italic tracking-tighter leading-none">
+              {sectionTitle}
+            </h2>
+            <p className="text-3xl font-black text-yellow-400 mb-8 italic">
+              {getText(ctaData.sectionSubtitle)}
+            </p>
+            <div className="w-32 h-6 bg-red-600 rounded-full" />
+          </motion.div>
 
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            {ctaData.buttons.map((button, index) => {
-              const isPrimary = button.type === 'primary';
-              return (
-                <motion.a
-                  key={index}
-                  href={button.link}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
-                  whileHover={{ scale: 1.05, y: -5 }}
-                  whileTap={{ scale: 0.95 }}
-                  className={`inline-flex items-center gap-4 px-12 py-6 rounded-full text-lg font-black uppercase tracking-widest transition-all shadow-2xl ${
-                    isPrimary
-                      ? 'bg-yellow-400 text-rose-900 shadow-yellow-500/40 hover:bg-yellow-300'
-                      : 'bg-white text-red-600 shadow-white/20 hover:bg-red-50'
-                  }`}
-                >
-                  {isPrimary ? (
-                    <Phone className="w-6 h-6" />
-                  ) : (
-                    <Mail className="w-6 h-6" />
-                  )}
-                  {getText(button.text)}
-                </motion.a>
-              );
-            })}
-          </div>
-        </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex-1 bg-white/10 backdrop-blur-xl p-12 md:p-16 rounded-[4rem] border border-white/20 shadow-2xl shadow-black/50"
+          >
+            <p className="text-2xl text-white font-bold leading-relaxed mb-12 italic">
+              {getText(ctaData.description)}
+            </p>
+
+            <div className="flex flex-col gap-6">
+              {ctaData.buttons.map((button, index) => {
+                const isPrimary = button.type === 'primary';
+                return (
+                  <motion.a
+                    key={index}
+                    href={button.link}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className={`inline-flex items-center justify-center gap-4 px-10 py-6 rounded-full text-lg font-black uppercase tracking-widest transition-all shadow-xl ${
+                      isPrimary
+                        ? 'bg-yellow-400 text-rose-900 shadow-yellow-500/30'
+                        : 'bg-white text-rose-950 shadow-white/10 hover:bg-orange-50'
+                    }`}
+                  >
+                    {isPrimary ? <Phone className="w-6 h-6" /> : <Mail className="w-6 h-6" />}
+                    {getText(button.text)}
+                  </motion.a>
+                );
+              })}
+            </div>
+          </motion.div>
+        </div>
       </div>
+    </section>
+  );
+}
 
       {/* Tropical Floating Elements (Decorative) */}
       <div className="absolute top-10 left-10 w-32 h-32 bg-yellow-400/20 rounded-full blur-3xl animate-pulse" />

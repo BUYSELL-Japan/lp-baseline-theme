@@ -60,150 +60,161 @@ export default function Contact() {
   const isDisabled = submitStatus === 'sending' || submitStatus === 'success';
 
   return (
-    <section id="contact" className="py-32 px-6 bg-amber-50">
-      <div className="max-w-4xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-20"
-        >
-          <span className="text-red-600 font-black uppercase tracking-[0.3em] text-sm block mb-4">Get in Touch</span>
-          <h2 className="text-5xl md:text-8xl font-black text-rose-900 mb-6 italic tracking-tighter">
-            {t(contactData, 'sectionTitle')}
-          </h2>
-          <p className="text-xl md:text-2xl font-bold text-orange-950/60">
-            {t(contactData, 'sectionSubtitle')}
-          </p>
-        </motion.div>
+    <section id="contact" className="py-32 px-6 bg-amber-50 relative overflow-hidden">
+      {/* Background Decor */}
+      <div className="absolute top-1/2 left-0 w-[50vw] h-[50vw] bg-red-600 opacity-[0.03] rounded-full blur-[120px] -translate-x-1/4 -translate-y-1/2" />
 
-        <motion.form
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          onSubmit={handleSubmit}
-          className="bg-white rounded-[4rem] p-12 md:p-20 shadow-[0_30px_80px_rgba(239,68,68,0.1)] border-8 border-amber-50"
-        >
-          {/* Honeypot */}
-          <div style={{ display: 'none' }} aria-hidden="true">
-            <input type="text" name="website" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} tabIndex={-1} autoComplete="off" />
-          </div>
-
-          <div className="space-y-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="space-y-3">
-                <label htmlFor="name" className="text-sm font-black uppercase tracking-widest text-red-600 ml-4">
-                  {t(contactData.fields, 'name')}
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  onFocus={() => setFocused('name')}
-                  onBlur={() => setFocused(null)}
-                  disabled={isDisabled}
-                  className={`w-full px-8 py-5 rounded-full bg-amber-50 border-4 transition-all duration-300 outline-none font-bold text-rose-900 ${
-                    focused === 'name' ? 'border-yellow-400 bg-white ring-4 ring-yellow-400/20' : 'border-transparent'
-                  }`}
-                  required
-                />
-              </div>
-
-              <div className="space-y-3">
-                <label htmlFor="email" className="text-sm font-black uppercase tracking-widest text-red-600 ml-4">
-                  {t(contactData.fields, 'email')}
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  onFocus={() => setFocused('email')}
-                  onBlur={() => setFocused(null)}
-                  disabled={isDisabled}
-                  className={`w-full px-8 py-5 rounded-full bg-amber-50 border-4 transition-all duration-300 outline-none font-bold text-rose-900 ${
-                    focused === 'email' ? 'border-yellow-400 bg-white ring-4 ring-yellow-400/20' : 'border-transparent'
-                  }`}
-                  required
-                />
-              </div>
-            </div>
-
-            <div className="space-y-3">
-              <label htmlFor="subject" className="text-sm font-black uppercase tracking-widest text-red-600 ml-4">
-                {t(contactData.fields, 'subject')}
-              </label>
-              <input
-                type="text"
-                id="subject"
-                name="subject"
-                value={formData.subject}
-                onChange={handleChange}
-                onFocus={() => setFocused('subject')}
-                onBlur={() => setFocused(null)}
-                disabled={isDisabled}
-                className={`w-full px-8 py-5 rounded-full bg-amber-50 border-4 transition-all duration-300 outline-none font-bold text-rose-900 ${
-                  focused === 'subject' ? 'border-yellow-400 bg-white ring-4 ring-yellow-400/20' : 'border-transparent'
-                }`}
-                required
-              />
-            </div>
-
-            <div className="space-y-3">
-              <label htmlFor="message" className="text-sm font-black uppercase tracking-widest text-red-600 ml-4">
-                {t(contactData.fields, 'message')}
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                onFocus={() => setFocused('message')}
-                onBlur={() => setFocused(null)}
-                rows={6}
-                disabled={isDisabled}
-                className={`w-full px-8 py-6 rounded-[3rem] bg-amber-50 border-4 transition-all duration-300 outline-none font-bold text-rose-900 resize-none ${
-                  focused === 'message' ? 'border-yellow-400 bg-white ring-4 ring-yellow-400/20' : 'border-transparent'
-                }`}
-                required
-              />
-            </div>
-
-            <motion.button
-              type="submit"
-              disabled={isDisabled}
-              whileHover={!isDisabled ? { scale: 1.02 } : {}}
-              whileTap={!isDisabled ? { scale: 0.98 } : {}}
-              className="w-full bg-red-600 text-yellow-200 py-6 rounded-full font-black text-xl uppercase tracking-[0.2em] shadow-2xl shadow-red-500/30 flex items-center justify-center gap-4 disabled:opacity-50"
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="flex flex-col lg:flex-row gap-20 items-start">
+          
+          {/* Text Side */}
+          <div className="w-full lg:w-2/5 pt-12">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
             >
-              {submitStatus === 'sending' ? (
-                <Loader2 className="animate-spin" />
-              ) : submitStatus === 'success' ? (
-                <CheckCircle />
-              ) : (
-                <Send className="w-6 h-6" />
-              )}
-              {t(contactData, 'submitButton')}
-            </motion.button>
-
-            <AnimatePresence>
-              {submitStatus === 'success' && (
-                <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="p-6 bg-green-50 rounded-3xl text-green-800 font-bold text-center border-2 border-green-100">
-                  <CheckCircle className="inline-block mr-2" /> Message sent successfully!
-                </motion.div>
-              )}
-              {submitStatus === 'error' && (
-                <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="p-6 bg-red-50 rounded-3xl text-red-800 font-bold text-center border-2 border-red-100">
-                  <AlertCircle className="inline-block mr-2" /> Failed to send message. Please try again.
-                </motion.div>
-              )}
-            </AnimatePresence>
+              <h2 className="text-6xl md:text-9xl font-black text-rose-950 mb-12 italic tracking-tighter leading-[0.8]">
+                {t(contactData, 'sectionTitle')}
+              </h2>
+              <div className="w-48 h-6 bg-red-600 rounded-full mb-12" />
+              <p className="text-3xl font-black text-orange-900/40 italic leading-tight">
+                {t(contactData, 'sectionSubtitle')}
+              </p>
+            </motion.div>
           </div>
-        </motion.form>
+
+          {/* Form Side */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="w-full lg:w-3/5"
+          >
+            <form
+              onSubmit={handleSubmit}
+              className="bg-white rounded-[4rem] p-10 md:p-16 shadow-[0_40px_100px_rgba(239,68,68,0.1)] relative"
+            >
+              {/* Glass Effect Overlay */}
+              <div className="absolute -inset-4 bg-yellow-400 opacity-10 rounded-[4.5rem] blur-2xl -z-10" />
+
+              {/* Honeypot */}
+              <div style={{ display: 'none' }} aria-hidden="true">
+                <input type="text" name="website" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} tabIndex={-1} autoComplete="off" />
+              </div>
+
+              <div className="space-y-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                  <div className="relative">
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      placeholder={t(contactData.fields, 'name')}
+                      value={formData.name}
+                      onChange={handleChange}
+                      onFocus={() => setFocused('name')}
+                      onBlur={() => setFocused(null)}
+                      disabled={isDisabled}
+                      className={`w-full px-0 py-6 bg-transparent border-b-4 transition-all duration-300 outline-none font-black text-2xl text-rose-950 placeholder:text-rose-900/20 ${
+                        focused === 'name' ? 'border-red-600' : 'border-amber-100'
+                      }`}
+                      required
+                    />
+                  </div>
+
+                  <div className="relative">
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      placeholder={t(contactData.fields, 'email')}
+                      value={formData.email}
+                      onChange={handleChange}
+                      onFocus={() => setFocused('email')}
+                      onBlur={() => setFocused(null)}
+                      disabled={isDisabled}
+                      className={`w-full px-0 py-6 bg-transparent border-b-4 transition-all duration-300 outline-none font-black text-2xl text-rose-950 placeholder:text-rose-900/20 ${
+                        focused === 'email' ? 'border-red-600' : 'border-amber-100'
+                      }`}
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div className="relative">
+                  <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    placeholder={t(contactData.fields, 'subject')}
+                    value={formData.subject}
+                    onChange={handleChange}
+                    onFocus={() => setFocused('subject')}
+                    onBlur={() => setFocused(null)}
+                    disabled={isDisabled}
+                    className={`w-full px-0 py-6 bg-transparent border-b-4 transition-all duration-300 outline-none font-black text-2xl text-rose-950 placeholder:text-rose-900/20 ${
+                      focused === 'subject' ? 'border-red-600' : 'border-amber-100'
+                    }`}
+                    required
+                  />
+                </div>
+
+                <div className="relative">
+                  <textarea
+                    id="message"
+                    name="message"
+                    placeholder={t(contactData.fields, 'message')}
+                    value={formData.message}
+                    onChange={handleChange}
+                    onFocus={() => setFocused('message')}
+                    onBlur={() => setFocused(null)}
+                    rows={4}
+                    disabled={isDisabled}
+                    className={`w-full px-0 py-6 bg-transparent border-b-4 transition-all duration-300 outline-none font-black text-2xl text-rose-950 placeholder:text-rose-900/20 resize-none ${
+                      focused === 'message' ? 'border-red-600' : 'border-amber-100'
+                    }`}
+                    required
+                  />
+                </div>
+
+                <motion.button
+                  type="submit"
+                  disabled={isDisabled}
+                  whileHover={!isDisabled ? { scale: 1.05 } : {}}
+                  whileTap={!isDisabled ? { scale: 0.95 } : {}}
+                  className="w-full bg-red-600 text-yellow-200 py-8 rounded-[2.5rem] font-black text-xl uppercase tracking-[0.2em] shadow-2xl shadow-red-500/30 flex items-center justify-center gap-6 disabled:opacity-50"
+                >
+                  {submitStatus === 'sending' ? (
+                    <Loader2 className="animate-spin w-8 h-8" />
+                  ) : submitStatus === 'success' ? (
+                    <CheckCircle className="w-8 h-8" />
+                  ) : (
+                    <Send className="w-8 h-8" />
+                  )}
+                  {t(contactData, 'submitButton')}
+                </motion.button>
+
+                <AnimatePresence>
+                  {submitStatus === 'success' && (
+                    <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="p-8 bg-green-50 rounded-[2.5rem] text-green-800 font-black text-center border-4 border-green-100 italic">
+                      SUCCESS! WE WILL CONTACT YOU SOON.
+                    </motion.div>
+                  )}
+                  {submitStatus === 'error' && (
+                    <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="p-8 bg-red-50 rounded-[2.5rem] text-red-800 font-black text-center border-4 border-red-100 italic">
+                      ERROR! PLEASE TRY AGAIN.
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            </form>
+          </motion.div>
+        </div>
       </div>
+    </section>
+  );
+}
     </section>
   );
 }

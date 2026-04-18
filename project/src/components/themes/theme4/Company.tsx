@@ -13,44 +13,46 @@ export default function Company() {
   const sectionSubtitle = getText(companyData.sectionSubtitle);
 
   return (
-    <section id="company" className="py-32 px-6 bg-amber-50">
-      <div className="max-w-6xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          className="text-center mb-24"
-        >
-          <span className="text-red-600 font-black uppercase tracking-[0.3em] text-sm block mb-4">Our Spirit</span>
-          <h2 className="text-5xl md:text-8xl font-black text-rose-900 mb-6 italic tracking-tighter">
-            {sectionTitle}
-          </h2>
-          <p className="text-xl md:text-2xl font-bold text-orange-950/60 max-w-2xl mx-auto">
+    <section id="company" className="py-32 px-6 bg-amber-50 relative overflow-hidden">
+      {/* Background Decor */}
+      <div className="absolute top-0 right-10 pointer-events-none select-none opacity-[0.03] text-[20rem] font-black italic whitespace-nowrap text-red-600 leading-none rotate-90">
+        LEGACY
+      </div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="flex flex-col lg:flex-row items-end gap-12 mb-32">
+          <div className="flex-1">
+            <h2 className="text-6xl md:text-9xl font-black text-rose-950 mb-8 italic tracking-tighter leading-none">
+              {sectionTitle}
+            </h2>
+            <div className="w-32 h-6 bg-red-600 rounded-full" />
+          </div>
+          <p className="flex-1 text-2xl font-black text-orange-900/40 italic">
             {sectionSubtitle}
           </p>
-        </motion.div>
+        </div>
 
-        <div className="grid grid-cols-1 gap-12">
-          {/* Philosophy */}
+        <div className="space-y-32">
+          {/* Philosophy Island */}
           {companyData.philosophy && (
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="bg-white rounded-[3.5rem] p-12 md:p-20 shadow-[0_20px_60px_rgba(239,68,68,0.1)] relative overflow-hidden"
+              className="lg:w-4/5 mr-auto bg-white rounded-[4rem] p-12 md:p-24 shadow-2xl relative overflow-hidden group"
             >
-              <div className="absolute top-0 right-0 p-12 opacity-5">
-                <Heart className="w-64 h-64 text-red-600 fill-current" />
+              <div className="absolute top-0 right-0 p-12 opacity-5 scale-150 rotate-12 group-hover:rotate-0 transition-transform duration-1000">
+                <Heart className="w-96 h-96 text-red-600 fill-current" />
               </div>
-              <div className="relative z-10 flex flex-col md:flex-row gap-8 items-start">
-                <div className="p-6 bg-red-600 rounded-[2rem] shadow-xl shadow-red-500/20 shrink-0">
-                  <Heart className="w-10 h-10 text-yellow-200" />
+              <div className="relative z-10 flex flex-col md:flex-row gap-12 items-start">
+                <div className="w-24 h-24 bg-red-600 rounded-[2rem] flex items-center justify-center shadow-2xl shrink-0 rotate-3">
+                  <Heart className="w-12 h-12 text-yellow-200" />
                 </div>
                 <div>
-                  <h3 className="text-4xl font-black text-rose-900 mb-6 italic tracking-tight">
+                  <h3 className="text-4xl md:text-6xl font-black text-rose-950 mb-8 italic tracking-tighter">
                     {getText(companyData.philosophy.title)}
                   </h3>
-                  <p className="text-2xl font-bold text-orange-950/70 leading-relaxed italic">
+                  <p className="text-3xl font-black text-orange-900/60 leading-tight italic">
                     {getText(companyData.philosophy.content)}
                   </p>
                 </div>
@@ -58,61 +60,68 @@ export default function Company() {
             </motion.div>
           )}
 
-          {/* History */}
+          {/* History Island */}
           {companyData.history && (
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="bg-white rounded-[3.5rem] p-12 md:p-20 shadow-[0_20px_60px_rgba(251,191,36,0.1)]"
+              className="lg:w-4/5 ml-auto bg-rose-950 rounded-[4rem] p-12 md:p-24 shadow-2xl text-white relative overflow-hidden"
             >
-              <div className="flex items-center gap-6 mb-16">
-                <div className="p-6 bg-yellow-400 rounded-2xl shadow-lg">
-                  <History className="w-10 h-10 text-rose-900" />
+              <div className="flex items-center gap-8 mb-20">
+                <div className="w-20 h-20 bg-yellow-400 rounded-2xl flex items-center justify-center shadow-2xl shrink-0 -rotate-6">
+                  <History className="w-10 h-10 text-rose-950" />
                 </div>
-                <h3 className="text-4xl font-black text-rose-900 italic tracking-tight">
+                <h3 className="text-4xl md:text-7xl font-black italic tracking-tighter underline decoration-red-600 decoration-8 underline-offset-8">
                   {getText(companyData.history.title)}
                 </h3>
               </div>
-              <div className="relative ml-4 md:ml-20">
-                <div className="absolute left-0 top-0 bottom-0 w-[4px] bg-amber-100 rounded-full" />
-                <div className="space-y-12">
-                  {companyData.history.timeline?.map((item, index) => (
-                    <div key={index} className="relative pl-12">
-                      <div className="absolute left-[-6px] top-2 w-4 h-4 bg-red-600 rounded-full shadow-[0_0_15px_rgba(220,38,38,0.5)]" />
-                      <div className="flex flex-col md:flex-row md:items-baseline gap-2">
-                        <span className="text-2xl font-black text-red-600 italic leading-none">{getText(item.year)}</span>
-                        <div className="h-[2px] w-8 bg-red-100 hidden md:block" />
-                        <p className="text-xl font-bold text-orange-950/70">{getText(item.event)}</p>
-                      </div>
+              <div className="space-y-16">
+                {companyData.history.timeline?.map((item, index) => (
+                  <div key={index} className="flex gap-8 group">
+                    <div className="text-4xl font-black text-yellow-400 italic tracking-tighter group-hover:scale-110 transition-transform duration-300">
+                      {getText(item.year)}
                     </div>
-                  ))}
-                </div>
+                    <div className="flex-1 pt-3">
+                      <div className="w-full h-1 bg-white/10 mb-4 rounded-full overflow-hidden">
+                        <motion.div
+                          initial={{ scaleX: 0 }}
+                          whileInView={{ scaleX: 1 }}
+                          viewport={{ once: true }}
+                          className="h-full bg-red-600 origin-left"
+                        />
+                      </div>
+                      <p className="text-2xl font-black italic text-white/80">{getText(item.event)}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </motion.div>
           )}
 
-          {/* Company Info */}
+          {/* Info Island - Table Style But Unique */}
           {companyData.companyInfo && (
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="bg-white rounded-[3.5rem] p-12 md:p-20 shadow-[0_20px_60px_rgba(0,0,0,0.05)] border-4 border-white"
+              className="lg:w-4/5 mx-auto bg-white rounded-[4rem] p-12 md:p-24 shadow-2xl border-8 border-amber-50"
             >
-              <div className="flex items-center gap-6 mb-16">
-                <div className="p-6 bg-rose-900 rounded-2xl shadow-xl">
-                  <Building2 className="w-10 h-10 text-yellow-200" />
-                </div>
-                <h3 className="text-4xl font-black text-rose-900 italic tracking-tight underline decoration-yellow-400 decoration-8 underline-offset-8">
+              <div className="flex items-center gap-8 mb-20 justify-end text-right">
+                <h3 className="text-4xl md:text-7xl font-black text-rose-950 italic tracking-tighter">
                   {getText(companyData.companyInfo.title)}
                 </h3>
+                <div className="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center shadow-2xl shrink-0 rotate-12">
+                  <Building2 className="w-10 h-10 text-yellow-200" />
+                </div>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-12">
                 {companyData.companyInfo.items?.map((item, index) => (
-                  <div key={index} className="flex flex-col gap-2 pb-6 border-b border-orange-50">
-                    <span className="text-xs font-black uppercase tracking-widest text-red-600">{getText(item.label)}</span>
-                    <p className="text-xl font-bold text-orange-950/80">{getText(item.value)}</p>
+                  <div key={index} className="group border-b-4 border-amber-50 pb-8 hover:border-red-600 transition-colors">
+                    <span className="text-xs font-black uppercase tracking-widest text-red-600 mb-2 block">{getText(item.label)}</span>
+                    <p className="text-2xl font-black text-rose-950 italic tracking-tighter">
+                      {getText(item.value)}
+                    </p>
                   </div>
                 ))}
               </div>

@@ -15,59 +15,49 @@ export default function FAQ() {
   const sectionSubtitle = getText(faqData.sectionSubtitle);
 
   return (
-    <section id="faq" className="py-32 px-6 bg-white relative">
-      <div className="max-w-4xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          className="text-center mb-24"
-        >
-          <span className="text-red-600 font-black uppercase tracking-[0.3em] text-sm block mb-4">Questions</span>
-          <h2 className="text-5xl md:text-8xl font-black text-rose-900 mb-6 italic tracking-tighter">
-            {sectionTitle}
-          </h2>
-          <p className="text-xl md:text-2xl font-bold text-orange-950/60 max-w-2xl mx-auto">
+    <section id="faq" className="py-32 px-6 bg-white relative overflow-hidden">
+      {/* Background Decor */}
+      <div className="absolute top-0 left-0 w-[40vw] h-[40vw] bg-red-600 opacity-[0.02] rounded-full blur-[100px] -translate-x-1/4 -translate-y-1/4" />
+
+      <div className="max-w-5xl mx-auto relative z-10">
+        <div className="flex flex-col lg:flex-row items-end gap-12 mb-24">
+          <div className="flex-1">
+            <h2 className="text-6xl md:text-9xl font-black text-rose-950 mb-8 italic tracking-tighter leading-none">
+              {sectionTitle}
+            </h2>
+            <div className="w-32 h-6 bg-red-600 rounded-full" />
+          </div>
+          <p className="flex-1 text-2xl font-black text-orange-900/40 italic">
             {sectionSubtitle}
           </p>
-        </motion.div>
+        </div>
 
-        <div className="space-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {faqData.items.map((item, index) => {
             const isOpen = openIndex === index;
             return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
-                className={`rounded-[2.5rem] overflow-hidden transition-all duration-500 ${
-                  isOpen ? 'bg-amber-50 shadow-xl' : 'bg-amber-50/30'
+                transition={{ delay: index * 0.1 }}
+                className={`flex flex-col rounded-[3.5rem] p-8 md:p-10 transition-all duration-500 overflow-hidden ${
+                  isOpen ? 'bg-amber-50 shadow-2xl scale-105 z-20' : 'bg-amber-50/40 hover:bg-amber-50'
                 }`}
               >
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : index)}
-                  className="w-full p-8 flex items-center justify-between text-left group"
+                  className="w-full flex items-start justify-between text-left group gap-4"
                 >
-                  <div className="flex items-center gap-6">
-                    <div className={`p-3 rounded-2xl transition-all duration-300 ${
-                      isOpen ? 'bg-red-600 text-yellow-200' : 'bg-red-100 text-red-600 group-hover:bg-red-600 group-hover:text-yellow-200'
-                    }`}>
-                      <HelpCircle className="w-6 h-6" />
-                    </div>
-                    <h3 className={`text-xl font-black transition-colors ${
-                      isOpen ? 'text-rose-900' : 'text-rose-900/70 group-hover:text-rose-900'
-                    }`}>
-                      {getText(item.question)}
-                    </h3>
+                  <h3 className={`text-2xl font-black italic tracking-tighter leading-tight transition-colors ${
+                    isOpen ? 'text-red-600' : 'text-rose-950'
+                  }`}>
+                    {getText(item.question)}
+                  </h3>
+                  <div className={`mt-1 shrink-0 transition-transform duration-500 ${isOpen ? 'rotate-180 text-red-600' : 'text-rose-900/30'}`}>
+                    <ChevronDown className="w-8 h-8" />
                   </div>
-                  <motion.div
-                    animate={{ rotate: isOpen ? 180 : 0 }}
-                    className={`p-2 rounded-full ${isOpen ? 'bg-red-600 text-yellow-200' : 'text-red-600'}`}
-                  >
-                    <ChevronDown className="w-6 h-6" />
-                  </motion.div>
                 </button>
 
                 <AnimatePresence>
@@ -76,13 +66,10 @@ export default function FAQ() {
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.4, ease: 'easeOut' }}
+                      className="overflow-hidden"
                     >
-                      <div className="px-8 pb-8 pt-2 flex gap-6">
-                        <div className="w-12 h-12 rounded-2xl bg-yellow-400 flex items-center justify-center shrink-0">
-                          <MessageSquare className="w-6 h-6 text-rose-900" />
-                        </div>
-                        <p className="text-lg font-bold text-orange-950/70 leading-relaxed italic pr-4">
+                      <div className="pt-8 border-t border-red-100 mt-6">
+                        <p className="text-lg font-bold text-orange-950/60 leading-relaxed italic">
                           {getText(item.answer)}
                         </p>
                       </div>

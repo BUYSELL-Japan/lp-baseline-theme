@@ -1,5 +1,8 @@
 import { useState } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useReviewsData } from '../../../contexts/PageDataContext';
+import { useLocalize } from '../../../hooks/useLocalize';
 
 export default function Reviews() {
   const reviewsData = useReviewsData();

@@ -13,7 +13,7 @@ export default function News() {
   const sectionSubtitle = getText(newsData.sectionSubtitle);
 
   return (
-    <section id="news" className="py-32 px-6 bg-amber-50 relative overflow-hidden">
+    <section id="news" className="py-32 px-6 bg-red-50/10 relative overflow-hidden">
       {/* Background Decor */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-px h-full bg-red-600/10 hidden lg:block" />
@@ -26,10 +26,10 @@ export default function News() {
           viewport={{ once: true }}
           className="text-center mb-32"
         >
-          <h2 className="text-6xl md:text-9xl font-black text-rose-950 mb-6 italic tracking-tighter leading-none">
+          <h2 className="text-5xl md:text-7xl font-black text-red-950 mb-6 italic tracking-tighter leading-none">
             {sectionTitle}
           </h2>
-          <div className="w-48 h-6 bg-red-600 mx-auto rounded-full" />
+          <div className="w-32 h-4 bg-red-600 mx-auto rounded-full shadow-lg" />
         </motion.div>
 
         <div className="relative space-y-24 lg:space-y-0">
@@ -47,7 +47,7 @@ export default function News() {
               {/* Date Column */}
               <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
                 <div className={`flex items-center gap-6 ${index % 2 === 0 ? 'lg:flex-row-reverse lg:text-right' : ''}`}>
-                  <div className="w-32 h-32 bg-red-600 rounded-[2.5rem] flex flex-col items-center justify-center text-yellow-200 shadow-2xl rotate-3">
+                  <div className="w-32 h-32 bg-red-600 rounded-[2.5rem] flex flex-col items-center justify-center text-yellow-400 shadow-2xl rotate-3">
                     <span className="text-sm font-black uppercase opacity-60 leading-none mb-1">
                       {getText(item.date).split('-')[1] || 'OCT'}
                     </span>
@@ -59,7 +59,7 @@ export default function News() {
                     <div className="text-sm font-black text-red-600 uppercase tracking-[0.3em] mb-2">
                       {getCategory(item.category)}
                     </div>
-                    <div className="text-lg font-bold text-orange-950/40">
+                    <div className="text-lg font-bold text-red-950/40">
                       {getText(item.date).split('-')[0]}
                     </div>
                   </div>
@@ -77,10 +77,10 @@ export default function News() {
                 >
                   <div className="absolute top-0 right-0 w-32 h-32 bg-yellow-400/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-red-600/10 transition-colors" />
                   
-                  <h3 className="text-3xl font-black text-rose-950 mb-6 italic tracking-tighter group-hover:text-red-600 transition-colors">
+                  <h3 className="text-2xl md:text-3xl font-black text-red-950 mb-6 italic tracking-tighter group-hover:text-red-600 transition-colors">
                     {getText(item.title)}
                   </h3>
-                  <p className="text-lg font-bold text-orange-950/60 leading-relaxed mb-8">
+                  <p className="text-lg font-bold text-red-950/60 leading-relaxed mb-8">
                     {getText(item.content)}
                   </p>
                   

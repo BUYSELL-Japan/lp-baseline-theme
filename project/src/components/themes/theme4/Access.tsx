@@ -16,10 +16,10 @@ export default function Access() {
   const sectionSubtitle = getText(accessData.sectionSubtitle);
 
   return (
-    <section id="access" className="py-32 px-6 bg-amber-50 relative overflow-hidden">
+    <section id="access" className="py-32 px-6 bg-red-50/10 relative overflow-hidden">
       {/* Background Decor */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
-        <div className="absolute top-0 right-0 w-[60vw] h-[60vw] bg-yellow-400 opacity-10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2" />
+        <div className="absolute top-0 right-0 w-[60vw] h-[60vw] bg-yellow-400 opacity-[0.05] rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2" />
       </div>
 
       <div className="max-w-[1400px] mx-auto relative z-10">
@@ -55,36 +55,36 @@ export default function Access() {
             viewport={{ once: true }}
             className="w-full lg:w-2/5 lg:-ml-24 relative z-20"
           >
-            <div className="bg-white rounded-[4rem] p-12 md:p-16 shadow-[0_40px_100px_rgba(220,38,38,0.15)] border-4 border-white rotate-[-1deg]">
+            <div className="bg-white rounded-[4rem] p-12 md:p-16 shadow-[0_40px_100px_rgba(220,38,38,0.1)] border-4 border-red-50 rotate-[-1deg]">
               <div className="mb-12">
-                <h2 className="text-5xl md:text-7xl font-black text-rose-950 mb-6 italic tracking-tighter leading-none">
+                <h2 className="text-5xl md:text-7xl font-black text-red-950 mb-6 italic tracking-tighter leading-none">
                   {sectionTitle}
                 </h2>
-                <div className="w-24 h-4 bg-red-600 rounded-full" />
+                <div className="w-20 h-4 bg-red-600 rounded-full shadow-lg" />
               </div>
 
               <div className="space-y-12">
                 <div className="flex items-start gap-8">
                   <div className="w-16 h-16 bg-red-600 rounded-[1.5rem] flex items-center justify-center shadow-xl shrink-0">
-                    <MapPin className="w-8 h-8 text-yellow-200" />
+                    <MapPin className="w-8 h-8 text-yellow-400" />
                   </div>
                   <div>
                     <h3 className="text-sm font-black text-red-600 uppercase tracking-[0.3em] mb-3">
                       {translate('address', language)}
                     </h3>
-                    <p className="text-2xl font-black text-rose-950 leading-tight italic">
+                    <p className="text-xl md:text-2xl font-black text-red-950 leading-tight italic">
                       {getText(accessData.address)}
                     </p>
                   </div>
                 </div>
 
                 {accessData.transportation && (
-                  <div className="pt-10 border-t-2 border-orange-50">
+                  <div className="pt-10 border-t-2 border-red-50">
                     <div className="flex items-center gap-4 mb-8">
                       <div className="w-12 h-12 bg-yellow-400 rounded-xl flex items-center justify-center">
-                        <Train className="w-6 h-6 text-rose-950" />
+                        <Train className="w-6 h-6 text-red-950" />
                       </div>
-                      <h4 className="text-2xl font-black text-rose-950 italic">
+                      <h4 className="text-xl md:text-2xl font-black text-red-950 italic">
                         {getText(accessData.transportation.title)}
                       </h4>
                     </div>
@@ -94,7 +94,7 @@ export default function Access() {
                           <div className="w-1.5 h-12 bg-red-600/20 rounded-full shrink-0" />
                           <div>
                             <span className="block text-[10px] font-black uppercase tracking-widest text-red-600 mb-1">{getText(method.type)}</span>
-                            <p className="text-lg font-bold text-orange-950/60 leading-tight">{getText(method.description)}</p>
+                            <p className="text-lg font-bold text-red-950/60 leading-tight">{getText(method.description)}</p>
                           </div>
                         </div>
                       ))}

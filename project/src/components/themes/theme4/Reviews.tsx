@@ -26,12 +26,12 @@ export default function Reviews() {
       <div className="max-w-[1200px] mx-auto relative z-10">
         <div className="flex flex-col lg:flex-row items-end gap-12 mb-24">
           <div className="flex-1">
-            <h2 className="text-6xl md:text-9xl font-black text-rose-950 mb-8 italic tracking-tighter leading-none">
+            <h2 className="text-5xl md:text-7xl font-black text-red-950 mb-8 italic tracking-tighter leading-none">
               {sectionTitle}
             </h2>
-            <div className="w-32 h-6 bg-yellow-400 rounded-full" />
+            <div className="w-24 h-4 bg-yellow-400 rounded-full shadow-lg" />
           </div>
-          <p className="flex-1 text-2xl font-black text-orange-900/40 italic">
+          <p className="flex-1 text-xl md:text-2xl font-black text-red-900/40 italic">
             {sectionSubtitle}
           </p>
         </div>
@@ -43,9 +43,9 @@ export default function Reviews() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20 }}
             transition={{ duration: 0.6 }}
-            className="bg-amber-50 rounded-[4rem] p-10 md:p-20 relative overflow-hidden"
+            className="bg-red-50/50 rounded-[3rem] p-10 md:p-16 relative overflow-hidden border border-red-100"
           >
-            <Quote className="absolute top-10 left-10 w-24 h-24 text-red-600 opacity-10" />
+            <Quote className="absolute top-10 left-10 w-24 h-24 text-red-600 opacity-[0.05]" />
             
             <div className="relative z-10 flex flex-col md:flex-row gap-12 items-center">
               <div className="w-48 h-48 shrink-0 rounded-[3rem] overflow-hidden border-8 border-white shadow-2xl rotate-3">
@@ -70,14 +70,14 @@ export default function Reviews() {
                   ))}
                 </div>
 
-                <p className="text-3xl md:text-5xl font-black text-rose-950 leading-tight italic tracking-tighter">
+                <p className="text-2xl md:text-4xl font-black text-red-950 leading-tight italic tracking-tighter">
                   "{getText(reviews[activeIndex].comment)}"
                 </p>
 
                 <div className="pt-8 border-t border-red-100 flex justify-between items-center">
                   <div>
-                    <h3 className="text-2xl font-black text-red-600">{getText(reviews[activeIndex].name)}</h3>
-                    <p className="text-sm font-bold text-orange-900/40 uppercase tracking-widest">{getText(reviews[activeIndex].date)}</p>
+                    <h3 className="text-xl font-black text-red-600">{getText(reviews[activeIndex].name)}</h3>
+                    <p className="text-xs font-bold text-red-900/40 uppercase tracking-widest">{getText(reviews[activeIndex].date)}</p>
                   </div>
                 </div>
               </div>

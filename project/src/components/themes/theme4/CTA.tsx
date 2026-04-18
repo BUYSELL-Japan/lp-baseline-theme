@@ -12,7 +12,7 @@ export default function CTA() {
   const sectionTitle = getText(ctaData.sectionTitle);
 
   return (
-    <section className="relative py-48 px-6 overflow-hidden bg-rose-950">
+    <section className="relative py-48 px-6 overflow-hidden bg-red-950">
       <div className="absolute inset-0">
         <img
           src={ctaData.backgroundImage}
@@ -30,13 +30,13 @@ export default function CTA() {
             viewport={{ once: true }}
             className="flex-1 text-left"
           >
-            <h2 className="text-6xl md:text-9xl font-black text-white mb-12 italic tracking-tighter leading-none">
+            <h2 className="text-5xl md:text-7xl font-black text-white mb-12 italic tracking-tighter leading-none">
               {sectionTitle}
             </h2>
-            <p className="text-3xl font-black text-yellow-400 mb-8 italic">
+            <p className="text-2xl font-black text-yellow-400 mb-8 italic">
               {getText(ctaData.sectionSubtitle)}
             </p>
-            <div className="w-32 h-6 bg-red-600 rounded-full" />
+            <div className="w-24 h-4 bg-red-600 rounded-full shadow-lg" />
           </motion.div>
 
           <motion.div
@@ -60,8 +60,8 @@ export default function CTA() {
                     whileTap={{ scale: 0.95 }}
                     className={`inline-flex items-center justify-center gap-4 px-10 py-6 rounded-full text-lg font-black uppercase tracking-widest transition-all shadow-xl ${
                       isPrimary
-                        ? 'bg-yellow-400 text-rose-900 shadow-yellow-500/30'
-                        : 'bg-white text-rose-950 shadow-white/10 hover:bg-orange-50'
+                        ? 'bg-yellow-400 text-red-900 shadow-yellow-500/30'
+                        : 'bg-white text-red-950 shadow-white/10 hover:bg-red-50'
                     }`}
                   >
                     {isPrimary ? <Phone className="w-6 h-6" /> : <Mail className="w-6 h-6" />}

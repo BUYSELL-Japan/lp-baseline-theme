@@ -14,8 +14,8 @@ function MenuItem({ item, index, onImageClick }: { item: MenuItemType; index: nu
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-50px' }}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
+      viewport={{ once: true, margin: '-20px' }}
+      transition={{ duration: 0.4, delay: index * 0.05 }}
       className={`relative mb-24 lg:mb-32 ${index % 2 === 0 ? 'lg:pr-24' : 'lg:pl-24 lg:mt-32'}`}
     >
       <div className="flex flex-col md:flex-row gap-8 items-center bg-white rounded-[3rem] p-6 shadow-2xl hover:shadow-red-500/10 transition-shadow duration-500 group">
@@ -29,17 +29,17 @@ function MenuItem({ item, index, onImageClick }: { item: MenuItemType; index: nu
 
         <div className="w-full md:w-3/5 space-y-4 py-4 pr-4">
           <div className="flex justify-between items-start gap-4">
-            <h3 className="text-3xl font-black text-rose-950 group-hover:text-red-600 transition-colors italic tracking-tighter">
+            <h3 className="text-2xl md:text-3xl font-black text-red-950 group-hover:text-red-600 transition-colors italic tracking-tighter">
               {t(item, 'name')}
             </h3>
             <div className="text-2xl font-black text-red-600 italic">
               {t(item, 'price', item.price)}
             </div>
           </div>
-          <p className="text-lg font-bold text-orange-950/60 leading-relaxed">
+          <p className="text-lg font-bold text-red-950/60 leading-relaxed">
             {t(item, 'description')}
           </p>
-          <div className="w-12 h-2 bg-yellow-400 rounded-full" />
+          <div className="w-12 h-2 bg-yellow-400 rounded-full shadow-sm" />
         </div>
       </div>
     </motion.div>
@@ -73,10 +73,10 @@ export default function Menu() {
           viewport={{ once: true }}
           className="mb-32"
         >
-          <h2 className="text-6xl md:text-9xl font-black text-rose-950 mb-6 italic tracking-tighter leading-none">
+          <h2 className="text-5xl md:text-7xl font-black text-red-950 mb-6 italic tracking-tighter leading-none">
             {t(menuData, 'sectionTitle')}
           </h2>
-          <p className="text-2xl md:text-4xl font-black text-orange-900/40 italic">
+          <p className="text-xl md:text-3xl font-black text-red-900/40 italic">
             {t(menuData, 'sectionSubtitle')}
           </p>
         </motion.div>

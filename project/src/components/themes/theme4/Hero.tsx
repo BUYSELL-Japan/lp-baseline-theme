@@ -34,7 +34,7 @@ export default function Hero() {
   return (
     <div ref={ref} className="relative min-h-screen overflow-hidden bg-amber-50 flex items-center">
       {/* Background Decorative Blob */}
-      <div className="absolute top-0 right-0 w-[80vw] h-[80vw] bg-yellow-400 opacity-20 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/4" />
+      <div className="absolute top-0 right-0 w-[80vw] h-[80vw] bg-yellow-300 opacity-20 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/4" />
       <div className="absolute bottom-0 left-0 w-[60vw] h-[60vw] bg-red-600 opacity-10 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/4" />
 
       <div className="max-w-[1400px] mx-auto px-6 w-full relative z-30 pt-20 pb-32">
@@ -47,7 +47,7 @@ export default function Hero() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, ease: 'easeOut' }}
             >
-              <h1 className="text-[12vw] lg:text-[10rem] font-black leading-[0.8] mb-12 tracking-tighter italic text-rose-950">
+              <h1 className="text-[10vw] lg:text-[7rem] font-black leading-[0.9] mb-12 tracking-tighter italic text-red-950">
                 {String(title).split('\n').map((line: string, i: number) => (
                   <motion.span 
                     key={i} 
@@ -65,14 +65,14 @@ export default function Hero() {
                 initial={{ opacity: 0, scaleX: 0 }}
                 animate={{ opacity: 1, scaleX: 1 }}
                 transition={{ delay: 0.8, duration: 1 }}
-                className="w-32 h-4 bg-yellow-400 mb-12 origin-left rounded-full"
+                className="w-32 h-3 bg-yellow-400 mb-12 origin-left rounded-full shadow-[0_4px_15px_rgba(250,204,21,0.3)]"
               />
 
               <motion.p
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1, delay: 1 }}
-                className="text-2xl md:text-4xl font-black text-orange-900/60 max-w-xl leading-tight mb-12"
+                className="text-xl md:text-3xl font-black text-red-900/70 max-w-xl leading-tight mb-12"
               >
                 {String(subtitle)}
               </motion.p>
@@ -114,8 +114,8 @@ export default function Hero() {
                 transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
                 className="absolute -top-12 -right-12 z-20"
               >
-                <div className="w-32 h-32 bg-yellow-400 rounded-full flex items-center justify-center shadow-xl">
-                  <Sun className="w-16 h-16 text-white" />
+                <div className="w-32 h-32 bg-yellow-400 rounded-full flex items-center justify-center shadow-2xl border-4 border-red-600">
+                  <Sun className="w-16 h-16 text-red-600" />
                 </div>
               </motion.div>
             </motion.div>

@@ -16,7 +16,7 @@ export default function Pricing() {
   const sectionSubtitle = getText(pricingData.sectionSubtitle);
 
   return (
-    <section id="pricing" className="py-32 px-6 bg-amber-50/50 relative overflow-hidden">
+    <section id="pricing" className="py-32 px-6 bg-red-50/10 relative overflow-hidden">
       {/* Decorative Sun */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-yellow-400 opacity-10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2" />
       
@@ -27,10 +27,10 @@ export default function Pricing() {
           viewport={{ once: true }}
           className="mb-24 text-right"
         >
-          <h2 className="text-6xl md:text-9xl font-black text-rose-950 mb-6 italic tracking-tighter leading-none">
+          <h2 className="text-5xl md:text-7xl font-black text-red-950 mb-6 italic tracking-tighter leading-none">
             {sectionTitle}
           </h2>
-          <p className="text-2xl md:text-4xl font-black text-orange-900/40 italic">
+          <p className="text-xl md:text-2xl font-black text-red-900/40 italic">
             {sectionSubtitle}
           </p>
         </motion.div>
@@ -61,7 +61,7 @@ export default function Pricing() {
                   )}
 
                   <div className="mb-8">
-                    <h3 className="text-3xl font-black text-rose-950 uppercase tracking-tighter italic">
+                    <h3 className="text-2xl md:text-3xl font-black text-red-950 uppercase tracking-tighter italic">
                       {getText(plan.name)}
                     </h3>
                   </div>
@@ -70,13 +70,13 @@ export default function Pricing() {
                     <div className="text-7xl font-black text-red-600 tracking-tighter italic leading-none">
                       {getText(plan.price)}
                     </div>
-                    <div className="text-[10px] font-black text-orange-950/30 mt-4 uppercase tracking-[0.2em]">
+                    <div className="text-[10px] font-black text-red-950/30 mt-4 uppercase tracking-[0.2em]">
                       {translate('taxIncluded', language)}
                     </div>
                   </div>
 
                   <div className="flex-grow space-y-6 mb-12">
-                    <p className="text-sm font-bold text-orange-950/50">
+                    <p className="text-sm font-bold text-red-950/50">
                       {getText(plan.description)}
                     </p>
                     <div className="h-px bg-yellow-100" />
@@ -84,7 +84,7 @@ export default function Pricing() {
                       {plan.features?.map((feature, idx) => (
                         <li key={idx} className="flex items-start gap-4">
                           <Check className="w-5 h-5 text-red-600 shrink-0" />
-                          <span className="text-base font-bold text-rose-950/80">{getText(feature)}</span>
+                          <span className="text-base font-bold text-red-950/80">{getText(feature)}</span>
                         </li>
                       ))}
                     </ul>
@@ -96,8 +96,8 @@ export default function Pricing() {
                     whileTap={{ scale: 0.98 }}
                     className={`block w-full text-center px-8 py-6 rounded-[2.5rem] font-black uppercase tracking-widest text-sm shadow-2xl transition-all ${
                       plan.isPopular
-                        ? 'bg-red-600 text-yellow-200 shadow-red-500/30'
-                        : 'bg-yellow-400 text-rose-900 shadow-yellow-500/20 hover:bg-yellow-500'
+                        ? 'bg-red-600 text-yellow-400 shadow-red-500/30'
+                        : 'bg-yellow-400 text-red-900 shadow-yellow-500/20 hover:bg-yellow-500'
                     }`}
                   >
                     {translate('bookingContact', language)}

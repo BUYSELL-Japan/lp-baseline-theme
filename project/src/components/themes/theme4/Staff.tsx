@@ -12,9 +12,9 @@ export default function Staff() {
   const sectionSubtitle = getText(staffData.sectionSubtitle);
 
   return (
-    <section id="staff" className="py-32 px-6 bg-amber-50 relative overflow-hidden">
+    <section id="staff" className="py-32 px-6 bg-red-50/10 relative overflow-hidden">
       {/* Background Decor */}
-      <div className="absolute top-1/2 left-0 w-full h-64 bg-red-600 opacity-[0.03] -rotate-3 -translate-y-1/2" />
+      <div className="absolute top-1/2 left-0 w-full h-64 bg-red-600 opacity-[0.02] -rotate-3 -translate-y-1/2" />
 
       <div className="max-w-[1200px] mx-auto relative z-10">
         <motion.div
@@ -23,10 +23,10 @@ export default function Staff() {
           viewport={{ once: true }}
           className="mb-32 max-w-2xl"
         >
-          <h2 className="text-6xl md:text-9xl font-black text-rose-950 mb-8 italic tracking-tighter leading-none">
+          <h2 className="text-5xl md:text-7xl font-black text-red-950 mb-8 italic tracking-tighter leading-none">
             {sectionTitle}
           </h2>
-          <div className="w-32 h-6 bg-yellow-400 rounded-full" />
+          <div className="w-24 h-4 bg-yellow-400 rounded-full shadow-lg" />
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16">
@@ -54,7 +54,7 @@ export default function Staff() {
                   </div>
                 </div>
                 <div className="p-8 text-center">
-                  <h3 className="text-3xl font-black text-rose-950 italic tracking-tighter">
+                  <h3 className="text-2xl md:text-3xl font-black text-red-950 italic tracking-tighter">
                     {getText(member.name)}
                   </h3>
                   <div className="mt-4 flex justify-center gap-1">

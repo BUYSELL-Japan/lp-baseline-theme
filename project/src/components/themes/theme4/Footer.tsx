@@ -24,10 +24,10 @@ export default function Footer() {
   const description = getText(footerData.description);
 
   return (
-    <footer className="relative bg-rose-950 text-white overflow-hidden">
+    <footer className="relative bg-red-950 text-white overflow-hidden">
       {/* Tropical Wave Top */}
       <div className="absolute top-0 left-0 w-full overflow-hidden leading-none z-10 transform -translate-y-[1px]">
-        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[60px] fill-amber-50">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[60px] fill-white">
           <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"></path>
         </svg>
       </div>
@@ -44,11 +44,11 @@ export default function Footer() {
           >
             <div className="flex items-center gap-6 mb-10">
               <div className="w-16 h-16 bg-red-600 rounded-[1.5rem] flex items-center justify-center shadow-2xl rotate-3">
-                <Sun className="w-8 h-8 text-yellow-200" />
+                <Sun className="w-8 h-8 text-yellow-400" />
               </div>
               <span className="text-4xl font-black italic tracking-tighter uppercase leading-none">{logoText}</span>
             </div>
-            <p className="text-xl font-black italic text-yellow-100/40 leading-tight">
+            <p className="text-xl font-black italic text-white/30 leading-tight">
               {description}
             </p>
           </motion.div>
@@ -92,7 +92,7 @@ export default function Footer() {
                         key={index}
                         href={social.url}
                         whileHover={{ scale: 1.1, y: -5 }}
-                        className="w-14 h-14 bg-red-600 rounded-2xl flex items-center justify-center text-yellow-200 shadow-xl shadow-red-500/10 hover:bg-yellow-400 hover:text-rose-950 transition-all"
+                        className="w-14 h-14 bg-red-600 rounded-2xl flex items-center justify-center text-yellow-400 shadow-xl shadow-red-500/10 hover:bg-yellow-400 hover:text-red-950 transition-all"
                       >
                         <Icon className="w-6 h-6" />
                       </motion.a>

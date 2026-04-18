@@ -37,8 +37,8 @@ export default function Header() {
       <motion.header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? 'bg-yellow-400/90 backdrop-blur-md shadow-lg py-2'
-            : 'bg-transparent py-4'
+            ? 'bg-yellow-400 backdrop-blur-md shadow-lg py-2'
+            : 'bg-white/80 backdrop-blur-sm py-4 border-b border-red-100'
         }`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
@@ -51,11 +51,11 @@ export default function Header() {
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               whileHover={{ scale: 1.05 }}
             >
-              <div className="p-2 bg-gradient-to-br from-red-500 to-orange-500 rounded-full shadow-lg shadow-orange-500/20">
-                <Sun className="w-6 h-6 text-yellow-200" />
+              <div className="p-2 bg-red-600 rounded-lg shadow-lg">
+                <Sun className="w-6 h-6 text-yellow-400" />
               </div>
               <span className={`text-xl md:text-2xl font-black uppercase tracking-tighter ${
-                scrolled ? 'text-rose-900' : 'text-white drop-shadow-md'
+                scrolled ? 'text-red-700' : 'text-red-600'
               }`}>
                 {(() => {
                   let logoText = getLocalizedValue(headerData.logo, 'text', language);
@@ -79,11 +79,11 @@ export default function Header() {
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
                     className={`text-sm font-bold uppercase tracking-wider transition-all relative group ${
-                      scrolled ? 'text-rose-800' : 'text-white'
+                      scrolled ? 'text-red-900' : 'text-red-700'
                     }`}
                   >
                     {String(label)}
-                    <span className="absolute -bottom-1 left-0 w-0 h-1 bg-red-500 transition-all group-hover:w-full rounded-full" />
+                    <span className="absolute -bottom-1 left-0 w-0 h-1 bg-red-600 transition-all group-hover:w-full rounded-full" />
                   </button>
                 );
               })}
@@ -92,10 +92,10 @@ export default function Header() {
               <div className="relative">
                 <button
                   onClick={() => setLanguageMenuOpen(!languageMenuOpen)}
-                  className={`flex items-center gap-2 p-2 rounded-full border-2 transition-all ${
+                  className={`flex items-center gap-2 p-2 rounded-lg border-2 transition-all ${
                     scrolled 
-                      ? 'border-rose-900/10 text-rose-900 hover:bg-rose-900 hover:text-white' 
-                      : 'border-white/20 text-white hover:bg-white hover:text-yellow-500'
+                      ? 'border-red-900/10 text-red-900 hover:bg-red-600 hover:text-white' 
+                      : 'border-red-600/20 text-red-600 hover:bg-red-600 hover:text-white'
                   }`}
                 >
                   <Globe className="w-4 h-4" />
@@ -105,7 +105,7 @@ export default function Header() {
                 <AnimatePresence>
                   {languageMenuOpen && (
                     <motion.div
-                      className="absolute right-0 mt-3 w-40 bg-white rounded-2xl shadow-2xl overflow-hidden border border-yellow-100"
+                      className="absolute right-0 mt-3 w-40 bg-white rounded-xl shadow-2xl overflow-hidden border border-red-50"
                       initial={{ opacity: 0, y: 10, scale: 0.95 }}
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: 10, scale: 0.95 }}
@@ -116,8 +116,8 @@ export default function Header() {
                           href={`${basePath}${lang === 'ja' ? '' : lang + '/'}`}
                           className={`block px-5 py-3 text-sm font-bold transition-colors ${
                             language === lang
-                              ? 'bg-yellow-400 text-rose-900'
-                              : 'text-rose-800 hover:bg-orange-50'
+                              ? 'bg-red-600 text-white'
+                              : 'text-red-800 hover:bg-red-50'
                           }`}
                         >
                           {languageNames[lang]}
@@ -133,13 +133,14 @@ export default function Header() {
             <div className="md:hidden">
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className={`p-2 rounded-xl ${scrolled ? 'text-rose-900 bg-yellow-400' : 'text-white bg-white/10'}`}
+                className={`p-2 rounded-lg ${scrolled ? 'text-red-900 bg-yellow-400' : 'text-red-600 bg-red-50'}`}
               >
                 {mobileMenuOpen ? <X /> : <Menu />}
               </button>
             </div>
           </div>
         </div>
+
 
         {/* Mobile Nav */}
         <AnimatePresence>

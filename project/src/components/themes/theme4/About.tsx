@@ -35,19 +35,19 @@ function FeatureCard({ feature, index }: { feature: AboutFeature; index: number 
         </motion.div>
         
         {/* Abstract Floating Shapes behind image */}
-        <div className={`absolute -inset-10 rounded-full blur-3xl opacity-30 -z-10 ${
-          index % 2 === 0 ? 'bg-yellow-400 translate-x-10' : 'bg-red-500 -translate-x-10'
+        <div className={`absolute -inset-10 rounded-full blur-3xl opacity-20 -z-10 ${
+          index % 2 === 0 ? 'bg-yellow-300 translate-x-10' : 'bg-red-400 -translate-x-10'
         }`} />
       </div>
 
       {/* Text Block - Overlapping */}
       <div className={`w-full lg:w-2/5 lg:absolute ${
         index % 2 === 0 ? 'lg:-right-12' : 'lg:-left-12'
-      } z-20 bg-white/90 backdrop-blur-md p-10 md:p-16 rounded-[3rem] shadow-2xl border border-white`}>
-        <h3 className="text-4xl md:text-6xl font-black text-rose-950 mb-6 leading-tight italic tracking-tighter">
+      } z-20 bg-white/95 backdrop-blur-md p-8 md:p-12 rounded-[2.5rem] shadow-2xl border border-red-50`}>
+        <h3 className="text-3xl md:text-5xl font-black text-red-950 mb-6 leading-tight italic tracking-tighter">
           {t(feature, 'title')}
         </h3>
-        <p className="text-xl md:text-2xl font-bold text-orange-900/70 leading-relaxed">
+        <p className="text-lg md:text-xl font-bold text-red-950/70 leading-relaxed">
           {t(feature, 'description')}
         </p>
         <div className="mt-8 flex gap-2">
@@ -66,11 +66,8 @@ export default function About() {
   if (!aboutData || !aboutData.features) return null;
 
   return (
-    <section id="about" className="py-32 px-6 bg-amber-50 relative overflow-hidden">
-      {/* Background Text Decor */}
-      <div className="absolute top-20 left-10 pointer-events-none select-none opacity-[0.03] text-[20rem] font-black italic whitespace-nowrap text-red-600 leading-none">
-        OKINAWA SPIRIT
-      </div>
+    <section id="about" className="py-32 px-6 bg-red-50/30 relative overflow-hidden">
+      {/* Background Text Decor - Removed to simplify UX */}
 
       <div className="max-w-[1200px] mx-auto relative z-10">
         <motion.div
@@ -79,10 +76,10 @@ export default function About() {
           viewport={{ once: true }}
           className="mb-32 max-w-2xl"
         >
-          <h2 className="text-6xl md:text-9xl font-black text-rose-950 mb-8 italic tracking-tighter leading-none">
+          <h2 className="text-5xl md:text-7xl font-black text-red-950 mb-8 italic tracking-tighter leading-none">
             {t(aboutData, 'sectionTitle')}
           </h2>
-          <div className="w-32 h-6 bg-red-600 rounded-full" />
+          <div className="w-24 h-4 bg-red-600 rounded-full shadow-lg" />
         </motion.div>
 
         <div className="relative">

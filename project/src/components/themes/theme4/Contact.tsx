@@ -60,9 +60,9 @@ export default function Contact() {
   const isDisabled = submitStatus === 'sending' || submitStatus === 'success';
 
   return (
-    <section id="contact" className="py-32 px-6 bg-amber-50 relative overflow-hidden">
+    <section id="contact" className="py-32 px-6 bg-red-50/20 relative overflow-hidden">
       {/* Background Decor */}
-      <div className="absolute top-1/2 left-0 w-[50vw] h-[50vw] bg-red-600 opacity-[0.03] rounded-full blur-[120px] -translate-x-1/4 -translate-y-1/2" />
+      <div className="absolute top-1/2 left-0 w-[50vw] h-[50vw] bg-red-600 opacity-[0.02] rounded-full blur-[120px] -translate-x-1/4 -translate-y-1/2" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="flex flex-col lg:flex-row gap-20 items-start">
@@ -74,11 +74,11 @@ export default function Contact() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-6xl md:text-9xl font-black text-rose-950 mb-12 italic tracking-tighter leading-[0.8]">
+              <h2 className="text-5xl md:text-7xl font-black text-red-950 mb-12 italic tracking-tighter leading-[0.9]">
                 {t(contactData, 'sectionTitle')}
               </h2>
-              <div className="w-48 h-6 bg-red-600 rounded-full mb-12" />
-              <p className="text-3xl font-black text-orange-900/40 italic leading-tight">
+              <div className="w-24 h-4 bg-red-600 rounded-full mb-12 shadow-lg" />
+              <p className="text-xl md:text-2xl font-black text-red-900/40 italic leading-tight">
                 {t(contactData, 'sectionSubtitle')}
               </p>
             </motion.div>
@@ -116,8 +116,8 @@ export default function Contact() {
                       onFocus={() => setFocused('name')}
                       onBlur={() => setFocused(null)}
                       disabled={isDisabled}
-                      className={`w-full px-0 py-6 bg-transparent border-b-4 transition-all duration-300 outline-none font-black text-2xl text-rose-950 placeholder:text-rose-900/20 ${
-                        focused === 'name' ? 'border-red-600' : 'border-amber-100'
+                      className={`w-full px-0 py-6 bg-transparent border-b-4 transition-all duration-300 outline-none font-black text-2xl text-red-950 placeholder:text-red-900/20 ${
+                        focused === 'name' ? 'border-red-600' : 'border-red-100'
                       }`}
                       required
                     />
@@ -134,8 +134,8 @@ export default function Contact() {
                       onFocus={() => setFocused('email')}
                       onBlur={() => setFocused(null)}
                       disabled={isDisabled}
-                      className={`w-full px-0 py-6 bg-transparent border-b-4 transition-all duration-300 outline-none font-black text-2xl text-rose-950 placeholder:text-rose-900/20 ${
-                        focused === 'email' ? 'border-red-600' : 'border-amber-100'
+                      className={`w-full px-0 py-6 bg-transparent border-b-4 transition-all duration-300 outline-none font-black text-2xl text-red-950 placeholder:text-red-900/20 ${
+                        focused === 'email' ? 'border-red-600' : 'border-red-100'
                       }`}
                       required
                     />
@@ -153,8 +153,8 @@ export default function Contact() {
                     onFocus={() => setFocused('subject')}
                     onBlur={() => setFocused(null)}
                     disabled={isDisabled}
-                    className={`w-full px-0 py-6 bg-transparent border-b-4 transition-all duration-300 outline-none font-black text-2xl text-rose-950 placeholder:text-rose-900/20 ${
-                      focused === 'subject' ? 'border-red-600' : 'border-amber-100'
+                    className={`w-full px-0 py-6 bg-transparent border-b-4 transition-all duration-300 outline-none font-black text-2xl text-red-950 placeholder:text-red-900/20 ${
+                      focused === 'subject' ? 'border-red-600' : 'border-red-100'
                     }`}
                     required
                   />
@@ -171,8 +171,8 @@ export default function Contact() {
                     onBlur={() => setFocused(null)}
                     rows={4}
                     disabled={isDisabled}
-                    className={`w-full px-0 py-6 bg-transparent border-b-4 transition-all duration-300 outline-none font-black text-2xl text-rose-950 placeholder:text-rose-900/20 resize-none ${
-                      focused === 'message' ? 'border-red-600' : 'border-amber-100'
+                    className={`w-full px-0 py-6 bg-transparent border-b-4 transition-all duration-300 outline-none font-black text-2xl text-red-950 placeholder:text-red-900/20 resize-none ${
+                      focused === 'message' ? 'border-red-600' : 'border-red-100'
                     }`}
                     required
                   />
@@ -198,12 +198,12 @@ export default function Contact() {
                 <AnimatePresence>
                   {submitStatus === 'success' && (
                     <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="p-8 bg-green-50 rounded-[2.5rem] text-green-800 font-black text-center border-4 border-green-100 italic">
-                      SUCCESS! WE WILL CONTACT YOU SOON.
+                      {translate('contactSuccess')}
                     </motion.div>
                   )}
                   {submitStatus === 'error' && (
                     <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="p-8 bg-red-50 rounded-[2.5rem] text-red-800 font-black text-center border-4 border-red-100 italic">
-                      ERROR! PLEASE TRY AGAIN.
+                      {translate('contactError')}
                     </motion.div>
                   )}
                 </AnimatePresence>

@@ -49,6 +49,7 @@ export default function Footer() {
                 <p className="text-white font-black text-xl">{getText(footerData.businessHours.days)}</p>
                 <p className="text-slate-400 font-medium">{getText(footerData.businessHours.hours)}</p>
                 <p className="text-slate-600 text-sm italic">{getText(footerData.businessHours.closedDay)}</p>
+              </div>
             </div>
           )}
 
@@ -57,25 +58,25 @@ export default function Footer() {
               <h3 className="text-sm font-black uppercase tracking-[0.2em] text-blue-500 mb-8">
                 {getText(footerData.social.title)}
               </h3>
-            <div className="flex flex-wrap gap-4">
-              {footerData.social.links.map((social, index) => {
-                const platformKey = (social.platform || '').toLowerCase();
-                const IconComponent = socialIconMap[platformKey] || HelpCircle;
-                return (
-                  <motion.a
-                    key={index}
-                    href={social.url}
-                    whileHover={{ scale: 1.1, y: -5 }}
-                    whileTap={{ scale: 0.9 }}
-                    className="w-12 h-12 bg-slate-900 border border-slate-800 rounded-2xl flex items-center justify-center hover:bg-slate-800 hover:border-blue-500/50 transition-colors"
-                  >
-                    <IconComponent className="w-5 h-5 text-slate-400 group-hover:text-blue-500" />
-                  </motion.a>
-                );
-              })}
+              <div className="flex flex-wrap gap-4">
+                {footerData.social.links.map((social, index) => {
+                  const platformKey = (social.platform || '').toLowerCase();
+                  const IconComponent = socialIconMap[platformKey] || HelpCircle;
+                  return (
+                    <motion.a
+                      key={index}
+                      href={social.url}
+                      whileHover={{ scale: 1.1, y: -5 }}
+                      whileTap={{ scale: 0.9 }}
+                      className="w-12 h-12 bg-slate-900 border border-slate-800 rounded-2xl flex items-center justify-center hover:bg-slate-800 hover:border-blue-500/50 transition-colors"
+                    >
+                      <IconComponent className="w-5 h-5 text-slate-400 group-hover:text-blue-500" />
+                    </motion.a>
+                  );
+                })}
+              </div>
             </div>
-          </div>
-        </div>
+          )}
 
         <div className="pt-12 border-t border-slate-900">
           <p className="text-slate-600 text-sm font-bold tracking-widest uppercase">

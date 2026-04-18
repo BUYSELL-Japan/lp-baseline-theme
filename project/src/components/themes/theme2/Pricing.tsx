@@ -23,9 +23,6 @@ export default function Pricing() {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <span className="text-blue-500 font-black uppercase tracking-[0.3em] text-sm mb-4 block">
-            Pricing Plans
-          </span>
           <h2 className="text-5xl md:text-7xl font-black text-white tracking-tighter mb-6">
             {getText(pricingData.sectionTitle)}
           </h2>

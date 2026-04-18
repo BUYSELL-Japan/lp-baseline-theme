@@ -32,9 +32,6 @@ export default function Menu() {
           transition={{ duration: 0.8 }}
           className="mb-20"
         >
-          <span className="text-blue-500 font-black uppercase tracking-[0.3em] text-sm mb-4 block">
-            Our Menu
-          </span>
           <h2 className="text-5xl md:text-7xl font-black text-white tracking-tighter mb-6 underline decoration-blue-600 underline-offset-8">
             {t(menuData, 'sectionTitle')}
           </h2>
@@ -68,9 +65,7 @@ export default function Menu() {
                       <h3 className="text-3xl font-black text-white tracking-tighter mb-1">
                         {t(item, 'name')}
                       </h3>
-                      <p className="text-blue-400 font-black text-sm uppercase tracking-widest">
-                        Available Now
-                      </p>
+
                     </div>
                     <div className="text-2xl font-black text-white bg-blue-600 px-4 py-1 rounded-xl shadow-lg shadow-blue-600/30">
                       {t(item, 'price', item.price)}

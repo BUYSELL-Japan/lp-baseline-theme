@@ -40,25 +40,25 @@ export default function Footer() {
             </p>
           </div>
 
-          <div>
-            <h3 className="text-sm font-black uppercase tracking-[0.2em] text-blue-500 mb-8">
-              Business Hours
-            </h3>
-            {footerData.businessHours && (
+          {footerData.businessHours && (
+            <div>
+              <h3 className="text-sm font-black uppercase tracking-[0.2em] text-blue-500 mb-8">
+                {getText(footerData.businessHours.title)}
+              </h3>
               <div className="space-y-4">
                 <p className="text-white font-black text-xl">{getText(footerData.businessHours.days)}</p>
                 <p className="text-slate-400 font-medium">{getText(footerData.businessHours.hours)}</p>
                 <p className="text-slate-600 text-sm italic">{getText(footerData.businessHours.closedDay)}</p>
-              </div>
-            )}
-          </div>
+            </div>
+          )}
 
-          <div>
-            <h3 className="text-sm font-black uppercase tracking-[0.2em] text-blue-500 mb-8">
-              Connect
-            </h3>
+          {footerData.social?.links && (
+            <div>
+              <h3 className="text-sm font-black uppercase tracking-[0.2em] text-blue-500 mb-8">
+                {getText(footerData.social.title)}
+              </h3>
             <div className="flex flex-wrap gap-4">
-              {footerData.social?.links?.map((social, index) => {
+              {footerData.social.links.map((social, index) => {
                 const platformKey = (social.platform || '').toLowerCase();
                 const IconComponent = socialIconMap[platformKey] || HelpCircle;
                 return (
@@ -77,17 +77,10 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="pt-12 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="pt-12 border-t border-slate-900">
           <p className="text-slate-600 text-sm font-bold tracking-widest uppercase">
             &copy; {currentYear} {getText(footerData.copyright)}
           </p>
-          <div className="flex gap-8">
-            {['Privacy Policy', 'Terms of Service', 'Cookie Policy'].map((item) => (
-              <a key={item} href="#" className="text-slate-600 text-xs font-bold uppercase tracking-widest hover:text-blue-500 transition-colors">
-                {item}
-              </a>
-            ))}
-          </div>
         </div>
       </div>
     </footer>

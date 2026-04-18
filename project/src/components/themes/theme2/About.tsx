@@ -19,9 +19,6 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <span className="text-blue-500 font-black uppercase tracking-[0.3em] text-sm mb-4 block">
-              The Story
-            </span>
             <h2 className="text-5xl md:text-7xl font-black text-white leading-tight tracking-tighter mb-8">
               {t(aboutData, 'sectionTitle')}
             </h2>

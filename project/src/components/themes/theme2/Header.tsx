@@ -55,7 +55,7 @@ export default function Header() {
         </motion.div>
 
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-8">
+        <nav className="hidden lg:flex flex-wrap items-center justify-end gap-x-8 gap-y-2 max-w-full">
           {navigation.map((item) => (
             <button
               key={item.id}

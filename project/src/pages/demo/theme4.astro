@@ -1,0 +1,23 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Theme4StorePage from '../../components/Theme4StorePage';
+import { getStoreData } from '../../services/dynamoService';
+import { mapDynamoToPageData } from '../../services/dataMapper';
+
+// デモ用のデータ取得（デフォルトで最初の店舗データを使用）
+const storeData = await getStoreData('demo-store');
+const pageData = mapDynamoToPageData(storeData);
+
+const title = "Theme 4 (Tropical) - Preview";
+---
+
+<Layout title={title}>
+  <Theme4StorePage pageData={pageData} initialLanguage="ja" basePath="/demo/theme4" client:load />
+</Layout>
+
+<style is:global>
+  /* テーマ4専用のベーススタイル（必要に応じて） */
+  body {
+    background-color: #fffdf0; /* amber-50 */
+  }
+</style>

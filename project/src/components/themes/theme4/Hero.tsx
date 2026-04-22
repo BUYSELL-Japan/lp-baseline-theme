@@ -40,8 +40,8 @@ export default function Hero() {
       <div className="max-w-[1400px] mx-auto px-6 w-full relative z-30 pt-20 pb-32">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
           
-          {/* Text Content - Left Side */}
-          <div className="w-full lg:w-3/5 order-2 lg:order-1">
+          {/* Text Content - Top on Mobile, Left on Desktop */}
+          <div className="w-full lg:w-3/5 order-1 lg:order-1">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -91,8 +91,8 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* Hero Image - Right Side (Overlapping) */}
-          <div className="w-full lg:w-2/5 order-1 lg:order-2 relative">
+          {/* Hero Image - Bottom on Mobile, Right on Desktop */}
+          <div className="w-full lg:w-2/5 order-2 lg:order-2 relative">
             <motion.div
               initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
               animate={{ opacity: 1, scale: 1, rotate: 5 }}
@@ -112,12 +112,13 @@ export default function Hero() {
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-                className="absolute -top-12 -right-12 z-20"
+                className="absolute -top-6 -right-6 lg:-top-12 lg:-right-12 z-20"
               >
-                <div className="w-32 h-32 bg-yellow-400 rounded-full flex items-center justify-center shadow-2xl border-4 border-red-600">
-                  <Sun className="w-16 h-16 text-red-600" />
+                <div className="w-20 h-20 lg:w-32 lg:h-32 bg-yellow-400 rounded-full flex items-center justify-center shadow-2xl border-4 border-red-600">
+                  <Sun className="w-10 h-10 lg:w-16 lg:h-16 text-red-600" />
                 </div>
               </motion.div>
+
             </motion.div>
 
             {/* Back Decoration */}

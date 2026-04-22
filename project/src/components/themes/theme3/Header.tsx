@@ -53,12 +53,12 @@ export default function Header() {
         </motion.div>
 
         {/* Desktop Nav — Minimal, spaced, wrap enabled for multiple languages */}
-        <nav className="hidden lg:flex flex-wrap items-center justify-end gap-x-6 xl:gap-x-10 gap-y-2 max-w-full">
+        <nav className="hidden xl:flex flex-wrap items-center justify-end gap-x-4 gap-y-2 max-w-full">
           {navigation.map((item) => (
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className={`font-serif text-sm tracking-[0.1em] transition-colors duration-300 ${
+              className={`font-serif text-[13px] tracking-[0.1em] transition-colors duration-300 whitespace-nowrap ${
                 scrolled ? 'text-stone-600 hover:text-stone-900' : 'text-white/80 hover:text-white'
               }`}
             >
@@ -66,7 +66,7 @@ export default function Header() {
             </button>
           ))}
 
-          <div className={`flex items-center gap-1 text-xs tracking-widest ${scrolled ? 'text-stone-400' : 'text-white/60'}`}>
+          <div className={`flex items-center gap-1 text-[10px] tracking-widest ${scrolled ? 'text-stone-400' : 'text-white/60'}`}>
             <Globe className="w-3.5 h-3.5" />
             <select
               value={language}
@@ -84,7 +84,7 @@ export default function Header() {
 
         {/* Mobile Toggle */}
         <button
-          className={`lg:hidden transition-colors ${scrolled ? 'text-stone-800' : 'text-white'}`}
+          className={`xl:hidden transition-colors ${scrolled ? 'text-stone-800' : 'text-white'}`}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -98,7 +98,7 @@ export default function Header() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-0 right-0 bg-stone-50 border-b border-stone-200 py-8 px-8 flex flex-col gap-5 shadow-lg lg:hidden"
+            className="absolute top-full left-0 right-0 bg-stone-50 border-b border-stone-200 py-8 px-8 flex flex-col gap-5 shadow-lg xl:hidden"
           >
 
             {navigation.map((item) => (

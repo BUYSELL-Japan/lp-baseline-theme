@@ -71,7 +71,7 @@ export default function Header() {
               </span>
             </motion.div>
 
-            <nav className="hidden md:flex flex-wrap items-center justify-end gap-x-4 lg:gap-x-6 gap-y-2 flex-1 min-w-[300px]">
+            <nav className="hidden xl:flex flex-wrap items-center justify-end gap-x-4 gap-y-2 flex-1 min-w-[300px]">
               {navigation.map((item) => {
                 let label = getLocalizedValue(item, 'label', language);
                 if (typeof label === 'object') {
@@ -82,7 +82,7 @@ export default function Header() {
                   <motion.button
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
-                    className={`text-base font-medium transition-colors whitespace-nowrap ${
+                    className={`text-sm font-medium transition-colors whitespace-nowrap ${
                       scrolled
                         ? 'text-gray-700 hover:text-teal-600'
                         : 'text-white hover:text-teal-300'
@@ -107,7 +107,7 @@ export default function Header() {
                   whileTap={{ y: 0 }}
                 >
                   <Globe className="w-5 h-5" />
-                  <span className="text-sm">{languageNames[language]}</span>
+                  <span className="text-xs">{languageNames[language]}</span>
                 </motion.button>
 
                 <AnimatePresence>
@@ -147,7 +147,7 @@ export default function Header() {
               </div>
             </nav>
 
-            <div className="md:hidden flex items-center gap-2 absolute top-4 right-4 z-50">
+            <div className="xl:hidden flex items-center gap-2 absolute top-4 right-4 z-50">
               <motion.button
                 onClick={() => setLanguageMenuOpen(!languageMenuOpen)}
                 className={`z-50 p-2 ${scrolled || mobileMenuOpen ? 'text-gray-900' : 'text-white'}`}
@@ -172,14 +172,14 @@ export default function Header() {
         {mobileMenuOpen && (
           <>
             <motion.div
-              className="fixed inset-0 bg-black/50 z-40 md:hidden"
+              className="fixed inset-0 bg-black/50 z-40 xl:hidden"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setMobileMenuOpen(false)}
             />
             <motion.nav
-              className="fixed top-20 left-0 right-0 bg-white/95 backdrop-blur-lg shadow-2xl z-40 md:hidden"
+              className="fixed top-20 left-0 right-0 bg-white/95 backdrop-blur-lg shadow-2xl z-40 xl:hidden"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}

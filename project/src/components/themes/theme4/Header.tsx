@@ -68,7 +68,7 @@ export default function Header() {
             </motion.div>
 
             {/* Desktop Nav */}
-            <nav className="hidden md:flex flex-wrap items-center justify-end gap-x-6 gap-y-2 flex-1 min-w-[300px]">
+            <nav className="hidden xl:flex flex-wrap items-center justify-end gap-x-4 gap-y-2 flex-1 min-w-[300px]">
               {navigation.map((item) => {
                 let label = getLocalizedValue(item, 'label', language);
                 if (typeof label === 'object') {
@@ -78,7 +78,7 @@ export default function Header() {
                   <button
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
-                    className={`text-sm font-bold uppercase tracking-wider transition-all relative group ${
+                    className={`text-xs font-bold uppercase tracking-wider transition-all relative group whitespace-nowrap ${
                       scrolled ? 'text-red-900' : 'text-red-700'
                     }`}
                   >
@@ -99,7 +99,7 @@ export default function Header() {
                   }`}
                 >
                   <Globe className="w-4 h-4" />
-                  <span className="text-xs font-black">{language.toUpperCase()}</span>
+                  <span className="text-[10px] font-black">{language.toUpperCase()}</span>
                 </button>
 
                 <AnimatePresence>
@@ -130,7 +130,7 @@ export default function Header() {
             </nav>
 
             {/* Mobile Toggle */}
-            <div className="md:hidden absolute top-4 right-6 z-50 flex items-center gap-2">
+            <div className="xl:hidden absolute top-4 right-6 z-50 flex items-center gap-2">
               <button
                 onClick={() => setLanguageMenuOpen(!languageMenuOpen)}
                 className={`p-2 rounded-lg ${scrolled ? 'text-red-900 bg-yellow-400' : 'text-red-600 bg-red-50'}`}

@@ -55,12 +55,12 @@ export default function Header() {
         </motion.div>
 
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex flex-wrap items-center justify-end gap-x-8 gap-y-2 max-w-full">
+        <nav className="hidden xl:flex flex-wrap items-center justify-end gap-x-4 gap-y-2 max-w-full">
           {navigation.map((item) => (
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className="text-sm font-bold uppercase tracking-widest text-slate-400 hover:text-blue-400 transition-colors"
+              className="text-xs font-bold uppercase tracking-widest text-slate-400 hover:text-blue-400 transition-colors whitespace-nowrap"
             >
               {getLocalizedValue(item, 'label', language)}
             </button>
@@ -73,7 +73,7 @@ export default function Header() {
             <select 
               value={language}
               onChange={(e) => window.location.href = `${basePath}${e.target.value === 'ja' ? '' : e.target.value + '/'}`}
-              className="bg-transparent text-xs font-bold uppercase tracking-tight focus:outline-none cursor-pointer hover:text-white"
+              className="bg-transparent text-[10px] font-bold uppercase tracking-tight focus:outline-none cursor-pointer hover:text-white"
             >
               {Object.keys(languageNames).map(lang => (
                 <option key={lang} value={lang} className="bg-slate-900">{languageNames[lang as Language]}</option>
@@ -84,7 +84,7 @@ export default function Header() {
 
         {/* Mobile Toggle */}
         <button 
-          className="lg:hidden w-12 h-12 flex items-center justify-center text-white"
+          className="xl:hidden w-12 h-12 flex items-center justify-center text-white"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? <X /> : <Menu />}
@@ -98,7 +98,7 @@ export default function Header() {
             initial={{ opacity: 0, x: '100%' }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
-            className="fixed inset-0 bg-slate-950 z-[90] flex flex-col p-8 pt-24 lg:hidden"
+            className="fixed inset-0 bg-slate-950 z-[90] flex flex-col p-8 pt-24 xl:hidden"
           >
             <div className="space-y-6">
               {navigation.map((item) => (

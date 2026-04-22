@@ -44,10 +44,10 @@ export default function Header() {
         animate={{ y: 0 }}
       >
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex items-center justify-between">
+          <div className="flex flex-wrap items-center justify-between min-h-[5rem] gap-y-4">
             {/* Logo */}
             <motion.div
-              className="flex items-center gap-3 cursor-pointer"
+              className="flex items-center gap-3 cursor-pointer w-full md:w-auto md:max-w-[40%] pr-16 md:pr-0"
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               whileHover={{ scale: 1.05 }}
             >
@@ -68,7 +68,7 @@ export default function Header() {
             </motion.div>
 
             {/* Desktop Nav */}
-            <nav className="hidden md:flex items-center gap-8">
+            <nav className="hidden md:flex flex-wrap items-center justify-end gap-x-6 gap-y-2 flex-1 min-w-[300px]">
               {navigation.map((item) => {
                 let label = getLocalizedValue(item, 'label', language);
                 if (typeof label === 'object') {
@@ -130,12 +130,18 @@ export default function Header() {
             </nav>
 
             {/* Mobile Toggle */}
-            <div className="md:hidden">
+            <div className="md:hidden absolute top-4 right-6 z-50 flex items-center gap-2">
+              <button
+                onClick={() => setLanguageMenuOpen(!languageMenuOpen)}
+                className={`p-2 rounded-lg ${scrolled ? 'text-red-900 bg-yellow-400' : 'text-red-600 bg-red-50'}`}
+              >
+                <Globe className="w-5 h-5" />
+              </button>
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 className={`p-2 rounded-lg ${scrolled ? 'text-red-900 bg-yellow-400' : 'text-red-600 bg-red-50'}`}
               >
-                {mobileMenuOpen ? <X /> : <Menu />}
+                {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </button>
             </div>
           </div>

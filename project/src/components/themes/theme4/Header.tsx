@@ -87,56 +87,50 @@ export default function Header() {
                   </button>
                 );
               })}
-
-              {/* Language Switcher */}
-              <div className="relative">
-                <button
-                  onClick={() => setLanguageMenuOpen(!languageMenuOpen)}
-                  className={`flex items-center gap-2 p-2 rounded-lg border-2 transition-all ${
-                    scrolled 
-                      ? 'border-red-900/10 text-red-900 hover:bg-red-600 hover:text-white' 
-                      : 'border-red-600/20 text-red-600 hover:bg-red-600 hover:text-white'
-                  }`}
-                >
-                  <Globe className="w-4 h-4" />
-                  <span className="text-[10px] font-black">{language.toUpperCase()}</span>
-                </button>
-
-                <AnimatePresence>
-                  {languageMenuOpen && (
-                    <motion.div
-                      className="absolute right-0 mt-3 w-40 bg-white rounded-xl shadow-2xl overflow-hidden border border-red-50"
-                      initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                      exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                    >
-                      {(Object.keys(languageNames) as Language[]).map((lang) => (
-                        <a
-                          key={lang}
-                          href={`${basePath}${lang === 'ja' ? '' : lang + '/'}`}
-                          className={`block px-5 py-3 text-sm font-bold transition-colors ${
-                            language === lang
-                              ? 'bg-red-600 text-white'
-                              : 'text-red-800 hover:bg-red-50'
-                          }`}
-                        >
-                          {languageNames[lang]}
-                        </a>
-                      ))}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
             </nav>
+
+            {/* Language Switcher — always visible */}
+            <div className="relative">
+              <button
+                onClick={() => setLanguageMenuOpen(!languageMenuOpen)}
+                className={`flex items-center gap-2 p-2 rounded-lg border-2 transition-all ${
+                  scrolled 
+                    ? 'border-red-900/10 text-red-900 hover:bg-red-600 hover:text-white' 
+                    : 'border-red-600/20 text-red-600 hover:bg-red-600 hover:text-white'
+                }`}
+              >
+                <Globe className="w-4 h-4" />
+                <span className="text-[10px] font-black">{language.toUpperCase()}</span>
+              </button>
+
+              <AnimatePresence>
+                {languageMenuOpen && (
+                  <motion.div
+                    className="absolute right-0 mt-3 w-40 bg-white rounded-xl shadow-2xl overflow-hidden border border-red-50"
+                    initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                  >
+                    {(Object.keys(languageNames) as Language[]).map((lang) => (
+                      <a
+                        key={lang}
+                        href={`${basePath}${lang === 'ja' ? '' : lang + '/'}`}
+                        className={`block px-5 py-3 text-sm font-bold transition-colors ${
+                          language === lang
+                            ? 'bg-red-600 text-white'
+                            : 'text-red-800 hover:bg-red-50'
+                        }`}
+                      >
+                        {languageNames[lang]}
+                      </a>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
 
             {/* Mobile Toggle */}
             <div className="xl:hidden absolute top-4 right-6 z-50 flex items-center gap-2">
-              <button
-                onClick={() => setLanguageMenuOpen(!languageMenuOpen)}
-                className={`p-2 rounded-lg ${scrolled ? 'text-red-900 bg-yellow-400' : 'text-red-600 bg-red-50'}`}
-              >
-                <Globe className="w-5 h-5" />
-              </button>
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 className={`p-2 rounded-lg ${scrolled ? 'text-red-900 bg-yellow-400' : 'text-red-600 bg-red-50'}`}

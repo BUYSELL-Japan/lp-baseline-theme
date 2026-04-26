@@ -65,22 +65,21 @@ export default function Header() {
               {getLocalizedValue(item, 'label', language)}
             </button>
           ))}
-          
-          <div className="h-4 w-px bg-slate-800" />
-          
-          <div className="flex items-center gap-2 text-slate-400">
-            <Globe className="w-4 h-4" />
-            <select 
-              value={language}
-              onChange={(e) => window.location.href = `${basePath}${e.target.value === 'ja' ? '' : e.target.value + '/'}`}
-              className="bg-transparent text-[10px] font-bold uppercase tracking-tight focus:outline-none cursor-pointer hover:text-white"
-            >
-              {Object.keys(languageNames).map(lang => (
-                <option key={lang} value={lang} className="bg-slate-900">{languageNames[lang as Language]}</option>
-              ))}
-            </select>
-          </div>
         </nav>
+
+        {/* Language Switcher — always visible */}
+        <div className="flex items-center gap-2 text-slate-400">
+          <Globe className="w-4 h-4" />
+          <select 
+            value={language}
+            onChange={(e) => window.location.href = `${basePath}${e.target.value === 'ja' ? '' : e.target.value + '/'}`}
+            className="bg-transparent text-xs font-bold uppercase tracking-tight focus:outline-none cursor-pointer hover:text-white"
+          >
+            {Object.keys(languageNames).map(lang => (
+              <option key={lang} value={lang} className="bg-slate-900">{languageNames[lang as Language]}</option>
+            ))}
+          </select>
+        </div>
 
         {/* Mobile Toggle */}
         <button 

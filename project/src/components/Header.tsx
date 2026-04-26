@@ -94,68 +94,61 @@ export default function Header() {
                   </motion.button>
                 );
               })}
-
-              <div className="relative">
-                <motion.button
-                  onClick={() => setLanguageMenuOpen(!languageMenuOpen)}
-                  className={`flex items-center gap-2 px-3 py-2 rounded-lg font-medium transition-colors ${
-                    scrolled
-                      ? 'text-gray-700 hover:bg-gray-100'
-                      : 'text-white hover:bg-white/10'
-                  }`}
-                  whileHover={{ y: -2 }}
-                  whileTap={{ y: 0 }}
-                >
-                  <Globe className="w-5 h-5" />
-                  <span className="text-xs">{languageNames[language]}</span>
-                </motion.button>
-
-                <AnimatePresence>
-                  {languageMenuOpen && (
-                    <>
-                      <motion.div
-                        className="fixed inset-0 z-30"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        onClick={() => setLanguageMenuOpen(false)}
-                      />
-                      <motion.div
-                        className="absolute right-0 mt-2 w-40 bg-white rounded-lg shadow-xl z-40 overflow-hidden"
-                        initial={{ opacity: 0, y: -10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -10 }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        {(Object.keys(languageNames) as Language[]).map((lang) => (
-                          <a
-                            key={lang}
-                            href={`${basePath}${lang === 'ja' ? '' : lang + '/'}`}
-                            className={`block w-full text-left px-4 py-3 text-sm transition-colors ${
-                              language === lang
-                                ? 'bg-teal-50 text-teal-600 font-bold'
-                                : 'text-gray-700 hover:bg-gray-50'
-                            }`}
-                          >
-                            {languageNames[lang]}
-                          </a>
-                        ))}
-                      </motion.div>
-                    </>
-                  )}
-                </AnimatePresence>
-              </div>
             </nav>
 
-            <div className="xl:hidden flex items-center gap-2 absolute top-4 right-4 z-50">
+            {/* Language Switcher — always visible */}
+            <div className="relative">
               <motion.button
                 onClick={() => setLanguageMenuOpen(!languageMenuOpen)}
-                className={`z-50 p-2 ${scrolled || mobileMenuOpen ? 'text-gray-900' : 'text-white'}`}
-                whileTap={{ scale: 0.95 }}
+                className={`flex items-center gap-2 px-3 py-2 rounded-lg font-medium transition-colors ${
+                  scrolled
+                    ? 'text-gray-700 hover:bg-gray-100'
+                    : 'text-white hover:bg-white/10'
+                }`}
+                whileHover={{ y: -2 }}
+                whileTap={{ y: 0 }}
               >
-                <Globe className="w-6 h-6" />
+                <Globe className="w-5 h-5" />
+                <span className="text-xs hidden sm:inline">{languageNames[language]}</span>
               </motion.button>
 
+              <AnimatePresence>
+                {languageMenuOpen && (
+                  <>
+                    <motion.div
+                      className="fixed inset-0 z-30"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      onClick={() => setLanguageMenuOpen(false)}
+                    />
+                    <motion.div
+                      className="absolute right-0 mt-2 w-40 bg-white rounded-lg shadow-xl z-40 overflow-hidden"
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      {(Object.keys(languageNames) as Language[]).map((lang) => (
+                        <a
+                          key={lang}
+                          href={`${basePath}${lang === 'ja' ? '' : lang + '/'}`}
+                          className={`block w-full text-left px-4 py-3 text-sm transition-colors ${
+                            language === lang
+                              ? 'bg-teal-50 text-teal-600 font-bold'
+                              : 'text-gray-700 hover:bg-gray-50'
+                          }`}
+                        >
+                          {languageNames[lang]}
+                        </a>
+                      ))}
+                    </motion.div>
+                  </>
+                )}
+              </AnimatePresence>
+            </div>
+
+            <div className="xl:hidden flex items-center gap-2 absolute top-4 right-4 z-50">
               <motion.button
                 className={`z-50 p-2 ${scrolled || mobileMenuOpen ? 'text-gray-900' : 'text-white'}`}
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

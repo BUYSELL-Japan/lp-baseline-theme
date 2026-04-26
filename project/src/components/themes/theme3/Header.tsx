@@ -52,7 +52,7 @@ export default function Header() {
           </span>
         </motion.div>
 
-        {/* Desktop Nav — Minimal, spaced, wrap enabled for multiple languages */}
+        {/* Desktop Nav — Minimal, spaced */}
         <nav className="hidden xl:flex flex-wrap items-center justify-end gap-x-4 gap-y-2 max-w-full">
           {navigation.map((item) => (
             <button
@@ -65,22 +65,23 @@ export default function Header() {
               {getLocalizedValue(item, 'label', language)}
             </button>
           ))}
-
-          <div className={`flex items-center gap-1 text-[10px] tracking-widest ${scrolled ? 'text-stone-400' : 'text-white/60'}`}>
-            <Globe className="w-3.5 h-3.5" />
-            <select
-              value={language}
-              onChange={(e) => window.location.href = `${basePath}${e.target.value === 'ja' ? '' : e.target.value + '/'}`}
-              className="bg-transparent font-serif focus:outline-none cursor-pointer"
-            >
-              {Object.keys(languageNames).map(lang => (
-                <option key={lang} value={lang} className="bg-stone-50 text-stone-800">
-                  {languageNames[lang as Language]}
-                </option>
-              ))}
-            </select>
-          </div>
         </nav>
+
+        {/* Language Switcher — always visible */}
+        <div className={`flex items-center gap-1 text-xs tracking-widest ${scrolled ? 'text-stone-500' : 'text-white/70'}`}>
+          <Globe className="w-3.5 h-3.5" />
+          <select
+            value={language}
+            onChange={(e) => window.location.href = `${basePath}${e.target.value === 'ja' ? '' : e.target.value + '/'}`}
+            className="bg-transparent font-serif focus:outline-none cursor-pointer"
+          >
+            {Object.keys(languageNames).map(lang => (
+              <option key={lang} value={lang} className="bg-stone-50 text-stone-800">
+                {languageNames[lang as Language]}
+              </option>
+            ))}
+          </select>
+        </div>
 
         {/* Mobile Toggle */}
         <button
@@ -100,7 +101,6 @@ export default function Header() {
             exit={{ opacity: 0, y: -20 }}
             className="absolute top-full left-0 right-0 bg-stone-50 border-b border-stone-200 py-8 px-8 flex flex-col gap-5 shadow-lg xl:hidden"
           >
-
             {navigation.map((item) => (
               <button
                 key={item.id}

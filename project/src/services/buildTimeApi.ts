@@ -110,8 +110,23 @@ export async function fetchStoreContentAtBuildTime(storeId: string): Promise<Lan
       }
     }
 
+    // Fetch settings to ensure we have the correct templateId
+    try {
+      const settingsResponse = await fetch(`https://2sznhxhcd8.execute-api.ap-southeast-2.amazonaws.com/dev/lp/settings/${storeId}`);
+      if (settingsResponse.ok) {
+        const settingsData = await settingsResponse.json();
+        if (settingsData.templateId) {
+          processedData.templateId = settingsData.templateId;
+          console.log(`[BuildTime API] Fetched templateId from settings: ${settingsData.templateId}`);
+        }
+      }
+    } catch (e) {
+      console.warn(`[BuildTime API] Failed to fetch settings for ${storeId}:`, e);
+    }
+
     return processedData as LandingPageContent;
   } catch (error) {
+
     console.error('[BuildTime API] Error fetching store content:', error);
     return null;
   }

@@ -113,7 +113,8 @@ export async function fetchStoreContentAtBuildTime(storeId: string): Promise<Lan
     // Fetch settings to ensure we have the correct templateId
     try {
       const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 5000);
+      const timeoutId = setTimeout(() => controller.abort(), 15000);
+      console.log(`[BuildTime API] Fetching settings for ${storeId}...`);
       const settingsResponse = await fetch(`https://2sznhxhcd8.execute-api.ap-southeast-2.amazonaws.com/dev/lp/settings/${storeId}`, {
         signal: controller.signal
       });
@@ -123,11 +124,19 @@ export async function fetchStoreContentAtBuildTime(storeId: string): Promise<Lan
         const settingsData = await settingsResponse.json();
         if (settingsData.templateId) {
           processedData.templateId = settingsData.templateId;
-          console.log(`[BuildTime API] Fetched templateId from settings: ${settingsData.templateId}`);
+          console.log(`[BuildTime API] Successfully fetched templateId from settings: ${settingsData.templateId}`);
+        } else {
+          console.warn(`[BuildTime API] Settings API returned success but no templateId found for ${storeId}.`);
         }
+      } else {
+        console.warn(`[BuildTime API] Settings API failed with status ${settingsResponse.status} for ${storeId}.`);
       }
-    } catch (e) {
-      console.warn(`[BuildTime API] Failed to fetch settings for ${storeId}:`, e);
+    } catch (e: any) {
+      if (e.name === 'AbortError') {
+        console.error(`[BuildTime API] CRITICAL: Fetching settings for ${storeId} TIMED OUT after 15 seconds!`);
+      } else {
+        console.error(`[BuildTime API] Failed to fetch settings for ${storeId}:`, e.message);
+      }
     }
 
     return processedData as LandingPageContent;

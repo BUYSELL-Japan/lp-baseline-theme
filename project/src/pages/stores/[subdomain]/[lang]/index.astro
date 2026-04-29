@@ -46,11 +46,7 @@ export async function getStaticPaths() {
 }
 
 const { pageData, storeId, subdomain, lang } = Astro.props;
-let currentTheme = pageData.settings?.theme;
-if (typeof currentTheme === 'object' && currentTheme !== null) {
-  currentTheme = currentTheme[lang] || currentTheme['en'] || currentTheme['ja'] || 'theme1';
-}
-currentTheme = typeof currentTheme === 'string' ? currentTheme : 'theme1';
+const currentTheme = typeof pageData.settings?.theme === 'string' ? pageData.settings.theme : 'theme1';
 
 
 // 動的SEOメタタグ生成（各言語用）

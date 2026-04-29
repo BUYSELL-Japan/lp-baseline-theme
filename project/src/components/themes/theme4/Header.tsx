@@ -106,7 +106,7 @@ export default function Header() {
               <AnimatePresence>
                 {languageMenuOpen && (
                   <motion.div
-                    className="absolute right-0 mt-3 w-40 bg-white rounded-xl shadow-2xl overflow-hidden border border-red-50"
+                    className="absolute left-0 md:left-auto md:right-0 mt-3 w-40 bg-white rounded-xl shadow-2xl overflow-hidden border border-red-50 z-50"
                     initial={{ opacity: 0, y: 10, scale: 0.95 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 10, scale: 0.95 }}

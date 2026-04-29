@@ -11,7 +11,7 @@ type SubmitStatus = 'idle' | 'sending' | 'success' | 'error';
 export default function Contact() {
   const contactData = useContactData();
   const contactEmail = useContactEmail();
-  const { t } = useLocalize();
+  const { t, translate } = useLocalize();
   const [focused, setFocused] = useState<string | null>(null);
   const [submitStatus, setSubmitStatus] = useState<SubmitStatus>('idle');
 

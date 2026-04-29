@@ -112,7 +112,13 @@ export async function fetchStoreContentAtBuildTime(storeId: string): Promise<Lan
 
     // Fetch settings to ensure we have the correct templateId
     try {
-      const settingsResponse = await fetch(`https://2sznhxhcd8.execute-api.ap-southeast-2.amazonaws.com/dev/lp/settings/${storeId}`);
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 5000);
+      const settingsResponse = await fetch(`https://2sznhxhcd8.execute-api.ap-southeast-2.amazonaws.com/dev/lp/settings/${storeId}`, {
+        signal: controller.signal
+      });
+      clearTimeout(timeoutId);
+
       if (settingsResponse.ok) {
         const settingsData = await settingsResponse.json();
         if (settingsData.templateId) {

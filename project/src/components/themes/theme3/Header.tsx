@@ -79,7 +79,7 @@ export default function Header() {
           </motion.div>
 
           {/* Desktop Nav */}
-          <nav className="hidden xl:flex flex-wrap items-center justify-end gap-x-4 gap-y-2 max-w-full">
+          <nav className="hidden lg:flex flex-wrap items-center justify-end gap-x-4 gap-y-2 max-w-full">
             {navigation.map((item) => (
               <button
                 key={item.id}
@@ -113,7 +113,7 @@ export default function Header() {
 
             {/* Mobile Hamburger Toggle */}
             <button
-              className={`xl:hidden p-1.5 rounded-lg transition-colors ${
+              className={`lg:hidden p-1.5 rounded-lg transition-colors ${
                 scrolled || mobileMenuOpen ? 'text-stone-800 hover:bg-stone-100' : 'text-white hover:bg-white/10'
               }`}
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -133,8 +133,16 @@ export default function Header() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
             transition={{ type: 'spring', damping: 30, stiffness: 300 }}
-            className="fixed inset-0 bg-stone-50 z-[90] flex flex-col pt-20 xl:hidden"
+            className="fixed inset-0 bg-stone-50 z-[110] flex flex-col pt-20 lg:hidden"
           >
+            {/* 閉じるボタン — メニュー内右上 */}
+            <button
+              onClick={() => setMobileMenuOpen(false)}
+              className="absolute top-4 right-6 p-2 text-stone-800 hover:bg-stone-100 rounded-lg transition-colors"
+              aria-label="メニューを閉じる"
+            >
+              <X className="w-7 h-7" />
+            </button>
             <nav className="flex-1 overflow-y-auto px-8 py-8 flex flex-col gap-2">
               {navigation.map((item, index) => (
                 <motion.button

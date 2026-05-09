@@ -109,8 +109,16 @@ export default function Header() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
             transition={{ type: 'spring', damping: 30, stiffness: 300 }}
-            className="fixed inset-0 bg-slate-950 z-[90] flex flex-col pt-20 xl:hidden"
+            className="fixed inset-0 bg-slate-950 z-[110] flex flex-col pt-20 xl:hidden"
           >
+            {/* 閉じるボタン — メニュー内右上 */}
+            <button
+              onClick={() => setMobileMenuOpen(false)}
+              className="absolute top-5 right-5 p-2 text-white hover:bg-white/10 rounded-lg transition-colors"
+              aria-label="メニューを閉じる"
+            >
+              <X className="w-7 h-7" />
+            </button>
             <div className="flex-1 overflow-y-auto px-8 py-6 space-y-2">
               {navigation.map((item, index) => (
                 <motion.button

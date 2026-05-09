@@ -144,7 +144,7 @@ export default function Gallery() {
         </motion.div>
 
         {/* Mobile scroll */}
-        <div className="md:hidden -mx-6">
+        <div className="md:hidden w-full">
           <div ref={scrollRef} className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide px-6 gap-4 pb-4">
             {filteredImages.map((image, index) => (
               <motion.div

@@ -13,10 +13,7 @@ export default function Header() {
   const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
   const langMenuRef = useRef<HTMLDivElement>(null);
 
-  if (!headerData) return null;
-
-  const navigation = Array.isArray(headerData.navigation) ? headerData.navigation : [];
-
+  // ✅ フックはearly returnより前に全て定義（Reactのルール）
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -47,6 +44,11 @@ export default function Header() {
     }
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [languageMenuOpen]);
+
+  // early return はフックの後
+  if (!headerData) return null;
+
+  const navigation = Array.isArray(headerData.navigation) ? headerData.navigation : [];
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);

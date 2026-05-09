@@ -33,7 +33,7 @@ export default function Theme2StorePage({ pageData, initialLanguage = 'ja', base
     <ErrorBoundary>
       <LanguageProvider initialLanguage={initialLanguage} basePath={basePath}>
         <PageDataProvider data={pageData}>
-          <div className="min-h-screen bg-slate-950 text-slate-50 selection:bg-blue-500/30 font-sans overflow-x-hidden">
+          <div className="relative w-full min-h-screen bg-slate-950 text-slate-50 selection:bg-blue-500/30 font-sans overflow-x-clip">
             {pageData.header && <Header />}
             <main>
               {pageData.hero && <Hero />}

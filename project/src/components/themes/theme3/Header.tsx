@@ -94,26 +94,26 @@ export default function Header() {
           </nav>
 
           {/* Right controls */}
-          <div className="flex items-center gap-2">
-            {/* Language Switcher */}
-            <div className={`relative flex items-center gap-1 text-xs tracking-widest ${scrolled || mobileMenuOpen ? 'text-stone-500' : 'text-white/70'}`} ref={langMenuRef}>
-              <Globe className="w-3.5 h-3.5" />
+          <div className="flex items-center gap-1 shrink-0">
+            {/* Language Switcher — 言語コードのみ表示で省スペース */}
+            <div className={`relative flex items-center gap-1 ${scrolled || mobileMenuOpen ? 'text-stone-500' : 'text-white/70'}`} ref={langMenuRef}>
+              <Globe className="w-3.5 h-3.5 shrink-0" />
               <select
                 value={language}
                 onChange={(e) => window.location.href = `${basePath}${e.target.value === 'ja' ? '' : e.target.value + '/'}`}
-                className="bg-transparent font-serif focus:outline-none cursor-pointer"
+                className="bg-transparent font-serif focus:outline-none cursor-pointer text-xs w-[3.5rem] max-w-[3.5rem]"
+                style={{ direction: 'ltr' }}
               >
-                {Object.keys(languageNames).map(lang => (
-                  <option key={lang} value={lang} className="bg-stone-50 text-stone-800">
-                    {languageNames[lang as Language]}
-                  </option>
-                ))}
+                <option value="ja" className="bg-stone-50 text-stone-800">JA</option>
+                <option value="en" className="bg-stone-50 text-stone-800">EN</option>
+                <option value="zh-tw" className="bg-stone-50 text-stone-800">繁中</option>
+                <option value="ko" className="bg-stone-50 text-stone-800">KO</option>
               </select>
             </div>
 
-            {/* Mobile Hamburger Toggle */}
+            {/* Mobile Hamburger Toggle — lg未満で必ず表示 */}
             <button
-              className={`lg:hidden p-1.5 rounded-lg transition-colors ${
+              className={`lg:hidden p-2 rounded-lg transition-colors shrink-0 ${
                 scrolled || mobileMenuOpen ? 'text-stone-800 hover:bg-stone-100' : 'text-white hover:bg-white/10'
               }`}
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

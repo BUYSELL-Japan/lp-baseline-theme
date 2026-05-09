@@ -52,16 +52,16 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between gap-4">
         {/* Logo */}
         <motion.div 
-          className="flex items-center gap-2 cursor-pointer group"
+          className="flex items-center gap-2 cursor-pointer group min-w-0 shrink flex-1 mr-4"
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           whileHover={{ scale: 1.02 }}
         >
-          <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/20 group-hover:bg-blue-500 transition-colors">
+          <div className="w-10 h-10 shrink-0 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/20 group-hover:bg-blue-500 transition-colors">
             <BarChart3 className="text-white w-6 h-6 rotate-12" />
           </div>
-          <span className="text-2xl font-black tracking-tighter text-white">
+          <div className="text-2xl font-black tracking-tighter text-white truncate">
             {logoText}
-          </span>
+          </div>
         </motion.div>
 
         {/* Desktop Nav */}

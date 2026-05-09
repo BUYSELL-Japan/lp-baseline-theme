@@ -68,7 +68,7 @@ export default function Reviews() {
                 )}
                 <div>
                   <p className="text-white font-black tracking-tight">{t(review, 'name')}</p>
-                  {review.date && <p className="text-slate-500 text-xs">{review.date}</p>}
+                  {review.date && <p className="text-slate-500 text-xs">{typeof review.date === 'string' ? review.date : t(review, 'date') as string}</p>}
                 </div>
               </div>
             </motion.div>

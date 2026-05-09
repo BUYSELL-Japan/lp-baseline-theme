@@ -4,9 +4,12 @@ import { useMenuData } from '../../../contexts/PageDataContext';
 import { useLocalize } from '../../../hooks/useLocalize';
 import Lightbox from '../../Lightbox';
 
+import { useLanguage } from '../../../contexts/LanguageContext';
+
 export default function Menu() {
   const menuData = useMenuData();
   const { t, translate } = useLocalize();
+  const { language } = useLanguage();
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
 

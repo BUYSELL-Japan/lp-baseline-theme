@@ -17,6 +17,16 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // モバイルメニューが開いているとき body のスクロールを無効化
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [mobileMenuOpen]);
+
   if (!headerData) return null;
 
   const navigation = Array.isArray(headerData.navigation) ? headerData.navigation : [];
@@ -35,11 +45,11 @@ export default function Header() {
     <header 
       className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${
         scrolled 
-          ? 'py-3 bg-slate-950/80 backdrop-blur-xl border-b border-slate-800 shadow-2xl' 
+          ? 'py-3 bg-slate-950/95 backdrop-blur-xl border-b border-slate-800 shadow-2xl' 
           : 'py-6 bg-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between gap-4">
         {/* Logo */}
         <motion.div 
           className="flex items-center gap-2 cursor-pointer group"
@@ -83,10 +93,11 @@ export default function Header() {
 
         {/* Mobile Toggle */}
         <button 
-          className="xl:hidden w-12 h-12 flex items-center justify-center text-white"
+          className="xl:hidden w-10 h-10 flex items-center justify-center text-white hover:bg-white/10 rounded-lg transition-colors"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label={mobileMenuOpen ? 'メニューを閉じる' : 'メニューを開く'}
         >
-          {mobileMenuOpen ? <X /> : <Menu />}
+          {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
 
@@ -97,30 +108,37 @@ export default function Header() {
             initial={{ opacity: 0, x: '100%' }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
-            className="fixed inset-0 bg-slate-950 z-[90] flex flex-col p-8 pt-24 xl:hidden"
+            transition={{ type: 'spring', damping: 30, stiffness: 300 }}
+            className="fixed inset-0 bg-slate-950 z-[90] flex flex-col pt-20 xl:hidden"
           >
-            <div className="space-y-6">
-              {navigation.map((item) => (
-                <button
+            <div className="flex-1 overflow-y-auto px-8 py-6 space-y-2">
+              {navigation.map((item, index) => (
+                <motion.button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="block w-full text-left text-3xl font-black tracking-tighter text-white hover:text-blue-500 transition-colors"
+                  className="block w-full text-left py-4 text-2xl font-black tracking-tighter text-white hover:text-blue-400 transition-colors border-b border-slate-800"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.25, delay: index * 0.05 }}
                 >
                   {getLocalizedValue(item, 'label', language)}
-                </button>
+                </motion.button>
               ))}
             </div>
             
-            <div className="mt-auto pt-8 border-t border-slate-900 grid grid-cols-2 gap-4">
-              {Object.keys(languageNames).map(lang => (
-                <a 
-                  key={lang} 
-                  href={`${basePath}${lang === 'ja' ? '' : lang + '/'}`}
-                  className={`px-4 py-3 rounded-xl font-bold text-center ${language === lang ? 'bg-blue-600 text-white' : 'bg-slate-900 text-slate-400'}`}
-                >
-                  {languageNames[lang as Language]}
-                </a>
-              ))}
+            <div className="px-8 py-6 border-t border-slate-800">
+              <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-3">言語 / Language</p>
+              <div className="grid grid-cols-2 gap-2">
+                {Object.keys(languageNames).map(lang => (
+                  <a 
+                    key={lang} 
+                    href={`${basePath}${lang === 'ja' ? '' : lang + '/'}`}
+                    className={`px-4 py-3 rounded-xl font-bold text-center text-sm transition-colors ${language === lang ? 'bg-blue-600 text-white' : 'bg-slate-800 text-slate-300 hover:bg-slate-700'}`}
+                  >
+                    {languageNames[lang as Language]}
+                  </a>
+                ))}
+              </div>
             </div>
           </motion.div>
         )}

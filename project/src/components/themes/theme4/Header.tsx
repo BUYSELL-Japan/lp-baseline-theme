@@ -24,6 +24,16 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // モバイルメニューが開いているとき body のスクロールを無効化
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [mobileMenuOpen]);
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -36,7 +46,7 @@ export default function Header() {
     <>
       <motion.header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled
+          scrolled || mobileMenuOpen
             ? 'bg-yellow-400 backdrop-blur-md shadow-lg py-2'
             : 'bg-white/80 backdrop-blur-sm py-4 border-b border-red-100'
         }`}
@@ -94,7 +104,7 @@ export default function Header() {
               <button
                 onClick={() => setLanguageMenuOpen(!languageMenuOpen)}
                 className={`flex items-center gap-2 p-2 rounded-lg border-2 transition-all ${
-                  scrolled 
+                  scrolled || mobileMenuOpen
                     ? 'border-red-900/10 text-red-900 hover:bg-red-600 hover:text-white' 
                     : 'border-red-600/20 text-red-600 hover:bg-red-600 hover:text-white'
                 }`}
@@ -106,7 +116,7 @@ export default function Header() {
               <AnimatePresence>
                 {languageMenuOpen && (
                   <motion.div
-                    className="absolute left-0 md:left-auto md:right-0 mt-3 w-40 bg-white rounded-xl shadow-2xl overflow-hidden border border-red-50 z-50"
+                    className="absolute right-0 mt-3 w-40 bg-white rounded-xl shadow-2xl overflow-hidden border border-red-50 z-50"
                     initial={{ opacity: 0, y: 10, scale: 0.95 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 10, scale: 0.95 }}
@@ -120,6 +130,7 @@ export default function Header() {
                             ? 'bg-red-600 text-white'
                             : 'text-red-800 hover:bg-red-50'
                         }`}
+                        onClick={() => setLanguageMenuOpen(false)}
                       >
                         {languageNames[lang]}
                       </a>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Globe } from 'lucide-react';
 import { useHeaderData } from '../../../contexts/PageDataContext';
@@ -10,12 +10,37 @@ export default function Header() {
   const { language, basePath } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const langMenuRef = useRef<HTMLDivElement>(null);
+  const [langMenuOpen, setLangMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 30);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // モバイルメニューが開いているとき body のスクロールを無効化
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [mobileMenuOpen]);
+
+  // 言語メニューの外側クリックで閉じる
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (langMenuRef.current && !langMenuRef.current.contains(e.target as Node)) {
+        setLangMenuOpen(false);
+      }
+    };
+    if (langMenuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [langMenuOpen]);
 
   if (!headerData) return null;
 
@@ -28,91 +53,125 @@ export default function Header() {
   };
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-700 ${
-        scrolled
-          ? 'bg-stone-50/95 backdrop-blur-sm border-b border-stone-200/80 shadow-sm py-3'
-          : 'bg-transparent py-7'
-      }`}
-    >
-      <div className="max-w-6xl mx-auto px-8 flex items-center justify-between">
-        {/* Logo — Centered-look with elegant serif */}
-        <motion.div
-          className="cursor-pointer shrink-0"
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          whileHover={{ opacity: 0.7 }}
-          transition={{ duration: 0.3 }}
-        >
-          <span
-            className={`font-serif text-2xl tracking-[0.15em] font-light transition-colors duration-500 ${
-              scrolled ? 'text-stone-800' : 'text-white'
-            }`}
+    <>
+      <header
+        className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-700 ${
+          scrolled || mobileMenuOpen
+            ? 'bg-stone-50 border-b border-stone-200/80 shadow-sm py-3'
+            : 'bg-transparent py-7'
+        }`}
+      >
+        <div className="max-w-6xl mx-auto px-8 flex items-center justify-between">
+          {/* Logo */}
+          <motion.div
+            className="cursor-pointer shrink-0"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            whileHover={{ opacity: 0.7 }}
+            transition={{ duration: 0.3 }}
           >
-            {logoText}
-          </span>
-        </motion.div>
-
-        {/* Desktop Nav — Minimal, spaced */}
-        <nav className="hidden xl:flex flex-wrap items-center justify-end gap-x-4 gap-y-2 max-w-full">
-          {navigation.map((item) => (
-            <button
-              key={item.id}
-              onClick={() => scrollToSection(item.id)}
-              className={`font-serif text-[13px] tracking-[0.1em] transition-colors duration-300 whitespace-nowrap ${
-                scrolled ? 'text-stone-600 hover:text-stone-900' : 'text-white/80 hover:text-white'
+            <span
+              className={`font-serif text-2xl tracking-[0.15em] font-light transition-colors duration-500 ${
+                scrolled || mobileMenuOpen ? 'text-stone-800' : 'text-white'
               }`}
             >
-              {getLocalizedValue(item, 'label', language)}
-            </button>
-          ))}
-        </nav>
+              {logoText}
+            </span>
+          </motion.div>
 
-        {/* Language Switcher — always visible */}
-        <div className={`flex items-center gap-1 text-xs tracking-widest ${scrolled ? 'text-stone-500' : 'text-white/70'}`}>
-          <Globe className="w-3.5 h-3.5" />
-          <select
-            value={language}
-            onChange={(e) => window.location.href = `${basePath}${e.target.value === 'ja' ? '' : e.target.value + '/'}`}
-            className="bg-transparent font-serif focus:outline-none cursor-pointer"
-          >
-            {Object.keys(languageNames).map(lang => (
-              <option key={lang} value={lang} className="bg-stone-50 text-stone-800">
-                {languageNames[lang as Language]}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        {/* Mobile Toggle */}
-        <button
-          className={`xl:hidden transition-colors ${scrolled ? 'text-stone-800' : 'text-white'}`}
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        >
-          {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
-      </div>
-
-      {/* Mobile Menu Drawer */}
-      <AnimatePresence>
-        {mobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-0 right-0 bg-stone-50 border-b border-stone-200 py-8 px-8 flex flex-col gap-5 shadow-lg xl:hidden"
-          >
+          {/* Desktop Nav */}
+          <nav className="hidden xl:flex flex-wrap items-center justify-end gap-x-4 gap-y-2 max-w-full">
             {navigation.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="font-serif text-lg tracking-widest text-stone-700 text-left hover:text-stone-900"
+                className={`font-serif text-[13px] tracking-[0.1em] transition-colors duration-300 whitespace-nowrap ${
+                  scrolled ? 'text-stone-600 hover:text-stone-900' : 'text-white/80 hover:text-white'
+                }`}
               >
                 {getLocalizedValue(item, 'label', language)}
               </button>
             ))}
+          </nav>
+
+          {/* Right controls */}
+          <div className="flex items-center gap-2">
+            {/* Language Switcher */}
+            <div className={`relative flex items-center gap-1 text-xs tracking-widest ${scrolled || mobileMenuOpen ? 'text-stone-500' : 'text-white/70'}`} ref={langMenuRef}>
+              <Globe className="w-3.5 h-3.5" />
+              <select
+                value={language}
+                onChange={(e) => window.location.href = `${basePath}${e.target.value === 'ja' ? '' : e.target.value + '/'}`}
+                className="bg-transparent font-serif focus:outline-none cursor-pointer"
+              >
+                {Object.keys(languageNames).map(lang => (
+                  <option key={lang} value={lang} className="bg-stone-50 text-stone-800">
+                    {languageNames[lang as Language]}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            {/* Mobile Hamburger Toggle */}
+            <button
+              className={`xl:hidden p-1.5 rounded-lg transition-colors ${
+                scrolled || mobileMenuOpen ? 'text-stone-800 hover:bg-stone-100' : 'text-white hover:bg-white/10'
+              }`}
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label={mobileMenuOpen ? 'メニューを閉じる' : 'メニューを開く'}
+            >
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {/* Mobile Menu — Full Screen Overlay */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, x: '100%' }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: '100%' }}
+            transition={{ type: 'spring', damping: 30, stiffness: 300 }}
+            className="fixed inset-0 bg-stone-50 z-[90] flex flex-col pt-20 xl:hidden"
+          >
+            <nav className="flex-1 overflow-y-auto px-8 py-8 flex flex-col gap-2">
+              {navigation.map((item, index) => (
+                <motion.button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className="font-serif text-2xl tracking-widest text-stone-700 text-left py-4 border-b border-stone-100 hover:text-stone-900 transition-colors"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.25, delay: index * 0.05 }}
+                >
+                  {getLocalizedValue(item, 'label', language)}
+                </motion.button>
+              ))}
+            </nav>
+
+            {/* Language options at bottom */}
+            <div className="px-8 py-6 border-t border-stone-200">
+              <p className="text-xs font-medium text-stone-400 uppercase tracking-widest mb-3">言語 / Language</p>
+              <div className="grid grid-cols-2 gap-2">
+                {(Object.keys(languageNames) as Language[]).map((lang) => (
+                  <a
+                    key={lang}
+                    href={`${basePath}${lang === 'ja' ? '' : lang + '/'}`}
+                    className={`px-4 py-3 rounded-xl font-serif text-center text-sm transition-colors ${
+                      language === lang
+                        ? 'bg-stone-800 text-white'
+                        : 'bg-stone-100 text-stone-700 hover:bg-stone-200'
+                    }`}
+                  >
+                    {languageNames[lang]}
+                  </a>
+                ))}
+              </div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </>
   );
 }

@@ -301,20 +301,32 @@ function transformMenuData(menuData: any): MenuData | null {
     });
     transformed.items = allItems;
   } else if (menuData.items && Array.isArray(menuData.items)) {
-    const processedItems = menuData.items.map((item: any) => {
-      const imageUrl = extractImageUrl(item.image);
-      console.log('[transformMenuData] Item raw image:', item.image);
-      console.log('[transformMenuData] Extracted image URL:', imageUrl);
+    const processedItems = menuData.items
+      .filter((item: any) => {
+        // 名前（ja or en）が空のアイテムはスキップ
+        const name = item.name;
+        if (!name) return false;
+        if (typeof name === 'string') return name.trim() !== '';
+        if (typeof name === 'object') {
+          const nameJa = name.ja || name.en || name['zh-tw'] || name.ko || '';
+          return String(nameJa).trim() !== '';
+        }
+        return false;
+      })
+      .map((item: any) => {
+        const imageUrl = extractImageUrl(item.image);
+        console.log('[transformMenuData] Item raw image:', item.image);
+        console.log('[transformMenuData] Extracted image URL:', imageUrl);
 
-      if (item.image && !isValidImageUrl(item.image)) {
-        console.warn(`[transformMenuData] Invalid image URL for item:`, item.name, item.image);
-      }
+        if (item.image && !isValidImageUrl(item.image)) {
+          console.warn(`[transformMenuData] Invalid image URL for item:`, item.name, item.image);
+        }
 
-      return {
-        ...item,
-        image: imageUrl || item.image
-      };
-    });
+        return {
+          ...item,
+          image: imageUrl || item.image
+        };
+      });
     transformed.items = processedItems;
   }
 
@@ -368,8 +380,23 @@ function transformGalleryData(galleryData: any): GalleryData | null {
     return null;
   }
 
-  if (!galleryData.sectionTitle && !galleryData.title) {
+  // sectionTitleが空（全言語空文字列）の場合は非表示とする
+  const rawTitle = galleryData.sectionTitle || galleryData.title;
+  if (!rawTitle) {
     console.log('[transformGalleryData] Missing title, returning null');
+    return null;
+  }
+  // 多言語オブジェクトの場合、全言語が空なら非表示
+  if (typeof rawTitle === 'object' && !Array.isArray(rawTitle)) {
+    const hasAnyValue = Object.values(rawTitle).some(
+      (v) => typeof v === 'string' && v.trim() !== ''
+    );
+    if (!hasAnyValue) {
+      console.log('[transformGalleryData] All title translations are empty, returning null');
+      return null;
+    }
+  } else if (typeof rawTitle === 'string' && rawTitle.trim() === '') {
+    console.log('[transformGalleryData] Title is empty string, returning null');
     return null;
   }
 
@@ -442,6 +469,47 @@ function transformGalleryData(galleryData: any): GalleryData | null {
   }
 
   return transformed;
+}
+
+function transformFAQData(faqData: any): FAQData | null {
+  if (!faqData || typeof faqData !== 'object') {
+    console.log('[transformFAQData] Invalid input, returning null');
+    return null;
+  }
+
+  // sectionTitleチェック（空なら非表示）
+  const rawTitle = faqData.sectionTitle || faqData.title;
+  if (!rawTitle) {
+    console.log('[transformFAQData] Missing title, returning null');
+    return null;
+  }
+
+  if (!faqData.items || !Array.isArray(faqData.items)) {
+    console.log('[transformFAQData] No items array, returning null');
+    return null;
+  }
+
+  // 質問が空のアイテムをフィルタ
+  const validItems = faqData.items.filter((item: any) => {
+    const q = item.question;
+    if (!q) return false;
+    if (typeof q === 'string') return q.trim() !== '';
+    if (typeof q === 'object') {
+      const text = q.ja || q.en || q['zh-tw'] || q.ko || '';
+      return String(text).trim() !== '';
+    }
+    return false;
+  });
+
+  if (validItems.length === 0) {
+    console.log('[transformFAQData] No valid items after filtering, returning null');
+    return null;
+  }
+
+  return {
+    ...faqData,
+    items: validItems,
+  };
 }
 
 function transformPricingData(pricingData: any): PricingData | null {
@@ -877,7 +945,7 @@ export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
       reviews: getSectionData('reviews', reviewsDataTransformed, defaultData.reviews),
       news: getSectionData('news', extractTranslatedData(contentData.news, 'news'), defaultData.news),
       access: getSectionData('access', accessData, defaultData.access),
-      faq: getSectionData('faq', extractTranslatedData(contentData.faq, 'faq'), defaultData.faq),
+      faq: getSectionData('faq', transformFAQData(extractTranslatedData(contentData.faq, 'faq')), defaultData.faq),
       cta: getSectionData('cta', extractTranslatedData(contentData.cta, 'cta'), defaultData.cta),
       pricing: getSectionData('pricing', pricingData, defaultData.pricing),
       company: getSectionData('company', extractTranslatedData(contentData.company, 'company'), defaultData.company),

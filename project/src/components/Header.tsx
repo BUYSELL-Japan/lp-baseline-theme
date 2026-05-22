@@ -1,12 +1,13 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Waves, Menu, X, Globe } from 'lucide-react';
-import { useHeaderData } from '../contexts/PageDataContext';
+import { useHeaderData, usePageData } from '../contexts/PageDataContext';
 import { useLanguage, languageNames, type Language } from '../contexts/LanguageContext';
 import { getLocalizedValue } from '../utils/i18n';
 
 export default function Header() {
   const headerData = useHeaderData();
+  const pageData = usePageData();
   const { language, basePath } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -48,7 +49,27 @@ export default function Header() {
   // early return はフックの後
   if (!headerData) return null;
 
-  const navigation = Array.isArray(headerData.navigation) ? headerData.navigation : [];
+  // 実際にレンダリングされているセクションIDのセットを構築
+  // StorePage.tsx でレンダリングするセクションと同じ条件で判定する
+  const visibleSectionIds = new Set<string>([
+    // 常に表示（headerData/heroはnavにないため不要）
+    ...(pageData.about    ? ['about']    : []),
+    ...(pageData.menu     ? ['menu']     : []),
+    ...(pageData.pricing  ? ['pricing']  : []),
+    ...(pageData.gallery  ? ['gallery']  : []),
+    ...(pageData.staff    ? ['staff']    : []),
+    ...(pageData.reviews  ? ['reviews']  : []),
+    ...(pageData.news     ? ['news']     : []),
+    ...(pageData.storeInfo ? ['storeInfo'] : []),
+    ...(pageData.company  ? ['company']  : []),
+    ...(pageData.access   ? ['access']   : []),
+    ...(pageData.faq      ? ['faq']      : []),
+    ...(pageData.contact  ? ['contact']  : []),
+  ]);
+
+  const navigation = Array.isArray(headerData.navigation)
+    ? headerData.navigation.filter((item) => visibleSectionIds.has(item.id))
+    : [];
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);

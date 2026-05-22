@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Globe, BarChart3 } from 'lucide-react';
-import { useHeaderData } from '../../../contexts/PageDataContext';
+import { useHeaderData, usePageData } from '../../../contexts/PageDataContext';
 import { useLanguage, languageNames, type Language } from '../../../contexts/LanguageContext';
 import { getLocalizedValue } from '../../../utils/i18n';
 
 export default function Header() {
   const headerData = useHeaderData();
+  const pageData = usePageData();
   const { language, basePath } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -29,7 +30,24 @@ export default function Header() {
 
   if (!headerData) return null;
 
-  const navigation = Array.isArray(headerData.navigation) ? headerData.navigation : [];
+  const visibleSectionIds = new Set<string>([
+    ...(pageData.about    ? ['about']    : []),
+    ...(pageData.menu     ? ['menu']     : []),
+    ...(pageData.pricing  ? ['pricing']  : []),
+    ...(pageData.gallery  ? ['gallery']  : []),
+    ...(pageData.staff    ? ['staff']    : []),
+    ...(pageData.reviews  ? ['reviews']  : []),
+    ...(pageData.news     ? ['news']     : []),
+    ...(pageData.storeInfo ? ['storeInfo'] : []),
+    ...(pageData.company  ? ['company']  : []),
+    ...(pageData.access   ? ['access']   : []),
+    ...(pageData.faq      ? ['faq']      : []),
+    ...(pageData.contact  ? ['contact']  : []),
+  ]);
+
+  const navigation = Array.isArray(headerData.navigation)
+    ? headerData.navigation.filter((item) => visibleSectionIds.has(item.id))
+    : [];
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);

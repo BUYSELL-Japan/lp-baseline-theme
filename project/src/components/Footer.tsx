@@ -86,38 +86,39 @@ export default function Footer() {
             </motion.div>
           )}
 
-          {footerData.social && footerData.social.links && Array.isArray(footerData.social.links) && (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              <h3 className="text-xl font-bold mb-4">{getText(footerData.social.title)}</h3>
-              <div className="flex gap-4">
-                {footerData.social.links.map((social, index) => {
-                  const platformKey = (social.platform || '').toLowerCase();
-                  const IconComponent = socialIconMap[platformKey] || HelpCircle;
-
-                  if (!socialIconMap[platformKey]) {
-                    console.warn(`[Footer] Unknown social platform: "${social.platform}", using default icon`);
-                  }
-
-                  return (
-                    <motion.a
-                      key={index}
-                      href={social.url}
-                      className="bg-teal-800 p-3 rounded-full hover:bg-teal-700 transition-colors"
-                      whileHover={{ scale: 1.1, y: -3 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <IconComponent className="w-5 h-5" />
-                    </motion.a>
-                  );
-                })}
-              </div>
-            </motion.div>
-          )}
+          {footerData.social && footerData.social.links && Array.isArray(footerData.social.links) && (() => {
+            const validLinks = footerData.social.links.filter(
+              (s) => s.url && s.url.trim() !== '' && s.url.trim() !== '#'
+            );
+            if (validLinks.length === 0) return null;
+            return (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                <h3 className="text-xl font-bold mb-4">{getText(footerData.social.title)}</h3>
+                <div className="flex gap-4">
+                  {validLinks.map((social, index) => {
+                    const platformKey = (social.platform || '').toLowerCase();
+                    const IconComponent = socialIconMap[platformKey] || HelpCircle;
+                    return (
+                      <motion.a
+                        key={index}
+                        href={social.url}
+                        className="bg-teal-800 p-3 rounded-full hover:bg-teal-700 transition-colors"
+                        whileHover={{ scale: 1.1, y: -3 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        <IconComponent className="w-5 h-5" />
+                      </motion.a>
+                    );
+                  })}
+                </div>
+              </motion.div>
+            );
+          })()}
         </div>
 
         <motion.div

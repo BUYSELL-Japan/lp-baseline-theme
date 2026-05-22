@@ -74,33 +74,39 @@ export default function Footer() {
               </motion.div>
             )}
 
-            {footerData.social && (
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }} 
-                whileInView={{ opacity: 1, y: 0 }} 
-                viewport={{ once: true }} 
-                transition={{ delay: 0.2 }}
-              >
-                <h3 className="text-xs font-black uppercase tracking-[0.4em] text-red-600 mb-8 underline decoration-yellow-400 decoration-4 underline-offset-8">
-                  {getText(footerData.social.title)}
-                </h3>
-                <div className="flex flex-wrap gap-4">
-                  {footerData.social.links?.map((social, index) => {
-                    const Icon = socialIconMap[social.platform.toLowerCase()] || HelpCircle;
-                    return (
-                      <motion.a
-                        key={index}
-                        href={social.url}
-                        whileHover={{ scale: 1.1, y: -5 }}
-                        className="w-14 h-14 bg-red-600 rounded-2xl flex items-center justify-center text-yellow-400 shadow-xl shadow-red-500/10 hover:bg-yellow-400 hover:text-red-950 transition-all"
-                      >
-                        <Icon className="w-6 h-6" />
-                      </motion.a>
-                    );
-                  })}
-                </div>
-              </motion.div>
-            )}
+            {footerData.social && (() => {
+              const validLinks = (footerData.social.links || []).filter(
+                (s) => s.url && s.url.trim() !== '' && s.url.trim() !== '#'
+              );
+              if (validLinks.length === 0) return null;
+              return (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2 }}
+                >
+                  <h3 className="text-xs font-black uppercase tracking-[0.4em] text-red-600 mb-8 underline decoration-yellow-400 decoration-4 underline-offset-8">
+                    {getText(footerData.social.title)}
+                  </h3>
+                  <div className="flex flex-wrap gap-4">
+                    {validLinks.map((social, index) => {
+                      const Icon = socialIconMap[social.platform.toLowerCase()] || HelpCircle;
+                      return (
+                        <motion.a
+                          key={index}
+                          href={social.url}
+                          whileHover={{ scale: 1.1, y: -5 }}
+                          className="w-14 h-14 bg-red-600 rounded-2xl flex items-center justify-center text-yellow-400 shadow-xl shadow-red-500/10 hover:bg-yellow-400 hover:text-red-950 transition-all"
+                        >
+                          <Icon className="w-6 h-6" />
+                        </motion.a>
+                      );
+                    })}
+                  </div>
+                </motion.div>
+              );
+            })()}
           </div>
         </div>
 

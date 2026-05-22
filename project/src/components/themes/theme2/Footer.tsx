@@ -57,30 +57,36 @@ export default function Footer() {
           )}
 
           {/* Social links */}
-          {footerData.social?.links && (
-            <div>
-              <h3 className="text-sm font-black uppercase tracking-[0.2em] text-blue-500 mb-8">
-                {getText(footerData.social.title)}
-              </h3>
-              <div className="flex flex-wrap gap-4">
-                {footerData.social.links.map((social, index) => {
-                  const platformKey = (social.platform || '').toLowerCase();
-                  const IconComponent = socialIconMap[platformKey] || HelpCircle;
-                  return (
-                    <motion.a
-                      key={index}
-                      href={social.url}
-                      whileHover={{ scale: 1.1, y: -5 }}
-                      whileTap={{ scale: 0.9 }}
-                      className="w-12 h-12 bg-slate-900 border border-slate-800 rounded-2xl flex items-center justify-center hover:bg-slate-800 hover:border-blue-500/50 transition-colors"
-                    >
-                      <IconComponent className="w-5 h-5 text-slate-400" />
-                    </motion.a>
-                  );
-                })}
+          {footerData.social?.links && (() => {
+            const validLinks = footerData.social.links.filter(
+              (s) => s.url && s.url.trim() !== '' && s.url.trim() !== '#'
+            );
+            if (validLinks.length === 0) return null;
+            return (
+              <div>
+                <h3 className="text-sm font-black uppercase tracking-[0.2em] text-blue-500 mb-8">
+                  {getText(footerData.social.title)}
+                </h3>
+                <div className="flex flex-wrap gap-4">
+                  {validLinks.map((social, index) => {
+                    const platformKey = (social.platform || '').toLowerCase();
+                    const IconComponent = socialIconMap[platformKey] || HelpCircle;
+                    return (
+                      <motion.a
+                        key={index}
+                        href={social.url}
+                        whileHover={{ scale: 1.1, y: -5 }}
+                        whileTap={{ scale: 0.9 }}
+                        className="w-12 h-12 bg-slate-900 border border-slate-800 rounded-2xl flex items-center justify-center hover:bg-slate-800 hover:border-blue-500/50 transition-colors"
+                      >
+                        <IconComponent className="w-5 h-5 text-slate-400" />
+                      </motion.a>
+                    );
+                  })}
+                </div>
               </div>
-            </div>
-          )}
+            );
+          })()}
         </div>{/* end grid */}
 
         {/* Copyright */}

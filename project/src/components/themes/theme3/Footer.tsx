@@ -50,29 +50,35 @@ export default function Footer() {
             </div>
           )}
 
-          {footerData.social && footerData.social.links && (
-            <div>
-              <h3 className="font-serif text-xs tracking-[0.3em] uppercase text-amber-500/80 mb-5">
-                {getText(footerData.social.title)}
-              </h3>
-              <div className="flex justify-center gap-5">
-                {footerData.social.links.map((social, index) => {
-                  const platformKey = (social.platform || '').toLowerCase();
-                  const IconComponent = socialIconMap[platformKey] || HelpCircle;
-                  return (
-                    <motion.a
-                      key={index}
-                      href={social.url}
-                      whileHover={{ y: -3 }}
-                      className="text-stone-400 hover:text-amber-400 transition-colors"
-                    >
-                      <IconComponent className="w-5 h-5" />
-                    </motion.a>
-                  );
-                })}
+          {footerData.social && footerData.social.links && (() => {
+            const validLinks = footerData.social.links.filter(
+              (s) => s.url && s.url.trim() !== '' && s.url.trim() !== '#'
+            );
+            if (validLinks.length === 0) return null;
+            return (
+              <div>
+                <h3 className="font-serif text-xs tracking-[0.3em] uppercase text-amber-500/80 mb-5">
+                  {getText(footerData.social.title)}
+                </h3>
+                <div className="flex justify-center gap-5">
+                  {validLinks.map((social, index) => {
+                    const platformKey = (social.platform || '').toLowerCase();
+                    const IconComponent = socialIconMap[platformKey] || HelpCircle;
+                    return (
+                      <motion.a
+                        key={index}
+                        href={social.url}
+                        whileHover={{ y: -3 }}
+                        className="text-stone-400 hover:text-amber-400 transition-colors"
+                      >
+                        <IconComponent className="w-5 h-5" />
+                      </motion.a>
+                    );
+                  })}
+                </div>
               </div>
-            </div>
-          )}
+            );
+          })()}
         </div>
 
 

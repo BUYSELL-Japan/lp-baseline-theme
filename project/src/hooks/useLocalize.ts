@@ -15,6 +15,9 @@ export function useLocalize() {
       if (field[language] !== undefined && field[language] !== null) {
         return String(field[language]);
       }
+      if (language === 'zh-tw' && field['zh'] !== undefined && field['zh'] !== null) {
+        return String(field['zh']);
+      }
       if (field['ja'] !== undefined && field['ja'] !== null) {
         return String(field['ja']);
       }

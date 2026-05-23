@@ -8,7 +8,6 @@ import Pricing from './themes/theme2/Pricing';
 import CTA from './themes/theme2/CTA';
 import Gallery from './themes/theme2/Gallery';
 import Staff from './themes/theme2/Staff';
-import Reviews from './themes/theme2/Reviews';
 import News from './themes/theme2/News';
 import StoreInfo from './themes/theme2/StoreInfo';
 import Company from './themes/theme2/Company';
@@ -43,7 +42,6 @@ export default function Theme2StorePage({ pageData, initialLanguage = 'ja', base
               {pageData.cta && <CTA />}
               {pageData.gallery && <Gallery />}
               {pageData.staff && <Staff />}
-              {pageData.reviews && <Reviews />}
               {pageData.news && <News />}
               {pageData.storeInfo && <StoreInfo />}
               {pageData.company && <Company />}

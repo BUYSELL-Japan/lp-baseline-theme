@@ -6,7 +6,6 @@ import Pricing from './themes/theme4/Pricing';
 import CTA from './themes/theme4/CTA';
 import Gallery from './themes/theme4/Gallery';
 import Staff from './themes/theme4/Staff';
-import Reviews from './themes/theme4/Reviews';
 import News from './themes/theme4/News';
 import StoreInfo from './themes/theme4/StoreInfo';
 import Company from './themes/theme4/Company';
@@ -39,7 +38,6 @@ export default function Theme4StorePage({ pageData, initialLanguage = 'ja', base
             {pageData.cta && <CTA />}
             {pageData.gallery && <Gallery />}
             {pageData.staff && <Staff />}
-            {pageData.reviews && <Reviews />}
             {pageData.news && <News />}
             {pageData.storeInfo && <StoreInfo />}
             {pageData.company && <Company />}

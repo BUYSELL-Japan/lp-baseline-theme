@@ -6,7 +6,6 @@ import Pricing from './Pricing';
 import CTA from './CTA';
 import Gallery from './Gallery';
 import Staff from './Staff';
-import Reviews from './Reviews';
 import News from './News';
 import StoreInfo from './StoreInfo';
 import Company from './Company';
@@ -39,7 +38,6 @@ export default function StorePage({ pageData, initialLanguage = 'ja', basePath =
             {pageData.cta && <CTA />}
             {pageData.gallery && <Gallery />}
             {pageData.staff && <Staff />}
-            {pageData.reviews && <Reviews />}
             {pageData.news && <News />}
             {pageData.storeInfo && <StoreInfo />}
             {pageData.company && <Company />}

@@ -8,7 +8,6 @@ import Pricing from './themes/theme3/Pricing';
 import CTA from './themes/theme3/CTA';
 import Gallery from './themes/theme3/Gallery';
 import Staff from './themes/theme3/Staff';
-import Reviews from './themes/theme3/Reviews';
 import News from './themes/theme3/News';
 import StoreInfo from './themes/theme3/StoreInfo';
 import Company from './themes/theme3/Company';
@@ -43,7 +42,6 @@ export default function Theme3StorePage({ pageData, initialLanguage = 'ja', base
               {pageData.cta && <CTA />}
               {pageData.gallery && <Gallery />}
               {pageData.staff && <Staff />}
-              {pageData.reviews && <Reviews />}
               {pageData.news && <News />}
               {pageData.storeInfo && <StoreInfo />}
               {pageData.company && <Company />}

@@ -62,7 +62,8 @@ export default function Footer() {
                 </h3>
                 <div className="flex justify-center gap-5">
                   {validLinks.map((social, index) => {
-                    const platformKey = (social.platform || '').toLowerCase();
+                    const platformName = typeof social.platform === 'string' ? social.platform : (getText(social.platform) || '');
+                    const platformKey = platformName.toLowerCase();
                     const IconComponent = socialIconMap[platformKey] || HelpCircle;
                     return (
                       <motion.a

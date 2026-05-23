@@ -914,11 +914,9 @@ export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
     const useFallback = process.env.USE_FALLBACK_DATA === 'true';
 
     const getSectionData = (sectionKey: string, extractedData: any, defaultSectionData: any) => {
-      // 完全に未知のセクションはデフォルトフォールバックをONにしているかによって判断（ユーザがわざと消したか判断不能なため）
-      if (useFallback) return extractedData || defaultSectionData;
-
+      // 完全に未知のセクションはデフォルトフォールバックをONにしているかによって判断
       if (contentData[sectionKey] === undefined) {
-        return defaultSectionData; // まだ一度も保存されていない＝ダミーデータを表示
+        return useFallback ? (extractedData || defaultSectionData) : defaultSectionData;
       }
 
       // 取得した元データ自体が再帰的にすべて空文字列や空配列などであれば非表示とする
@@ -929,7 +927,7 @@ export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
       // データが存在する場合はバリデーション結果（extractedData）を返す。
       // もしextractedDataがnull（変なデータ構成でtransform弾かれた場合）であっても、
       // ユーザがせっかく入力した項目がすべて消えないよう、最低限のフォールバックとして元データを渡す
-      return extractedData || contentData[sectionKey];
+      return extractedData !== null ? extractedData : null;
     };
 
     const pageData = {

@@ -12,6 +12,9 @@ export function useLocalize() {
     }
 
     if (typeof field === 'object' && field !== null && !Array.isArray(field)) {
+      if (Object.keys(field).length === 0) {
+        return '';
+      }
       if (field[language] !== undefined && field[language] !== null) {
         return String(field[language]);
       }

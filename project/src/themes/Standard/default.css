@@ -1,0 +1,45 @@
+/**
+ * Standard Theme - Default (Teal)
+ * 汎用・清潔感・信頼感
+ * ---
+ * 既存のデフォルトテーマカラーをCSS変数として定義。
+ * 全コンポーネントはこれらの変数を参照する（将来の置き換え用のリファレンス）。
+ */
+
+:root {
+  /* ===== ベースカラー ===== */
+  --color-bg-base: #ffffff;
+  --color-bg-section-alt: #f0fdfa;      /* teal-50 相当 */
+  --color-bg-gradient-from: #f0fdfa;    /* from-teal-50/30 相当 */
+
+  /* ===== メインアクセント（teal-600） ===== */
+  --color-primary: #0d9488;             /* teal-600 */
+  --color-primary-hover: #0f766e;       /* teal-700 */
+  --color-primary-light: #ccfbf1;       /* teal-100 */
+  --color-primary-lighter: #e6fffa;     /* teal-50 */
+  --color-primary-text: #0d9488;        /* text-teal-600 */
+
+  /* ===== フッター・ダーク ===== */
+  --color-footer-bg-from: #134e4a;      /* teal-900 */
+  --color-footer-bg-to: #0f3d3a;        /* teal-950 */
+  --color-footer-border: #115e59;       /* teal-800 */
+  --color-footer-text-muted: #99f6e4;   /* teal-200 */
+  --color-footer-text-subtle: #5eead4;  /* teal-300 */
+  --color-footer-icon-bg: #115e59;      /* teal-800 */
+  --color-footer-icon-bg-hover: #0f766e; /* teal-700 */
+
+  /* ===== CTA オーバーレイ ===== */
+  --color-cta-overlay-from: rgba(19, 78, 74, 0.95);  /* teal-900/95 */
+  --color-cta-overlay-to: rgba(17, 94, 89, 0.90);    /* teal-800/90 */
+  --color-cta-btn-text: #134e4a;        /* teal-900 */
+
+  /* ===== セクション区切りライン ===== */
+  --color-divider: #0d9488;             /* teal-600 */
+
+  /* ===== フォーカスリング ===== */
+  --color-focus-ring: #0d9488;          /* teal-600 */
+
+  /* ===== フォント ===== */
+  --font-primary: 'Noto Sans JP', sans-serif;
+  --font-display: 'Noto Sans JP', sans-serif;
+}

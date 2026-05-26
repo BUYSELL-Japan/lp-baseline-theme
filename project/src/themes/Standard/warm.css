@@ -1,0 +1,91 @@
+/**
+ * Standard Theme - Warm（沖縄・かまど料理・伝統工芸 向け）
+ * ────────────────────────────────────────────────────────
+ * カラーコンセプト:
+ *   ベース      : オフホワイト（清潔感と素朴な質感）
+ *   メインアクセント : ネイビーブルー（沖縄の海、誠実さ、看板の縁取り）
+ *   サブアクセント   : テラコッタ・炎のオレンジ（かまどの土、調理の熱気）
+ *   ミンサー模様    : ウコン黄色・朱色（沖縄の伝統的な暖かさ）
+ *   フッター      : 深みのあるネイビー（重厚感）
+ * ────────────────────────────────────────────────────────
+ * 使い方:
+ *   index.css に @import './themes/Standard/warm.css'; を追加するだけ。
+ *   :root の変数を上書きするため、default.css の後に読み込むこと。
+ */
+
+:root {
+  /* ===== ベースカラー ===== */
+  --color-bg-base: #fdf8f3;             /* 温かみのあるオフホワイト（生成り色） */
+  --color-bg-section-alt: #fef3e8;      /* 薄いアンバー・背景の変化に */
+  --color-bg-gradient-from: #fef3e8;    /* セクション切り替えグラデーション起点 */
+
+  /* ===== メインアクセント（ネイビーブルー） ===== */
+  /* 沖縄の海、看板の縁取り、誠実さを表現 */
+  --color-primary: #1e3a6e;             /* ネイビーブルー (navy-800相当) */
+  --color-primary-hover: #162d57;       /* ホバー時 (より深いネイビー) */
+  --color-primary-light: #dbeafe;       /* 薄いブルー背景 (blue-100相当) */
+  --color-primary-lighter: #eff6ff;     /* より薄い背景 (blue-50相当) */
+  --color-primary-text: #1e3a6e;        /* テキストへの適用 */
+
+  /* ===== サブアクセント（テラコッタ・炎色）===== */
+  /* かまどの土・調理の熱気。バッジ・価格タグ・強調要素に使用 */
+  --color-accent: #c1440e;              /* テラコッタ・深い炎色 */
+  --color-accent-hover: #a33a0c;        /* ホバー時 */
+  --color-accent-light: #fde8dd;        /* 薄いテラコッタ背景 */
+  --color-accent-text: #c1440e;         /* テキストへの適用 */
+
+  /* ===== ミンサー模様カラー ===== */
+  /* 沖縄の伝統工芸・暖かさの象徴。装飾的なアクセントに */
+  --color-minsar-yellow: #d4a017;       /* ウコン黄色 */
+  --color-minsar-red: #c0392b;          /* 朱色 */
+
+  /* ===== セクション区切りライン ===== */
+  /* h2 見出し下のアクセントラインはサブアクセントカラーを使用 */
+  --color-divider: #c1440e;             /* テラコッタ */
+
+  /* ===== フォーカスリング ===== */
+  --color-focus-ring: #1e3a6e;          /* ネイビー */
+
+  /* ===== フッター・ダーク（深みのあるネイビー） ===== */
+  --color-footer-bg-from: #0f1e3d;      /* 深いネイビー */
+  --color-footer-bg-to: #0a1628;        /* さらに深いネイビー・ほぼ黒 */
+  --color-footer-border: #1e3a6e;       /* ネイビー */
+  --color-footer-text-muted: #b8cae8;   /* 薄いブルーグレー（muted text） */
+  --color-footer-text-subtle: #93afd4;  /* さらに薄いブルーグレー */
+  --color-footer-icon-bg: #1e3a6e;      /* アイコン背景 */
+  --color-footer-icon-bg-hover: #2a4f96; /* アイコンホバー */
+
+  /* ===== CTA オーバーレイ ===== */
+  /* CTA セクションの背景オーバーレイ（画像の上に乗る暗い色） */
+  --color-cta-overlay-from: rgba(15, 30, 61, 0.95);  /* 深いネイビー 95% */
+  --color-cta-overlay-to: rgba(30, 58, 110, 0.88);   /* ネイビー 88% */
+  --color-cta-btn-text: #0f1e3d;        /* CTAボタンテキスト（白ボタン時） */
+
+  /* ===== フォント ===== */
+  /* 沖縄の温かみ・手仕事感を醸し出すセリフ系を使用 */
+  --font-primary: 'Noto Serif JP', serif;
+  --font-display: 'Zen Old Mincho', serif;
+
+  /* ===== 参考カラーパレット（コメントのみ・実装時に選択） ===== */
+  /*
+    ネイビー系:
+      #1e3a6e  メインネイビー ← --color-primary
+      #162d57  ダークネイビー ← --color-primary-hover
+      #2a4f96  ミディアムブルー
+      #4a7cc7  ライトブルー
+
+    テラコッタ・炎系:
+      #c1440e  テラコッタ ← --color-accent
+      #e85d04  炎オレンジ（より鮮やか）
+      #9c2c07  深い燃えカス茶
+
+    ミンサー:
+      #d4a017  ウコン黄色 ← --color-minsar-yellow
+      #c0392b  朱色 ← --color-minsar-red
+
+    ベース:
+      #fdf8f3  オフホワイト（生成り）← --color-bg-base
+      #f5ede0  温かいベージュ
+      #ede0cc  やや濃いベージュ
+  */
+}

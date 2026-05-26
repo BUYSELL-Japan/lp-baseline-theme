@@ -46,39 +46,41 @@ function MenuItem({ item, index, onImageClick }: { item: MenuItemType; index: nu
       transition={{ duration: 0.5, delay: index * 0.05 }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      style={{
-        rotateX,
-        rotateY,
-        transformStyle: 'preserve-3d',
-      }}
       className="group"
+      style={{ perspective: 1000 }}
     >
       <motion.div
-        className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300"
-        whileHover={{ scale: 1.02, y: -5 }}
-        transition={{ duration: 0.3, ease: 'easeOut' }}
+        style={{
+          rotateX,
+          rotateY,
+          transformStyle: 'preserve-3d',
+        }}
       >
-        <div className="relative overflow-hidden h-56 cursor-pointer" onClick={onImageClick} style={{ pointerEvents: 'auto' }}>
-          <motion.img
-            src={item.image}
-            alt={t(item, 'name')}
-            className="w-full h-full object-cover pointer-events-none"
-            whileHover={{ scale: 1.15 }}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 pointer-events-none" />
-          <motion.div
-            className="absolute top-4 right-4 bg-teal-600 text-white px-4 py-2 rounded-full font-bold text-lg shadow-lg pointer-events-none"
-            style={{ transform: 'translateZ(50px)' }}
-          >
-            {t(item, 'price', item.price)}
-          </motion.div>
-        </div>
+        <motion.div
+          className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300"
+          whileHover={{ scale: 1.02, y: -5 }}
+          transition={{ duration: 0.3, ease: 'easeOut' }}
+        >
+          <div className="relative overflow-hidden h-56 cursor-pointer group/image" onClick={onImageClick}>
+            <motion.img
+              src={item.image}
+              alt={t(item, 'name')}
+              className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover/image:scale-110"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 pointer-events-none" />
+            <motion.div
+              className="absolute top-4 right-4 bg-teal-600 text-white px-4 py-2 rounded-full font-bold text-lg shadow-lg pointer-events-none"
+              style={{ transform: 'translateZ(50px)' }}
+            >
+              {t(item, 'price', item.price)}
+            </motion.div>
+          </div>
 
-        <div className="p-6">
-          <h3 className="text-2xl font-bold text-gray-900 mb-2">{t(item, 'name')}</h3>
-          <p className="text-gray-600 leading-relaxed">{t(item, 'description')}</p>
-        </div>
+          <div className="p-6">
+            <h3 className="text-2xl font-bold text-gray-900 mb-2">{t(item, 'name')}</h3>
+            <p className="text-gray-600 leading-relaxed">{t(item, 'description')}</p>
+          </div>
+        </motion.div>
       </motion.div>
     </motion.div>
   );

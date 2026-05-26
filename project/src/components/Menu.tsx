@@ -10,57 +10,20 @@ import SectionError from './SectionError';
 
 function MenuItem({ item, index, onImageClick }: { item: MenuItemType; index: number; onImageClick: () => void }) {
   const { t } = useLocalize();
-  const cardRef = useRef<HTMLDivElement>(null);
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-
-  const rotateX = useSpring(useTransform(mouseY, [-0.5, 0.5], [7, -7]), {
-    stiffness: 200,
-    damping: 30,
-  });
-  const rotateY = useSpring(useTransform(mouseX, [-0.5, 0.5], [-7, 7]), {
-    stiffness: 200,
-    damping: 30,
-  });
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!cardRef.current) return;
-    const rect = cardRef.current.getBoundingClientRect();
-    const centerX = rect.left + rect.width / 2;
-    const centerY = rect.top + rect.height / 2;
-    mouseX.set((e.clientX - centerX) / rect.width);
-    mouseY.set((e.clientY - centerY) / rect.height);
-  };
-
-  const handleMouseLeave = () => {
-    mouseX.set(0);
-    mouseY.set(0);
-  };
 
   return (
     <motion.div
-      ref={cardRef}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-50px' }}
       transition={{ duration: 0.5, delay: index * 0.05 }}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
       className="group"
-      style={{ perspective: 1000 }}
     >
       <motion.div
-        style={{
-          rotateX,
-          rotateY,
-          transformStyle: 'preserve-3d',
-        }}
+        className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300"
+        whileHover={{ scale: 1.02, y: -5 }}
+        transition={{ duration: 0.3, ease: 'easeOut' }}
       >
-        <motion.div
-          className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300"
-          whileHover={{ scale: 1.02, y: -5 }}
-          transition={{ duration: 0.3, ease: 'easeOut' }}
-        >
           <div className="relative overflow-hidden h-56 cursor-pointer group/image" onClick={onImageClick}>
             <motion.img
               src={item.image}
@@ -81,7 +44,6 @@ function MenuItem({ item, index, onImageClick }: { item: MenuItemType; index: nu
             <p className="text-gray-600 leading-relaxed">{t(item, 'description')}</p>
           </div>
         </motion.div>
-      </motion.div>
     </motion.div>
   );
 }

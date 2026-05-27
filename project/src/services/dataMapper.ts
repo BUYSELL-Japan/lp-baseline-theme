@@ -82,7 +82,7 @@ function isValidImageUrl(url: any): boolean {
   const extractedUrl = extractImageUrl(url);
 
   if (!extractedUrl || typeof extractedUrl !== 'string') {
-    console.log(`[isValidImageUrl] Could not extract URL from:`, url);
+    (()=>{})(`[isValidImageUrl] Could not extract URL from:`, url);
     return false;
   }
 
@@ -107,10 +107,10 @@ function isValidImageUrl(url: any): boolean {
                     extractedUrl.startsWith('http://');
 
     const isS3 = hostname.includes('s3.amazonaws.com') || hostname.includes('lp-store-images');
-    console.log(`[isValidImageUrl] URL: ${extractedUrl}, Valid: ${isValid}, IsS3: ${isS3}, Hostname: ${hostname}`);
+    (()=>{})(`[isValidImageUrl] URL: ${extractedUrl}, Valid: ${isValid}, IsS3: ${isS3}, Hostname: ${hostname}`);
     return isValid;
   } catch (e) {
-    console.log(`[isValidImageUrl] Invalid URL format: ${extractedUrl}`);
+    (()=>{})(`[isValidImageUrl] Invalid URL format: ${extractedUrl}`);
     return false;
   }
 }
@@ -262,12 +262,12 @@ function convertFlatToNested(flatData: any): any {
 
 function transformMenuData(menuData: any): MenuData | null {
   if (!menuData || typeof menuData !== 'object') {
-    console.log('[transformMenuData] Invalid input, returning null');
+    (()=>{})('[transformMenuData] Invalid input, returning null');
     return null;
   }
 
   if (!menuData.sectionTitle && !menuData.title) {
-    console.log('[transformMenuData] Missing title, returning null');
+    (()=>{})('[transformMenuData] Missing title, returning null');
     return null;
   }
 
@@ -284,8 +284,8 @@ function transformMenuData(menuData: any): MenuData | null {
       if (category.items && Array.isArray(category.items)) {
         category.items.forEach((item: any) => {
           const imageUrl = extractImageUrl(item.image);
-          console.log('[transformMenuData] Category item raw image:', item.image);
-          console.log('[transformMenuData] Category item extracted URL:', imageUrl);
+          (()=>{})('[transformMenuData] Category item raw image:', item.image);
+          (()=>{})('[transformMenuData] Category item extracted URL:', imageUrl);
 
           if (item.image && !isValidImageUrl(item.image)) {
             console.warn(`[transformMenuData] Invalid image URL for item:`, item.name, item.image);
@@ -315,8 +315,8 @@ function transformMenuData(menuData: any): MenuData | null {
       })
       .map((item: any) => {
         const imageUrl = extractImageUrl(item.image);
-        console.log('[transformMenuData] Item raw image:', item.image);
-        console.log('[transformMenuData] Extracted image URL:', imageUrl);
+        (()=>{})('[transformMenuData] Item raw image:', item.image);
+        (()=>{})('[transformMenuData] Extracted image URL:', imageUrl);
 
         if (item.image && !isValidImageUrl(item.image)) {
           console.warn(`[transformMenuData] Invalid image URL for item:`, item.name, item.image);
@@ -331,7 +331,7 @@ function transformMenuData(menuData: any): MenuData | null {
   }
 
   if (transformed.items.length === 0) {
-    console.log('[transformMenuData] No items found, returning null');
+    (()=>{})('[transformMenuData] No items found, returning null');
     return null;
   }
 
@@ -340,12 +340,12 @@ function transformMenuData(menuData: any): MenuData | null {
 
 function transformContactData(contactData: any): ContactData | null {
   if (!contactData || typeof contactData !== 'object') {
-    console.log('[transformContactData] Invalid input, returning null');
+    (()=>{})('[transformContactData] Invalid input, returning null');
     return null;
   }
 
   if (!contactData.sectionTitle && !contactData.title) {
-    console.log('[transformContactData] Missing title, returning null');
+    (()=>{})('[transformContactData] Missing title, returning null');
     return null;
   }
 
@@ -376,14 +376,14 @@ function transformContactData(contactData: any): ContactData | null {
 
 function transformGalleryData(galleryData: any): GalleryData | null {
   if (!galleryData || typeof galleryData !== 'object') {
-    console.log('[transformGalleryData] Invalid input, returning null');
+    (()=>{})('[transformGalleryData] Invalid input, returning null');
     return null;
   }
 
   // sectionTitleが空（全言語空文字列）の場合は非表示とする
   const rawTitle = galleryData.sectionTitle || galleryData.title;
   if (!rawTitle) {
-    console.log('[transformGalleryData] Missing title, returning null');
+    (()=>{})('[transformGalleryData] Missing title, returning null');
     return null;
   }
   // 多言語オブジェクトの場合、全言語が空なら非表示
@@ -392,11 +392,11 @@ function transformGalleryData(galleryData: any): GalleryData | null {
       (v) => typeof v === 'string' && v.trim() !== ''
     );
     if (!hasAnyValue) {
-      console.log('[transformGalleryData] All title translations are empty, returning null');
+      (()=>{})('[transformGalleryData] All title translations are empty, returning null');
       return null;
     }
   } else if (typeof rawTitle === 'string' && rawTitle.trim() === '') {
-    console.log('[transformGalleryData] Title is empty string, returning null');
+    (()=>{})('[transformGalleryData] Title is empty string, returning null');
     return null;
   }
 
@@ -411,9 +411,9 @@ function transformGalleryData(galleryData: any): GalleryData | null {
     ? galleryData.images
         .map((img: any) => {
           const imageUrl = extractImageUrl(img.url);
-          console.log('[transformGalleryData] Processing image:', img);
-          console.log('[transformGalleryData] Raw image URL:', img.url);
-          console.log('[transformGalleryData] Extracted image URL:', imageUrl);
+          (()=>{})('[transformGalleryData] Processing image:', img);
+          (()=>{})('[transformGalleryData] Raw image URL:', img.url);
+          (()=>{})('[transformGalleryData] Extracted image URL:', imageUrl);
 
           if (!isValidImageUrl(img.url)) {
             console.warn(`[transformGalleryData] Invalid or missing image URL, skipping:`, img.url);
@@ -432,10 +432,10 @@ function transformGalleryData(galleryData: any): GalleryData | null {
         .filter((img: any): img is NonNullable<typeof img> => img !== null)
     : [];
 
-  console.log('[transformGalleryData] Transformed images:', images);
+  (()=>{})('[transformGalleryData] Transformed images:', images);
 
   if (images.length === 0) {
-    console.log('[transformGalleryData] No images found, returning null');
+    (()=>{})('[transformGalleryData] No images found, returning null');
     return null;
   }
 
@@ -473,19 +473,19 @@ function transformGalleryData(galleryData: any): GalleryData | null {
 
 function transformFAQData(faqData: any): FAQData | null {
   if (!faqData || typeof faqData !== 'object') {
-    console.log('[transformFAQData] Invalid input, returning null');
+    (()=>{})('[transformFAQData] Invalid input, returning null');
     return null;
   }
 
   // sectionTitleチェック（空なら非表示）
   const rawTitle = faqData.sectionTitle || faqData.title;
   if (!rawTitle) {
-    console.log('[transformFAQData] Missing title, returning null');
+    (()=>{})('[transformFAQData] Missing title, returning null');
     return null;
   }
 
   if (!faqData.items || !Array.isArray(faqData.items)) {
-    console.log('[transformFAQData] No items array, returning null');
+    (()=>{})('[transformFAQData] No items array, returning null');
     return null;
   }
 
@@ -502,7 +502,7 @@ function transformFAQData(faqData: any): FAQData | null {
   });
 
   if (validItems.length === 0) {
-    console.log('[transformFAQData] No valid items after filtering, returning null');
+    (()=>{})('[transformFAQData] No valid items after filtering, returning null');
     return null;
   }
 
@@ -514,11 +514,11 @@ function transformFAQData(faqData: any): FAQData | null {
 
 function transformPricingData(pricingData: any): PricingData | null {
   if (!pricingData || typeof pricingData !== 'object') {
-    console.log('[transformPricingData] Invalid input, returning null');
+    (()=>{})('[transformPricingData] Invalid input, returning null');
     return null;
   }
 
-  console.log('[transformPricingData] Input data:', {
+  (()=>{})('[transformPricingData] Input data:', {
     keys: Object.keys(pricingData),
     hasPlans: !!pricingData.plans,
     plansType: Array.isArray(pricingData.plans) ? 'array' : typeof pricingData.plans,
@@ -526,14 +526,14 @@ function transformPricingData(pricingData: any): PricingData | null {
   });
 
   if (!pricingData.sectionTitle && !pricingData.title) {
-    console.log('[transformPricingData] Missing title, returning null');
+    (()=>{})('[transformPricingData] Missing title, returning null');
     return null;
   }
 
   let plans = pricingData.plans && Array.isArray(pricingData.plans) ? pricingData.plans : [];
 
   if (plans.length === 0) {
-    console.log('[transformPricingData] No plans found, returning null');
+    (()=>{})('[transformPricingData] No plans found, returning null');
     return null;
   }
 
@@ -544,7 +544,7 @@ function transformPricingData(pricingData: any): PricingData | null {
     plans
   };
 
-  console.log('[transformPricingData] Transformed output:', {
+  (()=>{})('[transformPricingData] Transformed output:', {
     hasTitle: !!transformed.sectionTitle,
     plansCount: transformed.plans?.length
   });
@@ -554,11 +554,11 @@ function transformPricingData(pricingData: any): PricingData | null {
 
 function transformStaffData(staffData: any): StaffData | null {
   if (!staffData || typeof staffData !== 'object') {
-    console.log('[transformStaffData] Invalid input, returning null');
+    (()=>{})('[transformStaffData] Invalid input, returning null');
     return null;
   }
 
-  console.log('[transformStaffData] Input data:', {
+  (()=>{})('[transformStaffData] Input data:', {
     keys: Object.keys(staffData),
     hasMembers: !!staffData.members,
     membersType: Array.isArray(staffData.members) ? 'array' : typeof staffData.members,
@@ -566,21 +566,21 @@ function transformStaffData(staffData: any): StaffData | null {
   });
 
   if (!staffData.sectionTitle && !staffData.title) {
-    console.log('[transformStaffData] Missing title, returning null');
+    (()=>{})('[transformStaffData] Missing title, returning null');
     return null;
   }
 
   let members = staffData.members && Array.isArray(staffData.members) ? staffData.members : [];
 
   if (members.length === 0) {
-    console.log('[transformStaffData] No members found, returning null');
+    (()=>{})('[transformStaffData] No members found, returning null');
     return null;
   }
 
   const processedMembers = members.map((member: any, index: number) => {
     const imageUrl = extractImageUrl(member.image);
-    console.log(`[transformStaffData] Member ${index} raw image:`, member.image);
-    console.log(`[transformStaffData] Member ${index} extracted URL:`, imageUrl);
+    (()=>{})(`[transformStaffData] Member ${index} raw image:`, member.image);
+    (()=>{})(`[transformStaffData] Member ${index} extracted URL:`, imageUrl);
 
     if (member.image && !isValidImageUrl(member.image)) {
       console.warn(`[transformStaffData] Invalid image URL for member ${index}:`, member.name, member.image);
@@ -598,7 +598,7 @@ function transformStaffData(staffData: any): StaffData | null {
     members: processedMembers
   };
 
-  console.log('[transformStaffData] Transformed output:', {
+  (()=>{})('[transformStaffData] Transformed output:', {
     hasTitle: !!transformed.sectionTitle,
     membersCount: transformed.members?.length
   });
@@ -608,11 +608,11 @@ function transformStaffData(staffData: any): StaffData | null {
 
 function transformStoreInfoData(storeInfoData: any): StoreInfoData | null {
   if (!storeInfoData || typeof storeInfoData !== 'object') {
-    console.log('[transformStoreInfoData] Invalid input, returning null');
+    (()=>{})('[transformStoreInfoData] Invalid input, returning null');
     return null;
   }
 
-  console.log('[transformStoreInfoData] Input data:', {
+  (()=>{})('[transformStoreInfoData] Input data:', {
     keys: Object.keys(storeInfoData),
     hasItems: !!storeInfoData.items,
     itemsType: Array.isArray(storeInfoData.items) ? 'array' : typeof storeInfoData.items,
@@ -621,14 +621,14 @@ function transformStoreInfoData(storeInfoData: any): StoreInfoData | null {
   });
 
   if (!storeInfoData.sectionTitle && !storeInfoData.title) {
-    console.log('[transformStoreInfoData] Missing title, returning null');
+    (()=>{})('[transformStoreInfoData] Missing title, returning null');
     return null;
   }
 
   let items = storeInfoData.items && Array.isArray(storeInfoData.items) ? storeInfoData.items : [];
 
   if (items.length === 0) {
-    console.log('[transformStoreInfoData] No items found, returning null');
+    (()=>{})('[transformStoreInfoData] No items found, returning null');
     return null;
   }
 
@@ -641,7 +641,7 @@ function transformStoreInfoData(storeInfoData: any): StoreInfoData | null {
 
   const transformedItems = items.map((item: any, index: number) => {
     if (item.icon && item.title && item.content) {
-      console.log(`[transformStoreInfoData] Item ${index} already structured`);
+      (()=>{})(`[transformStoreInfoData] Item ${index} already structured`);
       return item;
     }
 
@@ -651,7 +651,7 @@ function transformStoreInfoData(storeInfoData: any): StoreInfoData | null {
       : false;
 
     if (hasLanguageKeys && index < iconMapping.length) {
-      console.log(`[transformStoreInfoData] Item ${index} is plain multilingual text, converting to structured format`);
+      (()=>{})(`[transformStoreInfoData] Item ${index} is plain multilingual text, converting to structured format`);
       const mapping = iconMapping[index];
       return {
         icon: mapping.icon,
@@ -660,7 +660,7 @@ function transformStoreInfoData(storeInfoData: any): StoreInfoData | null {
       };
     }
 
-    console.log(`[transformStoreInfoData] Item ${index} format unknown, using as-is`);
+    (()=>{})(`[transformStoreInfoData] Item ${index} format unknown, using as-is`);
     return item;
   });
 
@@ -672,7 +672,7 @@ function transformStoreInfoData(storeInfoData: any): StoreInfoData | null {
     items: transformedItems
   };
 
-  console.log('[transformStoreInfoData] Transformed output:', {
+  (()=>{})('[transformStoreInfoData] Transformed output:', {
     hasTitle: !!transformed.sectionTitle,
     itemsCount: transformed.items?.length,
     firstItemStructure: transformed.items?.[0]
@@ -683,12 +683,12 @@ function transformStoreInfoData(storeInfoData: any): StoreInfoData | null {
 
 function transformAccessData(accessData: any): AccessData | null {
   if (!accessData || typeof accessData !== 'object') {
-    console.log('[transformAccessData] Invalid input, returning null');
+    (()=>{})('[transformAccessData] Invalid input, returning null');
     return null;
   }
 
   if (!accessData.sectionTitle && !accessData.title) {
-    console.log('[transformAccessData] Missing title, returning null');
+    (()=>{})('[transformAccessData] Missing title, returning null');
     return null;
   }
 
@@ -713,11 +713,11 @@ function transformAccessData(accessData: any): AccessData | null {
 
 function transformReviewsData(reviewsData: any): ReviewsData | null {
   if (!reviewsData || typeof reviewsData !== 'object') {
-    console.log('[transformReviewsData] Invalid input, returning null');
+    (()=>{})('[transformReviewsData] Invalid input, returning null');
     return null;
   }
 
-  console.log('[transformReviewsData] Input data:', {
+  (()=>{})('[transformReviewsData] Input data:', {
     keys: Object.keys(reviewsData),
     hasReviews: !!reviewsData.reviews,
     reviewsType: Array.isArray(reviewsData.reviews) ? 'array' : typeof reviewsData.reviews,
@@ -725,14 +725,14 @@ function transformReviewsData(reviewsData: any): ReviewsData | null {
   });
 
   if (!reviewsData.sectionTitle && !reviewsData.title) {
-    console.log('[transformReviewsData] Missing title, returning null');
+    (()=>{})('[transformReviewsData] Missing title, returning null');
     return null;
   }
 
   let reviews = reviewsData.reviews && Array.isArray(reviewsData.reviews) ? reviewsData.reviews : [];
 
   if (reviews.length === 0) {
-    console.log('[transformReviewsData] No reviews found, returning null');
+    (()=>{})('[transformReviewsData] No reviews found, returning null');
     return null;
   }
 
@@ -742,7 +742,7 @@ function transformReviewsData(reviewsData: any): ReviewsData | null {
     reviews
   };
 
-  console.log('[transformReviewsData] Transformed output:', {
+  (()=>{})('[transformReviewsData] Transformed output:', {
     hasTitle: !!transformed.sectionTitle,
     reviewsCount: transformed.reviews?.length
   });
@@ -752,7 +752,7 @@ function transformReviewsData(reviewsData: any): ReviewsData | null {
 
 export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
   try {
-    console.log('[mapDynamoDBDataToPageData] Input dynamoData:', {
+    (()=>{})('[mapDynamoDBDataToPageData] Input dynamoData:', {
       keys: Object.keys(dynamoData || {}),
       hasContentData: !!dynamoData?.ContentData,
       contentDataType: typeof dynamoData?.ContentData
@@ -764,7 +764,7 @@ export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
       contentData = typeof dynamoData.ContentData === 'string'
         ? JSON.parse(dynamoData.ContentData)
         : dynamoData.ContentData;
-      console.log('[mapDynamoDBDataToPageData] ContentData extracted, keys:', Object.keys(contentData || {}));
+      (()=>{})('[mapDynamoDBDataToPageData] ContentData extracted, keys:', Object.keys(contentData || {}));
     }
 
     if (!isNestedStructure(contentData)) {
@@ -773,7 +773,7 @@ export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
 
     contentData = convertMultilingualFields(contentData);
 
-    console.log('🔍 ContentData Structure:', {
+    (()=>{})('🔍 ContentData Structure:', {
       menu: contentData.menu,
       pricing: contentData.pricing,
       staff: contentData.staff,
@@ -782,27 +782,27 @@ export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
     });
 
     const extractTranslatedData = (section: any, sectionName: string) => {
-      console.log(`🔍 Extracting ${sectionName}:`, section);
+      (()=>{})(`🔍 Extracting ${sectionName}:`, section);
 
       if (!section || typeof section !== 'object') {
-        console.log(`⚠️ ${sectionName} is null/undefined or not an object`);
+        (()=>{})(`⚠️ ${sectionName} is null/undefined or not an object`);
         return null;
       }
 
       let extractedData: any = null;
 
       if (section.translatedData) {
-        console.log(`✅ ${sectionName} has translatedData wrapper`);
+        (()=>{})(`✅ ${sectionName} has translatedData wrapper`);
 
         if (section.translatedData[sectionName]) {
-          console.log(`✅ Found ${sectionName} inside translatedData.${sectionName}`);
+          (()=>{})(`✅ Found ${sectionName} inside translatedData.${sectionName}`);
           extractedData = section.translatedData[sectionName];
         } else if (section.translatedData.success !== undefined) {
-          console.log(`✅ ${sectionName} is already unwrapped in translatedData`);
+          (()=>{})(`✅ ${sectionName} is already unwrapped in translatedData`);
           const { success, ...rest } = section.translatedData;
           extractedData = rest;
         } else {
-          console.log(`⚠️ ${sectionName} translatedData structure is unexpected:`, Object.keys(section.translatedData));
+          (()=>{})(`⚠️ ${sectionName} translatedData structure is unexpected:`, Object.keys(section.translatedData));
           extractedData = section.translatedData;
         }
 
@@ -812,7 +812,7 @@ export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
 
         for (const key of topLevelArrayKeys) {
           if (section[key] !== undefined && section[key] !== null) {
-            console.log(`✅ Merging top-level ${key} into ${sectionName}`);
+            (()=>{})(`✅ Merging top-level ${key} into ${sectionName}`);
             topLevelData[key] = section[key];
             hasTopLevelData = true;
           }
@@ -820,30 +820,30 @@ export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
 
         if (hasTopLevelData) {
           extractedData = { ...extractedData, ...topLevelData };
-          console.log(`✅ Merged data for ${sectionName}:`, Object.keys(extractedData));
+          (()=>{})(`✅ Merged data for ${sectionName}:`, Object.keys(extractedData));
         }
       } else if (section.success !== undefined && section[sectionName]) {
-        console.log(`✅ ${sectionName} has success flag, extracting ${sectionName} key`);
+        (()=>{})(`✅ ${sectionName} has success flag, extracting ${sectionName} key`);
         extractedData = section[sectionName];
       } else {
-        console.log(`✅ ${sectionName} using as-is (no wrapper)`);
+        (()=>{})(`✅ ${sectionName} using as-is (no wrapper)`);
         extractedData = section;
       }
 
       if (!extractedData || (typeof extractedData === 'object' && Object.keys(extractedData).length === 0)) {
-        console.log(`⚠️ ${sectionName} extracted data is empty, returning null`);
+        (()=>{})(`⚠️ ${sectionName} extracted data is empty, returning null`);
         return null;
       }
 
       const doubleNestedKeys = ['reviews', 'items', 'members', 'plans', 'images', 'features'];
       for (const key of doubleNestedKeys) {
         if (extractedData[key] && extractedData[key][key] && Array.isArray(extractedData[key][key])) {
-          console.log(`🔧 ${sectionName}: Fixing double-nested ${key} (${key}.${key})`);
+          (()=>{})(`🔧 ${sectionName}: Fixing double-nested ${key} (${key}.${key})`);
           extractedData[key] = extractedData[key][key];
         }
       }
 
-      console.log(`✅ ${sectionName} final extracted data:`, {
+      (()=>{})(`✅ ${sectionName} final extracted data:`, {
         keys: Object.keys(extractedData),
         hasItems: !!extractedData.items,
         hasReviews: !!extractedData.reviews,
@@ -863,8 +863,8 @@ export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
     const heroExtracted = extractTranslatedData(contentData.hero, 'hero');
     if (heroExtracted?.backgroundImage) {
       const heroImageUrl = extractImageUrl(heroExtracted.backgroundImage);
-      console.log('[mapDynamoDBDataToPageData] Hero raw backgroundImage:', heroExtracted.backgroundImage);
-      console.log('[mapDynamoDBDataToPageData] Hero extracted backgroundImage:', heroImageUrl);
+      (()=>{})('[mapDynamoDBDataToPageData] Hero raw backgroundImage:', heroExtracted.backgroundImage);
+      (()=>{})('[mapDynamoDBDataToPageData] Hero extracted backgroundImage:', heroImageUrl);
 
       if (!isValidImageUrl(heroExtracted.backgroundImage)) {
         console.warn('[mapDynamoDBDataToPageData] Invalid hero backgroundImage URL:', heroExtracted.backgroundImage);
@@ -878,8 +878,8 @@ export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
     const storeInfoExtracted = extractTranslatedData(contentData.storeInfo, 'storeInfo');
     if (storeInfoExtracted?.mainImage) {
       const storeInfoImageUrl = extractImageUrl(storeInfoExtracted.mainImage);
-      console.log('[mapDynamoDBDataToPageData] StoreInfo raw mainImage:', storeInfoExtracted.mainImage);
-      console.log('[mapDynamoDBDataToPageData] StoreInfo extracted mainImage:', storeInfoImageUrl);
+      (()=>{})('[mapDynamoDBDataToPageData] StoreInfo raw mainImage:', storeInfoExtracted.mainImage);
+      (()=>{})('[mapDynamoDBDataToPageData] StoreInfo extracted mainImage:', storeInfoImageUrl);
 
       if (storeInfoImageUrl) {
         storeInfoExtracted.mainImage = storeInfoImageUrl;
@@ -899,15 +899,15 @@ export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
 
     if (footerExtracted && footerExtracted.social) {
       if (Array.isArray(footerExtracted.social)) {
-        console.log('[mapDynamoDBDataToPageData] Footer social is array, converting to object with links');
+        (()=>{})('[mapDynamoDBDataToPageData] Footer social is array, converting to object with links');
         footerExtracted.social = {
           title: footerExtracted.socialTitle || { ja: 'SNSでフォロー', en: 'Follow Us', 'zh-tw': '追蹤我們', ko: '팔로우' },
           links: footerExtracted.social
         };
       } else if (footerExtracted.social.links && Array.isArray(footerExtracted.social.links)) {
-        console.log('[mapDynamoDBDataToPageData] Footer social.links is already correct format');
+        (()=>{})('[mapDynamoDBDataToPageData] Footer social.links is already correct format');
       } else {
-        console.log('[mapDynamoDBDataToPageData] Footer social structure unexpected:', footerExtracted.social);
+        (()=>{})('[mapDynamoDBDataToPageData] Footer social structure unexpected:', footerExtracted.social);
       }
     }
 
@@ -952,7 +952,7 @@ export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
       contactEmail: (dynamoData.contact_email as string) || '',
     };
 
-    console.log('📊 DynamoDB Data Mapped:', {
+    (()=>{})('📊 DynamoDB Data Mapped:', {
       header: {
         exists: !!pageData.header,
         hasLogo: !!pageData.header?.logo,

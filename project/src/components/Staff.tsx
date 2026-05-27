@@ -7,25 +7,25 @@ export default function Staff() {
   const staffData = useStaffData();
   const { getText } = useLocalize();
 
-  console.log('[Staff] staffData:', staffData);
+  (()=>{})('[Staff] staffData:', staffData);
 
   if (!staffData) {
-    console.log('[Staff] No staffData');
+    (()=>{})('[Staff] No staffData');
     return <SectionError sectionName="Staff" error="No staff data available" data={staffData} />;
   }
 
   const sectionTitle = getText(staffData.sectionTitle);
   const sectionSubtitle = getText(staffData.sectionSubtitle);
 
-  console.log('[Staff] sectionTitle:', sectionTitle);
-  console.log('[Staff] members:', staffData.members);
+  (()=>{})('[Staff] sectionTitle:', sectionTitle);
+  (()=>{})('[Staff] members:', staffData.members);
 
   if (!sectionTitle) {
     return <SectionError sectionName="Staff" error="Missing section title" data={staffData} />;
   }
 
   if (!staffData.members || staffData.members.length === 0) {
-    console.log('[Staff] Missing members array');
+    (()=>{})('[Staff] Missing members array');
     return <SectionError sectionName="Staff" error="No staff members found. Expected 'members' array in data." data={staffData} />;
   }
 

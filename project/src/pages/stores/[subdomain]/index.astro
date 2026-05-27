@@ -8,7 +8,8 @@ import Theme3StorePage from '../../../components/Theme3StorePage';
 import Theme4StorePage from '../../../components/Theme4StorePage';
 
 export async function getStaticPaths() {
-  const storeList = await getStoreList();
+  try {
+    const storeList = await getStoreList();
 
   const paths = await Promise.all(
     storeList.map(async ({ storeId, subdomain, contact_email, templateId }) => {
@@ -42,6 +43,10 @@ export async function getStaticPaths() {
   );
 
   return paths.filter(Boolean);
+  } catch (e: any) {
+    import('fs').then(fs => fs.writeFileSync('astro-error.log', String(e.stack || e)));
+    throw e;
+  }
 }
 
 const { pageData, storeId, subdomain } = Astro.props;
@@ -56,10 +61,10 @@ const getLocalText = (field: any, lang: string = 'ja') => {
 };
 
 const storeName = getLocalText(pageData.header?.logo?.text, 'ja') || 'Store';
-const heroCatch = getLocalText(pageData.hero?.sectionTitle, 'ja');
+const heroCatch = getLocalText(pageData.hero?.title, 'ja');
 const metaTitle = heroCatch ? `${storeName} | ${heroCatch}` : storeName;
 
-const heroDesc = getLocalText(pageData.hero?.sectionSubtitle, 'ja');
+const heroDesc = getLocalText(pageData.hero?.subtitle, 'ja');
 const aboutDesc = getLocalText(pageData.about?.features?.[0]?.description, 'ja');
 const metaDescription = `${heroDesc ? heroDesc + '。' : ''}${aboutDesc}`.substring(0, 150);
 

@@ -68,14 +68,14 @@ function deepUnmarshall(data: any): any {
 
 export async function fetchStoreContentAtBuildTime(storeId: string): Promise<LandingPageContent | null> {
   try {
-    console.log(`[BuildTime API] Fetching content for storeId: ${storeId}`);
+    (()=>{})(`[BuildTime API] Fetching content for storeId: ${storeId}`);
 
     const useFallbackData = process.env.USE_FALLBACK_DATA === 'true';
 
     let rawData;
 
     if (useFallbackData) {
-      console.log('[BuildTime API] Using fallback local data');
+      (()=>{})('[BuildTime API] Using fallback local data');
       const localPath = join(process.cwd(), 'public', 'dynamodb-data-OKI1011-multilang.json');
       const localData = JSON.parse(readFileSync(localPath, 'utf-8'));
       rawData = {
@@ -84,7 +84,7 @@ export async function fetchStoreContentAtBuildTime(storeId: string): Promise<Lan
         subdomainName: 'teststore'
       };
     } else {
-      console.log('[BuildTime API] Fetching from production API');
+      (()=>{})('[BuildTime API] Fetching from production API');
       const response = await fetch(`${API_BASE_URL}/${storeId}`);
 
       if (!response.ok) {
@@ -93,7 +93,7 @@ export async function fetchStoreContentAtBuildTime(storeId: string): Promise<Lan
       }
 
       rawData = await response.json();
-      console.log('[BuildTime API] Raw production API response:', {
+      (()=>{})('[BuildTime API] Raw production API response:', {
         keys: Object.keys(rawData),
         hasContentData: !!rawData.ContentData,
         contentDataType: typeof rawData.ContentData,
@@ -114,7 +114,7 @@ export async function fetchStoreContentAtBuildTime(storeId: string): Promise<Lan
     try {
       const controller = new AbortController();
       const timeoutId = setTimeout(() => controller.abort(), 15000);
-      console.log(`[BuildTime API] Fetching settings for ${storeId}...`);
+      (()=>{})(`[BuildTime API] Fetching settings for ${storeId}...`);
       const settingsResponse = await fetch(`https://2sznhxhcd8.execute-api.ap-southeast-2.amazonaws.com/dev/lp/settings/${storeId}`, {
         signal: controller.signal
       });
@@ -124,7 +124,7 @@ export async function fetchStoreContentAtBuildTime(storeId: string): Promise<Lan
         const settingsData = await settingsResponse.json();
         if (settingsData.templateId) {
           processedData.templateId = settingsData.templateId;
-          console.log(`[BuildTime API] Successfully fetched templateId from settings: ${settingsData.templateId}`);
+          (()=>{})(`[BuildTime API] Successfully fetched templateId from settings: ${settingsData.templateId}`);
         } else {
           console.warn(`[BuildTime API] Settings API returned success but no templateId found for ${storeId}.`);
         }
@@ -148,26 +148,26 @@ export async function fetchStoreContentAtBuildTime(storeId: string): Promise<Lan
 }
 
 export async function getStoreList(): Promise<StoreInfo[]> {
-  console.log('[BuildTime API] getStoreList called');
-  console.log('[BuildTime API] USE_STATIC_STORE_LIST:', process.env.USE_STATIC_STORE_LIST);
-  console.log('[BuildTime API] STORE_LIST:', process.env.STORE_LIST);
+  (()=>{})('[BuildTime API] getStoreList called');
+  (()=>{})('[BuildTime API] USE_STATIC_STORE_LIST:', process.env.USE_STATIC_STORE_LIST);
+  (()=>{})('[BuildTime API] STORE_LIST:', process.env.STORE_LIST);
 
   const useStaticList = process.env.USE_STATIC_STORE_LIST === 'true';
-  console.log('[BuildTime API] useStaticList:', useStaticList);
+  (()=>{})('[BuildTime API] useStaticList:', useStaticList);
 
   if (useStaticList) {
     const storeListEnv = process.env.STORE_LIST || 'OKI1011';
-    console.log('[BuildTime API] Using static store list:', storeListEnv);
+    (()=>{})('[BuildTime API] Using static store list:', storeListEnv);
     const stores = storeListEnv.split(',').map(s => ({
       storeId: s.trim(),
       subdomain: s.trim().toLowerCase(),
       templateId: process.env.DEFAULT_TEMPLATE_ID || 'theme1',
     }));
-    console.log('[BuildTime API] Parsed stores:', stores);
+    (()=>{})('[BuildTime API] Parsed stores:', stores);
     return stores;
   }
 
-  console.log('[BuildTime API] Fetching from API:', STORE_LIST_API_URL);
+  (()=>{})('[BuildTime API] Fetching from API:', STORE_LIST_API_URL);
   try {
     const response = await fetch(STORE_LIST_API_URL);
 
@@ -179,7 +179,7 @@ export async function getStoreList(): Promise<StoreInfo[]> {
     const data = await response.json();
 
     if (data.stores && Array.isArray(data.stores)) {
-      console.log(`[BuildTime API] Fetched ${data.count || data.stores.length} stores`);
+      (()=>{})(`[BuildTime API] Fetched ${data.count || data.stores.length} stores`);
       return data.stores;
     }
 

@@ -8,10 +8,10 @@ export default function Company() {
   const companyData = useCompanyData();
   const { getText } = useLocalize();
 
-  console.log('[Company] companyData:', companyData);
+  (()=>{})('[Company] companyData:', companyData);
 
   if (!companyData) {
-    console.log('[Company] No companyData');
+    (()=>{})('[Company] No companyData');
     return <SectionError sectionName="Company" error="No company data available" data={companyData} />;
   }
 

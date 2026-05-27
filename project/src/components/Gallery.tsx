@@ -22,15 +22,15 @@ export default function Gallery() {
     setSelectedCategoryIndex(0);
   }, [language]);
 
-  console.log('[Gallery] galleryData:', galleryData);
+  (()=>{})('[Gallery] galleryData:', galleryData);
 
   if (!galleryData) {
-    console.log('[Gallery] No galleryData');
+    (()=>{})('[Gallery] No galleryData');
     return <SectionError sectionName="Gallery" error="No gallery data available" data={galleryData} />;
   }
 
   if (!galleryData.images || !Array.isArray(galleryData.images)) {
-    console.log('[Gallery] Missing images array');
+    (()=>{})('[Gallery] Missing images array');
     return <SectionError sectionName="Gallery" error="No gallery images found. Expected 'images' array in data." data={galleryData} />;
   }
 

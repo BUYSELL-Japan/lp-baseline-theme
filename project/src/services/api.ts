@@ -48,7 +48,7 @@ function deepUnmarshall(data: any): any {
   }
 
   if (isDynamoDBFormat(data)) {
-    console.log('[deepUnmarshall] Found DynamoDB format, unmarshalling:', Object.keys(data));
+    (()=>{})('[deepUnmarshall] Found DynamoDB format, unmarshalling:', Object.keys(data));
     const unmarshalled = unmarshall(data);
     return deepUnmarshall(unmarshalled);
   }
@@ -67,14 +67,14 @@ function deepUnmarshall(data: any): any {
 
 export async function fetchStoreContent(storeId: string): Promise<LandingPageContent | null> {
   try {
-    console.log(`[API] Fetching content for storeId: ${storeId}`);
+    (()=>{})(`[API] Fetching content for storeId: ${storeId}`);
     const useLocalData = isLocalDevelopment();
-    console.log(`[API] USE_LOCAL_DATA: ${useLocalData}`);
+    (()=>{})(`[API] USE_LOCAL_DATA: ${useLocalData}`);
 
     let rawData;
 
     if (useLocalData) {
-      console.log('[API] Using local sample data');
+      (()=>{})('[API] Using local sample data');
       const response = await fetch('/dynamodb-data-OKI1011-multilang.json');
       if (!response.ok) {
         console.error(`[API] Failed to fetch local data: ${response.status}`);
@@ -87,7 +87,7 @@ export async function fetchStoreContent(storeId: string): Promise<LandingPageCon
         subdomainName: 'teststore'
       };
     } else {
-      console.log('[API] Fetching from production API');
+      (()=>{})('[API] Fetching from production API');
       const response = await fetch(`${API_BASE_URL}/${storeId}`);
 
       if (!response.ok) {
@@ -96,7 +96,7 @@ export async function fetchStoreContent(storeId: string): Promise<LandingPageCon
       }
 
       rawData = await response.json();
-      console.log('[API] Raw production API response:', {
+      (()=>{})('[API] Raw production API response:', {
         keys: Object.keys(rawData),
         hasContentData: !!rawData.ContentData,
         contentDataType: typeof rawData.ContentData,
@@ -105,21 +105,21 @@ export async function fetchStoreContent(storeId: string): Promise<LandingPageCon
       });
     }
 
-    console.log('[API] Raw API Response:', rawData);
-    console.log('[API] Raw API Response type:', typeof rawData);
-    console.log('[API] Raw API Response keys:', Object.keys(rawData));
+    (()=>{})('[API] Raw API Response:', rawData);
+    (()=>{})('[API] Raw API Response type:', typeof rawData);
+    (()=>{})('[API] Raw API Response keys:', Object.keys(rawData));
 
     const processedData = deepUnmarshall(rawData);
-    console.log('[API] After deep unmarshall:', processedData);
-    console.log('[API] Processed data keys:', Object.keys(processedData));
+    (()=>{})('[API] After deep unmarshall:', processedData);
+    (()=>{})('[API] Processed data keys:', Object.keys(processedData));
 
     if (processedData.ContentData) {
-      console.log('[API] ContentData found, type:', typeof processedData.ContentData);
+      (()=>{})('[API] ContentData found, type:', typeof processedData.ContentData);
       if (typeof processedData.ContentData === 'string') {
-        console.log('[API] ContentData is string, parsing...');
+        (()=>{})('[API] ContentData is string, parsing...');
         processedData.ContentData = JSON.parse(processedData.ContentData);
       }
-      console.log('[API] ContentData keys:', Object.keys(processedData.ContentData || {}));
+      (()=>{})('[API] ContentData keys:', Object.keys(processedData.ContentData || {}));
     }
 
     return processedData as LandingPageContent;

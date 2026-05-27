@@ -19,27 +19,27 @@ function App() {
         const pathStoreId = getStoreIdFromPath();
         const isDevelopment = import.meta.env.DEV;
 
-        console.log('[App] Hostname:', window.location.hostname);
-        console.log('[App] Pathname:', window.location.pathname);
-        console.log('[App] Subdomain:', subdomain);
-        console.log('[App] Path StoreId:', pathStoreId);
-        console.log('[App] Is Development:', isDevelopment);
+        (()=>{})('[App] Hostname:', window.location.hostname);
+        (()=>{})('[App] Pathname:', window.location.pathname);
+        (()=>{})('[App] Subdomain:', subdomain);
+        (()=>{})('[App] Path StoreId:', pathStoreId);
+        (()=>{})('[App] Is Development:', isDevelopment);
 
         if (isDevelopment && !pathStoreId) {
-          console.log('[App] Development mode without storeId, loading local JSON data...');
+          (()=>{})('[App] Development mode without storeId, loading local JSON data...');
           try {
             const response = await fetch('/dynamodb-data-OKI1011-multilang.json');
             if (response.ok) {
               const localData = await response.json();
-              console.log('[App] Local JSON loaded:', localData);
+              (()=>{})('[App] Local JSON loaded:', localData);
               const mappedData = mapDynamoDBDataToPageData(localData);
-              console.log('[App] Setting mapped local data');
+              (()=>{})('[App] Setting mapped local data');
               setPageData(mappedData);
               setIsLoading(false);
               return;
             }
           } catch (localErr) {
-            console.log('[App] Could not load local JSON, falling back to API or default');
+            (()=>{})('[App] Could not load local JSON, falling back to API or default');
           }
         }
 
@@ -47,41 +47,41 @@ function App() {
 
         if (pathStoreId) {
           storeId = pathStoreId;
-          console.log('[App] Using pathStoreId:', storeId);
+          (()=>{})('[App] Using pathStoreId:', storeId);
         } else if (subdomain && subdomain !== 'www') {
           storeId = subdomain;
-          console.log('[App] Using subdomain as storeId:', storeId);
+          (()=>{})('[App] Using subdomain as storeId:', storeId);
         }
 
         if (storeId) {
-          console.log('[App] Fetching data for storeId:', storeId);
+          (()=>{})('[App] Fetching data for storeId:', storeId);
           // 並行リクエストでコンテンツと設定(テーマ)を両方取得
           const [data, settings] = await Promise.all([
             fetchStoreContent(storeId),
             getStoreInfo(storeId)
           ]);
 
-          console.log('[App] Settings fetched:', settings);
+          (()=>{})('[App] Settings fetched:', settings);
           setTemplateId(settings.templateId);
 
           if (data) {
-            console.log('[App] Data fetched successfully, mapping...');
+            (()=>{})('[App] Data fetched successfully, mapping...');
             const mappedData = mapDynamoDBDataToPageData(data);
-            console.log('[App] Setting mapped data');
+            (()=>{})('[App] Setting mapped data');
             setPageData(mappedData);
           } else {
-            console.log('[App] No data returned from API');
+            (()=>{})('[App] No data returned from API');
             if (isDevelopment) {
-              console.log('[App] Using default data in development mode');
+              (()=>{})('[App] Using default data in development mode');
               setPageData(getDefaultPageData());
             } else {
               setError('Store not found');
             }
           }
         } else {
-          console.log('[App] No storeId found');
+          (()=>{})('[App] No storeId found');
           if (isDevelopment) {
-            console.log('[App] No storeId found, using default data in development mode');
+            (()=>{})('[App] No storeId found, using default data in development mode');
             setPageData(getDefaultPageData());
           } else {
             setError('Store not found');
@@ -91,7 +91,7 @@ function App() {
         console.error('[App] Error loading store data:', err);
         const isDevelopment = import.meta.env.DEV;
         if (isDevelopment) {
-          console.log('[App] Error occurred, using default data in development mode');
+          (()=>{})('[App] Error occurred, using default data in development mode');
           setPageData(getDefaultPageData());
         } else {
           setError('Failed to load store data');

@@ -57,10 +57,10 @@ const getLocalText = (field: any, targetLang: string) => {
 };
 
 const storeName = getLocalText(pageData.header?.logo?.text, lang) || 'Store';
-const heroCatch = getLocalText(pageData.hero?.sectionTitle, lang);
+const heroCatch = getLocalText(pageData.hero?.title, lang);
 const metaTitle = heroCatch ? `${storeName} | ${heroCatch}` : storeName;
 
-const heroDesc = getLocalText(pageData.hero?.sectionSubtitle, lang);
+const heroDesc = getLocalText(pageData.hero?.subtitle, lang);
 const aboutDesc = getLocalText(pageData.about?.features?.[0]?.description, lang);
 const metaDescription = `${heroDesc ? heroDesc + ' ' : ''}${aboutDesc}`.substring(0, 150);
 

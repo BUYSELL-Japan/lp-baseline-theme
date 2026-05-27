@@ -8,29 +8,29 @@ export default function News() {
   const newsData = useNewsData();
   const { getText, getCategory, language } = useLocalize();
 
-  console.log('[News] newsData:', newsData);
+  (()=>{})('[News] newsData:', newsData);
 
   if (!newsData) {
-    console.log('[News] No newsData');
+    (()=>{})('[News] No newsData');
     return <SectionError sectionName="News" error="No news data available" data={newsData} />;
   }
 
-  console.log('[News] Current language:', language);
-  console.log('[News] sectionSubtitle raw:', newsData.sectionSubtitle);
+  (()=>{})('[News] Current language:', language);
+  (()=>{})('[News] sectionSubtitle raw:', newsData.sectionSubtitle);
 
   const sectionTitle = getText(newsData.sectionTitle);
   const sectionSubtitle = getText(newsData.sectionSubtitle);
 
-  console.log('[News] sectionTitle:', sectionTitle);
-  console.log('[News] sectionSubtitle:', sectionSubtitle);
-  console.log('[News] items:', newsData.items);
+  (()=>{})('[News] sectionTitle:', sectionTitle);
+  (()=>{})('[News] sectionSubtitle:', sectionSubtitle);
+  (()=>{})('[News] items:', newsData.items);
 
   if (!sectionTitle) {
     return <SectionError sectionName="News" error="Missing section title" data={newsData} />;
   }
 
   if (!newsData.items || newsData.items.length === 0) {
-    console.log('[News] Missing items array');
+    (()=>{})('[News] Missing items array');
     return <SectionError sectionName="News" error="No news items found. Expected 'items' array in data." data={newsData} />;
   }
 

@@ -11,21 +11,21 @@ export default function Access() {
   const { getText } = useLocalize();
   const { language } = useLanguage();
 
-  console.log('[Access] accessData:', accessData);
+  (()=>{})('[Access] accessData:', accessData);
 
   if (!accessData) {
-    console.log('[Access] No accessData');
+    (()=>{})('[Access] No accessData');
     return <SectionError sectionName="Access" error="No access data available" data={accessData} />;
   }
 
   const sectionTitle = getText(accessData.sectionTitle);
   const sectionSubtitle = getText(accessData.sectionSubtitle);
 
-  console.log('[Access] sectionTitle:', sectionTitle);
-  console.log('[Access] address:', accessData.address);
+  (()=>{})('[Access] sectionTitle:', sectionTitle);
+  (()=>{})('[Access] address:', accessData.address);
 
   if (!sectionTitle) {
-    console.log('[Access] Missing sectionTitle');
+    (()=>{})('[Access] Missing sectionTitle');
     return <SectionError sectionName="Access" error="Missing section title" data={accessData} />;
   }
 

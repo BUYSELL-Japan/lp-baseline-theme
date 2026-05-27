@@ -15,24 +15,24 @@ export default function StoreInfo() {
   const storeInfoData = useStoreInfoData();
   const { t } = useLocalize();
 
-  console.log('[StoreInfo] storeInfoData:', storeInfoData);
+  (()=>{})('[StoreInfo] storeInfoData:', storeInfoData);
 
   if (!storeInfoData) {
-    console.log('[StoreInfo] No storeInfoData');
+    (()=>{})('[StoreInfo] No storeInfoData');
     return <SectionError sectionName="Store Info" error="No store information data available" data={storeInfoData} />;
   }
 
   const sectionTitle = t(storeInfoData, 'sectionTitle');
 
-  console.log('[StoreInfo] sectionTitle:', sectionTitle);
-  console.log('[StoreInfo] items:', storeInfoData.items);
+  (()=>{})('[StoreInfo] sectionTitle:', sectionTitle);
+  (()=>{})('[StoreInfo] items:', storeInfoData.items);
 
   if (!sectionTitle) {
     return <SectionError sectionName="Store Info" error="Missing section title" data={storeInfoData} />;
   }
 
   if (!storeInfoData.items || !Array.isArray(storeInfoData.items) || storeInfoData.items.length === 0) {
-    console.log('[StoreInfo] Missing items array');
+    (()=>{})('[StoreInfo] Missing items array');
     return <SectionError sectionName="Store Info" error="No store information items found. Expected 'items' array in data." data={storeInfoData} />;
   }
 

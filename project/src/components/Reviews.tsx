@@ -14,10 +14,10 @@ export default function Reviews() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  console.log('[Reviews] reviewsData:', reviewsData);
+  (()=>{})('[Reviews] reviewsData:', reviewsData);
 
   if (!reviewsData) {
-    console.log('[Reviews] No reviewsData');
+    (()=>{})('[Reviews] No reviewsData');
     return <SectionError sectionName="Reviews" error="No reviews data available" data={reviewsData} />;
   }
 
@@ -51,16 +51,16 @@ export default function Reviews() {
   const sectionTitle = getText(reviewsData.sectionTitle);
   const sectionSubtitle = getText(reviewsData.sectionSubtitle);
 
-  console.log('[Reviews] sectionTitle:', sectionTitle);
-  console.log('[Reviews] sectionSubtitle:', sectionSubtitle);
-  console.log('[Reviews] reviews:', reviewsData.reviews);
+  (()=>{})('[Reviews] sectionTitle:', sectionTitle);
+  (()=>{})('[Reviews] sectionSubtitle:', sectionSubtitle);
+  (()=>{})('[Reviews] reviews:', reviewsData.reviews);
 
   if (!sectionTitle) {
     return <SectionError sectionName="Reviews" error="Missing section title" data={reviewsData} />;
   }
 
   if (!reviewsData.reviews || reviewsData.reviews.length === 0) {
-    console.log('[Reviews] Missing reviews array');
+    (()=>{})('[Reviews] Missing reviews array');
     return <SectionError sectionName="Reviews" error="No reviews found. Expected 'reviews' array in data." data={reviewsData} />;
   }
 

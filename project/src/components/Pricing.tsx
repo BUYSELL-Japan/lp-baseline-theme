@@ -11,25 +11,25 @@ export default function Pricing() {
   const { getText } = useLocalize();
   const { language } = useLanguage();
 
-  console.log('[Pricing] pricingData:', pricingData);
+  (()=>{})('[Pricing] pricingData:', pricingData);
 
   if (!pricingData) {
-    console.log('[Pricing] No pricingData');
+    (()=>{})('[Pricing] No pricingData');
     return <SectionError sectionName="Pricing" error="No pricing data available" data={pricingData} />;
   }
 
   const sectionTitle = getText(pricingData.sectionTitle);
   const sectionSubtitle = getText(pricingData.sectionSubtitle);
 
-  console.log('[Pricing] sectionTitle:', sectionTitle);
-  console.log('[Pricing] plans:', pricingData.plans);
+  (()=>{})('[Pricing] sectionTitle:', sectionTitle);
+  (()=>{})('[Pricing] plans:', pricingData.plans);
 
   if (!sectionTitle) {
     return <SectionError sectionName="Pricing" error="Missing section title" data={pricingData} />;
   }
 
   if (!pricingData.plans || !Array.isArray(pricingData.plans) || pricingData.plans.length === 0) {
-    console.log('[Pricing] Missing plans array');
+    (()=>{})('[Pricing] Missing plans array');
     return <SectionError sectionName="Pricing" error="No pricing plans found. Expected 'plans' array in data." data={pricingData} />;
   }
 

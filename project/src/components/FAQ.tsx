@@ -10,25 +10,25 @@ export default function FAQ() {
   const { getText } = useLocalize();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-  console.log('[FAQ] faqData:', faqData);
+  (()=>{})('[FAQ] faqData:', faqData);
 
   if (!faqData) {
-    console.log('[FAQ] No faqData');
+    (()=>{})('[FAQ] No faqData');
     return <SectionError sectionName="FAQ" error="No FAQ data available" data={faqData} />;
   }
 
   const sectionTitle = getText(faqData.sectionTitle);
   const sectionSubtitle = getText(faqData.sectionSubtitle);
 
-  console.log('[FAQ] sectionTitle:', sectionTitle);
-  console.log('[FAQ] items:', faqData.items);
+  (()=>{})('[FAQ] sectionTitle:', sectionTitle);
+  (()=>{})('[FAQ] items:', faqData.items);
 
   if (!sectionTitle) {
     return <SectionError sectionName="FAQ" error="Missing section title" data={faqData} />;
   }
 
   if (!faqData.items || !Array.isArray(faqData.items) || faqData.items.length === 0) {
-    console.log('[FAQ] Missing items array');
+    (()=>{})('[FAQ] Missing items array');
     return <SectionError sectionName="FAQ" error="No FAQ items found. Expected 'items' array in data." data={faqData} />;
   }
 

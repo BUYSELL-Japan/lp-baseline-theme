@@ -8,24 +8,24 @@ export default function CTA() {
   const ctaData = useCTAData();
   const { getText } = useLocalize();
 
-  console.log('[CTA] ctaData:', ctaData);
+  (()=>{})('[CTA] ctaData:', ctaData);
 
   if (!ctaData) {
-    console.log('[CTA] No ctaData');
+    (()=>{})('[CTA] No ctaData');
     return <SectionError sectionName="CTA" error="No CTA data available" data={ctaData} />;
   }
 
   const sectionTitle = getText(ctaData.sectionTitle);
 
-  console.log('[CTA] sectionTitle:', sectionTitle);
-  console.log('[CTA] buttons:', ctaData.buttons);
+  (()=>{})('[CTA] sectionTitle:', sectionTitle);
+  (()=>{})('[CTA] buttons:', ctaData.buttons);
 
   if (!sectionTitle) {
     return <SectionError sectionName="CTA" error="Missing section title" data={ctaData} />;
   }
 
   if (!ctaData.buttons || !Array.isArray(ctaData.buttons) || ctaData.buttons.length === 0) {
-    console.log('[CTA] Missing buttons array');
+    (()=>{})('[CTA] Missing buttons array');
     return <SectionError sectionName="CTA" error="No CTA buttons found. Expected 'buttons' array in data." data={ctaData} />;
   }
 

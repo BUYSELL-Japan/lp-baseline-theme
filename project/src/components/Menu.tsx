@@ -55,10 +55,10 @@ export default function Menu() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  console.log('[Menu] menuData:', menuData);
+  // (()=>{})('[Menu] menuData:', menuData);
 
   if (!menuData) {
-    console.log('[Menu] No menuData');
+    (()=>{})('[Menu] No menuData');
     return <SectionError sectionName="Menu" error="No menu data available" data={menuData} />;
   }
   const [lightboxOpen, setLightboxOpen] = useState(false);

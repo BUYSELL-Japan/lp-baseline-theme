@@ -14,11 +14,11 @@ export default function Hero() {
     offset: ['start start', 'end start'],
   });
 
-  console.log('[Hero] heroData:', heroData);
-  console.log('[Hero] language:', language);
+  (()=>{})('[Hero] heroData:', heroData);
+  (()=>{})('[Hero] language:', language);
 
   if (!heroData) {
-    console.log('[Hero] No heroData, returning null');
+    (()=>{})('[Hero] No heroData, returning null');
     return null;
   }
 
@@ -28,8 +28,8 @@ export default function Hero() {
   let title = getLocalizedValue(heroData, 'sectionTitle', language) || getLocalizedValue(heroData, 'title', language);
   let subtitle = getLocalizedValue(heroData, 'sectionSubtitle', language) || getLocalizedValue(heroData, 'subtitle', language);
 
-  console.log('[Hero] Raw title:', title);
-  console.log('[Hero] Raw subtitle:', subtitle);
+  (()=>{})('[Hero] Raw title:', title);
+  (()=>{})('[Hero] Raw subtitle:', subtitle);
 
   if (typeof title === 'object') {
     title = title[language] || title['ja'] || title[Object.keys(title)[0]] || '';
@@ -41,12 +41,12 @@ export default function Hero() {
   title = String(title || '');
   subtitle = String(subtitle || '');
 
-  console.log('[Hero] Processed title:', title);
-  console.log('[Hero] Processed subtitle:', subtitle);
-  console.log('[Hero] backgroundImage:', heroData.backgroundImage);
+  (()=>{})('[Hero] Processed title:', title);
+  (()=>{})('[Hero] Processed subtitle:', subtitle);
+  (()=>{})('[Hero] backgroundImage:', heroData.backgroundImage);
 
   if (!title && !subtitle && !heroData.backgroundImage) {
-    console.log('[Hero] No content to display, returning null');
+    (()=>{})('[Hero] No content to display, returning null');
     return null;
   }
 

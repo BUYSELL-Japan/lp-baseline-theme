@@ -32,20 +32,20 @@
   --color-bg-section-alt: #f2ebe0;      /* 温かいベージュ（床・テーブル色味） */
   --color-bg-gradient-from: #f2ebe0;    /* セクション切り替えグラデーション起点 */
 
-  /* ===== プライマリ（ネイビーブルー） ===== */
-  /* 看板の「kamado」文字のネイビーから直接抽出。誠実さ・沖縄の海 */
-  --color-primary: #1e3a7a;             /* kamado 文字ネイビー */
-  --color-primary-hover: #152c61;       /* ホバー時（より深く） */
-  --color-primary-light: #dde6f5;       /* 薄いネイビー背景（アイコン背景等） */
-  --color-primary-lighter: #eef3fa;     /* さらに薄い（セクション背景等） */
-  --color-primary-text: #1e3a7a;        /* テキストへの適用 */
+  /* ===== プライマリ（珊瑚レッド） ===== */
+  /* 看板本体の珊瑚色・内観天井のクリムゾンレッド。サイトのメインカラーとして使用 */
+  --color-primary: #c8433a;             /* 看板本体の珊瑚レッド */
+  --color-primary-hover: #a8362f;       /* ホバー時（より深く） */
+  --color-primary-light: #fce8e7;       /* 薄い珊瑚背景（アイコン背景等） */
+  --color-primary-lighter: #fdf1f0;     /* さらに薄い（セクション背景等） */
+  --color-primary-text: #c8433a;        /* テキストへの適用 */
 
-  /* ===== サブアクセント（珊瑚レッド） ===== */
-  /* 看板本体の珊瑚色・内観天井のクリムゾンレッド。バッジ・価格タグ・CTAに */
-  --color-accent: #c8433a;              /* 看板本体の珊瑚レッド */
-  --color-accent-hover: #a8362f;        /* ホバー時（より深く） */
-  --color-accent-light: #fce8e7;        /* 薄い珊瑚背景 */
-  --color-accent-text: #c8433a;         /* テキストへの適用 */
+  /* ===== サブアクセント（ネイビーブルー） ===== */
+  /* 看板の「kamado」文字のネイビーから抽出。誠実さ・引き締め役に */
+  --color-accent: #1e3a7a;              /* kamado 文字ネイビー */
+  --color-accent-hover: #152c61;        /* ホバー時（より深く） */
+  --color-accent-light: #dde6f5;        /* 薄いネイビー背景 */
+  --color-accent-text: #1e3a7a;         /* テキストへの適用 */
 
   /* ===== 装飾アクセント（シーサーゴールド） ===== */
   /* 看板のシーサー（獅子）の金色。ミンサー・装飾的な強調要素に */

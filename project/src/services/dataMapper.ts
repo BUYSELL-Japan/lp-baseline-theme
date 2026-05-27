@@ -938,7 +938,7 @@ export function mapDynamoDBDataToPageData(dynamoData: any): PageData {
       storeInfo: getSectionData('storeInfo', storeInfoData, defaultData.storeInfo),
       contact: getSectionData('contact', contactData, defaultData.contact),
       footer: getSectionData('footer', footerExtracted, defaultData.footer),
-      gallery: getSectionData('gallery', galleryData, defaultData.gallery),
+      gallery: getSectionData('gallery', galleryData, null), // 未登録時はサンプルを使わずnullにする
       staff: getSectionData('staff', staffData, defaultData.staff),
       reviews: getSectionData('reviews', reviewsDataTransformed, defaultData.reviews),
       news: getSectionData('news', extractTranslatedData(contentData.news, 'news'), defaultData.news),

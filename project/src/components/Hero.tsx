@@ -101,6 +101,13 @@ export default function Hero() {
         </motion.div>
 
         <motion.div
+          initial={{ width: 0 }}
+          animate={{ width: "80px" }}
+          transition={{ duration: 1, delay: 1.2, ease: "easeOut" }}
+          className="h-1.5 bg-theme-accent mt-8 mb-4 rounded-full shadow-[0_0_10px_rgba(200,67,58,0.5)]"
+        />
+
+        <motion.div
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 1.5 }}
@@ -110,7 +117,7 @@ export default function Hero() {
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
           >
-            <ChevronDown className="w-12 h-12 text-white/80" />
+            <ChevronDown className="w-12 h-12 text-theme-accent opacity-90 drop-shadow-lg" />
           </motion.div>
         </motion.div>
       </motion.div>

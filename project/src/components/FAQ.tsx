@@ -45,7 +45,7 @@ export default function FAQ() {
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             {sectionTitle}
           </h2>
-          <div className="w-24 h-1 bg-theme-primary mx-auto mb-6" />
+          <div className="w-24 h-1 bg-theme-divider mx-auto mb-6" />
           <p className="text-xl text-gray-700">{sectionSubtitle}</p>
         </motion.div>
 

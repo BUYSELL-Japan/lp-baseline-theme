@@ -81,7 +81,7 @@ export default function Header() {
   return (
     <>
       <motion.header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-t-4 border-theme-accent ${
           scrolled || mobileMenuOpen
             ? 'bg-white shadow-lg'
             : 'bg-transparent'
@@ -99,7 +99,7 @@ export default function Header() {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              <Waves className={`w-8 h-8 shrink-0 ${scrolled || mobileMenuOpen ? 'text-theme-primary' : 'text-white'}`} />
+              <Waves className={`w-8 h-8 shrink-0 ${scrolled || mobileMenuOpen ? 'text-theme-accent' : 'text-white'}`} />
               <span className={`text-xl md:text-2xl font-bold leading-tight truncate ${scrolled || mobileMenuOpen ? 'text-gray-900' : 'text-white'}`}>
                 {(() => {
                   let logoText = getLocalizedValue(headerData.logo, 'text', language);
@@ -125,8 +125,8 @@ export default function Header() {
                     onClick={() => scrollToSection(item.id)}
                     className={`text-sm font-medium transition-colors whitespace-nowrap ${
                       scrolled
-                        ? 'text-gray-700 hover:text-theme-primary'
-                        : 'text-white hover:text-theme-footer-subtle'
+                        ? 'text-gray-700 hover:text-theme-accent'
+                        : 'text-white hover:text-theme-accent'
                     }`}
                     whileHover={{ y: -2 }}
                     whileTap={{ y: 0 }}
@@ -170,7 +170,7 @@ export default function Header() {
                           href={`${basePath}${lang === 'ja' ? '' : lang + '/'}`}
                           className={`block w-full text-left px-4 py-3 text-sm font-medium transition-colors ${
                             language === lang
-                              ? 'bg-theme-primary-lighter text-theme-primary font-bold'
+                              ? 'bg-theme-primary-lighter text-theme-accent font-bold'
                               : 'text-gray-700 hover:bg-gray-50'
                           }`}
                           onClick={() => setLanguageMenuOpen(false)}
@@ -220,7 +220,7 @@ export default function Header() {
                   <motion.button
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
-                    className="block w-full text-left px-4 py-4 text-xl font-bold text-gray-900 hover:bg-theme-primary-lighter hover:text-theme-primary rounded-xl transition-colors"
+                    className="block w-full text-left px-4 py-4 text-xl font-bold text-gray-900 hover:text-theme-accent transition-colors"
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.25, delay: index * 0.04 }}
@@ -241,7 +241,7 @@ export default function Header() {
                     href={`${basePath}${lang === 'ja' ? '' : lang + '/'}`}
                     className={`px-4 py-3 rounded-xl font-bold text-center text-sm transition-colors ${
                       language === lang
-                        ? 'bg-theme-primary text-white'
+                        ? 'bg-theme-accent text-white'
                         : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                     }`}
                   >

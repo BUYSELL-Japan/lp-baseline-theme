@@ -94,7 +94,7 @@ export default function Contact() {
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             {t(contactData, 'sectionTitle')}
           </h2>
-          <div className="w-24 h-1 bg-theme-primary mx-auto mb-6" />
+          <div className="w-24 h-1 bg-theme-divider mx-auto mb-6" />
           <p className="text-xl text-gray-700">
             {t(contactData, 'sectionSubtitle')}
           </p>

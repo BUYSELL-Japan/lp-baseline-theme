@@ -99,7 +99,7 @@ export default function Header() {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              <Waves className={`w-8 h-8 shrink-0 ${scrolled || mobileMenuOpen ? 'text-teal-600' : 'text-white'}`} />
+              <Waves className={`w-8 h-8 shrink-0 ${scrolled || mobileMenuOpen ? 'text-theme-primary' : 'text-white'}`} />
               <span className={`text-xl md:text-2xl font-bold leading-tight truncate ${scrolled || mobileMenuOpen ? 'text-gray-900' : 'text-white'}`}>
                 {(() => {
                   let logoText = getLocalizedValue(headerData.logo, 'text', language);
@@ -125,8 +125,8 @@ export default function Header() {
                     onClick={() => scrollToSection(item.id)}
                     className={`text-sm font-medium transition-colors whitespace-nowrap ${
                       scrolled
-                        ? 'text-gray-700 hover:text-teal-600'
-                        : 'text-white hover:text-teal-300'
+                        ? 'text-gray-700 hover:text-theme-primary'
+                        : 'text-white hover:text-theme-footer-subtle'
                     }`}
                     whileHover={{ y: -2 }}
                     whileTap={{ y: 0 }}
@@ -170,7 +170,7 @@ export default function Header() {
                           href={`${basePath}${lang === 'ja' ? '' : lang + '/'}`}
                           className={`block w-full text-left px-4 py-3 text-sm font-medium transition-colors ${
                             language === lang
-                              ? 'bg-teal-50 text-teal-600 font-bold'
+                              ? 'bg-theme-primary-lighter text-theme-primary font-bold'
                               : 'text-gray-700 hover:bg-gray-50'
                           }`}
                           onClick={() => setLanguageMenuOpen(false)}
@@ -220,7 +220,7 @@ export default function Header() {
                   <motion.button
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
-                    className="block w-full text-left px-4 py-4 text-xl font-bold text-gray-900 hover:bg-teal-50 hover:text-teal-600 rounded-xl transition-colors"
+                    className="block w-full text-left px-4 py-4 text-xl font-bold text-gray-900 hover:bg-theme-primary-lighter hover:text-theme-primary rounded-xl transition-colors"
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.25, delay: index * 0.04 }}
@@ -241,7 +241,7 @@ export default function Header() {
                     href={`${basePath}${lang === 'ja' ? '' : lang + '/'}`}
                     className={`px-4 py-3 rounded-xl font-bold text-center text-sm transition-colors ${
                       language === lang
-                        ? 'bg-teal-600 text-white'
+                        ? 'bg-theme-primary text-white'
                         : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                     }`}
                   >

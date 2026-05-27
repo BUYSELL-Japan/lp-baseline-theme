@@ -37,7 +37,7 @@ export default function StoreInfo() {
   }
 
   return (
-    <section id="storeInfo" className="py-24 px-4 bg-gradient-to-b from-white to-teal-50/30">
+    <section id="storeInfo" className="py-24 px-4">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -47,7 +47,7 @@ export default function StoreInfo() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">{t(storeInfoData, 'sectionTitle')}</h2>
-          <div className="w-24 h-1 bg-teal-600 mx-auto" />
+          <div className="w-24 h-1 bg-theme-divider mx-auto" />
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
@@ -71,11 +71,11 @@ export default function StoreInfo() {
               >
                 <div className="flex items-start gap-4">
                   <motion.div
-                    className="bg-teal-100 p-3 rounded-xl"
+                    className="bg-theme-primary-light p-3 rounded-xl"
                     whileHover={{ rotate: 360, scale: 1.1 }}
                     transition={{ duration: 0.6 }}
                   >
-                    <IconComponent className="w-6 h-6 text-teal-600" />
+                    <IconComponent className="w-6 h-6 text-theme-primary" />
                   </motion.div>
                   <div>
                     <h3 className="text-xl font-bold text-gray-900 mb-2">{t(item, 'title')}</h3>

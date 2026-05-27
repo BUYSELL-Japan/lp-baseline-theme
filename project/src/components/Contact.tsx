@@ -82,7 +82,7 @@ export default function Contact() {
   const isDisabled = submitStatus === 'sending' || submitStatus === 'success';
 
   return (
-    <section id="contact" className="py-24 px-4 bg-gradient-to-b from-teal-50/30 to-white">
+    <section id="contact" className="py-24 px-4 bg-section-gradient">
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -94,7 +94,7 @@ export default function Contact() {
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             {t(contactData, 'sectionTitle')}
           </h2>
-          <div className="w-24 h-1 bg-teal-600 mx-auto mb-6" />
+          <div className="w-24 h-1 bg-theme-primary mx-auto mb-6" />
           <p className="text-xl text-gray-700">
             {t(contactData, 'sectionSubtitle')}
           </p>
@@ -136,7 +136,7 @@ export default function Contact() {
                 onFocus={() => setFocused('name')}
                 onBlur={() => setFocused(null)}
                 disabled={isDisabled}
-                className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-teal-600 focus:outline-none transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+                className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-theme-primary focus:outline-none transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
                 animate={{ scale: focused === 'name' ? 1.02 : 1, borderColor: focused === 'name' ? '#0d9488' : '#e5e7eb' }}
                 transition={{ duration: 0.2 }}
                 required
@@ -156,7 +156,7 @@ export default function Contact() {
                 onFocus={() => setFocused('email')}
                 onBlur={() => setFocused(null)}
                 disabled={isDisabled}
-                className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-teal-600 focus:outline-none transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+                className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-theme-primary focus:outline-none transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
                 animate={{ scale: focused === 'email' ? 1.02 : 1, borderColor: focused === 'email' ? '#0d9488' : '#e5e7eb' }}
                 transition={{ duration: 0.2 }}
                 required
@@ -176,7 +176,7 @@ export default function Contact() {
                 onFocus={() => setFocused('subject')}
                 onBlur={() => setFocused(null)}
                 disabled={isDisabled}
-                className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-teal-600 focus:outline-none transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+                className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-theme-primary focus:outline-none transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
                 animate={{ scale: focused === 'subject' ? 1.02 : 1, borderColor: focused === 'subject' ? '#0d9488' : '#e5e7eb' }}
                 transition={{ duration: 0.2 }}
                 required
@@ -196,7 +196,7 @@ export default function Contact() {
                 onBlur={() => setFocused(null)}
                 rows={6}
                 disabled={isDisabled}
-                className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-teal-600 focus:outline-none transition-colors resize-none disabled:opacity-60 disabled:cursor-not-allowed"
+                className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-theme-primary focus:outline-none transition-colors resize-none disabled:opacity-60 disabled:cursor-not-allowed"
                 animate={{ scale: focused === 'message' ? 1.02 : 1, borderColor: focused === 'message' ? '#0d9488' : '#e5e7eb' }}
                 transition={{ duration: 0.2 }}
                 required
@@ -207,7 +207,7 @@ export default function Contact() {
             <motion.button
               type="submit"
               disabled={isDisabled}
-              className="w-full bg-teal-600 text-white py-4 rounded-lg font-bold text-lg shadow-lg flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+              className="w-full bg-theme-primary text-white py-4 rounded-lg font-bold text-lg shadow-lg flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
               whileHover={!isDisabled ? { scale: 1.02, y: -2, boxShadow: '0 20px 25px -5px rgb(0 0 0 / 0.1)' } : {}}
               whileTap={!isDisabled ? { scale: 0.98 } : {}}
               transition={{ duration: 0.2 }}

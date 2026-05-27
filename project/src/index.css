@@ -1,3 +1,8 @@
+/* default.css を先に読み込み、次に上書きしたいテーマCSSを読み込む */
+/* warm.css を使いたい場合は warm.css の import をコメントアウト解除してください */
+/* @import './themes/Standard/default.css'; */
+@import './themes/Standard/warm.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -11,6 +16,7 @@
 
   body {
     @apply font-sans antialiased;
+    background-color: var(--color-bg-base, #ffffff);
     overflow-x: hidden;
     max-width: 100%;
   }
@@ -28,5 +34,32 @@
 
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
+  }
+
+  /* CTA グラデーションオーバーレイ（CSS変数対応） */
+  .bg-cta-overlay {
+    background: linear-gradient(
+      to right,
+      var(--color-cta-overlay-from),
+      var(--color-cta-overlay-to)
+    );
+  }
+
+  /* フッターグラデーション（CSS変数対応） */
+  .bg-footer-gradient {
+    background: linear-gradient(
+      to bottom,
+      var(--color-footer-bg-from),
+      var(--color-footer-bg-to)
+    );
+  }
+
+  /* セクショングラデーション（下から白へ） */
+  .bg-section-gradient {
+    background: linear-gradient(
+      to bottom,
+      var(--color-bg-gradient-from),
+      #ffffff
+    );
   }
 }

@@ -37,7 +37,7 @@ export default function CTA() {
           alt="Background"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-teal-900/95 to-teal-800/90" />
+        <div className="absolute inset-0 bg-cta-overlay" />
       </div>
 
       <div className="relative max-w-4xl mx-auto text-center">
@@ -71,7 +71,7 @@ export default function CTA() {
                 whileTap={{ scale: 0.95 }}
                 className={`inline-flex items-center gap-3 px-8 py-4 rounded-full text-lg font-bold transition-all shadow-lg ${
                   button.type === 'primary'
-                    ? 'bg-white text-teal-900 hover:bg-gray-100'
+                    ? 'bg-white text-theme-cta-btn-text hover:bg-gray-100'
                     : 'bg-transparent text-white border-2 border-white hover:bg-white/10'
                 }`}
               >

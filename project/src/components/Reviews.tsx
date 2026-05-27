@@ -77,7 +77,7 @@ export default function Reviews() {
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             {sectionTitle}
           </h2>
-          <div className="w-24 h-1 bg-teal-600 mx-auto mb-6" />
+          <div className="w-24 h-1 bg-theme-divider mx-auto mb-6" />
           <p className="text-xl text-gray-700">{sectionSubtitle}</p>
         </motion.div>
 
@@ -175,7 +175,7 @@ export default function Reviews() {
                 onClick={() => scrollToIndex(index)}
                 className={`w-2 h-2 rounded-full transition-all duration-300 ${
                   index === currentIndex
-                    ? 'bg-teal-600 w-8'
+                    ? 'bg-theme-primary w-8'
                     : 'bg-gray-300 hover:bg-gray-400'
                 }`}
                 aria-label={`${translate('review', language)} ${index + 1}${translate('showItem', language)}`}

@@ -28,7 +28,7 @@ export default function Footer() {
   const description = getText(footerData.description);
 
   return (
-    <footer className="relative bg-gradient-to-b from-teal-900 to-teal-950 text-white overflow-hidden">
+    <footer className="relative bg-footer-gradient text-white overflow-hidden">
       <div className="absolute inset-0 opacity-10">
         <svg className="w-full h-32" viewBox="0 0 1200 120" preserveAspectRatio="none">
           <motion.path
@@ -62,7 +62,7 @@ export default function Footer() {
               <Waves className="w-8 h-8" />
               <span className="text-2xl font-bold">{logoText}</span>
             </div>
-            <p className="text-teal-200 leading-relaxed">
+            <p className="text-theme-footer-muted leading-relaxed">
               {description.split('\n').map((line: string, i: number) => (
                 <span key={i}>
                   {line}
@@ -80,9 +80,9 @@ export default function Footer() {
               transition={{ duration: 0.6, delay: 0.1 }}
             >
               <h3 className="text-xl font-bold mb-4">{getText(footerData.businessHours.title)}</h3>
-              <p className="text-teal-200">{getText(footerData.businessHours.days)}</p>
-              <p className="text-teal-200">{getText(footerData.businessHours.hours)}</p>
-              <p className="text-teal-200 text-sm mt-2">{getText(footerData.businessHours.closedDay)}</p>
+              <p className="text-theme-footer-muted">{getText(footerData.businessHours.days)}</p>
+              <p className="text-theme-footer-muted">{getText(footerData.businessHours.hours)}</p>
+              <p className="text-theme-footer-muted text-sm mt-2">{getText(footerData.businessHours.closedDay)}</p>
             </motion.div>
           )}
 
@@ -108,7 +108,7 @@ export default function Footer() {
                       <motion.a
                         key={index}
                         href={social.url}
-                        className="bg-teal-800 p-3 rounded-full hover:bg-teal-700 transition-colors"
+                        className="bg-theme-footer-icon p-3 rounded-full hover:bg-theme-footer-icon-hover transition-colors"
                         whileHover={{ scale: 1.1, y: -3 }}
                         whileTap={{ scale: 0.95 }}
                       >
@@ -127,9 +127,9 @@ export default function Footer() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="border-t border-teal-800 pt-8 text-center"
+          className="border-t border-theme-footer-border pt-8 text-center"
         >
-          <p className="text-teal-300">&copy; {currentYear} {getText(footerData.copyright)}</p>
+          <p className="text-theme-footer-subtle">&copy; {currentYear} {getText(footerData.copyright)}</p>
         </motion.div>
       </div>
     </footer>

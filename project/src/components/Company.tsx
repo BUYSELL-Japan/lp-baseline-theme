@@ -42,7 +42,7 @@ export default function Company() {
                 <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
                   {sectionTitle}
                 </h2>
-                <div className="w-24 h-1 bg-teal-600 mx-auto mb-6" />
+                <div className="w-24 h-1 bg-theme-primary mx-auto mb-6" />
               </>
             )}
             {sectionSubtitle && (
@@ -61,8 +61,8 @@ export default function Company() {
             className="bg-white rounded-3xl shadow-lg p-8 md:p-12"
           >
             <div className="flex items-center gap-4 mb-6">
-              <div className="bg-teal-100 p-4 rounded-2xl">
-                <Heart className="w-8 h-8 text-teal-600" />
+              <div className="bg-theme-primary-light p-4 rounded-2xl">
+                <Heart className="w-8 h-8 text-theme-primary" />
               </div>
               <h3 className="text-3xl font-bold text-gray-900">
                 {getText(companyData.philosophy.title)}
@@ -83,8 +83,8 @@ export default function Company() {
             className="bg-white rounded-3xl shadow-lg p-8 md:p-12"
           >
             <div className="flex items-center gap-4 mb-8">
-              <div className="bg-teal-100 p-4 rounded-2xl">
-                <History className="w-8 h-8 text-teal-600" />
+              <div className="bg-theme-primary-light p-4 rounded-2xl">
+                <History className="w-8 h-8 text-theme-primary" />
               </div>
               <h3 className="text-3xl font-bold text-gray-900">
                 {getText(companyData.history.title)}
@@ -92,7 +92,7 @@ export default function Company() {
             </div>
 
             <div className="relative">
-              <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-teal-200" />
+              <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-theme-primary-light" />
               <div className="space-y-6">
                 {companyData.history.timeline.map((item, index) => (
                   <motion.div
@@ -103,11 +103,11 @@ export default function Company() {
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     className="relative pl-12"
                   >
-                    <div className="absolute left-0 top-1 w-8 h-8 bg-teal-600 rounded-full flex items-center justify-center">
+                    <div className="absolute left-0 top-1 w-8 h-8 bg-theme-primary rounded-full flex items-center justify-center">
                       <div className="w-3 h-3 bg-white rounded-full" />
                     </div>
                     <div className="bg-gray-50 rounded-xl p-4 hover:bg-gray-100 transition-colors">
-                      <div className="font-bold text-teal-600 text-lg mb-1">
+                      <div className="font-bold text-theme-primary text-lg mb-1">
                         {getText(item.year)}
                       </div>
                       <div className="text-gray-700">{getText(item.event)}</div>
@@ -128,8 +128,8 @@ export default function Company() {
             className="bg-white rounded-3xl shadow-lg p-8 md:p-12"
           >
             <div className="flex items-center gap-4 mb-8">
-              <div className="bg-teal-100 p-4 rounded-2xl">
-                <Building2 className="w-8 h-8 text-teal-600" />
+              <div className="bg-theme-primary-light p-4 rounded-2xl">
+                <Building2 className="w-8 h-8 text-theme-primary" />
               </div>
               <h3 className="text-3xl font-bold text-gray-900">
                 {getText(companyData.companyInfo.title)}
@@ -146,7 +146,7 @@ export default function Company() {
                   transition={{ duration: 0.5, delay: index * 0.05 }}
                   className="flex flex-col md:flex-row md:items-start gap-2"
                 >
-                  <div className="font-bold text-teal-600 min-w-[120px]">
+                  <div className="font-bold text-theme-primary min-w-[120px]">
                     {getText(item.label)}
                   </div>
                   <div className="text-gray-700 flex-1">{getText(item.value)}</div>

@@ -45,7 +45,7 @@ export default function FAQ() {
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             {sectionTitle}
           </h2>
-          <div className="w-24 h-1 bg-teal-600 mx-auto mb-6" />
+          <div className="w-24 h-1 bg-theme-primary mx-auto mb-6" />
           <p className="text-xl text-gray-700">{sectionSubtitle}</p>
         </motion.div>
 
@@ -73,7 +73,7 @@ export default function FAQ() {
                   transition={{ duration: 0.3 }}
                   className="flex-shrink-0"
                 >
-                  <ChevronDown className="w-6 h-6 text-teal-600" />
+                  <ChevronDown className="w-6 h-6 text-theme-primary" />
                 </motion.div>
               </motion.button>
 

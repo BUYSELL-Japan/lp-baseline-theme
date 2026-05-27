@@ -47,7 +47,7 @@ export default function News() {
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             {sectionTitle}
           </h2>
-          <div className="w-24 h-1 bg-teal-600 mx-auto mb-6" />
+          <div className="w-24 h-1 bg-theme-divider mx-auto mb-6" />
           <p className="text-xl text-gray-700">{sectionSubtitle}</p>
         </motion.div>
 
@@ -64,12 +64,12 @@ export default function News() {
             >
               <div className="flex flex-col md:flex-row md:items-center gap-4">
                 <div className="flex items-center gap-4 flex-shrink-0">
-                  <div className="bg-teal-100 p-3 rounded-xl">
-                    <Calendar className="w-6 h-6 text-teal-600" />
+                  <div className="bg-theme-primary-light p-3 rounded-xl">
+                    <Calendar className="w-6 h-6 text-theme-primary" />
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">{getText(item.date)}</p>
-                    <span className="inline-flex items-center gap-1 px-3 py-1 bg-teal-600 text-white text-xs rounded-full mt-1">
+                    <span className="inline-flex items-center gap-1 px-3 py-1 bg-theme-primary text-white text-xs rounded-full mt-1">
                       <Tag className="w-3 h-3" />
                       {getCategory(item.category)}
                     </span>

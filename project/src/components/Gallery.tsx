@@ -126,7 +126,7 @@ export default function Gallery() {
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             {sectionTitle}
           </h2>
-          <div className="w-24 h-1 bg-teal-600 mx-auto mb-6" />
+          <div className="w-24 h-1 bg-theme-primary mx-auto mb-6" />
           <p className="text-xl text-gray-700">{sectionSubtitle}</p>
         </motion.div>
 
@@ -142,7 +142,7 @@ export default function Gallery() {
             onClick={() => setSelectedCategoryIndex(0)}
             className={`px-6 py-3 rounded-full font-medium transition-all ${
               selectedCategoryIndex === 0
-                ? 'bg-teal-600 text-white shadow-lg'
+                ? 'bg-theme-primary text-white shadow-lg'
                 : 'bg-white text-gray-700 hover:bg-gray-100 shadow'
             }`}
             whileHover={{ scale: 1.05, y: -2 }}
@@ -159,7 +159,7 @@ export default function Gallery() {
                 onClick={() => setSelectedCategoryIndex(categoryIndex)}
                 className={`px-6 py-3 rounded-full font-medium transition-all ${
                   selectedCategoryIndex === categoryIndex
-                    ? 'bg-teal-600 text-white shadow-lg'
+                    ? 'bg-theme-primary text-white shadow-lg'
                     : 'bg-white text-gray-700 hover:bg-gray-100 shadow'
                 }`}
                 whileHover={{ scale: 1.05, y: -2 }}
@@ -196,7 +196,7 @@ export default function Gallery() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="absolute bottom-0 left-0 right-0 p-6">
                     <p className="text-white text-lg font-bold">{getText(image.caption)}</p>
-                    <span className="inline-block mt-2 px-3 py-1 bg-teal-600 text-white text-sm rounded-full">
+                    <span className="inline-block mt-2 px-3 py-1 bg-theme-primary text-white text-sm rounded-full">
                       {getText(image.category)}
                     </span>
                   </div>
@@ -231,7 +231,7 @@ export default function Gallery() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent">
                       <div className="absolute bottom-0 left-0 right-0 p-6">
                         <p className="text-white text-lg font-bold">{getText(image.caption)}</p>
-                        <span className="inline-block mt-2 px-3 py-1 bg-teal-600 text-white text-sm rounded-full">
+                        <span className="inline-block mt-2 px-3 py-1 bg-theme-primary text-white text-sm rounded-full">
                           {getText(image.category)}
                         </span>
                       </div>
@@ -249,7 +249,7 @@ export default function Gallery() {
                 onClick={() => scrollToIndex(index)}
                 className={`w-2 h-2 rounded-full transition-all duration-300 ${
                   index === currentIndex
-                    ? 'bg-teal-600 w-8'
+                    ? 'bg-theme-primary w-8'
                     : 'bg-gray-300 hover:bg-gray-400'
                 }`}
                 aria-label={`${translate('image', language)} ${index + 1}${translate('showItem', language)}`}

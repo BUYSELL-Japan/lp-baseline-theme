@@ -42,7 +42,7 @@ export default function Staff() {
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             {sectionTitle}
           </h2>
-          <div className="w-24 h-1 bg-teal-600 mx-auto mb-6" />
+          <div className="w-24 h-1 bg-theme-divider mx-auto mb-6" />
           <p className="text-xl text-gray-700">{sectionSubtitle}</p>
         </motion.div>
 
@@ -68,7 +68,7 @@ export default function Staff() {
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-1">{getText(member.name)}</h3>
-                <p className="text-teal-600 font-medium mb-3">{getText(member.role)}</p>
+                <p className="text-theme-primary font-medium mb-3">{getText(member.role)}</p>
                 <p className="text-gray-600 text-sm leading-relaxed">
                   {getText(member.description)}
                 </p>

@@ -106,15 +106,21 @@ export default function Access() {
                       {getText(accessData.transportation.title)}
                     </h3>
                     <div className="space-y-3">
-                      {accessData.transportation.methods && Array.isArray(accessData.transportation.methods) && accessData.transportation.methods.map((method, index) => (
-                        <div key={index} className="flex items-start gap-3">
-                          <div className="w-2 h-2 bg-theme-primary rounded-full mt-2 flex-shrink-0" />
-                          <div>
-                            <span className="font-bold text-gray-900">{getText(method.type)}:</span>
-                            <span className="text-gray-700 ml-2">{getText(method.description)}</span>
+                      {accessData.transportation.methods && Array.isArray(accessData.transportation.methods) && accessData.transportation.methods.map((method, index) => {
+                        const typeText = getText(method.type);
+                        const descText = getText(method.description);
+                        if (!typeText && !descText) return null;
+
+                        return (
+                          <div key={index} className="flex items-start gap-3">
+                            <div className="w-2 h-2 bg-theme-primary rounded-full mt-2 flex-shrink-0" />
+                            <div>
+                              {typeText && <span className="font-bold text-gray-900">{typeText}:</span>}
+                              {descText && <span className="text-gray-700 ml-2">{descText}</span>}
+                            </div>
                           </div>
-                        </div>
-                      ))}
+                        );
+                      })}
                     </div>
                   </div>
                 </div>

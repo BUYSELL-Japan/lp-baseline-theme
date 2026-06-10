@@ -3,6 +3,7 @@ import StorePage from './StorePage';
 import Theme2StorePage from './Theme2StorePage';
 import Theme3StorePage from './Theme3StorePage';
 import Theme4StorePage from './Theme4StorePage';
+import Theme5StorePage from './Theme5StorePage';
 import type { PageData } from '../services/dataMapper';
 import type { Language } from '../contexts/LanguageContext';
 
@@ -11,13 +12,13 @@ interface ThemeGalleryProps {
 }
 
 export default function ThemeGallery({ pageData }: ThemeGalleryProps) {
-  const [theme, setTheme] = useState<'theme1' | 'theme2' | 'theme3' | 'theme4'>('theme1');
+  const [theme, setTheme] = useState<'theme1' | 'theme2' | 'theme3' | 'theme4' | 'theme5'>('theme1');
 
   useEffect(() => {
     // Initial load
     const params = new URLSearchParams(window.location.search);
     const themeParam = params.get('theme');
-    if (themeParam === 'theme2' || themeParam === 'theme3' || themeParam === 'theme4') {
+    if (themeParam === 'theme2' || themeParam === 'theme3' || themeParam === 'theme4' || themeParam === 'theme5') {
       setTheme(themeParam);
     }
 
@@ -25,7 +26,7 @@ export default function ThemeGallery({ pageData }: ThemeGalleryProps) {
     const handlePopState = () => {
       const p = new URLSearchParams(window.location.search);
       const t = p.get('theme');
-      if (t === 'theme1' || t === 'theme2' || t === 'theme3' || t === 'theme4') {
+      if (t === 'theme1' || t === 'theme2' || t === 'theme3' || t === 'theme4' || t === 'theme5') {
         setTheme(t as any);
       } else {
         setTheme('theme1');
@@ -36,7 +37,7 @@ export default function ThemeGallery({ pageData }: ThemeGalleryProps) {
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
 
-  const changeTheme = (newTheme: 'theme1' | 'theme2' | 'theme3' | 'theme4') => {
+  const changeTheme = (newTheme: 'theme1' | 'theme2' | 'theme3' | 'theme4' | 'theme5') => {
     setTheme(newTheme);
     const url = new URL(window.location.href);
     url.searchParams.set('theme', newTheme);
@@ -127,6 +128,12 @@ export default function ThemeGallery({ pageData }: ThemeGalleryProps) {
             >
               Theme 4 (Tropical)
             </button>
+            <button 
+              className={`theme-btn ${theme === 'theme5' ? 'active' : ''}`}
+              onClick={() => changeTheme('theme5')}
+            >
+              Theme 5 (Urban)
+            </button>
           </div>
         </div>
       </div>
@@ -136,6 +143,7 @@ export default function ThemeGallery({ pageData }: ThemeGalleryProps) {
         {theme === 'theme2' && <Theme2StorePage pageData={pageData} initialLanguage={lang} basePath="/preview" />}
         {theme === 'theme3' && <Theme3StorePage pageData={pageData} initialLanguage={lang} basePath="/preview" />}
         {theme === 'theme4' && <Theme4StorePage pageData={pageData} initialLanguage={lang} basePath="/preview" />}
+        {theme === 'theme5' && <Theme5StorePage pageData={pageData} initialLanguage={lang} basePath="/preview" />}
       </div>
     </div>
   );

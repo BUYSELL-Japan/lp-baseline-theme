@@ -6,6 +6,7 @@ import StorePage from '../../../components/StorePage';
 import Theme2StorePage from '../../../components/Theme2StorePage';
 import Theme3StorePage from '../../../components/Theme3StorePage';
 import Theme4StorePage from '../../../components/Theme4StorePage';
+import Theme5StorePage from '../../../components/Theme5StorePage';
 
 export async function getStaticPaths() {
   try {
@@ -82,4 +83,5 @@ const alternateLinks = [
   {currentTheme === 'theme2' && <Theme2StorePage client:only="react" pageData={pageData} initialLanguage="ja" basePath={currentPath} />}
   {currentTheme === 'theme3' && <Theme3StorePage client:only="react" pageData={pageData} initialLanguage="ja" basePath={currentPath} />}
   {currentTheme === 'theme4' && <Theme4StorePage client:only="react" pageData={pageData} initialLanguage="ja" basePath={currentPath} />}
+  {currentTheme === 'theme5' && <Theme5StorePage client:only="react" pageData={pageData} initialLanguage="ja" basePath={currentPath} />}
 </Layout>

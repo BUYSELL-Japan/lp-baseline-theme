@@ -1,0 +1,38 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Theme5StorePage from '../../components/Theme5StorePage';
+import * as mockData from '../../data/content';
+import type { PageData } from '../../services/dataMapper';
+
+const pageData: PageData = {
+  header: mockData.headerData,
+  hero: mockData.heroData,
+  about: mockData.aboutData,
+  menu: mockData.menuData,
+  storeInfo: mockData.storeInfoData,
+  contact: mockData.contactData,
+  footer: mockData.footerData,
+  gallery: mockData.galleryData,
+  staff: mockData.staffData,
+  reviews: mockData.reviewsData,
+  news: mockData.newsData,
+  access: mockData.accessData,
+  faq: mockData.faqData,
+  cta: mockData.ctaData,
+  pricing: mockData.pricingData,
+  company: mockData.companyData,
+  settings: mockData.settingsData,
+};
+
+const title = "Theme 5 (Urban) - Preview";
+---
+
+<Layout title={title}>
+  <Theme5StorePage client:only="react" pageData={pageData} initialLanguage="ja" basePath="/demo/theme5" />
+</Layout>
+
+<style is:global>
+  body {
+    background-color: #f3f4f6; /* gray-100 */
+  }
+</style>

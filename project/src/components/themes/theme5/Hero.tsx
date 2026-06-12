@@ -129,12 +129,11 @@ export default function Hero() {
               <div className="absolute -top-3 right-8 w-0.5 h-16 bg-[#C0392B] z-10" />
               <div className="absolute -top-3 right-14 w-0.5 h-10 bg-[#C0392B]/50 z-10" />
 
-              <div className="aspect-[4/3] lg:aspect-[3/2] overflow-hidden">
+              <div className="aspect-[4/3] lg:aspect-[3/2] overflow-hidden bg-white/50 flex items-center justify-center">
                 <motion.img
-                  style={{ y: imageY }}
                   src={heroData.backgroundImage}
                   alt="Hero"
-                  className="w-full h-[120%] object-cover object-center"
+                  className="w-full h-full object-contain object-center"
                 />
               </div>
 

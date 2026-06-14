@@ -12,6 +12,13 @@ export default function Staff() {
   const sectionTitle = getText(staffData.sectionTitle);
   if (!sectionTitle) return null;
 
+  const validMembers = staffData.members.filter((member) => {
+    const name = getText(member.name);
+    return (name && name.trim() !== '') || (member.image && member.image.trim() !== '');
+  });
+
+  if (validMembers.length === 0) return null;
+
   return (
     <section id="staff" className="py-32 px-8 bg-stone-900 text-stone-100">
       <div className="max-w-6xl mx-auto">
@@ -36,7 +43,7 @@ export default function Staff() {
 
         {/* Staff list — horizontal editorial strip, not card grid */}
         <div className="space-y-0">
-          {staffData.members.map((member, index) => (
+          {validMembers.map((member, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, x: -30 }}

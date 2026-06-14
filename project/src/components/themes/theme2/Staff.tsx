@@ -10,7 +10,12 @@ export default function Staff() {
   if (!staffData) return <SectionError sectionName="Staff" error="No staff data available" data={staffData} />;
   const sectionTitle = t(staffData, 'sectionTitle');
   if (!sectionTitle) return <SectionError sectionName="Staff" error="Missing section title" data={staffData} />;
-  if (!staffData.members || !Array.isArray(staffData.members) || staffData.members.length === 0) {
+  const validMembers = staffData.members.filter((member: any) => {
+    const name = t(member, 'name');
+    return (name && name.trim() !== '') || (member.image && member.image.trim() !== '');
+  });
+
+  if (!staffData.members || !Array.isArray(staffData.members) || validMembers.length === 0) {
     return <SectionError sectionName="Staff" error="No staff members found." data={staffData} />;
   }
 
@@ -34,11 +39,11 @@ export default function Staff() {
         </motion.div>
 
         <div className={`grid grid-cols-1 ${
-          staffData.members.length === 1 ? 'max-w-sm mx-auto' : 
-          staffData.members.length === 2 ? 'md:grid-cols-2 max-w-4xl mx-auto' : 
+          validMembers.length === 1 ? 'max-w-sm mx-auto' : 
+          validMembers.length === 2 ? 'md:grid-cols-2 max-w-4xl mx-auto' : 
           'md:grid-cols-2 lg:grid-cols-3'
         } gap-6`}>
-          {staffData.members.map((member, index) => (
+          {validMembers.map((member, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}

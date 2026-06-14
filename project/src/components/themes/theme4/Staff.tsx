@@ -11,6 +11,13 @@ export default function Staff() {
   const sectionTitle = getText(staffData.sectionTitle);
   const sectionSubtitle = getText(staffData.sectionSubtitle);
 
+  const validMembers = staffData.members.filter((member) => {
+    const name = getText(member.name);
+    return (name && name.trim() !== '') || (member.image && member.image.trim() !== '');
+  });
+
+  if (validMembers.length === 0) return null;
+
   return (
     <section id="staff" className="py-32 px-6 bg-red-50/10 relative overflow-hidden">
       {/* Background Decor */}
@@ -30,11 +37,11 @@ export default function Staff() {
         </motion.div>
 
         <div className={`grid grid-cols-1 ${
-          staffData.members.length === 1 ? 'max-w-sm mx-auto' : 
-          staffData.members.length === 2 ? 'md:grid-cols-2 max-w-4xl mx-auto' : 
+          validMembers.length === 1 ? 'max-w-sm mx-auto' : 
+          validMembers.length === 2 ? 'md:grid-cols-2 max-w-4xl mx-auto' : 
           'md:grid-cols-2 lg:grid-cols-3'
         } gap-12 lg:gap-16`}>
-          {staffData.members.map((member, index) => (
+          {validMembers.map((member, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, scale: 0.8 }}

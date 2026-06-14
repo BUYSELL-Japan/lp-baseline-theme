@@ -32,7 +32,7 @@ export default function Hero() {
   }
 
   return (
-    <div ref={ref} className="relative min-h-screen overflow-hidden bg-amber-50 flex items-center">
+    <div ref={ref} className="relative min-h-[100svh] overflow-hidden bg-amber-50 flex items-center">
       {/* Background Decorative Blob */}
       <div className="absolute top-0 right-0 w-[80vw] h-[80vw] bg-yellow-300 opacity-20 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/4" />
       <div className="absolute bottom-0 left-0 w-[60vw] h-[60vw] bg-red-600 opacity-10 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/4" />
@@ -47,7 +47,7 @@ export default function Hero() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, ease: 'easeOut' }}
             >
-              <h1 className="text-[10vw] lg:text-[7rem] font-black leading-[0.9] mb-12 tracking-tighter italic text-red-950">
+              <h1 className="text-[8vw] sm:text-[8vw] lg:text-[7rem] font-black leading-[0.9] mb-8 sm:mb-12 tracking-tighter italic text-red-950">
                 {String(title).split('\n').map((line: string, i: number) => (
                   <motion.span 
                     key={i} 
@@ -72,7 +72,7 @@ export default function Hero() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1, delay: 1 }}
-                className="text-xl md:text-3xl font-black text-red-900/70 max-w-xl leading-tight mb-12"
+                className="text-lg sm:text-xl md:text-3xl font-black text-red-900/70 max-w-xl leading-tight mb-8 sm:mb-12"
               >
                 {String(subtitle)}
               </motion.p>
@@ -99,7 +99,7 @@ export default function Hero() {
               transition={{ duration: 1.2, ease: 'easeOut' }}
               className="relative z-10"
             >
-              <div className="aspect-[4/5] overflow-hidden rounded-[4rem] shadow-[0_40px_100px_rgba(220,38,38,0.2)] border-8 border-white p-2 bg-white">
+              <div className="aspect-[4/3] sm:aspect-[4/5] overflow-hidden rounded-[2rem] sm:rounded-[4rem] shadow-[0_40px_100px_rgba(220,38,38,0.2)] border-4 sm:border-8 border-white p-1 sm:p-2 bg-white">
                 <motion.img
                   style={{ y: useTransform(scrollYProgress, [0, 1], ['0%', '20%']) }}
                   src={heroData.backgroundImage}

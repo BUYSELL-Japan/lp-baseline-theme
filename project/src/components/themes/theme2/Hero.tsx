@@ -14,7 +14,7 @@ export default function Hero() {
   const subtitle = getLocalizedValue(heroData, 'subtitle', language);
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-slate-950">
+    <section className="relative min-h-[100svh] flex items-center overflow-hidden bg-slate-950">
       {/* Background with modern overlay */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -33,10 +33,10 @@ export default function Hero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-6xl md:text-8xl font-black text-white leading-[0.9] tracking-tighter mb-8 italic">
+            <h1 className="text-4xl sm:text-6xl md:text-8xl font-black text-white leading-[0.9] tracking-tighter mb-6 sm:mb-8 italic break-words">
               {title}
             </h1>
-            <p className="text-xl md:text-2xl text-slate-400 leading-relaxed mb-10 font-medium">
+            <p className="text-base sm:text-xl md:text-2xl text-slate-400 leading-relaxed mb-8 sm:mb-10 font-medium">
               {subtitle}
             </p>
           </motion.div>

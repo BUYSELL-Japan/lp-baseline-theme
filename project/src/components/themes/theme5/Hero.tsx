@@ -30,7 +30,7 @@ export default function Hero() {
   }
 
   return (
-    <div ref={ref} className="relative min-h-screen overflow-hidden bg-gray-100 flex items-center">
+    <div ref={ref} className="relative min-h-[100svh] overflow-hidden bg-gray-100 flex items-center">
 
       {/* Concrete texture overlay */}
       <div
@@ -73,7 +73,7 @@ export default function Hero() {
               {/* Gold top accent line */}
               <div className="w-12 h-0.5 bg-[#D4AF37] mb-8" />
 
-              <h1 className="text-[11vw] lg:text-[5.5rem] font-black leading-[0.88] mb-8 tracking-tight text-gray-900">
+              <h1 className="text-[8vw] sm:text-[8vw] lg:text-[5.5rem] font-black leading-[0.88] mb-6 sm:mb-8 tracking-tight text-gray-900">
                 {String(title).split('\n').map((line: string, i: number) => (
                   <motion.span
                     key={i}

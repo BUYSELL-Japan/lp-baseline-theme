@@ -51,7 +51,7 @@ export default function Hero() {
   }
 
   return (
-    <div ref={ref} className="relative h-screen overflow-hidden">
+    <div ref={ref} className="relative min-h-[100svh] overflow-hidden">
       <motion.div
         style={{ y }}
         className="absolute inset-0 w-full h-full"
@@ -75,7 +75,7 @@ export default function Hero() {
           className="text-center"
         >
           <motion.h1
-            className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6"
+            className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-4 sm:mb-6 break-words"
             style={{
               textShadow: '0 4px 20px rgba(0,0,0,0.5)',
             }}
@@ -91,7 +91,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.8 }}
-            className="text-xl md:text-2xl font-light tracking-wider"
+            className="text-base sm:text-xl md:text-2xl font-light tracking-wider px-2"
             style={{
               textShadow: '0 2px 10px rgba(0,0,0,0.5)',
             }}

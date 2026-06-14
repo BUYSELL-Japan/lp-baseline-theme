@@ -13,7 +13,7 @@ export default function Hero() {
   const subtitle = t(heroData, 'subtitle');
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden">
       {/* Full-bleed background image with soft warm overlay */}
       <div className="absolute inset-0 z-0">
         <img
@@ -25,7 +25,7 @@ export default function Hero() {
       </div>
 
       {/* Centered elegant content */}
-      <div className="relative z-10 text-center px-8 max-w-4xl mx-auto pt-20">
+      <div className="relative z-10 text-center px-6 sm:px-8 max-w-4xl mx-auto pt-20">
         {/* Decorative Line */}
         <motion.div
           initial={{ scaleX: 0 }}
@@ -38,7 +38,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
-          className="font-serif text-5xl md:text-7xl lg:text-8xl text-white font-light leading-tight tracking-wider mb-8"
+          className="font-serif text-3xl sm:text-5xl md:text-7xl lg:text-8xl text-white font-light leading-tight tracking-wider mb-6 sm:mb-8 break-words"
         >
           {title}
         </motion.h1>
@@ -54,7 +54,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.8 }}
-          className="font-serif text-xl md:text-2xl text-white/70 tracking-widest font-light leading-relaxed max-w-2xl mx-auto mb-14"
+          className="font-serif text-base sm:text-xl md:text-2xl text-white/70 tracking-widest font-light leading-relaxed max-w-2xl mx-auto mb-10 sm:mb-14"
         >
           {subtitle}
         </motion.p>

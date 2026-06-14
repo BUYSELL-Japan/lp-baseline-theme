@@ -84,13 +84,13 @@ export default function Lightbox({
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.9, opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="relative max-w-7xl max-h-[90vh] mx-4"
+          className="relative w-full max-w-7xl h-[90vh] mx-4 flex flex-col items-center justify-center"
           onClick={(e) => e.stopPropagation()}
         >
           <img
             src={currentImage.src}
             alt={currentImage.alt}
-            className="max-w-full max-h-[90vh] object-contain rounded-lg"
+            className="w-full h-full object-contain rounded-lg"
           />
 
           {images.length > 1 && (

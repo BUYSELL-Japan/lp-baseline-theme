@@ -87,18 +87,18 @@ export default function Header() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           {/* 1行レイアウト: ロゴ | デスクトップNav | 言語ボタン | ハンバーガー */}
-          <div className="flex items-center justify-between h-16">
+          <div className="flex items-center justify-between min-h-[4rem] py-2">
 
             {/* Logo */}
             <motion.div
-              className="flex items-center gap-2 cursor-pointer shrink-0 min-w-0"
+              className="flex items-center gap-2 cursor-pointer shrink min-w-0 max-w-[60%] xl:max-w-none"
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               whileHover={{ scale: 1.05 }}
             >
               <div className="p-1.5 bg-red-600 rounded-lg shadow-lg shrink-0">
                 <Sun className="w-5 h-5 text-yellow-400" />
               </div>
-              <span className={`text-sm sm:text-lg font-black uppercase tracking-tighter break-words leading-tight ${
+              <span className={`text-xs sm:text-sm md:text-lg font-black uppercase tracking-tighter line-clamp-2 leading-tight ${
                 scrolled || mobileMenuOpen ? 'text-red-700' : 'text-red-600'
               }`}>
                 {(() => {

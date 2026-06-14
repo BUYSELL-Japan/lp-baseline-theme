@@ -82,13 +82,13 @@ export default function Header() {
         <div className="max-w-6xl mx-auto px-8 flex items-center justify-between">
           {/* Logo */}
           <motion.div
-            className="cursor-pointer min-w-0 shrink flex-1 mr-4"
+            className="cursor-pointer min-w-0 shrink max-w-[60%] lg:max-w-none mr-4"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             whileHover={{ opacity: 0.7 }}
             transition={{ duration: 0.3 }}
           >
             <div
-              className={`font-serif text-base sm:text-xl lg:text-2xl tracking-[0.15em] font-light transition-colors duration-500 break-words leading-tight ${
+              className={`font-serif text-sm sm:text-lg lg:text-2xl tracking-[0.15em] font-light transition-colors duration-500 line-clamp-2 leading-tight ${
                 scrolled || mobileMenuOpen ? 'text-stone-800' : 'text-white'
               }`}
             >

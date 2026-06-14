@@ -91,16 +91,16 @@ export default function Header() {
         transition={{ duration: 0.6, ease: 'easeOut' }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20">
+          <div className="flex items-center justify-between min-h-[5rem] py-2">
             {/* Logo */}
             <motion.div
-              className="flex items-center gap-3 cursor-pointer z-50 min-w-0 flex-1 pr-4 xl:flex-none xl:pr-0"
+              className="flex items-center gap-3 cursor-pointer z-50 shrink min-w-0 max-w-[60%] xl:max-w-none pr-2 xl:pr-0"
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
               <Waves className={`w-8 h-8 shrink-0 ${scrolled || mobileMenuOpen ? 'text-theme-accent' : 'text-white'}`} />
-              <span className={`text-base sm:text-xl md:text-2xl font-bold leading-tight break-words ${scrolled || mobileMenuOpen ? 'text-gray-900' : 'text-white'}`}>
+              <span className={`text-sm sm:text-lg md:text-2xl font-bold leading-tight line-clamp-2 ${scrolled || mobileMenuOpen ? 'text-gray-900' : 'text-white'}`}>
                 {(() => {
                   let logoText = getLocalizedValue(headerData.logo, 'text', language);
                   if (typeof logoText === 'object') {

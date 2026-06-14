@@ -82,11 +82,11 @@ export default function Header() {
         animate={{ y: 0 }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="flex items-center justify-between h-14">
+          <div className="flex items-center justify-between min-h-[3.5rem] py-1">
 
             {/* Logo - Cymbal-inspired gold circle + text */}
             <motion.div
-              className="flex items-center gap-3 cursor-pointer shrink-0 min-w-0"
+              className="flex items-center gap-3 cursor-pointer shrink min-w-0 max-w-[55%] xl:max-w-none"
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               whileHover={{ scale: 1.02 }}
             >
@@ -100,7 +100,7 @@ export default function Header() {
                   scrolled || mobileMenuOpen ? 'bg-[#D4AF37]' : 'bg-gray-800'
                 }`} />
               </div>
-              <span className={`text-xs sm:text-sm font-bold uppercase tracking-[0.2em] break-words leading-tight transition-colors ${
+              <span className={`text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] line-clamp-2 leading-tight transition-colors ${
                 scrolled || mobileMenuOpen ? 'text-white' : 'text-gray-900'
               }`}>
                 {(() => {

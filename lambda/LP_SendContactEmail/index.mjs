@@ -53,10 +53,15 @@ export const handler = async (event) => {
         </div>
 
         <div style="background-color: #fefce8; border: 1px solid #fef08a; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
-          <p style="margin: 0; font-size: 14px; color: #854d0e;">
+          <p style="margin: 0 0 15px 0; font-size: 14px; color: #854d0e;">
             <strong>💡 Landyからのヒント</strong><br>
             お問い合わせから「24時間以内」に返信すると成約率が劇的に上がります！すぐにお客様へお返事しましょう。
           </p>
+          <div style="text-align: center;">
+            <a href="mailto:${email}" style="display: inline-block; background-color: #0d9488; color: #ffffff; text-decoration: none; padding: 12px 24px; border-radius: 6px; font-weight: bold; font-size: 16px;">
+              ✉️ このお客様に返信する
+            </a>
+          </div>
         </div>
       </div>
       

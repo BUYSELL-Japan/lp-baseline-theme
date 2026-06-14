@@ -100,7 +100,7 @@ export default function Header() {
               whileTap={{ scale: 0.98 }}
             >
               <Waves className={`w-8 h-8 shrink-0 ${scrolled || mobileMenuOpen ? 'text-theme-accent' : 'text-white'}`} />
-              <span className={`text-xl md:text-2xl font-bold leading-tight truncate ${scrolled || mobileMenuOpen ? 'text-gray-900' : 'text-white'}`}>
+              <span className={`text-base sm:text-xl md:text-2xl font-bold leading-tight break-words ${scrolled || mobileMenuOpen ? 'text-gray-900' : 'text-white'}`}>
                 {(() => {
                   let logoText = getLocalizedValue(headerData.logo, 'text', language);
                   if (typeof logoText === 'object') {

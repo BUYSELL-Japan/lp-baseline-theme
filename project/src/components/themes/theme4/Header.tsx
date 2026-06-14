@@ -98,7 +98,7 @@ export default function Header() {
               <div className="p-1.5 bg-red-600 rounded-lg shadow-lg shrink-0">
                 <Sun className="w-5 h-5 text-yellow-400" />
               </div>
-              <span className={`text-lg font-black uppercase tracking-tighter truncate max-w-[160px] sm:max-w-none ${
+              <span className={`text-sm sm:text-lg font-black uppercase tracking-tighter break-words leading-tight ${
                 scrolled || mobileMenuOpen ? 'text-red-700' : 'text-red-600'
               }`}>
                 {(() => {

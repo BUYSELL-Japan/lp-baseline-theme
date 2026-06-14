@@ -88,7 +88,7 @@ export default function Header() {
             transition={{ duration: 0.3 }}
           >
             <div
-              className={`font-serif text-xl lg:text-2xl tracking-[0.15em] font-light transition-colors duration-500 truncate ${
+              className={`font-serif text-base sm:text-xl lg:text-2xl tracking-[0.15em] font-light transition-colors duration-500 break-words leading-tight ${
                 scrolled || mobileMenuOpen ? 'text-stone-800' : 'text-white'
               }`}
             >

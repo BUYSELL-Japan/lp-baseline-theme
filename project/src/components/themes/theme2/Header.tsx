@@ -77,7 +77,7 @@ export default function Header() {
           <div className="w-10 h-10 shrink-0 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/20 group-hover:bg-blue-500 transition-colors">
             <BarChart3 className="text-white w-6 h-6 rotate-12" />
           </div>
-          <div className="text-2xl font-black tracking-tighter text-white truncate">
+          <div className="text-base sm:text-2xl font-black tracking-tighter text-white break-words leading-tight">
             {logoText}
           </div>
         </motion.div>

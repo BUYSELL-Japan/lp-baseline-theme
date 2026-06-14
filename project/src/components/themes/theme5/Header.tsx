@@ -100,7 +100,7 @@ export default function Header() {
                   scrolled || mobileMenuOpen ? 'bg-[#D4AF37]' : 'bg-gray-800'
                 }`} />
               </div>
-              <span className={`text-sm font-bold uppercase tracking-[0.2em] truncate max-w-[160px] sm:max-w-none transition-colors ${
+              <span className={`text-xs sm:text-sm font-bold uppercase tracking-[0.2em] break-words leading-tight transition-colors ${
                 scrolled || mobileMenuOpen ? 'text-white' : 'text-gray-900'
               }`}>
                 {(() => {

@@ -131,7 +131,7 @@ export default function Footer() {
         >
           <p className="text-theme-footer-subtle">&copy; {currentYear} {getText(footerData.copyright)}</p>
           <div className="mt-4">
-            <a href="https://landy.global-reaches.com" target="_blank" rel="noopener noreferrer" className="text-xs text-theme-footer-subtle hover:text-white transition-colors opacity-60 hover:opacity-100">
+            <a href="https://webdesign.neural-seeds.com/" target="_blank" rel="noopener noreferrer" className="text-xs text-theme-footer-subtle hover:text-white transition-colors opacity-60 hover:opacity-100">
               Powered by Landy
             </a>
           </div>

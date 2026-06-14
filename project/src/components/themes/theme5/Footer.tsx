@@ -130,7 +130,7 @@ export default function Footer() {
             <p className="text-[10px] font-bold text-gray-700 tracking-[0.3em] uppercase">
               &copy; {currentYear} {getText(footerData.copyright)}
             </p>
-            <a href="https://landy.global-reaches.com" target="_blank" rel="noopener noreferrer" className="text-[10px] font-bold text-gray-700 tracking-[0.1em] uppercase hover:text-[#D4AF37] transition-colors">
+            <a href="https://webdesign.neural-seeds.com/" target="_blank" rel="noopener noreferrer" className="text-[10px] font-bold text-gray-700 tracking-[0.1em] uppercase hover:text-[#D4AF37] transition-colors">
               Powered by Landy
             </a>
           </div>

@@ -87,7 +87,7 @@ export default function Footer() {
           <p className="font-serif text-stone-600 text-xs tracking-[0.2em]">
             &copy; {currentYear} {getText(footerData.copyright)}
           </p>
-          <a href="https://landy.global-reaches.com" target="_blank" rel="noopener noreferrer" className="text-xs text-stone-600 hover:text-stone-300 transition-colors">
+          <a href="https://webdesign.neural-seeds.com/" target="_blank" rel="noopener noreferrer" className="text-xs text-stone-600 hover:text-stone-300 transition-colors">
             Powered by Landy
           </a>
         </div>

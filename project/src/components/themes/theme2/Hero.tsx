@@ -14,7 +14,7 @@ export default function Hero() {
   const subtitle = getLocalizedValue(heroData, 'subtitle', language);
 
   return (
-    <section className="relative min-h-[70svh] lg:min-h-[100svh] flex items-center overflow-hidden bg-slate-950">
+    <section className="relative min-h-[50svh] sm:min-h-[60svh] lg:min-h-[100svh] flex items-center overflow-hidden bg-slate-950">
       {/* Background with modern overlay */}
       <div className="absolute inset-0 z-0">
         <img 

@@ -29,7 +29,11 @@ export default function Staff() {
           <div className="w-24 h-4 bg-yellow-400 rounded-full shadow-lg" />
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16">
+        <div className={`grid grid-cols-1 ${
+          staffData.members.length === 1 ? 'max-w-sm mx-auto' : 
+          staffData.members.length === 2 ? 'md:grid-cols-2 max-w-4xl mx-auto' : 
+          'md:grid-cols-2 lg:grid-cols-3'
+        } gap-12 lg:gap-16`}>
           {staffData.members.map((member, index) => (
             <motion.div
               key={index}

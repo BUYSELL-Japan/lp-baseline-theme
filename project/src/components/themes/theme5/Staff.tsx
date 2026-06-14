@@ -32,7 +32,11 @@ export default function Staff() {
         </motion.div>
 
         {/* Staff Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-gray-200">
+        <div className={`grid grid-cols-1 ${
+          staffData.members.length === 1 ? 'max-w-sm mx-auto border border-gray-200' : 
+          staffData.members.length === 2 ? 'sm:grid-cols-2 max-w-4xl mx-auto border border-gray-200' : 
+          'sm:grid-cols-2 lg:grid-cols-3'
+        } gap-px bg-gray-200`}>
           {staffData.members.map((member, index) => (
             <motion.div
               key={index}

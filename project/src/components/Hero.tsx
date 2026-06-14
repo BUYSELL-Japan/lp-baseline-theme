@@ -51,7 +51,7 @@ export default function Hero() {
   }
 
   return (
-    <div ref={ref} className="relative min-h-[100svh] overflow-hidden">
+    <div ref={ref} className="relative min-h-[100svh] flex items-center justify-center overflow-hidden">
       <motion.div
         style={{ y }}
         className="absolute inset-0 w-full h-full"
@@ -66,7 +66,7 @@ export default function Hero() {
 
       <motion.div
         style={{ opacity }}
-        className="relative z-20 h-full flex flex-col items-center justify-center text-white px-4"
+        className="relative z-20 w-full flex flex-col items-center justify-center text-white px-4"
       >
         <motion.div
           initial={{ opacity: 0, y: 30, rotateX: -15 }}

@@ -133,7 +133,7 @@ export default function Hero() {
                 <motion.img
                   src={heroData.backgroundImage}
                   alt="Hero"
-                  className="w-full h-full object-contain object-center"
+                  className="w-full h-full object-cover object-center"
                 />
               </div>
 

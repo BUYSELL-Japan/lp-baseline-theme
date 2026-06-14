@@ -75,7 +75,7 @@ export const handler = async (event) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: \`Landy Support <\${fromEmail}>\`,
+        from: `Landy Support <${fromEmail}>`,
         to: [toEmail],
         reply_to: email, // お客さんのメアドを返信先に設定
         subject: emailSubject,

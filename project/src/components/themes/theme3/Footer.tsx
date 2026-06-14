@@ -83,10 +83,13 @@ export default function Footer() {
         </div>
 
 
-        <div className="pt-8 border-t border-stone-700 text-center">
+        <div className="pt-8 border-t border-stone-700 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="font-serif text-stone-600 text-xs tracking-[0.2em]">
             &copy; {currentYear} {getText(footerData.copyright)}
           </p>
+          <a href="https://landy.global-reaches.com" target="_blank" rel="noopener noreferrer" className="text-xs text-stone-600 hover:text-stone-300 transition-colors">
+            Powered by Landy
+          </a>
         </div>
       </div>
     </footer>

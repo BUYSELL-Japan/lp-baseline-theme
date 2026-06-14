@@ -126,9 +126,14 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-gray-800 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-[10px] font-bold text-gray-700 tracking-[0.3em] uppercase">
-            &copy; {currentYear} {getText(footerData.copyright)}
-          </p>
+          <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8">
+            <p className="text-[10px] font-bold text-gray-700 tracking-[0.3em] uppercase">
+              &copy; {currentYear} {getText(footerData.copyright)}
+            </p>
+            <a href="https://landy.global-reaches.com" target="_blank" rel="noopener noreferrer" className="text-[10px] font-bold text-gray-700 tracking-[0.1em] uppercase hover:text-[#D4AF37] transition-colors">
+              Powered by Landy
+            </a>
+          </div>
           {/* Red noren symbolic divider */}
           <div className="flex items-center gap-1">
             <div className="w-0.5 h-4 bg-[#C0392B]" />

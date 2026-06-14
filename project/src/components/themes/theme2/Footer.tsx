@@ -91,10 +91,13 @@ export default function Footer() {
         </div>{/* end grid */}
 
         {/* Copyright */}
-        <div className="pt-12 border-t border-slate-900">
+        <div className="pt-12 border-t border-slate-900 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-slate-600 text-sm font-bold tracking-widest uppercase">
             &copy; {currentYear} {getText(footerData.copyright)}
           </p>
+          <a href="https://landy.global-reaches.com" target="_blank" rel="noopener noreferrer" className="text-xs text-slate-600 hover:text-white transition-colors">
+            Powered by Landy
+          </a>
         </div>
       </div>
     </footer>

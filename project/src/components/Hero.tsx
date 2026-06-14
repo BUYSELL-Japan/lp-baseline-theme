@@ -72,7 +72,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30, rotateX: -15 }}
           animate={{ opacity: 1, y: 0, rotateX: 0 }}
           transition={{ duration: 1, delay: 0.2, ease: 'easeOut' }}
-          className="text-center"
+          className="text-center pt-16 sm:pt-20 lg:pt-0"
         >
           <motion.h1
             className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-4 sm:mb-6 break-words"

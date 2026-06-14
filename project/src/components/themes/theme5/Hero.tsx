@@ -30,7 +30,7 @@ export default function Hero() {
   }
 
   return (
-    <div ref={ref} className="relative min-h-[100svh] overflow-hidden bg-gray-100 flex items-center">
+    <div ref={ref} className="relative min-h-[100svh] overflow-hidden bg-gray-100 flex flex-col justify-center lg:items-center">
 
       {/* Concrete texture overlay */}
       <div
@@ -55,7 +55,7 @@ export default function Hero() {
       {/* Red noren accent — vertical bar left */}
       <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#C0392B]" />
 
-      <div className="max-w-[1400px] mx-auto px-6 w-full relative z-20 pt-28 lg:pt-20 pb-20">
+      <div className="max-w-[1400px] mx-auto px-6 w-full relative z-20 pt-32 pb-16 lg:pt-20 lg:pb-20 my-auto">
         <div className="flex flex-col lg:flex-row items-center gap-0 lg:gap-0 min-h-[80vh]">
 
           {/* Text Block - overlaps image on desktop */}

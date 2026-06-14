@@ -32,12 +32,12 @@ export default function Hero() {
   }
 
   return (
-    <div ref={ref} className="relative min-h-[100svh] overflow-hidden bg-amber-50 flex items-center">
+    <div ref={ref} className="relative min-h-[100svh] overflow-hidden bg-amber-50 flex flex-col justify-center lg:items-center">
       {/* Background Decorative Blob */}
       <div className="absolute top-0 right-0 w-[80vw] h-[80vw] bg-yellow-300 opacity-20 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/4" />
       <div className="absolute bottom-0 left-0 w-[60vw] h-[60vw] bg-red-600 opacity-10 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/4" />
 
-      <div className="max-w-[1400px] mx-auto px-6 w-full relative z-30 pt-36 lg:pt-24 pb-32">
+      <div className="max-w-[1400px] mx-auto px-6 w-full relative z-30 pt-36 lg:pt-24 pb-16 lg:pb-32 my-auto">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
           
           {/* Text Content - Top on Mobile, Left on Desktop */}

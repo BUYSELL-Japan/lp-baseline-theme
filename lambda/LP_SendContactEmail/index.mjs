@@ -1,7 +1,8 @@
 export const handler = async (event) => {
   console.log("--- LAMBDA START (Resend version) ---");
 
-  // CORSプリフライト対忁E  if (event.httpMethod === "OPTIONS") {
+  // CORSプリフライト対応
+  if (event.httpMethod === "OPTIONS" || (event.requestContext && event.requestContext.http && event.requestContext.http.method === "OPTIONS")) {
     return corsResponse(200, { message: "OK" });
   }
 
@@ -14,61 +15,70 @@ export const handler = async (event) => {
 
   const { name, email, subject, message, website, targetEmail } = body;
 
-  // スパム対策（ハニ�Eポット！E  if (website && website.trim().length > 0) {
+  // スパム対策（ハニーポット）
+  if (website && website.trim().length > 0) {
     return corsResponse(200, { message: "Sent successfully" });
   }
 
-  // 送信先�E送信允E�E設宁E  const fromEmail = process.env.RESEND_FROM_EMAIL;
-  const toEmail = targetEmail || process.env.SES_TO_EMAIL; // 店�EのメアチE
+  // 送信先・送信元の設定
+  const fromEmail = process.env.RESEND_FROM_EMAIL;
+  // targetEmailが空の場合はフォールバックとしてSES_TO_EMAIL（環境変数にあれば）を使用。基本はtargetEmailが必須。
+  const toEmail = targetEmail || process.env.SES_TO_EMAIL || "info@global-reaches.com"; 
+
   if (!fromEmail || !toEmail) {
     console.error("Missing config: FROM or TO email");
     return corsResponse(500, { error: "Configuration error" });
   }
 
-  const emailSubject = `🎉 新しいお問ぁE��わせが届きました�E�E[${name}]様より`;
+  const emailSubject = `🎉 新しいお問い合わせが届きました！ [${name}]様より`;
+  
+  // HTMLテンプレート
   const emailHtml = `
     <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; color: #333;">
       <div style="background-color: #0d9488; color: #fff; padding: 20px; border-radius: 8px 8px 0 0; text-align: center;">
-        <h1 style="margin: 0; font-size: 20px;">🎉 新しいお問ぁE��わせが届きました�E�E/h1>
+        <h1 style="margin: 0; font-size: 20px;">🎉 新しいお問い合わせが届きました！</h1>
       </div>
       
       <div style="border: 1px solid #ddd; border-top: none; padding: 30px; border-radius: 0 0 8px 8px; background-color: #fafafa;">
-        <p>ご担当老E��E/p>
-        <p>おめでとぁE��ざいます！Ebr>Webサイトから新しいお問ぁE��わせが届きました、E/p>
+        <p>ご担当者様</p>
+        <p>おめでとうございます！<br>Webサイトから新しいお問い合わせが届きました。</p>
         
         <div style="background-color: #fff; border: 1px solid #eee; padding: 20px; border-radius: 8px; margin: 20px 0;">
-          <h2 style="font-size: 16px; margin-top: 0; color: #0d9488; border-bottom: 2px solid #0d9488; padding-bottom: 5px;">📝 お客様から�EメチE��ージ</h2>
+          <h2 style="font-size: 16px; margin-top: 0; color: #0d9488; border-bottom: 2px solid #0d9488; padding-bottom: 5px;">📝 お客様からのメッセージ</h2>
           
-          <p><strong>👤 お名剁E</strong><br>${name} 槁E/p>
-          <p><strong>✉︁Eメール:</strong><br>${email}</p>
-          <p><strong>🏷�E�E件吁E</strong><br>${subject || "�E�未入力！E}</p>
-          <p><strong>💬 冁E��:</strong><br>${message.replace(/\n/g, '<br>')}</p>
+          <p><strong>👤 お名前:</strong><br>${name} 様</p>
+          <p><strong>✉️ メール:</strong><br>${email}</p>
+          <p><strong>🏷️ 件名:</strong><br>${subject || "（未入力）"}</p>
+          <p><strong>💬 内容:</strong><br>${(message || "").replace(/\n/g, '<br>')}</p>
         </div>
 
         <div style="background-color: #fefce8; border: 1px solid #fef08a; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
           <p style="margin: 0; font-size: 14px; color: #854d0e;">
-            <strong>💡 LandyからのヒンチE/strong><br>
-            お問ぁE��わせから、E4時間以冁E��に返信すると成紁E��が劇皁E��上がります！すぐにお客様へお返事しましょぁE��E          </p>
+            <strong>💡 Landyからのヒント</strong><br>
+            お問い合わせから「24時間以内」に返信すると成約率が劇的に上がります！すぐにお客様へお返事しましょう。
+          </p>
         </div>
       </div>
       
       <div style="text-align: center; margin-top: 20px; color: #999; font-size: 12px;">
-        <p>あなた�EWebサイト�E24時間休まず働ぁE��ぁE��す✨<br>Powered by Landy</p>
+        <p>あなたのWebサイトは24時間休まず働いています✨<br>Powered by Landy</p>
       </div>
     </div>
   `;
 
   try {
-    // Resend APIを直接叩く（ライブラリ不要E��E    const response = await fetch("https://api.resend.com/emails", {
+    // Resend APIを直接叩く（ライブラリ不要）
+    const response = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
         "Authorization": `Bearer ${process.env.RESEND_API_KEY}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: `Landy Support <${fromEmail}>`,
+        from: \`Landy Support <\${fromEmail}>\`,
         to: [toEmail],
-        reply_to: email, // お客さんのメアドを返信先に設宁E        subject: emailSubject,
+        reply_to: email, // お客さんのメアドを返信先に設定
+        subject: emailSubject,
         html: emailHtml,
       }),
     });

@@ -18,9 +18,9 @@ export default function Company() {
   const sectionTitle = getText(companyData.sectionTitle);
   const sectionSubtitle = getText(companyData.sectionSubtitle);
 
-  const hasPhilosophy = companyData.philosophy && getText(companyData.philosophy.title);
-  const hasHistory = companyData.history && companyData.history.timeline && Array.isArray(companyData.history.timeline) && companyData.history.timeline.length > 0;
-  const hasCompanyInfo = companyData.companyInfo && companyData.companyInfo.items && Array.isArray(companyData.companyInfo.items) && companyData.companyInfo.items.length > 0;
+  const hasPhilosophy = !!(companyData.philosophy && (getText(companyData.philosophy.title) || getText(companyData.philosophy.content)));
+  const hasHistory = !!(companyData.history && companyData.history.timeline && Array.isArray(companyData.history.timeline) && companyData.history.timeline.some(item => getText(item.year) || getText(item.event)));
+  const hasCompanyInfo = !!(companyData.companyInfo && companyData.companyInfo.items && Array.isArray(companyData.companyInfo.items) && companyData.companyInfo.items.some(item => getText(item.label) || getText(item.value)));
 
   if (!hasPhilosophy && !hasHistory && !hasCompanyInfo) {
     return <SectionError sectionName="Company" error="No company content found. Expected at least one of: philosophy, history, or companyInfo." data={companyData} />;

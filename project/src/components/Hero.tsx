@@ -54,13 +54,13 @@ export default function Hero() {
     <div ref={ref} className="relative min-h-[70svh] lg:min-h-[100svh] flex items-center justify-center overflow-hidden">
       <motion.div
         style={{ y }}
-        className="absolute inset-0 w-full h-full"
+        className="absolute inset-0 w-full h-full bg-black"
       >
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60 z-10" />
         <img
           src={heroData.backgroundImage}
           alt="Hero background"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-contain sm:object-cover"
         />
       </motion.div>
 

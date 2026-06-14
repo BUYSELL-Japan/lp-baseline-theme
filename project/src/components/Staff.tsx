@@ -17,16 +17,21 @@ export default function Staff() {
   const sectionTitle = getText(staffData.sectionTitle);
   const sectionSubtitle = getText(staffData.sectionSubtitle);
 
+  const validMembers = staffData.members.filter((member) => {
+    const name = getText(member.name);
+    return (name && name.trim() !== '') || (member.image && member.image.trim() !== '');
+  });
+
+  if (validMembers.length === 0) {
+    (()=>{})('[Staff] Missing members array or all empty');
+    return null;
+  }
+
   (()=>{})('[Staff] sectionTitle:', sectionTitle);
   (()=>{})('[Staff] members:', staffData.members);
 
   if (!sectionTitle) {
     return <SectionError sectionName="Staff" error="Missing section title" data={staffData} />;
-  }
-
-  if (!staffData.members || staffData.members.length === 0) {
-    (()=>{})('[Staff] Missing members array');
-    return <SectionError sectionName="Staff" error="No staff members found. Expected 'members' array in data." data={staffData} />;
   }
 
   return (
@@ -46,8 +51,13 @@ export default function Staff() {
           <p className="text-xl text-gray-700">{sectionSubtitle}</p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {staffData.members.map((member, index) => (
+        <div className={`grid grid-cols-1 ${
+          validMembers.length === 1 ? 'max-w-sm mx-auto' :
+          validMembers.length === 2 ? 'md:grid-cols-2 max-w-2xl mx-auto' :
+          validMembers.length === 3 ? 'md:grid-cols-3 max-w-4xl mx-auto' :
+          'md:grid-cols-2 lg:grid-cols-4'
+        } gap-8`}>
+          {validMembers.map((member, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}

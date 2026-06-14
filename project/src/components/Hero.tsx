@@ -51,7 +51,7 @@ export default function Hero() {
   }
 
   return (
-    <div ref={ref} className="relative min-h-[100svh] flex items-center justify-center overflow-hidden">
+    <div ref={ref} className="relative min-h-[70svh] lg:min-h-[100svh] flex items-center justify-center overflow-hidden">
       <motion.div
         style={{ y }}
         className="absolute inset-0 w-full h-full"

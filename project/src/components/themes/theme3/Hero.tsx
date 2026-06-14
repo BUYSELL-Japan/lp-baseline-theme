@@ -13,7 +13,7 @@ export default function Hero() {
   const subtitle = t(heroData, 'subtitle');
 
   return (
-    <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[70svh] lg:min-h-[100svh] flex items-center justify-center overflow-hidden">
       {/* Full-bleed background image with soft warm overlay */}
       <div className="absolute inset-0 z-0">
         <img

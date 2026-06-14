@@ -111,7 +111,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 1.5 }}
-          className="absolute bottom-12"
+          className="relative mt-4 lg:absolute lg:mt-0 lg:bottom-12"
         >
           <motion.div
             animate={{ y: [0, 10, 0] }}

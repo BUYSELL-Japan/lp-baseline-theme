@@ -85,7 +85,7 @@ export async function fetchStoreContentAtBuildTime(storeId: string): Promise<Lan
       };
     } else {
       (()=>{})('[BuildTime API] Fetching from production API');
-      const response = await fetch(`${API_BASE_URL}/${storeId}`);
+      const response = await fetch(`${API_BASE_URL}/${storeId}?t=${Date.now()}`);
 
       if (!response.ok) {
         console.error(`[BuildTime API] Failed to fetch store content: ${response.status}`);
@@ -115,7 +115,7 @@ export async function fetchStoreContentAtBuildTime(storeId: string): Promise<Lan
       const controller = new AbortController();
       const timeoutId = setTimeout(() => controller.abort(), 15000);
       (()=>{})(`[BuildTime API] Fetching settings for ${storeId}...`);
-      const settingsResponse = await fetch(`https://2sznhxhcd8.execute-api.ap-southeast-2.amazonaws.com/dev/lp/settings/${storeId}`, {
+      const settingsResponse = await fetch(`https://2sznhxhcd8.execute-api.ap-southeast-2.amazonaws.com/dev/lp/settings/${storeId}?t=${Date.now()}`, {
         signal: controller.signal
       });
       clearTimeout(timeoutId);
@@ -169,7 +169,7 @@ export async function getStoreList(): Promise<StoreInfo[]> {
 
   (()=>{})('[BuildTime API] Fetching from API:', STORE_LIST_API_URL);
   try {
-    const response = await fetch(STORE_LIST_API_URL);
+      const response = await fetch(`${STORE_LIST_API_URL}?t=${Date.now()}`);
 
     if (!response.ok) {
       console.warn('[BuildTime API] Failed to fetch store list, using default');

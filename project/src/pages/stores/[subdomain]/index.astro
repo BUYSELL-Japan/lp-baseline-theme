@@ -11,12 +11,18 @@ import Theme5StorePage from '../../../components/Theme5StorePage';
 export async function getStaticPaths() {
   try {
     const storeList = await getStoreList();
+    console.log("Found stores:", storeList.length);
 
   const paths = await Promise.all(
     storeList.map(async ({ storeId, subdomain, contact_email, templateId }) => {
+      console.log(`Processing store: ${storeId}`);
       const storeContent = await fetchStoreContentAtBuildTime(storeId);
-      if (!storeContent) return null;
-
+      if (!storeContent) {
+        console.log(`Skipping ${storeId} because storeContent is null`);
+        return null;
+      }
+      console.log(`Successfully processed ${storeId}`);
+      
       const pageData = mapDynamoDBDataToPageData(storeContent);
 
       // DynamoDB Stores テーブルの contact_email を注入
@@ -28,7 +34,7 @@ export async function getStaticPaths() {
       // ContentData 内に templateId があればそちらを優先
       const contentTemplateId = storeContent?.templateId || storeContent?.ContentData?.templateId;
       const themeFromSettings = (pageData.settings as any)?.theme;
-      const resolvedTheme = templateId || contentTemplateId || (themeFromSettings && themeFromSettings !== 'theme1' ? themeFromSettings : null) || 'theme1';
+      const resolvedTheme = contentTemplateId || templateId || (themeFromSettings && themeFromSettings !== 'theme1' ? themeFromSettings : null) || 'theme1';
 
       if (!pageData.settings) {
         pageData.settings = { theme: resolvedTheme } as any;
@@ -43,7 +49,9 @@ export async function getStaticPaths() {
     })
   );
 
-  return paths.filter(Boolean);
+  const finalPaths = paths.filter(Boolean);
+  console.log("Total generated paths:", finalPaths.length);
+  return finalPaths;
   } catch (e: any) {
     import('fs').then(fs => fs.writeFileSync('astro-error.log', String(e.stack || e)));
     throw e;

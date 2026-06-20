@@ -10,7 +10,8 @@ import Theme5StorePage from '../../../../components/Theme5StorePage';
 import type { Language } from '../../../../contexts/LanguageContext';
 
 export async function getStaticPaths() {
-  const storeList = await getStoreList();
+  try {
+    const storeList = await getStoreList();
   const languages = ['en', 'ko', 'zh-tw'];
 
   const paths = await Promise.all(
@@ -28,7 +29,7 @@ export async function getStaticPaths() {
       // ContentData 内に templateId があればそちらを優先
       const contentTemplateId = storeContent?.templateId || storeContent?.ContentData?.templateId;
       const themeFromSettings = (pageData.settings as any)?.theme;
-      const resolvedTheme = templateId || contentTemplateId || (themeFromSettings && themeFromSettings !== 'theme1' ? themeFromSettings : null) || 'theme1';
+      const resolvedTheme = contentTemplateId || templateId || (themeFromSettings && themeFromSettings !== 'theme1' ? themeFromSettings : null) || 'theme1';
 
       if (!pageData.settings) {
         pageData.settings = { theme: resolvedTheme } as any;
@@ -43,7 +44,10 @@ export async function getStaticPaths() {
     })
   );
 
-  return paths.flat().filter(Boolean);
+  } catch (e: any) {
+    console.error("GETSTATICPATHS LANG ERROR:", e);
+    return [];
+  }
 }
 
 const { pageData, storeId, subdomain, lang } = Astro.props;

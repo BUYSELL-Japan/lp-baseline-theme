@@ -6,7 +6,6 @@ import Pricing from './themes/theme5/Pricing';
 import CTA from './themes/theme5/CTA';
 import Gallery from './themes/theme5/Gallery';
 import Staff from './themes/theme5/Staff';
-import Reviews from './themes/theme5/Reviews';
 import News from './themes/theme5/News';
 import StoreInfo from './themes/theme5/StoreInfo';
 import Company from './themes/theme5/Company';
@@ -39,7 +38,6 @@ export default function Theme5StorePage({ pageData, initialLanguage = 'ja', base
             {pageData.cta && <CTA />}
             {pageData.gallery && <Gallery />}
             {pageData.staff && <Staff />}
-            {pageData.reviews && <Reviews />}
             {pageData.news && <News />}
             {pageData.storeInfo && <StoreInfo />}
             {pageData.company && <Company />}

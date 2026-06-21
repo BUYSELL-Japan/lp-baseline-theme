@@ -51,7 +51,6 @@ export default function Header() {
     ...(pageData.pricing  ? ['pricing']  : []),
     ...(pageData.gallery  ? ['gallery']  : []),
     ...(pageData.staff    ? ['staff']    : []),
-    ...(pageData.reviews  ? ['reviews']  : []),
     ...(pageData.news     ? ['news']     : []),
     ...(pageData.storeInfo ? ['storeInfo'] : []),
     ...(pageData.company  ? ['company']  : []),

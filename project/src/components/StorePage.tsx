@@ -29,7 +29,7 @@ export default function StorePage({ pageData, initialLanguage = 'ja', basePath =
     <ErrorBoundary>
       <LanguageProvider initialLanguage={initialLanguage} basePath={basePath}>
         <PageDataProvider data={pageData}>
-          <div className="min-h-screen bg-white">
+          <div className="min-h-screen bg-white font-display">
             {pageData.header && <Header />}
             {pageData.hero && <Hero />}
             {pageData.about && <About />}

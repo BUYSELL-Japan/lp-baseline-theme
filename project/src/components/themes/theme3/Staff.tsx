@@ -5,7 +5,7 @@ import { useLocalize } from '../../../hooks/useLocalize';
 
 export default function Staff() {
   const staffData = useStaffData();
-  const { getText } = useLocalize();
+  const { getText, translate } = useLocalize();
 
   if (!staffData || !staffData.members || staffData.members.length === 0) return null;
 
@@ -31,7 +31,7 @@ export default function Staff() {
           className="flex flex-col md:flex-row md:items-end justify-between pb-12 mb-16 border-b border-stone-700"
         >
           <div>
-            <span className="font-serif text-xs tracking-[0.4em] uppercase text-amber-500 mb-4 block">Our Team</span>
+            <span className="font-serif text-xs tracking-[0.4em] uppercase text-amber-500 mb-4 block">{translate('sectionStaff')}</span>
             <h2 className="font-serif text-5xl md:text-6xl text-stone-100 font-light tracking-wide">
               {sectionTitle}
             </h2>

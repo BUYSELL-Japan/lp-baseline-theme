@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { useState, useRef, useEffect } from 'react';
+import { useState } from 'react';
 import { useGalleryData } from '../../../contexts/PageDataContext';
 import { useLocalize } from '../../../hooks/useLocalize';
 import { useLanguage } from '../../../contexts/LanguageContext';
@@ -12,8 +12,6 @@ export default function Gallery() {
   const { language } = useLanguage();
   const allCategory = translate('all', language);
   const [selectedCategoryIndex, setSelectedCategoryIndex] = useState<number>(0);
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const [currentIndex, setCurrentIndex] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
 
@@ -32,7 +30,7 @@ export default function Gallery() {
   const sectionTitle = getText(galleryData.sectionTitle);
 
   return (
-    <section id="gallery" className="py-32 px-6 bg-white relative overflow-hidden">
+    <section id="gallery" className="py-16 sm:py-20 md:py-28 lg:py-32 px-4 sm:px-6 bg-white relative overflow-hidden">
       {/* Background Decor */}
       <div className="absolute top-0 right-0 w-[50vw] h-[50vw] bg-yellow-400 opacity-[0.03] rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2" />
 

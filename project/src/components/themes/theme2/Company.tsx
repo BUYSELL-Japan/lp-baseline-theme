@@ -21,14 +21,14 @@ export default function Company() {
   }
 
   return (
-    <section id="company" className="py-32 px-6 bg-slate-950">
+    <section id="company" className="py-16 sm:py-20 md:py-28 lg:py-32 px-4 sm:px-6 bg-slate-950">
       <div className="max-w-6xl mx-auto">
         {(sectionTitle || sectionSubtitle) && (
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6 }}
             className="mb-16"
           >
             {sectionTitle && (

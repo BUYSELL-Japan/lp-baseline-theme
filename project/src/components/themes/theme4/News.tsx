@@ -13,7 +13,7 @@ export default function News() {
   const sectionSubtitle = getText(newsData.sectionSubtitle);
 
   return (
-    <section id="news" className="py-32 px-6 bg-red-50/10 relative overflow-hidden">
+    <section id="news" className="py-16 sm:py-20 md:py-28 lg:py-32 px-4 sm:px-6 bg-red-50/10 relative overflow-hidden">
       {/* Background Decor */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-px h-full bg-red-600/10 hidden lg:block" />
@@ -39,7 +39,7 @@ export default function News() {
               initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
+              transition={{ duration: 0.6, delay: Math.min(index * 0.08, 0.4) }}
               className={`relative flex flex-col lg:flex-row items-center gap-12 ${
                 index % 2 === 0 ? 'lg:flex-row-reverse' : ''
               } lg:mb-32`}

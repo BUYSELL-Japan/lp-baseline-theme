@@ -15,39 +15,32 @@ export default function StoreInfo() {
   const storeInfoData = useStoreInfoData();
   const { t } = useLocalize();
 
-  (()=>{})('[StoreInfo] storeInfoData:', storeInfoData);
-
   if (!storeInfoData) {
-    (()=>{})('[StoreInfo] No storeInfoData');
     return <SectionError sectionName="Store Info" error="No store information data available" data={storeInfoData} />;
   }
 
   const sectionTitle = t(storeInfoData, 'sectionTitle');
-
-  (()=>{})('[StoreInfo] sectionTitle:', sectionTitle);
-  (()=>{})('[StoreInfo] items:', storeInfoData.items);
 
   if (!sectionTitle) {
     return <SectionError sectionName="Store Info" error="Missing section title" data={storeInfoData} />;
   }
 
   if (!storeInfoData.items || !Array.isArray(storeInfoData.items) || storeInfoData.items.length === 0) {
-    (()=>{})('[StoreInfo] Missing items array');
     return <SectionError sectionName="Store Info" error="No store information items found. Expected 'items' array in data." data={storeInfoData} />;
   }
 
   return (
-    <section id="storeInfo" className="py-24 px-4">
+    <section id="storeInfo" className="py-16 sm:py-20 md:py-28 lg:py-32 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.6 }}
+          className="mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">{t(storeInfoData, 'sectionTitle')}</h2>
-          <div className="w-24 h-1 bg-theme-divider mx-auto" />
+          <div className="w-16 h-2 bg-theme-divider mb-6" />
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900">{t(storeInfoData, 'sectionTitle')}</h2>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
@@ -65,7 +58,7 @@ export default function StoreInfo() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{ duration: 0.6, delay: Math.min(index * 0.08, 0.4) }}
                 whileHover={{ scale: 1.02, y: -5 }}
                 className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
               >

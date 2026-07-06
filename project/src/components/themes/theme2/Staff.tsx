@@ -20,13 +20,13 @@ export default function Staff() {
   }
 
   return (
-    <section id="staff" className="py-32 px-6 bg-slate-950">
+    <section id="staff" className="py-16 sm:py-20 md:py-28 lg:py-32 px-4 sm:px-6 bg-slate-950">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
           className="mb-16"
         >
           <div className="w-16 h-1 bg-blue-500 mb-8" />
@@ -49,7 +49,7 @@ export default function Staff() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.6, delay: Math.min(index * 0.08, 0.4) }}
               whileHover={{ y: -8 }}
               className="group bg-slate-900 rounded-3xl border border-slate-800 hover:border-blue-500/40 overflow-hidden transition-colors"
             >

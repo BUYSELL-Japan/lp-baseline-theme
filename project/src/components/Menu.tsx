@@ -1,4 +1,4 @@
-import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
 import { useMenuData } from '../contexts/PageDataContext';
 import { useLocalize } from '../hooks/useLocalize';
@@ -24,7 +24,7 @@ function MenuItem({ item, index, onImageClick }: { item: MenuItemType; index: nu
         whileHover={{ scale: 1.02, y: -5 }}
         transition={{ duration: 0.3, ease: 'easeOut' }}
       >
-          <div className="relative overflow-hidden h-56 cursor-pointer group/image" onClick={onImageClick}>
+          <div className="relative overflow-hidden aspect-[4/3] cursor-pointer group/image" onClick={onImageClick}>
             <motion.img
               src={item.image}
               alt={t(item, 'name')}
@@ -55,10 +55,7 @@ export default function Menu() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // (()=>{})('[Menu] menuData:', menuData);
-
   if (!menuData) {
-    (()=>{})('[Menu] No menuData');
     return <SectionError sectionName="Menu" error="No menu data available" data={menuData} />;
   }
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -125,18 +122,18 @@ export default function Menu() {
   }));
 
   return (
-    <section id="menu" className="py-24 bg-gradient-to-b from-amber-50/30 to-white">
-      <div className="max-w-7xl mx-auto px-4">
+    <section id="menu" className="py-16 sm:py-20 md:py-28 lg:py-32 bg-gradient-to-b from-gray-50 to-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.6 }}
+          className="mb-16"
         >
+          <div className="w-16 h-2 bg-theme-divider mb-6" />
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">{sectionTitle}</h2>
-          <div className="w-24 h-1 bg-theme-divider mx-auto mb-6" />
-          <p className="text-xl text-gray-700">{sectionSubtitle}</p>
+          <p className="text-xl text-gray-600">{sectionSubtitle}</p>
         </motion.div>
 
         <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-8">

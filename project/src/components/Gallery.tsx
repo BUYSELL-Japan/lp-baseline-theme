@@ -22,15 +22,11 @@ export default function Gallery() {
     setSelectedCategoryIndex(0);
   }, [language]);
 
-  (()=>{})('[Gallery] galleryData:', galleryData);
-
   if (!galleryData) {
-    (()=>{})('[Gallery] No galleryData');
     return <SectionError sectionName="Gallery" error="No gallery data available" data={galleryData} />;
   }
 
   if (!galleryData.images || !Array.isArray(galleryData.images)) {
-    (()=>{})('[Gallery] Missing images array');
     return <SectionError sectionName="Gallery" error="No gallery images found. Expected 'images' array in data." data={galleryData} />;
   }
 
@@ -114,20 +110,20 @@ export default function Gallery() {
   }
 
   return (
-    <section id="gallery" className="py-24 px-4 bg-gradient-to-b from-white to-gray-50">
+    <section id="gallery" className="py-16 sm:py-20 md:py-28 lg:py-32 px-4 sm:px-6 bg-gradient-to-b from-white to-gray-50">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.6 }}
+          className="mb-16"
         >
+          <div className="w-16 h-2 bg-theme-divider mb-6" />
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             {sectionTitle}
           </h2>
-          <div className="w-24 h-1 bg-theme-divider mx-auto mb-6" />
-          <p className="text-xl text-gray-700">{sectionSubtitle}</p>
+          <p className="text-xl text-gray-600">{sectionSubtitle}</p>
         </motion.div>
 
         <motion.div

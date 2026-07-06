@@ -53,28 +53,28 @@ export default function Contact() {
 
   const isDisabled = submitStatus === 'sending' || submitStatus === 'success';
 
-  const inputBase = "w-full px-5 py-4 rounded-xl bg-slate-800 border-2 border-slate-700 text-white placeholder-slate-500 focus:outline-none transition-colors disabled:opacity-60 disabled:cursor-not-allowed";
+  const inputBase = "w-full px-5 py-4 rounded-xl bg-white border-2 border-slate-200 text-slate-900 placeholder-slate-400 focus:outline-none transition-colors disabled:opacity-60 disabled:cursor-not-allowed";
   const inputFocused = "border-blue-500";
-  const inputNormal = "border-slate-700";
+  const inputNormal = "border-slate-200";
 
   return (
-    <section id="contact" className="py-32 px-6 bg-slate-950">
+    <section id="contact" className="py-16 sm:py-20 md:py-28 lg:py-32 px-4 sm:px-6 bg-slate-50">
       {/* Glow accent */}
-      <div className="absolute left-1/2 -translate-x-1/2 w-[600px] h-64 bg-blue-600/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute left-1/2 -translate-x-1/2 w-[600px] h-64 bg-blue-600/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-3xl mx-auto relative">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
           <div className="w-16 h-1 bg-blue-500 mx-auto mb-8" />
-          <h2 className="text-5xl md:text-7xl font-black text-white tracking-tighter mb-6">
+          <h2 className="text-5xl md:text-7xl font-black text-slate-900 tracking-tighter mb-6">
             {t(contactData, 'sectionTitle')}
           </h2>
-          <p className="text-xl text-slate-400">
+          <p className="text-xl text-slate-500">
             {t(contactData, 'sectionSubtitle')}
           </p>
         </motion.div>
@@ -83,9 +83,9 @@ export default function Contact() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.6, delay: 0.15 }}
           onSubmit={handleSubmit}
-          className="bg-slate-900 rounded-3xl border border-slate-800 p-8 md:p-12 shadow-2xl"
+          className="bg-white rounded-3xl border border-slate-200 p-8 md:p-12 shadow-xl"
         >
           {/* Honeypot */}
           <div style={{ display: 'none' }} aria-hidden="true">
@@ -95,7 +95,7 @@ export default function Contact() {
           <div className="space-y-6">
             {/* Name */}
             <div>
-              <label htmlFor="name-t2" className="block text-sm font-bold text-slate-400 uppercase tracking-widest mb-2">
+              <label htmlFor="name-t2" className="block text-sm font-bold text-slate-500 uppercase tracking-widest mb-2">
                 {t(contactData.fields, 'name')}
               </label>
               <input
@@ -110,7 +110,7 @@ export default function Contact() {
 
             {/* Email */}
             <div>
-              <label htmlFor="email-t2" className="block text-sm font-bold text-slate-400 uppercase tracking-widest mb-2">
+              <label htmlFor="email-t2" className="block text-sm font-bold text-slate-500 uppercase tracking-widest mb-2">
                 {t(contactData.fields, 'email')}
               </label>
               <input
@@ -125,7 +125,7 @@ export default function Contact() {
 
             {/* Subject */}
             <div>
-              <label htmlFor="subject-t2" className="block text-sm font-bold text-slate-400 uppercase tracking-widest mb-2">
+              <label htmlFor="subject-t2" className="block text-sm font-bold text-slate-500 uppercase tracking-widest mb-2">
                 {t(contactData.fields, 'subject')}
               </label>
               <input
@@ -140,7 +140,7 @@ export default function Contact() {
 
             {/* Message */}
             <div>
-              <label htmlFor="message-t2" className="block text-sm font-bold text-slate-400 uppercase tracking-widest mb-2">
+              <label htmlFor="message-t2" className="block text-sm font-bold text-slate-500 uppercase tracking-widest mb-2">
                 {t(contactData.fields, 'message')}
               </label>
               <textarea
@@ -170,7 +170,7 @@ export default function Contact() {
               {submitStatus === 'success' && (
                 <motion.div
                   initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}
-                  className="flex items-center gap-3 p-4 bg-blue-600/20 border border-blue-500/40 rounded-xl text-blue-300"
+                  className="flex items-center gap-3 p-4 bg-blue-50 border border-blue-200 rounded-xl text-blue-700"
                 >
                   <CheckCircle className="w-5 h-5 flex-shrink-0" />
                   <span className="text-sm font-bold">{translate('contactSuccess')}</span>
@@ -179,7 +179,7 @@ export default function Contact() {
               {submitStatus === 'error' && (
                 <motion.div
                   initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}
-                  className="flex items-center gap-3 p-4 bg-red-500/20 border border-red-500/40 rounded-xl text-red-300"
+                  className="flex items-center gap-3 p-4 bg-red-50 border border-red-200 rounded-xl text-red-700"
                 >
                   <AlertCircle className="w-5 h-5 flex-shrink-0" />
                   <span className="text-sm font-bold">{translate('contactError')}</span>

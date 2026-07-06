@@ -45,7 +45,7 @@ export default function Pricing() {
           className="mb-16 lg:text-right"
         >
           <div className="flex items-center gap-4 mb-4 lg:justify-end">
-            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-500">Pricing</span>
+            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-500">{translate('sectionPricing', language)}</span>
             <div className="w-0.5 h-10 bg-[#C0392B]" />
           </div>
           <h2 className="text-4xl lg:text-6xl font-black text-white leading-none tracking-tight">
@@ -130,8 +130,10 @@ export default function Pricing() {
               </div>
 
               {/* CTA */}
-              <a
+              <motion.a
                 href="#contact"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 className={`block w-full text-center px-6 py-4 text-xs font-black uppercase tracking-[0.2em] border transition-all ${
                   plan.isPopular
                     ? 'bg-gray-950 text-[#D4AF37] border-gray-950 hover:bg-gray-800'
@@ -139,7 +141,7 @@ export default function Pricing() {
                 }`}
               >
                 {translate('bookingContact', language)}
-              </a>
+              </motion.a>
             </motion.div>
           ))}
         </div>

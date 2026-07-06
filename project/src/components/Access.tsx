@@ -11,21 +11,14 @@ export default function Access() {
   const { getText } = useLocalize();
   const { language } = useLanguage();
 
-  (()=>{})('[Access] accessData:', accessData);
-
   if (!accessData) {
-    (()=>{})('[Access] No accessData');
     return <SectionError sectionName="Access" error="No access data available" data={accessData} />;
   }
 
   const sectionTitle = getText(accessData.sectionTitle);
   const sectionSubtitle = getText(accessData.sectionSubtitle);
 
-  (()=>{})('[Access] sectionTitle:', sectionTitle);
-  (()=>{})('[Access] address:', accessData.address);
-
   if (!sectionTitle) {
-    (()=>{})('[Access] Missing sectionTitle');
     return <SectionError sectionName="Access" error="Missing section title" data={accessData} />;
   }
 
@@ -33,20 +26,20 @@ export default function Access() {
   const hasTransportation = accessData.transportation && typeof accessData.transportation === 'object';
 
   return (
-    <section id="access" className="py-24 px-4 bg-section-gradient">
+    <section id="access" className="py-16 sm:py-20 md:py-28 lg:py-32 px-4 sm:px-6 bg-section-gradient">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.6 }}
+          className="mb-16"
         >
+          <div className="w-16 h-2 bg-theme-divider mb-6" />
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             {sectionTitle}
           </h2>
-          <div className="w-24 h-1 bg-theme-divider mx-auto mb-6" />
-          <p className="text-xl text-gray-700">{sectionSubtitle}</p>
+          <p className="text-xl text-gray-600">{sectionSubtitle}</p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">

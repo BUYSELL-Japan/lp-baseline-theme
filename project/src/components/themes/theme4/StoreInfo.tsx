@@ -17,7 +17,7 @@ export default function StoreInfo() {
   if (!storeInfoData || !storeInfoData.items) return null;
 
   return (
-    <section id="storeInfo" className="py-32 px-6 bg-white relative overflow-hidden">
+    <section id="storeInfo" className="py-16 sm:py-20 md:py-28 lg:py-32 px-4 sm:px-6 bg-white relative overflow-hidden">
       {/* Background Decor */}
       <div className="absolute top-0 right-0 w-[500px] h-px bg-red-600/10 rotate-45 translate-x-1/2" />
 
@@ -49,7 +49,7 @@ export default function StoreInfo() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
+                    transition={{ delay: Math.min(index * 0.08, 0.4) }}
                     className="flex items-center gap-8 p-8 bg-red-50/50 rounded-[3rem] border-2 border-transparent hover:border-red-600 transition-all duration-300"
                   >
                     <div className="w-16 h-16 bg-red-600 rounded-[1.5rem] flex items-center justify-center shadow-xl rotate-3">
@@ -77,7 +77,7 @@ export default function StoreInfo() {
               viewport={{ once: true }}
               className="relative z-10 p-4 bg-white rounded-[4rem] shadow-2xl -rotate-2"
             >
-              <div className="aspect-[4/5] rounded-[3.5rem] overflow-hidden">
+              <div className="aspect-[4/5] rounded-[3.5rem] overflow-hidden relative">
                 <img
                   src={storeInfoData.mainImage}
                   alt={t(storeInfoData, 'mainImageCaption')}

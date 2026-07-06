@@ -23,13 +23,13 @@ export default function Menu() {
   }));
 
   return (
-    <section id="menu" className="py-32 px-6 bg-slate-950">
+    <section id="menu" className="py-16 sm:py-20 md:py-28 lg:py-32 px-4 sm:px-6 bg-slate-950">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
           className="mb-20"
         >
           <h2 className="text-5xl md:text-7xl font-black text-white tracking-tighter mb-6 underline decoration-blue-600 underline-offset-8">
@@ -47,7 +47,7 @@ export default function Menu() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.6, delay: Math.min(index * 0.08, 0.4) }}
               className="group cursor-pointer"
               onClick={() => openLightbox(index)}
             >

@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Globe, BarChart3 } from 'lucide-react';
 import { useHeaderData, usePageData } from '../../../contexts/PageDataContext';
 import { useLanguage, languageNames, type Language } from '../../../contexts/LanguageContext';
-import { getLocalizedValue } from '../../../utils/i18n';
+import { getLocalizedValue, translate } from '../../../utils/i18n';
 
 export default function Header() {
   const headerData = useHeaderData();
@@ -112,7 +112,7 @@ export default function Header() {
         <button 
           className="xl:hidden w-10 h-10 flex items-center justify-center text-white hover:bg-white/10 rounded-lg transition-colors"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label={mobileMenuOpen ? 'メニューを閉じる' : 'メニューを開く'}
+          aria-label={mobileMenuOpen ? translate('mobileMenuClose', language) : translate('mobileMenuOpen', language)}
         >
           {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
@@ -132,7 +132,7 @@ export default function Header() {
             <button
               onClick={() => setMobileMenuOpen(false)}
               className="absolute top-5 right-5 p-2 text-white hover:bg-white/10 rounded-lg transition-colors"
-              aria-label="メニューを閉じる"
+              aria-label={translate('mobileMenuClose', language)}
             >
               <X className="w-7 h-7" />
             </button>
@@ -152,7 +152,7 @@ export default function Header() {
             </div>
             
             <div className="px-8 py-6 border-t border-slate-800">
-              <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-3">言語 / Language</p>
+              <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-3">{translate('languageLabel', language)}</p>
               <div className="grid grid-cols-2 gap-2">
                 {Object.keys(languageNames).map(lang => (
                   <a 

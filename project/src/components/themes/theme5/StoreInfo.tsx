@@ -12,7 +12,7 @@ const iconMap: Record<string, any> = {
 
 export default function StoreInfo() {
   const storeInfoData = useStoreInfoData();
-  const { t } = useLocalize();
+  const { t, translate } = useLocalize();
 
   if (!storeInfoData || !storeInfoData.items) return null;
 
@@ -60,7 +60,7 @@ export default function StoreInfo() {
               <div className="mb-12">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-0.5 h-10 bg-[#C0392B]" />
-                  <span className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-500">Store Info</span>
+                  <span className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-500">{translate('sectionStoreInfo')}</span>
                 </div>
                 <h2 className="text-4xl lg:text-5xl font-black text-white leading-none tracking-tight">
                   {t(storeInfoData, 'sectionTitle')}

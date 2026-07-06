@@ -16,7 +16,7 @@ export default function Pricing() {
   const sectionSubtitle = getText(pricingData.sectionSubtitle);
 
   return (
-    <section id="pricing" className="py-32 px-6 bg-red-50/10 relative overflow-hidden">
+    <section id="pricing" className="py-16 sm:py-20 md:py-28 lg:py-32 px-4 sm:px-6 bg-red-50/10 relative overflow-hidden">
       {/* Decorative Sun */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-yellow-400 opacity-10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2" />
       
@@ -42,7 +42,7 @@ export default function Pricing() {
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.6, delay: Math.min(index * 0.08, 0.4) }}
               className={`relative flex-1 flex flex-col ${
                 plan.isPopular ? 'lg:scale-110 lg:z-20' : 'lg:z-10 opacity-90'
               }`}

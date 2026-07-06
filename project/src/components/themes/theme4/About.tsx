@@ -16,7 +16,7 @@ function FeatureCard({ feature, index }: { feature: AboutFeature; index: number 
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.8, delay: index * 0.2 }}
+      transition={{ duration: 0.6, delay: Math.min(index * 0.08, 0.4) }}
       className={`relative flex flex-col items-center gap-12 mb-48 lg:mb-64 ${
         index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
       }`}
@@ -30,7 +30,7 @@ function FeatureCard({ feature, index }: { feature: AboutFeature; index: number 
           <img
             src={feature.image}
             alt={t(feature, 'title')}
-            className="w-full h-[500px] object-cover rounded-[3.5rem] transition-transform duration-700 group-hover:scale-110"
+            className="w-full aspect-[4/5] sm:aspect-[4/3] object-cover rounded-[3.5rem] transition-transform duration-700 group-hover:scale-110"
           />
         </motion.div>
         
@@ -66,7 +66,7 @@ export default function About() {
   if (!aboutData || !aboutData.features) return null;
 
   return (
-    <section id="about" className="py-32 px-6 bg-red-50/30 relative overflow-hidden">
+    <section id="about" className="py-16 sm:py-20 md:py-28 lg:py-32 px-4 sm:px-6 bg-red-50/30 relative overflow-hidden">
       {/* Background Text Decor - Removed to simplify UX */}
 
       <div className="max-w-[1200px] mx-auto relative z-10">

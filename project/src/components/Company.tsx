@@ -8,10 +8,7 @@ export default function Company() {
   const companyData = useCompanyData();
   const { getText } = useLocalize();
 
-  (()=>{})('[Company] companyData:', companyData);
-
   if (!companyData) {
-    (()=>{})('[Company] No companyData');
     return <SectionError sectionName="Company" error="No company data available" data={companyData} />;
   }
 
@@ -27,26 +24,26 @@ export default function Company() {
   }
 
   return (
-    <section id="company" className="py-24 px-4 bg-gradient-to-b from-gray-50 to-white">
+    <section id="company" className="py-16 sm:py-20 md:py-28 lg:py-32 px-4 sm:px-6 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-6xl mx-auto">
         {(sectionTitle || sectionSubtitle) && (
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            transition={{ duration: 0.6 }}
+            className="mb-16"
           >
             {sectionTitle && (
               <>
+                <div className="w-16 h-2 bg-theme-divider mb-6" />
                 <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
                   {sectionTitle}
                 </h2>
-                <div className="w-24 h-1 bg-theme-divider mx-auto mb-6" />
               </>
             )}
             {sectionSubtitle && (
-              <p className="text-xl text-gray-700">{sectionSubtitle}</p>
+              <p className="text-xl text-gray-600">{sectionSubtitle}</p>
             )}
           </motion.div>
         )}

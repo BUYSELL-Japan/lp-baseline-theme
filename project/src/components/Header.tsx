@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Waves, Menu, X, Globe } from 'lucide-react';
 import { useHeaderData, usePageData } from '../contexts/PageDataContext';
 import { useLanguage, languageNames, type Language } from '../contexts/LanguageContext';
-import { getLocalizedValue } from '../utils/i18n';
+import { getLocalizedValue, translate } from '../utils/i18n';
 
 export default function Header() {
   const headerData = useHeaderData();
@@ -190,7 +190,7 @@ export default function Header() {
                 }`}
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 whileTap={{ scale: 0.95 }}
-                aria-label={mobileMenuOpen ? 'メニューを閉じる' : 'メニューを開く'}
+                aria-label={mobileMenuOpen ? translate('mobileMenuClose', language) : translate('mobileMenuOpen', language)}
               >
                 {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </motion.button>
@@ -233,7 +233,7 @@ export default function Header() {
 
             {/* Language options at bottom */}
             <div className="px-6 py-6 border-t border-gray-100">
-              <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">言語 / Language</p>
+              <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">{translate('languageLabel', language)}</p>
               <div className="grid grid-cols-2 gap-2">
                 {(Object.keys(languageNames) as Language[]).map((lang) => (
                   <a

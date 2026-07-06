@@ -19,7 +19,7 @@ function MenuItem({ item, index, onImageClick }: { item: MenuItemType; index: nu
       <div className="flex flex-col sm:flex-row items-start gap-0 py-8 sm:py-0">
         {/* Image */}
         <div
-          className="w-full sm:w-48 h-40 sm:h-36 overflow-hidden flex-shrink-0 cursor-pointer relative"
+          className="w-full sm:w-48 aspect-[4/3] overflow-hidden flex-shrink-0 cursor-pointer relative"
           onClick={onImageClick}
         >
           <img
@@ -60,7 +60,7 @@ function MenuItem({ item, index, onImageClick }: { item: MenuItemType; index: nu
 
 export default function Menu() {
   const menuData = useMenuData();
-  const { t } = useLocalize();
+  const { t, translate } = useLocalize();
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
 
@@ -91,7 +91,7 @@ export default function Menu() {
         >
           <div className="flex items-center gap-4 mb-4">
             <div className="w-0.5 h-10 bg-[#C0392B]" />
-            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-400">Menu</span>
+            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-400">{translate('menu')}</span>
           </div>
           <h2 className="text-4xl lg:text-6xl font-black text-gray-900 leading-none tracking-tight">
             {t(menuData, 'sectionTitle')}

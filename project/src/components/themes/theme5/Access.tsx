@@ -33,7 +33,7 @@ export default function Access() {
               <div className="mb-10">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-0.5 h-10 bg-[#C0392B]" />
-                  <span className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-500">Access</span>
+                  <span className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-500">{translate('sectionAccess', language)}</span>
                 </div>
                 <h2 className="text-4xl lg:text-5xl font-black text-white leading-none tracking-tight">
                   {sectionTitle}

@@ -5,7 +5,7 @@ import { useLocalize } from '../../../hooks/useLocalize';
 
 export default function CTA() {
   const ctaData = useCTAData();
-  const { getText } = useLocalize();
+  const { getText, translate } = useLocalize();
 
   if (!ctaData || !ctaData.buttons) return null;
 
@@ -38,7 +38,7 @@ export default function CTA() {
             <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-[#C0392B]" />
             <div className="pl-8">
               <div className="flex items-center gap-4 mb-6">
-                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-400">Contact</span>
+                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-400">{translate('sectionContact')}</span>
                 <div className="w-8 h-px bg-[#D4AF37]" />
               </div>
               <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-6 leading-tight tracking-tight">
@@ -64,9 +64,11 @@ export default function CTA() {
               {ctaData.buttons.map((button, index) => {
                 const isPrimary = button.type === 'primary';
                 return (
-                  <a
+                  <motion.a
                     key={index}
                     href={button.link}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
                     className={`inline-flex items-center gap-4 px-8 py-5 text-sm font-black uppercase tracking-[0.15em] border transition-all ${
                       isPrimary
                         ? 'bg-[#D4AF37] text-gray-950 border-[#D4AF37] hover:bg-[#C9A227]'
@@ -75,7 +77,7 @@ export default function CTA() {
                   >
                     {isPrimary ? <Phone className="w-5 h-5 shrink-0" /> : <Mail className="w-5 h-5 shrink-0" />}
                     {getText(button.text)}
-                  </a>
+                  </motion.a>
                 );
               })}
             </div>

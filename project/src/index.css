@@ -1,7 +1,7 @@
 /* default.css を先に読み込み、次に上書きしたいテーマCSSを読み込む */
-/* warm.css を使いたい場合は warm.css の import をコメントアウト解除してください */
-/* @import './themes/Standard/default.css'; */
-@import './themes/Standard/warm.css';
+/* warm.css は特定店舗（食彩kamado）向けの専用配色のため、汎用的なStandardテーマの既定値には使わない */
+@import './themes/Standard/default.css';
+/* @import './themes/Standard/warm.css'; */
 
 @tailwind base;
 @tailwind components;

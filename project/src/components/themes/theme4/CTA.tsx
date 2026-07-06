@@ -12,7 +12,7 @@ export default function CTA() {
   const sectionTitle = getText(ctaData.sectionTitle);
 
   return (
-    <section className="relative py-48 px-6 overflow-hidden bg-red-950">
+    <section className="relative py-24 sm:py-32 lg:py-48 px-4 sm:px-6 overflow-hidden bg-red-950">
       <div className="absolute inset-0">
         <img
           src={ctaData.backgroundImage}

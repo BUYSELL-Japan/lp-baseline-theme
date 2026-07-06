@@ -18,6 +18,11 @@ const { title, description = '', lang = 'ja', alternateLinks = [] } = Astro.prop
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     {description && <meta name="description" content={description} />}
+
+    <!-- Standard(theme1) 用フォント。--font-display(default.css: Noto Sans JP)を実際に読み込む -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
     
     {alternateLinks.map(link => (
       <link rel="alternate" hreflang={link.lang} href={link.href} />

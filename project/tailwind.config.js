@@ -3,6 +3,10 @@ export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx,astro}'],
   theme: {
     extend: {
+      fontFamily: {
+        // Standard(theme1) の実フォント。default.css / warm.css の --font-display を反映
+        display: ['var(--font-display)', 'Noto Sans JP', 'sans-serif'],
+      },
       colors: {
         // テーマカラー（CSS変数から取得 - warm.css / default.css で上書き可能）
         theme: {

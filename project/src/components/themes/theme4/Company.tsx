@@ -13,7 +13,7 @@ export default function Company() {
   const sectionSubtitle = getText(companyData.sectionSubtitle);
 
   return (
-    <section id="company" className="py-32 px-6 bg-red-50/10 relative overflow-hidden">
+    <section id="company" className="py-16 sm:py-20 md:py-28 lg:py-32 px-4 sm:px-6 bg-red-50/10 relative overflow-hidden">
       {/* Background Decor - Removed filler text */}
 
       <div className="max-w-7xl mx-auto relative z-10">

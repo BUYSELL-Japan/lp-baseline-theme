@@ -7,10 +7,7 @@ export default function Staff() {
   const staffData = useStaffData();
   const { getText } = useLocalize();
 
-  (()=>{})('[Staff] staffData:', staffData);
-
   if (!staffData) {
-    (()=>{})('[Staff] No staffData');
     return <SectionError sectionName="Staff" error="No staff data available" data={staffData} />;
   }
 
@@ -23,32 +20,28 @@ export default function Staff() {
   });
 
   if (validMembers.length === 0) {
-    (()=>{})('[Staff] Missing members array or all empty');
     return null;
   }
-
-  (()=>{})('[Staff] sectionTitle:', sectionTitle);
-  (()=>{})('[Staff] members:', staffData.members);
 
   if (!sectionTitle) {
     return <SectionError sectionName="Staff" error="Missing section title" data={staffData} />;
   }
 
   return (
-    <section id="staff" className="py-24 px-4 bg-gradient-to-b from-gray-50 to-white">
+    <section id="staff" className="py-16 sm:py-20 md:py-28 lg:py-32 px-4 sm:px-6 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.6 }}
+          className="mb-16"
         >
+          <div className="w-16 h-2 bg-theme-divider mb-6" />
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             {sectionTitle}
           </h2>
-          <div className="w-24 h-1 bg-theme-divider mx-auto mb-6" />
-          <p className="text-xl text-gray-700">{sectionSubtitle}</p>
+          <p className="text-xl text-gray-600">{sectionSubtitle}</p>
         </motion.div>
 
         <div className={`grid grid-cols-1 ${
@@ -63,7 +56,7 @@ export default function Staff() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.6, delay: Math.min(index * 0.08, 0.4) }}
               whileHover={{ y: -10, scale: 1.02 }}
               className="bg-white rounded-2xl shadow-lg overflow-hidden"
             >

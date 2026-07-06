@@ -15,7 +15,7 @@ export default function FAQ() {
   const sectionSubtitle = getText(faqData.sectionSubtitle);
 
   return (
-    <section id="faq" className="py-32 px-6 bg-white relative overflow-hidden">
+    <section id="faq" className="py-16 sm:py-20 md:py-28 lg:py-32 px-4 sm:px-6 bg-white relative overflow-hidden">
       {/* Background Decor */}
       <div className="absolute top-0 left-0 w-[40vw] h-[40vw] bg-red-600 opacity-[0.02] rounded-full blur-[100px] -translate-x-1/4 -translate-y-1/4" />
 
@@ -41,7 +41,7 @@ export default function FAQ() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
+                transition={{ delay: Math.min(index * 0.08, 0.4) }}
                 className={`flex flex-col rounded-[3rem] p-8 md:p-10 transition-all duration-500 overflow-hidden ${
                   isOpen ? 'bg-red-50 shadow-2xl scale-105 z-20' : 'bg-red-50/40 hover:bg-red-50'
                 }`}

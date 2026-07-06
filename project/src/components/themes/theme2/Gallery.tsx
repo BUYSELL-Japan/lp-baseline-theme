@@ -60,20 +60,20 @@ export default function Gallery() {
   if (!sectionTitle || galleryData.images.length === 0) return null;
 
   return (
-    <section id="gallery" className="py-32 px-6 bg-slate-900">
+    <section id="gallery" className="py-16 sm:py-20 md:py-28 lg:py-32 px-4 sm:px-6 bg-slate-50">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
           className="mb-16"
         >
           <div className="w-16 h-1 bg-blue-500 mb-8" />
-          <h2 className="text-5xl md:text-7xl font-black text-white tracking-tighter mb-4">
+          <h2 className="text-5xl md:text-7xl font-black text-slate-900 tracking-tighter mb-4">
             {sectionTitle}
           </h2>
-          {sectionSubtitle && <p className="text-xl text-slate-400">{sectionSubtitle}</p>}
+          {sectionSubtitle && <p className="text-xl text-slate-500">{sectionSubtitle}</p>}
         </motion.div>
 
         {/* Category filter */}
@@ -89,7 +89,7 @@ export default function Gallery() {
             className={`px-6 py-2.5 rounded-xl font-black text-sm uppercase tracking-widest transition-all ${
               selectedCategoryIndex === 0
                 ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/30'
-                : 'bg-slate-800 text-slate-400 border border-slate-700 hover:border-blue-500/50 hover:text-white'
+                : 'bg-white text-slate-500 border border-slate-200 hover:border-blue-400 hover:text-slate-900'
             }`}
             whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
           >
@@ -104,7 +104,7 @@ export default function Gallery() {
                 className={`px-6 py-2.5 rounded-xl font-black text-sm uppercase tracking-widest transition-all ${
                   selectedCategoryIndex === categoryIndex
                     ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/30'
-                    : 'bg-slate-800 text-slate-400 border border-slate-700 hover:border-blue-500/50 hover:text-white'
+                    : 'bg-white text-slate-500 border border-slate-200 hover:border-blue-400 hover:text-slate-900'
                 }`}
                 whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
               >
@@ -123,12 +123,12 @@ export default function Gallery() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
-              transition={{ duration: 0.4, delay: index * 0.05 }}
+              transition={{ duration: 0.6, delay: Math.min(index * 0.08, 0.4) }}
               whileHover={{ y: -6, scale: 1.02 }}
               onClick={() => { setLightboxIndex(index); setLightboxOpen(true); }}
-              className="group relative rounded-2xl overflow-hidden cursor-pointer border border-slate-800 hover:border-blue-500/40 transition-colors"
+              className="group relative rounded-2xl overflow-hidden cursor-pointer border border-slate-200 hover:border-blue-400 hover:shadow-lg transition-colors"
             >
-              <div className="aspect-square bg-slate-800 relative overflow-hidden">
+              <div className="aspect-square bg-slate-100 relative overflow-hidden">
                 <img src={image.url} alt={getText(image.caption)} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="absolute bottom-0 left-0 right-0 p-6">
@@ -153,8 +153,8 @@ export default function Gallery() {
                 onClick={() => { setLightboxIndex(index); setLightboxOpen(true); }}
                 className="flex-shrink-0 w-[85vw] snap-center"
               >
-                <div className="group relative rounded-2xl overflow-hidden border border-slate-800">
-                  <div className="aspect-square bg-slate-800 relative overflow-hidden">
+                <div className="group relative rounded-2xl overflow-hidden border border-slate-200">
+                  <div className="aspect-square bg-slate-100 relative overflow-hidden">
                     <img src={image.url} alt={getText(image.caption)} className="w-full h-full object-cover" />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent">
                       <div className="absolute bottom-0 left-0 right-0 p-6">
@@ -174,7 +174,7 @@ export default function Gallery() {
               <button
                 key={index}
                 onClick={() => scrollToIndex(index)}
-                className={`h-2 rounded-full transition-all duration-300 ${index === currentIndex ? 'bg-blue-500 w-8' : 'bg-slate-700 w-2 hover:bg-slate-500'}`}
+                className={`h-2 rounded-full transition-all duration-300 ${index === currentIndex ? 'bg-blue-500 w-8' : 'bg-slate-300 w-2 hover:bg-slate-400'}`}
                 aria-label={`Image ${index + 1}`}
               />
             ))}

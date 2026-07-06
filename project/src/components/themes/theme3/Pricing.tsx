@@ -43,7 +43,7 @@ export default function Pricing() {
               transition={{ duration: 0.7, delay: index * 0.1 }}
               className={`relative p-10 flex flex-col h-full transition-all duration-500 ${
                 plan.isPopular
-                  ? 'bg-amber-800 text-white shadow-xl shadow-amber-900/20'
+                  ? 'bg-amber-800 text-white border-2 border-amber-900'
                   : 'bg-white border border-stone-200 hover:border-amber-300 hover:shadow-md'
               }`}
             >
@@ -53,7 +53,7 @@ export default function Pricing() {
 
               {plan.isPopular && (
                 <span className="absolute -top-4 left-1/2 -translate-x-1/2 bg-amber-600 text-white text-xs font-serif tracking-[0.2em] uppercase px-6 py-1.5">
-                  Recommended
+                  {translate('popular', language)}
                 </span>
               )}
 

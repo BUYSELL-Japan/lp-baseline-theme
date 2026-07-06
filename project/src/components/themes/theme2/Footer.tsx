@@ -25,7 +25,7 @@ export default function Footer() {
   const description = getText(footerData.description);
 
   return (
-    <footer className="bg-slate-950 text-white pt-24 pb-12 px-6 border-t border-slate-900">
+    <footer className="bg-slate-950 text-white pt-16 sm:pt-20 lg:pt-24 pb-10 sm:pb-12 px-4 sm:px-6 border-t border-slate-900">
       <div className="max-w-7xl mx-auto">
         {/* Grid: Logo + sections */}
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-16 mb-20">

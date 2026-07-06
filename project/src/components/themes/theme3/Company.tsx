@@ -5,7 +5,7 @@ import { useLocalize } from '../../../hooks/useLocalize';
 
 export default function Company() {
   const companyData = useCompanyData();
-  const { getText } = useLocalize();
+  const { getText, translate } = useLocalize();
 
   if (!companyData) return null;
 
@@ -63,7 +63,7 @@ export default function Company() {
               transition={{ duration: 0.9 }}
             >
               <div className="flex items-baseline gap-6 mb-10">
-                <span className="font-serif text-xs tracking-[0.4em] uppercase text-amber-700">History</span>
+                <span className="font-serif text-xs tracking-[0.4em] uppercase text-amber-700">{translate('sectionHistory')}</span>
                 <h3 className="font-serif text-2xl text-stone-800 font-light tracking-wide">
                   {getText(companyData.history.title)}
                 </h3>
@@ -97,7 +97,7 @@ export default function Company() {
               transition={{ duration: 0.9 }}
             >
               <div className="flex items-baseline gap-6 mb-10">
-                <span className="font-serif text-xs tracking-[0.4em] uppercase text-amber-700">Company</span>
+                <span className="font-serif text-xs tracking-[0.4em] uppercase text-amber-700">{translate('sectionCompany')}</span>
                 <h3 className="font-serif text-2xl text-stone-800 font-light tracking-wide">
                   {getText(companyData.companyInfo.title)}
                 </h3>

@@ -23,17 +23,17 @@ export default function StoreInfo() {
   }
 
   return (
-    <section id="storeInfo" className="py-32 px-6 bg-slate-900">
+    <section id="storeInfo" className="py-16 sm:py-20 md:py-28 lg:py-32 px-4 sm:px-6 bg-slate-50">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
           className="mb-16"
         >
           <div className="w-16 h-1 bg-blue-500 mb-8" />
-          <h2 className="text-5xl md:text-7xl font-black text-white tracking-tighter">
+          <h2 className="text-5xl md:text-7xl font-black text-slate-900 tracking-tighter">
             {sectionTitle}
           </h2>
         </motion.div>
@@ -48,17 +48,17 @@ export default function StoreInfo() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{ duration: 0.6, delay: Math.min(index * 0.08, 0.4) }}
                 whileHover={{ y: -4 }}
-                className="bg-slate-950 rounded-2xl border border-slate-800 hover:border-blue-500/40 p-8 transition-colors"
+                className="bg-white rounded-2xl border border-slate-200 hover:border-blue-400 hover:shadow-md p-8 transition-colors"
               >
                 <div className="flex items-start gap-5">
-                  <div className="bg-blue-600/20 border border-blue-600/30 p-3 rounded-xl flex-shrink-0">
-                    <IconComponent className="w-6 h-6 text-blue-400" />
+                  <div className="bg-blue-50 border border-blue-200 p-3 rounded-xl flex-shrink-0">
+                    <IconComponent className="w-6 h-6 text-blue-600" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-black text-white mb-2">{t(item, 'title')}</h3>
-                    <p className="text-slate-400 leading-relaxed">{t(item, 'content')}</p>
+                    <h3 className="text-lg font-black text-slate-900 mb-2">{t(item, 'title')}</h3>
+                    <p className="text-slate-500 leading-relaxed">{t(item, 'content')}</p>
                   </div>
                 </div>
               </motion.div>
@@ -71,10 +71,10 @@ export default function StoreInfo() {
             initial={{ opacity: 0, scale: 0.97 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="rounded-3xl overflow-hidden border border-slate-800"
+            transition={{ duration: 0.6 }}
+            className="rounded-3xl overflow-hidden border border-slate-200"
           >
-            <div className="aspect-video bg-slate-800 relative">
+            <div className="aspect-video bg-slate-100 relative">
               <img
                 src={storeInfoData.mainImage}
                 alt={t(storeInfoData, 'mainImageCaption')}

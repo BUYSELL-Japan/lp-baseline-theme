@@ -111,7 +111,7 @@ export default function Footer() {
                           key={index}
                           href={social.url}
                           whileHover={{ y: -2 }}
-                          className="w-10 h-10 border border-gray-700 flex items-center justify-center text-gray-500 hover:text-[#D4AF37] hover:border-[#D4AF37] transition-all"
+                          className="w-11 h-11 border border-gray-700 flex items-center justify-center text-gray-500 hover:text-[#D4AF37] hover:border-[#D4AF37] transition-all"
                         >
                           <Icon className="w-4 h-4" />
                         </motion.a>

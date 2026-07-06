@@ -79,6 +79,90 @@ export const staticTranslations: Record<string, Record<Language, string>> = {
     'zh-tw': '發送失敗。請稍後再試。',
     ko: '전송에 실패했습니다. 잠시 후 다시 시도해 주세요.',
   },
+  mobileMenuOpen: {
+    ja: 'メニューを開く',
+    en: 'Open menu',
+    'zh-tw': '開啟選單',
+    ko: '메뉴 열기',
+  },
+  mobileMenuClose: {
+    ja: 'メニューを閉じる',
+    en: 'Close menu',
+    'zh-tw': '關閉選單',
+    ko: '메뉴 닫기',
+  },
+  languageLabel: {
+    ja: '言語 / Language',
+    en: 'Language',
+    'zh-tw': '語言 / Language',
+    ko: '언어 / Language',
+  },
+  sectionAbout: {
+    ja: '当店について',
+    en: 'About',
+    'zh-tw': '關於我們',
+    ko: '소개',
+  },
+  sectionPricing: {
+    ja: '料金',
+    en: 'Pricing',
+    'zh-tw': '價格',
+    ko: '가격',
+  },
+  sectionGallery: {
+    ja: 'ギャラリー',
+    en: 'Gallery',
+    'zh-tw': '藝廊',
+    ko: '갤러리',
+  },
+  sectionStaff: {
+    ja: 'スタッフ紹介',
+    en: 'Staff',
+    'zh-tw': '員工介紹',
+    ko: '스태프 소개',
+  },
+  sectionNews: {
+    ja: 'お知らせ',
+    en: 'News',
+    'zh-tw': '最新消息',
+    ko: '공지사항',
+  },
+  sectionCompany: {
+    ja: '運営会社',
+    en: 'Company',
+    'zh-tw': '公司資訊',
+    ko: '회사 정보',
+  },
+  sectionStoreInfo: {
+    ja: '店舗情報',
+    en: 'Store Info',
+    'zh-tw': '店家資訊',
+    ko: '매장 정보',
+  },
+  sectionAccess: {
+    ja: 'アクセス',
+    en: 'Access',
+    'zh-tw': '交通方式',
+    ko: '오시는 길',
+  },
+  sectionFaq: {
+    ja: 'よくある質問',
+    en: 'FAQ',
+    'zh-tw': '常見問題',
+    ko: '자주 묻는 질문',
+  },
+  sectionContact: {
+    ja: 'お問い合わせ',
+    en: 'Contact',
+    'zh-tw': '聯絡我們',
+    ko: '문의하기',
+  },
+  sectionHistory: {
+    ja: '沿革',
+    en: 'History',
+    'zh-tw': '沿革',
+    ko: '연혁',
+  },
 };
 
 // ニュースカテゴリの翻訳マップ

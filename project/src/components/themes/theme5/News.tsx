@@ -5,7 +5,7 @@ import { useLocalize } from '../../../hooks/useLocalize';
 
 export default function News() {
   const newsData = useNewsData();
-  const { getText, getCategory } = useLocalize();
+  const { getText, getCategory, translate } = useLocalize();
 
   if (!newsData || !newsData.items) return null;
 
@@ -26,7 +26,7 @@ export default function News() {
         >
           <div className="flex items-center gap-4 mb-4">
             <div className="w-0.5 h-10 bg-[#C0392B]" />
-            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-400">News</span>
+            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-400">{translate('sectionNews')}</span>
           </div>
           <h2 className="text-4xl lg:text-6xl font-black text-gray-900 leading-none tracking-tight">
             {sectionTitle}

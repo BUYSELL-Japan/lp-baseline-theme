@@ -60,7 +60,7 @@ export default function Contact() {
   const isDisabled = submitStatus === 'sending' || submitStatus === 'success';
 
   return (
-    <section id="contact" className="py-32 px-6 bg-red-50/20 relative overflow-hidden">
+    <section id="contact" className="py-16 sm:py-20 md:py-28 lg:py-32 px-4 sm:px-6 bg-red-50/20 relative overflow-hidden">
       {/* Background Decor */}
       <div className="absolute top-1/2 left-0 w-[50vw] h-[50vw] bg-red-600 opacity-[0.02] rounded-full blur-[120px] -translate-x-1/4 -translate-y-1/2" />
 

@@ -17,12 +17,12 @@ export default function CTA() {
   }
 
   return (
-    <section className="relative py-32 px-6 overflow-hidden bg-slate-950">
+    <section className="relative py-16 sm:py-20 md:py-28 lg:py-32 px-4 sm:px-6 overflow-hidden bg-slate-950">
       {/* Background image with dark overlay */}
       {ctaData.backgroundImage && (
         <div className="absolute inset-0 z-0">
-          <img src={ctaData.backgroundImage} alt="Background" className="w-full h-full object-cover opacity-20" />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/90 to-slate-950/80" />
+          <img src={ctaData.backgroundImage} alt="Background" className="w-full h-full object-cover opacity-45" />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/85 to-slate-950/75" />
         </div>
       )}
 
@@ -35,7 +35,7 @@ export default function CTA() {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
         >
           {/* Decorative line */}
           <div className="w-16 h-1 bg-blue-500 mx-auto mb-8" />

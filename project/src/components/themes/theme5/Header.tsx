@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Globe } from 'lucide-react';
 import { useHeaderData, usePageData } from '../../../contexts/PageDataContext';
 import { useLanguage, languageNames, type Language } from '../../../contexts/LanguageContext';
-import { getLocalizedValue } from '../../../utils/i18n';
+import { getLocalizedValue, translate } from '../../../utils/i18n';
 
 export default function Header() {
   const headerData = useHeaderData();
@@ -141,7 +141,7 @@ export default function Header() {
               <div className="relative" ref={langBtnRef}>
                 <button
                   onClick={() => setLanguageMenuOpen(!languageMenuOpen)}
-                  className={`flex items-center gap-1.5 px-3 py-1.5 border transition-all text-[10px] font-bold uppercase tracking-wider ${
+                  className={`flex items-center gap-1.5 px-3 py-2.5 border transition-all text-[10px] font-bold uppercase tracking-wider ${
                     scrolled || mobileMenuOpen
                       ? 'border-[#D4AF37]/40 text-[#D4AF37] hover:bg-[#D4AF37]/10'
                       : 'border-gray-300 text-gray-600 hover:border-gray-900 hover:text-gray-900'
@@ -181,13 +181,13 @@ export default function Header() {
 
               {/* Mobile Hamburger */}
               <button
-                className={`xl:hidden p-2 transition-colors ${
+                className={`xl:hidden p-2.5 transition-colors ${
                   scrolled || mobileMenuOpen
                     ? 'text-gray-300 hover:text-[#D4AF37]'
                     : 'text-gray-700 hover:text-gray-900'
                 }`}
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                aria-label={mobileMenuOpen ? 'メニューを閉じる' : 'メニューを開く'}
+                aria-label={mobileMenuOpen ? translate('mobileMenuClose', language) : translate('mobileMenuOpen', language)}
               >
                 {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </button>
@@ -211,8 +211,8 @@ export default function Header() {
 
             <button
               onClick={() => setMobileMenuOpen(false)}
-              className="absolute top-4 right-4 p-2 text-gray-400 hover:text-[#D4AF37] transition-colors"
-              aria-label="メニューを閉じる"
+              className="absolute top-4 right-4 p-2.5 text-gray-400 hover:text-[#D4AF37] transition-colors"
+              aria-label={translate('mobileMenuClose', language)}
             >
               <X className="w-6 h-6" />
             </button>
@@ -233,7 +233,7 @@ export default function Header() {
             </nav>
 
             <div className="px-8 py-6 border-t border-gray-800">
-              <p className="text-[10px] font-bold text-gray-600 uppercase tracking-[0.3em] mb-4">Language</p>
+              <p className="text-[10px] font-bold text-gray-600 uppercase tracking-[0.3em] mb-4">{translate('languageLabel', language)}</p>
               <div className="flex flex-wrap gap-2">
                 {(Object.keys(languageNames) as Language[]).map((lang) => (
                   <a

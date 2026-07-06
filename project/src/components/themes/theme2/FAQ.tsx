@@ -18,21 +18,21 @@ export default function FAQ() {
   }
 
   return (
-    <section id="faq" className="py-32 px-6 bg-slate-950">
+    <section id="faq" className="py-16 sm:py-20 md:py-28 lg:py-32 px-4 sm:px-6 bg-white">
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
           className="mb-16"
         >
           <div className="w-16 h-1 bg-blue-500 mb-8" />
-          <h2 className="text-5xl md:text-7xl font-black text-white tracking-tighter mb-4">
+          <h2 className="text-5xl md:text-7xl font-black text-slate-900 tracking-tighter mb-4">
             {sectionTitle}
           </h2>
           {faqData.sectionSubtitle && (
-            <p className="text-xl text-slate-400">{getText(faqData.sectionSubtitle)}</p>
+            <p className="text-xl text-slate-500">{getText(faqData.sectionSubtitle)}</p>
           )}
         </motion.div>
 
@@ -43,14 +43,14 @@ export default function FAQ() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.05 }}
-              className="bg-slate-900 rounded-2xl border border-slate-800 overflow-hidden hover:border-blue-500/40 transition-colors"
+              transition={{ duration: 0.6, delay: Math.min(index * 0.08, 0.4) }}
+              className="bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden hover:border-blue-400 transition-colors"
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
                 className="w-full p-6 flex items-center justify-between text-left"
               >
-                <h3 className="text-lg font-black text-white tracking-tight pr-4">
+                <h3 className="text-lg font-black text-slate-900 tracking-tight pr-4">
                   {getText(item.question)}
                 </h3>
                 <motion.div
@@ -58,7 +58,7 @@ export default function FAQ() {
                   transition={{ duration: 0.25 }}
                   className="flex-shrink-0"
                 >
-                  <ChevronDown className="w-5 h-5 text-blue-400" />
+                  <ChevronDown className="w-5 h-5 text-blue-600" />
                 </motion.div>
               </button>
 
@@ -69,8 +69,8 @@ export default function FAQ() {
                 className="overflow-hidden"
               >
                 <div className="px-6 pb-6 pt-0">
-                  <div className="border-t border-slate-800 pt-4">
-                    <p className="text-slate-400 leading-relaxed">{getText(item.answer)}</p>
+                  <div className="border-t border-slate-200 pt-4">
+                    <p className="text-slate-500 leading-relaxed">{getText(item.answer)}</p>
                   </div>
                 </div>
               </motion.div>

@@ -8,29 +8,22 @@ export default function CTA() {
   const ctaData = useCTAData();
   const { getText } = useLocalize();
 
-  (()=>{})('[CTA] ctaData:', ctaData);
-
   if (!ctaData) {
-    (()=>{})('[CTA] No ctaData');
     return <SectionError sectionName="CTA" error="No CTA data available" data={ctaData} />;
   }
 
   const sectionTitle = getText(ctaData.sectionTitle);
-
-  (()=>{})('[CTA] sectionTitle:', sectionTitle);
-  (()=>{})('[CTA] buttons:', ctaData.buttons);
 
   if (!sectionTitle) {
     return <SectionError sectionName="CTA" error="Missing section title" data={ctaData} />;
   }
 
   if (!ctaData.buttons || !Array.isArray(ctaData.buttons) || ctaData.buttons.length === 0) {
-    (()=>{})('[CTA] Missing buttons array');
     return <SectionError sectionName="CTA" error="No CTA buttons found. Expected 'buttons' array in data." data={ctaData} />;
   }
 
   return (
-    <section className="relative py-24 px-4 overflow-hidden">
+    <section className="relative py-16 sm:py-20 md:py-28 lg:py-32 px-4 sm:px-6 overflow-hidden">
       <div className="absolute inset-0">
         <img
           src={ctaData.backgroundImage}

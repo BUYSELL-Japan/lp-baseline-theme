@@ -25,8 +25,8 @@ function FeatureCard({ feature, index }: { feature: AboutFeature; index: number 
           whileHover={{ scale: 1.03 }}
         />
         {/* Gold corner accent */}
-        <div className={`absolute top-0 ${isEven ? 'right-0' : 'left-0'} w-12 h-12 border-t-2 border-${isEven ? 'r' : 'l'}-2 border-[#D4AF37]`} />
-        <div className={`absolute bottom-0 ${isEven ? 'left-0' : 'right-0'} w-12 h-12 border-b-2 border-${isEven ? 'l' : 'r'}-2 border-[#D4AF37]`} />
+        <div className={`absolute top-0 w-12 h-12 border-t-2 border-[#D4AF37] ${isEven ? 'right-0 border-r-2' : 'left-0 border-l-2'}`} />
+        <div className={`absolute bottom-0 w-12 h-12 border-b-2 border-[#D4AF37] ${isEven ? 'left-0 border-l-2' : 'right-0 border-r-2'}`} />
       </div>
 
       {/* Text panel */}
@@ -59,7 +59,7 @@ function FeatureCard({ feature, index }: { feature: AboutFeature; index: number 
 
 export default function About() {
   const aboutData = useAboutData();
-  const { t } = useLocalize();
+  const { t, translate } = useLocalize();
 
   if (!aboutData || !aboutData.features) return null;
 
@@ -78,7 +78,7 @@ export default function About() {
         >
           <div className="flex items-center gap-4 mb-4">
             <div className="w-0.5 h-10 bg-[#C0392B]" />
-            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-400">About</span>
+            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-400">{translate('sectionAbout')}</span>
           </div>
           <h2 className="text-4xl lg:text-6xl font-black text-gray-900 leading-none tracking-tight">
             {t(aboutData, 'sectionTitle')}

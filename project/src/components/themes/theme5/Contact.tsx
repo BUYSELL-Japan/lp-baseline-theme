@@ -83,7 +83,7 @@ export default function Contact() {
               className="relative pl-8 border-l-2 border-[#C0392B]"
             >
               <div className="flex items-center gap-4 mb-4">
-                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-400">Contact</span>
+                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-400">{translate('sectionContact')}</span>
               </div>
               <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-6 leading-tight tracking-tight">
                 {t(contactData, 'sectionTitle')}

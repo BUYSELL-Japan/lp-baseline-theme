@@ -45,7 +45,7 @@ export default function Gallery() {
           <div>
             <div className="flex items-center gap-4 mb-3">
               <div className="w-0.5 h-10 bg-[#C0392B]" />
-              <span className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-400">Gallery</span>
+              <span className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-400">{translate('sectionGallery', language)}</span>
             </div>
             <h2 className="text-4xl lg:text-6xl font-black text-gray-900 leading-none tracking-tight">
               {sectionTitle}
@@ -81,16 +81,16 @@ export default function Gallery() {
           </div>
         </motion.div>
 
-        {/* Masonry Grid - Editorial style */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-1 auto-rows-[200px] lg:auto-rows-[240px]">
+        {/* Masonry Grid - Editorial style (モバイルは均一グリッド、lg以上で非対称マソンリー) */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-1 auto-rows-[160px] sm:auto-rows-[200px] lg:auto-rows-[240px]">
           {filteredImages.map((image, index) => {
             const spans = [
-              'col-span-2 row-span-2',
+              'col-span-1 row-span-1 lg:col-span-2 lg:row-span-2',
               'col-span-1 row-span-1',
-              'col-span-1 row-span-2',
+              'col-span-1 row-span-1 lg:row-span-2',
               'col-span-1 row-span-1',
               'col-span-1 row-span-1',
-              'col-span-2 row-span-1',
+              'col-span-1 row-span-1 lg:col-span-2',
             ];
             const spanClass = spans[index % spans.length];
 
@@ -98,9 +98,10 @@ export default function Gallery() {
               <motion.div
                 key={index}
                 layout
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-80px' }}
+                transition={{ duration: 0.6, delay: Math.min(index * 0.08, 0.4) }}
                 onClick={() => { setLightboxIndex(index); setLightboxOpen(true); }}
                 className={`relative cursor-pointer group overflow-hidden ${spanClass}`}
               >

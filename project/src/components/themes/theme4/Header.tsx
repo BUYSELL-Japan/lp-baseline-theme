@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Sun, Menu, X, Globe } from 'lucide-react';
 import { useHeaderData, usePageData } from '../../../contexts/PageDataContext';
 import { useLanguage, languageNames, type Language } from '../../../contexts/LanguageContext';
-import { getLocalizedValue } from '../../../utils/i18n';
+import { getLocalizedValue, translate } from '../../../utils/i18n';
 
 export default function Header() {
   const headerData = useHeaderData();
@@ -185,7 +185,7 @@ export default function Header() {
                     : 'text-red-600 bg-red-50 hover:bg-red-100'
                 }`}
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                aria-label={mobileMenuOpen ? 'メニューを閉じる' : 'メニューを開く'}
+                aria-label={mobileMenuOpen ? translate('mobileMenuClose', language) : translate('mobileMenuOpen', language)}
               >
                 {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </button>
@@ -208,7 +208,7 @@ export default function Header() {
             <button
               onClick={() => setMobileMenuOpen(false)}
               className="absolute top-4 right-4 p-2 text-red-900 hover:bg-red-600/20 rounded-lg transition-colors"
-              aria-label="メニューを閉じる"
+              aria-label={translate('mobileMenuClose', language)}
             >
               <X className="w-7 h-7" />
             </button>
@@ -229,7 +229,7 @@ export default function Header() {
             </nav>
 
             <div className="px-8 py-6 border-t border-rose-900/10">
-              <p className="text-xs font-bold text-rose-900/50 uppercase tracking-widest mb-3">言語 / Language</p>
+              <p className="text-xs font-bold text-rose-900/50 uppercase tracking-widest mb-3">{translate('languageLabel', language)}</p>
               <div className="flex flex-wrap gap-2">
                 {(Object.keys(languageNames) as Language[]).map((lang) => (
                   <a

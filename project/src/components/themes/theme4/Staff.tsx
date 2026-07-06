@@ -19,7 +19,7 @@ export default function Staff() {
   if (validMembers.length === 0) return null;
 
   return (
-    <section id="staff" className="py-32 px-6 bg-red-50/10 relative overflow-hidden">
+    <section id="staff" className="py-16 sm:py-20 md:py-28 lg:py-32 px-4 sm:px-6 bg-red-50/10 relative overflow-hidden">
       {/* Background Decor */}
       <div className="absolute top-1/2 left-0 w-full h-64 bg-red-600 opacity-[0.02] -rotate-3 -translate-y-1/2" />
 
@@ -47,7 +47,7 @@ export default function Staff() {
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
+              transition={{ duration: 0.6, delay: Math.min(index * 0.08, 0.4) }}
               className={`relative group ${
                 index % 2 === 0 ? 'lg:-translate-y-12' : 'lg:translate-y-12'
               }`}

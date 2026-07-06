@@ -16,7 +16,7 @@ export default function Access() {
   const sectionSubtitle = getText(accessData.sectionSubtitle);
 
   return (
-    <section id="access" className="py-32 px-6 bg-red-50/10 relative overflow-hidden">
+    <section id="access" className="py-16 sm:py-20 md:py-28 lg:py-32 px-4 sm:px-6 bg-red-50/10 relative overflow-hidden">
       {/* Background Decor */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
         <div className="absolute top-0 right-0 w-[60vw] h-[60vw] bg-yellow-400 opacity-[0.05] rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2" />

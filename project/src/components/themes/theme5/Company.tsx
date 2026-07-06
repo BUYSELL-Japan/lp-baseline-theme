@@ -5,7 +5,7 @@ import { useLocalize } from '../../../hooks/useLocalize';
 
 export default function Company() {
   const companyData = useCompanyData();
-  const { getText } = useLocalize();
+  const { getText, translate } = useLocalize();
 
   if (!companyData) return null;
 
@@ -25,7 +25,7 @@ export default function Company() {
           <div>
             <div className="flex items-center gap-4 mb-4">
               <div className="w-0.5 h-10 bg-[#C0392B]" />
-              <span className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-400">Company</span>
+              <span className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-400">{translate('sectionCompany')}</span>
             </div>
             <h2 className="text-4xl lg:text-6xl font-black text-gray-900 leading-none tracking-tight">
               {sectionTitle}

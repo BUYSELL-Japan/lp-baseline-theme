@@ -13,7 +13,7 @@ type SubmitStatus = 'idle' | 'sending' | 'success' | 'error';
 export default function Contact() {
   const contactData = useContactData();
   const contactEmail = useContactEmail();
-  const { t } = useLocalize();
+  const { t, translate } = useLocalize();
   const [focused, setFocused] = useState<string | null>(null);
   const [submitStatus, setSubmitStatus] = useState<SubmitStatus>('idle');
 
@@ -82,20 +82,20 @@ export default function Contact() {
   const isDisabled = submitStatus === 'sending' || submitStatus === 'success';
 
   return (
-    <section id="contact" className="py-24 px-4 bg-section-gradient">
+    <section id="contact" className="py-16 sm:py-20 md:py-28 lg:py-32 px-4 sm:px-6 bg-section-gradient">
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.6 }}
+          className="mb-16"
         >
+          <div className="w-16 h-2 bg-theme-divider mb-6" />
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             {t(contactData, 'sectionTitle')}
           </h2>
-          <div className="w-24 h-1 bg-theme-divider mx-auto mb-6" />
-          <p className="text-xl text-gray-700">
+          <p className="text-xl text-gray-600">
             {t(contactData, 'sectionSubtitle')}
           </p>
         </motion.div>
@@ -228,7 +228,7 @@ export default function Contact() {
                   className="flex items-center gap-3 p-4 bg-green-50 border border-green-200 rounded-lg text-green-800"
                 >
                   <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
-                  <span className="text-sm font-medium">お問い合わせを受け付けました。ありがとうございます！</span>
+                  <span className="text-sm font-medium">{translate('contactSuccess')}</span>
                 </motion.div>
               )}
               {submitStatus === 'error' && (
@@ -239,7 +239,7 @@ export default function Contact() {
                   className="flex items-center gap-3 p-4 bg-red-50 border border-red-200 rounded-lg text-red-800"
                 >
                   <AlertCircle className="w-5 h-5 text-red-600 flex-shrink-0" />
-                  <span className="text-sm font-medium">送信に失敗しました。しばらくしてからもう一度お試しください。</span>
+                  <span className="text-sm font-medium">{translate('contactError')}</span>
                 </motion.div>
               )}
             </AnimatePresence>

@@ -1,9 +1,7 @@
-import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
-import { useRef, useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import { useState } from 'react';
 import { useMenuData } from '../../../contexts/PageDataContext';
 import { useLocalize } from '../../../hooks/useLocalize';
-import { useLanguage } from '../../../contexts/LanguageContext';
-import { translate } from '../../../utils/i18n';
 import type { MenuItem as MenuItemType } from '../../../data/types';
 import Lightbox from '../../Lightbox';
 
@@ -15,7 +13,7 @@ function MenuItem({ item, index, onImageClick }: { item: MenuItemType; index: nu
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-20px' }}
-      transition={{ duration: 0.4, delay: index * 0.05 }}
+      transition={{ duration: 0.6, delay: Math.min(index * 0.08, 0.4) }}
       className={`relative mb-24 lg:mb-32 ${index % 2 === 0 ? 'lg:pr-24' : 'lg:pl-24 lg:mt-32'}`}
     >
       <div className="flex flex-col md:flex-row gap-8 items-center bg-white rounded-[3rem] p-6 shadow-2xl hover:shadow-red-500/10 transition-shadow duration-500 group">
@@ -65,7 +63,7 @@ export default function Menu() {
   }));
 
   return (
-    <section id="menu" className="py-32 px-6 bg-white relative">
+    <section id="menu" className="py-16 sm:py-20 md:py-28 lg:py-32 px-4 sm:px-6 bg-white relative">
       <div className="max-w-[1000px] mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

@@ -17,13 +17,13 @@ export default function Hero() {
     <section className="relative min-h-[50svh] sm:min-h-[60svh] lg:min-h-[100svh] flex items-center overflow-hidden bg-slate-950">
       {/* Background with modern overlay */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src={heroData.backgroundImage} 
-          alt="Hero background" 
-          className="w-full h-full object-cover opacity-40"
+        <img
+          src={heroData.backgroundImage}
+          alt="Hero background"
+          className="w-full h-full object-cover opacity-75"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/55 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 w-full pt-20">

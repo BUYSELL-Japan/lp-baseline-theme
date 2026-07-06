@@ -16,7 +16,7 @@ function FeatureCard({ feature, index }: { feature: AboutFeature; index: number 
       ref={ref}
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-      transition={{ duration: 0.8, delay: index * 0.2, ease: 'easeOut' }}
+      transition={{ duration: 0.6, delay: Math.min(index * 0.08, 0.4), ease: 'easeOut' }}
       className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-8 md:gap-12 mb-24`}
     >
       <motion.div
@@ -28,7 +28,7 @@ function FeatureCard({ feature, index }: { feature: AboutFeature; index: number 
           <motion.img
             src={feature.image}
             alt={t(feature, 'title')}
-            className="w-full h-80 object-cover"
+            className="w-full aspect-[4/3] object-cover"
             whileHover={{ scale: 1.1 }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
           />
@@ -61,37 +61,28 @@ export default function About() {
   const aboutData = useAboutData();
   const { t } = useLocalize();
 
-  (()=>{})('[About] aboutData:', aboutData);
-
-  if (!aboutData) {
-    (()=>{})('[About] No aboutData, returning null');
-    return null;
-  }
+  if (!aboutData) return null;
 
   const sectionTitle = t(aboutData, 'sectionTitle');
 
-  (()=>{})('[About] sectionTitle:', sectionTitle);
-  (()=>{})('[About] features:', aboutData.features);
-
   if (!sectionTitle || !aboutData.features || !Array.isArray(aboutData.features) || aboutData.features.length === 0) {
-    (()=>{})('[About] Missing required data, returning null');
     return null;
   }
 
   return (
-    <section id="about" className="py-24 px-4 bg-gradient-to-b from-white to-amber-50/30">
+    <section id="about" className="py-16 sm:py-20 md:py-28 lg:py-32 px-4 sm:px-6 bg-gradient-to-b from-white to-gray-50">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          transition={{ duration: 0.6 }}
+          className="mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <div className="w-16 h-2 bg-theme-divider mb-6" />
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
             {sectionTitle}
           </h2>
-          <div className="w-24 h-1 bg-theme-divider mx-auto" />
         </motion.div>
 
         <div>

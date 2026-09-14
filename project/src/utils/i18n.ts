@@ -240,6 +240,12 @@ export function translate(key: string, language: Language): string {
   return staticTranslations[key]?.[language] || staticTranslations[key]?.['ja'] || '';
 }
 
+// 空欄判定用: 文字列なら前後の空白（半角・全角スペース、改行、タブ含む）を除去して返す。
+// 空白のみが入力された項目を「非空」と誤判定して表示してしまうバグの対策。
+function trimIfString(value: any): any {
+  return typeof value === 'string' ? value.trim() : value;
+}
+
 export function getLocalizedValue<T extends Record<string, any>>(
   obj: T,
   key: string,
@@ -251,25 +257,25 @@ export function getLocalizedValue<T extends Record<string, any>>(
 
   if (value && typeof value === 'object' && !Array.isArray(value)) {
     if (value[language] !== undefined) {
-      return value[language];
+      return trimIfString(value[language]);
     }
     if (value['ja'] !== undefined) {
-      return value['ja'];
+      return trimIfString(value['ja']);
     }
-    return value[Object.keys(value)[0]] || '';
+    return trimIfString(value[Object.keys(value)[0]]) || '';
   }
 
   const localizedKey = `${key}_${language}`;
   if (obj[localizedKey] !== undefined) {
-    return obj[localizedKey];
+    return trimIfString(obj[localizedKey]);
   }
 
   const fallbackKey = `${key}_ja`;
   if (obj[fallbackKey] !== undefined) {
-    return obj[fallbackKey];
+    return trimIfString(obj[fallbackKey]);
   }
 
-  return value || '';
+  return trimIfString(value) || '';
 }
 
 export function localizeObject<T extends Record<string, any>>(

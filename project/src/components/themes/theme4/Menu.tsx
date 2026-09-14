@@ -51,6 +51,7 @@ export default function Menu() {
   const [lightboxIndex, setLightboxIndex] = useState(0);
 
   if (!menuData || !menuData.items) return null;
+  if (!t(menuData, 'sectionTitle')) return null;
 
   const openLightbox = (index: number) => {
     setLightboxIndex(index);

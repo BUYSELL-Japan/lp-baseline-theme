@@ -12,6 +12,8 @@ export default function Hero() {
   const title = t(heroData, 'title');
   const subtitle = t(heroData, 'subtitle');
 
+  if (!title && !subtitle && !heroData.backgroundImage) return null;
+
   return (
     <section className="relative min-h-[50svh] sm:min-h-[60svh] lg:min-h-[100svh] flex items-center justify-center overflow-hidden">
       {/* Full-bleed background image with soft warm overlay */}

@@ -8,6 +8,7 @@ export default function CTA() {
   const { getText } = useLocalize();
 
   if (!ctaData || !ctaData.buttons) return null;
+  if (!getText(ctaData.sectionTitle)) return null;
 
   return (
     <section className="relative py-40 overflow-hidden bg-stone-900">

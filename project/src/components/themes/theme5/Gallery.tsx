@@ -28,6 +28,7 @@ export default function Gallery() {
   }));
 
   const sectionTitle = getText(galleryData.sectionTitle);
+  if (!sectionTitle) return null;
 
   return (
     <section id="gallery" className="py-20 lg:py-28 bg-gray-100 relative overflow-hidden">

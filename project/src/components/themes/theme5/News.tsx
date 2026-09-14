@@ -10,6 +10,7 @@ export default function News() {
   if (!newsData || !newsData.items) return null;
 
   const sectionTitle = getText(newsData.sectionTitle);
+  if (!sectionTitle) return null;
 
   return (
     <section id="news" className="py-20 lg:py-28 bg-gray-50 relative overflow-hidden">

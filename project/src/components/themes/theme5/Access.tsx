@@ -13,6 +13,7 @@ export default function Access() {
   if (!accessData) return null;
 
   const sectionTitle = getText(accessData.sectionTitle);
+  if (!sectionTitle) return null;
 
   return (
     <section id="access" className="py-20 lg:py-28 bg-white relative overflow-hidden">

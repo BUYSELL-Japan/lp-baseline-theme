@@ -62,6 +62,7 @@ export default function About() {
   const { t, translate } = useLocalize();
 
   if (!aboutData || !aboutData.features) return null;
+  if (!t(aboutData, 'sectionTitle')) return null;
 
   return (
     <section id="about" className="py-20 lg:py-28 bg-gray-50 relative overflow-hidden">

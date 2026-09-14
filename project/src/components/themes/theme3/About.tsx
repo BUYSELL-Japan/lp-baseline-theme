@@ -8,6 +8,7 @@ export default function About() {
   const { t } = useLocalize();
 
   if (!aboutData || !aboutData.features) return null;
+  if (!t(aboutData, 'sectionTitle')) return null;
 
   return (
     <section id="about" className="bg-stone-900 text-stone-100">

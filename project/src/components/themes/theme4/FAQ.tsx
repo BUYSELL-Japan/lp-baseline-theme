@@ -13,6 +13,7 @@ export default function FAQ() {
 
   const sectionTitle = getText(faqData.sectionTitle);
   const sectionSubtitle = getText(faqData.sectionSubtitle);
+  if (!sectionTitle) return null;
 
   return (
     <section id="faq" className="py-16 sm:py-20 md:py-28 lg:py-32 px-4 sm:px-6 bg-white relative overflow-hidden">

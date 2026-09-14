@@ -15,6 +15,7 @@ export default function StoreInfo() {
   const { t } = useLocalize();
 
   if (!storeInfoData || !storeInfoData.items) return null;
+  if (!t(storeInfoData, 'sectionTitle')) return null;
 
   return (
     <section id="storeInfo" className="py-16 sm:py-20 md:py-28 lg:py-32 px-4 sm:px-6 bg-white relative overflow-hidden">

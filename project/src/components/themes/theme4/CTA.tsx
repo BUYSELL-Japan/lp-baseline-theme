@@ -10,6 +10,7 @@ export default function CTA() {
   if (!ctaData || !ctaData.buttons) return null;
 
   const sectionTitle = getText(ctaData.sectionTitle);
+  if (!sectionTitle) return null;
 
   return (
     <section className="relative py-24 sm:py-32 lg:py-48 px-4 sm:px-6 overflow-hidden bg-red-950">

@@ -14,6 +14,7 @@ export default function Pricing() {
 
   const sectionTitle = getText(pricingData.sectionTitle);
   const sectionSubtitle = getText(pricingData.sectionSubtitle);
+  if (!sectionTitle) return null;
 
   return (
     <section id="pricing" className="py-16 sm:py-20 md:py-28 lg:py-32 px-4 sm:px-6 bg-red-50/10 relative overflow-hidden">

@@ -13,6 +13,7 @@ export default function Reviews() {
 
   const sectionTitle = getText(reviewsData.sectionTitle);
   const sectionSubtitle = getText(reviewsData.sectionSubtitle);
+  if (!sectionTitle) return null;
   const reviews = reviewsData.reviews;
 
   const nextReview = () => setActiveIndex((prev) => (prev + 1) % reviews.length);

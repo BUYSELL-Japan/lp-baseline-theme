@@ -25,6 +25,7 @@ export default function Contact() {
   const [honeypot, setHoneypot] = useState('');
 
   if (!contactData || !contactData.fields) return null;
+  if (!t(contactData, 'sectionTitle')) return null;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });

@@ -12,6 +12,7 @@ export default function Pricing() {
   const { language } = useLanguage();
 
   if (!pricingData || !pricingData.plans) return null;
+  if (!getText(pricingData.sectionTitle)) return null;
 
   return (
     <section id="pricing" className="py-32 px-8 bg-stone-50">

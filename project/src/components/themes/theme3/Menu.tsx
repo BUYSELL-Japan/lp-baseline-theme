@@ -14,6 +14,7 @@ export default function Menu() {
   const [lightboxIndex, setLightboxIndex] = useState(0);
 
   if (!menuData || !menuData.items) return null;
+  if (!t(menuData, 'sectionTitle')) return null;
 
   const lightboxImages = menuData.items.map((item) => ({
     src: item.image,

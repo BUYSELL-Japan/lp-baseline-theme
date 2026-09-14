@@ -14,6 +14,7 @@ export default function Access() {
 
   const sectionTitle = getText(accessData.sectionTitle);
   const sectionSubtitle = getText(accessData.sectionSubtitle);
+  if (!sectionTitle) return null;
 
   return (
     <section id="access" className="py-16 sm:py-20 md:py-28 lg:py-32 px-4 sm:px-6 bg-red-50/10 relative overflow-hidden">

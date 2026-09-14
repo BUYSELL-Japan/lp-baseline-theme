@@ -28,6 +28,10 @@ export default function Hero() {
   if (typeof subtitle === 'object') {
     subtitle = subtitle[language] || subtitle['ja'] || '';
   }
+  title = typeof title === 'string' ? title.trim() : title;
+  subtitle = typeof subtitle === 'string' ? subtitle.trim() : subtitle;
+
+  if (!title && !subtitle && !heroData.backgroundImage) return null;
 
   return (
     <div ref={ref} className="relative min-h-[100svh] overflow-hidden bg-gray-100 flex flex-col justify-center lg:items-center">

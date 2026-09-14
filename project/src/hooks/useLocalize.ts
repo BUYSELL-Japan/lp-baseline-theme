@@ -8,7 +8,8 @@ export function useLocalize() {
     if (!field) return '';
 
     if (typeof field === 'string') {
-      return field;
+      // 半角・全角スペースや改行のみの入力を「空」として扱う（表示判定用の空欄チェック）
+      return field.trim();
     }
 
     if (typeof field === 'object' && field !== null && !Array.isArray(field)) {
@@ -16,21 +17,21 @@ export function useLocalize() {
         return '';
       }
       if (field[language] !== undefined && field[language] !== null) {
-        return String(field[language]);
+        return String(field[language]).trim();
       }
       if (language === 'zh-tw' && field['zh'] !== undefined && field['zh'] !== null) {
-        return String(field['zh']);
+        return String(field['zh']).trim();
       }
       if (field['ja'] !== undefined && field['ja'] !== null) {
-        return String(field['ja']);
+        return String(field['ja']).trim();
       }
       const firstKey = Object.keys(field)[0];
       if (firstKey && field[firstKey] !== undefined && field[firstKey] !== null) {
-        return String(field[firstKey]);
+        return String(field[firstKey]).trim();
       }
     }
 
-    return String(field);
+    return String(field).trim();
   }
 
   function t(obj: any, key: string, fallback: string = ''): string {

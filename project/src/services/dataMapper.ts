@@ -120,16 +120,22 @@ function isNestedStructure(data: any): boolean {
   return 'header' in data || 'hero' in data || 'menu' in data;
 }
 
+// 判定対象から除外するメタデータキー（翻訳API/保存APIのレスポンスラッパーに付随するもので、
+// 表示コンテンツではないため、これらだけが残っていてもセクションは「空」とみなす）
+const SECTION_EMPTY_IGNORED_KEYS = new Set(['success', 'storeId', 'section', 'targetLanguages']);
+
 function isSectionEmpty(obj: any): boolean {
   if (obj === null || obj === undefined) return true;
   if (typeof obj === 'string') return obj.trim().length === 0;
-  if (typeof obj === 'number' || typeof obj === 'boolean') return false;
+  // 数値・真偽値（rating, isPopular, success フラグ等）は単体では表示コンテンツを構成しないため「空」とみなす
+  if (typeof obj === 'number' || typeof obj === 'boolean') return true;
   if (Array.isArray(obj)) {
     return obj.every(isSectionEmpty);
   }
   if (typeof obj === 'object') {
-    if (Object.keys(obj).length === 0) return true;
-    return Object.values(obj).every(isSectionEmpty);
+    const keys = Object.keys(obj).filter((key) => !SECTION_EMPTY_IGNORED_KEYS.has(key));
+    if (keys.length === 0) return true;
+    return keys.every((key) => isSectionEmpty(obj[key]));
   }
   return true;
 }

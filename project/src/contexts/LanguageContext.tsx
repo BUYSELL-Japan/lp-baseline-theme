@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 
 export type Language = 'ja' | 'en' | 'zh-tw' | 'ko';
 
@@ -19,7 +19,7 @@ export function LanguageProvider({
   initialLanguage = 'ja', 
   basePath = '/' 
 }: { 
-  children: ReactNode; 
+  children: React.ReactNode; 
   initialLanguage?: Language;
   basePath?: string;
 }) {

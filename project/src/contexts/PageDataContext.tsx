@@ -1,10 +1,10 @@
-import { createContext, useContext, ReactNode } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
 import type { PageData } from '../services/dataMapper';
 import { getDefaultPageData } from '../services/dataMapper';
 
 const PageDataContext = createContext<PageData>(getDefaultPageData());
 
-export function PageDataProvider({ children, data }: { children: ReactNode; data: PageData }) {
+export function PageDataProvider({ children, data }: { children: React.ReactNode; data: PageData }) {
   return (
     <PageDataContext.Provider value={data}>
       {children}

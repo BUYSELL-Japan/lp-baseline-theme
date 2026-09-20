@@ -1,0 +1,29 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ThemeBrushStorePage from '../../components/ThemeBrushStorePage';
+import { headerData, heroData, aboutData, menuData, storeInfoData, contactData, footerData, galleryData, accessData, newsData, faqData, staffData, pricingData, companyData, ctaData } from '../../data/content';
+
+// Mock data
+const mockData = {
+  theme: 'brush',
+  header: headerData,
+  hero: heroData,
+  about: aboutData,
+  menu: menuData,
+  storeInfo: storeInfoData,
+  contact: contactData,
+  footer: footerData,
+  gallery: galleryData,
+  access: accessData,
+  news: newsData,
+  faq: faqData,
+  staff: staffData,
+  pricing: pricingData,
+  company: companyData,
+  cta: ctaData
+};
+---
+
+<Layout title="Brush Theme Demo">
+  <ThemeBrushStorePage client:load initialData={mockData} initialLanguage="ja" showDemoBanner={true} />
+</Layout>

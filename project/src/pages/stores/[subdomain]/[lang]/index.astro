@@ -10,6 +10,7 @@ import Theme5StorePage from '../../../../components/Theme5StorePage';
 import ThemeEmberStorePage from '../../../../components/ThemeEmberStorePage';
 import ThemeWarmStorePage from '../../../../components/ThemeWarmStorePage';
 import ThemeBlazeStorePage from '../../../../components/ThemeBlazeStorePage';
+import ThemeCharStorePage from '../../../../components/ThemeCharStorePage';
 import type { Language } from '../../../../contexts/LanguageContext';
 
 export async function getStaticPaths() {
@@ -91,4 +92,5 @@ const alternateLinks = [
   {currentTheme === 'ember' && <ThemeEmberStorePage client:only="react" pageData={pageData} initialLanguage={lang as Language} basePath={currentPath} />}
   {currentTheme === 'warm' && <ThemeWarmStorePage client:only="react" pageData={pageData} initialLanguage={lang as Language} basePath={currentPath} />}
   {currentTheme === 'blaze' && <ThemeBlazeStorePage client:only="react" pageData={pageData} initialLanguage={lang as Language} basePath={currentPath} />}
+  {currentTheme === 'char' && <ThemeCharStorePage client:only="react" pageData={pageData} initialLanguage={lang as Language} basePath={currentPath} />}
 </Layout>

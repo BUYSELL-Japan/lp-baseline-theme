@@ -1,5 +1,4 @@
 import puppeteer from 'puppeteer-core';
-import fs from 'fs';
 
 (async () => {
   const browser = await puppeteer.launch({
@@ -18,8 +17,22 @@ import fs from 'fs';
     console.log('PAGE ERROR:', err.message);
   });
 
-  await page.goto('http://localhost:4321/demo/mist', { waitUntil: 'networkidle0' });
+  await page.goto('http://localhost:4321/demo/char', { waitUntil: 'networkidle0' });
   
   console.log('Page loaded.');
+  
+  // Check for review/口コミ section
+  const hasReviews = await page.evaluate(() => {
+    const text = document.body.innerText;
+    return text.includes('口コミ') || text.includes('レビュー') || text.includes('お客様の声') || text.includes('Review');
+  });
+  console.log('Has reviews section:', hasReviews);
+  
+  // Check for [IMG] text
+  const hasIMG = await page.evaluate(() => {
+    return document.body.innerText.includes('[IMG]');
+  });
+  console.log('Has [IMG] text:', hasIMG);
+
   await browser.close();
 })();

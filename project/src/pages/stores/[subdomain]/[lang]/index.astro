@@ -8,6 +8,7 @@ import Theme3StorePage from '../../../../components/Theme3StorePage';
 import Theme4StorePage from '../../../../components/Theme4StorePage';
 import Theme5StorePage from '../../../../components/Theme5StorePage';
 import ThemeEmberStorePage from '../../../../components/ThemeEmberStorePage';
+import ThemeWarmStorePage from '../../../../components/ThemeWarmStorePage';
 import ThemeBlazeStorePage from '../../../../components/ThemeBlazeStorePage';
 import type { Language } from '../../../../contexts/LanguageContext';
 
@@ -88,5 +89,6 @@ const alternateLinks = [
   {currentTheme === 'theme4' && <Theme4StorePage client:only="react" pageData={pageData} initialLanguage={lang as Language} basePath={currentPath} />}
   {currentTheme === 'theme5' && <Theme5StorePage client:only="react" pageData={pageData} initialLanguage={lang as Language} basePath={currentPath} />}
   {currentTheme === 'ember' && <ThemeEmberStorePage client:only="react" pageData={pageData} initialLanguage={lang as Language} basePath={currentPath} />}
+  {currentTheme === 'warm' && <ThemeWarmStorePage client:only="react" pageData={pageData} initialLanguage={lang as Language} basePath={currentPath} />}
   {currentTheme === 'blaze' && <ThemeBlazeStorePage client:only="react" pageData={pageData} initialLanguage={lang as Language} basePath={currentPath} />}
 </Layout>

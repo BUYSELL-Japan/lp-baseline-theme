@@ -68,115 +68,47 @@ export const menuData: MenuData = {
   sectionTitle: 'お品書き',
   sectionSubtitle: '心を込めてお作りする、こだわりの一杯',
   items: [
-    {
+{
       name: '琉球そば',
       price: '¥950',
       description: '伝統の三枚肉と紅生姜が映える定番の一杯',
       image: 'https://images.unsplash.com/photo-1617093727343-374698b1b08d?w=600&q=80',
-    },
-    {
+    },{
       name: 'ソーキそば',
       price: '¥1,100',
       description: '柔らかく煮込んだソーキがたっぷり',
       image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=600&q=80',
-    },
-    {
+    },{
       name: '特製琉球そば',
       price: '¥1,300',
       description: '三枚肉とソーキの豪華な組み合わせ',
       image: 'https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?w=600&q=80',
-    },
-    {
+    },{
       name: '野菜そば',
       price: '¥1,050',
       description: '季節の野菜をたっぷり使った健康志向の一杯',
       image: 'https://images.unsplash.com/photo-1623341214825-9f4f963727da?w=600&q=80',
-    },
-    {
+    },{
       name: '辛味噌そば',
       price: '¥1,150',
       description: '自家製辛味噌が効いた新感覚の味わい',
       image: 'https://images.unsplash.com/photo-1585032226651-759b368d7246?w=600&q=80',
-    },
-    {
+    },{
       name: '海老天そば',
       price: '¥1,250',
       description: 'サクサクの海老天が贅沢にのった一杯',
       image: 'https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?w=600&q=80',
-    },
-    {
+    },{
       name: 'あぐー豚そば',
       price: '¥1,400',
       description: '希少なあぐー豚を使った最高級の一杯',
       image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&q=80',
-    },
-    {
+    },{
       name: '冷やしそば',
       price: '¥1,000',
       description: '夏季限定、冷たいスープでさっぱりと',
       image: 'https://images.unsplash.com/photo-1617093727343-374698b1b08d?w=600&q=80',
-    },
-    {
-      name: 'ゆし豆腐そば',
-      price: '¥980',
-      description: 'ふわふわのゆし豆腐が優しい味わい',
-      image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&q=80',
-    },
-    {
-      name: '炙りチャーシューそば',
-      price: '¥1,200',
-      description: '香ばしく炙ったチャーシューが絶品',
-      image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=600&q=80',
-    },
-    {
-      name: 'きのこそば',
-      price: '¥1,050',
-      description: '5種類のきのこが香る秋の味覚',
-      image: 'https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?w=600&q=80',
-    },
-    {
-      name: '海鮮そば',
-      price: '¥1,350',
-      description: '沖縄近海の魚介をふんだんに使用',
-      image: 'https://images.unsplash.com/photo-1623341214825-9f4f963727da?w=600&q=80',
-    },
-    {
-      name: 'つけそば',
-      price: '¥1,100',
-      description: '濃厚なつけ汁で味わう新スタイル',
-      image: 'https://images.unsplash.com/photo-1585032226651-759b368d7246?w=600&q=80',
-    },
-    {
-      name: 'カレーそば',
-      price: '¥1,150',
-      description: 'スパイシーなカレースープとの融合',
-      image: 'https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?w=600&q=80',
-    },
-    {
-      name: '鶏白湯そば',
-      price: '¥1,100',
-      description: 'クリーミーな鶏白湯スープ',
-      image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&q=80',
-    },
-    {
-      name: 'まぜそば',
-      price: '¥1,000',
-      description: 'スープなしで味わう新感覚',
-      image: 'https://images.unsplash.com/photo-1617093727343-374698b1b08d?w=600&q=80',
-    },
-    {
-      name: '黒胡麻担々そば',
-      price: '¥1,200',
-      description: '黒胡麻の風味が効いたピリ辛仕立て',
-      image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=600&q=80',
-    },
-    {
-      name: 'お子様そば',
-      price: '¥680',
-      description: '小さなお子様でも安心の優しい味',
-      image: 'https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?w=600&q=80',
-    },
-  ],
+    },    ],
 };
 
 export const storeInfoData: StoreInfoData = {

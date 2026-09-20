@@ -21,10 +21,10 @@ export default function Access() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-sans font-bold text-[#333333] mb-4">
-            {getText(accessData.sectionTitle)}
+            {getText(accessData, 'sectionTitle', language)}
           </h2>
           {accessData.sectionSubtitle && (
-            <p className="text-base text-[#333333]">{getText(accessData.sectionSubtitle)}</p>
+            <p className="text-base text-[#333333]">{getText(accessData, 'sectionSubtitle', language)}</p>
           )}
         </motion.div>
 
@@ -39,18 +39,18 @@ export default function Access() {
               {/* Address */}
               <div className="border-b border-[#E5E5E5] pb-6">
                 <h3 className="font-sans font-bold text-[#333333] mb-2">{translate('address', language)}</h3>
-                <p className="text-[#333333]">{getText(accessData.address)}</p>
+                <p className="text-[#333333]">{getText(accessData, 'address', language)}</p>
               </div>
 
               {/* Transportation */}
               {accessData.transportation && (
                 <div className="border-b border-[#E5E5E5] pb-6">
-                  <h3 className="font-sans font-bold text-[#333333] mb-3">{getText(accessData.transportation.title)}</h3>
+                  <h3 className="font-sans font-bold text-[#333333] mb-3">{getText(accessData.transportation, 'title', language)}</h3>
                   <div className="space-y-2">
                     {accessData.transportation.methods?.map((method, index) => (
                       <div key={index} className="flex items-start text-sm">
-                        <span className="font-bold text-[#2D6A4F] w-24 flex-shrink-0">{getText(method.type)}</span>
-                        <span className="text-[#333333]">{getText(method.description)}</span>
+                        <span className="font-bold text-[#2D6A4F] w-24 flex-shrink-0">{getText(method, 'type', language)}</span>
+                        <span className="text-[#333333]">{getText(method, 'description', language)}</span>
                       </div>
                     ))}
                   </div>
@@ -60,15 +60,15 @@ export default function Access() {
               {/* Parking */}
               {accessData.parking && (
                 <div>
-                  <h3 className="font-sans font-bold text-[#333333] mb-2">{getText(accessData.parking.title)}</h3>
-                  <p className="text-[#333333] text-sm mb-1">{getText(accessData.parking.description)}</p>
-                  {accessData.parking.capacity && (
+                  <h3 className="font-sans font-bold text-[#333333] mb-2">{getText(accessData.parking, 'title', language)}</h3>
+                  <p className="text-[#333333] text-sm mb-1">{getText(accessData.parking, 'description', language)}</p>
+                  {accessData.parking.spaces && (
                     <p className="text-[#2D6A4F] text-sm font-bold mb-1">
-                      {translate('parkingCapacity', language).replace('{0}', accessData.parking.capacity.toString())}
+                      {translate('parkingCapacity', language).replace('{0}', accessData.parking.spaces)}
                     </p>
                   )}
                   {accessData.parking.notes && (
-                    <p className="text-[#333333] text-xs mt-2">{getText(accessData.parking.notes)}</p>
+                    <p className="text-[#333333] text-xs mt-2">{getText(accessData.parking, 'notes', language)}</p>
                   )}
                 </div>
               )}
@@ -81,9 +81,9 @@ export default function Access() {
             viewport={{ once: true }}
             className="lg:w-[50%] bg-[#E5E5E5] border border-[#E5E5E5] aspect-video lg:aspect-auto"
           >
-            {accessData.mapUrl ? (
+            {accessData.mapEmbedUrl ? (
               <iframe
-                src={accessData.mapUrl}
+                src={accessData.mapEmbedUrl}
                 width="100%"
                 height="100%"
                 style={{ border: 0, minHeight: '300px' }}

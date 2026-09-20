@@ -1,19 +1,25 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useGalleryData } from '../../../contexts/PageDataContext';
 import { useLanguage } from '../../../contexts/LanguageContext';
 import { getLocalizedValue } from '../../../utils/i18n';
 import SectionError from '../../SectionError';
+import Lightbox from '../../Lightbox';
 
 export default function Gallery() {
   const galleryData = useGalleryData();
   const { language } = useLanguage();
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
 
   if (!galleryData) return <SectionError sectionName="Gallery" error="No gallery data available" />;
   if (!galleryData.images || galleryData.images.length === 0) return null;
 
   const sectionTitle = getLocalizedValue(galleryData, 'sectionTitle', language);
+  const lightboxImages = galleryData.images.map((image) => ({
+    src: image.url,
+    alt: getLocalizedValue(image, 'caption', language) || '',
+  }));
 
   return (
     <section id="gallery" className="bg-[#F5F5F3] py-32 md:py-48 px-4 md:px-0 border-b border-[#EEEEEE]">
@@ -39,7 +45,10 @@ export default function Gallery() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.8 }}
               className="aspect-square relative group overflow-hidden cursor-pointer bg-[#F5F5F3]"
-              onClick={() => setSelectedImage(image.url)}
+              onClick={() => {
+                setLightboxIndex(index);
+                setLightboxOpen(true);
+              }}
             >
               <img 
                 src={image.url} 
@@ -52,34 +61,15 @@ export default function Gallery() {
         </div>
       </div>
 
-      <AnimatePresence>
-        {selectedImage && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[200] bg-[#FFFFFF]/95 backdrop-blur flex items-center justify-center p-4 md:p-12 cursor-pointer"
-            onClick={() => setSelectedImage(null)}
-          >
-            <button 
-              className="absolute top-8 right-8 text-[#888888] hover:text-[#222222] text-2xl transition-colors"
-              onClick={() => setSelectedImage(null)}
-            >
-              ✕
-            </button>
-            <motion.img
-              initial={{ scale: 0.95, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.95, opacity: 0 }}
-              transition={{ duration: 0.4 }}
-              src={selectedImage}
-              alt="Gallery Preview"
-              className="max-w-full max-h-full object-contain shadow-2xl"
-              onClick={(e) => e.stopPropagation()}
-            />
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {lightboxOpen && (
+        <Lightbox
+          images={lightboxImages}
+          currentIndex={lightboxIndex}
+          onClose={() => setLightboxOpen(false)}
+          onPrevious={() => setLightboxIndex((p) => (p > 0 ? p - 1 : lightboxImages.length - 1))}
+          onNext={() => setLightboxIndex((p) => (p < lightboxImages.length - 1 ? p + 1 : 0))}
+        />
+      )}
     </section>
   );
 }

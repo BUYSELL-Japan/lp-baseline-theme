@@ -39,7 +39,7 @@ export default function News() {
             >
               <div className="w-full sm:w-1/4">
                 <span className="text-[#888888] font-sans font-light text-xs tracking-widest block mb-2 sm:mb-0">
-                  {item.date}
+                  {getLocalizedValue(item, 'date', language)}
                 </span>
                 {item.category && (
                   <span className="inline-block text-[#6B8F71] text-[10px] tracking-widest border border-[#6B8F71] px-2 py-0.5 mt-2">

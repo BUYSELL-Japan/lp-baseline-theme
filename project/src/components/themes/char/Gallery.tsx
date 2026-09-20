@@ -3,16 +3,23 @@ import { useGalleryData } from '../../../contexts/PageDataContext';
 import { useLanguage } from '../../../contexts/LanguageContext';
 import { getLocalizedValue } from '../../../utils/i18n';
 import SectionError from '../../SectionError';
+import Lightbox from '../../Lightbox';
 
 export default function Gallery() {
   const galleryData = useGalleryData();
   const { language } = useLanguage();
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
 
   if (!galleryData) return <SectionError sectionName="Gallery" error="No gallery data available" />;
 
   const sectionTitle = getLocalizedValue(galleryData, 'sectionTitle', language);
   const images = galleryData.images || [];
+  const lightboxImages = images.map((img) => ({
+    src: img.url,
+    alt: img.caption || '',
+  }));
 
   return (
     <section id="gallery" className="py-24 md:py-32 px-6" style={{ backgroundColor: '#1C1C1C', borderTop: '1px solid #D4541A' }}>
@@ -39,6 +46,10 @@ export default function Gallery() {
               style={{ backgroundColor: '#111111' }}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
+              onClick={() => {
+                setLightboxIndex(index);
+                setLightboxOpen(true);
+              }}
             >
               <img
                 src={img.url}
@@ -58,6 +69,16 @@ export default function Gallery() {
           ))}
         </div>
       </div>
+
+      {lightboxOpen && (
+        <Lightbox
+          images={lightboxImages}
+          currentIndex={lightboxIndex}
+          onClose={() => setLightboxOpen(false)}
+          onPrevious={() => setLightboxIndex((p) => (p > 0 ? p - 1 : lightboxImages.length - 1))}
+          onNext={() => setLightboxIndex((p) => (p < lightboxImages.length - 1 ? p + 1 : 0))}
+        />
+      )}
     </section>
   );
 }

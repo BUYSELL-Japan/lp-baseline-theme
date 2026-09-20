@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useGalleryData } from '../../../contexts/PageDataContext';
 import { useLanguage } from '../../../contexts/LanguageContext';
 import { getLocalizedValue } from '../../../utils/i18n';
+import Lightbox from '../../Lightbox';
 
 export default function Gallery() {
   const galleryData = useGalleryData();
   const { language } = useLanguage();
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
   if (!galleryData || !galleryData.images || galleryData.images.length === 0) return null;
   const sectionTitle = getLocalizedValue(galleryData, 'sectionTitle', language) || 'Gallery';
+  const lightboxImages = galleryData.images.map((img) => ({
+    src: img.url,
+    alt: getLocalizedValue(img, 'caption', language) || '',
+  }));
 
   return (
     <section id="gallery" className="py-24 bg-[#FFFBF0] overflow-hidden">
@@ -26,7 +33,13 @@ export default function Gallery() {
             return (
               <div key={index} className="w-64 sm:w-80 md:w-auto flex-shrink-0 group snap-center md:snap-align-none">
                 <div className="bg-white p-4 rounded-3xl shadow-lg border border-[#FEF3C7] transform transition-all duration-300 md:group-hover:-translate-y-3 md:group-hover:rotate-2">
-                  <div className="w-full aspect-square overflow-hidden rounded-2xl">
+                  <div
+                    className="w-full aspect-square overflow-hidden rounded-2xl cursor-pointer"
+                    onClick={() => {
+                      setLightboxIndex(index);
+                      setLightboxOpen(true);
+                    }}
+                  >
                     <img 
                       src={img.url} 
                       alt={caption || ''} 
@@ -55,6 +68,16 @@ export default function Gallery() {
           scrollbar-width: none;
         }
       `}</style>
+
+      {lightboxOpen && (
+        <Lightbox
+          images={lightboxImages}
+          currentIndex={lightboxIndex}
+          onClose={() => setLightboxOpen(false)}
+          onPrevious={() => setLightboxIndex((p) => (p > 0 ? p - 1 : lightboxImages.length - 1))}
+          onNext={() => setLightboxIndex((p) => (p < lightboxImages.length - 1 ? p + 1 : 0))}
+        />
+      )}
     </section>
   );
 }

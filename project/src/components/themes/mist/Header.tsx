@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { usePageData, useHeaderData } from '../../../contexts/PageDataContext';
 import { useLanguage } from '../../../contexts/LanguageContext';
 import { getLocalizedValue } from '../../../utils/i18n';
-import type { Language } from '../../../data/types';
+import type { Language } from '../../../contexts/LanguageContext';
 import SectionError from '../../SectionError';
 
 const languageNames: Record<Language, string> = {

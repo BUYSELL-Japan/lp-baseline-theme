@@ -50,7 +50,7 @@ export default function Pricing() {
               const name = getLocalizedValue(plan, 'name', language);
               const desc = getLocalizedValue(plan, 'description', language);
               const price = getLocalizedValue(plan, 'price', language);
-              const features = plan.features?.map(f => getLocalizedValue(f, 'text', language)).filter(Boolean) || [];
+              const features = plan.features || [];
 
               return (
                 <motion.div 

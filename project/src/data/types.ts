@@ -8,6 +8,7 @@ export interface LocalizedText {
 export interface HeaderData {
   logo: {
     text: string;
+    image?: string;
   };
   navigation: NavigationItem[];
 }

@@ -47,7 +47,6 @@ export default function Access() {
           <div className="w-full border-t border-[#EEEEEE] pt-12">
             <h3 className="font-sans font-medium text-[#444444] mb-4 text-sm tracking-widest">{translate('address', language) || '所在地'}</h3>
             <p className="text-[#888888] font-light text-sm leading-loose tracking-widest mb-12">
-              {accessData.postalCode && <span>{accessData.postalCode}<br/></span>}
               {getLocalizedValue(accessData, 'address', language)}
             </p>
             

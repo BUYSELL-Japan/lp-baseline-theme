@@ -1,22 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useMenuData } from '../../../contexts/PageDataContext';
 import { useLanguage } from '../../../contexts/LanguageContext';
 import { getLocalizedValue } from '../../../utils/i18n';
 import SectionError from '../../SectionError';
+import Lightbox from '../../Lightbox';
 
 export default function Menu() {
   const menuData = useMenuData();
   const { language } = useLanguage();
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
 
   if (!menuData) return <SectionError sectionName="Menu" error="No menu data available" data={menuData} />;
-  
+
   const sectionTitle = getLocalizedValue(menuData, 'sectionTitle', language);
   if (!sectionTitle) return <SectionError sectionName="Menu" error="Missing section title" data={menuData} />;
 
   if (!menuData.items || menuData.items.length === 0) {
     return <SectionError sectionName="Menu" error="No menu items found." data={menuData} />;
   }
+
+  const itemsWithImages = menuData.items.filter((item) => item.image);
+  const lightboxImages = itemsWithImages.map((item) => ({
+    src: item.image,
+    alt: getLocalizedValue(item, 'name', language) || '',
+  }));
 
   return (
     <section id="menu" className="py-20 bg-[#FFFBF0]">
@@ -41,7 +50,13 @@ export default function Menu() {
                 className="group flex flex-col h-full bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-[#D97706]/20 hover:border-[#D97706]/50"
               >
                 {item.image ? (
-                  <div className="aspect-square w-full overflow-hidden p-2">
+                  <div
+                    className="aspect-square w-full overflow-hidden p-2 cursor-pointer"
+                    onClick={() => {
+                      setLightboxIndex(itemsWithImages.indexOf(item));
+                      setLightboxOpen(true);
+                    }}
+                  >
                     <img src={item.image} alt={itemName} className="w-full h-full object-cover rounded-2xl group-hover:scale-105 transition-transform duration-500" />
                   </div>
                 ) : (
@@ -65,6 +80,16 @@ export default function Menu() {
           })}
         </div>
       </div>
+
+      {lightboxOpen && (
+        <Lightbox
+          images={lightboxImages}
+          currentIndex={lightboxIndex}
+          onClose={() => setLightboxOpen(false)}
+          onPrevious={() => setLightboxIndex((p) => (p > 0 ? p - 1 : lightboxImages.length - 1))}
+          onNext={() => setLightboxIndex((p) => (p < lightboxImages.length - 1 ? p + 1 : 0))}
+        />
+      )}
     </section>
   );
 }

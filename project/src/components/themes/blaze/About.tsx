@@ -7,10 +7,9 @@ import { getLocalizedValue } from '../../../utils/i18n';
 export default function About() {
   const aboutData = useAboutData();
   const { language } = useLanguage();
-  if (!aboutData || (!aboutData.title && !aboutData.description && (!aboutData.features || aboutData.features.length === 0))) return null;
-  
-  const title = getLocalizedValue(aboutData, 'title', language);
-  const description = getLocalizedValue(aboutData, 'description', language);
+  if (!aboutData || (!aboutData.sectionTitle && (!aboutData.features || aboutData.features.length === 0))) return null;
+
+  const title = getLocalizedValue(aboutData, 'sectionTitle', language);
 
   return (
     <section id="about" className="py-20 bg-[#0a0a0a] text-white">
@@ -19,11 +18,6 @@ export default function About() {
           <h2 className="text-5xl md:text-7xl font-black uppercase italic mb-8 border-l-8 border-[#DC2626] pl-6 text-transparent bg-clip-text bg-gradient-to-r from-[#DC2626] to-[#F59E0B]">
             {title}
           </h2>
-        )}
-        {description && (
-          <p className="text-xl text-gray-300 font-bold max-w-3xl leading-relaxed whitespace-pre-wrap">
-            {description}
-          </p>
         )}
       </div>
 

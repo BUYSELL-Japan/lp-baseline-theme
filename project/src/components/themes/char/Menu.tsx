@@ -1,17 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useMenuData } from '../../../contexts/PageDataContext';
 import { useLanguage } from '../../../contexts/LanguageContext';
 import { getLocalizedValue } from '../../../utils/i18n';
 import SectionError from '../../SectionError';
+import Lightbox from '../../Lightbox';
 
 export default function Menu() {
   const menuData = useMenuData();
   const { language } = useLanguage();
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
 
   if (!menuData) return <SectionError sectionName="Menu" error="No menu data available" />;
 
   const sectionTitle = getLocalizedValue(menuData, 'sectionTitle', language);
   const items = menuData.items || [];
+  const itemsWithImages = items.filter((item) => item.image);
+  const lightboxImages = itemsWithImages.map((item) => ({
+    src: item.image,
+    alt: getLocalizedValue(item, 'name', language) || '',
+  }));
 
   return (
     <section id="menu" className="py-24 md:py-32 px-6" style={{ backgroundColor: '#1C1C1C', borderTop: '1px solid #D4541A' }}>
@@ -44,7 +52,13 @@ export default function Menu() {
               >
                 {/* 料理画像 */}
                 {hasImage && (
-                  <div className="w-full md:w-[30%] h-[200px] flex-shrink-0 mb-6 md:mb-0 md:mr-8 overflow-hidden">
+                  <div
+                    className="w-full md:w-[30%] h-[200px] flex-shrink-0 mb-6 md:mb-0 md:mr-8 overflow-hidden cursor-pointer"
+                    onClick={() => {
+                      setLightboxIndex(itemsWithImages.indexOf(item));
+                      setLightboxOpen(true);
+                    }}
+                  >
                     <img
                       src={item.image}
                       alt={name}
@@ -87,6 +101,16 @@ export default function Menu() {
           })}
         </div>
       </div>
+
+      {lightboxOpen && (
+        <Lightbox
+          images={lightboxImages}
+          currentIndex={lightboxIndex}
+          onClose={() => setLightboxOpen(false)}
+          onPrevious={() => setLightboxIndex((p) => (p > 0 ? p - 1 : lightboxImages.length - 1))}
+          onNext={() => setLightboxIndex((p) => (p < lightboxImages.length - 1 ? p + 1 : 0))}
+        />
+      )}
     </section>
   );
 }

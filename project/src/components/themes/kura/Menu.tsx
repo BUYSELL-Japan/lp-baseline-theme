@@ -1,22 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useMenuData } from '../../../contexts/PageDataContext';
 import { useLanguage } from '../../../contexts/LanguageContext';
 import { getLocalizedValue } from '../../../utils/i18n';
 import SectionError from '../../SectionError';
+import Lightbox from '../../Lightbox';
 
 export default function Menu() {
   const menuData = useMenuData();
   const { language } = useLanguage();
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
 
   if (!menuData) return <SectionError sectionName="Menu" error="No menu data available" data={menuData} />;
-  
+
   const sectionTitle = getLocalizedValue(menuData, 'sectionTitle', language);
   if (!sectionTitle) return <SectionError sectionName="Menu" error="Missing section title" data={menuData} />;
 
   if (!menuData.items || menuData.items.length === 0) {
     return <SectionError sectionName="Menu" error="No menu items found." data={menuData} />;
   }
+
+  const itemsWithImages = menuData.items.filter((item) => item.image);
+  const lightboxImages = itemsWithImages.map((item) => ({
+    src: item.image,
+    alt: getLocalizedValue(item, 'name', language) || '',
+  }));
 
   return (
     <section id="menu" className="py-32 md:py-48 bg-[#FAFAF7]">
@@ -41,12 +50,19 @@ export default function Menu() {
                 className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-stretch gap-12 md:gap-0 w-full max-w-none`}
               >
                 {/* Image */}
-                <div className="w-full md:w-1/2 h-[300px] md:h-[400px] overflow-hidden">
+                <div
+                  className={`w-full md:w-1/2 h-[300px] md:h-[400px] overflow-hidden ${item.image ? 'cursor-pointer' : ''}`}
+                  onClick={() => {
+                    if (!item.image) return;
+                    setLightboxIndex(itemsWithImages.indexOf(item));
+                    setLightboxOpen(true);
+                  }}
+                >
                   {item.image ? (
-                    <img 
-                      src={item.image} 
-                      alt={itemName} 
-                      className="w-full h-full object-cover" 
+                    <img
+                      src={item.image}
+                      alt={itemName}
+                      className="w-full h-full object-cover"
                     />
                   ) : (
                     <div className="w-full h-full bg-[#F5F0E8]"></div>
@@ -72,6 +88,16 @@ export default function Menu() {
           })}
         </div>
       </div>
+
+      {lightboxOpen && (
+        <Lightbox
+          images={lightboxImages}
+          currentIndex={lightboxIndex}
+          onClose={() => setLightboxOpen(false)}
+          onPrevious={() => setLightboxIndex((p) => (p > 0 ? p - 1 : lightboxImages.length - 1))}
+          onNext={() => setLightboxIndex((p) => (p < lightboxImages.length - 1 ? p + 1 : 0))}
+        />
+      )}
     </section>
   );
 }

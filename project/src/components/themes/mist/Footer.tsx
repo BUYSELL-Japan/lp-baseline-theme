@@ -10,24 +10,18 @@ export default function Footer() {
 
   if (!footerData) return <SectionError sectionName="Footer" error="No footer data available" />;
 
-  const logoText = getLocalizedValue(footerData.logo, 'text', language);
+  const logoText = typeof footerData.logo === 'string'
+    ? footerData.logo
+    : getLocalizedValue(footerData.logo, 'text', language);
   const description = getLocalizedValue(footerData, 'description', language);
 
   return (
     <footer className="bg-[#FFFFFF] py-24 px-6 border-t border-[#EEEEEE]">
       <div className="max-w-4xl mx-auto flex flex-col items-center text-center">
         <div className="mb-12">
-          {footerData.logo.image ? (
-            <img 
-              src={footerData.logo.image} 
-              alt={logoText || 'Logo'} 
-              className="h-8 object-contain grayscale opacity-80"
-            />
-          ) : (
-            <span className="text-lg font-sans font-medium text-[#222222] tracking-[0.2em]">
-              {logoText}
-            </span>
-          )}
+          <span className="text-lg font-sans font-medium text-[#222222] tracking-[0.2em]">
+            {logoText}
+          </span>
         </div>
         
         {description && (

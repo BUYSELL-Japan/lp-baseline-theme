@@ -69,7 +69,7 @@ export default function About() {
                   )}
                   {desc && (
                     <div className="text-[#1C1917] font-medium leading-loose text-lg space-y-4">
-                      {desc.split('\n').map((paragraph, pIndex) => (
+                      {desc.split('\n').map((paragraph: string, pIndex: number) => (
                         <p key={pIndex}>{paragraph}</p>
                       ))}
                     </div>

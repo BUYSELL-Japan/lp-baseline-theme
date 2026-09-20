@@ -71,10 +71,14 @@ export default function Gallery() {
       <AnimatePresence>
         {lightboxOpen && (
           <Lightbox
-            images={images}
-            photoIndex={photoIndex}
-            setPhotoIndex={setPhotoIndex}
-            setIsOpen={setLightboxOpen}
+            images={images.map((image) => ({
+              src: image.url,
+              alt: getLocalizedValue(image, 'caption', language) || '',
+            }))}
+            currentIndex={photoIndex}
+            onClose={() => setLightboxOpen(false)}
+            onPrevious={() => setPhotoIndex((p) => (p > 0 ? p - 1 : images.length - 1))}
+            onNext={() => setPhotoIndex((p) => (p < images.length - 1 ? p + 1 : 0))}
           />
         )}
       </AnimatePresence>

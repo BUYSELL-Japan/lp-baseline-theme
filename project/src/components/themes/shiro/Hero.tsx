@@ -1,22 +1,20 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useHeroData, usePageData } from '../../../contexts/PageDataContext';
+import { useHeroData } from '../../../contexts/PageDataContext';
 import { useLanguage } from '../../../contexts/LanguageContext';
 import { getLocalizedValue, translate } from '../../../utils/i18n';
 import SectionError from '../../SectionError';
 
 export default function Hero() {
   const heroData = useHeroData();
-  const pageData = usePageData();
   const { language } = useLanguage();
 
   if (!heroData) return <SectionError sectionName="Hero" error="No hero data available" />;
 
   const title = getLocalizedValue(heroData, 'title', language);
   const subtitle = getLocalizedValue(heroData, 'subtitle', language);
-  const showReservations = pageData.reservations !== false;
-  
-  const imageUrl = heroData.backgroundImage || heroData.image;
+
+  const imageUrl = heroData.backgroundImage;
 
   return (
     <section id="hero" className="bg-[#FFFFFF] pt-32 pb-16 md:pt-40 md:pb-24 px-6 md:px-12 border-b border-[#E5E5E5] flex items-center justify-center">
@@ -41,17 +39,15 @@ export default function Hero() {
             {subtitle}
           </motion.p>
           
-          {showReservations && (
-            <motion.a 
-              href="#contact"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="bg-[#2D6A4F] text-white font-sans font-bold px-10 py-4 hover:bg-[#1b4332] transition-colors rounded-none text-lg"
-            >
-              {translate('bookingContact', language)}
-            </motion.a>
-          )}
+          <motion.a
+            href="#contact"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="bg-[#2D6A4F] text-white font-sans font-bold px-10 py-4 hover:bg-[#1b4332] transition-colors rounded-none text-lg"
+          >
+            {translate('bookingContact', language)}
+          </motion.a>
         </div>
 
         {/* Image Section */}

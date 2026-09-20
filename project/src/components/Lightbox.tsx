@@ -41,7 +41,7 @@ export default function Lightbox({
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="fixed inset-0 z-50 flex items-center justify-center bg-black/95"
+        className="fixed inset-0 z-[999] flex items-center justify-center bg-black/90 p-4"
         onClick={onClose}
       >
         <button
@@ -84,13 +84,14 @@ export default function Lightbox({
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.9, opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="relative w-full max-w-7xl h-[90vh] mx-4 flex flex-col items-center justify-center"
+          className="relative flex flex-col items-center justify-center max-w-[90vw] max-h-[90vh]"
           onClick={(e) => e.stopPropagation()}
         >
           <img
             src={currentImage.src}
             alt={currentImage.alt}
-            className="w-full h-full object-contain rounded-lg"
+            className="max-w-[90vw] max-h-[90vh] w-auto h-auto object-contain rounded-lg select-none"
+            draggable={false}
           />
 
           {images.length > 1 && (

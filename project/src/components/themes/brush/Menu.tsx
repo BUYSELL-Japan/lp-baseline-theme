@@ -1,19 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 import { useMenuData } from '../../../contexts/PageDataContext';
 import { useLanguage } from '../../../contexts/LanguageContext';
 import { useLocalize } from '../../../hooks/useLocalize';
+import Lightbox from '../../Lightbox';
 
 export default function Menu() {
   const menuData = useMenuData();
   const { language } = useLanguage();
   const { getText } = useLocalize();
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
 
-  if (!menuData || !menuData.categories) return null;
+  if (!menuData || !menuData.items) return null;
 
-  const allItems = menuData.categories.flatMap(c => c.items);
-  // Optional: Just show all items flat or by category. We'll show all items flat for "一品入魂" impact.
+  // MenuData.items is the flat list of menu items (see src/data/types.ts).
+  const allItems = menuData.items;
+  const itemsWithImages = allItems.filter((item) => item.image);
+  const lightboxImages = itemsWithImages.map((item) => ({
+    src: item.image,
+    alt: getText(item.name),
+  }));
 
   return (
     <section id="menu" className="w-full bg-[#F5F0E8] py-24 md:py-32">
@@ -43,11 +51,18 @@ export default function Menu() {
             className="w-full border-t border-b border-[#1a1a1a]/20 -mt-px flex flex-col md:flex-row group"
           >
             {/* Left Image */}
-            <div className="w-full md:w-[40%] aspect-[4/3] md:aspect-auto md:h-auto relative overflow-hidden">
+            <div
+              className={`w-full md:w-[40%] aspect-[4/3] md:aspect-auto md:h-auto relative overflow-hidden ${item.image ? 'cursor-pointer' : ''}`}
+              onClick={() => {
+                if (!item.image) return;
+                setLightboxIndex(itemsWithImages.indexOf(item));
+                setLightboxOpen(true);
+              }}
+            >
               {item.image ? (
-                <img 
-                  src={item.image} 
-                  alt={getText(item.name)} 
+                <img
+                  src={item.image}
+                  alt={getText(item.name)}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               ) : (
@@ -59,10 +74,10 @@ export default function Menu() {
 
             {/* Right Text */}
             <div className="w-full md:w-[60%] p-10 md:p-16 lg:p-24 flex flex-col justify-center bg-[#F5F0E8]">
-              {item.badge && (
+              {(item as any).badge && (
                 <div className="mb-6">
                   <span className="inline-block bg-[#1a1a1a] text-white px-4 py-1 text-sm font-sans font-bold tracking-widest">
-                    {getText(item.badge)}
+                    {getText((item as any).badge)}
                   </span>
                 </div>
               )}
@@ -83,6 +98,16 @@ export default function Menu() {
           </motion.div>
         ))}
       </div>
+
+      {lightboxOpen && (
+        <Lightbox
+          images={lightboxImages}
+          currentIndex={lightboxIndex}
+          onClose={() => setLightboxOpen(false)}
+          onPrevious={() => setLightboxIndex((p) => (p > 0 ? p - 1 : lightboxImages.length - 1))}
+          onNext={() => setLightboxIndex((p) => (p < lightboxImages.length - 1 ? p + 1 : 0))}
+        />
+      )}
     </section>
   );
 }

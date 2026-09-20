@@ -1,16 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useMenuData } from '../../../contexts/PageDataContext';
 import { useLanguage } from '../../../contexts/LanguageContext';
 import { getLocalizedValue } from '../../../utils/i18n';
 import SectionError from '../../SectionError';
+import Lightbox from '../../Lightbox';
 
 export default function Menu() {
   const menuData = useMenuData();
   const { language } = useLanguage();
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
 
   if (!menuData) return <SectionError sectionName="Menu" error="No menu data available" data={menuData} />;
-  
+
   const sectionTitle = getLocalizedValue(menuData, 'sectionTitle', language);
 
   if (!menuData.items || menuData.items.length === 0) {
@@ -19,6 +22,12 @@ export default function Menu() {
 
   // Pre-generate pseudo-random rotations so they don't mismatch on hydration
   const rotations = [2, -3, 1, -2, 3, -1, 4, -4];
+
+  const itemsWithImages = menuData.items.filter((item) => item.image);
+  const lightboxImages = itemsWithImages.map((item) => ({
+    src: item.image,
+    alt: getLocalizedValue(item, 'name', language) || '',
+  }));
 
   return (
     <section id="menu" className="relative py-24 md:py-32 bg-[#FFFFFF]">
@@ -45,12 +54,19 @@ export default function Menu() {
                 className="bg-white rounded-[20px] shadow-[0_10px_30px_rgba(0,0,0,0.15)] overflow-hidden border-4 border-[#1a1a1a] flex flex-col cursor-pointer"
               >
                 {/* Image */}
-                <div className="w-full h-[250px] relative overflow-hidden bg-[#FFBE0B]/20">
+                <div
+                  className={`w-full h-[250px] relative overflow-hidden bg-[#FFBE0B]/20 ${item.image ? 'cursor-pointer' : ''}`}
+                  onClick={() => {
+                    if (!item.image) return;
+                    setLightboxIndex(itemsWithImages.indexOf(item));
+                    setLightboxOpen(true);
+                  }}
+                >
                   {item.image && (
-                    <img 
-                      src={item.image} 
-                      alt={itemName} 
-                      className="w-full h-full object-cover" 
+                    <img
+                      src={item.image}
+                      alt={itemName}
+                      className="w-full h-full object-cover"
                     />
                   )}
                   {/* Price Sticker */}
@@ -82,6 +98,16 @@ export default function Menu() {
           <path d="M0,0 L600,30 L1200,0 L1200,30 L0,30 Z" fill="#FFBE0B"></path>
         </svg>
       </div>
+
+      {lightboxOpen && (
+        <Lightbox
+          images={lightboxImages}
+          currentIndex={lightboxIndex}
+          onClose={() => setLightboxOpen(false)}
+          onPrevious={() => setLightboxIndex((p) => (p > 0 ? p - 1 : lightboxImages.length - 1))}
+          onNext={() => setLightboxIndex((p) => (p < lightboxImages.length - 1 ? p + 1 : 0))}
+        />
+      )}
     </section>
   );
 }

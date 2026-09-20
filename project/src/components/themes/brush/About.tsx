@@ -24,9 +24,6 @@ export default function About() {
           {getText(aboutData.sectionTitle)}
         </motion.h2>
         <div className="w-24 h-2 bg-[#C0392B] mx-auto mb-6" />
-        <p className="text-xl md:text-2xl font-serif font-bold text-white/80 tracking-widest">
-          {getText(aboutData.sectionSubtitle)}
-        </p>
       </div>
 
       <div className="max-w-6xl mx-auto px-4 md:px-6 flex flex-col gap-24 md:gap-32">

@@ -40,7 +40,7 @@ export default function News() {
             >
               <div className="w-40 flex-shrink-0 mb-2 md:mb-0">
                 <span className="text-[#333333] font-sans font-bold">
-                  {item.date}
+                  {getLocalizedValue(item, 'date', language)}
                 </span>
               </div>
               <div className="flex-1">

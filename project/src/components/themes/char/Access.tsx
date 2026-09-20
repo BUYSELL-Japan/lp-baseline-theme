@@ -50,7 +50,6 @@ export default function Access() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 py-8" style={{ borderBottom: '1px solid rgba(212, 84, 26, 0.5)' }}>
               <div className="font-sans text-base tracking-[0.2em] uppercase" style={{ fontFamily: 'monospace', color: '#D4541A', fontWeight: 700 }}>ADDRESS</div>
               <div className="md:col-span-2 font-sans text-base text-[#BBBBBB] leading-loose tracking-wider" style={{ fontFamily: 'monospace' }}>
-                {accessData.postalCode && <span>{accessData.postalCode}<br /></span>}
                 {getLocalizedValue(accessData, 'address', language)}
               </div>
             </div>

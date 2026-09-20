@@ -1,16 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 import { useGalleryData } from '../../../contexts/PageDataContext';
 import { useLanguage } from '../../../contexts/LanguageContext';
 import { useLocalize } from '../../../hooks/useLocalize';
+import Lightbox from '../../Lightbox';
 
 export default function Gallery() {
   const galleryData = useGalleryData();
   const { language } = useLanguage();
   const { getText } = useLocalize();
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
 
   if (!galleryData || !galleryData.images || galleryData.images.length === 0) return null;
+
+  const lightboxImages = galleryData.images.map((image) => ({
+    src: image.url,
+    alt: getText(image.caption),
+  }));
 
   return (
     <section id="gallery" className="py-24 md:py-32 bg-[#F5F0E8]">
@@ -36,9 +44,10 @@ export default function Gallery() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true, margin: "50px" }}
               transition={{ duration: 0.5, delay: (index % 3) * 0.1 }}
-              className="relative aspect-square overflow-hidden bg-[#F5F0E8] group"
+              onClick={() => { setLightboxIndex(index); setLightboxOpen(true); }}
+              className="relative aspect-square overflow-hidden bg-[#F5F0E8] group cursor-pointer"
             >
-              <img 
+              <img
                 src={image.url} 
                 alt={getText(image.caption) || `Gallery image ${index + 1}`}
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
@@ -54,6 +63,16 @@ export default function Gallery() {
           ))}
         </div>
       </div>
+
+      {lightboxOpen && (
+        <Lightbox
+          images={lightboxImages}
+          currentIndex={lightboxIndex}
+          onClose={() => setLightboxOpen(false)}
+          onPrevious={() => setLightboxIndex((p) => (p > 0 ? p - 1 : lightboxImages.length - 1))}
+          onNext={() => setLightboxIndex((p) => (p < lightboxImages.length - 1 ? p + 1 : 0))}
+        />
+      )}
     </section>
   );
 }

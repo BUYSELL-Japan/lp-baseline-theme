@@ -14,8 +14,8 @@ export default function StoreInfo() {
   const sectionTitle = t(storeInfoData, 'sectionTitle', language);
   const sectionSubtitle = t(storeInfoData, 'sectionSubtitle', language);
   const items = storeInfoData.items || [];
-  const image = storeInfoData.image;
-  const imageCaption = t(storeInfoData, 'imageCaption', language);
+  const image = storeInfoData.mainImage;
+  const imageCaption = t(storeInfoData, 'mainImageCaption', language);
 
   return (
     <section id="storeInfo" className="bg-[#FFFFFF] py-20 px-6 border-b border-[#E5E5E5]">

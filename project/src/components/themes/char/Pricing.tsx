@@ -9,9 +9,10 @@ export default function Pricing() {
   const { language } = useLanguage();
 
   if (!pricingData) return <SectionError sectionName="Pricing" error="No pricing data available" />;
+  if (!pricingData.plans || pricingData.plans.length === 0) return null;
 
   const sectionTitle = getLocalizedValue(pricingData, 'sectionTitle', language);
-  const plans = pricingData.plans || [];
+  const plans = pricingData.plans;
 
   const getFeatureText = (feature: any): string => {
     if (typeof feature === 'string') return feature;

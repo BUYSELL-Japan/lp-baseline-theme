@@ -16,9 +16,9 @@ export default function Hero() {
   if (!title && !subtitle && !heroData.backgroundImage) return null;
 
   return (
-    <section 
+    <section
       className="relative min-h-[90svh] sm:min-h-screen flex items-end sm:items-center bg-cover bg-center bg-fixed bg-no-repeat"
-      style={{ backgroundImage: `url(${heroData.backgroundImage})` }}
+      style={heroData.backgroundImage ? { backgroundImage: `url(${heroData.backgroundImage})` } : undefined}
     >
       {/* Dark overlay for Ember's heavy feel (60% opacity) */}
       <div className="absolute inset-0 bg-[#0a0a0a]/60 z-0"></div>

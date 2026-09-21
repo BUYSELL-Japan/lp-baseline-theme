@@ -9,9 +9,10 @@ export default function News() {
   const { language } = useLanguage();
 
   if (!newsData) return <SectionError sectionName="News" error="No news data available" />;
+  if (!newsData.items || newsData.items.length === 0) return null;
 
   const sectionTitle = getLocalizedValue(newsData, 'sectionTitle', language);
-  const items = newsData.items || [];
+  const items = newsData.items;
 
   return (
     <section id="news" className="py-32 md:py-48 px-6" style={{ backgroundColor: '#1C1C1C', borderTop: '1px solid #D4541A' }}>

@@ -12,7 +12,6 @@ export default function About() {
   if (!aboutData) return <SectionError sectionName="About" error="No about data available" />;
 
   const sectionTitle = getLocalizedValue(aboutData, 'sectionTitle', language);
-  const sectionSubtitle = getLocalizedValue(aboutData, 'sectionSubtitle', language);
   const features = aboutData.features || [];
 
   return (
@@ -27,9 +26,6 @@ export default function About() {
           <h2 className="text-3xl md:text-4xl font-sans font-bold text-[#333333] mb-4">
             {sectionTitle}
           </h2>
-          {sectionSubtitle && (
-            <p className="text-base text-[#333333] max-w-2xl mx-auto">{sectionSubtitle}</p>
-          )}
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

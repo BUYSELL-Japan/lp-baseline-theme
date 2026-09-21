@@ -13,9 +13,10 @@ export default function Gallery() {
   const [lightboxIndex, setLightboxIndex] = useState(0);
 
   if (!galleryData) return <SectionError sectionName="Gallery" error="No gallery data available" />;
+  if (!galleryData.images || galleryData.images.length === 0) return null;
 
   const sectionTitle = getLocalizedValue(galleryData, 'sectionTitle', language);
-  const images = galleryData.images || [];
+  const images = galleryData.images;
   const lightboxImages = images.map((img) => ({
     src: img.url,
     alt: img.caption || '',

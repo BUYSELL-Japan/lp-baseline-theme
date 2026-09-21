@@ -10,7 +10,7 @@ export default function Menu() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
 
-  if (!menuData || !menuData.items) return null;
+  if (!menuData || !menuData.items || menuData.items.length === 0) return null;
   if (!t(menuData, 'sectionTitle')) return null;
 
   const openLightbox = (index: number) => {
@@ -18,7 +18,8 @@ export default function Menu() {
     setLightboxOpen(true);
   };
 
-  const lightboxImages = menuData.items.map((item) => ({
+  const itemsWithImages = menuData.items.filter((item) => item.image);
+  const lightboxImages = itemsWithImages.map((item) => ({
     src: item.image,
     alt: t(item, 'name'),
   }));
@@ -50,17 +51,21 @@ export default function Menu() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: Math.min(index * 0.1, 0.5) }}
-              className="group cursor-pointer min-w-[280px] sm:min-w-[360px] lg:min-w-0 snap-center lg:snap-align-none shrink-0 lg:shrink flex flex-col bg-[#0a0a0a] border border-[#D4AF37]/30 hover:border-[#D4AF37] transition-all duration-300"
-              onClick={() => openLightbox(index)}
+              className="group min-w-[280px] sm:min-w-[360px] lg:min-w-0 snap-center lg:snap-align-none shrink-0 lg:shrink flex flex-col bg-[#0a0a0a] border border-[#D4AF37]/30 hover:border-[#D4AF37] transition-all duration-300"
             >
-              <div className="relative aspect-[4/3] overflow-hidden">
-                <img 
-                  src={item.image} 
-                  alt={t(item, 'name')} 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-[#0a0a0a]/20 group-hover:bg-transparent transition-colors duration-500" />
-              </div>
+              {item.image && (
+                <div
+                  className="relative aspect-[4/3] overflow-hidden cursor-pointer"
+                  onClick={() => openLightbox(itemsWithImages.indexOf(item))}
+                >
+                  <img
+                    src={item.image}
+                    alt={t(item, 'name')}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-[#0a0a0a]/20 group-hover:bg-transparent transition-colors duration-500" />
+                </div>
+              )}
               
               <div className="p-6 sm:p-8 flex-grow flex flex-col justify-between">
                 <div>
@@ -85,8 +90,8 @@ export default function Menu() {
             images={lightboxImages}
             currentIndex={lightboxIndex}
             onClose={() => setLightboxOpen(false)}
-            onPrevious={() => setLightboxIndex((prev) => (prev > 0 ? prev - 1 : menuData.items.length - 1))}
-            onNext={() => setLightboxIndex((prev) => (prev < menuData.items.length - 1 ? prev + 1 : 0))}
+            onPrevious={() => setLightboxIndex((prev) => (prev > 0 ? prev - 1 : lightboxImages.length - 1))}
+            onNext={() => setLightboxIndex((prev) => (prev < lightboxImages.length - 1 ? prev + 1 : 0))}
           />
         )}
       </div>

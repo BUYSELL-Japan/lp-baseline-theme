@@ -39,7 +39,7 @@ export default function News() {
             const title = getText(item.title);
             const content = getText(item.content);
             const category = getCategory(item.category);
-            const date = typeof item.date === 'string' ? item.date : item.date?.ja || '';
+            const date = getText(item.date);
 
             return (
               <motion.div

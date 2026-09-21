@@ -10,7 +10,7 @@ export default function About() {
   const { language } = useLanguage();
   const { getText } = useLocalize();
 
-  if (!aboutData || !aboutData.features) return null;
+  if (!aboutData || !aboutData.features || aboutData.features.length === 0) return null;
 
   return (
     <section id="about" className="py-24 md:py-32 bg-[#1a1a1a] text-white">

@@ -20,7 +20,7 @@ export default function CTA() {
           viewport={{ once: true }}
         >
           <h2 className="text-3xl md:text-5xl font-sans font-bold text-white mb-6">
-            {getLocalizedValue(ctaData, 'title', language)}
+            {getLocalizedValue(ctaData, 'sectionTitle', language)}
           </h2>
           <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto">
             {getLocalizedValue(ctaData, 'description', language)}

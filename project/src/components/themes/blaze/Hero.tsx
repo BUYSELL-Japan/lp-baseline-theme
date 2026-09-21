@@ -29,9 +29,9 @@ export default function Hero() {
       `}</style>
       
       {/* Background Image with diagonal clip-path */}
-      <div 
+      <div
         className="absolute inset-0 w-full h-full bg-cover bg-center blaze-clip z-0"
-        style={{ backgroundImage: `url(${heroData.backgroundImage})` }}
+        style={heroData.backgroundImage ? { backgroundImage: `url(${heroData.backgroundImage})` } : undefined}
       >
         <div className="absolute inset-0 bg-gradient-to-tr from-[#EA580C]/50 to-[#DC2626]/30 mix-blend-multiply" />
       </div>

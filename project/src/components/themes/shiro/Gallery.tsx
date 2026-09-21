@@ -12,11 +12,13 @@ export default function Gallery() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
 
-  if (!galleryData) return <SectionError sectionName="Gallery" error="No gallery data available" />;
+  if (!galleryData || !galleryData.images || galleryData.images.length === 0) {
+    return <SectionError sectionName="Gallery" error="No gallery images available" data={galleryData} />;
+  }
 
   const sectionTitle = getLocalizedValue(galleryData, 'sectionTitle', language);
   const sectionSubtitle = getLocalizedValue(galleryData, 'sectionSubtitle', language);
-  const images = galleryData.images || [];
+  const images = galleryData.images;
 
   return (
     <section id="gallery" className="bg-[#F8F8F8] py-20 px-6 border-b border-[#E5E5E5]">

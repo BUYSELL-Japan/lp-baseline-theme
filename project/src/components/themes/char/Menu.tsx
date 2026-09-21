@@ -12,9 +12,10 @@ export default function Menu() {
   const [lightboxIndex, setLightboxIndex] = useState(0);
 
   if (!menuData) return <SectionError sectionName="Menu" error="No menu data available" />;
+  if (!menuData.items || menuData.items.length === 0) return null;
 
   const sectionTitle = getLocalizedValue(menuData, 'sectionTitle', language);
-  const items = menuData.items || [];
+  const items = menuData.items;
   const itemsWithImages = items.filter((item) => item.image);
   const lightboxImages = itemsWithImages.map((item) => ({
     src: item.image,

@@ -11,7 +11,7 @@ export default function Pricing() {
   const { getText } = useLocalize();
   const { language } = useLanguage();
 
-  if (!pricingData || !pricingData.plans) return null;
+  if (!pricingData || !pricingData.plans || pricingData.plans.length === 0) return null;
   if (!getText(pricingData.sectionTitle)) return null;
 
   return (

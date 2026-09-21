@@ -12,7 +12,9 @@ export default function Pricing() {
   const { getText } = useLocalize();
   const { language } = useLanguage();
 
-  if (!pricingData || !pricingData.plans) return <SectionError sectionName="Pricing" error="No pricing data available" data={pricingData} />;
+  if (!pricingData || !pricingData.plans || pricingData.plans.length === 0) {
+    return <SectionError sectionName="Pricing" error="No pricing data available" data={pricingData} />;
+  }
 
   return (
     <section id="pricing" className="bg-[#FFFFFF] py-20 px-6 border-b border-[#E5E5E5]">

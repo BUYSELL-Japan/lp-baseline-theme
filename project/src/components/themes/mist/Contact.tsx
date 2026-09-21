@@ -15,7 +15,7 @@ export default function Contact() {
   const nameLabel = getLocalizedValue(contactData.fields, 'name', language) || 'Name';
   const emailLabel = getLocalizedValue(contactData.fields, 'email', language) || 'Email';
   const messageLabel = getLocalizedValue(contactData.fields, 'message', language) || 'Message';
-  const submitText = getLocalizedValue(contactData, 'submitText', language) || 'Submit';
+  const submitText = getLocalizedValue(contactData, 'submitButton', language) || 'Submit';
 
   return (
     <section id="contact" className="bg-[#F5F5F3] py-32 md:py-48 px-6 border-b border-[#EEEEEE]">

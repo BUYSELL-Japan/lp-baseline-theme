@@ -9,7 +9,9 @@ export default function News() {
   const newsData = useNewsData();
   const { language } = useLanguage();
 
-  if (!newsData || !newsData.items) return <SectionError sectionName="News" error="No news data available" data={newsData} />;
+  if (!newsData || !newsData.items || newsData.items.length === 0) {
+    return <SectionError sectionName="News" error="No news data available" data={newsData} />;
+  }
 
   return (
     <section id="news" className="bg-[#FFFFFF] py-20 px-6 border-b border-[#E5E5E5]">

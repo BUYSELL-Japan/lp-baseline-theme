@@ -10,12 +10,16 @@ export default function Staff() {
   if (!staffData) return <SectionError sectionName="Staff" error="No staff data available" data={staffData} />;
   const sectionTitle = t(staffData, 'sectionTitle');
   if (!sectionTitle) return <SectionError sectionName="Staff" error="Missing section title" data={staffData} />;
+  if (!staffData.members || !Array.isArray(staffData.members) || staffData.members.length === 0) {
+    return <SectionError sectionName="Staff" error="No staff members found." data={staffData} />;
+  }
+
   const validMembers = staffData.members.filter((member: any) => {
     const name = t(member, 'name');
     return (name && name.trim() !== '') || (member.image && member.image.trim() !== '');
   });
 
-  if (!staffData.members || !Array.isArray(staffData.members) || validMembers.length === 0) {
+  if (validMembers.length === 0) {
     return <SectionError sectionName="Staff" error="No staff members found." data={staffData} />;
   }
 

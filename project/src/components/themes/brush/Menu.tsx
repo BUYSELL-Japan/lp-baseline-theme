@@ -13,7 +13,7 @@ export default function Menu() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
 
-  if (!menuData || !menuData.items) return null;
+  if (!menuData || !menuData.items || menuData.items.length === 0) return null;
 
   // MenuData.items is the flat list of menu items (see src/data/types.ts).
   const allItems = menuData.items;

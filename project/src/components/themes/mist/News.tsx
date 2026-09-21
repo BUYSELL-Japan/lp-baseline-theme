@@ -9,7 +9,7 @@ export default function News() {
   const newsData = useNewsData();
   const { language } = useLanguage();
 
-  if (!newsData || !newsData.items) return null;
+  if (!newsData || !newsData.items || newsData.items.length === 0) return null;
   const sectionTitle = getLocalizedValue(newsData, 'sectionTitle', language);
 
   return (

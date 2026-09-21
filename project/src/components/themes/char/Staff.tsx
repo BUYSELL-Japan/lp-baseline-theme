@@ -9,9 +9,10 @@ export default function Staff() {
   const { language } = useLanguage();
 
   if (!staffData) return <SectionError sectionName="Staff" error="No staff data available" />;
+  if (!staffData.members || staffData.members.length === 0) return null;
 
   const sectionTitle = getLocalizedValue(staffData, 'sectionTitle', language);
-  const members = staffData.members || [];
+  const members = staffData.members;
 
   return (
     <section id="staff" className="py-32 md:py-48 px-6" style={{ backgroundColor: '#111111', borderTop: '1px solid #D4541A' }}>

@@ -85,10 +85,20 @@ export async function fetchStoreContentAtBuildTime(storeId: string): Promise<Lan
       };
     } else {
       (()=>{})('[BuildTime API] Fetching from production API');
-      const response = await fetch(`${API_BASE_URL}/${storeId}?t=${Date.now()}`);
+      const MAX_RETRIES = 3;
+      const RETRY_DELAY_MS = 1000;
+      let response: Response | null = null;
+      for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+        response = await fetch(`${API_BASE_URL}/${storeId}?t=${Date.now()}`);
+        if (response.ok) break;
+        console.error(`[BuildTime API] Failed to fetch store content: ${response.status} (attempt ${attempt}/${MAX_RETRIES})`);
+        if (attempt < MAX_RETRIES) {
+          await new Promise(resolve => setTimeout(resolve, RETRY_DELAY_MS));
+        }
+      }
 
-      if (!response.ok) {
-        console.error(`[BuildTime API] Failed to fetch store content: ${response.status}`);
+      if (!response || !response.ok) {
+        console.error(`[BuildTime API] All ${MAX_RETRIES} attempts failed for storeId: ${storeId}`);
         return null;
       }
 

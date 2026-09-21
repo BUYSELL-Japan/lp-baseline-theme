@@ -1,0 +1,1420 @@
+{
+  "store_id": "demo-cafe",
+  "Subdomain": "demo-cafe",
+  "RecordType": "LP_CONTENT",
+  "Status": "Published",
+  "CreatedAt": "2026-09-21T01:16:22.455Z",
+  "UpdatedAt": "2026-09-21T01:16:22.455Z",
+  "ContentData": {
+    "header": {
+      "logo": {
+        "text": {
+          "ja": "カフェ＆ダイニング HARU",
+          "en": "Cafe & Dining HARU",
+          "ko": "카페 & 다이닝 HARU",
+          "zh-tw": "咖啡＆餐廳 HARU"
+        }
+      },
+      "navigation": [
+        {
+          "id": "about",
+          "label": {
+            "ja": "コンセプト",
+            "en": "Concept",
+            "ko": "개념",
+            "zh-tw": "概念"
+          }
+        },
+        {
+          "id": "menu",
+          "label": {
+            "ja": "メニュー",
+            "en": "Menu",
+            "ko": "메뉴",
+            "zh-tw": "菜單"
+          }
+        },
+        {
+          "id": "pricing",
+          "label": {
+            "ja": "コース・プラン",
+            "en": "Course Plan",
+            "ko": "코스 플랜",
+            "zh-tw": "課程方案"
+          }
+        },
+        {
+          "id": "cta",
+          "label": {
+            "ja": "ご予約",
+            "en": "Reservation",
+            "ko": "예약",
+            "zh-tw": "預約"
+          }
+        },
+        {
+          "id": "gallery",
+          "label": {
+            "ja": "ギャラリー",
+            "en": "Gallery",
+            "ko": "갤러리",
+            "zh-tw": "畫廊"
+          }
+        },
+        {
+          "id": "staff",
+          "label": {
+            "ja": "スタッフ",
+            "en": "Staff",
+            "ko": "직원",
+            "zh-tw": "員工"
+          }
+        },
+        {
+          "id": "reviews",
+          "label": {
+            "ja": "お客様の声",
+            "en": "Customer Feedback",
+            "ko": "고객 후기",
+            "zh-tw": "客戶反饋"
+          }
+        },
+        {
+          "id": "news",
+          "label": {
+            "ja": "お知らせ",
+            "en": "Notice",
+            "ko": "공지사항",
+            "zh-tw": "最新消息"
+          }
+        },
+        {
+          "id": "storeInfo",
+          "label": {
+            "ja": "店舗情報",
+            "en": "Store Information",
+            "ko": "매장 정보",
+            "zh-tw": "店鋪資訊"
+          }
+        },
+        {
+          "id": "company",
+          "label": {
+            "ja": "運営会社",
+            "en": "Operating Company",
+            "ko": "운영 회사",
+            "zh-tw": "運營公司"
+          }
+        },
+        {
+          "id": "access",
+          "label": {
+            "ja": "アクセス",
+            "en": "Access",
+            "ko": "오시는 길",
+            "zh-tw": "交通資訊"
+          }
+        },
+        {
+          "id": "faq",
+          "label": {
+            "ja": "よくある質問",
+            "en": "FAQ",
+            "ko": "자주 묻는 질문",
+            "zh-tw": "常見問題"
+          }
+        },
+        {
+          "id": "contact",
+          "label": {
+            "ja": "お問い合わせ",
+            "en": "Contact Us",
+            "ko": "문의하기",
+            "zh-tw": "聯絡我們"
+          }
+        }
+      ]
+    },
+    "hero": {
+      "sectionTitle": {
+        "ja": "白い空間で、\n心地よい時間を。",
+        "en": "A Comfortable Moment,\nin a White Space.",
+        "ko": "화이트 공간에서,\n편안한 시간을.",
+        "zh-tw": "在白色空間中，\n享受愉悅時光。"
+      },
+      "subtitle": {
+        "ja": "白を基調にした清潔感あるカフェ。ランチからディナーまで",
+        "en": "A clean, white-toned cafe serving everything from lunch to dinner",
+        "ko": "화이트를 기본으로 한 청결한 카페. 런치부터 디너까지",
+        "zh-tw": "以白色為基調的清爽咖啡廳，從午餐到晚餐都能享用"
+      },
+      "backgroundImage": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1920&q=80"
+    },
+    "about": {
+      "sectionTitle": {
+        "ja": "私たちのこだわり",
+        "en": "Our Commitment",
+        "ko": "우리의 고집",
+        "zh-tw": "我們的堅持"
+      },
+      "features": [
+        {
+          "title": {
+            "ja": "シンプルな美味しさ",
+            "en": "Simple, Genuine Flavor",
+            "ko": "심플한 맛",
+            "zh-tw": "簡約的美味"
+          },
+          "description": {
+            "ja": "素材の味を引き出す、飾らないシンプルな調理を大切にしています。",
+            "en": "We value simple, unadorned cooking that brings out the natural flavor of ingredients.",
+            "ko": "재료의 맛을 이끌어내는 꾸밈없는 심플한 조리를 중요하게 여깁니다.",
+            "zh-tw": "重視樸實簡約的烹調方式，充分展現食材本身的美味。"
+          },
+          "image": "https://images.unsplash.com/photo-1495364141860-b0d03eccd065?w=800&q=80"
+        },
+        {
+          "title": {
+            "ja": "清潔で心地よい空間",
+            "en": "A Clean, Comfortable Space",
+            "ko": "청결하고 편안한 공간",
+            "zh-tw": "潔淨舒適的空間"
+          },
+          "description": {
+            "ja": "白を基調とした明るく清潔な空間で、ゆったりお過ごしいただけます。",
+            "en": "Relax in our bright, clean, white-toned space.",
+            "ko": "화이트를 기본으로 한 밝고 청결한 공간에서 편안히 쉬실 수 있습니다.",
+            "zh-tw": "以白色為基調的明亮潔淨空間，讓您悠閒放鬆。"
+          },
+          "image": "https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=800&q=80"
+        },
+        {
+          "title": {
+            "ja": "一日中楽しめるメニュー",
+            "en": "A Menu to Enjoy All Day",
+            "ko": "하루 종일 즐기는 메뉴",
+            "zh-tw": "全天皆宜的菜單"
+          },
+          "description": {
+            "ja": "モーニングからディナーまで、一日中お楽しみいただけます。",
+            "en": "From morning to dinner, there's something to enjoy any time of day.",
+            "ko": "모닝부터 디너까지 하루 종일 즐기실 수 있습니다.",
+            "zh-tw": "從早餐到晚餐，全天皆可享用。"
+          },
+          "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&q=80"
+        }
+      ]
+    },
+    "menu": {
+      "sectionTitle": {
+        "ja": "お品書き",
+        "en": "Menu",
+        "ko": "메뉴",
+        "zh-tw": "菜單"
+      },
+      "sectionSubtitle": {
+        "ja": "シンプルで、心地よい一皿",
+        "en": "Simple, comforting dishes",
+        "ko": "심플하고 편안한 한 그릇",
+        "zh-tw": "簡約而舒心的一道料理"
+      },
+      "items": [
+        {
+          "name": {
+            "ja": "日替わりランチ",
+            "en": "Daily Lunch Special",
+            "ko": "오늘의 런치",
+            "zh-tw": "每日午餐"
+          },
+          "description": {
+            "ja": "シェフが日替わりでご用意する本日のランチ。",
+            "en": "A daily-changing lunch prepared by our chef.",
+            "ko": "셰프가 매일 준비하는 오늘의 런치입니다.",
+            "zh-tw": "主廚每日精心準備的今日午餐。"
+          },
+          "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80",
+          "price": "¥980"
+        },
+        {
+          "name": {
+            "ja": "パスタセット",
+            "en": "Pasta Set",
+            "ko": "파스타 세트",
+            "zh-tw": "義大利麵套餐"
+          },
+          "description": {
+            "ja": "季節の食材を使った本日のパスタ。",
+            "en": "Today's pasta made with seasonal ingredients.",
+            "ko": "제철 재료를 사용한 오늘의 파스타입니다.",
+            "zh-tw": "使用當季食材的今日義大利麵。"
+          },
+          "image": "https://images.unsplash.com/photo-1495364141860-b0d03eccd065?w=800&q=80",
+          "price": "¥1,200"
+        },
+        {
+          "name": {
+            "ja": "グリルチキン",
+            "en": "Grilled Chicken",
+            "ko": "그릴 치킨",
+            "zh-tw": "烤雞"
+          },
+          "description": {
+            "ja": "ジューシーに焼き上げたグリルチキン。",
+            "en": "Juicy, perfectly grilled chicken.",
+            "ko": "육즙 가득하게 구운 그릴 치킨입니다.",
+            "zh-tw": "烤得多汁鮮嫩的烤雞。"
+          },
+          "image": "https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=800&q=80",
+          "price": "¥1,100"
+        },
+        {
+          "name": {
+            "ja": "サラダボウル",
+            "en": "Salad Bowl",
+            "ko": "샐러드 볼",
+            "zh-tw": "沙拉碗"
+          },
+          "description": {
+            "ja": "新鮮な野菜をたっぷり使ったヘルシーな一皿。",
+            "en": "A healthy bowl packed with fresh vegetables.",
+            "ko": "신선한 채소를 듬뿍 사용한 건강한 한 그릇입니다.",
+            "zh-tw": "滿滿新鮮蔬菜的健康料理。"
+          },
+          "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&q=80",
+          "price": "¥880"
+        },
+        {
+          "name": {
+            "ja": "スープセット",
+            "en": "Soup Set",
+            "ko": "수프 세트",
+            "zh-tw": "湯品套餐"
+          },
+          "description": {
+            "ja": "優しい味わいの本日のスープとパン。",
+            "en": "Today's gently flavored soup, served with bread.",
+            "ko": "부드러운 맛의 오늘의 수프와 빵입니다.",
+            "zh-tw": "溫和滋味的今日湯品與麵包。"
+          },
+          "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80",
+          "price": "¥650"
+        },
+        {
+          "name": {
+            "ja": "ケーキセット",
+            "en": "Cake Set",
+            "ko": "케이크 세트",
+            "zh-tw": "蛋糕套餐"
+          },
+          "description": {
+            "ja": "季節のケーキとドリンクのセット。",
+            "en": "A seasonal cake paired with your choice of drink.",
+            "ko": "계절 케이크와 음료 세트입니다.",
+            "zh-tw": "季節蛋糕與飲品套餐。"
+          },
+          "image": "https://images.unsplash.com/photo-1495364141860-b0d03eccd065?w=800&q=80",
+          "price": "¥780"
+        },
+        {
+          "name": {
+            "ja": "コーヒー",
+            "en": "Coffee",
+            "ko": "커피",
+            "zh-tw": "咖啡"
+          },
+          "description": {
+            "ja": "厳選豆を使った香り高いコーヒー。",
+            "en": "Aromatic coffee made from carefully selected beans.",
+            "ko": "엄선된 원두를 사용한 향 좋은 커피입니다.",
+            "zh-tw": "使用嚴選咖啡豆的香醇咖啡。"
+          },
+          "image": "https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=800&q=80",
+          "price": "¥480"
+        },
+        {
+          "name": {
+            "ja": "スムージー",
+            "en": "Smoothie",
+            "ko": "스무디",
+            "zh-tw": "果昔"
+          },
+          "description": {
+            "ja": "フルーツたっぷりの爽やかなスムージー。",
+            "en": "A refreshing smoothie packed with fruit.",
+            "ko": "과일이 듬뿍 들어간 시원한 스무디입니다.",
+            "zh-tw": "水果滿滿的清爽果昔。"
+          },
+          "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&q=80",
+          "price": "¥580"
+        }
+      ]
+    },
+    "gallery": {
+      "sectionTitle": {
+        "ja": "ギャラリー",
+        "en": "Gallery",
+        "ko": "갤러리",
+        "zh-tw": "畫廊"
+      },
+      "sectionSubtitle": {
+        "ja": "白い空間と料理を写真でお届け",
+        "en": "Our white space and dishes, captured in photos",
+        "ko": "화이트 공간과 요리를 사진으로 전해드립니다",
+        "zh-tw": "透過照片傳達白色空間與料理"
+      },
+      "categories": [
+        {
+          "ja": "すべて",
+          "en": "All",
+          "ko": "전체",
+          "zh-tw": "全部"
+        },
+        {
+          "ja": "料理",
+          "en": "Cuisine",
+          "ko": "요리",
+          "zh-tw": "料理"
+        },
+        {
+          "ja": "店内",
+          "en": "Interior",
+          "ko": "매장",
+          "zh-tw": "店內"
+        },
+        {
+          "ja": "イベント",
+          "en": "Events",
+          "ko": "이벤트",
+          "zh-tw": "活動"
+        }
+      ],
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80",
+          "caption": {
+            "ja": "日替わりランチ",
+            "en": "Daily Lunch Special",
+            "ko": "오늘의 런치",
+            "zh-tw": "每日午餐"
+          },
+          "category": {
+            "ja": "料理",
+            "en": "Cuisine",
+            "ko": "요리",
+            "zh-tw": "料理"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1495364141860-b0d03eccd065?w=800&q=80",
+          "caption": {
+            "ja": "パスタセット",
+            "en": "Pasta Set",
+            "ko": "파스타 세트",
+            "zh-tw": "義大利麵套餐"
+          },
+          "category": {
+            "ja": "料理",
+            "en": "Cuisine",
+            "ko": "요리",
+            "zh-tw": "料理"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=800&q=80",
+          "caption": {
+            "ja": "ケーキセット",
+            "en": "Cake Set",
+            "ko": "케이크 세트",
+            "zh-tw": "蛋糕套餐"
+          },
+          "category": {
+            "ja": "料理",
+            "en": "Cuisine",
+            "ko": "요리",
+            "zh-tw": "料理"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&q=80",
+          "caption": {
+            "ja": "コーヒー",
+            "en": "Coffee",
+            "ko": "커피",
+            "zh-tw": "咖啡"
+          },
+          "category": {
+            "ja": "料理",
+            "en": "Cuisine",
+            "ko": "요리",
+            "zh-tw": "料理"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80",
+          "caption": {
+            "ja": "白を基調にした店内",
+            "en": "White-toned Interior",
+            "ko": "화이트 기본 매장",
+            "zh-tw": "白色基調店內"
+          },
+          "category": {
+            "ja": "店内",
+            "en": "Interior",
+            "ko": "매장",
+            "zh-tw": "店內"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&q=80",
+          "caption": {
+            "ja": "明るい窓際席",
+            "en": "Bright Window Seating",
+            "ko": "밝은 창가석",
+            "zh-tw": "明亮的窗邊座位"
+          },
+          "category": {
+            "ja": "店内",
+            "en": "Interior",
+            "ko": "매장",
+            "zh-tw": "店內"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80",
+          "caption": {
+            "ja": "ゆったりソファ席",
+            "en": "Relaxed Sofa Seating",
+            "ko": "여유로운 소파석",
+            "zh-tw": "舒適的沙發座位"
+          },
+          "category": {
+            "ja": "店内",
+            "en": "Interior",
+            "ko": "매장",
+            "zh-tw": "店內"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=80",
+          "caption": {
+            "ja": "ランチの一皿",
+            "en": "A Lunch Dish",
+            "ko": "런치 한 그릇",
+            "zh-tw": "午餐一皿"
+          },
+          "category": {
+            "ja": "料理",
+            "en": "Cuisine",
+            "ko": "요리",
+            "zh-tw": "料理"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1552566626-52f8b828add9?w=800&q=80",
+          "caption": {
+            "ja": "誕生日のお祝い",
+            "en": "Birthday Celebration",
+            "ko": "생일 축하",
+            "zh-tw": "生日慶祝"
+          },
+          "category": {
+            "ja": "イベント",
+            "en": "Events",
+            "ko": "이벤트",
+            "zh-tw": "活動"
+          }
+        }
+      ]
+    },
+    "staff": {
+      "sectionTitle": {
+        "ja": "スタッフ紹介",
+        "en": "Staff Introduction",
+        "ko": "직원 소개",
+        "zh-tw": "員工介紹"
+      },
+      "sectionSubtitle": {
+        "ja": "笑顔で、心地よい時間をお届けします",
+        "en": "We bring comfort with a smile",
+        "ko": "웃는 얼굴로 편안한 시간을 선사합니다",
+        "zh-tw": "以笑容帶來愉悅的時光"
+      },
+      "members": [
+        {
+          "name": {
+            "ja": "春野 陽子",
+            "en": "Yoko Haruno",
+            "ko": "하루노 요코",
+            "zh-tw": "春野陽子"
+          },
+          "role": {
+            "ja": "オーナーシェフ",
+            "en": "Owner Chef",
+            "ko": "오너 셰프",
+            "zh-tw": "老闆主廚"
+          },
+          "description": {
+            "ja": "シンプルで飽きのこない料理を日々研究しています。",
+            "en": "She continually researches simple, timeless dishes.",
+            "ko": "심플하고 질리지 않는 요리를 매일 연구하고 있습니다.",
+            "zh-tw": "每日鑽研簡約不厭的料理。"
+          },
+          "image": "https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=600&q=80"
+        },
+        {
+          "name": {
+            "ja": "白井 葵",
+            "en": "Aoi Shirai",
+            "ko": "시라이 아오이",
+            "zh-tw": "白井葵"
+          },
+          "role": {
+            "ja": "パティシエ",
+            "en": "Pastry Chef",
+            "ko": "파티시에",
+            "zh-tw": "甜點師"
+          },
+          "description": {
+            "ja": "季節ごとの素材を活かしたケーキをお作りしています。",
+            "en": "She creates cakes that make the most of seasonal ingredients.",
+            "ko": "계절별 재료를 살린 케이크를 만들고 있습니다.",
+            "zh-tw": "運用季節食材製作蛋糕。"
+          },
+          "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&q=80"
+        },
+        {
+          "name": {
+            "ja": "森 陸",
+            "en": "Riku Mori",
+            "ko": "모리 리쿠",
+            "zh-tw": "森陸"
+          },
+          "role": {
+            "ja": "フロアスタッフ",
+            "en": "Floor Staff",
+            "ko": "홀 스태프",
+            "zh-tw": "外場人員"
+          },
+          "description": {
+            "ja": "明るい接客で、居心地の良い時間をお届けします。",
+            "en": "He provides a bright, welcoming service for a comfortable visit.",
+            "ko": "밝은 서비스로 편안한 시간을 선사합니다.",
+            "zh-tw": "以爽朗的服務打造舒適的時光。"
+          },
+          "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80"
+        }
+      ]
+    },
+    "news": {
+      "sectionTitle": {
+        "ja": "お知らせ",
+        "en": "News",
+        "ko": "공지사항",
+        "zh-tw": "最新消息"
+      },
+      "sectionSubtitle": {
+        "ja": "最新情報をお届けします",
+        "en": "Latest updates",
+        "ko": "최신 정보를 전달합니다",
+        "zh-tw": "為您帶來最新消息"
+      },
+      "items": [
+        {
+          "date": "2024-12-06",
+          "category": "お知らせ",
+          "title": {
+            "ja": "年末年始の営業時間のご案内",
+            "en": "New Year's Business Hours",
+            "ko": "연말연시 영업시간 안내",
+            "zh-tw": "年末年初營業時間公告"
+          },
+          "content": {
+            "ja": "12月31日、1月1日はお休みです。",
+            "en": "We will be closed on December 31 and January 1.",
+            "ko": "12월 31일, 1월 1일은 휴무입니다.",
+            "zh-tw": "12月31日、1月1日公休。"
+          }
+        },
+        {
+          "date": "2024-11-21",
+          "category": "新メニュー",
+          "title": {
+            "ja": "冬のケーキが登場",
+            "en": "New Winter Cakes Now Available",
+            "ko": "겨울 케이크 등장",
+            "zh-tw": "冬季蛋糕登場"
+          },
+          "content": {
+            "ja": "旬の果物を使った冬限定ケーキをご用意しました。",
+            "en": "We've prepared winter-limited cakes made with seasonal fruit.",
+            "ko": "제철 과일을 사용한 겨울 한정 케이크를 준비했습니다.",
+            "zh-tw": "推出使用當季水果的冬季限定蛋糕。"
+          }
+        },
+        {
+          "date": "2024-10-23",
+          "category": "お知らせ",
+          "title": {
+            "ja": "モーニング営業開始",
+            "en": "Morning Service Now Available",
+            "ko": "모닝 영업 시작",
+            "zh-tw": "早餐時段開始營業"
+          },
+          "content": {
+            "ja": "8時からのモーニングメニューを開始しました。",
+            "en": "We've launched a morning menu starting at 8 AM.",
+            "ko": "8시부터의 모닝 메뉴를 시작했습니다.",
+            "zh-tw": "推出8點開始供應的早餐菜單。"
+          }
+        }
+      ]
+    },
+    "pricing": {
+      "sectionTitle": {
+        "ja": "コース・プラン",
+        "en": "Course Plans",
+        "ko": "코스 플랜",
+        "zh-tw": "課程方案"
+      },
+      "sectionSubtitle": {
+        "ja": "ご利用シーンに合わせた各種プラン",
+        "en": "Various plans tailored to your occasion",
+        "ko": "이용 상황에 맞춘 다양한 플랜",
+        "zh-tw": "依使用場景提供多種方案"
+      },
+      "plans": [
+        {
+          "name": {
+            "ja": "モーニングプラン",
+            "en": "Morning Plan",
+            "ko": "모닝 플랜",
+            "zh-tw": "早餐方案"
+          },
+          "description": {
+            "ja": "朝の時間を心地よく過ごせるセット。",
+            "en": "A set perfect for a comfortable morning.",
+            "ko": "아침 시간을 편안하게 보내는 세트입니다.",
+            "zh-tw": "享受愉悅早晨時光的套餐。"
+          },
+          "price": "¥780",
+          "features": [
+            {
+              "ja": "トーストまたはシリアル",
+              "en": "Toast or Cereal",
+              "ko": "토스트 또는 시리얼",
+              "zh-tw": "吐司或穀片"
+            },
+            {
+              "ja": "スクランブルエッグ",
+              "en": "Scrambled Eggs",
+              "ko": "스크램블 에그",
+              "zh-tw": "炒蛋"
+            },
+            {
+              "ja": "コーヒーまたは紅茶",
+              "en": "Coffee or Tea",
+              "ko": "커피 또는 홍차",
+              "zh-tw": "咖啡或紅茶"
+            }
+          ]
+        },
+        {
+          "name": {
+            "ja": "ランチプラン",
+            "en": "Lunch Plan",
+            "ko": "런치 플랜",
+            "zh-tw": "午餐方案"
+          },
+          "description": {
+            "ja": "パスタまたはグリルチキンが選べる一番人気プラン。",
+            "en": "Our most popular plan, with a choice of pasta or grilled chicken.",
+            "ko": "파스타 또는 그릴 치킨을 선택할 수 있는 가장 인기 있는 플랜입니다.",
+            "zh-tw": "可選擇義大利麵或烤雞的最受歡迎方案。"
+          },
+          "price": "¥1,500",
+          "features": [
+            {
+              "ja": "メイン1品選択",
+              "en": "Choice of One Main Dish",
+              "ko": "메인 1품 선택",
+              "zh-tw": "主餐一份"
+            },
+            {
+              "ja": "サラダ",
+              "en": "Salad",
+              "ko": "샐러드",
+              "zh-tw": "沙拉"
+            },
+            {
+              "ja": "スープ",
+              "en": "Soup",
+              "ko": "수프",
+              "zh-tw": "湯品"
+            },
+            {
+              "ja": "ドリンク",
+              "en": "Drink",
+              "ko": "음료",
+              "zh-tw": "飲品"
+            }
+          ],
+          "isPopular": true
+        },
+        {
+          "name": {
+            "ja": "ディナープラン",
+            "en": "Dinner Plan",
+            "ko": "디너 플랜",
+            "zh-tw": "晚餐方案"
+          },
+          "description": {
+            "ja": "ゆったりとした時間で楽しむディナーコース。",
+            "en": "A dinner course to enjoy at a relaxed pace.",
+            "ko": "여유로운 시간에 즐기는 디너 코스입니다.",
+            "zh-tw": "悠閒享用的晚餐套餐。"
+          },
+          "price": "¥2,800",
+          "features": [
+            {
+              "ja": "前菜",
+              "en": "Appetizer",
+              "ko": "전채",
+              "zh-tw": "前菜"
+            },
+            {
+              "ja": "メイン1品選択",
+              "en": "Choice of One Main Dish",
+              "ko": "메인 1품 선택",
+              "zh-tw": "主餐一份"
+            },
+            {
+              "ja": "デザート",
+              "en": "Dessert",
+              "ko": "디저트",
+              "zh-tw": "甜點"
+            },
+            {
+              "ja": "ドリンク",
+              "en": "Drink",
+              "ko": "음료",
+              "zh-tw": "飲品"
+            }
+          ]
+        }
+      ]
+    },
+    "faq": {
+      "sectionTitle": {
+        "ja": "よくあるご質問",
+        "en": "Frequently Asked Questions",
+        "ko": "자주 묻는 질문",
+        "zh-tw": "常見問題"
+      },
+      "sectionSubtitle": {
+        "ja": "お客様からのご質問にお答えします",
+        "en": "We answer questions from our customers",
+        "ko": "고객님의 질문에 답변드립니다",
+        "zh-tw": "為您解答常見疑問"
+      },
+      "items": [
+        {
+          "question": {
+            "ja": "Wi-Fiは使えますか？",
+            "en": "Is Wi-Fi available?",
+            "ko": "Wi-Fi를 사용할 수 있나요？",
+            "zh-tw": "有提供Wi-Fi嗎？"
+          },
+          "answer": {
+            "ja": "はい、店内は無料Wi-Fiをご利用いただけます。",
+            "en": "Yes, free Wi-Fi is available throughout the cafe.",
+            "ko": "네, 매장 내에서 무료 Wi-Fi를 이용하실 수 있습니다.",
+            "zh-tw": "有的，店內提供免費Wi-Fi。"
+          }
+        },
+        {
+          "question": {
+            "ja": "一人でも利用できますか？",
+            "en": "Can I visit alone?",
+            "ko": "혼자서도 이용할 수 있나요？",
+            "zh-tw": "可以一個人來嗎？"
+          },
+          "answer": {
+            "ja": "もちろんです。一人席もご用意しております。",
+            "en": "Of course. We also have seating for solo guests.",
+            "ko": "물론입니다. 1인석도 준비하고 있습니다.",
+            "zh-tw": "當然可以，也備有單人座位。"
+          }
+        },
+        {
+          "question": {
+            "ja": "テイクアウトはできますか？",
+            "en": "Is takeout available?",
+            "ko": "테이크아웃이 가능한가요？",
+            "zh-tw": "可以外帶嗎？"
+          },
+          "answer": {
+            "ja": "はい、ドリンクとケーキはテイクアウト可能です。",
+            "en": "Yes, drinks and cakes are available for takeout.",
+            "ko": "네, 음료와 케이크는 테이크아웃 가능합니다.",
+            "zh-tw": "可以，飲品和蛋糕都可外帶。"
+          }
+        },
+        {
+          "question": {
+            "ja": "予約は必要ですか？",
+            "en": "Is a reservation required?",
+            "ko": "예약이 필요한가요？",
+            "zh-tw": "需要預約嗎？"
+          },
+          "answer": {
+            "ja": "4名様以上の場合はご予約をおすすめします。",
+            "en": "Reservations are recommended for groups of four or more.",
+            "ko": "4명 이상인 경우 예약을 권장합니다.",
+            "zh-tw": "4人以上建議提前預約。"
+          }
+        },
+        {
+          "question": {
+            "ja": "ベビーカーでの入店は可能ですか？",
+            "en": "Can I bring a stroller?",
+            "ko": "유모차를 가지고 입장할 수 있나요？",
+            "zh-tw": "可以推嬰兒車入店嗎？"
+          },
+          "answer": {
+            "ja": "はい、店内はバリアフリーになっております。",
+            "en": "Yes, our cafe is fully barrier-free.",
+            "ko": "네, 매장 내는 배리어프리로 되어 있습니다.",
+            "zh-tw": "可以，店內為無障礙空間。"
+          }
+        }
+      ]
+    },
+    "access": {
+      "sectionTitle": {
+        "ja": "アクセス",
+        "en": "Access",
+        "ko": "오시는 길",
+        "zh-tw": "交通資訊"
+      },
+      "sectionSubtitle": {
+        "ja": "店舗へのご案内",
+        "en": "Guide to the Store",
+        "ko": "매장 안내",
+        "zh-tw": "商店指南"
+      },
+      "address": {
+        "ja": "東京都目黒区〇〇 7-9-11",
+        "en": "7-9-11, XX, Meguro, Tokyo",
+        "ko": "도쿄도 메구로구 〇〇 7-9-11",
+        "zh-tw": "東京都目黑區〇〇 7-9-11"
+      },
+      "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3579.1447437301044!2d127.68589831501648!3d26.21424098342371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34e56bd0b4a42ff1%3A0x36812e0e598f7d6b!2z54CP6Yar!5e0!3m2!1sja!2sjp!4v1234567890123!5m2!1sja!2sjp",
+      "parking": {
+        "title": {
+          "ja": "駐車場のご案内",
+          "en": "Parking Information",
+          "ko": "주차 정보",
+          "zh-tw": "停車資訊"
+        },
+        "description": {
+          "ja": "店舗専用駐車場はございません。近隣のパーキングをご利用ください。",
+          "en": "We do not have dedicated parking. Please use nearby parking facilities.",
+          "ko": "매장 전용 주차장은 없습니다. 인근 주차장을 이용해 주십시오.",
+          "zh-tw": "本店無專屬停車場，請使用附近的停車設施。"
+        },
+        "spaces": {
+          "ja": "近隣コインパーキングをご利用ください",
+          "en": "Please use nearby coin parking",
+          "ko": "인근 동전 주차장을 이용해 주세요",
+          "zh-tw": "請利用附近的投幣停車場"
+        },
+        "notes": {
+          "ja": "自転車置き場はございます。",
+          "en": "Bicycle parking is available.",
+          "ko": "자전거 주차장이 있습니다.",
+          "zh-tw": "設有腳踏車停放區。"
+        }
+      },
+      "transportation": {
+        "title": {
+          "ja": "公共交通機関をご利用の方",
+          "en": "For those using public transportation",
+          "ko": "대중교통을 이용하시는 분",
+          "zh-tw": "使用大眾運輸的顧客"
+        },
+        "methods": [
+          {
+            "type": {
+              "ja": "電車",
+              "en": "Train",
+              "ko": "기차",
+              "zh-tw": "電車"
+            },
+            "description": {
+              "ja": "〇〇線「××駅」より徒歩3分",
+              "en": "3 minutes on foot from XX Station",
+              "ko": "〇〇선 '××역'에서 도보 3분",
+              "zh-tw": "從〇〇線「××站」步行3分鐘"
+            }
+          },
+          {
+            "type": {
+              "ja": "バス",
+              "en": "Bus",
+              "ko": "버스",
+              "zh-tw": "巴士"
+            },
+            "description": {
+              "ja": "「△△」バス停より徒歩1分",
+              "en": "1 minute on foot from the △△ bus stop",
+              "ko": "'△△' 버스 정류장에서 도보 1분",
+              "zh-tw": "從「△△」巴士站步行1分鐘"
+            }
+          },
+          {
+            "type": {
+              "ja": "タクシー",
+              "en": "Taxi",
+              "ko": "택시",
+              "zh-tw": "計程車"
+            },
+            "description": {
+              "ja": "最寄り駅より約4分",
+              "en": "About 4 minutes from the nearest station",
+              "ko": "가까운 역에서 약 4분",
+              "zh-tw": "從最近車站約4分鐘"
+            }
+          }
+        ]
+      }
+    },
+    "storeInfo": {
+      "sectionTitle": {
+        "ja": "店舗情報",
+        "en": "Store Information",
+        "ko": "매장 정보",
+        "zh-tw": "店鋪資訊"
+      },
+      "mainImage": "https://images.unsplash.com/photo-1495364141860-b0d03eccd065?w=1200&q=80",
+      "mainImageCaption": {
+        "ja": "明るく清潔な空間で、心地よいひとときを",
+        "en": "A bright, clean space for a comfortable moment",
+        "ko": "밝고 청결한 공간에서 편안한 시간을",
+        "zh-tw": "在明亮潔淨的空間中，享受愉悅時光"
+      },
+      "items": [
+        {
+          "ja": "東京都目黒区〇〇 7-9-11",
+          "en": "7-9-11, XX, Meguro, Tokyo",
+          "ko": "도쿄도 메구로구 〇〇 7-9-11",
+          "zh-tw": "東京都目黑區〇〇 7-9-11"
+        },
+        {
+          "ja": "8:00 - 21:00（L.O. 20:30）",
+          "en": "8:00 - 21:00 (L.O. 20:30)",
+          "ko": "8:00 - 21:00 (L.O. 20:30)",
+          "zh-tw": "8:00 - 21:00（最後點餐20:30）"
+        },
+        {
+          "ja": "03-CCCC-CCCC",
+          "en": "03-CCCC-CCCC",
+          "ko": "03-CCCC-CCCC",
+          "zh-tw": "03-CCCC-CCCC"
+        },
+        {
+          "ja": "info@haru.example.com",
+          "en": "info@haru.example.com",
+          "ko": "info@haru.example.com",
+          "zh-tw": "info@haru.example.com"
+        }
+      ]
+    },
+    "contact": {
+      "sectionTitle": {
+        "ja": "お問い合わせ",
+        "en": "Contact Us",
+        "ko": "문의하기",
+        "zh-tw": "聯絡我們"
+      },
+      "sectionSubtitle": {
+        "ja": "ご予約やご質問など、お気軽にお問い合わせください",
+        "en": "Please feel free to contact us for reservations or inquiries.",
+        "ko": "예약이나 문의 사항이 있으시면 언제든지 문의해 주세요.",
+        "zh-tw": "如需預約或詢問，請隨時與我們聯繫。"
+      },
+      "fields": {
+        "name": {
+          "ja": "お名前",
+          "en": "Name",
+          "ko": "이름",
+          "zh-tw": "姓名"
+        },
+        "email": {
+          "ja": "メールアドレス",
+          "en": "Email Address",
+          "ko": "이메일 주소",
+          "zh-tw": "電子郵件地址"
+        },
+        "subject": {
+          "ja": "件名",
+          "en": "Subject",
+          "ko": "제목",
+          "zh-tw": "主題"
+        },
+        "message": {
+          "ja": "お問い合わせ内容",
+          "en": "Message",
+          "ko": "문의 내용",
+          "zh-tw": "訊息內容"
+        }
+      },
+      "submitButton": {
+        "ja": "送信する",
+        "en": "Send",
+        "ko": "보내기",
+        "zh-tw": "發送"
+      }
+    },
+    "cta": {
+      "sectionTitle": {
+        "ja": "ご予約・お問い合わせ",
+        "en": "Reservations and Inquiries",
+        "ko": "예약 및 문의",
+        "zh-tw": "預約與詢問"
+      },
+      "sectionSubtitle": {
+        "ja": "皆様のご来店を心よりお待ちしております",
+        "en": "We sincerely look forward to your visit.",
+        "ko": "여러분의 방문을 진심으로 기다립니다.",
+        "zh-tw": "我們衷心期待您的光臨。"
+      },
+      "description": {
+        "ja": "女子会やお誕生日会など、様々なシーンでご利用いただけます。",
+        "en": "Perfect for girls' get-togethers, birthday parties, and more.",
+        "ko": "여자들의 모임이나 생일 파티 등 다양한 상황에서 이용하실 수 있습니다.",
+        "zh-tw": "適合女子聚會、生日派對等各種場合。"
+      },
+      "backgroundImage": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1600&q=80",
+      "buttons": [
+        {
+          "text": {
+            "ja": "お電話でご予約",
+            "en": "Reserve by Phone",
+            "ko": "전화로 예약하기",
+            "zh-tw": "電話預約"
+          },
+          "link": "#contact",
+          "type": "primary"
+        },
+        {
+          "text": {
+            "ja": "Webでお問い合わせ",
+            "en": "Inquire via Web",
+            "ko": "웹으로 문의하기",
+            "zh-tw": "網上詢問"
+          },
+          "link": "#contact",
+          "type": "secondary"
+        }
+      ]
+    },
+    "reviews": {
+      "sectionTitle": {
+        "ja": "お客様の声",
+        "en": "Customer Voices",
+        "ko": "고객의 목소리",
+        "zh-tw": "顧客的聲音"
+      },
+      "sectionSubtitle": {
+        "ja": "ご来店いただいたお客様からのメッセージ",
+        "en": "Messages from customers who visited us",
+        "ko": "방문한 고객의 메시지",
+        "zh-tw": "來店顧客的留言"
+      },
+      "reviews": [
+        {
+          "name": {
+            "ja": "岡田 麻衣",
+            "en": "Mai Okada",
+            "ko": "오카다 마이",
+            "zh-tw": "岡田麻衣"
+          },
+          "rating": 5,
+          "date": "2024-11-23",
+          "comment": {
+            "ja": "白を基調とした店内がとても落ち着きました。ケーキも絶品です。",
+            "en": "The white-toned interior was so relaxing. The cake was exquisite too.",
+            "ko": "화이트를 기본으로 한 매장이 매우 차분했습니다. 케이크도 일품입니다.",
+            "zh-tw": "白色基調的店內非常令人放鬆，蛋糕也絕品美味。"
+          },
+          "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&q=80"
+        },
+        {
+          "name": {
+            "ja": "長谷川 蓮",
+            "en": "Ren Hasegawa",
+            "ko": "하세가와 렌",
+            "zh-tw": "長谷川蓮"
+          },
+          "rating": 5,
+          "date": "2024-11-11",
+          "comment": {
+            "ja": "ランチのパスタが美味しく、一人でも入りやすい雰囲気でした。",
+            "en": "The lunch pasta was delicious, and the atmosphere made it easy to visit alone.",
+            "ko": "런치 파스타가 맛있었고 혼자서도 들어가기 편한 분위기였습니다.",
+            "zh-tw": "午餐義大利麵美味，氛圍也讓一個人用餐輕鬆自在。"
+          },
+          "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80"
+        },
+        {
+          "name": {
+            "ja": "福田 智子",
+            "en": "Tomoko Fukuda",
+            "ko": "후쿠다 토모코",
+            "zh-tw": "福田智子"
+          },
+          "rating": 4,
+          "date": "2024-10-29",
+          "comment": {
+            "ja": "モーニングメニューが充実していて、朝から良い時間を過ごせました。",
+            "en": "The morning menu was substantial, and I had a great start to my day.",
+            "ko": "모닝 메뉴가 충실해서 아침부터 좋은 시간을 보냈습니다.",
+            "zh-tw": "早餐菜單豐富，讓我一早就度過美好時光。"
+          },
+          "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80"
+        }
+      ]
+    },
+    "company": {
+      "sectionTitle": {
+        "ja": "運営会社情報",
+        "en": "Company Information",
+        "ko": "운영 회사 정보",
+        "zh-tw": "運營公司資訊"
+      },
+      "sectionSubtitle": {
+        "ja": "食を通じて地域社会に貢献する",
+        "en": "Contributing to the local community through food",
+        "ko": "음식을 통해 지역 사회에 기여하기",
+        "zh-tw": "通過美食貢獻地方社區"
+      },
+      "philosophy": {
+        "title": {
+          "ja": "経営理念",
+          "en": "Management Philosophy",
+          "ko": "경영 철학",
+          "zh-tw": "經營理念"
+        },
+        "content": {
+          "ja": "「カフェ＆ダイニング HARU」は、素材への敬意と職人の技術、真心のこもったおもてなしを通じて、お客様に忘れられない一皿をお届けすることを使命としています。",
+          "en": "\"Cafe & Dining HARU\" is committed to delivering an unforgettable dish to every guest through respect for ingredients, skilled craftsmanship, and heartfelt hospitality.",
+          "ko": "'카페 & 다이닝 HARU'는 재료에 대한 경의와 장인의 기술, 진심 어린 환대를 통해 손님에게 잊을 수 없는 한 그릇을 선사하는 것을 사명으로 하고 있습니다.",
+          "zh-tw": "「咖啡＆餐廳 HARU」秉持對食材的尊重、職人的技藝與真誠的款待，致力於為每位顧客獻上難忘的一餐。"
+        }
+      },
+      "history": {
+        "title": {
+          "ja": "沿革",
+          "en": "History",
+          "ko": "연혁",
+          "zh-tw": "沿革"
+        },
+        "timeline": [
+          {
+            "year": "2019年",
+            "event": {
+              "ja": "カフェ＆ダイニング HARU 創業",
+              "en": "Founding of Cafe & Dining HARU",
+              "ko": "카페 & 다이닝 HARU 창업",
+              "zh-tw": "咖啡＆餐廳 HARU 創業"
+            }
+          },
+          {
+            "year": "2021年",
+            "event": {
+              "ja": "店舗を増築し、席数を拡大",
+              "en": "Expanded the restaurant and increased seating capacity",
+              "ko": "매장을 증축하여 좌석 수 확대",
+              "zh-tw": "擴建店舖並增加座位數"
+            }
+          },
+          {
+            "year": "2024年",
+            "event": {
+              "ja": "テイクアウト・デリバリー事業を開始",
+              "en": "Started takeout and delivery service",
+              "ko": "테이크아웃 및 배달 사업 시작",
+              "zh-tw": "開始外帶及外送服務"
+            }
+          }
+        ]
+      },
+      "companyInfo": {
+        "title": {
+          "ja": "会社概要",
+          "en": "Company Overview",
+          "ko": "회사 개요",
+          "zh-tw": "公司概況"
+        },
+        "items": [
+          {
+            "label": {
+              "ja": "屋号",
+              "en": "Store Name",
+              "ko": "상호",
+              "zh-tw": "店名"
+            },
+            "value": {
+              "ja": "カフェ＆ダイニング HARU",
+              "en": "Cafe & Dining HARU",
+              "ko": "카페 & 다이닝 HARU",
+              "zh-tw": "咖啡＆餐廳 HARU"
+            }
+          },
+          {
+            "label": {
+              "ja": "設立",
+              "en": "Established",
+              "ko": "설립",
+              "zh-tw": "成立"
+            },
+            "value": {
+              "ja": "2019年2月",
+              "en": "2月 2019",
+              "ko": "2019년 2月",
+              "zh-tw": "2019年2月"
+            }
+          },
+          {
+            "label": {
+              "ja": "代表者",
+              "en": "Representative",
+              "ko": "대표자",
+              "zh-tw": "代表人"
+            },
+            "value": {
+              "ja": "春野 陽子",
+              "en": "Yoko Haruno",
+              "ko": "하루노 요코",
+              "zh-tw": "春野陽子"
+            }
+          },
+          {
+            "label": {
+              "ja": "所在地",
+              "en": "Location",
+              "ko": "위치",
+              "zh-tw": "所在地"
+            },
+            "value": {
+              "ja": "東京都目黒区〇〇 7-9-11",
+              "en": "7-9-11, XX, Meguro, Tokyo",
+              "ko": "도쿄도 메구로구 〇〇 7-9-11",
+              "zh-tw": "東京都目黑區〇〇 7-9-11"
+            }
+          },
+          {
+            "label": {
+              "ja": "事業内容",
+              "en": "Business Activities",
+              "ko": "사업 내용",
+              "zh-tw": "業務內容"
+            },
+            "value": {
+              "ja": "飲食店経営",
+              "en": "Restaurant management",
+              "ko": "식당 경영",
+              "zh-tw": "餐飲經營"
+            }
+          },
+          {
+            "label": {
+              "ja": "従業員数",
+              "en": "Number of Employees",
+              "ko": "직원 수",
+              "zh-tw": "員工人數"
+            },
+            "value": {
+              "ja": "約10名（パート・アルバイト含む）",
+              "en": "Approx. 10 (including part-time staff)",
+              "ko": "약 10명(파트타임 포함)",
+              "zh-tw": "約10人（含兼職員工）"
+            }
+          }
+        ]
+      }
+    },
+    "footer": {
+      "logo": {
+        "ja": "カフェ＆ダイニング HARU",
+        "en": "Cafe & Dining HARU",
+        "ko": "카페 & 다이닝 HARU",
+        "zh-tw": "咖啡＆餐廳 HARU"
+      },
+      "description": {
+        "ja": "白い空間で、心地よいひとときを。",
+        "en": "A comfortable moment in a white space.",
+        "ko": "화이트 공간에서 편안한 시간을.",
+        "zh-tw": "在白色空間中，享受愉悅時光。"
+      },
+      "businessHours": {
+        "title": {
+          "ja": "営業時間",
+          "en": "Business Hours",
+          "ko": "영업 시간",
+          "zh-tw": "營業時間"
+        },
+        "days": {
+          "ja": "月曜日 - 日曜日",
+          "en": "Monday - Sunday",
+          "ko": "월요일 - 일요일",
+          "zh-tw": "星期一 - 星期日"
+        },
+        "hours": {
+          "ja": "8:00 - 21:00",
+          "en": "8:00 - 21:00",
+          "ko": "8:00 - 21:00",
+          "zh-tw": "8:00 - 21:00"
+        },
+        "closedDay": {
+          "ja": "定休日: 不定休",
+          "en": "Closed: Irregular holidays",
+          "ko": "휴무일: 불규칙 휴무",
+          "zh-tw": "休息日: 不定期休假"
+        }
+      },
+      "social": {
+        "title": {
+          "ja": "SNSアカウント",
+          "en": "Social Media Accounts",
+          "ko": "소셜 미디어 계정",
+          "zh-tw": "社交媒體帳號"
+        },
+        "links": [
+          {
+            "platform": "Facebook",
+            "url": "#"
+          },
+          {
+            "platform": "Instagram",
+            "url": "#"
+          },
+          {
+            "platform": "Twitter",
+            "url": "#"
+          }
+        ]
+      },
+      "copyright": {
+        "ja": "© 2024 カフェ＆ダイニング HARU. All rights reserved.",
+        "en": "© 2024 Cafe & Dining HARU. All rights reserved.",
+        "ko": "© 2024 카페 & 다이닝 HARU. All rights reserved.",
+        "zh-tw": "© 2024 咖啡＆餐廳 HARU. All rights reserved."
+      }
+    },
+    "templateId": "shiro",
+    "settings": {
+      "theme": "shiro"
+    }
+  }
+}

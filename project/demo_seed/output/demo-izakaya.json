@@ -1,0 +1,1432 @@
+{
+  "store_id": "demo-izakaya",
+  "Subdomain": "demo-izakaya",
+  "RecordType": "LP_CONTENT",
+  "Status": "Published",
+  "CreatedAt": "2026-09-21T01:16:22.455Z",
+  "UpdatedAt": "2026-09-21T01:16:22.455Z",
+  "ContentData": {
+    "header": {
+      "logo": {
+        "text": {
+          "ja": "和食居酒屋 燈",
+          "en": "Japanese Izakaya TOMOSHIBI",
+          "ko": "일본식 이자카야 TOMOSHIBI",
+          "zh-tw": "和食居酒屋 燈"
+        }
+      },
+      "navigation": [
+        {
+          "id": "about",
+          "label": {
+            "ja": "コンセプト",
+            "en": "Concept",
+            "ko": "개념",
+            "zh-tw": "概念"
+          }
+        },
+        {
+          "id": "menu",
+          "label": {
+            "ja": "メニュー",
+            "en": "Menu",
+            "ko": "메뉴",
+            "zh-tw": "菜單"
+          }
+        },
+        {
+          "id": "pricing",
+          "label": {
+            "ja": "コース・プラン",
+            "en": "Course Plan",
+            "ko": "코스 플랜",
+            "zh-tw": "課程方案"
+          }
+        },
+        {
+          "id": "cta",
+          "label": {
+            "ja": "ご予約",
+            "en": "Reservation",
+            "ko": "예약",
+            "zh-tw": "預約"
+          }
+        },
+        {
+          "id": "gallery",
+          "label": {
+            "ja": "ギャラリー",
+            "en": "Gallery",
+            "ko": "갤러리",
+            "zh-tw": "畫廊"
+          }
+        },
+        {
+          "id": "staff",
+          "label": {
+            "ja": "スタッフ",
+            "en": "Staff",
+            "ko": "직원",
+            "zh-tw": "員工"
+          }
+        },
+        {
+          "id": "reviews",
+          "label": {
+            "ja": "お客様の声",
+            "en": "Customer Feedback",
+            "ko": "고객 후기",
+            "zh-tw": "客戶反饋"
+          }
+        },
+        {
+          "id": "news",
+          "label": {
+            "ja": "お知らせ",
+            "en": "Notice",
+            "ko": "공지사항",
+            "zh-tw": "最新消息"
+          }
+        },
+        {
+          "id": "storeInfo",
+          "label": {
+            "ja": "店舗情報",
+            "en": "Store Information",
+            "ko": "매장 정보",
+            "zh-tw": "店鋪資訊"
+          }
+        },
+        {
+          "id": "company",
+          "label": {
+            "ja": "運営会社",
+            "en": "Operating Company",
+            "ko": "운영 회사",
+            "zh-tw": "運營公司"
+          }
+        },
+        {
+          "id": "access",
+          "label": {
+            "ja": "アクセス",
+            "en": "Access",
+            "ko": "오시는 길",
+            "zh-tw": "交通資訊"
+          }
+        },
+        {
+          "id": "faq",
+          "label": {
+            "ja": "よくある質問",
+            "en": "FAQ",
+            "ko": "자주 묻는 질문",
+            "zh-tw": "常見問題"
+          }
+        },
+        {
+          "id": "contact",
+          "label": {
+            "ja": "お問い合わせ",
+            "en": "Contact Us",
+            "ko": "문의하기",
+            "zh-tw": "聯絡我們"
+          }
+        }
+      ]
+    },
+    "hero": {
+      "sectionTitle": {
+        "ja": "旬の味と、\n温かな灯り。",
+        "en": "Seasonal Flavors,\nWarm Light.",
+        "ko": "제철의 맛과,\n따뜻한 불빛.",
+        "zh-tw": "當季美味，\n溫暖燈火。"
+      },
+      "subtitle": {
+        "ja": "旬の食材と地酒が楽しめる温かい大衆居酒屋",
+        "en": "A warm neighborhood izakaya where you can enjoy seasonal ingredients and local sake",
+        "ko": "제철 재료와 지역 술을 즐길 수 있는 따뜻한 대중 이자카야",
+        "zh-tw": "可享用當季食材與地方酒的溫馨大眾居酒屋"
+      },
+      "backgroundImage": "https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?w=1920&q=80"
+    },
+    "about": {
+      "sectionTitle": {
+        "ja": "私たちのこだわり",
+        "en": "Our Commitment",
+        "ko": "우리의 고집",
+        "zh-tw": "我們的堅持"
+      },
+      "features": [
+        {
+          "title": {
+            "ja": "旬を味わう",
+            "en": "Savoring the Seasons",
+            "ko": "제철을 맛보다",
+            "zh-tw": "品味當季"
+          },
+          "description": {
+            "ja": "市場から届く旬の食材を、その日のうちに調理してご提供します。",
+            "en": "Seasonal ingredients delivered fresh from the market are prepared and served the same day.",
+            "ko": "시장에서 들어오는 제철 재료를 그날 안에 조리하여 제공합니다.",
+            "zh-tw": "來自市場的當季食材，當天烹調並提供給您。"
+          },
+          "image": "https://images.unsplash.com/photo-1544148103-0773bf10d330?w=800&q=80"
+        },
+        {
+          "title": {
+            "ja": "全国の地酒",
+            "en": "Local Sake from Across Japan",
+            "ko": "전국의 지역 술",
+            "zh-tw": "日本各地地方酒"
+          },
+          "description": {
+            "ja": "蔵元と直接やり取りして選んだ地酒を豊富に取り揃えています。",
+            "en": "We offer a wide selection of local sake, chosen through direct relationships with breweries.",
+            "ko": "양조장과 직접 소통하여 선택한 지역 술을 다양하게 갖추고 있습니다.",
+            "zh-tw": "與酒藏直接聯繫精選的地方酒，種類豐富。"
+          },
+          "image": "https://images.unsplash.com/photo-1617093727343-374698b1b08d?w=800&q=80"
+        },
+        {
+          "title": {
+            "ja": "温かなおもてなし",
+            "en": "Warm Hospitality",
+            "ko": "따뜻한 환대",
+            "zh-tw": "溫暖的款待"
+          },
+          "description": {
+            "ja": "一人でもグループでも、寛げる温かな雰囲気を大切にしています。",
+            "en": "We value a warm, relaxing atmosphere, whether you're dining alone or with a group.",
+            "ko": "혼자여도 그룹이어도 편안한 따뜻한 분위기를 중요하게 여깁니다.",
+            "zh-tw": "無論獨自或多人用餐，都重視溫馨放鬆的氛圍。"
+          },
+          "image": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=800&q=80"
+        }
+      ]
+    },
+    "menu": {
+      "sectionTitle": {
+        "ja": "お品書き",
+        "en": "Menu",
+        "ko": "메뉴",
+        "zh-tw": "菜單"
+      },
+      "sectionSubtitle": {
+        "ja": "旬を感じる、心温まる一品",
+        "en": "Heartwarming dishes that capture the season",
+        "ko": "제철을 느끼는 마음 따뜻해지는 한 그릇",
+        "zh-tw": "感受當季，暖心的一道料理"
+      },
+      "items": [
+        {
+          "name": {
+            "ja": "刺身盛り合わせ",
+            "en": "Assorted Sashimi",
+            "ko": "사시미 모듬",
+            "zh-tw": "生魚片拼盤"
+          },
+          "description": {
+            "ja": "その日仕入れた旬魚のお造り盛り合わせ。",
+            "en": "An assorted platter of seasonal sashimi from that day's catch.",
+            "ko": "그날 들여온 제철 생선의 모듬 사시미입니다.",
+            "zh-tw": "當日進貨的當季魚生拼盤。"
+          },
+          "image": "https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?w=800&q=80",
+          "price": "¥1,200"
+        },
+        {
+          "name": {
+            "ja": "から揚げ",
+            "en": "Fried Chicken",
+            "ko": "가라아게",
+            "zh-tw": "日式炸雞"
+          },
+          "description": {
+            "ja": "外はカリッと、中はジューシーな自家製から揚げ。",
+            "en": "Homemade fried chicken, crispy outside and juicy inside.",
+            "ko": "겉은 바삭하고 속은 육즙이 가득한 수제 가라아게입니다.",
+            "zh-tw": "外酥內嫩的自製日式炸雞。"
+          },
+          "image": "https://images.unsplash.com/photo-1544148103-0773bf10d330?w=800&q=80",
+          "price": "¥680"
+        },
+        {
+          "name": {
+            "ja": "肉じゃが",
+            "en": "Simmered Meat and Potatoes",
+            "ko": "니쿠자가",
+            "zh-tw": "馬鈴薯燉肉"
+          },
+          "description": {
+            "ja": "じっくり煮込んだ家庭的な優しい味わい。",
+            "en": "A comforting, home-style dish, slowly simmered.",
+            "ko": "오랜 시간 끓인 가정적인 부드러운 맛입니다.",
+            "zh-tw": "細火慢燉，家常溫暖的味道。"
+          },
+          "image": "https://images.unsplash.com/photo-1617093727343-374698b1b08d?w=800&q=80",
+          "price": "¥580"
+        },
+        {
+          "name": {
+            "ja": "出汁巻き卵",
+            "en": "Dashi Rolled Omelette",
+            "ko": "다시마키 계란",
+            "zh-tw": "出汁蛋捲"
+          },
+          "description": {
+            "ja": "特製出汁をたっぷり含んだふんわり卵焼き。",
+            "en": "A fluffy rolled omelette rich with our special dashi stock.",
+            "ko": "특제 다시를 듬뿍 담은 폭신한 계란말이입니다.",
+            "zh-tw": "充滿特製高湯的鬆軟蛋捲。"
+          },
+          "image": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=800&q=80",
+          "price": "¥480"
+        },
+        {
+          "name": {
+            "ja": "枝豆",
+            "en": "Edamame",
+            "ko": "에다마메",
+            "zh-tw": "毛豆"
+          },
+          "description": {
+            "ja": "塩茹でしたシンプルな定番のお通し。",
+            "en": "A classic salt-boiled starter.",
+            "ko": "소금물에 삶은 심플한 기본 안주입니다.",
+            "zh-tw": "簡單鹽煮的經典基本小菜。"
+          },
+          "image": "https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?w=800&q=80",
+          "price": "¥380"
+        },
+        {
+          "name": {
+            "ja": "冷奴",
+            "en": "Chilled Tofu",
+            "ko": "히야얏코",
+            "zh-tw": "涼拌豆腐"
+          },
+          "description": {
+            "ja": "薬味を添えたさっぱり冷たい豆腐。",
+            "en": "Refreshing chilled tofu topped with condiments.",
+            "ko": "고명을 곁들인 깔끔하고 시원한 두부입니다.",
+            "zh-tw": "搭配佐料的清爽冷豆腐。"
+          },
+          "image": "https://images.unsplash.com/photo-1544148103-0773bf10d330?w=800&q=80",
+          "price": "¥350"
+        },
+        {
+          "name": {
+            "ja": "焼き魚",
+            "en": "Grilled Fish",
+            "ko": "생선구이",
+            "zh-tw": "烤魚"
+          },
+          "description": {
+            "ja": "旬の魚を香ばしく焼き上げました。",
+            "en": "Seasonal fish grilled to a fragrant finish.",
+            "ko": "제철 생선을 고소하게 구워냈습니다.",
+            "zh-tw": "將當季魚類烤得香氣四溢。"
+          },
+          "image": "https://images.unsplash.com/photo-1617093727343-374698b1b08d?w=800&q=80",
+          "price": "¥780"
+        },
+        {
+          "name": {
+            "ja": "日本酒（1合）",
+            "en": "Sake (180ml)",
+            "ko": "일본 술 (1합)",
+            "zh-tw": "日本酒（一合）"
+          },
+          "description": {
+            "ja": "季節に合わせた地酒を1合からご用意。",
+            "en": "Seasonal local sake available starting from 180ml.",
+            "ko": "계절에 맞는 지역 술을 1합부터 준비합니다.",
+            "zh-tw": "依季節提供地方酒，最少一合起。"
+          },
+          "image": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=800&q=80",
+          "price": "¥580"
+        }
+      ]
+    },
+    "gallery": {
+      "sectionTitle": {
+        "ja": "ギャラリー",
+        "en": "Gallery",
+        "ko": "갤러리",
+        "zh-tw": "畫廊"
+      },
+      "sectionSubtitle": {
+        "ja": "旬の料理と温かな店内を写真でお届け",
+        "en": "Seasonal dishes and a warm interior, captured in photos",
+        "ko": "제철 요리와 따뜻한 매장을 사진으로 전해드립니다",
+        "zh-tw": "透過照片傳達當季料理與溫馨店內"
+      },
+      "categories": [
+        {
+          "ja": "すべて",
+          "en": "All",
+          "ko": "전체",
+          "zh-tw": "全部"
+        },
+        {
+          "ja": "料理",
+          "en": "Cuisine",
+          "ko": "요리",
+          "zh-tw": "料理"
+        },
+        {
+          "ja": "店内",
+          "en": "Interior",
+          "ko": "매장",
+          "zh-tw": "店內"
+        },
+        {
+          "ja": "イベント",
+          "en": "Events",
+          "ko": "이벤트",
+          "zh-tw": "活動"
+        }
+      ],
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?w=800&q=80",
+          "caption": {
+            "ja": "刺身盛り合わせ",
+            "en": "Assorted Sashimi",
+            "ko": "사시미 모듬",
+            "zh-tw": "生魚片拼盤"
+          },
+          "category": {
+            "ja": "料理",
+            "en": "Cuisine",
+            "ko": "요리",
+            "zh-tw": "料理"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1544148103-0773bf10d330?w=800&q=80",
+          "caption": {
+            "ja": "から揚げ",
+            "en": "Fried Chicken",
+            "ko": "가라아게",
+            "zh-tw": "日式炸雞"
+          },
+          "category": {
+            "ja": "料理",
+            "en": "Cuisine",
+            "ko": "요리",
+            "zh-tw": "料理"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1617093727343-374698b1b08d?w=800&q=80",
+          "caption": {
+            "ja": "焼き魚",
+            "en": "Grilled Fish",
+            "ko": "생선구이",
+            "zh-tw": "烤魚"
+          },
+          "category": {
+            "ja": "料理",
+            "en": "Cuisine",
+            "ko": "요리",
+            "zh-tw": "料理"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=800&q=80",
+          "caption": {
+            "ja": "地酒の数々",
+            "en": "A Variety of Local Sake",
+            "ko": "다양한 지역 술",
+            "zh-tw": "各式地方酒"
+          },
+          "category": {
+            "ja": "料理",
+            "en": "Cuisine",
+            "ko": "요리",
+            "zh-tw": "料理"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80",
+          "caption": {
+            "ja": "温かみのある店内",
+            "en": "Warm Interior",
+            "ko": "따뜻한 매장",
+            "zh-tw": "溫馨的店內"
+          },
+          "category": {
+            "ja": "店内",
+            "en": "Interior",
+            "ko": "매장",
+            "zh-tw": "店內"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&q=80",
+          "caption": {
+            "ja": "カウンター席",
+            "en": "Counter Seats",
+            "ko": "카운터석",
+            "zh-tw": "吧台座位"
+          },
+          "category": {
+            "ja": "店内",
+            "en": "Interior",
+            "ko": "매장",
+            "zh-tw": "店內"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80",
+          "caption": {
+            "ja": "座敷席",
+            "en": "Tatami Room Seating",
+            "ko": "다다미방",
+            "zh-tw": "和式座位"
+          },
+          "category": {
+            "ja": "店内",
+            "en": "Interior",
+            "ko": "매장",
+            "zh-tw": "店內"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?w=600&q=80",
+          "caption": {
+            "ja": "旬の一皿",
+            "en": "A Seasonal Dish",
+            "ko": "제철의 한 그릇",
+            "zh-tw": "當季一皿"
+          },
+          "category": {
+            "ja": "料理",
+            "en": "Cuisine",
+            "ko": "요리",
+            "zh-tw": "料理"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1552566626-52f8b828add9?w=800&q=80",
+          "caption": {
+            "ja": "忘年会シーン",
+            "en": "Year-End Party Scene",
+            "ko": "송년회 장면",
+            "zh-tw": "尾牙聚會場景"
+          },
+          "category": {
+            "ja": "イベント",
+            "en": "Events",
+            "ko": "이벤트",
+            "zh-tw": "活動"
+          }
+        }
+      ]
+    },
+    "staff": {
+      "sectionTitle": {
+        "ja": "スタッフ紹介",
+        "en": "Staff Introduction",
+        "ko": "직원 소개",
+        "zh-tw": "員工介紹"
+      },
+      "sectionSubtitle": {
+        "ja": "灯りのもとで、心を込めてお迎えします",
+        "en": "We welcome you with warmth under the lantern light",
+        "ko": "불빛 아래에서 정성껏 맞이합니다",
+        "zh-tw": "在燈火下，用心迎接您"
+      },
+      "members": [
+        {
+          "name": {
+            "ja": "灯里 正",
+            "en": "Tadashi Tomori",
+            "ko": "토모리 타다시",
+            "zh-tw": "燈里正"
+          },
+          "role": {
+            "ja": "店主",
+            "en": "Proprietor",
+            "ko": "점주",
+            "zh-tw": "店主"
+          },
+          "description": {
+            "ja": "旬の食材を活かした料理で、お客様を温かくお迎えします。",
+            "en": "He welcomes guests warmly with dishes that make the most of seasonal ingredients.",
+            "ko": "제철 재료를 살린 요리로 손님을 따뜻하게 맞이합니다.",
+            "zh-tw": "以善用當季食材的料理，溫暖迎接每位顧客。"
+          },
+          "image": "https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=600&q=80"
+        },
+        {
+          "name": {
+            "ja": "宮本 さくら",
+            "en": "Sakura Miyamoto",
+            "ko": "미야모토 사쿠라",
+            "zh-tw": "宮本櫻"
+          },
+          "role": {
+            "ja": "女将",
+            "en": "Proprietress",
+            "ko": "여주인",
+            "zh-tw": "女主人"
+          },
+          "description": {
+            "ja": "地酒に詳しく、お料理に合う一杯をご案内します。",
+            "en": "Knowledgeable about local sake, she guides guests to the perfect pairing.",
+            "ko": "지역 술에 능통하여 요리에 어울리는 한 잔을 안내합니다.",
+            "zh-tw": "熟知地方酒，能為您介紹合適的搭配。"
+          },
+          "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&q=80"
+        },
+        {
+          "name": {
+            "ja": "大野 健太",
+            "en": "Kenta Ohno",
+            "ko": "오노 켄타",
+            "zh-tw": "大野健太"
+          },
+          "role": {
+            "ja": "ホールスタッフ",
+            "en": "Hall Staff",
+            "ko": "홀 스태프",
+            "zh-tw": "外場人員"
+          },
+          "description": {
+            "ja": "明るい笑顔でお客様をおもてなしします。",
+            "en": "He welcomes guests with a bright, warm smile.",
+            "ko": "밝은 미소로 손님을 대접합니다.",
+            "zh-tw": "以爽朗的笑容款待每位顧客。"
+          },
+          "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80"
+        }
+      ]
+    },
+    "news": {
+      "sectionTitle": {
+        "ja": "お知らせ",
+        "en": "News",
+        "ko": "공지사항",
+        "zh-tw": "最新消息"
+      },
+      "sectionSubtitle": {
+        "ja": "最新情報をお届けします",
+        "en": "Latest updates",
+        "ko": "최신 정보를 전달합니다",
+        "zh-tw": "為您帶來最新消息"
+      },
+      "items": [
+        {
+          "date": "2024-12-02",
+          "category": "お知らせ",
+          "title": {
+            "ja": "年末年始の営業時間のご案内",
+            "en": "New Year's Business Hours",
+            "ko": "연말연시 영업시간 안내",
+            "zh-tw": "年末年初營業時間公告"
+          },
+          "content": {
+            "ja": "12月31日、1月1日はお休みです。",
+            "en": "We will be closed on December 31 and January 1.",
+            "ko": "12월 31일, 1월 1일은 휴무입니다.",
+            "zh-tw": "12月31日、1月1日公休。"
+          }
+        },
+        {
+          "date": "2024-11-16",
+          "category": "新メニュー",
+          "title": {
+            "ja": "冬の新メニュー登場",
+            "en": "New Winter Menu Available",
+            "ko": "겨울 신메뉴 등장",
+            "zh-tw": "冬季新菜單登場"
+          },
+          "content": {
+            "ja": "冬の味覚を活かした新メニューをご用意しました。",
+            "en": "We've prepared a new menu featuring the flavors of winter.",
+            "ko": "겨울의 맛을 살린 신메뉴를 준비했습니다.",
+            "zh-tw": "推出運用冬季風味的新菜單。"
+          }
+        },
+        {
+          "date": "2024-10-21",
+          "category": "お知らせ",
+          "title": {
+            "ja": "地酒フェア開催",
+            "en": "Local Sake Fair",
+            "ko": "지역 술 페어 개최",
+            "zh-tw": "地方酒祭活動舉辦"
+          },
+          "content": {
+            "ja": "全国各地の地酒を特別価格でご提供します。",
+            "en": "We're offering local sake from across Japan at special prices.",
+            "ko": "전국 각지의 지역 술을 특별 가격으로 제공합니다.",
+            "zh-tw": "以特惠價格提供日本各地的地方酒。"
+          }
+        }
+      ]
+    },
+    "pricing": {
+      "sectionTitle": {
+        "ja": "コース・プラン",
+        "en": "Course Plans",
+        "ko": "코스 플랜",
+        "zh-tw": "課程方案"
+      },
+      "sectionSubtitle": {
+        "ja": "ご利用シーンに合わせた各種プラン",
+        "en": "Various plans tailored to your occasion",
+        "ko": "이용 상황에 맞춘 다양한 플랜",
+        "zh-tw": "依使用場景提供多種方案"
+      },
+      "plans": [
+        {
+          "name": {
+            "ja": "お手軽コース",
+            "en": "Casual Course",
+            "ko": "캐주얼 코스",
+            "zh-tw": "輕鬆套餐"
+          },
+          "description": {
+            "ja": "気軽に居酒屋を楽しめる全5品コース。",
+            "en": "A casual 5-dish course for enjoying izakaya dining with ease.",
+            "ko": "가볍게 이자카야를 즐기는 전 5품 코스입니다.",
+            "zh-tw": "輕鬆享用居酒屋的全5道套餐。"
+          },
+          "price": "¥2,800",
+          "features": [
+            {
+              "ja": "お通し",
+              "en": "Appetizer",
+              "ko": "기본 안주",
+              "zh-tw": "小菜"
+            },
+            {
+              "ja": "刺身3種",
+              "en": "3 Types of Sashimi",
+              "ko": "사시미 3종",
+              "zh-tw": "3種生魚片"
+            },
+            {
+              "ja": "から揚げ",
+              "en": "Fried Chicken",
+              "ko": "가라아게",
+              "zh-tw": "日式炸雞"
+            },
+            {
+              "ja": "肉じゃが",
+              "en": "Simmered Meat and Potatoes",
+              "ko": "니쿠자가",
+              "zh-tw": "馬鈴薯燉肉"
+            },
+            {
+              "ja": "ドリンク1杯",
+              "en": "One Drink",
+              "ko": "음료 1잔",
+              "zh-tw": "一杯飲品"
+            }
+          ]
+        },
+        {
+          "name": {
+            "ja": "燈おすすめコース",
+            "en": "TOMOSHIBI's Recommended Course",
+            "ko": "TOMOSHIBI 추천 코스",
+            "zh-tw": "燈推薦套餐"
+          },
+          "description": {
+            "ja": "旬の一皿を堪能できる一番人気コース。",
+            "en": "Our most popular course, showcasing the best of the season.",
+            "ko": "제철 한 그릇을 만끽할 수 있는 가장 인기 있는 코스입니다.",
+            "zh-tw": "盡享當季美味的最受歡迎套餐。"
+          },
+          "price": "¥4,500",
+          "features": [
+            {
+              "ja": "刺身盛り合わせ",
+              "en": "Assorted Sashimi",
+              "ko": "사시미 모듬",
+              "zh-tw": "生魚片拼盤"
+            },
+            {
+              "ja": "焼き魚",
+              "en": "Grilled Fish",
+              "ko": "생선구이",
+              "zh-tw": "烤魚"
+            },
+            {
+              "ja": "から揚げ",
+              "en": "Fried Chicken",
+              "ko": "가라아게",
+              "zh-tw": "日式炸雞"
+            },
+            {
+              "ja": "出汁巻き卵",
+              "en": "Dashi Rolled Omelette",
+              "ko": "다시마키 계란",
+              "zh-tw": "出汁蛋捲"
+            },
+            {
+              "ja": "地酒1杯付き",
+              "en": "Includes One Local Sake",
+              "ko": "지역 술 1잔 포함",
+              "zh-tw": "附一杯地方酒"
+            }
+          ],
+          "isPopular": true
+        },
+        {
+          "name": {
+            "ja": "飲み放題付きコース",
+            "en": "Course with All-You-Can-Drink",
+            "ko": "음료 무제한 포함 코스",
+            "zh-tw": "含暢飲套餐"
+          },
+          "description": {
+            "ja": "料理と地酒飲み放題を両方満喫できるお得なコース。",
+            "en": "A great-value course combining dishes with all-you-can-drink local sake.",
+            "ko": "요리와 지역 술 무제한을 모두 만끽할 수 있는 알찬 코스입니다.",
+            "zh-tw": "同時享用料理與地方酒暢飲的超值套餐。"
+          },
+          "price": "¥5,800",
+          "features": [
+            {
+              "ja": "料理6品",
+              "en": "6 Dishes",
+              "ko": "요리 6품",
+              "zh-tw": "6道料理"
+            },
+            {
+              "ja": "2時間飲み放題（地酒含む）",
+              "en": "2-Hour All-You-Can-Drink (incl. sake)",
+              "ko": "2시간 음료 무제한 (지역 술 포함)",
+              "zh-tw": "2小時暢飲（含地方酒）"
+            },
+            {
+              "ja": "デザート",
+              "en": "Dessert",
+              "ko": "디저트",
+              "zh-tw": "甜點"
+            }
+          ]
+        }
+      ]
+    },
+    "faq": {
+      "sectionTitle": {
+        "ja": "よくあるご質問",
+        "en": "Frequently Asked Questions",
+        "ko": "자주 묻는 질문",
+        "zh-tw": "常見問題"
+      },
+      "sectionSubtitle": {
+        "ja": "お客様からのご質問にお答えします",
+        "en": "We answer questions from our customers",
+        "ko": "고객님의 질문에 답변드립니다",
+        "zh-tw": "為您解答常見疑問"
+      },
+      "items": [
+        {
+          "question": {
+            "ja": "一人でも利用できますか？",
+            "en": "Can I dine alone?",
+            "ko": "혼자서도 이용할 수 있나요？",
+            "zh-tw": "可以一個人用餐嗎？"
+          },
+          "answer": {
+            "ja": "はい、カウンター席で一人でも心地よくお過ごしいただけます。",
+            "en": "Yes, our counter seats are comfortable for solo diners.",
+            "ko": "네, 카운터석에서 혼자서도 편안하게 즐기실 수 있습니다.",
+            "zh-tw": "可以，吧台座位讓您一個人也能舒適用餐。"
+          }
+        },
+        {
+          "question": {
+            "ja": "地酒の試飲はできますか？",
+            "en": "Can I sample the local sake?",
+            "ko": "지역 술 시음이 가능한가요？",
+            "zh-tw": "可以試喝地方酒嗎？"
+          },
+          "answer": {
+            "ja": "少量サイズでのご提供も可能です。お気軽にご相談ください。",
+            "en": "We can serve smaller portions upon request — feel free to ask.",
+            "ko": "소량 사이즈로도 제공 가능합니다. 편하게 상담해 주세요.",
+            "zh-tw": "可提供小份量，歡迎隨時詢問。"
+          }
+        },
+        {
+          "question": {
+            "ja": "座敷席はありますか？",
+            "en": "Do you have tatami room seating?",
+            "ko": "다다미방이 있나요？",
+            "zh-tw": "有和式座位嗎？"
+          },
+          "answer": {
+            "ja": "2室ご用意しております。",
+            "en": "We have two tatami rooms available.",
+            "ko": "2개의 방을 준비하고 있습니다.",
+            "zh-tw": "設有2間和室座位。"
+          }
+        },
+        {
+          "question": {
+            "ja": "苦手な食材の相談はできますか？",
+            "en": "Can I request to avoid certain ingredients?",
+            "ko": "싫어하는 재료를 미리 말할 수 있나요？",
+            "zh-tw": "可以告知不吃的食材嗎？"
+          },
+          "answer": {
+            "ja": "ご予約時にお申し付けください。",
+            "en": "Please let us know at the time of reservation.",
+            "ko": "예약 시 말씀해 주세요.",
+            "zh-tw": "請於預約時告知。"
+          }
+        },
+        {
+          "question": {
+            "ja": "駐車場はありますか？",
+            "en": "Do you have parking?",
+            "ko": "주차장이 있나요？",
+            "zh-tw": "有停車場嗎？"
+          },
+          "answer": {
+            "ja": "近隣の提携パーキングをご案内しております。",
+            "en": "We can direct you to nearby affiliated parking.",
+            "ko": "인근 제휴 주차장을 안내하고 있습니다.",
+            "zh-tw": "可為您介紹附近的合作停車場。"
+          }
+        }
+      ]
+    },
+    "access": {
+      "sectionTitle": {
+        "ja": "アクセス",
+        "en": "Access",
+        "ko": "오시는 길",
+        "zh-tw": "交通資訊"
+      },
+      "sectionSubtitle": {
+        "ja": "店舗へのご案内",
+        "en": "Guide to the Store",
+        "ko": "매장 안내",
+        "zh-tw": "商店指南"
+      },
+      "address": {
+        "ja": "東京都墨田区〇〇 5-7-9",
+        "en": "5-7-9, XX, Sumida, Tokyo",
+        "ko": "도쿄도 스미다구 〇〇 5-7-9",
+        "zh-tw": "東京都墨田區〇〇 5-7-9"
+      },
+      "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3579.1447437301044!2d127.68589831501648!3d26.21424098342371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34e56bd0b4a42ff1%3A0x36812e0e598f7d6b!2z54CP6Yar!5e0!3m2!1sja!2sjp!4v1234567890123!5m2!1sja!2sjp",
+      "parking": {
+        "title": {
+          "ja": "駐車場のご案内",
+          "en": "Parking Information",
+          "ko": "주차 정보",
+          "zh-tw": "停車資訊"
+        },
+        "description": {
+          "ja": "近隣の提携コインパーキングをご利用ください。",
+          "en": "Please use the nearby affiliated coin parking.",
+          "ko": "인근 제휴 동전 주차장을 이용해 주십시오.",
+          "zh-tw": "請使用附近的合作投幣停車場。"
+        },
+        "spaces": {
+          "ja": "提携駐車場 約4台",
+          "en": "Affiliated parking approx. 4 cars",
+          "ko": "제휴 주차장 약 4대",
+          "zh-tw": "合作停車場約4輛"
+        },
+        "notes": {
+          "ja": "お食事のお客様には割引券をお渡しします。",
+          "en": "Dining guests will receive a discount voucher.",
+          "ko": "식사하시는 고객님께는 할인권을 드립니다.",
+          "zh-tw": "用餐顧客可獲得優惠券。"
+        }
+      },
+      "transportation": {
+        "title": {
+          "ja": "公共交通機関をご利用の方",
+          "en": "For those using public transportation",
+          "ko": "대중교통을 이용하시는 분",
+          "zh-tw": "使用大眾運輸的顧客"
+        },
+        "methods": [
+          {
+            "type": {
+              "ja": "電車",
+              "en": "Train",
+              "ko": "기차",
+              "zh-tw": "電車"
+            },
+            "description": {
+              "ja": "〇〇線「××駅」より徒歩5分",
+              "en": "5 minutes on foot from XX Station",
+              "ko": "〇〇선 '××역'에서 도보 5분",
+              "zh-tw": "從〇〇線「××站」步行5分鐘"
+            }
+          },
+          {
+            "type": {
+              "ja": "バス",
+              "en": "Bus",
+              "ko": "버스",
+              "zh-tw": "巴士"
+            },
+            "description": {
+              "ja": "「△△」バス停より徒歩3分",
+              "en": "3 minutes on foot from the △△ bus stop",
+              "ko": "'△△' 버스 정류장에서 도보 3분",
+              "zh-tw": "從「△△」巴士站步行3分鐘"
+            }
+          },
+          {
+            "type": {
+              "ja": "タクシー",
+              "en": "Taxi",
+              "ko": "택시",
+              "zh-tw": "計程車"
+            },
+            "description": {
+              "ja": "最寄り駅より約5分",
+              "en": "About 5 minutes from the nearest station",
+              "ko": "가까운 역에서 약 5분",
+              "zh-tw": "從最近車站約5分鐘"
+            }
+          }
+        ]
+      }
+    },
+    "storeInfo": {
+      "sectionTitle": {
+        "ja": "店舗情報",
+        "en": "Store Information",
+        "ko": "매장 정보",
+        "zh-tw": "店鋪資訊"
+      },
+      "mainImage": "https://images.unsplash.com/photo-1617093727343-374698b1b08d?w=1200&q=80",
+      "mainImageCaption": {
+        "ja": "温かな灯りのもと、ごゆっくりお過ごしください",
+        "en": "Relax and unwind under our warm lantern light",
+        "ko": "따뜻한 불빛 아래에서 편안히 쉬어가세요",
+        "zh-tw": "在溫暖的燈火下，請盡情放鬆"
+      },
+      "items": [
+        {
+          "ja": "東京都墨田区〇〇 5-7-9",
+          "en": "5-7-9, XX, Sumida, Tokyo",
+          "ko": "도쿄도 스미다구 〇〇 5-7-9",
+          "zh-tw": "東京都墨田區〇〇 5-7-9"
+        },
+        {
+          "ja": "17:00 - 23:00（L.O. 22:30）",
+          "en": "17:00 - 23:00 (L.O. 22:30)",
+          "ko": "17:00 - 23:00 (L.O. 22:30)",
+          "zh-tw": "17:00 - 23:00（最後點餐22:30）"
+        },
+        {
+          "ja": "03-AAAA-AAAA",
+          "en": "03-AAAA-AAAA",
+          "ko": "03-AAAA-AAAA",
+          "zh-tw": "03-AAAA-AAAA"
+        },
+        {
+          "ja": "info@tomoshibi.example.com",
+          "en": "info@tomoshibi.example.com",
+          "ko": "info@tomoshibi.example.com",
+          "zh-tw": "info@tomoshibi.example.com"
+        }
+      ]
+    },
+    "contact": {
+      "sectionTitle": {
+        "ja": "お問い合わせ",
+        "en": "Contact Us",
+        "ko": "문의하기",
+        "zh-tw": "聯絡我們"
+      },
+      "sectionSubtitle": {
+        "ja": "ご予約やご質問など、お気軽にお問い合わせください",
+        "en": "Please feel free to contact us for reservations or inquiries.",
+        "ko": "예약이나 문의 사항이 있으시면 언제든지 문의해 주세요.",
+        "zh-tw": "如需預約或詢問，請隨時與我們聯繫。"
+      },
+      "fields": {
+        "name": {
+          "ja": "お名前",
+          "en": "Name",
+          "ko": "이름",
+          "zh-tw": "姓名"
+        },
+        "email": {
+          "ja": "メールアドレス",
+          "en": "Email Address",
+          "ko": "이메일 주소",
+          "zh-tw": "電子郵件地址"
+        },
+        "subject": {
+          "ja": "件名",
+          "en": "Subject",
+          "ko": "제목",
+          "zh-tw": "主題"
+        },
+        "message": {
+          "ja": "お問い合わせ内容",
+          "en": "Message",
+          "ko": "문의 내용",
+          "zh-tw": "訊息內容"
+        }
+      },
+      "submitButton": {
+        "ja": "送信する",
+        "en": "Send",
+        "ko": "보내기",
+        "zh-tw": "發送"
+      }
+    },
+    "cta": {
+      "sectionTitle": {
+        "ja": "ご予約・お問い合わせ",
+        "en": "Reservations and Inquiries",
+        "ko": "예약 및 문의",
+        "zh-tw": "預約與詢問"
+      },
+      "sectionSubtitle": {
+        "ja": "皆様のご来店を心よりお待ちしております",
+        "en": "We sincerely look forward to your visit.",
+        "ko": "여러분의 방문을 진심으로 기다립니다.",
+        "zh-tw": "我們衷心期待您的光臨。"
+      },
+      "description": {
+        "ja": "女子会や歓送迎会など、様々なシーンでご利用いただけます。",
+        "en": "Perfect for girls' nights out, welcome and farewell parties, and more.",
+        "ko": "여자들의 모임이나 환송회 등 다양한 상황에서 이용하실 수 있습니다.",
+        "zh-tw": "適合女子聚會、迎新送舊會等各種場合。"
+      },
+      "backgroundImage": "https://images.unsplash.com/photo-1544148103-0773bf10d330?w=1600&q=80",
+      "buttons": [
+        {
+          "text": {
+            "ja": "お電話でご予約",
+            "en": "Reserve by Phone",
+            "ko": "전화로 예약하기",
+            "zh-tw": "電話預約"
+          },
+          "link": "#contact",
+          "type": "primary"
+        },
+        {
+          "text": {
+            "ja": "Webでお問い合わせ",
+            "en": "Inquire via Web",
+            "ko": "웹으로 문의하기",
+            "zh-tw": "網上詢問"
+          },
+          "link": "#contact",
+          "type": "secondary"
+        }
+      ]
+    },
+    "reviews": {
+      "sectionTitle": {
+        "ja": "お客様の声",
+        "en": "Customer Voices",
+        "ko": "고객의 목소리",
+        "zh-tw": "顧客的聲音"
+      },
+      "sectionSubtitle": {
+        "ja": "ご来店いただいたお客様からのメッセージ",
+        "en": "Messages from customers who visited us",
+        "ko": "방문한 고객의 메시지",
+        "zh-tw": "來店顧客的留言"
+      },
+      "reviews": [
+        {
+          "name": {
+            "ja": "小島 誠",
+            "en": "Makoto Kojima",
+            "ko": "코지마 마코토",
+            "zh-tw": "小島誠"
+          },
+          "rating": 5,
+          "date": "2024-11-19",
+          "comment": {
+            "ja": "温かい雰囲気で、地酒も料理も最高でした。",
+            "en": "The warm atmosphere, local sake, and food were all wonderful.",
+            "ko": "따뜻한 분위기에서 지역 술도 요리도 최고였습니다.",
+            "zh-tw": "溫馨的氛圍，地方酒與料理都非常出色。"
+          },
+          "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&q=80"
+        },
+        {
+          "name": {
+            "ja": "渡辺 由美",
+            "en": "Yumi Watanabe",
+            "ko": "와타나베 유미",
+            "zh-tw": "渡邊由美"
+          },
+          "rating": 5,
+          "date": "2024-11-06",
+          "comment": {
+            "ja": "一人でもカウンターで気軽に楽しめました。また来ます。",
+            "en": "I enjoyed dining alone at the counter with ease. I'll be back.",
+            "ko": "혼자서도 카운터에서 편하게 즐길 수 있었습니다. 또 오겠습니다.",
+            "zh-tw": "一個人在吧台也能輕鬆享用，還會再來。"
+          },
+          "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80"
+        },
+        {
+          "name": {
+            "ja": "高橋 修",
+            "en": "Osamu Takahashi",
+            "ko": "다카하시 오사무",
+            "zh-tw": "高橋修"
+          },
+          "rating": 4,
+          "date": "2024-10-27",
+          "comment": {
+            "ja": "肉じゃがが家庭的で美味しかったです。落ち着ける空間でした。",
+            "en": "The simmered meat and potatoes had a comforting, home-style flavor. A calm, relaxing space.",
+            "ko": "니쿠자가가 가정적이고 맛있었습니다. 차분한 공간이었습니다.",
+            "zh-tw": "馬鈴薯燉肉家常美味，空間也十分寧靜舒適。"
+          },
+          "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80"
+        }
+      ]
+    },
+    "company": {
+      "sectionTitle": {
+        "ja": "運営会社情報",
+        "en": "Company Information",
+        "ko": "운영 회사 정보",
+        "zh-tw": "運營公司資訊"
+      },
+      "sectionSubtitle": {
+        "ja": "食を通じて地域社会に貢献する",
+        "en": "Contributing to the local community through food",
+        "ko": "음식을 통해 지역 사회에 기여하기",
+        "zh-tw": "通過美食貢獻地方社區"
+      },
+      "philosophy": {
+        "title": {
+          "ja": "経営理念",
+          "en": "Management Philosophy",
+          "ko": "경영 철학",
+          "zh-tw": "經營理念"
+        },
+        "content": {
+          "ja": "「和食居酒屋 燈」は、素材への敬意と職人の技術、真心のこもったおもてなしを通じて、お客様に忘れられない一皿をお届けすることを使命としています。",
+          "en": "\"Japanese Izakaya TOMOSHIBI\" is committed to delivering an unforgettable dish to every guest through respect for ingredients, skilled craftsmanship, and heartfelt hospitality.",
+          "ko": "'일본식 이자카야 TOMOSHIBI'는 재료에 대한 경의와 장인의 기술, 진심 어린 환대를 통해 손님에게 잊을 수 없는 한 그릇을 선사하는 것을 사명으로 하고 있습니다.",
+          "zh-tw": "「和食居酒屋 燈」秉持對食材的尊重、職人的技藝與真誠的款待，致力於為每位顧客獻上難忘的一餐。"
+        }
+      },
+      "history": {
+        "title": {
+          "ja": "沿革",
+          "en": "History",
+          "ko": "연혁",
+          "zh-tw": "沿革"
+        },
+        "timeline": [
+          {
+            "year": "2014年",
+            "event": {
+              "ja": "和食居酒屋 燈 創業",
+              "en": "Founding of Japanese Izakaya TOMOSHIBI",
+              "ko": "일본식 이자카야 TOMOSHIBI 창업",
+              "zh-tw": "和食居酒屋 燈 創業"
+            }
+          },
+          {
+            "year": "2016年",
+            "event": {
+              "ja": "店舗を増築し、席数を拡大",
+              "en": "Expanded the restaurant and increased seating capacity",
+              "ko": "매장을 증축하여 좌석 수 확대",
+              "zh-tw": "擴建店舖並增加座位數"
+            }
+          },
+          {
+            "year": "2019年",
+            "event": {
+              "ja": "テイクアウト・デリバリー事業を開始",
+              "en": "Started takeout and delivery service",
+              "ko": "테이크아웃 및 배달 사업 시작",
+              "zh-tw": "開始外帶及外送服務"
+            }
+          }
+        ]
+      },
+      "companyInfo": {
+        "title": {
+          "ja": "会社概要",
+          "en": "Company Overview",
+          "ko": "회사 개요",
+          "zh-tw": "公司概況"
+        },
+        "items": [
+          {
+            "label": {
+              "ja": "屋号",
+              "en": "Store Name",
+              "ko": "상호",
+              "zh-tw": "店名"
+            },
+            "value": {
+              "ja": "和食居酒屋 燈",
+              "en": "Japanese Izakaya TOMOSHIBI",
+              "ko": "일본식 이자카야 TOMOSHIBI",
+              "zh-tw": "和食居酒屋 燈"
+            }
+          },
+          {
+            "label": {
+              "ja": "設立",
+              "en": "Established",
+              "ko": "설립",
+              "zh-tw": "成立"
+            },
+            "value": {
+              "ja": "2014年11月",
+              "en": "11月 2014",
+              "ko": "2014년 11月",
+              "zh-tw": "2014年11月"
+            }
+          },
+          {
+            "label": {
+              "ja": "代表者",
+              "en": "Representative",
+              "ko": "대표자",
+              "zh-tw": "代表人"
+            },
+            "value": {
+              "ja": "灯里 正",
+              "en": "Tadashi Tomori",
+              "ko": "토모리 타다시",
+              "zh-tw": "燈里正"
+            }
+          },
+          {
+            "label": {
+              "ja": "所在地",
+              "en": "Location",
+              "ko": "위치",
+              "zh-tw": "所在地"
+            },
+            "value": {
+              "ja": "東京都墨田区〇〇 5-7-9",
+              "en": "5-7-9, XX, Sumida, Tokyo",
+              "ko": "도쿄도 스미다구 〇〇 5-7-9",
+              "zh-tw": "東京都墨田區〇〇 5-7-9"
+            }
+          },
+          {
+            "label": {
+              "ja": "事業内容",
+              "en": "Business Activities",
+              "ko": "사업 내용",
+              "zh-tw": "業務內容"
+            },
+            "value": {
+              "ja": "飲食店経営",
+              "en": "Restaurant management",
+              "ko": "식당 경영",
+              "zh-tw": "餐飲經營"
+            }
+          },
+          {
+            "label": {
+              "ja": "従業員数",
+              "en": "Number of Employees",
+              "ko": "직원 수",
+              "zh-tw": "員工人數"
+            },
+            "value": {
+              "ja": "約12名（パート・アルバイト含む）",
+              "en": "Approx. 12 (including part-time staff)",
+              "ko": "약 12명(파트타임 포함)",
+              "zh-tw": "約12人（含兼職員工）"
+            }
+          }
+        ]
+      }
+    },
+    "footer": {
+      "logo": {
+        "ja": "和食居酒屋 燈",
+        "en": "Japanese Izakaya TOMOSHIBI",
+        "ko": "일본식 이자카야 TOMOSHIBI",
+        "zh-tw": "和食居酒屋 燈"
+      },
+      "description": {
+        "ja": "小さな灯りが、ほっとする時間をお届けします。",
+        "en": "A small light that brings a moment of comfort.",
+        "ko": "작은 불빛이 편안한 시간을 선사합니다.",
+        "zh-tw": "小小的燈火，帶來安心的時光。"
+      },
+      "businessHours": {
+        "title": {
+          "ja": "営業時間",
+          "en": "Business Hours",
+          "ko": "영업 시간",
+          "zh-tw": "營業時間"
+        },
+        "days": {
+          "ja": "月曜日 - 日曜日",
+          "en": "Monday - Sunday",
+          "ko": "월요일 - 일요일",
+          "zh-tw": "星期一 - 星期日"
+        },
+        "hours": {
+          "ja": "17:00 - 23:00",
+          "en": "17:00 - 23:00",
+          "ko": "17:00 - 23:00",
+          "zh-tw": "17:00 - 23:00"
+        },
+        "closedDay": {
+          "ja": "定休日: 不定休",
+          "en": "Closed: Irregular holidays",
+          "ko": "휴무일: 불규칙 휴무",
+          "zh-tw": "休息日: 不定期休假"
+        }
+      },
+      "social": {
+        "title": {
+          "ja": "SNSアカウント",
+          "en": "Social Media Accounts",
+          "ko": "소셜 미디어 계정",
+          "zh-tw": "社交媒體帳號"
+        },
+        "links": [
+          {
+            "platform": "Facebook",
+            "url": "#"
+          },
+          {
+            "platform": "Instagram",
+            "url": "#"
+          },
+          {
+            "platform": "Twitter",
+            "url": "#"
+          }
+        ]
+      },
+      "copyright": {
+        "ja": "© 2024 和食居酒屋 燈. All rights reserved.",
+        "en": "© 2024 Japanese Izakaya TOMOSHIBI. All rights reserved.",
+        "ko": "© 2024 일본식 이자카야 TOMOSHIBI. All rights reserved.",
+        "zh-tw": "© 2024 和食居酒屋 燈. All rights reserved."
+      }
+    },
+    "templateId": "warm",
+    "settings": {
+      "theme": "warm"
+    }
+  }
+}

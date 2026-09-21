@@ -1,0 +1,1402 @@
+{
+  "store_id": "demo-sweets",
+  "Subdomain": "demo-sweets",
+  "RecordType": "LP_CONTENT",
+  "Status": "Published",
+  "CreatedAt": "2026-09-21T01:16:22.455Z",
+  "UpdatedAt": "2026-09-21T01:16:22.455Z",
+  "ContentData": {
+    "header": {
+      "logo": {
+        "text": {
+          "ja": "スイーツカフェ MELLOW",
+          "en": "Sweets Cafe MELLOW",
+          "ko": "스위츠 카페 MELLOW",
+          "zh-tw": "甜點咖啡廳 MELLOW"
+        }
+      },
+      "navigation": [
+        {
+          "id": "about",
+          "label": {
+            "ja": "コンセプト",
+            "en": "Concept",
+            "ko": "개념",
+            "zh-tw": "概念"
+          }
+        },
+        {
+          "id": "menu",
+          "label": {
+            "ja": "メニュー",
+            "en": "Menu",
+            "ko": "메뉴",
+            "zh-tw": "菜單"
+          }
+        },
+        {
+          "id": "pricing",
+          "label": {
+            "ja": "コース・プラン",
+            "en": "Course Plan",
+            "ko": "코스 플랜",
+            "zh-tw": "課程方案"
+          }
+        },
+        {
+          "id": "cta",
+          "label": {
+            "ja": "ご予約",
+            "en": "Reservation",
+            "ko": "예약",
+            "zh-tw": "預約"
+          }
+        },
+        {
+          "id": "gallery",
+          "label": {
+            "ja": "ギャラリー",
+            "en": "Gallery",
+            "ko": "갤러리",
+            "zh-tw": "畫廊"
+          }
+        },
+        {
+          "id": "staff",
+          "label": {
+            "ja": "スタッフ",
+            "en": "Staff",
+            "ko": "직원",
+            "zh-tw": "員工"
+          }
+        },
+        {
+          "id": "reviews",
+          "label": {
+            "ja": "お客様の声",
+            "en": "Customer Feedback",
+            "ko": "고객 후기",
+            "zh-tw": "客戶反饋"
+          }
+        },
+        {
+          "id": "news",
+          "label": {
+            "ja": "お知らせ",
+            "en": "Notice",
+            "ko": "공지사항",
+            "zh-tw": "最新消息"
+          }
+        },
+        {
+          "id": "storeInfo",
+          "label": {
+            "ja": "店舗情報",
+            "en": "Store Information",
+            "ko": "매장 정보",
+            "zh-tw": "店鋪資訊"
+          }
+        },
+        {
+          "id": "company",
+          "label": {
+            "ja": "運営会社",
+            "en": "Operating Company",
+            "ko": "운영 회사",
+            "zh-tw": "運營公司"
+          }
+        },
+        {
+          "id": "access",
+          "label": {
+            "ja": "アクセス",
+            "en": "Access",
+            "ko": "오시는 길",
+            "zh-tw": "交通資訊"
+          }
+        },
+        {
+          "id": "faq",
+          "label": {
+            "ja": "よくある質問",
+            "en": "FAQ",
+            "ko": "자주 묻는 질문",
+            "zh-tw": "常見問題"
+          }
+        },
+        {
+          "id": "contact",
+          "label": {
+            "ja": "お問い合わせ",
+            "en": "Contact Us",
+            "ko": "문의하기",
+            "zh-tw": "聯絡我們"
+          }
+        }
+      ]
+    },
+    "hero": {
+      "sectionTitle": {
+        "ja": "毎日が、\n甘くてカラフルに。",
+        "en": "Every Day,\nSweet and Colorful.",
+        "ko": "매일이,\n달콤하고 컬러풀하게.",
+        "zh-tw": "每一天，\n甜蜜又繽紛。"
+      },
+      "subtitle": {
+        "ja": "インスタ映えするカラフルなスイーツが揃うトレンドカフェ",
+        "en": "A trendy cafe filled with colorful, photogenic sweets",
+        "ko": "인스타 감성의 컬러풀한 디저트가 가득한 트렌디 카페",
+        "zh-tw": "充滿IG打卡風繽紛甜點的潮流咖啡廳"
+      },
+      "backgroundImage": "https://images.unsplash.com/photo-1551024506-0bccd828d307?w=1920&q=80"
+    },
+    "about": {
+      "sectionTitle": {
+        "ja": "私たちのこだわり",
+        "en": "Our Commitment",
+        "ko": "우리의 고집",
+        "zh-tw": "我們的堅持"
+      },
+      "features": [
+        {
+          "title": {
+            "ja": "見た目も楽しいスイーツ",
+            "en": "Sweets That Delight the Eyes",
+            "ko": "보는 즐거움이 있는 디저트",
+            "zh-tw": "視覺享受的甜點"
+          },
+          "description": {
+            "ja": "カラフルで写真映えする見た目にもこだわっています。",
+            "en": "We take great care in creating colorful, photogenic presentations.",
+            "ko": "컬러풀하고 사진에 예쁘게 나오는 모습에도 신경 쓰고 있습니다.",
+            "zh-tw": "講究色彩繽紛、適合拍照的外觀呈現。"
+          },
+          "image": "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=800&q=80"
+        },
+        {
+          "title": {
+            "ja": "厳選フルーツ",
+            "en": "Carefully Selected Fruit",
+            "ko": "엄선된 과일",
+            "zh-tw": "嚴選水果"
+          },
+          "description": {
+            "ja": "旬のフルーツを毎朝市場で厳選しています。",
+            "en": "We select seasonal fruit fresh from the market every morning.",
+            "ko": "제철 과일을 매일 아침 시장에서 엄선하고 있습니다.",
+            "zh-tw": "每日清晨於市場嚴選當季水果。"
+          },
+          "image": "https://images.unsplash.com/photo-1488900128323-21503983a07e?w=800&q=80"
+        },
+        {
+          "title": {
+            "ja": "寛げるトレンド空間",
+            "en": "A Relaxing, Trendy Space",
+            "ko": "편안한 트렌디 공간",
+            "zh-tw": "輕鬆的潮流空間"
+          },
+          "description": {
+            "ja": "友人との時間をより楽しくする、明るくポップな空間です。",
+            "en": "A bright, playful space designed to make time with friends even more fun.",
+            "ko": "친구와의 시간을 더 즐겁게 만드는 밝고 팝한 공간입니다.",
+            "zh-tw": "明亮活潑的空間，讓與朋友的時光更加愉快。"
+          },
+          "image": "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=800&q=80"
+        }
+      ]
+    },
+    "menu": {
+      "sectionTitle": {
+        "ja": "お品書き",
+        "en": "Menu",
+        "ko": "메뉴",
+        "zh-tw": "菜單"
+      },
+      "sectionSubtitle": {
+        "ja": "甘くて、カラフルな一皿",
+        "en": "Sweet, colorful treats",
+        "ko": "달콤하고 컬러풀한 한 그릇",
+        "zh-tw": "甜蜜繽紛的一道甜點"
+      },
+      "items": [
+        {
+          "name": {
+            "ja": "フルーツパフェ",
+            "en": "Fruit Parfait",
+            "ko": "과일 파르페",
+            "zh-tw": "水果芭菲"
+          },
+          "description": {
+            "ja": "旬のフルーツをたっぷりのせた看板パフェ。",
+            "en": "Our signature parfait, generously topped with seasonal fruit.",
+            "ko": "제철 과일을 듬뿍 올린 대표 파르페입니다.",
+            "zh-tw": "滿滿當季水果的招牌芭菲。"
+          },
+          "image": "https://images.unsplash.com/photo-1551024506-0bccd828d307?w=800&q=80",
+          "price": "¥1,200"
+        },
+        {
+          "name": {
+            "ja": "クレープ",
+            "en": "Crepe",
+            "ko": "크레페",
+            "zh-tw": "可麗餅"
+          },
+          "description": {
+            "ja": "もちもち生地に生クリームをたっぷりと。",
+            "en": "Chewy crepe batter topped generously with fresh cream.",
+            "ko": "쫄깃한 반죽에 생크림을 듬뿍 올렸습니다.",
+            "zh-tw": "軟糯餅皮搭配滿滿鮮奶油。"
+          },
+          "image": "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=800&q=80",
+          "price": "¥680"
+        },
+        {
+          "name": {
+            "ja": "フルーツサンド",
+            "en": "Fruit Sandwich",
+            "ko": "과일 샌드위치",
+            "zh-tw": "水果三明治"
+          },
+          "description": {
+            "ja": "断面が可愛い、SNSで人気のフルーツサンド。",
+            "en": "A popular fruit sandwich with an adorable cross-section, loved on social media.",
+            "ko": "단면이 예쁜, SNS에서 인기 있는 과일 샌드위치입니다.",
+            "zh-tw": "剖面可愛，社群媒體上超人氣的水果三明治。"
+          },
+          "image": "https://images.unsplash.com/photo-1488900128323-21503983a07e?w=800&q=80",
+          "price": "¥780"
+        },
+        {
+          "name": {
+            "ja": "タピオカドリンク",
+            "en": "Tapioca Drink",
+            "ko": "타피오카 드링크",
+            "zh-tw": "珍珠飲品"
+          },
+          "description": {
+            "ja": "もちもちタピオカ入りの人気ドリンク。",
+            "en": "A popular drink filled with chewy tapioca pearls.",
+            "ko": "쫄깃한 타피오카가 들어간 인기 드링크입니다.",
+            "zh-tw": "加入軟糯珍珠的人氣飲品。"
+          },
+          "image": "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=800&q=80",
+          "price": "¥580"
+        },
+        {
+          "name": {
+            "ja": "ソフトクリーム",
+            "en": "Soft Serve Ice Cream",
+            "ko": "소프트 아이스크림",
+            "zh-tw": "霜淇淋"
+          },
+          "description": {
+            "ja": "なめらかな口どけの人気ソフトクリーム。",
+            "en": "A popular soft serve that melts smoothly in your mouth.",
+            "ko": "부드럽게 녹는 인기 소프트 아이스크림입니다.",
+            "zh-tw": "口感滑順的人氣霜淇淋。"
+          },
+          "image": "https://images.unsplash.com/photo-1551024506-0bccd828d307?w=800&q=80",
+          "price": "¥380"
+        },
+        {
+          "name": {
+            "ja": "ケーキセット",
+            "en": "Cake Set",
+            "ko": "케이크 세트",
+            "zh-tw": "蛋糕套餐"
+          },
+          "description": {
+            "ja": "季節のケーキとドリンクのお得なセット。",
+            "en": "A great-value set with a seasonal cake and drink.",
+            "ko": "계절 케이크와 음료의 알찬 세트입니다.",
+            "zh-tw": "季節蛋糕與飲品的超值套餐。"
+          },
+          "image": "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=800&q=80",
+          "price": "¥850"
+        },
+        {
+          "name": {
+            "ja": "スムージーボウル",
+            "en": "Smoothie Bowl",
+            "ko": "스무디 볼",
+            "zh-tw": "果昔碗"
+          },
+          "description": {
+            "ja": "フルーツとグラノーラをのせたヘルシーな一皿。",
+            "en": "A healthy bowl topped with fruit and granola.",
+            "ko": "과일과 그래놀라를 올린 건강한 한 그릇입니다.",
+            "zh-tw": "鋪滿水果與穀麥的健康料理。"
+          },
+          "image": "https://images.unsplash.com/photo-1488900128323-21503983a07e?w=800&q=80",
+          "price": "¥980"
+        },
+        {
+          "name": {
+            "ja": "ワッフル",
+            "en": "Waffle",
+            "ko": "와플",
+            "zh-tw": "鬆餅"
+          },
+          "description": {
+            "ja": "外はカリッと、中はもちもちのワッフル。",
+            "en": "A waffle with a crispy outside and a chewy inside.",
+            "ko": "겉은 바삭하고 속은 쫄깃한 와플입니다.",
+            "zh-tw": "外酥內軟的鬆餅。"
+          },
+          "image": "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=800&q=80",
+          "price": "¥720"
+        }
+      ]
+    },
+    "gallery": {
+      "sectionTitle": {
+        "ja": "ギャラリー",
+        "en": "Gallery",
+        "ko": "갤러리",
+        "zh-tw": "畫廊"
+      },
+      "sectionSubtitle": {
+        "ja": "カラフルで可愛いスイーツを写真でお届け",
+        "en": "Colorful, adorable sweets, captured in photos",
+        "ko": "컬러풀하고 귀여운 디저트를 사진으로 전해드립니다",
+        "zh-tw": "透過照片傳達繽紛可愛的甜點"
+      },
+      "categories": [
+        {
+          "ja": "すべて",
+          "en": "All",
+          "ko": "전체",
+          "zh-tw": "全部"
+        },
+        {
+          "ja": "料理",
+          "en": "Cuisine",
+          "ko": "요리",
+          "zh-tw": "料理"
+        },
+        {
+          "ja": "店内",
+          "en": "Interior",
+          "ko": "매장",
+          "zh-tw": "店內"
+        },
+        {
+          "ja": "イベント",
+          "en": "Events",
+          "ko": "이벤트",
+          "zh-tw": "活動"
+        }
+      ],
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1551024506-0bccd828d307?w=800&q=80",
+          "caption": {
+            "ja": "フルーツパフェ",
+            "en": "Fruit Parfait",
+            "ko": "과일 파르페",
+            "zh-tw": "水果芭菲"
+          },
+          "category": {
+            "ja": "料理",
+            "en": "Cuisine",
+            "ko": "요리",
+            "zh-tw": "料理"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=800&q=80",
+          "caption": {
+            "ja": "クレープ",
+            "en": "Crepe",
+            "ko": "크레페",
+            "zh-tw": "可麗餅"
+          },
+          "category": {
+            "ja": "料理",
+            "en": "Cuisine",
+            "ko": "요리",
+            "zh-tw": "料理"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1488900128323-21503983a07e?w=800&q=80",
+          "caption": {
+            "ja": "フルーツサンド",
+            "en": "Fruit Sandwich",
+            "ko": "과일 샌드위치",
+            "zh-tw": "水果三明治"
+          },
+          "category": {
+            "ja": "料理",
+            "en": "Cuisine",
+            "ko": "요리",
+            "zh-tw": "料理"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=800&q=80",
+          "caption": {
+            "ja": "タピオカドリンク",
+            "en": "Tapioca Drink",
+            "ko": "타피오카 드링크",
+            "zh-tw": "珍珠飲品"
+          },
+          "category": {
+            "ja": "料理",
+            "en": "Cuisine",
+            "ko": "요리",
+            "zh-tw": "料理"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80",
+          "caption": {
+            "ja": "ポップな店内",
+            "en": "A Playful, Pop Interior",
+            "ko": "팝한 매장",
+            "zh-tw": "活潑的店內"
+          },
+          "category": {
+            "ja": "店内",
+            "en": "Interior",
+            "ko": "매장",
+            "zh-tw": "店內"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&q=80",
+          "caption": {
+            "ja": "フォトスポット",
+            "en": "Photo Spot",
+            "ko": "포토 스팟",
+            "zh-tw": "拍照打卡點"
+          },
+          "category": {
+            "ja": "店内",
+            "en": "Interior",
+            "ko": "매장",
+            "zh-tw": "店內"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80",
+          "caption": {
+            "ja": "カラフルな座席",
+            "en": "Colorful Seating",
+            "ko": "컬러풀한 좌석",
+            "zh-tw": "繽紛座位"
+          },
+          "category": {
+            "ja": "店内",
+            "en": "Interior",
+            "ko": "매장",
+            "zh-tw": "店內"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1551024506-0bccd828d307?w=600&q=80",
+          "caption": {
+            "ja": "パフェの断面",
+            "en": "Parfait Cross-Section",
+            "ko": "파르페 단면",
+            "zh-tw": "芭菲剖面"
+          },
+          "category": {
+            "ja": "料理",
+            "en": "Cuisine",
+            "ko": "요리",
+            "zh-tw": "料理"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1552566626-52f8b828add9?w=800&q=80",
+          "caption": {
+            "ja": "誕生日会シーン",
+            "en": "Birthday Party Scene",
+            "ko": "생일파티 장면",
+            "zh-tw": "生日派對場景"
+          },
+          "category": {
+            "ja": "イベント",
+            "en": "Events",
+            "ko": "이벤트",
+            "zh-tw": "活動"
+          }
+        }
+      ]
+    },
+    "staff": {
+      "sectionTitle": {
+        "ja": "スタッフ紹介",
+        "en": "Staff Introduction",
+        "ko": "직원 소개",
+        "zh-tw": "員工介紹"
+      },
+      "sectionSubtitle": {
+        "ja": "笑顔で、甘いひとときをお届けします",
+        "en": "We bring a sweet moment with a smile",
+        "ko": "웃는 얼굴로 달콤한 시간을 선사합니다",
+        "zh-tw": "以笑容獻上甜蜜時光"
+      },
+      "members": [
+        {
+          "name": {
+            "ja": "蜜谷 ののか",
+            "en": "Nonoka Mitsutani",
+            "ko": "미츠타니 노노카",
+            "zh-tw": "蜜谷乃乃花"
+          },
+          "role": {
+            "ja": "オーナーパティシエ",
+            "en": "Owner Pastry Chef",
+            "ko": "오너 파티시에",
+            "zh-tw": "老闆甜點師"
+          },
+          "description": {
+            "ja": "カラフルで可愛いスイーツを日々考案しています。",
+            "en": "She creates colorful, adorable sweets every day.",
+            "ko": "컬러풀하고 귀여운 디저트를 매일 고안하고 있습니다.",
+            "zh-tw": "每日構思繽紛可愛的甜點。"
+          },
+          "image": "https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=600&q=80"
+        },
+        {
+          "name": {
+            "ja": "桃井 らら",
+            "en": "Rara Momoi",
+            "ko": "모모이 라라",
+            "zh-tw": "桃井拉拉"
+          },
+          "role": {
+            "ja": "フォトジェニック担当",
+            "en": "Photogenic Presentation Specialist",
+            "ko": "포토제닉 담당",
+            "zh-tw": "視覺呈現負責人"
+          },
+          "description": {
+            "ja": "SNSで人気の盛り付けを研究しています。",
+            "en": "She researches plating styles that are popular on social media.",
+            "ko": "SNS에서 인기 있는 플레이팅을 연구하고 있습니다.",
+            "zh-tw": "研究社群媒體上受歡迎的擺盤方式。"
+          },
+          "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&q=80"
+        },
+        {
+          "name": {
+            "ja": "柚木 みなと",
+            "en": "Minato Yuzuki",
+            "ko": "유즈키 미나토",
+            "zh-tw": "柚木港"
+          },
+          "role": {
+            "ja": "ホールスタッフ",
+            "en": "Hall Staff",
+            "ko": "홀 스태프",
+            "zh-tw": "外場人員"
+          },
+          "description": {
+            "ja": "元気な接客で店を明るくしています。",
+            "en": "He brightens the cafe with energetic, cheerful service.",
+            "ko": "활기찬 서비스로 매장을 밝게 만듭니다.",
+            "zh-tw": "以充滿活力的服務點亮店內氛圍。"
+          },
+          "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80"
+        }
+      ]
+    },
+    "news": {
+      "sectionTitle": {
+        "ja": "お知らせ",
+        "en": "News",
+        "ko": "공지사항",
+        "zh-tw": "最新消息"
+      },
+      "sectionSubtitle": {
+        "ja": "最新情報をお届けします",
+        "en": "Latest updates",
+        "ko": "최신 정보를 전달합니다",
+        "zh-tw": "為您帶來最新消息"
+      },
+      "items": [
+        {
+          "date": "2024-12-09",
+          "category": "お知らせ",
+          "title": {
+            "ja": "年末年始の営業時間のご案内",
+            "en": "New Year's Business Hours",
+            "ko": "연말연시 영업시간 안내",
+            "zh-tw": "年末年初營業時間公告"
+          },
+          "content": {
+            "ja": "12月31日、1月1日はお休みです。",
+            "en": "We will be closed on December 31 and January 1.",
+            "ko": "12월 31일, 1월 1일은 휴무입니다.",
+            "zh-tw": "12月31日、1月1日公休。"
+          }
+        },
+        {
+          "date": "2024-11-24",
+          "category": "新メニュー",
+          "title": {
+            "ja": "冬限定パフェが登場",
+            "en": "New Winter-Limited Parfait Available",
+            "ko": "겨울 한정 파르페 등장",
+            "zh-tw": "冬季限定芭菲登場"
+          },
+          "content": {
+            "ja": "いちごを使った冬限定パフェをご用意しました。",
+            "en": "We've prepared a winter-limited parfait made with strawberries.",
+            "ko": "딸기를 사용한 겨울 한정 파르페를 준비했습니다.",
+            "zh-tw": "推出使用草莓的冬季限定芭菲。"
+          }
+        },
+        {
+          "date": "2024-10-28",
+          "category": "イベント",
+          "title": {
+            "ja": "誕生日プラン開始",
+            "en": "Birthday Plan Now Available",
+            "ko": "생일 플랜 시작",
+            "zh-tw": "生日方案開始"
+          },
+          "content": {
+            "ja": "お誕生日のお客様にサプライズプレートをご用意します。",
+            "en": "We prepare a surprise plate for guests celebrating a birthday.",
+            "ko": "생일을 맞은 고객님께 서프라이즈 플레이트를 준비합니다.",
+            "zh-tw": "為壽星顧客準備驚喜甜點盤。"
+          }
+        }
+      ]
+    },
+    "pricing": {
+      "sectionTitle": {
+        "ja": "コース・プラン",
+        "en": "Course Plans",
+        "ko": "코스 플랜",
+        "zh-tw": "課程方案"
+      },
+      "sectionSubtitle": {
+        "ja": "ご利用シーンに合わせた各種プラン",
+        "en": "Various plans tailored to your occasion",
+        "ko": "이용 상황에 맞춘 다양한 플랜",
+        "zh-tw": "依使用場景提供多種方案"
+      },
+      "plans": [
+        {
+          "name": {
+            "ja": "お手軽セット",
+            "en": "Casual Set",
+            "ko": "캐주얼 세트",
+            "zh-tw": "輕鬆套餐"
+          },
+          "description": {
+            "ja": "ドリンクとスイーツ1品のお得なセット。",
+            "en": "A great-value set with a drink and one sweet treat.",
+            "ko": "음료와 디저트 1개의 알찬 세트입니다.",
+            "zh-tw": "飲品加一款甜點的超值套餐。"
+          },
+          "price": "¥980",
+          "features": [
+            {
+              "ja": "スイーツ1品選択",
+              "en": "Choice of One Sweet",
+              "ko": "디저트 1품 선택",
+              "zh-tw": "甜點一款"
+            },
+            {
+              "ja": "ドリンク1杯",
+              "en": "One Drink",
+              "ko": "음료 1잔",
+              "zh-tw": "一杯飲品"
+            }
+          ]
+        },
+        {
+          "name": {
+            "ja": "MELLOWおすすめセット",
+            "en": "MELLOW's Recommended Set",
+            "ko": "MELLOW 추천 세트",
+            "zh-tw": "MELLOW推薦套餐"
+          },
+          "description": {
+            "ja": "フルーツパフェとドリンクの一番人気セット。",
+            "en": "Our most popular set with fruit parfait and a drink.",
+            "ko": "과일 파르페와 음료의 가장 인기 있는 세트입니다.",
+            "zh-tw": "水果芭菲與飲品的最受歡迎套餐。"
+          },
+          "price": "¥1,580",
+          "features": [
+            {
+              "ja": "フルーツパフェ",
+              "en": "Fruit Parfait",
+              "ko": "과일 파르페",
+              "zh-tw": "水果芭菲"
+            },
+            {
+              "ja": "ドリンク1杯",
+              "en": "One Drink",
+              "ko": "음료 1잔",
+              "zh-tw": "一杯飲品"
+            },
+            {
+              "ja": "ミニワッフル付き",
+              "en": "Includes a Mini Waffle",
+              "ko": "미니 와플 포함",
+              "zh-tw": "附迷你鬆餅"
+            }
+          ],
+          "isPopular": true
+        },
+        {
+          "name": {
+            "ja": "女子会プラン",
+            "en": "Girls' Get-Together Plan",
+            "ko": "여자들의 모임 플랜",
+            "zh-tw": "女子聚會方案"
+          },
+          "description": {
+            "ja": "スイーツ3品を仲間とシェアできるお得なプラン。",
+            "en": "A great-value plan to share three sweets with friends.",
+            "ko": "디저트 3품을 친구들과 나눌 수 있는 알찬 플랜입니다.",
+            "zh-tw": "可與朋友分享3款甜點的超值方案。"
+          },
+          "price": "¥3,200",
+          "features": [
+            {
+              "ja": "スイーツ3品盛り合わせ",
+              "en": "Assorted 3 Sweets",
+              "ko": "디저트 3품 모듬",
+              "zh-tw": "3款甜點拼盤"
+            },
+            {
+              "ja": "ドリンク2杯",
+              "en": "2 Drinks",
+              "ko": "음료 2잔",
+              "zh-tw": "2杯飲品"
+            },
+            {
+              "ja": "フォトスポット利用可能",
+              "en": "Access to Photo Spot",
+              "ko": "포토 스팟 이용 가능",
+              "zh-tw": "可使用拍照打卡點"
+            }
+          ]
+        }
+      ]
+    },
+    "faq": {
+      "sectionTitle": {
+        "ja": "よくあるご質問",
+        "en": "Frequently Asked Questions",
+        "ko": "자주 묻는 질문",
+        "zh-tw": "常見問題"
+      },
+      "sectionSubtitle": {
+        "ja": "お客様からのご質問にお答えします",
+        "en": "We answer questions from our customers",
+        "ko": "고객님의 질문에 답변드립니다",
+        "zh-tw": "為您解答常見疑問"
+      },
+      "items": [
+        {
+          "question": {
+            "ja": "写真撮影は可能ですか？",
+            "en": "Can I take photos?",
+            "ko": "사진 촬영이 가능한가요？",
+            "zh-tw": "可以拍照嗎？"
+          },
+          "answer": {
+            "ja": "はい、店内でのお写真撮影は大歓迎です。",
+            "en": "Yes, we warmly welcome photos taken inside the cafe.",
+            "ko": "네, 매장 내 사진 촬영을 크게 환영합니다.",
+            "zh-tw": "可以，非常歡迎在店內拍照。"
+          }
+        },
+        {
+          "question": {
+            "ja": "テイクアウトはできますか？",
+            "en": "Is takeout available?",
+            "ko": "테이크아웃이 가능한가요？",
+            "zh-tw": "可以外帶嗎？"
+          },
+          "answer": {
+            "ja": "はい、ほとんどのメニューがテイクアウト可能です。",
+            "en": "Yes, most items are available for takeout.",
+            "ko": "네, 대부분의 메뉴가 테이크아웃 가능합니다.",
+            "zh-tw": "可以，大部分菜單皆可外帶。"
+          }
+        },
+        {
+          "question": {
+            "ja": "誕生日サプライズをお願いできますか？",
+            "en": "Can you help with a birthday surprise?",
+            "ko": "생일 서프라이즈를 부탁할 수 있나요？",
+            "zh-tw": "可以幫忙準備生日驚喜嗎？"
+          },
+          "answer": {
+            "ja": "事前にご予約いただければメッセージプレートをご用意します。",
+            "en": "With advance reservation, we can prepare a message plate for you.",
+            "ko": "사전에 예약해 주시면 메시지 플레이트를 준비합니다.",
+            "zh-tw": "如提前預約，我們可準備留言甜點盤。"
+          }
+        },
+        {
+          "question": {
+            "ja": "アレルギー表示はありますか？",
+            "en": "Do you have allergy information?",
+            "ko": "알레르기 표시가 있나요？",
+            "zh-tw": "有標示過敏原資訊嗎？"
+          },
+          "answer": {
+            "ja": "主要なアレルゲンはメニューに表示しております。",
+            "en": "Major allergens are listed on our menu.",
+            "ko": "주요 알레르기 유발 물질은 메뉴에 표시하고 있습니다.",
+            "zh-tw": "菜單上有標示主要過敏原。"
+          }
+        },
+        {
+          "question": {
+            "ja": "予約は必要ですか？",
+            "en": "Is a reservation required?",
+            "ko": "예약이 필요한가요？",
+            "zh-tw": "需要預約嗎？"
+          },
+          "answer": {
+            "ja": "週末は混み合うため、5名様以上はご予約をおすすめします。",
+            "en": "Weekends can be busy, so reservations are recommended for groups of five or more.",
+            "ko": "주말은 붐비므로 5명 이상은 예약을 권장합니다.",
+            "zh-tw": "週末較繁忙，5人以上建議提前預約。"
+          }
+        }
+      ]
+    },
+    "access": {
+      "sectionTitle": {
+        "ja": "アクセス",
+        "en": "Access",
+        "ko": "오시는 길",
+        "zh-tw": "交通資訊"
+      },
+      "sectionSubtitle": {
+        "ja": "店舗へのご案内",
+        "en": "Guide to the Store",
+        "ko": "매장 안내",
+        "zh-tw": "商店指南"
+      },
+      "address": {
+        "ja": "東京都渋谷区〇〇 10-12-14",
+        "en": "10-12-14, XX, Shibuya, Tokyo",
+        "ko": "도쿄도 시부야구 〇〇 10-12-14",
+        "zh-tw": "東京都澀谷區〇〇 10-12-14"
+      },
+      "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3579.1447437301044!2d127.68589831501648!3d26.21424098342371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34e56bd0b4a42ff1%3A0x36812e0e598f7d6b!2z54CP6Yar!5e0!3m2!1sja!2sjp!4v1234567890123!5m2!1sja!2sjp",
+      "parking": {
+        "title": {
+          "ja": "駐車場のご案内",
+          "en": "Parking Information",
+          "ko": "주차 정보",
+          "zh-tw": "停車資訊"
+        },
+        "description": {
+          "ja": "店舗専用駐車場はございません。近隣のパーキングをご利用ください。",
+          "en": "We do not have dedicated parking. Please use nearby parking facilities.",
+          "ko": "매장 전용 주차장은 없습니다. 인근 주차장을 이용해 주십시오.",
+          "zh-tw": "本店無專屬停車場，請使用附近的停車設施。"
+        },
+        "spaces": {
+          "ja": "近隣コインパーキングをご利用ください",
+          "en": "Please use nearby coin parking",
+          "ko": "인근 동전 주차장을 이용해 주세요",
+          "zh-tw": "請利用附近的投幣停車場"
+        },
+        "notes": {
+          "ja": "自転車置き場はございます。",
+          "en": "Bicycle parking is available.",
+          "ko": "자전거 주차장이 있습니다.",
+          "zh-tw": "設有腳踏車停放區。"
+        }
+      },
+      "transportation": {
+        "title": {
+          "ja": "公共交通機関をご利用の方",
+          "en": "For those using public transportation",
+          "ko": "대중교통을 이용하시는 분",
+          "zh-tw": "使用大眾運輸的顧客"
+        },
+        "methods": [
+          {
+            "type": {
+              "ja": "電車",
+              "en": "Train",
+              "ko": "기차",
+              "zh-tw": "電車"
+            },
+            "description": {
+              "ja": "〇〇線「××駅」より徒歩4分",
+              "en": "4 minutes on foot from XX Station",
+              "ko": "〇〇선 '××역'에서 도보 4분",
+              "zh-tw": "從〇〇線「××站」步行4分鐘"
+            }
+          },
+          {
+            "type": {
+              "ja": "バス",
+              "en": "Bus",
+              "ko": "버스",
+              "zh-tw": "巴士"
+            },
+            "description": {
+              "ja": "「△△」バス停より徒歩2分",
+              "en": "2 minutes on foot from the △△ bus stop",
+              "ko": "'△△' 버스 정류장에서 도보 2분",
+              "zh-tw": "從「△△」巴士站步行2分鐘"
+            }
+          },
+          {
+            "type": {
+              "ja": "タクシー",
+              "en": "Taxi",
+              "ko": "택시",
+              "zh-tw": "計程車"
+            },
+            "description": {
+              "ja": "最寄り駅より約5分",
+              "en": "About 5 minutes from the nearest station",
+              "ko": "가까운 역에서 약 5분",
+              "zh-tw": "從最近車站約5分鐘"
+            }
+          }
+        ]
+      }
+    },
+    "storeInfo": {
+      "sectionTitle": {
+        "ja": "店舗情報",
+        "en": "Store Information",
+        "ko": "매장 정보",
+        "zh-tw": "店鋪資訊"
+      },
+      "mainImage": "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=1200&q=80",
+      "mainImageCaption": {
+        "ja": "カラフルで可愛い空間で、甘いひとときを",
+        "en": "A colorful, adorable space for a sweet moment",
+        "ko": "컬러풀하고 귀여운 공간에서 달콤한 시간을",
+        "zh-tw": "在繽紛可愛的空間中，享受甜蜜時光"
+      },
+      "items": [
+        {
+          "ja": "東京都渋谷区〇〇 10-12-14",
+          "en": "10-12-14, XX, Shibuya, Tokyo",
+          "ko": "도쿄도 시부야구 〇〇 10-12-14",
+          "zh-tw": "東京都澀谷區〇〇 10-12-14"
+        },
+        {
+          "ja": "10:00 - 20:00（L.O. 19:30）",
+          "en": "10:00 - 20:00 (L.O. 19:30)",
+          "ko": "10:00 - 20:00 (L.O. 19:30)",
+          "zh-tw": "10:00 - 20:00（最後點餐19:30）"
+        },
+        {
+          "ja": "03-FFFF-FFFF",
+          "en": "03-FFFF-FFFF",
+          "ko": "03-FFFF-FFFF",
+          "zh-tw": "03-FFFF-FFFF"
+        },
+        {
+          "ja": "info@mellow.example.com",
+          "en": "info@mellow.example.com",
+          "ko": "info@mellow.example.com",
+          "zh-tw": "info@mellow.example.com"
+        }
+      ]
+    },
+    "contact": {
+      "sectionTitle": {
+        "ja": "お問い合わせ",
+        "en": "Contact Us",
+        "ko": "문의하기",
+        "zh-tw": "聯絡我們"
+      },
+      "sectionSubtitle": {
+        "ja": "ご予約やご質問など、お気軽にお問い合わせください",
+        "en": "Please feel free to contact us for reservations or inquiries.",
+        "ko": "예약이나 문의 사항이 있으시면 언제든지 문의해 주세요.",
+        "zh-tw": "如需預約或詢問，請隨時與我們聯繫。"
+      },
+      "fields": {
+        "name": {
+          "ja": "お名前",
+          "en": "Name",
+          "ko": "이름",
+          "zh-tw": "姓名"
+        },
+        "email": {
+          "ja": "メールアドレス",
+          "en": "Email Address",
+          "ko": "이메일 주소",
+          "zh-tw": "電子郵件地址"
+        },
+        "subject": {
+          "ja": "件名",
+          "en": "Subject",
+          "ko": "제목",
+          "zh-tw": "主題"
+        },
+        "message": {
+          "ja": "お問い合わせ内容",
+          "en": "Message",
+          "ko": "문의 내용",
+          "zh-tw": "訊息內容"
+        }
+      },
+      "submitButton": {
+        "ja": "送信する",
+        "en": "Send",
+        "ko": "보내기",
+        "zh-tw": "發送"
+      }
+    },
+    "cta": {
+      "sectionTitle": {
+        "ja": "ご予約・お問い合わせ",
+        "en": "Reservations and Inquiries",
+        "ko": "예약 및 문의",
+        "zh-tw": "預約與詢問"
+      },
+      "sectionSubtitle": {
+        "ja": "皆様のご来店を心よりお待ちしております",
+        "en": "We sincerely look forward to your visit.",
+        "ko": "여러분의 방문을 진심으로 기다립니다.",
+        "zh-tw": "我們衷心期待您的光臨。"
+      },
+      "description": {
+        "ja": "女子会やお誕生日会など、様々なシーンでご利用いただけます。",
+        "en": "Perfect for girls' get-togethers, birthday parties, and more.",
+        "ko": "여자들의 모임이나 생일 파티 등 다양한 상황에서 이용하실 수 있습니다.",
+        "zh-tw": "適合女子聚會、生日派對等各種場合。"
+      },
+      "backgroundImage": "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=1600&q=80",
+      "buttons": [
+        {
+          "text": {
+            "ja": "お電話でご予約",
+            "en": "Reserve by Phone",
+            "ko": "전화로 예약하기",
+            "zh-tw": "電話預約"
+          },
+          "link": "#contact",
+          "type": "primary"
+        },
+        {
+          "text": {
+            "ja": "Webでお問い合わせ",
+            "en": "Inquire via Web",
+            "ko": "웹으로 문의하기",
+            "zh-tw": "網上詢問"
+          },
+          "link": "#contact",
+          "type": "secondary"
+        }
+      ]
+    },
+    "reviews": {
+      "sectionTitle": {
+        "ja": "お客様の声",
+        "en": "Customer Voices",
+        "ko": "고객의 목소리",
+        "zh-tw": "顧客的聲音"
+      },
+      "sectionSubtitle": {
+        "ja": "ご来店いただいたお客様からのメッセージ",
+        "en": "Messages from customers who visited us",
+        "ko": "방문한 고객의 메시지",
+        "zh-tw": "來店顧客的留言"
+      },
+      "reviews": [
+        {
+          "name": {
+            "ja": "水野 陽菜",
+            "en": "Hina Mizuno",
+            "ko": "미즈노 히나",
+            "zh-tw": "水野陽菜"
+          },
+          "rating": 5,
+          "date": "2024-11-26",
+          "comment": {
+            "ja": "パフェが可愛くて写真もたくさん撮りました。味も最高です。",
+            "en": "The parfait was so adorable, I took tons of photos. The flavor was amazing too.",
+            "ko": "파르페가 귀여워서 사진도 많이 찍었습니다. 맛도 최고입니다.",
+            "zh-tw": "芭菲非常可愛，拍了很多照片，味道也超讚。"
+          },
+          "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&q=80"
+        },
+        {
+          "name": {
+            "ja": "加藤 優",
+            "en": "Yu Kato",
+            "ko": "카토 유",
+            "zh-tw": "加藤優"
+          },
+          "rating": 5,
+          "date": "2024-11-16",
+          "comment": {
+            "ja": "友人の誕生日で利用しました。サプライズプレートに感動しました。",
+            "en": "I used this for a friend's birthday. The surprise plate was so touching.",
+            "ko": "친구 생일에 이용했습니다. 서프라이즈 플레이트에 감동했습니다.",
+            "zh-tw": "用於朋友的生日，驚喜甜點盤讓人感動。"
+          },
+          "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80"
+        },
+        {
+          "name": {
+            "ja": "山下 結衣",
+            "en": "Yui Yamashita",
+            "ko": "야마시타 유이",
+            "zh-tw": "山下結衣"
+          },
+          "rating": 4,
+          "date": "2024-10-25",
+          "comment": {
+            "ja": "フルーツサンドが断面から可愛くて、テイクアウトもしました。",
+            "en": "The fruit sandwich was adorable, even the cross-section. I took some home too.",
+            "ko": "과일 샌드위치가 단면부터 귀여워서 테이크아웃도 했습니다.",
+            "zh-tw": "水果三明治連剖面都很可愛，也外帶了一份。"
+          },
+          "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80"
+        }
+      ]
+    },
+    "company": {
+      "sectionTitle": {
+        "ja": "運営会社情報",
+        "en": "Company Information",
+        "ko": "운영 회사 정보",
+        "zh-tw": "運營公司資訊"
+      },
+      "sectionSubtitle": {
+        "ja": "食を通じて地域社会に貢献する",
+        "en": "Contributing to the local community through food",
+        "ko": "음식을 통해 지역 사회에 기여하기",
+        "zh-tw": "通過美食貢獻地方社區"
+      },
+      "philosophy": {
+        "title": {
+          "ja": "経営理念",
+          "en": "Management Philosophy",
+          "ko": "경영 철학",
+          "zh-tw": "經營理念"
+        },
+        "content": {
+          "ja": "「スイーツカフェ MELLOW」は、素材への敬意と職人の技術、真心のこもったおもてなしを通じて、お客様に忘れられない一皿をお届けすることを使命としています。",
+          "en": "\"Sweets Cafe MELLOW\" is committed to delivering an unforgettable dish to every guest through respect for ingredients, skilled craftsmanship, and heartfelt hospitality.",
+          "ko": "'스위츠 카페 MELLOW'는 재료에 대한 경의와 장인의 기술, 진심 어린 환대를 통해 손님에게 잊을 수 없는 한 그릇을 선사하는 것을 사명으로 하고 있습니다.",
+          "zh-tw": "「甜點咖啡廳 MELLOW」秉持對食材的尊重、職人的技藝與真誠的款待，致力於為每位顧客獻上難忘的一餐。"
+        }
+      },
+      "history": {
+        "title": {
+          "ja": "沿革",
+          "en": "History",
+          "ko": "연혁",
+          "zh-tw": "沿革"
+        },
+        "timeline": [
+          {
+            "year": "2020年",
+            "event": {
+              "ja": "スイーツカフェ MELLOW 創業",
+              "en": "Founding of Sweets Cafe MELLOW",
+              "ko": "스위츠 카페 MELLOW 창업",
+              "zh-tw": "甜點咖啡廳 MELLOW 創業"
+            }
+          },
+          {
+            "year": "2022年",
+            "event": {
+              "ja": "店舗を増築し、席数を拡大",
+              "en": "Expanded the restaurant and increased seating capacity",
+              "ko": "매장을 증축하여 좌석 수 확대",
+              "zh-tw": "擴建店舖並增加座位數"
+            }
+          },
+          {
+            "year": "2025年",
+            "event": {
+              "ja": "テイクアウト・デリバリー事業を開始",
+              "en": "Started takeout and delivery service",
+              "ko": "테이크아웃 및 배달 사업 시작",
+              "zh-tw": "開始外帶及外送服務"
+            }
+          }
+        ]
+      },
+      "companyInfo": {
+        "title": {
+          "ja": "会社概要",
+          "en": "Company Overview",
+          "ko": "회사 개요",
+          "zh-tw": "公司概況"
+        },
+        "items": [
+          {
+            "label": {
+              "ja": "屋号",
+              "en": "Store Name",
+              "ko": "상호",
+              "zh-tw": "店名"
+            },
+            "value": {
+              "ja": "スイーツカフェ MELLOW",
+              "en": "Sweets Cafe MELLOW",
+              "ko": "스위츠 카페 MELLOW",
+              "zh-tw": "甜點咖啡廳 MELLOW"
+            }
+          },
+          {
+            "label": {
+              "ja": "設立",
+              "en": "Established",
+              "ko": "설립",
+              "zh-tw": "成立"
+            },
+            "value": {
+              "ja": "2020年7月",
+              "en": "7月 2020",
+              "ko": "2020년 7月",
+              "zh-tw": "2020年7月"
+            }
+          },
+          {
+            "label": {
+              "ja": "代表者",
+              "en": "Representative",
+              "ko": "대표자",
+              "zh-tw": "代表人"
+            },
+            "value": {
+              "ja": "蜜谷 ののか",
+              "en": "Nonoka Mitsutani",
+              "ko": "미츠타니 노노카",
+              "zh-tw": "蜜谷乃乃花"
+            }
+          },
+          {
+            "label": {
+              "ja": "所在地",
+              "en": "Location",
+              "ko": "위치",
+              "zh-tw": "所在地"
+            },
+            "value": {
+              "ja": "東京都渋谷区〇〇 10-12-14",
+              "en": "10-12-14, XX, Shibuya, Tokyo",
+              "ko": "도쿄도 시부야구 〇〇 10-12-14",
+              "zh-tw": "東京都澀谷區〇〇 10-12-14"
+            }
+          },
+          {
+            "label": {
+              "ja": "事業内容",
+              "en": "Business Activities",
+              "ko": "사업 내용",
+              "zh-tw": "業務內容"
+            },
+            "value": {
+              "ja": "飲食店経営",
+              "en": "Restaurant management",
+              "ko": "식당 경영",
+              "zh-tw": "餐飲經營"
+            }
+          },
+          {
+            "label": {
+              "ja": "従業員数",
+              "en": "Number of Employees",
+              "ko": "직원 수",
+              "zh-tw": "員工人數"
+            },
+            "value": {
+              "ja": "約9名（パート・アルバイト含む）",
+              "en": "Approx. 9 (including part-time staff)",
+              "ko": "약 9명(파트타임 포함)",
+              "zh-tw": "約9人（含兼職員工）"
+            }
+          }
+        ]
+      }
+    },
+    "footer": {
+      "logo": {
+        "ja": "スイーツカフェ MELLOW",
+        "en": "Sweets Cafe MELLOW",
+        "ko": "스위츠 카페 MELLOW",
+        "zh-tw": "甜點咖啡廳 MELLOW"
+      },
+      "description": {
+        "ja": "毎日を、甘くカラフルに彩ります。",
+        "en": "Coloring every day sweet and bright.",
+        "ko": "매일을 달콤하고 컬러풀하게 채웁니다.",
+        "zh-tw": "為每一天增添甜蜜與繽紛色彩。"
+      },
+      "businessHours": {
+        "title": {
+          "ja": "営業時間",
+          "en": "Business Hours",
+          "ko": "영업 시간",
+          "zh-tw": "營業時間"
+        },
+        "days": {
+          "ja": "月曜日 - 日曜日",
+          "en": "Monday - Sunday",
+          "ko": "월요일 - 일요일",
+          "zh-tw": "星期一 - 星期日"
+        },
+        "hours": {
+          "ja": "10:00 - 20:00",
+          "en": "10:00 - 20:00",
+          "ko": "10:00 - 20:00",
+          "zh-tw": "10:00 - 20:00"
+        },
+        "closedDay": {
+          "ja": "定休日: 不定休",
+          "en": "Closed: Irregular holidays",
+          "ko": "휴무일: 불규칙 휴무",
+          "zh-tw": "休息日: 不定期休假"
+        }
+      },
+      "social": {
+        "title": {
+          "ja": "SNSアカウント",
+          "en": "Social Media Accounts",
+          "ko": "소셜 미디어 계정",
+          "zh-tw": "社交媒體帳號"
+        },
+        "links": [
+          {
+            "platform": "Facebook",
+            "url": "#"
+          },
+          {
+            "platform": "Instagram",
+            "url": "#"
+          },
+          {
+            "platform": "Twitter",
+            "url": "#"
+          }
+        ]
+      },
+      "copyright": {
+        "ja": "© 2024 スイーツカフェ MELLOW. All rights reserved.",
+        "en": "© 2024 Sweets Cafe MELLOW. All rights reserved.",
+        "ko": "© 2024 스위츠 카페 MELLOW. All rights reserved.",
+        "zh-tw": "© 2024 甜點咖啡廳 MELLOW. All rights reserved."
+      }
+    },
+    "templateId": "pop",
+    "settings": {
+      "theme": "pop"
+    }
+  }
+}

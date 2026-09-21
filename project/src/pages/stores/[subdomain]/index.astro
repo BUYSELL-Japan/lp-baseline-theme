@@ -7,6 +7,11 @@ import Theme2StorePage from '../../../components/Theme2StorePage';
 import Theme3StorePage from '../../../components/Theme3StorePage';
 import Theme4StorePage from '../../../components/Theme4StorePage';
 import Theme5StorePage from '../../../components/Theme5StorePage';
+import ThemeKuraStorePage from '../../../components/ThemeKuraStorePage';
+import ThemeShiroStorePage from '../../../components/ThemeShiroStorePage';
+import ThemeBrushStorePage from '../../../components/ThemeBrushStorePage';
+import ThemeMistStorePage from '../../../components/ThemeMistStorePage';
+import ThemePopStorePage from '../../../components/ThemePopStorePage';
 
 export async function getStaticPaths() {
   try {
@@ -92,4 +97,9 @@ const alternateLinks = [
   {currentTheme === 'theme3' && <Theme3StorePage client:only="react" pageData={pageData} initialLanguage="ja" basePath={currentPath} />}
   {currentTheme === 'theme4' && <Theme4StorePage client:only="react" pageData={pageData} initialLanguage="ja" basePath={currentPath} />}
   {currentTheme === 'theme5' && <Theme5StorePage client:only="react" pageData={pageData} initialLanguage="ja" basePath={currentPath} />}
+  {currentTheme === 'kura' && <ThemeKuraStorePage client:only="react" pageData={pageData} initialLanguage="ja" basePath={currentPath} />}
+  {currentTheme === 'shiro' && <ThemeShiroStorePage client:only="react" pageData={pageData} initialLanguage="ja" basePath={currentPath} />}
+  {currentTheme === 'brush' && <ThemeBrushStorePage client:only="react" pageData={pageData} initialLanguage="ja" basePath={currentPath} />}
+  {currentTheme === 'mist' && <ThemeMistStorePage client:only="react" pageData={pageData} initialLanguage="ja" basePath={currentPath} />}
+  {currentTheme === 'pop' && <ThemePopStorePage client:only="react" pageData={pageData} initialLanguage="ja" basePath={currentPath} />}
 </Layout>

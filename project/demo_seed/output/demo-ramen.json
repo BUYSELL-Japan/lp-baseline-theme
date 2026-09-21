@@ -1,0 +1,1414 @@
+{
+  "store_id": "demo-ramen",
+  "Subdomain": "demo-ramen",
+  "RecordType": "LP_CONTENT",
+  "Status": "Published",
+  "CreatedAt": "2026-09-21T01:16:22.455Z",
+  "UpdatedAt": "2026-09-21T01:16:22.455Z",
+  "ContentData": {
+    "header": {
+      "logo": {
+        "text": {
+          "ja": "ラーメン専門店 麺や一徹",
+          "en": "Ramen Specialist MENYA ITTEKI",
+          "ko": "라멘 전문점 MENYA ITTEKI",
+          "zh-tw": "拉麵專門店 麵屋一徹"
+        }
+      },
+      "navigation": [
+        {
+          "id": "about",
+          "label": {
+            "ja": "コンセプト",
+            "en": "Concept",
+            "ko": "개념",
+            "zh-tw": "概念"
+          }
+        },
+        {
+          "id": "menu",
+          "label": {
+            "ja": "メニュー",
+            "en": "Menu",
+            "ko": "메뉴",
+            "zh-tw": "菜單"
+          }
+        },
+        {
+          "id": "pricing",
+          "label": {
+            "ja": "コース・プラン",
+            "en": "Course Plan",
+            "ko": "코스 플랜",
+            "zh-tw": "課程方案"
+          }
+        },
+        {
+          "id": "cta",
+          "label": {
+            "ja": "ご予約",
+            "en": "Reservation",
+            "ko": "예약",
+            "zh-tw": "預約"
+          }
+        },
+        {
+          "id": "gallery",
+          "label": {
+            "ja": "ギャラリー",
+            "en": "Gallery",
+            "ko": "갤러리",
+            "zh-tw": "畫廊"
+          }
+        },
+        {
+          "id": "staff",
+          "label": {
+            "ja": "スタッフ",
+            "en": "Staff",
+            "ko": "직원",
+            "zh-tw": "員工"
+          }
+        },
+        {
+          "id": "reviews",
+          "label": {
+            "ja": "お客様の声",
+            "en": "Customer Feedback",
+            "ko": "고객 후기",
+            "zh-tw": "客戶反饋"
+          }
+        },
+        {
+          "id": "news",
+          "label": {
+            "ja": "お知らせ",
+            "en": "Notice",
+            "ko": "공지사항",
+            "zh-tw": "最新消息"
+          }
+        },
+        {
+          "id": "storeInfo",
+          "label": {
+            "ja": "店舗情報",
+            "en": "Store Information",
+            "ko": "매장 정보",
+            "zh-tw": "店鋪資訊"
+          }
+        },
+        {
+          "id": "company",
+          "label": {
+            "ja": "運営会社",
+            "en": "Operating Company",
+            "ko": "운영 회사",
+            "zh-tw": "運營公司"
+          }
+        },
+        {
+          "id": "access",
+          "label": {
+            "ja": "アクセス",
+            "en": "Access",
+            "ko": "오시는 길",
+            "zh-tw": "交通資訊"
+          }
+        },
+        {
+          "id": "faq",
+          "label": {
+            "ja": "よくある質問",
+            "en": "FAQ",
+            "ko": "자주 묻는 질문",
+            "zh-tw": "常見問題"
+          }
+        },
+        {
+          "id": "contact",
+          "label": {
+            "ja": "お問い合わせ",
+            "en": "Contact Us",
+            "ko": "문의하기",
+            "zh-tw": "聯絡我們"
+          }
+        }
+      ]
+    },
+    "hero": {
+      "sectionTitle": {
+        "ja": "一杯に込める、\n職人の一徹。",
+        "en": "One Bowl,\nA Craftsman's Unwavering Spirit.",
+        "ko": "한 그릇에 담은,\n장인의 외길.",
+        "zh-tw": "一碗之中，\n職人的堅持。"
+      },
+      "subtitle": {
+        "ja": "豚骨・醤油・味噌が揃う本格ラーメン専門店。職人の一杯",
+        "en": "An authentic ramen shop offering tonkotsu, shoyu, and miso — crafted by a true ramen artisan",
+        "ko": "돈코츠・쇼유・미소가 모두 있는 본격 라멘 전문점. 장인의 한 그릇",
+        "zh-tw": "齊聚豚骨、醬油、味噌的正宗拉麵專門店，職人的一碗"
+      },
+      "backgroundImage": "https://images.unsplash.com/photo-1591814468924-caf88d1232e1?w=1920&q=80"
+    },
+    "about": {
+      "sectionTitle": {
+        "ja": "私たちのこだわり",
+        "en": "Our Commitment",
+        "ko": "우리의 고집",
+        "zh-tw": "我們的堅持"
+      },
+      "features": [
+        {
+          "title": {
+            "ja": "丹念に炊く豚骨スープ",
+            "en": "Carefully Simmered Tonkotsu Broth",
+            "ko": "정성껏 끓인 돈코츠 스프",
+            "zh-tw": "細心熬煮的豚骨湯"
+          },
+          "description": {
+            "ja": "骨から丁寧に炊き出す濃厚スープを、毎日一から仕込みます。",
+            "en": "Our rich broth is carefully prepared from bones, from scratch, every single day.",
+            "ko": "뼈부터 정성껏 끓여내는 진한 스프를 매일 처음부터 준비합니다.",
+            "zh-tw": "從骨頭細心熬煮的濃郁湯頭，每日從零開始製作。"
+          },
+          "image": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=800&q=80"
+        },
+        {
+          "title": {
+            "ja": "自家製麺",
+            "en": "Homemade Noodles",
+            "ko": "수제 면",
+            "zh-tw": "自製麵條"
+          },
+          "description": {
+            "ja": "スープに合わせて配合を変える自家製麺にこだわっています。",
+            "en": "We take pride in our homemade noodles, with the blend adjusted to match each broth.",
+            "ko": "스프에 맞춰 배합을 바꾸는 수제 면을 고집하고 있습니다.",
+            "zh-tw": "堅持依湯頭調整配方的自製麵條。"
+          },
+          "image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&q=80"
+        },
+        {
+          "title": {
+            "ja": "三種の味の追求",
+            "en": "The Pursuit of Three Flavors",
+            "ko": "세 가지 맛의 추구",
+            "zh-tw": "三種風味的追求"
+          },
+          "description": {
+            "ja": "豚骨・醤油・味噌、それぞれの味を極限まで突き詰めています。",
+            "en": "We pursue tonkotsu, shoyu, and miso, each to the fullest extent of flavor.",
+            "ko": "돈코츠・쇼유・미소, 각각의 맛을 극한까지 추구하고 있습니다.",
+            "zh-tw": "豚骨、醬油、味噌，各自風味皆追求極致。"
+          },
+          "image": "https://images.unsplash.com/photo-1623341214825-9f4f963727da?w=800&q=80"
+        }
+      ]
+    },
+    "menu": {
+      "sectionTitle": {
+        "ja": "お品書き",
+        "en": "Menu",
+        "ko": "메뉴",
+        "zh-tw": "菜單"
+      },
+      "sectionSubtitle": {
+        "ja": "一杯に込めた、職人の一徹",
+        "en": "A craftsman's unwavering spirit in every bowl",
+        "ko": "한 그릇에 담은 장인의 외길",
+        "zh-tw": "一碗之中的職人堅持"
+      },
+      "items": [
+        {
+          "name": {
+            "ja": "特製豚骨ラーメン",
+            "en": "Special Tonkotsu Ramen",
+            "ko": "특제 돈코츠 라멘",
+            "zh-tw": "特製豚骨拉麵"
+          },
+          "description": {
+            "ja": "濃厚でコクのある看板の豚骨スープ。",
+            "en": "Our signature rich and deeply flavorful tonkotsu broth.",
+            "ko": "진하고 깊은 맛의 대표 돈코츠 스프입니다.",
+            "zh-tw": "濃郁醇厚的招牌豚骨湯頭。"
+          },
+          "image": "https://images.unsplash.com/photo-1591814468924-caf88d1232e1?w=800&q=80",
+          "price": "¥950"
+        },
+        {
+          "name": {
+            "ja": "醤油ラーメン",
+            "en": "Shoyu Ramen",
+            "ko": "쇼유 라멘",
+            "zh-tw": "醬油拉麵"
+          },
+          "description": {
+            "ja": "すっきりとした醤油ベースの伝統の味。",
+            "en": "A clean, traditional shoyu-based flavor.",
+            "ko": "깔끔한 쇼유 베이스의 전통적인 맛입니다.",
+            "zh-tw": "清爽的醬油基底，傳統風味。"
+          },
+          "image": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=800&q=80",
+          "price": "¥900"
+        },
+        {
+          "name": {
+            "ja": "味噌ラーメン",
+            "en": "Miso Ramen",
+            "ko": "미소 라멘",
+            "zh-tw": "味噌拉麵"
+          },
+          "description": {
+            "ja": "香ばしい味噌とコクのあるスープ。",
+            "en": "A fragrant miso soup with deep, rich flavor.",
+            "ko": "고소한 미소와 깊은 맛의 스프입니다.",
+            "zh-tw": "香氣濃郁的味噌湯頭。"
+          },
+          "image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&q=80",
+          "price": "¥980"
+        },
+        {
+          "name": {
+            "ja": "塩ラーメン",
+            "en": "Salt Ramen",
+            "ko": "시오 라멘",
+            "zh-tw": "鹽味拉麵"
+          },
+          "description": {
+            "ja": "素材の旨味を活かした塩スープ。",
+            "en": "A salt-based soup that highlights the natural umami of the ingredients.",
+            "ko": "재료의 감칠맛을 살린 시오 스프입니다.",
+            "zh-tw": "襯托食材鮮美的鹽味湯頭。"
+          },
+          "image": "https://images.unsplash.com/photo-1623341214825-9f4f963727da?w=800&q=80",
+          "price": "¥880"
+        },
+        {
+          "name": {
+            "ja": "つけ麺",
+            "en": "Tsukemen (Dipping Noodles)",
+            "ko": "츠케멘",
+            "zh-tw": "沾麵"
+          },
+          "description": {
+            "ja": "濃厚な魚介豚骨スープに絡める太麺。",
+            "en": "Thick noodles paired with a rich seafood and tonkotsu dipping broth.",
+            "ko": "진한 해물 돈코츠 스프에 곁들이는 두꺼운 면입니다.",
+            "zh-tw": "搭配濃郁魚貝豚骨湯頭的粗麵。"
+          },
+          "image": "https://images.unsplash.com/photo-1591814468924-caf88d1232e1?w=800&q=80",
+          "price": "¥1,050"
+        },
+        {
+          "name": {
+            "ja": "チャーシュー麺",
+            "en": "Chashu Ramen",
+            "ko": "차슈멘",
+            "zh-tw": "叉燒麵"
+          },
+          "description": {
+            "ja": "自家製チャーシューをたっぷりのせた一杯。",
+            "en": "A bowl generously topped with homemade chashu pork.",
+            "ko": "수제 차슈를 듬뿍 올린 한 그릇입니다.",
+            "zh-tw": "滿滿自製叉燒的一碗。"
+          },
+          "image": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=800&q=80",
+          "price": "¥1,200"
+        },
+        {
+          "name": {
+            "ja": "半チャーハンセット",
+            "en": "Half Fried Rice Set",
+            "ko": "미니 볶음밥 세트",
+            "zh-tw": "半份炒飯套餐"
+          },
+          "description": {
+            "ja": "ラーメンと一緒に楽しむミニチャーハン。",
+            "en": "A mini fried rice to enjoy alongside your ramen.",
+            "ko": "라멘과 함께 즐기는 미니 볶음밥입니다.",
+            "zh-tw": "與拉麵一同享用的迷你炒飯。"
+          },
+          "image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&q=80",
+          "price": "¥1,100"
+        },
+        {
+          "name": {
+            "ja": "餃子",
+            "en": "Gyoza",
+            "ko": "교자",
+            "zh-tw": "煎餃"
+          },
+          "description": {
+            "ja": "パリッと焼き上げた自家製餃子。",
+            "en": "Homemade gyoza, grilled to a crisp finish.",
+            "ko": "바삭하게 구운 수제 교자입니다.",
+            "zh-tw": "煎得酥脆的自製煎餃。"
+          },
+          "image": "https://images.unsplash.com/photo-1623341214825-9f4f963727da?w=800&q=80",
+          "price": "¥480"
+        }
+      ]
+    },
+    "gallery": {
+      "sectionTitle": {
+        "ja": "ギャラリー",
+        "en": "Gallery",
+        "ko": "갤러리",
+        "zh-tw": "畫廊"
+      },
+      "sectionSubtitle": {
+        "ja": "一杯へのこだわりを写真でお届け",
+        "en": "Our dedication to every bowl, captured in photos",
+        "ko": "한 그릇에 대한 고집을 사진으로 전해드립니다",
+        "zh-tw": "透過照片傳達對一碗麵的堅持"
+      },
+      "categories": [
+        {
+          "ja": "すべて",
+          "en": "All",
+          "ko": "전체",
+          "zh-tw": "全部"
+        },
+        {
+          "ja": "料理",
+          "en": "Cuisine",
+          "ko": "요리",
+          "zh-tw": "料理"
+        },
+        {
+          "ja": "店内",
+          "en": "Interior",
+          "ko": "매장",
+          "zh-tw": "店內"
+        },
+        {
+          "ja": "イベント",
+          "en": "Events",
+          "ko": "이벤트",
+          "zh-tw": "活動"
+        }
+      ],
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1591814468924-caf88d1232e1?w=800&q=80",
+          "caption": {
+            "ja": "特製豚骨ラーメン",
+            "en": "Special Tonkotsu Ramen",
+            "ko": "특제 돈코츠 라멘",
+            "zh-tw": "特製豚骨拉麵"
+          },
+          "category": {
+            "ja": "料理",
+            "en": "Cuisine",
+            "ko": "요리",
+            "zh-tw": "料理"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=800&q=80",
+          "caption": {
+            "ja": "醤油ラーメン",
+            "en": "Shoyu Ramen",
+            "ko": "쇼유 라멘",
+            "zh-tw": "醬油拉麵"
+          },
+          "category": {
+            "ja": "料理",
+            "en": "Cuisine",
+            "ko": "요리",
+            "zh-tw": "料理"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&q=80",
+          "caption": {
+            "ja": "自家製麺",
+            "en": "Homemade Noodles",
+            "ko": "수제 면",
+            "zh-tw": "自製麵條"
+          },
+          "category": {
+            "ja": "料理",
+            "en": "Cuisine",
+            "ko": "요리",
+            "zh-tw": "料理"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1623341214825-9f4f963727da?w=800&q=80",
+          "caption": {
+            "ja": "チャーシュー麺",
+            "en": "Chashu Ramen",
+            "ko": "차슈멘",
+            "zh-tw": "叉燒麵"
+          },
+          "category": {
+            "ja": "料理",
+            "en": "Cuisine",
+            "ko": "요리",
+            "zh-tw": "料理"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80",
+          "caption": {
+            "ja": "カウンター席",
+            "en": "Counter Seats",
+            "ko": "카운터석",
+            "zh-tw": "吧台座位"
+          },
+          "category": {
+            "ja": "店内",
+            "en": "Interior",
+            "ko": "매장",
+            "zh-tw": "店內"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&q=80",
+          "caption": {
+            "ja": "券売機のある入口",
+            "en": "Entrance with Ticket Machine",
+            "ko": "발권기가 있는 입구",
+            "zh-tw": "設有售票機的入口"
+          },
+          "category": {
+            "ja": "店内",
+            "en": "Interior",
+            "ko": "매장",
+            "zh-tw": "店內"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80",
+          "caption": {
+            "ja": "厨房の様子",
+            "en": "The Kitchen",
+            "ko": "주방 모습",
+            "zh-tw": "廚房情景"
+          },
+          "category": {
+            "ja": "店内",
+            "en": "Interior",
+            "ko": "매장",
+            "zh-tw": "店內"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1591814468924-caf88d1232e1?w=600&q=80",
+          "caption": {
+            "ja": "スープの仕込み",
+            "en": "Preparing the Broth",
+            "ko": "스프 준비",
+            "zh-tw": "湯頭熬製"
+          },
+          "category": {
+            "ja": "料理",
+            "en": "Cuisine",
+            "ko": "요리",
+            "zh-tw": "料理"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1552566626-52f8b828add9?w=800&q=80",
+          "caption": {
+            "ja": "ラーメンフェス出店",
+            "en": "Ramen Festival Booth",
+            "ko": "라멘 페스티벌 출점",
+            "zh-tw": "拉麵祭參展"
+          },
+          "category": {
+            "ja": "イベント",
+            "en": "Events",
+            "ko": "이벤트",
+            "zh-tw": "活動"
+          }
+        }
+      ]
+    },
+    "staff": {
+      "sectionTitle": {
+        "ja": "スタッフ紹介",
+        "en": "Staff Introduction",
+        "ko": "직원 소개",
+        "zh-tw": "員工介紹"
+      },
+      "sectionSubtitle": {
+        "ja": "一杯一杯に、真剣勝負しています",
+        "en": "We take every single bowl seriously",
+        "ko": "한 그릇 한 그릇에 진지하게 승부합니다",
+        "zh-tw": "每一碗，皆全力以赴"
+      },
+      "members": [
+        {
+          "name": {
+            "ja": "一徹 剛",
+            "en": "Tsuyoshi Ittetsu",
+            "ko": "잇테츠 츠요시",
+            "zh-tw": "一徹剛"
+          },
+          "role": {
+            "ja": "店主・製麺師",
+            "en": "Owner and Noodle Maker",
+            "ko": "점주・제면사",
+            "zh-tw": "店主・製麵師"
+          },
+          "description": {
+            "ja": "スープと麺、両方にこだわり抜く職人。妥協は一切しません。",
+            "en": "A craftsman who is uncompromising about both soup and noodles.",
+            "ko": "스프와 면 모두에 철저히 신경 쓰는 장인. 절대 타협하지 않습니다.",
+            "zh-tw": "對湯頭與麵條皆極致講究的職人，絕不妥協。"
+          },
+          "image": "https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=600&q=80"
+        },
+        {
+          "name": {
+            "ja": "宮下 蘭",
+            "en": "Ran Miyashita",
+            "ko": "미야시타 란",
+            "zh-tw": "宮下蘭"
+          },
+          "role": {
+            "ja": "スープ担当",
+            "en": "Soup Specialist",
+            "ko": "스프 담당",
+            "zh-tw": "湯頭負責人"
+          },
+          "description": {
+            "ja": "毎朝早くからスープの仕込みを担当しています。",
+            "en": "She handles the broth preparation early every morning.",
+            "ko": "매일 아침 일찍부터 스프 준비를 담당하고 있습니다.",
+            "zh-tw": "每天清早負責熬製湯頭。"
+          },
+          "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&q=80"
+        },
+        {
+          "name": {
+            "ja": "坂本 翼",
+            "en": "Tsubasa Sakamoto",
+            "ko": "사카모토 츠바사",
+            "zh-tw": "坂本翼"
+          },
+          "role": {
+            "ja": "ホールスタッフ",
+            "en": "Hall Staff",
+            "ko": "홀 스태프",
+            "zh-tw": "外場人員"
+          },
+          "description": {
+            "ja": "お客様をスピーディーかつ丁寧にご案内します。",
+            "en": "He guides guests promptly and courteously.",
+            "ko": "고객님을 신속하고 정중하게 안내합니다.",
+            "zh-tw": "迅速且細心地為顧客服務。"
+          },
+          "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80"
+        }
+      ]
+    },
+    "news": {
+      "sectionTitle": {
+        "ja": "お知らせ",
+        "en": "News",
+        "ko": "공지사항",
+        "zh-tw": "最新消息"
+      },
+      "sectionSubtitle": {
+        "ja": "最新情報をお届けします",
+        "en": "Latest updates",
+        "ko": "최신 정보를 전달합니다",
+        "zh-tw": "為您帶來最新消息"
+      },
+      "items": [
+        {
+          "date": "2024-12-07",
+          "category": "お知らせ",
+          "title": {
+            "ja": "年末年始の営業時間のご案内",
+            "en": "New Year's Business Hours",
+            "ko": "연말연시 영업시간 안내",
+            "zh-tw": "年末年初營業時間公告"
+          },
+          "content": {
+            "ja": "12月31日、1月1日はお休みです。",
+            "en": "We will be closed on December 31 and January 1.",
+            "ko": "12월 31일, 1월 1일은 휴무입니다.",
+            "zh-tw": "12月31日、1月1日公休。"
+          }
+        },
+        {
+          "date": "2024-11-19",
+          "category": "新メニュー",
+          "title": {
+            "ja": "塩ラーメンが新登場",
+            "en": "New Salt Ramen Now on the Menu",
+            "ko": "시오 라멘 신메뉴 등장",
+            "zh-tw": "全新鹽味拉麵上市"
+          },
+          "content": {
+            "ja": "素材の旨味を活かした塩ラーメンをご用意しました。",
+            "en": "We've prepared a new salt ramen that highlights natural umami.",
+            "ko": "재료의 감칠맛을 살린 시오 라멘을 준비했습니다.",
+            "zh-tw": "推出襯托食材鮮美的鹽味拉麵。"
+          }
+        },
+        {
+          "date": "2024-10-26",
+          "category": "お知らせ",
+          "title": {
+            "ja": "深夜営業開始",
+            "en": "Late-Night Hours Now Available",
+            "ko": "심야 영업 시작",
+            "zh-tw": "深夜營業開始"
+          },
+          "content": {
+            "ja": "金土日は深夜1時まで営業いたします。",
+            "en": "We are now open until 1 AM on Fridays, Saturdays, and Sundays.",
+            "ko": "금・토・일요일은 심야 1시까지 영업합니다.",
+            "zh-tw": "五、六、日營業至凌晨1點。"
+          }
+        }
+      ]
+    },
+    "pricing": {
+      "sectionTitle": {
+        "ja": "コース・プラン",
+        "en": "Course Plans",
+        "ko": "코스 플랜",
+        "zh-tw": "課程方案"
+      },
+      "sectionSubtitle": {
+        "ja": "ご利用シーンに合わせた各種プラン",
+        "en": "Various plans tailored to your occasion",
+        "ko": "이용 상황에 맞춘 다양한 플랜",
+        "zh-tw": "依使用場景提供多種方案"
+      },
+      "plans": [
+        {
+          "name": {
+            "ja": "お一人様ランチ",
+            "en": "Solo Lunch",
+            "ko": "1인 런치",
+            "zh-tw": "獨自午餐"
+          },
+          "description": {
+            "ja": "ラーメンと小ライスのお得なセット。",
+            "en": "A great-value set with ramen and a small rice.",
+            "ko": "라멘과 소량 밥의 알찬 세트입니다.",
+            "zh-tw": "拉麵與小份米飯的超值套餐。"
+          },
+          "price": "¥1,050",
+          "features": [
+            {
+              "ja": "ラーメン1杯選択",
+              "en": "Choice of One Ramen",
+              "ko": "라멘 1그릇 선택",
+              "zh-tw": "拉麵一碗"
+            },
+            {
+              "ja": "小ライス",
+              "en": "Small Rice",
+              "ko": "소량 밥",
+              "zh-tw": "小份米飯"
+            },
+            {
+              "ja": "餃子3個",
+              "en": "3 Gyoza",
+              "ko": "교자 3개",
+              "zh-tw": "煎餃3個"
+            }
+          ]
+        },
+        {
+          "name": {
+            "ja": "一徹スペシャル",
+            "en": "ITTEKI Special",
+            "ko": "잇테츠 스페셜",
+            "zh-tw": "一徹特餐"
+          },
+          "description": {
+            "ja": "チャーシュー麺と半チャーハンの一番人気セット。",
+            "en": "Our most popular set with chashu ramen and half fried rice.",
+            "ko": "차슈멘과 미니 볶음밥의 가장 인기 있는 세트입니다.",
+            "zh-tw": "叉燒麵與半份炒飯的最受歡迎套餐。"
+          },
+          "price": "¥1,780",
+          "features": [
+            {
+              "ja": "チャーシュー麺",
+              "en": "Chashu Ramen",
+              "ko": "차슈멘",
+              "zh-tw": "叉燒麵"
+            },
+            {
+              "ja": "半チャーハン",
+              "en": "Half Fried Rice",
+              "ko": "미니 볶음밥",
+              "zh-tw": "半份炒飯"
+            },
+            {
+              "ja": "餃子3個",
+              "en": "3 Gyoza",
+              "ko": "교자 3개",
+              "zh-tw": "煎餃3個"
+            },
+            {
+              "ja": "ドリンク1杯",
+              "en": "One Drink",
+              "ko": "음료 1잔",
+              "zh-tw": "一杯飲品"
+            }
+          ],
+          "isPopular": true
+        },
+        {
+          "name": {
+            "ja": "食べ比べセット",
+            "en": "Tasting Comparison Set",
+            "ko": "맛 비교 세트",
+            "zh-tw": "口味比較套餐"
+          },
+          "description": {
+            "ja": "三種のスープを少量ずつ楽しめる贅沢なセット。",
+            "en": "A luxurious set to enjoy small portions of all three soups.",
+            "ko": "세 가지 스프를 소량씩 즐길 수 있는 호화 세트입니다.",
+            "zh-tw": "可少量品嚐三種湯頭的奢華套餐。"
+          },
+          "price": "¥1,600",
+          "features": [
+            {
+              "ja": "豚骨・醤油・味噌の食べ比べ",
+              "en": "Tonkotsu, Shoyu, and Miso Comparison",
+              "ko": "돈코츠・쇼유・미소 비교",
+              "zh-tw": "豚骨、醬油、味噌比較"
+            },
+            {
+              "ja": "餃子3個",
+              "en": "3 Gyoza",
+              "ko": "교자 3개",
+              "zh-tw": "煎餃3個"
+            },
+            {
+              "ja": "ドリンク1杯",
+              "en": "One Drink",
+              "ko": "음료 1잔",
+              "zh-tw": "一杯飲品"
+            }
+          ]
+        }
+      ]
+    },
+    "faq": {
+      "sectionTitle": {
+        "ja": "よくあるご質問",
+        "en": "Frequently Asked Questions",
+        "ko": "자주 묻는 질문",
+        "zh-tw": "常見問題"
+      },
+      "sectionSubtitle": {
+        "ja": "お客様からのご質問にお答えします",
+        "en": "We answer questions from our customers",
+        "ko": "고객님의 질문에 답변드립니다",
+        "zh-tw": "為您解答常見疑問"
+      },
+      "items": [
+        {
+          "question": {
+            "ja": "麺の硬さは選べますか？",
+            "en": "Can I choose the noodle firmness?",
+            "ko": "면의 익힘 정도를 선택할 수 있나요？",
+            "zh-tw": "可以選擇麵條硬度嗎？"
+          },
+          "answer": {
+            "ja": "はい、やわらかめ〜硬めまでお選びいただけます。",
+            "en": "Yes, you can choose from soft to firm.",
+            "ko": "네, 부드럽게부터 딱딱하게까지 선택 가능합니다.",
+            "zh-tw": "可以，從軟到硬皆可選擇。"
+          }
+        },
+        {
+          "question": {
+            "ja": "替え玉はできますか？",
+            "en": "Can I order extra noodles?",
+            "ko": "면 추가가 가능한가요？",
+            "zh-tw": "可以加麵嗎？"
+          },
+          "answer": {
+            "ja": "はい、1玉100円で承っております。",
+            "en": "Yes, extra noodles are available for ¥100.",
+            "ko": "네, 1인분 100엔으로 가능합니다.",
+            "zh-tw": "可以，加麵100日圓。"
+          }
+        },
+        {
+          "question": {
+            "ja": "ベジタリアン対応はありますか？",
+            "en": "Do you have vegetarian options?",
+            "ko": "베지테리언 메뉴가 있나요？",
+            "zh-tw": "有素食選項嗎？"
+          },
+          "answer": {
+            "ja": "野菜のみのスープもご用意可能です。事前にご相談ください。",
+            "en": "A vegetable-only broth is available upon request — please ask in advance.",
+            "ko": "채소만 사용한 스프도 준비 가능합니다. 사전에 상담해 주세요.",
+            "zh-tw": "可提供純蔬菜湯頭，請提前告知。"
+          }
+        },
+        {
+          "question": {
+            "ja": "並ぶ時間はどれくらいですか？",
+            "en": "How long is the wait?",
+            "ko": "대기 시간은 얼마나 되나요？",
+            "zh-tw": "需要排隊多久？"
+          },
+          "answer": {
+            "ja": "ピーク時は20〜30分ほどお待ちいただく場合があります。",
+            "en": "During peak hours, the wait may be about 20 to 30 minutes.",
+            "ko": "피크 시간에는 20~30분 정도 기다리실 수 있습니다.",
+            "zh-tw": "尖峰時段可能需等候20至30分鐘。"
+          }
+        },
+        {
+          "question": {
+            "ja": "クレジットカードは使えますか？",
+            "en": "Can I pay by credit card?",
+            "ko": "신용카드를 사용할 수 있나요？",
+            "zh-tw": "可以使用信用卡嗎？"
+          },
+          "answer": {
+            "ja": "主要クレジットカード・電子マネーに対応しております。",
+            "en": "We accept major credit cards and e-money.",
+            "ko": "주요 신용카드・전자화폐를 지원합니다.",
+            "zh-tw": "接受主要信用卡與電子支付。"
+          }
+        }
+      ]
+    },
+    "access": {
+      "sectionTitle": {
+        "ja": "アクセス",
+        "en": "Access",
+        "ko": "오시는 길",
+        "zh-tw": "交通資訊"
+      },
+      "sectionSubtitle": {
+        "ja": "店舗へのご案内",
+        "en": "Guide to the Store",
+        "ko": "매장 안내",
+        "zh-tw": "商店指南"
+      },
+      "address": {
+        "ja": "東京都豊島区〇〇 8-10-12",
+        "en": "8-10-12, XX, Toshima, Tokyo",
+        "ko": "도쿄도 도시마구 〇〇 8-10-12",
+        "zh-tw": "東京都豐島區〇〇 8-10-12"
+      },
+      "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3579.1447437301044!2d127.68589831501648!3d26.21424098342371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34e56bd0b4a42ff1%3A0x36812e0e598f7d6b!2z54CP6Yar!5e0!3m2!1sja!2sjp!4v1234567890123!5m2!1sja!2sjp",
+      "parking": {
+        "title": {
+          "ja": "駐車場のご案内",
+          "en": "Parking Information",
+          "ko": "주차 정보",
+          "zh-tw": "停車資訊"
+        },
+        "description": {
+          "ja": "店舗専用駐車場はございません。近隣のパーキングをご利用ください。",
+          "en": "We do not have dedicated parking. Please use nearby parking facilities.",
+          "ko": "매장 전용 주차장은 없습니다. 인근 주차장을 이용해 주십시오.",
+          "zh-tw": "本店無專屬停車場，請使用附近的停車設施。"
+        },
+        "spaces": {
+          "ja": "近隣コインパーキングをご利用ください",
+          "en": "Please use nearby coin parking",
+          "ko": "인근 동전 주차장을 이용해 주세요",
+          "zh-tw": "請利用附近的投幣停車場"
+        },
+        "notes": {
+          "ja": "公共交通機関のご利用をおすすめします。",
+          "en": "We recommend using public transportation.",
+          "ko": "대중교통 이용을 권장합니다.",
+          "zh-tw": "建議搭乘大眾運輸前來。"
+        }
+      },
+      "transportation": {
+        "title": {
+          "ja": "公共交通機関をご利用の方",
+          "en": "For those using public transportation",
+          "ko": "대중교통을 이용하시는 분",
+          "zh-tw": "使用大眾運輸的顧客"
+        },
+        "methods": [
+          {
+            "type": {
+              "ja": "電車",
+              "en": "Train",
+              "ko": "기차",
+              "zh-tw": "電車"
+            },
+            "description": {
+              "ja": "〇〇線「××駅」より徒歩1分",
+              "en": "1 minute on foot from XX Station",
+              "ko": "〇〇선 '××역'에서 도보 1분",
+              "zh-tw": "從〇〇線「××站」步行1分鐘"
+            }
+          },
+          {
+            "type": {
+              "ja": "バス",
+              "en": "Bus",
+              "ko": "버스",
+              "zh-tw": "巴士"
+            },
+            "description": {
+              "ja": "「△△」バス停より徒歩2分",
+              "en": "2 minutes on foot from the △△ bus stop",
+              "ko": "'△△' 버스 정류장에서 도보 2분",
+              "zh-tw": "從「△△」巴士站步行2分鐘"
+            }
+          },
+          {
+            "type": {
+              "ja": "タクシー",
+              "en": "Taxi",
+              "ko": "택시",
+              "zh-tw": "計程車"
+            },
+            "description": {
+              "ja": "最寄り駅より約3分",
+              "en": "About 3 minutes from the nearest station",
+              "ko": "가까운 역에서 약 3분",
+              "zh-tw": "從最近車站約3分鐘"
+            }
+          }
+        ]
+      }
+    },
+    "storeInfo": {
+      "sectionTitle": {
+        "ja": "店舗情報",
+        "en": "Store Information",
+        "ko": "매장 정보",
+        "zh-tw": "店鋪資訊"
+      },
+      "mainImage": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=1200&q=80",
+      "mainImageCaption": {
+        "ja": "カウンター越しに、職人の技をご覧ください",
+        "en": "Watch the craftsman's technique right across the counter",
+        "ko": "카운터 너머로 장인의 기술을 지켜보세요",
+        "zh-tw": "在吧台前，欣賞職人的技藝"
+      },
+      "items": [
+        {
+          "ja": "東京都豊島区〇〇 8-10-12",
+          "en": "8-10-12, XX, Toshima, Tokyo",
+          "ko": "도쿄도 도시마구 〇〇 8-10-12",
+          "zh-tw": "東京都豐島區〇〇 8-10-12"
+        },
+        {
+          "ja": "11:00 - 15:00 / 18:00 - 翌1:00",
+          "en": "11:00 - 15:00 / 18:00 - 1:00",
+          "ko": "11:00 - 15:00 / 18:00 - 익일 1:00",
+          "zh-tw": "11:00 - 15:00 / 18:00 - 隔日1:00"
+        },
+        {
+          "ja": "03-DDDD-DDDD",
+          "en": "03-DDDD-DDDD",
+          "ko": "03-DDDD-DDDD",
+          "zh-tw": "03-DDDD-DDDD"
+        },
+        {
+          "ja": "info@itteki.example.com",
+          "en": "info@itteki.example.com",
+          "ko": "info@itteki.example.com",
+          "zh-tw": "info@itteki.example.com"
+        }
+      ]
+    },
+    "contact": {
+      "sectionTitle": {
+        "ja": "お問い合わせ",
+        "en": "Contact Us",
+        "ko": "문의하기",
+        "zh-tw": "聯絡我們"
+      },
+      "sectionSubtitle": {
+        "ja": "ご予約やご質問など、お気軽にお問い合わせください",
+        "en": "Please feel free to contact us for reservations or inquiries.",
+        "ko": "예약이나 문의 사항이 있으시면 언제든지 문의해 주세요.",
+        "zh-tw": "如需預約或詢問，請隨時與我們聯繫。"
+      },
+      "fields": {
+        "name": {
+          "ja": "お名前",
+          "en": "Name",
+          "ko": "이름",
+          "zh-tw": "姓名"
+        },
+        "email": {
+          "ja": "メールアドレス",
+          "en": "Email Address",
+          "ko": "이메일 주소",
+          "zh-tw": "電子郵件地址"
+        },
+        "subject": {
+          "ja": "件名",
+          "en": "Subject",
+          "ko": "제목",
+          "zh-tw": "主題"
+        },
+        "message": {
+          "ja": "お問い合わせ内容",
+          "en": "Message",
+          "ko": "문의 내용",
+          "zh-tw": "訊息內容"
+        }
+      },
+      "submitButton": {
+        "ja": "送信する",
+        "en": "Send",
+        "ko": "보내기",
+        "zh-tw": "發送"
+      }
+    },
+    "cta": {
+      "sectionTitle": {
+        "ja": "ご予約・お問い合わせ",
+        "en": "Reservations and Inquiries",
+        "ko": "예약 및 문의",
+        "zh-tw": "預約與詢問"
+      },
+      "sectionSubtitle": {
+        "ja": "皆様のご来店を心よりお待ちしております",
+        "en": "We sincerely look forward to your visit.",
+        "ko": "여러분의 방문을 진심으로 기다립니다.",
+        "zh-tw": "我們衷心期待您的光臨。"
+      },
+      "description": {
+        "ja": "お一人でも、ご家族でも、様々なシーンでご利用いただけます。",
+        "en": "Perfect for solo diners, families, and more.",
+        "ko": "혼자서도 가족과도 다양한 상황에서 이용하실 수 있습니다.",
+        "zh-tw": "無論獨自或全家用餐，都適合各種場合。"
+      },
+      "backgroundImage": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=1600&q=80",
+      "buttons": [
+        {
+          "text": {
+            "ja": "お電話でご予約",
+            "en": "Reserve by Phone",
+            "ko": "전화로 예약하기",
+            "zh-tw": "電話預約"
+          },
+          "link": "#contact",
+          "type": "primary"
+        },
+        {
+          "text": {
+            "ja": "Webでお問い合わせ",
+            "en": "Inquire via Web",
+            "ko": "웹으로 문의하기",
+            "zh-tw": "網上詢問"
+          },
+          "link": "#contact",
+          "type": "secondary"
+        }
+      ]
+    },
+    "reviews": {
+      "sectionTitle": {
+        "ja": "お客様の声",
+        "en": "Customer Voices",
+        "ko": "고객의 목소리",
+        "zh-tw": "顧客的聲音"
+      },
+      "sectionSubtitle": {
+        "ja": "ご来店いただいたお客様からのメッセージ",
+        "en": "Messages from customers who visited us",
+        "ko": "방문한 고객의 메시지",
+        "zh-tw": "來店顧客的留言"
+      },
+      "reviews": [
+        {
+          "name": {
+            "ja": "石井 康平",
+            "en": "Kohei Ishii",
+            "ko": "이시이 코헤이",
+            "zh-tw": "石井康平"
+          },
+          "rating": 5,
+          "date": "2024-11-24",
+          "comment": {
+            "ja": "豚骨スープの濃厚さに驚きました。深夜営業も助かります。",
+            "en": "I was amazed by how rich the tonkotsu broth was. The late-night hours are also a lifesaver.",
+            "ko": "돈코츠 스프의 진함에 놀랐습니다. 심야 영업도 도움이 됩니다.",
+            "zh-tw": "豚骨湯頭的濃郁令人驚艷，深夜營業也很方便。"
+          },
+          "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&q=80"
+        },
+        {
+          "name": {
+            "ja": "村上 恵美",
+            "en": "Emi Murakami",
+            "ko": "무라카미 에미",
+            "zh-tw": "村上惠美"
+          },
+          "rating": 5,
+          "date": "2024-11-13",
+          "comment": {
+            "ja": "自家製麺のコシが最高でした。また通いたいお店です。",
+            "en": "The chewiness of the homemade noodles was amazing. I definitely want to come back.",
+            "ko": "수제 면의 쫄깃함이 최고였습니다. 또 다니고 싶은 가게입니다.",
+            "zh-tw": "自製麵條的彈性極佳，是想常來光顧的店。"
+          },
+          "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80"
+        },
+        {
+          "name": {
+            "ja": "和田 大輔",
+            "en": "Daisuke Wada",
+            "ko": "와다 다이스케",
+            "zh-tw": "和田大輔"
+          },
+          "rating": 4,
+          "date": "2024-10-31",
+          "comment": {
+            "ja": "食べ比べセットで三種類全部楽しめて満足でした。",
+            "en": "I was satisfied being able to enjoy all three flavors with the tasting comparison set.",
+            "ko": "맛 비교 세트로 세 가지 모두 즐길 수 있어 만족했습니다.",
+            "zh-tw": "口味比較套餐能一次品嚐三種風味，非常滿足。"
+          },
+          "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80"
+        }
+      ]
+    },
+    "company": {
+      "sectionTitle": {
+        "ja": "運営会社情報",
+        "en": "Company Information",
+        "ko": "운영 회사 정보",
+        "zh-tw": "運營公司資訊"
+      },
+      "sectionSubtitle": {
+        "ja": "食を通じて地域社会に貢献する",
+        "en": "Contributing to the local community through food",
+        "ko": "음식을 통해 지역 사회에 기여하기",
+        "zh-tw": "通過美食貢獻地方社區"
+      },
+      "philosophy": {
+        "title": {
+          "ja": "経営理念",
+          "en": "Management Philosophy",
+          "ko": "경영 철학",
+          "zh-tw": "經營理念"
+        },
+        "content": {
+          "ja": "「ラーメン専門店 麺や一徹」は、素材への敬意と職人の技術、真心のこもったおもてなしを通じて、お客様に忘れられない一皿をお届けすることを使命としています。",
+          "en": "\"Ramen Specialist MENYA ITTEKI\" is committed to delivering an unforgettable dish to every guest through respect for ingredients, skilled craftsmanship, and heartfelt hospitality.",
+          "ko": "'라멘 전문점 MENYA ITTEKI'는 재료에 대한 경의와 장인의 기술, 진심 어린 환대를 통해 손님에게 잊을 수 없는 한 그릇을 선사하는 것을 사명으로 하고 있습니다.",
+          "zh-tw": "「拉麵專門店 麵屋一徹」秉持對食材的尊重、職人的技藝與真誠的款待，致力於為每位顧客獻上難忘的一餐。"
+        }
+      },
+      "history": {
+        "title": {
+          "ja": "沿革",
+          "en": "History",
+          "ko": "연혁",
+          "zh-tw": "沿革"
+        },
+        "timeline": [
+          {
+            "year": "2015年",
+            "event": {
+              "ja": "ラーメン専門店 麺や一徹 創業",
+              "en": "Founding of Ramen Specialist MENYA ITTEKI",
+              "ko": "라멘 전문점 MENYA ITTEKI 창업",
+              "zh-tw": "拉麵專門店 麵屋一徹 創業"
+            }
+          },
+          {
+            "year": "2017年",
+            "event": {
+              "ja": "店舗を増築し、席数を拡大",
+              "en": "Expanded the restaurant and increased seating capacity",
+              "ko": "매장을 증축하여 좌석 수 확대",
+              "zh-tw": "擴建店舖並增加座位數"
+            }
+          },
+          {
+            "year": "2020年",
+            "event": {
+              "ja": "テイクアウト・デリバリー事業を開始",
+              "en": "Started takeout and delivery service",
+              "ko": "테이크아웃 및 배달 사업 시작",
+              "zh-tw": "開始外帶及外送服務"
+            }
+          }
+        ]
+      },
+      "companyInfo": {
+        "title": {
+          "ja": "会社概要",
+          "en": "Company Overview",
+          "ko": "회사 개요",
+          "zh-tw": "公司概況"
+        },
+        "items": [
+          {
+            "label": {
+              "ja": "屋号",
+              "en": "Store Name",
+              "ko": "상호",
+              "zh-tw": "店名"
+            },
+            "value": {
+              "ja": "ラーメン専門店 麺や一徹",
+              "en": "Ramen Specialist MENYA ITTEKI",
+              "ko": "라멘 전문점 MENYA ITTEKI",
+              "zh-tw": "拉麵專門店 麵屋一徹"
+            }
+          },
+          {
+            "label": {
+              "ja": "設立",
+              "en": "Established",
+              "ko": "설립",
+              "zh-tw": "成立"
+            },
+            "value": {
+              "ja": "2015年9月",
+              "en": "9月 2015",
+              "ko": "2015년 9月",
+              "zh-tw": "2015年9月"
+            }
+          },
+          {
+            "label": {
+              "ja": "代表者",
+              "en": "Representative",
+              "ko": "대표자",
+              "zh-tw": "代表人"
+            },
+            "value": {
+              "ja": "一徹 剛",
+              "en": "Tsuyoshi Ittetsu",
+              "ko": "잇테츠 츠요시",
+              "zh-tw": "一徹剛"
+            }
+          },
+          {
+            "label": {
+              "ja": "所在地",
+              "en": "Location",
+              "ko": "위치",
+              "zh-tw": "所在地"
+            },
+            "value": {
+              "ja": "東京都豊島区〇〇 8-10-12",
+              "en": "8-10-12, XX, Toshima, Tokyo",
+              "ko": "도쿄도 도시마구 〇〇 8-10-12",
+              "zh-tw": "東京都豐島區〇〇 8-10-12"
+            }
+          },
+          {
+            "label": {
+              "ja": "事業内容",
+              "en": "Business Activities",
+              "ko": "사업 내용",
+              "zh-tw": "業務內容"
+            },
+            "value": {
+              "ja": "飲食店経営",
+              "en": "Restaurant management",
+              "ko": "식당 경영",
+              "zh-tw": "餐飲經營"
+            }
+          },
+          {
+            "label": {
+              "ja": "従業員数",
+              "en": "Number of Employees",
+              "ko": "직원 수",
+              "zh-tw": "員工人數"
+            },
+            "value": {
+              "ja": "約14名（パート・アルバイト含む）",
+              "en": "Approx. 14 (including part-time staff)",
+              "ko": "약 14명(파트타임 포함)",
+              "zh-tw": "約14人（含兼職員工）"
+            }
+          }
+        ]
+      }
+    },
+    "footer": {
+      "logo": {
+        "ja": "ラーメン専門店 麺や一徹",
+        "en": "Ramen Specialist MENYA ITTEKI",
+        "ko": "라멘 전문점 MENYA ITTEKI",
+        "zh-tw": "拉麵專門店 麵屋一徹"
+      },
+      "description": {
+        "ja": "一杯の中に、職人の一徹を。",
+        "en": "A craftsman's unwavering spirit, in a single bowl.",
+        "ko": "한 그릇 속에 장인의 외길을.",
+        "zh-tw": "在一碗之中，堅持職人之心。"
+      },
+      "businessHours": {
+        "title": {
+          "ja": "営業時間",
+          "en": "Business Hours",
+          "ko": "영업 시간",
+          "zh-tw": "營業時間"
+        },
+        "days": {
+          "ja": "月曜日 - 日曜日",
+          "en": "Monday - Sunday",
+          "ko": "월요일 - 일요일",
+          "zh-tw": "星期一 - 星期日"
+        },
+        "hours": {
+          "ja": "11:00 - 翌1:00",
+          "en": "11:00 - 1:00",
+          "ko": "11:00 - 익일 1:00",
+          "zh-tw": "11:00 - 隔日1:00"
+        },
+        "closedDay": {
+          "ja": "定休日: 不定休",
+          "en": "Closed: Irregular holidays",
+          "ko": "휴무일: 불규칙 휴무",
+          "zh-tw": "休息日: 不定期休假"
+        }
+      },
+      "social": {
+        "title": {
+          "ja": "SNSアカウント",
+          "en": "Social Media Accounts",
+          "ko": "소셜 미디어 계정",
+          "zh-tw": "社交媒體帳號"
+        },
+        "links": [
+          {
+            "platform": "Facebook",
+            "url": "#"
+          },
+          {
+            "platform": "Instagram",
+            "url": "#"
+          },
+          {
+            "platform": "Twitter",
+            "url": "#"
+          }
+        ]
+      },
+      "copyright": {
+        "ja": "© 2024 ラーメン専門店 麺や一徹. All rights reserved.",
+        "en": "© 2024 Ramen Specialist MENYA ITTEKI. All rights reserved.",
+        "ko": "© 2024 라멘 전문점 MENYA ITTEKI. All rights reserved.",
+        "zh-tw": "© 2024 拉麵專門店 麵屋一徹. All rights reserved."
+      }
+    },
+    "templateId": "brush",
+    "settings": {
+      "theme": "brush"
+    }
+  }
+}

@@ -1,27 +1,31 @@
 ---
+import { readFileSync } from 'fs';
+import { join } from 'path';
 import Layout from '../../layouts/Layout.astro';
 import ThemeKuraStorePage from '../../components/ThemeKuraStorePage';
-import * as mockData from '../../data/content';
 import type { PageData } from '../../services/dataMapper';
 
+const demoItem = JSON.parse(readFileSync(join(process.cwd(), 'demo_seed', 'output', 'demo-kappo.json'), 'utf-8'));
+const demoContent = demoItem.ContentData;
+
 const pageData: PageData = {
-  header: mockData.headerData,
-  hero: mockData.heroData,
-  about: mockData.aboutData,
-  menu: mockData.menuData,
-  storeInfo: mockData.storeInfoData,
-  contact: mockData.contactData,
-  footer: mockData.footerData,
-  gallery: mockData.galleryData,
-  staff: mockData.staffData,
-  reviews: mockData.reviewsData,
-  news: mockData.newsData,
-  access: mockData.accessData,
-  faq: mockData.faqData,
-  cta: mockData.ctaData,
-  pricing: mockData.pricingData,
-  company: mockData.companyData,
-  settings: mockData.settingsData,
+  header: demoContent.header,
+  hero: demoContent.hero,
+  about: demoContent.about,
+  menu: demoContent.menu,
+  storeInfo: demoContent.storeInfo,
+  contact: demoContent.contact,
+  footer: demoContent.footer,
+  gallery: demoContent.gallery,
+  staff: demoContent.staff,
+  reviews: demoContent.reviews,
+  news: demoContent.news,
+  access: demoContent.access,
+  faq: demoContent.faq,
+  cta: demoContent.cta,
+  pricing: demoContent.pricing,
+  company: demoContent.company,
+  settings: demoContent.settings,
 };
 ---
 

@@ -1,0 +1,1444 @@
+{
+  "store_id": "demo-steak",
+  "Subdomain": "demo-steak",
+  "RecordType": "LP_CONTENT",
+  "Status": "Published",
+  "CreatedAt": "2026-09-21T01:16:22.455Z",
+  "UpdatedAt": "2026-09-21T01:16:22.455Z",
+  "ContentData": {
+    "header": {
+      "logo": {
+        "text": {
+          "ja": "炭火ステーキ KUROBULL",
+          "en": "Charcoal Steak KUROBULL",
+          "ko": "숯불 스테이크 KUROBULL",
+          "zh-tw": "炭火牛排 KUROBULL"
+        }
+      },
+      "navigation": [
+        {
+          "id": "about",
+          "label": {
+            "ja": "コンセプト",
+            "en": "Concept",
+            "ko": "개념",
+            "zh-tw": "概念"
+          }
+        },
+        {
+          "id": "menu",
+          "label": {
+            "ja": "メニュー",
+            "en": "Menu",
+            "ko": "메뉴",
+            "zh-tw": "菜單"
+          }
+        },
+        {
+          "id": "pricing",
+          "label": {
+            "ja": "コース・プラン",
+            "en": "Course Plan",
+            "ko": "코스 플랜",
+            "zh-tw": "課程方案"
+          }
+        },
+        {
+          "id": "cta",
+          "label": {
+            "ja": "ご予約",
+            "en": "Reservation",
+            "ko": "예약",
+            "zh-tw": "預約"
+          }
+        },
+        {
+          "id": "gallery",
+          "label": {
+            "ja": "ギャラリー",
+            "en": "Gallery",
+            "ko": "갤러리",
+            "zh-tw": "畫廊"
+          }
+        },
+        {
+          "id": "staff",
+          "label": {
+            "ja": "スタッフ",
+            "en": "Staff",
+            "ko": "직원",
+            "zh-tw": "員工"
+          }
+        },
+        {
+          "id": "reviews",
+          "label": {
+            "ja": "お客様の声",
+            "en": "Customer Feedback",
+            "ko": "고객 후기",
+            "zh-tw": "客戶反饋"
+          }
+        },
+        {
+          "id": "news",
+          "label": {
+            "ja": "お知らせ",
+            "en": "Notice",
+            "ko": "공지사항",
+            "zh-tw": "最新消息"
+          }
+        },
+        {
+          "id": "storeInfo",
+          "label": {
+            "ja": "店舗情報",
+            "en": "Store Information",
+            "ko": "매장 정보",
+            "zh-tw": "店鋪資訊"
+          }
+        },
+        {
+          "id": "company",
+          "label": {
+            "ja": "運営会社",
+            "en": "Operating Company",
+            "ko": "운영 회사",
+            "zh-tw": "運營公司"
+          }
+        },
+        {
+          "id": "access",
+          "label": {
+            "ja": "アクセス",
+            "en": "Access",
+            "ko": "오시는 길",
+            "zh-tw": "交通資訊"
+          }
+        },
+        {
+          "id": "faq",
+          "label": {
+            "ja": "よくある質問",
+            "en": "FAQ",
+            "ko": "자주 묻는 질문",
+            "zh-tw": "常見問題"
+          }
+        },
+        {
+          "id": "contact",
+          "label": {
+            "ja": "お問い合わせ",
+            "en": "Contact Us",
+            "ko": "문의하기",
+            "zh-tw": "聯絡我們"
+          }
+        }
+      ]
+    },
+    "hero": {
+      "sectionTitle": {
+        "ja": "黒毛和牛を、\n炭火で焼き上げる。",
+        "en": "Japanese Wagyu,\nGrilled Over Charcoal.",
+        "ko": "흑모 와규를,\n숯불로 구워내다.",
+        "zh-tw": "黑毛和牛，\n炭火豪邁燒烤。"
+      },
+      "subtitle": {
+        "ja": "一頭ごとに厳選した黒毛和牛を、備長炭の炎で豪快に焼き上げる本格ステーキハウス",
+        "en": "An authentic steakhouse grilling carefully selected Japanese Wagyu over binchotan charcoal",
+        "ko": "엄선된 흑모 와규를 비장탄 숯불로 호쾌하게 구워내는 본격 스테이크 하우스",
+        "zh-tw": "嚴選黑毛和牛，以備長炭火豪邁燒烤的正宗牛排館"
+      },
+      "backgroundImage": "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=1920&q=80"
+    },
+    "about": {
+      "sectionTitle": {
+        "ja": "私たちのこだわり",
+        "en": "Our Commitment",
+        "ko": "우리의 고집",
+        "zh-tw": "我們的堅持"
+      },
+      "features": [
+        {
+          "title": {
+            "ja": "一頭ごとの厳選",
+            "en": "Selected One by One",
+            "ko": "한 마리씩 엄선",
+            "zh-tw": "逐頭嚴選"
+          },
+          "description": {
+            "ja": "提携農家から届く黒毛和牛を、部位ごとに目利きした職人が一頭ごとに厳選しています。",
+            "en": "Our craftsmen select Japanese Wagyu delivered from partner farms, evaluating each cut with an expert eye.",
+            "ko": "제휴 농가에서 들어오는 흑모 와규를 부위별로 안목 있는 장인이 한 마리씩 엄선하고 있습니다.",
+            "zh-tw": "來自合作農場的黑毛和牛，由職人依部位仔細鑑定，逐頭精選。"
+          },
+          "image": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=800&q=80"
+        },
+        {
+          "title": {
+            "ja": "備長炭の炎",
+            "en": "The Flame of Binchotan",
+            "ko": "비장탄의 불꽃",
+            "zh-tw": "備長炭之火"
+          },
+          "description": {
+            "ja": "高温で燃える備長炭の炎が、余分な脂を落としながら旨味だけを閉じ込めます。",
+            "en": "The high heat of binchotan charcoal renders away excess fat while locking in pure umami.",
+            "ko": "고온으로 타오르는 비장탄의 불꽃이 여분의 기름을 제거하며 감칠맛만을 가둡니다.",
+            "zh-tw": "備長炭高溫火焰在去除多餘油脂的同時，將美味完整封存。"
+          },
+          "image": "https://images.unsplash.com/photo-1558030006-450675393462?w=800&q=80"
+        },
+        {
+          "title": {
+            "ja": "職人の焼き技",
+            "en": "The Craftsman's Grilling Technique",
+            "ko": "장인의 굽기 기술",
+            "zh-tw": "職人的燒烤技藝"
+          },
+          "description": {
+            "ja": "肉の厚みと部位に応じて火加減を見極める、焼き師の熟練の技をご堪能ください。",
+            "en": "Enjoy the skilled technique of our grill master, who reads the thickness and cut of the meat to perfect every steak.",
+            "ko": "고기의 두께와 부위에 따라 불의 세기를 가늠하는 숙련된 기술을 만끽하십시오.",
+            "zh-tw": "請盡情享受燒烤師傅依肉的厚度與部位精準掌控火候的熟練技藝。"
+          },
+          "image": "https://images.unsplash.com/photo-1544025162-d76694265947?w=800&q=80"
+        }
+      ]
+    },
+    "menu": {
+      "sectionTitle": {
+        "ja": "お品書き",
+        "en": "Menu",
+        "ko": "메뉴",
+        "zh-tw": "菜單"
+      },
+      "sectionSubtitle": {
+        "ja": "心を込めて焼き上げる、こだわりの一皿",
+        "en": "A dish carefully grilled with heart",
+        "ko": "정성을 담아 구워내는 한 그릇",
+        "zh-tw": "用心燒烤的每一道料理"
+      },
+      "items": [
+        {
+          "name": {
+            "ja": "黒毛和牛サーロイン",
+            "en": "Wagyu Sirloin Steak",
+            "ko": "흑모 와규 서로인",
+            "zh-tw": "黑毛和牛沙朗牛排"
+          },
+          "description": {
+            "ja": "赤身と脂のバランスが絶妙な看板メニュー。",
+            "en": "Our signature dish with a perfect balance of lean meat and marbling.",
+            "ko": "살코기와 지방의 균형이 절묘한 대표 메뉴입니다.",
+            "zh-tw": "瘦肉與油花比例絕妙的招牌菜。"
+          },
+          "image": "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=800&q=80",
+          "price": "¥4,800"
+        },
+        {
+          "name": {
+            "ja": "リブロースステーキ",
+            "en": "Ribeye Steak",
+            "ko": "립로스 스테이크",
+            "zh-tw": "肋眼牛排"
+          },
+          "description": {
+            "ja": "霜降りの旨味が溶け出す、しっとり柔らかな一枚。",
+            "en": "A tender cut where marbled richness melts in every bite.",
+            "ko": "마블링의 감칠맛이 녹아드는 촉촉하고 부드러운 한 장입니다.",
+            "zh-tw": "雪花油花的鮮美融化其中，濕潤軟嫩。"
+          },
+          "image": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=800&q=80",
+          "price": "¥5,200"
+        },
+        {
+          "name": {
+            "ja": "アグー豚テンダーロイン",
+            "en": "Agu Pork Tenderloin",
+            "ko": "아구 돼지 안심",
+            "zh-tw": "阿古豬菲力"
+          },
+          "description": {
+            "ja": "沖縄県産アグー豚の希少部位を炭火で。",
+            "en": "A rare cut of Okinawan Agu pork, grilled over charcoal.",
+            "ko": "오키나와산 아구 돼지의 희귀 부위를 숯불로 구웠습니다.",
+            "zh-tw": "以炭火燒烤沖繩產阿古豬的稀有部位。"
+          },
+          "image": "https://images.unsplash.com/photo-1558030006-450675393462?w=800&q=80",
+          "price": "¥3,200"
+        },
+        {
+          "name": {
+            "ja": "炭火ハンバーグ",
+            "en": "Charcoal-grilled Hamburger Steak",
+            "ko": "숯불 함박스테이크",
+            "zh-tw": "炭火漢堡排"
+          },
+          "description": {
+            "ja": "挽きたての牛肉100%、肉汁溢れる自家製ハンバーグ。",
+            "en": "A juicy 100% beef hamburger steak made from freshly ground meat.",
+            "ko": "갓 다진 소고기 100%, 육즙이 넘치는 수제 함박스테이크입니다.",
+            "zh-tw": "現絞牛肉100%，肉汁豐盈的自製漢堡排。"
+          },
+          "image": "https://images.unsplash.com/photo-1544025162-d76694265947?w=800&q=80",
+          "price": "¥2,200"
+        },
+        {
+          "name": {
+            "ja": "骨付きカルビ",
+            "en": "Bone-in Short Rib",
+            "ko": "본갈비",
+            "zh-tw": "帶骨牛小排"
+          },
+          "description": {
+            "ja": "骨際の旨味を炭火でダイレクトに味わえる一品。",
+            "en": "A dish that lets you enjoy the rich flavor near the bone, straight from the charcoal grill.",
+            "ko": "뼈 주변의 감칠맛을 숯불로 직접 맛볼 수 있는 일품입니다.",
+            "zh-tw": "直接以炭火品嚐骨邊鮮美的絕品。"
+          },
+          "image": "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=800&q=80",
+          "price": "¥2,800"
+        },
+        {
+          "name": {
+            "ja": "炭火野菜盛り合わせ",
+            "en": "Charcoal-grilled Vegetable Platter",
+            "ko": "숯불 채소 모듬",
+            "zh-tw": "炭火時蔬拼盤"
+          },
+          "description": {
+            "ja": "旬の野菜を炭火でシンプルに。",
+            "en": "Seasonal vegetables, simply grilled over charcoal.",
+            "ko": "제철 채소를 숯불로 심플하게 구웠습니다.",
+            "zh-tw": "當季蔬菜以炭火簡單燒烤。"
+          },
+          "image": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=800&q=80",
+          "price": "¥980"
+        },
+        {
+          "name": {
+            "ja": "テールスープ",
+            "en": "Oxtail Soup",
+            "ko": "테일 수프",
+            "zh-tw": "牛尾湯"
+          },
+          "description": {
+            "ja": "じっくり煮込んだコク深いテールスープ。",
+            "en": "A rich, slow-simmered oxtail soup.",
+            "ko": "오랜 시간 끓인 깊은 맛의 테일 수프입니다.",
+            "zh-tw": "細火慢燉，滋味濃郁的牛尾湯。"
+          },
+          "image": "https://images.unsplash.com/photo-1558030006-450675393462?w=800&q=80",
+          "price": "¥600"
+        },
+        {
+          "name": {
+            "ja": "デザート",
+            "en": "Dessert",
+            "ko": "디저트",
+            "zh-tw": "甜點"
+          },
+          "description": {
+            "ja": "食後に楽しむ、季節のデザート。",
+            "en": "A seasonal dessert to enjoy after your meal.",
+            "ko": "식후에 즐기는 계절 디저트입니다.",
+            "zh-tw": "餐後享用的季節甜點。"
+          },
+          "image": "https://images.unsplash.com/photo-1544025162-d76694265947?w=800&q=80",
+          "price": "¥800"
+        }
+      ]
+    },
+    "gallery": {
+      "sectionTitle": {
+        "ja": "ギャラリー",
+        "en": "Gallery",
+        "ko": "갤러리",
+        "zh-tw": "畫廊"
+      },
+      "sectionSubtitle": {
+        "ja": "炭火とお肉の魅力を写真でお届け",
+        "en": "Discover the charm of charcoal and meat through photos",
+        "ko": "숯불과 고기의 매력을 사진으로 전해드립니다",
+        "zh-tw": "透過照片傳達炭火與肉品的魅力"
+      },
+      "categories": [
+        {
+          "ja": "すべて",
+          "en": "All",
+          "ko": "전체",
+          "zh-tw": "全部"
+        },
+        {
+          "ja": "料理",
+          "en": "Cuisine",
+          "ko": "요리",
+          "zh-tw": "料理"
+        },
+        {
+          "ja": "店内",
+          "en": "Interior",
+          "ko": "매장",
+          "zh-tw": "店內"
+        },
+        {
+          "ja": "イベント",
+          "en": "Events",
+          "ko": "이벤트",
+          "zh-tw": "活動"
+        }
+      ],
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=800&q=80",
+          "caption": {
+            "ja": "黒毛和牛サーロイン",
+            "en": "Wagyu Sirloin",
+            "ko": "흑모 와규 서로인",
+            "zh-tw": "黑毛和牛沙朗"
+          },
+          "category": {
+            "ja": "料理",
+            "en": "Cuisine",
+            "ko": "요리",
+            "zh-tw": "料理"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=800&q=80",
+          "caption": {
+            "ja": "備長炭の炎",
+            "en": "Binchotan Flame",
+            "ko": "비장탄 불꽃",
+            "zh-tw": "備長炭火焰"
+          },
+          "category": {
+            "ja": "料理",
+            "en": "Cuisine",
+            "ko": "요리",
+            "zh-tw": "料理"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1558030006-450675393462?w=800&q=80",
+          "caption": {
+            "ja": "焼き上げの瞬間",
+            "en": "The Moment of Grilling",
+            "ko": "굽는 순간",
+            "zh-tw": "燒烤瞬間"
+          },
+          "category": {
+            "ja": "料理",
+            "en": "Cuisine",
+            "ko": "요리",
+            "zh-tw": "料理"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1544025162-d76694265947?w=800&q=80",
+          "caption": {
+            "ja": "骨付きカルビ",
+            "en": "Bone-in Short Rib",
+            "ko": "본갈비",
+            "zh-tw": "帶骨牛小排"
+          },
+          "category": {
+            "ja": "料理",
+            "en": "Cuisine",
+            "ko": "요리",
+            "zh-tw": "料理"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80",
+          "caption": {
+            "ja": "落ち着いた店内",
+            "en": "Calm Interior",
+            "ko": "차분한 매장",
+            "zh-tw": "沉靜的店內"
+          },
+          "category": {
+            "ja": "店内",
+            "en": "Interior",
+            "ko": "매장",
+            "zh-tw": "店內"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&q=80",
+          "caption": {
+            "ja": "カウンター席",
+            "en": "Counter Seats",
+            "ko": "카운터석",
+            "zh-tw": "吧台座位"
+          },
+          "category": {
+            "ja": "店内",
+            "en": "Interior",
+            "ko": "매장",
+            "zh-tw": "店內"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80",
+          "caption": {
+            "ja": "落ち着いたテーブル席",
+            "en": "Relaxed Table Seating",
+            "ko": "여유로운 테이블석",
+            "zh-tw": "舒適的桌位"
+          },
+          "category": {
+            "ja": "店内",
+            "en": "Interior",
+            "ko": "매장",
+            "zh-tw": "店內"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=600&q=80",
+          "caption": {
+            "ja": "熟成肉の一枚",
+            "en": "A Cut of Aged Meat",
+            "ko": "숙성육 한 장",
+            "zh-tw": "熟成肉一片"
+          },
+          "category": {
+            "ja": "料理",
+            "en": "Cuisine",
+            "ko": "요리",
+            "zh-tw": "料理"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1552566626-52f8b828add9?w=800&q=80",
+          "caption": {
+            "ja": "記念日のお祝い",
+            "en": "Anniversary Celebration",
+            "ko": "기념일 축하",
+            "zh-tw": "紀念日慶祝"
+          },
+          "category": {
+            "ja": "イベント",
+            "en": "Events",
+            "ko": "이벤트",
+            "zh-tw": "活動"
+          }
+        }
+      ]
+    },
+    "staff": {
+      "sectionTitle": {
+        "ja": "スタッフ紹介",
+        "en": "Staff Introduction",
+        "ko": "직원 소개",
+        "zh-tw": "員工介紹"
+      },
+      "sectionSubtitle": {
+        "ja": "職人の技が、旨さを引き出します",
+        "en": "Craftsmanship brings out the best flavor",
+        "ko": "장인의 기술이 맛을 이끌어냅니다",
+        "zh-tw": "職人技藝，成就美味"
+      },
+      "members": [
+        {
+          "name": {
+            "ja": "黒田 龍一",
+            "en": "Ryuichi Kuroda",
+            "ko": "구로다 류이치",
+            "zh-tw": "黑田龍一"
+          },
+          "role": {
+            "ja": "オーナー・焼き師",
+            "en": "Owner and Grill Master",
+            "ko": "오너·구이 장인",
+            "zh-tw": "老闆・燒烤師"
+          },
+          "description": {
+            "ja": "炭火焼き一筋20年。肉の声を聞き、最高の一枚を焼き上げます。",
+            "en": "20 years dedicated to charcoal grilling. He listens to the meat to grill the perfect steak.",
+            "ko": "숯불구이 외길 20년. 고기의 소리를 듣고 최고의 한 장을 구워냅니다.",
+            "zh-tw": "專注炭火燒烤20年。傾聽肉的聲音，燒烤出最完美的一片。"
+          },
+          "image": "https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=600&q=80"
+        },
+        {
+          "name": {
+            "ja": "石田 誠",
+            "en": "Makoto Ishida",
+            "ko": "이시다 마코토",
+            "zh-tw": "石田誠"
+          },
+          "role": {
+            "ja": "ソムリエ",
+            "en": "Sommelier",
+            "ko": "소믈리에",
+            "zh-tw": "侍酒師"
+          },
+          "description": {
+            "ja": "お肉に合うワイン選びをお手伝いします。",
+            "en": "He helps you choose the perfect wine to pair with your steak.",
+            "ko": "고기에 어울리는 와인 선택을 도와드립니다.",
+            "zh-tw": "協助您挑選最適合牛排的美酒。"
+          },
+          "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&q=80"
+        },
+        {
+          "name": {
+            "ja": "中村 舞",
+            "en": "Mai Nakamura",
+            "ko": "나카무라 마이",
+            "zh-tw": "中村舞"
+          },
+          "role": {
+            "ja": "フロアスタッフ",
+            "en": "Floor Staff",
+            "ko": "홀 스태프",
+            "zh-tw": "外場人員"
+          },
+          "description": {
+            "ja": "お客様に寄り添った心地よい接客を心がけています。",
+            "en": "She strives to provide attentive and comfortable service tailored to each guest.",
+            "ko": "고객에게 다가가는 편안한 서비스를 위해 노력하고 있습니다.",
+            "zh-tw": "致力於提供貼心舒適的服務。"
+          },
+          "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80"
+        }
+      ]
+    },
+    "news": {
+      "sectionTitle": {
+        "ja": "お知らせ",
+        "en": "News",
+        "ko": "공지사항",
+        "zh-tw": "最新消息"
+      },
+      "sectionSubtitle": {
+        "ja": "最新情報をお届けします",
+        "en": "Latest updates",
+        "ko": "최신 정보를 전달합니다",
+        "zh-tw": "為您帶來最新消息"
+      },
+      "items": [
+        {
+          "date": "2024-12-01",
+          "category": "お知らせ",
+          "title": {
+            "ja": "年末年始の営業時間のご案内",
+            "en": "New Year's Business Hours",
+            "ko": "연말연시 영업시간 안내",
+            "zh-tw": "年末年初營業時間公告"
+          },
+          "content": {
+            "ja": "12月31日、1月1日はお休みとさせていただきます。",
+            "en": "We will be closed on December 31 and January 1.",
+            "ko": "12월 31일, 1월 1일은 휴무입니다.",
+            "zh-tw": "12月31日、1月1日公休。"
+          }
+        },
+        {
+          "date": "2024-11-15",
+          "category": "新メニュー",
+          "title": {
+            "ja": "骨付きカルビが新登場",
+            "en": "Bone-in Short Rib Now on the Menu",
+            "ko": "본갈비 신메뉴 등장",
+            "zh-tw": "全新帶骨牛小排上市"
+          },
+          "content": {
+            "ja": "骨際の旨味を炭火で。ぜひご賞味ください。",
+            "en": "Savor the rich flavor near the bone, grilled over charcoal.",
+            "ko": "뼈 주변의 감칠맛을 숯불로. 꼭 맛보세요.",
+            "zh-tw": "以炭火品嚐骨邊鮮美，敬請享用。"
+          }
+        },
+        {
+          "date": "2024-10-20",
+          "category": "イベント",
+          "title": {
+            "ja": "記念日プラン開始",
+            "en": "Anniversary Plan Now Available",
+            "ko": "기념일 플랜 시작",
+            "zh-tw": "紀念日方案開始"
+          },
+          "content": {
+            "ja": "大切な日に、特別な一皿をご用意します。",
+            "en": "We prepare a special dish for your important occasions.",
+            "ko": "중요한 날에 특별한 한 그릇을 준비합니다.",
+            "zh-tw": "為重要的日子準備特別的一餐。"
+          }
+        }
+      ]
+    },
+    "pricing": {
+      "sectionTitle": {
+        "ja": "コース・プラン",
+        "en": "Course Plans",
+        "ko": "코스 플랜",
+        "zh-tw": "課程方案"
+      },
+      "sectionSubtitle": {
+        "ja": "ご利用シーンに合わせた各種プラン",
+        "en": "Various plans tailored to your occasion",
+        "ko": "이용 상황에 맞춘 다양한 플랜",
+        "zh-tw": "依使用場景提供多種方案"
+      },
+      "plans": [
+        {
+          "name": {
+            "ja": "ランチ限定コース",
+            "en": "Lunch Limited Course",
+            "ko": "런치 한정 코스",
+            "zh-tw": "午餐限定套餐"
+          },
+          "description": {
+            "ja": "お手頃価格でステーキを楽しめる昼限定コース。",
+            "en": "A lunch-only course that lets you enjoy steak at an affordable price.",
+            "ko": "합리적인 가격으로 스테이크를 즐기는 점심 한정 코스입니다.",
+            "zh-tw": "以親民價格享用牛排的午間限定套餐。"
+          },
+          "price": "¥2,800",
+          "features": [
+            {
+              "ja": "本日のステーキ150g",
+              "en": "Today's Steak 150g",
+              "ko": "오늘의 스테이크 150g",
+              "zh-tw": "今日牛排150g"
+            },
+            {
+              "ja": "スープ",
+              "en": "Soup",
+              "ko": "수프",
+              "zh-tw": "湯品"
+            },
+            {
+              "ja": "サラダ",
+              "en": "Salad",
+              "ko": "샐러드",
+              "zh-tw": "沙拉"
+            },
+            {
+              "ja": "ライスまたはパン",
+              "en": "Rice or Bread",
+              "ko": "밥 또는 빵",
+              "zh-tw": "米飯或麵包"
+            }
+          ]
+        },
+        {
+          "name": {
+            "ja": "シェフおすすめコース",
+            "en": "Chef's Recommended Course",
+            "ko": "셰프 추천 코스",
+            "zh-tw": "主廚推薦套餐"
+          },
+          "description": {
+            "ja": "人気のサーロインを中心に構成した一番人気コース。",
+            "en": "Our most popular course, centered around our signature sirloin.",
+            "ko": "인기 있는 서로인을 중심으로 구성한 가장 인기 있는 코스입니다.",
+            "zh-tw": "以人氣沙朗為主的最受歡迎套餐。"
+          },
+          "price": "¥6,500",
+          "features": [
+            {
+              "ja": "前菜",
+              "en": "Appetizer",
+              "ko": "전채",
+              "zh-tw": "前菜"
+            },
+            {
+              "ja": "黒毛和牛サーロイン200g",
+              "en": "Wagyu Sirloin 200g",
+              "ko": "흑모 와규 서로인 200g",
+              "zh-tw": "黑毛和牛沙朗200g"
+            },
+            {
+              "ja": "炭火野菜",
+              "en": "Charcoal-grilled Vegetables",
+              "ko": "숯불 채소",
+              "zh-tw": "炭火時蔬"
+            },
+            {
+              "ja": "テールスープ",
+              "en": "Oxtail Soup",
+              "ko": "테일 수프",
+              "zh-tw": "牛尾湯"
+            },
+            {
+              "ja": "デザート",
+              "en": "Dessert",
+              "ko": "디저트",
+              "zh-tw": "甜點"
+            }
+          ],
+          "isPopular": true
+        },
+        {
+          "name": {
+            "ja": "プレミアム宴会コース",
+            "en": "Premium Banquet Course",
+            "ko": "프리미엄 연회 코스",
+            "zh-tw": "頂級宴會套餐"
+          },
+          "description": {
+            "ja": "記念日や接待に相応しい、贅を尽くした最上級コース。",
+            "en": "The ultimate course, perfect for anniversaries and business entertaining.",
+            "ko": "기념일과 접대에 어울리는 최고급 코스입니다.",
+            "zh-tw": "適合紀念日與商務接待的極致奢華套餐。"
+          },
+          "price": "¥12,000",
+          "features": [
+            {
+              "ja": "前菜盛り合わせ",
+              "en": "Appetizer Platter",
+              "ko": "전채 모듬",
+              "zh-tw": "前菜拼盤"
+            },
+            {
+              "ja": "リブロースステーキ200g",
+              "en": "Ribeye Steak 200g",
+              "ko": "립로스 스테이크 200g",
+              "zh-tw": "肋眼牛排200g"
+            },
+            {
+              "ja": "アグー豚テンダーロイン",
+              "en": "Agu Pork Tenderloin",
+              "ko": "아구 돼지 안심",
+              "zh-tw": "阿古豬菲力"
+            },
+            {
+              "ja": "骨付きカルビ",
+              "en": "Bone-in Short Rib",
+              "ko": "본갈비",
+              "zh-tw": "帶骨牛小排"
+            },
+            {
+              "ja": "土鍋ご飯",
+              "en": "Clay Pot Rice",
+              "ko": "돌솥밥",
+              "zh-tw": "土鍋飯"
+            },
+            {
+              "ja": "デザート・飲み物付き",
+              "en": "Dessert and Drink Included",
+              "ko": "디저트・음료 포함",
+              "zh-tw": "附甜點及飲品"
+            }
+          ]
+        }
+      ]
+    },
+    "faq": {
+      "sectionTitle": {
+        "ja": "よくあるご質問",
+        "en": "Frequently Asked Questions",
+        "ko": "자주 묻는 질문",
+        "zh-tw": "常見問題"
+      },
+      "sectionSubtitle": {
+        "ja": "お客様からのご質問にお答えします",
+        "en": "We answer questions from our customers",
+        "ko": "고객님의 질문에 답변드립니다",
+        "zh-tw": "為您解答常見疑問"
+      },
+      "items": [
+        {
+          "question": {
+            "ja": "予約は必要ですか？",
+            "en": "Is a reservation required?",
+            "ko": "예약이 필요한가요?",
+            "zh-tw": "需要預約嗎？"
+          },
+          "answer": {
+            "ja": "特に週末は満席になりやすいため、ご予約をおすすめしております。",
+            "en": "Reservations are recommended, especially on weekends when we tend to be fully booked.",
+            "ko": "특히 주말은 만석이 되기 쉬우므로 예약을 권장합니다.",
+            "zh-tw": "尤其週末容易滿席，建議提前預約。"
+          }
+        },
+        {
+          "question": {
+            "ja": "個室はありますか？",
+            "en": "Do you have private rooms?",
+            "ko": "개인실이 있나요?",
+            "zh-tw": "有包廂嗎？"
+          },
+          "answer": {
+            "ja": "2〜8名様用の個室を2室ご用意しております。",
+            "en": "We have two private rooms available for 2 to 8 guests.",
+            "ko": "2~8명용 개인실을 2개 마련하고 있습니다.",
+            "zh-tw": "設有2間可供2至8人使用的包廂。"
+          }
+        },
+        {
+          "question": {
+            "ja": "お肉の量は調整できますか？",
+            "en": "Can I adjust the portion size?",
+            "ko": "고기 양을 조절할 수 있나요?",
+            "zh-tw": "可以調整肉量嗎？"
+          },
+          "answer": {
+            "ja": "はい、+50gからグラム単位で調整可能です。",
+            "en": "Yes, you can adjust the portion in increments of 50g.",
+            "ko": "네, +50g부터 그램 단위로 조절 가능합니다.",
+            "zh-tw": "可以，最少可增加50g並以克為單位調整。"
+          }
+        },
+        {
+          "question": {
+            "ja": "クレジットカードは使えますか？",
+            "en": "Can I pay by credit card?",
+            "ko": "신용카드를 사용할 수 있나요?",
+            "zh-tw": "可以使用信用卡嗎？"
+          },
+          "answer": {
+            "ja": "主要クレジットカード・電子マネー・QR決済に対応しております。",
+            "en": "We accept major credit cards, e-money, and QR code payments.",
+            "ko": "주요 신용카드・전자화폐・QR 결제가 가능합니다.",
+            "zh-tw": "接受主要信用卡、電子支付及QR碼支付。"
+          }
+        },
+        {
+          "question": {
+            "ja": "子供と一緒に利用できますか？",
+            "en": "Can I bring children?",
+            "ko": "아이와 함께 이용할 수 있나요?",
+            "zh-tw": "可以帶小孩用餐嗎？"
+          },
+          "answer": {
+            "ja": "お子様用の椅子とメニューをご用意しております。",
+            "en": "We provide children's chairs and a kids' menu.",
+            "ko": "아동용 의자와 메뉴를 준비하고 있습니다.",
+            "zh-tw": "提供兒童座椅及兒童菜單。"
+          }
+        }
+      ]
+    },
+    "access": {
+      "sectionTitle": {
+        "ja": "アクセス",
+        "en": "Access",
+        "ko": "오시는 길",
+        "zh-tw": "交通資訊"
+      },
+      "sectionSubtitle": {
+        "ja": "店舗へのご案内",
+        "en": "Guide to the Store",
+        "ko": "매장 안내",
+        "zh-tw": "商店指南"
+      },
+      "address": {
+        "ja": "東京都港区〇〇 2-4-6",
+        "en": "2-4-6, XX, Minato, Tokyo",
+        "ko": "도쿄도 미나토구 〇〇 2-4-6",
+        "zh-tw": "東京都港區〇〇 2-4-6"
+      },
+      "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3579.1447437301044!2d127.68589831501648!3d26.21424098342371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34e56bd0b4a42ff1%3A0x36812e0e598f7d6b!2z54CP6Yar!5e0!3m2!1sja!2sjp!4v1234567890123!5m2!1sja!2sjp",
+      "parking": {
+        "title": {
+          "ja": "駐車場のご案内",
+          "en": "Parking Information",
+          "ko": "주차 정보",
+          "zh-tw": "停車資訊"
+        },
+        "description": {
+          "ja": "近隣の提携コインパーキングをご利用ください。",
+          "en": "Please use the nearby affiliated coin parking.",
+          "ko": "인근 제휴 동전 주차장을 이용해 주십시오.",
+          "zh-tw": "請使用附近的合作投幣停車場。"
+        },
+        "spaces": {
+          "ja": "提携駐車場 約5台",
+          "en": "Affiliated parking approx. 5 cars",
+          "ko": "제휴 주차장 약 5대",
+          "zh-tw": "合作停車場約5輛"
+        },
+        "notes": {
+          "ja": "お食事のお客様には1時間分のサービス券をお渡しします。",
+          "en": "Dining guests will receive a one-hour parking voucher.",
+          "ko": "식사하시는 고객님께는 1시간 서비스권을 드립니다.",
+          "zh-tw": "用餐顧客可獲得一小時停車優惠券。"
+        }
+      },
+      "transportation": {
+        "title": {
+          "ja": "公共交通機関をご利用の方",
+          "en": "For those using public transportation",
+          "ko": "대중교통을 이용하시는 분",
+          "zh-tw": "使用大眾運輸的顧客"
+        },
+        "methods": [
+          {
+            "type": {
+              "ja": "電車",
+              "en": "Train",
+              "ko": "기차",
+              "zh-tw": "電車"
+            },
+            "description": {
+              "ja": "〇〇線「××駅」より徒歩3分",
+              "en": "3 minutes on foot from XX Station",
+              "ko": "〇〇선 '××역'에서 도보 3분",
+              "zh-tw": "從〇〇線「××站」步行3分鐘"
+            }
+          },
+          {
+            "type": {
+              "ja": "バス",
+              "en": "Bus",
+              "ko": "버스",
+              "zh-tw": "巴士"
+            },
+            "description": {
+              "ja": "「△△」バス停より徒歩1分",
+              "en": "1 minute on foot from the △△ bus stop",
+              "ko": "'△△' 버스 정류장에서 도보 1분",
+              "zh-tw": "從「△△」巴士站步行1分鐘"
+            }
+          },
+          {
+            "type": {
+              "ja": "タクシー",
+              "en": "Taxi",
+              "ko": "택시",
+              "zh-tw": "計程車"
+            },
+            "description": {
+              "ja": "最寄り駅より約3分",
+              "en": "About 3 minutes from the nearest station",
+              "ko": "가까운 역에서 약 3분",
+              "zh-tw": "從最近車站約3分鐘"
+            }
+          }
+        ]
+      }
+    },
+    "storeInfo": {
+      "sectionTitle": {
+        "ja": "店舗情報",
+        "en": "Store Information",
+        "ko": "매장 정보",
+        "zh-tw": "店鋪資訊"
+      },
+      "mainImage": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=1200&q=80",
+      "mainImageCaption": {
+        "ja": "上質な空間で、極上のひとときをお過ごしください",
+        "en": "Enjoy a premium moment in a refined space",
+        "ko": "고급스러운 공간에서 최고의 시간을 보내세요",
+        "zh-tw": "在優雅空間中，享受極致時光"
+      },
+      "items": [
+        {
+          "ja": "東京都港区〇〇 2-4-6",
+          "en": "2-4-6, XX, Minato, Tokyo",
+          "ko": "도쿄도 미나토구 〇〇 2-4-6",
+          "zh-tw": "東京都港區〇〇 2-4-6"
+        },
+        {
+          "ja": "17:00 - 23:00（L.O. 22:00）",
+          "en": "17:00 - 23:00 (L.O. 22:00)",
+          "ko": "17:00 - 23:00 (L.O. 22:00)",
+          "zh-tw": "17:00 - 23:00（最後點餐22:00）"
+        },
+        {
+          "ja": "03-XXXX-XXXX",
+          "en": "03-XXXX-XXXX",
+          "ko": "03-XXXX-XXXX",
+          "zh-tw": "03-XXXX-XXXX"
+        },
+        {
+          "ja": "info@kurobull.example.com",
+          "en": "info@kurobull.example.com",
+          "ko": "info@kurobull.example.com",
+          "zh-tw": "info@kurobull.example.com"
+        }
+      ]
+    },
+    "contact": {
+      "sectionTitle": {
+        "ja": "お問い合わせ",
+        "en": "Contact Us",
+        "ko": "문의하기",
+        "zh-tw": "聯絡我們"
+      },
+      "sectionSubtitle": {
+        "ja": "ご予約やご質問など、お気軽にお問い合わせください",
+        "en": "Please feel free to contact us for reservations or inquiries.",
+        "ko": "예약이나 문의 사항이 있으시면 언제든지 문의해 주세요.",
+        "zh-tw": "如需預約或詢問，請隨時與我們聯繫。"
+      },
+      "fields": {
+        "name": {
+          "ja": "お名前",
+          "en": "Name",
+          "ko": "이름",
+          "zh-tw": "姓名"
+        },
+        "email": {
+          "ja": "メールアドレス",
+          "en": "Email Address",
+          "ko": "이메일 주소",
+          "zh-tw": "電子郵件地址"
+        },
+        "subject": {
+          "ja": "件名",
+          "en": "Subject",
+          "ko": "제목",
+          "zh-tw": "主題"
+        },
+        "message": {
+          "ja": "お問い合わせ内容",
+          "en": "Message",
+          "ko": "문의 내용",
+          "zh-tw": "訊息內容"
+        }
+      },
+      "submitButton": {
+        "ja": "送信する",
+        "en": "Send",
+        "ko": "보내기",
+        "zh-tw": "發送"
+      }
+    },
+    "cta": {
+      "sectionTitle": {
+        "ja": "ご予約・お問い合わせ",
+        "en": "Reservations and Inquiries",
+        "ko": "예약 및 문의",
+        "zh-tw": "預約與詢問"
+      },
+      "sectionSubtitle": {
+        "ja": "皆様のご来店を心よりお待ちしております",
+        "en": "We sincerely look forward to your visit.",
+        "ko": "여러분의 방문을 진심으로 기다립니다.",
+        "zh-tw": "我們衷心期待您的光臨。"
+      },
+      "description": {
+        "ja": "記念日のお祝いや接待など、様々なシーンでご利用いただけます。",
+        "en": "Perfect for anniversaries, business entertaining, and more.",
+        "ko": "기념일 축하나 접대 등 다양한 상황에서 이용하실 수 있습니다.",
+        "zh-tw": "適合紀念日慶祝、商務接待等各種場合。"
+      },
+      "backgroundImage": "https://images.unsplash.com/photo-1558030006-450675393462?w=1600&q=80",
+      "buttons": [
+        {
+          "text": {
+            "ja": "お電話でご予約",
+            "en": "Reserve by Phone",
+            "ko": "전화로 예약하기",
+            "zh-tw": "電話預約"
+          },
+          "link": "#contact",
+          "type": "primary"
+        },
+        {
+          "text": {
+            "ja": "Webでお問い合わせ",
+            "en": "Inquire via Web",
+            "ko": "웹으로 문의하기",
+            "zh-tw": "網上詢問"
+          },
+          "link": "#contact",
+          "type": "secondary"
+        }
+      ]
+    },
+    "reviews": {
+      "sectionTitle": {
+        "ja": "お客様の声",
+        "en": "Customer Voices",
+        "ko": "고객의 목소리",
+        "zh-tw": "顧客的聲音"
+      },
+      "sectionSubtitle": {
+        "ja": "ご来店いただいたお客様からのメッセージ",
+        "en": "Messages from customers who visited us",
+        "ko": "방문한 고객의 메시지",
+        "zh-tw": "來店顧客的留言"
+      },
+      "reviews": [
+        {
+          "name": {
+            "ja": "田中 良太",
+            "en": "Ryota Tanaka",
+            "ko": "타나카 료타",
+            "zh-tw": "田中良太"
+          },
+          "rating": 5,
+          "date": "2024-11-15",
+          "comment": {
+            "ja": "炭火の香りと肉の旨味が最高でした。特別な日にまた来ます。",
+            "en": "The aroma of charcoal and the flavor of the meat were amazing. I'll be back for another special occasion.",
+            "ko": "숯불 향과 고기의 풍미가 최고였습니다. 특별한 날에 또 오겠습니다.",
+            "zh-tw": "炭火香氣與肉的美味令人驚艷，特別的日子還會再來。"
+          },
+          "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&q=80"
+        },
+        {
+          "name": {
+            "ja": "佐藤 美香",
+            "en": "Mika Sato",
+            "ko": "사토 미카",
+            "zh-tw": "佐藤美香"
+          },
+          "rating": 5,
+          "date": "2024-11-10",
+          "comment": {
+            "ja": "サーロインが柔らかくて感動しました。接客も丁寧でした。",
+            "en": "The sirloin was so tender it was moving. The service was also very attentive.",
+            "ko": "서로인이 부드러워서 감동했습니다. 서비스도 정중했습니다.",
+            "zh-tw": "沙朗牛排軟嫩令人感動，服務也十分細心。"
+          },
+          "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80"
+        },
+        {
+          "name": {
+            "ja": "鈴木 健一",
+            "en": "Kenichi Suzuki",
+            "ko": "스즈키 켄이치",
+            "zh-tw": "鈴木健一"
+          },
+          "rating": 4,
+          "date": "2024-10-28",
+          "comment": {
+            "ja": "量もしっかりあって満足。次は骨付きカルビを食べたいです。",
+            "en": "The portions were generous and satisfying. Next time I want to try the bone-in short rib.",
+            "ko": "양도 충분해서 만족스러웠습니다. 다음엔 본갈비를 먹고 싶습니다.",
+            "zh-tw": "分量十足令人滿足，下次想嘗試帶骨牛小排。"
+          },
+          "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80"
+        }
+      ]
+    },
+    "company": {
+      "sectionTitle": {
+        "ja": "運営会社情報",
+        "en": "Company Information",
+        "ko": "운영 회사 정보",
+        "zh-tw": "運營公司資訊"
+      },
+      "sectionSubtitle": {
+        "ja": "食を通じて地域社会に貢献する",
+        "en": "Contributing to the local community through food",
+        "ko": "음식을 통해 지역 사회에 기여하기",
+        "zh-tw": "通過美食貢獻地方社區"
+      },
+      "philosophy": {
+        "title": {
+          "ja": "経営理念",
+          "en": "Management Philosophy",
+          "ko": "경영 철학",
+          "zh-tw": "經營理念"
+        },
+        "content": {
+          "ja": "「炭火ステーキ KUROBULL」は、素材への敬意と職人の技術、真心のこもったおもてなしを通じて、お客様に忘れられない一皿をお届けすることを使命としています。",
+          "en": "\"Charcoal Steak KUROBULL\" is committed to delivering an unforgettable dish to every guest through respect for ingredients, skilled craftsmanship, and heartfelt hospitality.",
+          "ko": "'숯불 스테이크 KUROBULL'는 재료에 대한 경의와 장인의 기술, 진심 어린 환대를 통해 손님에게 잊을 수 없는 한 그릇을 선사하는 것을 사명으로 하고 있습니다.",
+          "zh-tw": "「炭火牛排 KUROBULL」秉持對食材的尊重、職人的技藝與真誠的款待，致力於為每位顧客獻上難忘的一餐。"
+        }
+      },
+      "history": {
+        "title": {
+          "ja": "沿革",
+          "en": "History",
+          "ko": "연혁",
+          "zh-tw": "沿革"
+        },
+        "timeline": [
+          {
+            "year": "2016年",
+            "event": {
+              "ja": "炭火ステーキ KUROBULL 創業",
+              "en": "Founding of Charcoal Steak KUROBULL",
+              "ko": "숯불 스테이크 KUROBULL 창업",
+              "zh-tw": "炭火牛排 KUROBULL 創業"
+            }
+          },
+          {
+            "year": "2018年",
+            "event": {
+              "ja": "店舗を増築し、席数を拡大",
+              "en": "Expanded the restaurant and increased seating capacity",
+              "ko": "매장을 증축하여 좌석 수 확대",
+              "zh-tw": "擴建店舖並增加座位數"
+            }
+          },
+          {
+            "year": "2021年",
+            "event": {
+              "ja": "テイクアウト・デリバリー事業を開始",
+              "en": "Started takeout and delivery service",
+              "ko": "테이크아웃 및 배달 사업 시작",
+              "zh-tw": "開始外帶及外送服務"
+            }
+          }
+        ]
+      },
+      "companyInfo": {
+        "title": {
+          "ja": "会社概要",
+          "en": "Company Overview",
+          "ko": "회사 개요",
+          "zh-tw": "公司概況"
+        },
+        "items": [
+          {
+            "label": {
+              "ja": "屋号",
+              "en": "Store Name",
+              "ko": "상호",
+              "zh-tw": "店名"
+            },
+            "value": {
+              "ja": "炭火ステーキ KUROBULL",
+              "en": "Charcoal Steak KUROBULL",
+              "ko": "숯불 스테이크 KUROBULL",
+              "zh-tw": "炭火牛排 KUROBULL"
+            }
+          },
+          {
+            "label": {
+              "ja": "設立",
+              "en": "Established",
+              "ko": "설립",
+              "zh-tw": "成立"
+            },
+            "value": {
+              "ja": "2016年5月",
+              "en": "5月 2016",
+              "ko": "2016년 5月",
+              "zh-tw": "2016年5月"
+            }
+          },
+          {
+            "label": {
+              "ja": "代表者",
+              "en": "Representative",
+              "ko": "대표자",
+              "zh-tw": "代表人"
+            },
+            "value": {
+              "ja": "黒田 龍一",
+              "en": "Ryuichi Kuroda",
+              "ko": "구로다 류이치",
+              "zh-tw": "黑田龍一"
+            }
+          },
+          {
+            "label": {
+              "ja": "所在地",
+              "en": "Location",
+              "ko": "위치",
+              "zh-tw": "所在地"
+            },
+            "value": {
+              "ja": "東京都港区〇〇 2-4-6",
+              "en": "2-4-6, XX, Minato, Tokyo",
+              "ko": "도쿄도 미나토구 〇〇 2-4-6",
+              "zh-tw": "東京都港區〇〇 2-4-6"
+            }
+          },
+          {
+            "label": {
+              "ja": "事業内容",
+              "en": "Business Activities",
+              "ko": "사업 내용",
+              "zh-tw": "業務內容"
+            },
+            "value": {
+              "ja": "飲食店経営",
+              "en": "Restaurant management",
+              "ko": "식당 경영",
+              "zh-tw": "餐飲經營"
+            }
+          },
+          {
+            "label": {
+              "ja": "従業員数",
+              "en": "Number of Employees",
+              "ko": "직원 수",
+              "zh-tw": "員工人數"
+            },
+            "value": {
+              "ja": "約25名（パート・アルバイト含む）",
+              "en": "Approx. 25 (including part-time staff)",
+              "ko": "약 25명(파트타임 포함)",
+              "zh-tw": "約25人（含兼職員工）"
+            }
+          }
+        ]
+      }
+    },
+    "footer": {
+      "logo": {
+        "ja": "炭火ステーキ KUROBULL",
+        "en": "Charcoal Steak KUROBULL",
+        "ko": "숯불 스테이크 KUROBULL",
+        "zh-tw": "炭火牛排 KUROBULL"
+      },
+      "description": {
+        "ja": "炎の熱で、素材の真価を引き出します。",
+        "en": "We bring out the true value of ingredients through the heat of the flame.",
+        "ko": "불의 열기로 재료의 진가를 이끌어냅니다.",
+        "zh-tw": "以炎火之熱，引出食材真正的價值。"
+      },
+      "businessHours": {
+        "title": {
+          "ja": "営業時間",
+          "en": "Business Hours",
+          "ko": "영업 시간",
+          "zh-tw": "營業時間"
+        },
+        "days": {
+          "ja": "月曜日 - 日曜日",
+          "en": "Monday - Sunday",
+          "ko": "월요일 - 일요일",
+          "zh-tw": "星期一 - 星期日"
+        },
+        "hours": {
+          "ja": "17:00 - 23:00",
+          "en": "17:00 - 23:00",
+          "ko": "17:00 - 23:00",
+          "zh-tw": "17:00 - 23:00"
+        },
+        "closedDay": {
+          "ja": "定休日: 不定休",
+          "en": "Closed: Irregular holidays",
+          "ko": "휴무일: 불규칙 휴무",
+          "zh-tw": "休息日: 不定期休假"
+        }
+      },
+      "social": {
+        "title": {
+          "ja": "SNSアカウント",
+          "en": "Social Media Accounts",
+          "ko": "소셜 미디어 계정",
+          "zh-tw": "社交媒體帳號"
+        },
+        "links": [
+          {
+            "platform": "Facebook",
+            "url": "#"
+          },
+          {
+            "platform": "Instagram",
+            "url": "#"
+          },
+          {
+            "platform": "Twitter",
+            "url": "#"
+          }
+        ]
+      },
+      "copyright": {
+        "ja": "© 2024 炭火ステーキ KUROBULL. All rights reserved.",
+        "en": "© 2024 Charcoal Steak KUROBULL. All rights reserved.",
+        "ko": "© 2024 숯불 스테이크 KUROBULL. All rights reserved.",
+        "zh-tw": "© 2024 炭火牛排 KUROBULL. All rights reserved."
+      }
+    },
+    "templateId": "ember",
+    "settings": {
+      "theme": "ember"
+    }
+  }
+}

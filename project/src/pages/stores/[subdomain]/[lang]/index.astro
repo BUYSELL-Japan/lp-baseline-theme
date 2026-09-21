@@ -11,6 +11,11 @@ import ThemeEmberStorePage from '../../../../components/ThemeEmberStorePage';
 import ThemeWarmStorePage from '../../../../components/ThemeWarmStorePage';
 import ThemeBlazeStorePage from '../../../../components/ThemeBlazeStorePage';
 import ThemeCharStorePage from '../../../../components/ThemeCharStorePage';
+import ThemeKuraStorePage from '../../../../components/ThemeKuraStorePage';
+import ThemeShiroStorePage from '../../../../components/ThemeShiroStorePage';
+import ThemeBrushStorePage from '../../../../components/ThemeBrushStorePage';
+import ThemeMistStorePage from '../../../../components/ThemeMistStorePage';
+import ThemePopStorePage from '../../../../components/ThemePopStorePage';
 import type { Language } from '../../../../contexts/LanguageContext';
 
 export async function getStaticPaths() {
@@ -93,4 +98,9 @@ const alternateLinks = [
   {currentTheme === 'warm' && <ThemeWarmStorePage client:only="react" pageData={pageData} initialLanguage={lang as Language} basePath={currentPath} />}
   {currentTheme === 'blaze' && <ThemeBlazeStorePage client:only="react" pageData={pageData} initialLanguage={lang as Language} basePath={currentPath} />}
   {currentTheme === 'char' && <ThemeCharStorePage client:only="react" pageData={pageData} initialLanguage={lang as Language} basePath={currentPath} />}
+  {currentTheme === 'kura' && <ThemeKuraStorePage client:only="react" pageData={pageData} initialLanguage={lang as Language} basePath={currentPath} />}
+  {currentTheme === 'shiro' && <ThemeShiroStorePage client:only="react" pageData={pageData} initialLanguage={lang as Language} basePath={currentPath} />}
+  {currentTheme === 'brush' && <ThemeBrushStorePage client:only="react" pageData={pageData} initialLanguage={lang as Language} basePath={currentPath} />}
+  {currentTheme === 'mist' && <ThemeMistStorePage client:only="react" pageData={pageData} initialLanguage={lang as Language} basePath={currentPath} />}
+  {currentTheme === 'pop' && <ThemePopStorePage client:only="react" pageData={pageData} initialLanguage={lang as Language} basePath={currentPath} />}
 </Layout>

@@ -1,0 +1,1450 @@
+{
+  "store_id": "demo-yakiniku",
+  "Subdomain": "demo-yakiniku",
+  "RecordType": "LP_CONTENT",
+  "Status": "Published",
+  "CreatedAt": "2026-09-21T01:16:22.455Z",
+  "UpdatedAt": "2026-09-21T01:16:22.455Z",
+  "ContentData": {
+    "header": {
+      "logo": {
+        "text": {
+          "ja": "焼肉ダイニング 炎",
+          "en": "Yakiniku Dining HONOO",
+          "ko": "야키니쿠 다이닝 HONOO",
+          "zh-tw": "燒肉餐廳 炎"
+        }
+      },
+      "navigation": [
+        {
+          "id": "about",
+          "label": {
+            "ja": "コンセプト",
+            "en": "Concept",
+            "ko": "개념",
+            "zh-tw": "概念"
+          }
+        },
+        {
+          "id": "menu",
+          "label": {
+            "ja": "メニュー",
+            "en": "Menu",
+            "ko": "메뉴",
+            "zh-tw": "菜單"
+          }
+        },
+        {
+          "id": "pricing",
+          "label": {
+            "ja": "コース・プラン",
+            "en": "Course Plan",
+            "ko": "코스 플랜",
+            "zh-tw": "課程方案"
+          }
+        },
+        {
+          "id": "cta",
+          "label": {
+            "ja": "ご予約",
+            "en": "Reservation",
+            "ko": "예약",
+            "zh-tw": "預約"
+          }
+        },
+        {
+          "id": "gallery",
+          "label": {
+            "ja": "ギャラリー",
+            "en": "Gallery",
+            "ko": "갤러리",
+            "zh-tw": "畫廊"
+          }
+        },
+        {
+          "id": "staff",
+          "label": {
+            "ja": "スタッフ",
+            "en": "Staff",
+            "ko": "직원",
+            "zh-tw": "員工"
+          }
+        },
+        {
+          "id": "reviews",
+          "label": {
+            "ja": "お客様の声",
+            "en": "Customer Feedback",
+            "ko": "고객 후기",
+            "zh-tw": "客戶反饋"
+          }
+        },
+        {
+          "id": "news",
+          "label": {
+            "ja": "お知らせ",
+            "en": "Notice",
+            "ko": "공지사항",
+            "zh-tw": "最新消息"
+          }
+        },
+        {
+          "id": "storeInfo",
+          "label": {
+            "ja": "店舗情報",
+            "en": "Store Information",
+            "ko": "매장 정보",
+            "zh-tw": "店鋪資訊"
+          }
+        },
+        {
+          "id": "company",
+          "label": {
+            "ja": "運営会社",
+            "en": "Operating Company",
+            "ko": "운영 회사",
+            "zh-tw": "運營公司"
+          }
+        },
+        {
+          "id": "access",
+          "label": {
+            "ja": "アクセス",
+            "en": "Access",
+            "ko": "오시는 길",
+            "zh-tw": "交通資訊"
+          }
+        },
+        {
+          "id": "faq",
+          "label": {
+            "ja": "よくある質問",
+            "en": "FAQ",
+            "ko": "자주 묻는 질문",
+            "zh-tw": "常見問題"
+          }
+        },
+        {
+          "id": "contact",
+          "label": {
+            "ja": "お問い合わせ",
+            "en": "Contact Us",
+            "ko": "문의하기",
+            "zh-tw": "聯絡我們"
+          }
+        }
+      ]
+    },
+    "hero": {
+      "sectionTitle": {
+        "ja": "国産牛を、\n炎とともに味わう。",
+        "en": "Domestic Beef,\nSavored with Fire.",
+        "ko": "국산 소고기를,\n불꽃과 함께 맛보다.",
+        "zh-tw": "國產牛肉，\n伴隨炎火品味。"
+      },
+      "subtitle": {
+        "ja": "厳選した国産牛を思う存分楽しめるダイナミックな焼肉店",
+        "en": "A dynamic yakiniku restaurant where you can fully enjoy carefully selected domestic beef",
+        "ko": "엄선된 국산 소고기를 마음껏 즐길 수 있는 다이나믹한 고기집",
+        "zh-tw": "盡情享用嚴選國產牛肉的動感燒肉店"
+      },
+      "backgroundImage": "https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=1920&q=80"
+    },
+    "about": {
+      "sectionTitle": {
+        "ja": "私たちのこだわり",
+        "en": "Our Commitment",
+        "ko": "우리의 고집",
+        "zh-tw": "我們的堅持"
+      },
+      "features": [
+        {
+          "title": {
+            "ja": "厳選された国産牛",
+            "en": "Carefully Selected Domestic Beef",
+            "ko": "엄선된 국산 소고기",
+            "zh-tw": "嚴選國產牛肉"
+          },
+          "description": {
+            "ja": "信頼できる産地から届く国産牛を、部位ごとに丁寧に見極めています。",
+            "en": "We carefully evaluate domestic beef from trusted regions, cut by cut.",
+            "ko": "믿을 수 있는 산지에서 들어오는 국산 소고기를 부위별로 정성껏 살핍니다.",
+            "zh-tw": "來自可信賴產地的國產牛肉，依部位仔細鑑定。"
+          },
+          "image": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&q=80"
+        },
+        {
+          "title": {
+            "ja": "炎で仕上げる香り",
+            "en": "The Aroma Finished by Fire",
+            "ko": "불꽃으로 완성하는 향",
+            "zh-tw": "炎火完成的香氣"
+          },
+          "description": {
+            "ja": "強い炎で表面を香ばしく仕上げ、肉の旨味を引き立てます。",
+            "en": "The intense flame sears the surface, bringing out the meat's rich flavor.",
+            "ko": "강한 불꽃으로 표면을 고소하게 마무리하여 고기의 감칠맛을 살립니다.",
+            "zh-tw": "以強烈火焰將表面烤出焦香，襯托出肉的美味。"
+          },
+          "image": "https://images.unsplash.com/photo-1544025162-d76694265947?w=800&q=80"
+        },
+        {
+          "title": {
+            "ja": "活気あふれる空間",
+            "en": "A Lively Atmosphere",
+            "ko": "활기 넘치는 공간",
+            "zh-tw": "充滿活力的空間"
+          },
+          "description": {
+            "ja": "仲間と炎を囲み、賑やかに楽しめる空間づくりを大切にしています。",
+            "en": "We value creating a lively space where you can gather with friends around the flame.",
+            "ko": "친구들과 불을 둘러싸고 즐겁게 즐길 수 있는 공간을 중요하게 여깁니다.",
+            "zh-tw": "重視打造能與夥伴圍繞炎火、熱鬧享用的空間。"
+          },
+          "image": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=800&q=80"
+        }
+      ]
+    },
+    "menu": {
+      "sectionTitle": {
+        "ja": "お品書き",
+        "en": "Menu",
+        "ko": "메뉴",
+        "zh-tw": "菜單"
+      },
+      "sectionSubtitle": {
+        "ja": "厳選国産牛を、豪快に。",
+        "en": "Carefully selected domestic beef, served boldly.",
+        "ko": "엄선 국산 소고기를 호쾌하게",
+        "zh-tw": "嚴選國產牛肉，豪邁上桌"
+      },
+      "items": [
+        {
+          "name": {
+            "ja": "特選カルビ",
+            "en": "Premium Short Rib",
+            "ko": "특선 갈비",
+            "zh-tw": "特選牛小排"
+          },
+          "description": {
+            "ja": "甘みのある脂が特徴の看板カルビ。",
+            "en": "Our signature short rib known for its sweet marbling.",
+            "ko": "단맛이 있는 지방이 특징인 대표 갈비입니다.",
+            "zh-tw": "以甘甜油脂為特色的招牌牛小排。"
+          },
+          "image": "https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=800&q=80",
+          "price": "¥1,800"
+        },
+        {
+          "name": {
+            "ja": "ロース",
+            "en": "Loin",
+            "ko": "로스",
+            "zh-tw": "里肌"
+          },
+          "description": {
+            "ja": "赤身の旨味を存分に味わえる一枚。",
+            "en": "A cut that lets you fully savor the flavor of lean meat.",
+            "ko": "살코기의 감칠맛을 마음껏 느낄 수 있는 한 장입니다.",
+            "zh-tw": "充分享受瘦肉美味的一片。"
+          },
+          "image": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&q=80",
+          "price": "¥1,600"
+        },
+        {
+          "name": {
+            "ja": "ハラミ",
+            "en": "Skirt Steak",
+            "ko": "안창살",
+            "zh-tw": "橫膈膜肉"
+          },
+          "description": {
+            "ja": "柔らかくジューシーな人気の部位。",
+            "en": "A popular cut known for being tender and juicy.",
+            "ko": "부드럽고 육즙이 풍부한 인기 부위입니다.",
+            "zh-tw": "軟嫩多汁的人氣部位。"
+          },
+          "image": "https://images.unsplash.com/photo-1544025162-d76694265947?w=800&q=80",
+          "price": "¥1,400"
+        },
+        {
+          "name": {
+            "ja": "タン塩",
+            "en": "Salted Beef Tongue",
+            "ko": "우설 소금구이",
+            "zh-tw": "鹽味牛舌"
+          },
+          "description": {
+            "ja": "レモンと塩でさっぱりと仕上げた一品。",
+            "en": "A refreshing dish finished with lemon and salt.",
+            "ko": "레몬과 소금으로 깔끔하게 마무리한 요리입니다.",
+            "zh-tw": "以檸檬與鹽調製，清爽的一道菜。"
+          },
+          "image": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=800&q=80",
+          "price": "¥1,200"
+        },
+        {
+          "name": {
+            "ja": "ホルモン",
+            "en": "Beef Offal",
+            "ko": "곱창",
+            "zh-tw": "牛雜"
+          },
+          "description": {
+            "ja": "下処理にこだわった臭みのないホルモン。",
+            "en": "Carefully prepared offal with no unpleasant odor.",
+            "ko": "손질에 신경 쓴 잡내 없는 곱창입니다.",
+            "zh-tw": "精心處理，毫無異味的牛雜。"
+          },
+          "image": "https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=800&q=80",
+          "price": "¥980"
+        },
+        {
+          "name": {
+            "ja": "野菜盛り合わせ",
+            "en": "Assorted Vegetables",
+            "ko": "채소 모듬",
+            "zh-tw": "時蔬拼盤"
+          },
+          "description": {
+            "ja": "焼肉に合う新鮮野菜の盛り合わせ。",
+            "en": "A fresh vegetable platter that pairs perfectly with yakiniku.",
+            "ko": "고기구이에 어울리는 신선한 채소 모듬입니다.",
+            "zh-tw": "與燒肉相配的新鮮蔬菜拼盤。"
+          },
+          "image": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&q=80",
+          "price": "¥780"
+        },
+        {
+          "name": {
+            "ja": "クッパ",
+            "en": "Gukbap (Korean Soup with Rice)",
+            "ko": "국밥",
+            "zh-tw": "湯飯"
+          },
+          "description": {
+            "ja": "食事の締めに人気のスープご飯。",
+            "en": "A popular soup-and-rice dish to finish your meal.",
+            "ko": "식사 마무리로 인기 있는 국밥입니다.",
+            "zh-tw": "作為餐後收尾的人氣湯飯。"
+          },
+          "image": "https://images.unsplash.com/photo-1544025162-d76694265947?w=800&q=80",
+          "price": "¥680"
+        },
+        {
+          "name": {
+            "ja": "アイスクリーム",
+            "en": "Ice Cream",
+            "ko": "아이스크림",
+            "zh-tw": "冰淇淋"
+          },
+          "description": {
+            "ja": "焼肉の後にさっぱり楽しめるデザート。",
+            "en": "A refreshing dessert to enjoy after yakiniku.",
+            "ko": "고기구이 후 깔끔하게 즐기는 디저트입니다.",
+            "zh-tw": "燒肉後清爽享用的甜點。"
+          },
+          "image": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=800&q=80",
+          "price": "¥480"
+        }
+      ]
+    },
+    "gallery": {
+      "sectionTitle": {
+        "ja": "ギャラリー",
+        "en": "Gallery",
+        "ko": "갤러리",
+        "zh-tw": "畫廊"
+      },
+      "sectionSubtitle": {
+        "ja": "炎とお肉の躍動を写真でお届け",
+        "en": "The dynamic energy of fire and meat, captured in photos",
+        "ko": "불꽃과 고기의 생동감을 사진으로 전해드립니다",
+        "zh-tw": "透過照片傳達炎火與肉品的躍動感"
+      },
+      "categories": [
+        {
+          "ja": "すべて",
+          "en": "All",
+          "ko": "전체",
+          "zh-tw": "全部"
+        },
+        {
+          "ja": "料理",
+          "en": "Cuisine",
+          "ko": "요리",
+          "zh-tw": "料理"
+        },
+        {
+          "ja": "店内",
+          "en": "Interior",
+          "ko": "매장",
+          "zh-tw": "店內"
+        },
+        {
+          "ja": "イベント",
+          "en": "Events",
+          "ko": "이벤트",
+          "zh-tw": "活動"
+        }
+      ],
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=800&q=80",
+          "caption": {
+            "ja": "特選カルビ",
+            "en": "Premium Short Rib",
+            "ko": "특선 갈비",
+            "zh-tw": "特選牛小排"
+          },
+          "category": {
+            "ja": "料理",
+            "en": "Cuisine",
+            "ko": "요리",
+            "zh-tw": "料理"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&q=80",
+          "caption": {
+            "ja": "焼き上がりの瞬間",
+            "en": "The Moment It's Grilled",
+            "ko": "구워지는 순간",
+            "zh-tw": "燒烤瞬間"
+          },
+          "category": {
+            "ja": "料理",
+            "en": "Cuisine",
+            "ko": "요리",
+            "zh-tw": "料理"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1544025162-d76694265947?w=800&q=80",
+          "caption": {
+            "ja": "ハラミの盛り付け",
+            "en": "Skirt Steak Plating",
+            "ko": "안창살 플레이팅",
+            "zh-tw": "橫膈膜肉擺盤"
+          },
+          "category": {
+            "ja": "料理",
+            "en": "Cuisine",
+            "ko": "요리",
+            "zh-tw": "料理"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=800&q=80",
+          "caption": {
+            "ja": "タン塩",
+            "en": "Salted Beef Tongue",
+            "ko": "우설 소금구이",
+            "zh-tw": "鹽味牛舌"
+          },
+          "category": {
+            "ja": "料理",
+            "en": "Cuisine",
+            "ko": "요리",
+            "zh-tw": "料理"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80",
+          "caption": {
+            "ja": "賑やかな店内",
+            "en": "Lively Interior",
+            "ko": "활기찬 매장",
+            "zh-tw": "熱鬧的店內"
+          },
+          "category": {
+            "ja": "店内",
+            "en": "Interior",
+            "ko": "매장",
+            "zh-tw": "店內"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&q=80",
+          "caption": {
+            "ja": "グループ席",
+            "en": "Group Seating",
+            "ko": "단체석",
+            "zh-tw": "團體座位"
+          },
+          "category": {
+            "ja": "店内",
+            "en": "Interior",
+            "ko": "매장",
+            "zh-tw": "店內"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80",
+          "caption": {
+            "ja": "焼き台のあるテーブル",
+            "en": "Grill Tables",
+            "ko": "화로 테이블",
+            "zh-tw": "設有烤爐的桌位"
+          },
+          "category": {
+            "ja": "店内",
+            "en": "Interior",
+            "ko": "매장",
+            "zh-tw": "店內"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=600&q=80",
+          "caption": {
+            "ja": "網の上の一枚",
+            "en": "On the Grill",
+            "ko": "그릴 위의 한 장",
+            "zh-tw": "烤網上的一片"
+          },
+          "category": {
+            "ja": "料理",
+            "en": "Cuisine",
+            "ko": "요리",
+            "zh-tw": "料理"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1552566626-52f8b828add9?w=800&q=80",
+          "caption": {
+            "ja": "宴会シーン",
+            "en": "Banquet Scene",
+            "ko": "회식 장면",
+            "zh-tw": "宴會場景"
+          },
+          "category": {
+            "ja": "イベント",
+            "en": "Events",
+            "ko": "이벤트",
+            "zh-tw": "活動"
+          }
+        }
+      ]
+    },
+    "staff": {
+      "sectionTitle": {
+        "ja": "スタッフ紹介",
+        "en": "Staff Introduction",
+        "ko": "직원 소개",
+        "zh-tw": "員工介紹"
+      },
+      "sectionSubtitle": {
+        "ja": "熱気とともにお迎えします",
+        "en": "We welcome you with energy and heat",
+        "ko": "열기와 함께 맞이합니다",
+        "zh-tw": "以熱情迎接您的到來"
+      },
+      "members": [
+        {
+          "name": {
+            "ja": "炎山 豪",
+            "en": "Go Honoyama",
+            "ko": "혼야마 고",
+            "zh-tw": "炎山豪"
+          },
+          "role": {
+            "ja": "オーナー",
+            "en": "Owner",
+            "ko": "오너",
+            "zh-tw": "老闆"
+          },
+          "description": {
+            "ja": "焼肉店を渡り歩いた末に開いた自分の店。肉への愛情は誰にも負けません。",
+            "en": "After working at many yakiniku restaurants, he opened his own. No one loves meat more than he does.",
+            "ko": "여러 고기집을 거쳐 연 자신의 가게. 고기에 대한 사랑은 누구에게도 지지 않습니다.",
+            "zh-tw": "遍歷各家燒肉店後開設自己的店，對肉的熱愛無人能及。"
+          },
+          "image": "https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=600&q=80"
+        },
+        {
+          "name": {
+            "ja": "金城 大和",
+            "en": "Yamato Kinjo",
+            "ko": "김성 야마토",
+            "zh-tw": "金城大和"
+          },
+          "role": {
+            "ja": "焼き方指導スタッフ",
+            "en": "Grilling Guide Staff",
+            "ko": "굽기 안내 스태프",
+            "zh-tw": "燒烤指導人員"
+          },
+          "description": {
+            "ja": "最高の焼き加減をお客様に直接お伝えします。",
+            "en": "He personally shares the secrets of perfect grilling with guests.",
+            "ko": "최고의 굽기를 고객님께 직접 알려드립니다.",
+            "zh-tw": "親自向顧客傳授最佳燒烤火候。"
+          },
+          "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&q=80"
+        },
+        {
+          "name": {
+            "ja": "上原 花",
+            "en": "Hana Uehara",
+            "ko": "우에하라 하나",
+            "zh-tw": "上原花"
+          },
+          "role": {
+            "ja": "ホールスタッフ",
+            "en": "Hall Staff",
+            "ko": "홀 스태프",
+            "zh-tw": "外場人員"
+          },
+          "description": {
+            "ja": "元気な接客で店を盛り上げます。",
+            "en": "She brings energy and enthusiasm to every table.",
+            "ko": "활기찬 서비스로 매장을 더욱 즐겁게 만듭니다.",
+            "zh-tw": "以充滿活力的服務炒熱店內氣氛。"
+          },
+          "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80"
+        }
+      ]
+    },
+    "news": {
+      "sectionTitle": {
+        "ja": "お知らせ",
+        "en": "News",
+        "ko": "공지사항",
+        "zh-tw": "最新消息"
+      },
+      "sectionSubtitle": {
+        "ja": "最新情報をお届けします",
+        "en": "Latest updates",
+        "ko": "최신 정보를 전달합니다",
+        "zh-tw": "為您帶來最新消息"
+      },
+      "items": [
+        {
+          "date": "2024-12-05",
+          "category": "お知らせ",
+          "title": {
+            "ja": "年末年始の営業時間のご案内",
+            "en": "New Year's Business Hours",
+            "ko": "연말연시 영업시간 안내",
+            "zh-tw": "年末年初營業時間公告"
+          },
+          "content": {
+            "ja": "12月31日〜1月2日はお休みです。",
+            "en": "We will be closed from December 31 to January 2.",
+            "ko": "12월 31일~1월 2일은 휴무입니다.",
+            "zh-tw": "12月31日至1月2日公休。"
+          }
+        },
+        {
+          "date": "2024-11-18",
+          "category": "新メニュー",
+          "title": {
+            "ja": "希少部位が新登場",
+            "en": "New Rare Cuts Now Available",
+            "ko": "희귀 부위 신메뉴 등장",
+            "zh-tw": "全新稀有部位上市"
+          },
+          "content": {
+            "ja": "数量限定の希少部位をご用意しました。",
+            "en": "We've prepared a limited quantity of rare cuts.",
+            "ko": "수량 한정 희귀 부위를 준비했습니다.",
+            "zh-tw": "推出數量限定的稀有部位。"
+          }
+        },
+        {
+          "date": "2024-10-22",
+          "category": "イベント",
+          "title": {
+            "ja": "食べ放題プラン開始",
+            "en": "All-You-Can-Eat Plan Launched",
+            "ko": "무제한 뷔페 플랜 시작",
+            "zh-tw": "吃到飽方案開始"
+          },
+          "content": {
+            "ja": "2時間食べ放題プランをスタートしました。",
+            "en": "We've launched a 2-hour all-you-can-eat plan.",
+            "ko": "2시간 무제한 플랜을 시작했습니다.",
+            "zh-tw": "推出2小時吃到飽方案。"
+          }
+        }
+      ]
+    },
+    "pricing": {
+      "sectionTitle": {
+        "ja": "コース・プラン",
+        "en": "Course Plans",
+        "ko": "코스 플랜",
+        "zh-tw": "課程方案"
+      },
+      "sectionSubtitle": {
+        "ja": "ご利用シーンに合わせた各種プラン",
+        "en": "Various plans tailored to your occasion",
+        "ko": "이용 상황에 맞춘 다양한 플랜",
+        "zh-tw": "依使用場景提供多種方案"
+      },
+      "plans": [
+        {
+          "name": {
+            "ja": "お手軽コース",
+            "en": "Casual Course",
+            "ko": "캐주얼 코스",
+            "zh-tw": "輕鬆套餐"
+          },
+          "description": {
+            "ja": "気軽に焼肉を楽しめる全6品コース。",
+            "en": "A casual 6-dish course for enjoying yakiniku with ease.",
+            "ko": "가볍게 고기구이를 즐기는 전 6품 코스입니다.",
+            "zh-tw": "輕鬆享用燒肉的全6道套餐。"
+          },
+          "price": "¥3,200",
+          "features": [
+            {
+              "ja": "カルビ",
+              "en": "Short Rib",
+              "ko": "갈비",
+              "zh-tw": "牛小排"
+            },
+            {
+              "ja": "ロース",
+              "en": "Loin",
+              "ko": "로스",
+              "zh-tw": "里肌"
+            },
+            {
+              "ja": "野菜盛り合わせ",
+              "en": "Assorted Vegetables",
+              "ko": "채소 모듬",
+              "zh-tw": "時蔬拼盤"
+            },
+            {
+              "ja": "クッパ",
+              "en": "Gukbap",
+              "ko": "국밥",
+              "zh-tw": "湯飯"
+            },
+            {
+              "ja": "キムチ",
+              "en": "Kimchi",
+              "ko": "김치",
+              "zh-tw": "泡菜"
+            },
+            {
+              "ja": "ドリンク1杯",
+              "en": "One Drink",
+              "ko": "음료 1잔",
+              "zh-tw": "一杯飲品"
+            }
+          ]
+        },
+        {
+          "name": {
+            "ja": "炎おすすめコース",
+            "en": "HONOO's Recommended Course",
+            "ko": "HONOO 추천 코스",
+            "zh-tw": "炎推薦套餐"
+          },
+          "description": {
+            "ja": "人気部位を一度に楽しめる一番人気コース。",
+            "en": "Our most popular course featuring all the best cuts at once.",
+            "ko": "인기 부위를 한번에 즐기는 가장 인기 있는 코스입니다.",
+            "zh-tw": "一次享用人氣部位的最受歡迎套餐。"
+          },
+          "price": "¥5,500",
+          "features": [
+            {
+              "ja": "特選カルビ",
+              "en": "Premium Short Rib",
+              "ko": "특선 갈비",
+              "zh-tw": "特選牛小排"
+            },
+            {
+              "ja": "ハラミ",
+              "en": "Skirt Steak",
+              "ko": "안창살",
+              "zh-tw": "橫膈膜肉"
+            },
+            {
+              "ja": "タン塩",
+              "en": "Salted Beef Tongue",
+              "ko": "우설 소금구이",
+              "zh-tw": "鹽味牛舌"
+            },
+            {
+              "ja": "野菜盛り合わせ",
+              "en": "Assorted Vegetables",
+              "ko": "채소 모듬",
+              "zh-tw": "時蔬拼盤"
+            },
+            {
+              "ja": "クッパ",
+              "en": "Gukbap",
+              "ko": "국밥",
+              "zh-tw": "湯飯"
+            },
+            {
+              "ja": "デザート",
+              "en": "Dessert",
+              "ko": "디저트",
+              "zh-tw": "甜點"
+            }
+          ],
+          "isPopular": true
+        },
+        {
+          "name": {
+            "ja": "プレミアム食べ放題",
+            "en": "Premium All-You-Can-Eat",
+            "ko": "프리미엄 무제한",
+            "zh-tw": "頂級吃到飽"
+          },
+          "description": {
+            "ja": "希少部位を含む2時間食べ放題プラン。",
+            "en": "A 2-hour all-you-can-eat plan including rare cuts.",
+            "ko": "희귀 부위를 포함한 2시간 무제한 플랜입니다.",
+            "zh-tw": "包含稀有部位的2小時吃到飽方案。"
+          },
+          "price": "¥6,800",
+          "features": [
+            {
+              "ja": "全メニュー食べ放題",
+              "en": "All Menu Items Included",
+              "ko": "전 메뉴 무제한",
+              "zh-tw": "全菜單吃到飽"
+            },
+            {
+              "ja": "希少部位付き",
+              "en": "Includes Rare Cuts",
+              "ko": "희귀 부위 포함",
+              "zh-tw": "附稀有部位"
+            },
+            {
+              "ja": "飲み放題オプション有",
+              "en": "All-You-Can-Drink Option Available",
+              "ko": "음료 무제한 옵션 있음",
+              "zh-tw": "可加購暢飲選項"
+            },
+            {
+              "ja": "制限時間120分",
+              "en": "120-Minute Time Limit",
+              "ko": "제한 시간 120분",
+              "zh-tw": "限時120分鐘"
+            }
+          ]
+        }
+      ]
+    },
+    "faq": {
+      "sectionTitle": {
+        "ja": "よくあるご質問",
+        "en": "Frequently Asked Questions",
+        "ko": "자주 묻는 질문",
+        "zh-tw": "常見問題"
+      },
+      "sectionSubtitle": {
+        "ja": "お客様からのご質問にお答えします",
+        "en": "We answer questions from our customers",
+        "ko": "고객님의 질문에 답변드립니다",
+        "zh-tw": "為您解答常見疑問"
+      },
+      "items": [
+        {
+          "question": {
+            "ja": "食べ放題の時間制限はありますか？",
+            "en": "Is there a time limit for all-you-can-eat?",
+            "ko": "무제한 뷔페 시간 제한이 있나요?",
+            "zh-tw": "吃到飽有時間限制嗎？"
+          },
+          "answer": {
+            "ja": "120分制となっております。",
+            "en": "It is limited to 120 minutes.",
+            "ko": "120분제로 운영됩니다.",
+            "zh-tw": "限時120分鐘。"
+          }
+        },
+        {
+          "question": {
+            "ja": "団体利用は可能ですか？",
+            "en": "Can I book for a large group?",
+            "ko": "단체 이용이 가능한가요？",
+            "zh-tw": "可以團體用餐嗎？"
+          },
+          "answer": {
+            "ja": "20名様まで貸切対応が可能です。",
+            "en": "We can accommodate private bookings for up to 20 guests.",
+            "ko": "20명까지 단독 대여가 가능합니다.",
+            "zh-tw": "最多可包場容納20位客人。"
+          }
+        },
+        {
+          "question": {
+            "ja": "煙は気になりませんか？",
+            "en": "Will the smoke be an issue?",
+            "ko": "연기가 신경 쓰이지 않나요？",
+            "zh-tw": "煙味會很重嗎？"
+          },
+          "answer": {
+            "ja": "各席に強力な排煙設備を設置しております。",
+            "en": "Each table is equipped with a powerful smoke ventilation system.",
+            "ko": "각 좌석에 강력한 배연 설비를 설치했습니다.",
+            "zh-tw": "每桌均設有強力排煙設備。"
+          }
+        },
+        {
+          "question": {
+            "ja": "キムチは追加できますか？",
+            "en": "Can I order extra kimchi?",
+            "ko": "김치 추가할 수 있나요？",
+            "zh-tw": "可以加點泡菜嗎？"
+          },
+          "answer": {
+            "ja": "はい、単品でご注文いただけます。",
+            "en": "Yes, you can order it as an individual item.",
+            "ko": "네, 단품으로 주문 가능합니다.",
+            "zh-tw": "可以，可單點加購。"
+          }
+        },
+        {
+          "question": {
+            "ja": "駐車場はありますか？",
+            "en": "Do you have parking?",
+            "ko": "주차장이 있나요？",
+            "zh-tw": "有停車場嗎？"
+          },
+          "answer": {
+            "ja": "近隣の提携パーキングをご案内しております。",
+            "en": "We can direct you to nearby affiliated parking.",
+            "ko": "인근 제휴 주차장을 안내하고 있습니다.",
+            "zh-tw": "可為您介紹附近的合作停車場。"
+          }
+        }
+      ]
+    },
+    "access": {
+      "sectionTitle": {
+        "ja": "アクセス",
+        "en": "Access",
+        "ko": "오시는 길",
+        "zh-tw": "交通資訊"
+      },
+      "sectionSubtitle": {
+        "ja": "店舗へのご案内",
+        "en": "Guide to the Store",
+        "ko": "매장 안내",
+        "zh-tw": "商店指南"
+      },
+      "address": {
+        "ja": "東京都新宿区〇〇 3-5-7",
+        "en": "3-5-7, XX, Shinjuku, Tokyo",
+        "ko": "도쿄도 신주쿠구 〇〇 3-5-7",
+        "zh-tw": "東京都新宿區〇〇 3-5-7"
+      },
+      "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3579.1447437301044!2d127.68589831501648!3d26.21424098342371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34e56bd0b4a42ff1%3A0x36812e0e598f7d6b!2z54CP6Yar!5e0!3m2!1sja!2sjp!4v1234567890123!5m2!1sja!2sjp",
+      "parking": {
+        "title": {
+          "ja": "駐車場のご案内",
+          "en": "Parking Information",
+          "ko": "주차 정보",
+          "zh-tw": "停車資訊"
+        },
+        "description": {
+          "ja": "近隣の提携コインパーキングをご利用ください。",
+          "en": "Please use the nearby affiliated coin parking.",
+          "ko": "인근 제휴 동전 주차장을 이용해 주십시오.",
+          "zh-tw": "請使用附近的合作投幣停車場。"
+        },
+        "spaces": {
+          "ja": "提携駐車場 約8台",
+          "en": "Affiliated parking approx. 8 cars",
+          "ko": "제휴 주차장 약 8대",
+          "zh-tw": "合作停車場約8輛"
+        },
+        "notes": {
+          "ja": "お食事のお客様には割引券をお渡しします。",
+          "en": "Dining guests will receive a discount voucher.",
+          "ko": "식사하시는 고객님께는 할인권을 드립니다.",
+          "zh-tw": "用餐顧客可獲得優惠券。"
+        }
+      },
+      "transportation": {
+        "title": {
+          "ja": "公共交通機関をご利用の方",
+          "en": "For those using public transportation",
+          "ko": "대중교통을 이용하시는 분",
+          "zh-tw": "使用大眾運輸的顧客"
+        },
+        "methods": [
+          {
+            "type": {
+              "ja": "電車",
+              "en": "Train",
+              "ko": "기차",
+              "zh-tw": "電車"
+            },
+            "description": {
+              "ja": "〇〇線「××駅」東口より徒歩4分",
+              "en": "4 minutes on foot from the east exit of XX Station",
+              "ko": "〇〇선 '××역' 동쪽 출구에서 도보 4분",
+              "zh-tw": "從〇〇線「××站」東口步行4分鐘"
+            }
+          },
+          {
+            "type": {
+              "ja": "バス",
+              "en": "Bus",
+              "ko": "버스",
+              "zh-tw": "巴士"
+            },
+            "description": {
+              "ja": "「△△」バス停より徒歩2分",
+              "en": "2 minutes on foot from the △△ bus stop",
+              "ko": "'△△' 버스 정류장에서 도보 2분",
+              "zh-tw": "從「△△」巴士站步行2分鐘"
+            }
+          },
+          {
+            "type": {
+              "ja": "タクシー",
+              "en": "Taxi",
+              "ko": "택시",
+              "zh-tw": "計程車"
+            },
+            "description": {
+              "ja": "最寄り駅より約5分",
+              "en": "About 5 minutes from the nearest station",
+              "ko": "가까운 역에서 약 5분",
+              "zh-tw": "從最近車站約5分鐘"
+            }
+          }
+        ]
+      }
+    },
+    "storeInfo": {
+      "sectionTitle": {
+        "ja": "店舗情報",
+        "en": "Store Information",
+        "ko": "매장 정보",
+        "zh-tw": "店鋪資訊"
+      },
+      "mainImage": "https://images.unsplash.com/photo-1544025162-d76694265947?w=1200&q=80",
+      "mainImageCaption": {
+        "ja": "賑やかで活気ある空間で、焼肉をお楽しみください",
+        "en": "Enjoy yakiniku in a lively, energetic space",
+        "ko": "활기차고 생동감 있는 공간에서 고기구이를 즐겨보세요",
+        "zh-tw": "在熱鬧充滿活力的空間中享用燒肉"
+      },
+      "items": [
+        {
+          "ja": "東京都新宿区〇〇 3-5-7",
+          "en": "3-5-7, XX, Shinjuku, Tokyo",
+          "ko": "도쿄도 신주쿠구 〇〇 3-5-7",
+          "zh-tw": "東京都新宿區〇〇 3-5-7"
+        },
+        {
+          "ja": "17:00 - 24:00（L.O. 23:00）",
+          "en": "17:00 - 24:00 (L.O. 23:00)",
+          "ko": "17:00 - 24:00 (L.O. 23:00)",
+          "zh-tw": "17:00 - 24:00（最後點餐23:00）"
+        },
+        {
+          "ja": "03-YYYY-YYYY",
+          "en": "03-YYYY-YYYY",
+          "ko": "03-YYYY-YYYY",
+          "zh-tw": "03-YYYY-YYYY"
+        },
+        {
+          "ja": "info@honoo.example.com",
+          "en": "info@honoo.example.com",
+          "ko": "info@honoo.example.com",
+          "zh-tw": "info@honoo.example.com"
+        }
+      ]
+    },
+    "contact": {
+      "sectionTitle": {
+        "ja": "お問い合わせ",
+        "en": "Contact Us",
+        "ko": "문의하기",
+        "zh-tw": "聯絡我們"
+      },
+      "sectionSubtitle": {
+        "ja": "ご予約やご質問など、お気軽にお問い合わせください",
+        "en": "Please feel free to contact us for reservations or inquiries.",
+        "ko": "예약이나 문의 사항이 있으시면 언제든지 문의해 주세요.",
+        "zh-tw": "如需預約或詢問，請隨時與我們聯繫。"
+      },
+      "fields": {
+        "name": {
+          "ja": "お名前",
+          "en": "Name",
+          "ko": "이름",
+          "zh-tw": "姓名"
+        },
+        "email": {
+          "ja": "メールアドレス",
+          "en": "Email Address",
+          "ko": "이메일 주소",
+          "zh-tw": "電子郵件地址"
+        },
+        "subject": {
+          "ja": "件名",
+          "en": "Subject",
+          "ko": "제목",
+          "zh-tw": "主題"
+        },
+        "message": {
+          "ja": "お問い合わせ内容",
+          "en": "Message",
+          "ko": "문의 내용",
+          "zh-tw": "訊息內容"
+        }
+      },
+      "submitButton": {
+        "ja": "送信する",
+        "en": "Send",
+        "ko": "보내기",
+        "zh-tw": "發送"
+      }
+    },
+    "cta": {
+      "sectionTitle": {
+        "ja": "ご予約・お問い合わせ",
+        "en": "Reservations and Inquiries",
+        "ko": "예약 및 문의",
+        "zh-tw": "預約與詢問"
+      },
+      "sectionSubtitle": {
+        "ja": "皆様のご来店を心よりお待ちしております",
+        "en": "We sincerely look forward to your visit.",
+        "ko": "여러분의 방문을 진심으로 기다립니다.",
+        "zh-tw": "我們衷心期待您的光臨。"
+      },
+      "description": {
+        "ja": "宴会や飲み会など、様々なシーンでご利用いただけます。",
+        "en": "Perfect for banquets, drinking parties, and more.",
+        "ko": "회식이나 모임 등 다양한 상황에서 이용하실 수 있습니다.",
+        "zh-tw": "適合宴會、聚餐等各種場合。"
+      },
+      "backgroundImage": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1600&q=80",
+      "buttons": [
+        {
+          "text": {
+            "ja": "お電話でご予約",
+            "en": "Reserve by Phone",
+            "ko": "전화로 예약하기",
+            "zh-tw": "電話預約"
+          },
+          "link": "#contact",
+          "type": "primary"
+        },
+        {
+          "text": {
+            "ja": "Webでお問い合わせ",
+            "en": "Inquire via Web",
+            "ko": "웹으로 문의하기",
+            "zh-tw": "網上詢問"
+          },
+          "link": "#contact",
+          "type": "secondary"
+        }
+      ]
+    },
+    "reviews": {
+      "sectionTitle": {
+        "ja": "お客様の声",
+        "en": "Customer Voices",
+        "ko": "고객의 목소리",
+        "zh-tw": "顧客的聲音"
+      },
+      "sectionSubtitle": {
+        "ja": "ご来店いただいたお客様からのメッセージ",
+        "en": "Messages from customers who visited us",
+        "ko": "방문한 고객의 메시지",
+        "zh-tw": "來店顧客的留言"
+      },
+      "reviews": [
+        {
+          "name": {
+            "ja": "山本 大輔",
+            "en": "Daisuke Yamamoto",
+            "ko": "야마모토 다이스케",
+            "zh-tw": "山本大輔"
+          },
+          "rating": 5,
+          "date": "2024-11-20",
+          "comment": {
+            "ja": "肉の質が高くて驚きました。食べ放題でこの品質は最高です。",
+            "en": "I was surprised by the high quality of the meat. Amazing quality for an all-you-can-eat.",
+            "ko": "고기의 질이 높아서 놀랐습니다. 무제한인데 이 품질은 최고입니다.",
+            "zh-tw": "肉的品質令人驚艷，吃到飽還有這樣的水準真的很棒。"
+          },
+          "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&q=80"
+        },
+        {
+          "name": {
+            "ja": "小林 真央",
+            "en": "Mao Kobayashi",
+            "ko": "고바야시 마오",
+            "zh-tw": "小林真央"
+          },
+          "rating": 5,
+          "date": "2024-11-08",
+          "comment": {
+            "ja": "店員さんが焼き方を教えてくれて助かりました。とても美味しかったです。",
+            "en": "The staff kindly taught us how to grill. It was delicious.",
+            "ko": "직원분이 굽는 방법을 알려주셔서 도움이 되었습니다. 정말 맛있었습니다.",
+            "zh-tw": "店員教我們如何燒烤，非常有幫助，也很美味。"
+          },
+          "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80"
+        },
+        {
+          "name": {
+            "ja": "中川 拓也",
+            "en": "Takuya Nakagawa",
+            "ko": "나카가와 다쿠야",
+            "zh-tw": "中川拓也"
+          },
+          "rating": 4,
+          "date": "2024-10-30",
+          "comment": {
+            "ja": "賑やかで楽しい雰囲気でした。仲間との飲み会に最適です。",
+            "en": "The atmosphere was lively and fun. Perfect for a party with friends.",
+            "ko": "활기차고 즐거운 분위기였습니다. 친구들과의 모임에 최적입니다.",
+            "zh-tw": "氣氛熱鬧愉快，非常適合與朋友聚餐。"
+          },
+          "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80"
+        }
+      ]
+    },
+    "company": {
+      "sectionTitle": {
+        "ja": "運営会社情報",
+        "en": "Company Information",
+        "ko": "운영 회사 정보",
+        "zh-tw": "運營公司資訊"
+      },
+      "sectionSubtitle": {
+        "ja": "食を通じて地域社会に貢献する",
+        "en": "Contributing to the local community through food",
+        "ko": "음식을 통해 지역 사회에 기여하기",
+        "zh-tw": "通過美食貢獻地方社區"
+      },
+      "philosophy": {
+        "title": {
+          "ja": "経営理念",
+          "en": "Management Philosophy",
+          "ko": "경영 철학",
+          "zh-tw": "經營理念"
+        },
+        "content": {
+          "ja": "「焼肉ダイニング 炎」は、素材への敬意と職人の技術、真心のこもったおもてなしを通じて、お客様に忘れられない一皿をお届けすることを使命としています。",
+          "en": "\"Yakiniku Dining HONOO\" is committed to delivering an unforgettable dish to every guest through respect for ingredients, skilled craftsmanship, and heartfelt hospitality.",
+          "ko": "'야키니쿠 다이닝 HONOO'는 재료에 대한 경의와 장인의 기술, 진심 어린 환대를 통해 손님에게 잊을 수 없는 한 그릇을 선사하는 것을 사명으로 하고 있습니다.",
+          "zh-tw": "「燒肉餐廳 炎」秉持對食材的尊重、職人的技藝與真誠的款待，致力於為每位顧客獻上難忘的一餐。"
+        }
+      },
+      "history": {
+        "title": {
+          "ja": "沿革",
+          "en": "History",
+          "ko": "연혁",
+          "zh-tw": "沿革"
+        },
+        "timeline": [
+          {
+            "year": "2017年",
+            "event": {
+              "ja": "焼肉ダイニング 炎 創業",
+              "en": "Founding of Yakiniku Dining HONOO",
+              "ko": "야키니쿠 다이닝 HONOO 창업",
+              "zh-tw": "燒肉餐廳 炎 創業"
+            }
+          },
+          {
+            "year": "2019年",
+            "event": {
+              "ja": "店舗を増築し、席数を拡大",
+              "en": "Expanded the restaurant and increased seating capacity",
+              "ko": "매장을 증축하여 좌석 수 확대",
+              "zh-tw": "擴建店舖並增加座位數"
+            }
+          },
+          {
+            "year": "2022年",
+            "event": {
+              "ja": "テイクアウト・デリバリー事業を開始",
+              "en": "Started takeout and delivery service",
+              "ko": "테이크아웃 및 배달 사업 시작",
+              "zh-tw": "開始外帶及外送服務"
+            }
+          }
+        ]
+      },
+      "companyInfo": {
+        "title": {
+          "ja": "会社概要",
+          "en": "Company Overview",
+          "ko": "회사 개요",
+          "zh-tw": "公司概況"
+        },
+        "items": [
+          {
+            "label": {
+              "ja": "屋号",
+              "en": "Store Name",
+              "ko": "상호",
+              "zh-tw": "店名"
+            },
+            "value": {
+              "ja": "焼肉ダイニング 炎",
+              "en": "Yakiniku Dining HONOO",
+              "ko": "야키니쿠 다이닝 HONOO",
+              "zh-tw": "燒肉餐廳 炎"
+            }
+          },
+          {
+            "label": {
+              "ja": "設立",
+              "en": "Established",
+              "ko": "설립",
+              "zh-tw": "成立"
+            },
+            "value": {
+              "ja": "2017年8月",
+              "en": "8月 2017",
+              "ko": "2017년 8月",
+              "zh-tw": "2017年8月"
+            }
+          },
+          {
+            "label": {
+              "ja": "代表者",
+              "en": "Representative",
+              "ko": "대표자",
+              "zh-tw": "代表人"
+            },
+            "value": {
+              "ja": "炎山 豪",
+              "en": "Go Honoyama",
+              "ko": "혼야마 고",
+              "zh-tw": "炎山豪"
+            }
+          },
+          {
+            "label": {
+              "ja": "所在地",
+              "en": "Location",
+              "ko": "위치",
+              "zh-tw": "所在地"
+            },
+            "value": {
+              "ja": "東京都新宿区〇〇 3-5-7",
+              "en": "3-5-7, XX, Shinjuku, Tokyo",
+              "ko": "도쿄도 신주쿠구 〇〇 3-5-7",
+              "zh-tw": "東京都新宿區〇〇 3-5-7"
+            }
+          },
+          {
+            "label": {
+              "ja": "事業内容",
+              "en": "Business Activities",
+              "ko": "사업 내용",
+              "zh-tw": "業務內容"
+            },
+            "value": {
+              "ja": "飲食店経営",
+              "en": "Restaurant management",
+              "ko": "식당 경영",
+              "zh-tw": "餐飲經營"
+            }
+          },
+          {
+            "label": {
+              "ja": "従業員数",
+              "en": "Number of Employees",
+              "ko": "직원 수",
+              "zh-tw": "員工人數"
+            },
+            "value": {
+              "ja": "約30名（パート・アルバイト含む）",
+              "en": "Approx. 30 (including part-time staff)",
+              "ko": "약 30명(파트타임 포함)",
+              "zh-tw": "約30人（含兼職員工）"
+            }
+          }
+        ]
+      }
+    },
+    "footer": {
+      "logo": {
+        "ja": "焼肉ダイニング 炎",
+        "en": "Yakiniku Dining HONOO",
+        "ko": "야키니쿠 다이닝 HONOO",
+        "zh-tw": "燒肉餐廳 炎"
+      },
+      "description": {
+        "ja": "炎とともに、忘れられない一夜を。",
+        "en": "An unforgettable night, together with the flame.",
+        "ko": "불꽃과 함께, 잊을 수 없는 밤을.",
+        "zh-tw": "與炎火共度，難忘的夜晚。"
+      },
+      "businessHours": {
+        "title": {
+          "ja": "営業時間",
+          "en": "Business Hours",
+          "ko": "영업 시간",
+          "zh-tw": "營業時間"
+        },
+        "days": {
+          "ja": "月曜日 - 日曜日",
+          "en": "Monday - Sunday",
+          "ko": "월요일 - 일요일",
+          "zh-tw": "星期一 - 星期日"
+        },
+        "hours": {
+          "ja": "17:00 - 24:00",
+          "en": "17:00 - 24:00",
+          "ko": "17:00 - 24:00",
+          "zh-tw": "17:00 - 24:00"
+        },
+        "closedDay": {
+          "ja": "定休日: 不定休",
+          "en": "Closed: Irregular holidays",
+          "ko": "휴무일: 불규칙 휴무",
+          "zh-tw": "休息日: 不定期休假"
+        }
+      },
+      "social": {
+        "title": {
+          "ja": "SNSアカウント",
+          "en": "Social Media Accounts",
+          "ko": "소셜 미디어 계정",
+          "zh-tw": "社交媒體帳號"
+        },
+        "links": [
+          {
+            "platform": "Facebook",
+            "url": "#"
+          },
+          {
+            "platform": "Instagram",
+            "url": "#"
+          },
+          {
+            "platform": "Twitter",
+            "url": "#"
+          }
+        ]
+      },
+      "copyright": {
+        "ja": "© 2024 焼肉ダイニング 炎. All rights reserved.",
+        "en": "© 2024 Yakiniku Dining HONOO. All rights reserved.",
+        "ko": "© 2024 야키니쿠 다이닝 HONOO. All rights reserved.",
+        "zh-tw": "© 2024 燒肉餐廳 炎. All rights reserved."
+      }
+    },
+    "templateId": "blaze",
+    "settings": {
+      "theme": "blaze"
+    }
+  }
+}

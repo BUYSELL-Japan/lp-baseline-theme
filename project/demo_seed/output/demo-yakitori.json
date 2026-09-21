@@ -1,0 +1,1444 @@
+{
+  "store_id": "demo-yakitori",
+  "Subdomain": "demo-yakitori",
+  "RecordType": "LP_CONTENT",
+  "Status": "Published",
+  "CreatedAt": "2026-09-21T01:16:22.455Z",
+  "UpdatedAt": "2026-09-21T01:16:22.455Z",
+  "ContentData": {
+    "header": {
+      "logo": {
+        "text": {
+          "ja": "炭火焼鳥 無骨",
+          "en": "Charcoal Yakitori BUKOU",
+          "ko": "숯불 야키토리 BUKOU",
+          "zh-tw": "炭火燒鳥 無骨"
+        }
+      },
+      "navigation": [
+        {
+          "id": "about",
+          "label": {
+            "ja": "コンセプト",
+            "en": "Concept",
+            "ko": "개념",
+            "zh-tw": "概念"
+          }
+        },
+        {
+          "id": "menu",
+          "label": {
+            "ja": "メニュー",
+            "en": "Menu",
+            "ko": "메뉴",
+            "zh-tw": "菜單"
+          }
+        },
+        {
+          "id": "pricing",
+          "label": {
+            "ja": "コース・プラン",
+            "en": "Course Plan",
+            "ko": "코스 플랜",
+            "zh-tw": "課程方案"
+          }
+        },
+        {
+          "id": "cta",
+          "label": {
+            "ja": "ご予約",
+            "en": "Reservation",
+            "ko": "예약",
+            "zh-tw": "預約"
+          }
+        },
+        {
+          "id": "gallery",
+          "label": {
+            "ja": "ギャラリー",
+            "en": "Gallery",
+            "ko": "갤러리",
+            "zh-tw": "畫廊"
+          }
+        },
+        {
+          "id": "staff",
+          "label": {
+            "ja": "スタッフ",
+            "en": "Staff",
+            "ko": "직원",
+            "zh-tw": "員工"
+          }
+        },
+        {
+          "id": "reviews",
+          "label": {
+            "ja": "お客様の声",
+            "en": "Customer Feedback",
+            "ko": "고객 후기",
+            "zh-tw": "客戶反饋"
+          }
+        },
+        {
+          "id": "news",
+          "label": {
+            "ja": "お知らせ",
+            "en": "Notice",
+            "ko": "공지사항",
+            "zh-tw": "最新消息"
+          }
+        },
+        {
+          "id": "storeInfo",
+          "label": {
+            "ja": "店舗情報",
+            "en": "Store Information",
+            "ko": "매장 정보",
+            "zh-tw": "店鋪資訊"
+          }
+        },
+        {
+          "id": "company",
+          "label": {
+            "ja": "運営会社",
+            "en": "Operating Company",
+            "ko": "운영 회사",
+            "zh-tw": "運營公司"
+          }
+        },
+        {
+          "id": "access",
+          "label": {
+            "ja": "アクセス",
+            "en": "Access",
+            "ko": "오시는 길",
+            "zh-tw": "交通資訊"
+          }
+        },
+        {
+          "id": "faq",
+          "label": {
+            "ja": "よくある質問",
+            "en": "FAQ",
+            "ko": "자주 묻는 질문",
+            "zh-tw": "常見問題"
+          }
+        },
+        {
+          "id": "contact",
+          "label": {
+            "ja": "お問い合わせ",
+            "en": "Contact Us",
+            "ko": "문의하기",
+            "zh-tw": "聯絡我們"
+          }
+        }
+      ]
+    },
+    "hero": {
+      "sectionTitle": {
+        "ja": "一本一本に、\n心を込めて。",
+        "en": "Every Skewer,\nGrilled with Heart.",
+        "ko": "한 꼬치 한 꼬치,\n정성을 담아.",
+        "zh-tw": "每一串，\n用心燒烤。"
+      },
+      "subtitle": {
+        "ja": "備長炭で一本一本丁寧に焼き上げる本格焼き鳥専門店",
+        "en": "An authentic yakitori restaurant grilling each skewer carefully over binchotan charcoal",
+        "ko": "비장탄으로 한 꼬치씩 정성껏 구워내는 본격 야키토리 전문점",
+        "zh-tw": "以備長炭逐串細心燒烤的正宗燒鳥專門店"
+      },
+      "backgroundImage": "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=1920&q=80"
+    },
+    "about": {
+      "sectionTitle": {
+        "ja": "私たちのこだわり",
+        "en": "Our Commitment",
+        "ko": "우리의 고집",
+        "zh-tw": "我們的堅持"
+      },
+      "features": [
+        {
+          "title": {
+            "ja": "備長炭一本焼き",
+            "en": "Grilled Skewer by Skewer over Binchotan",
+            "ko": "비장탄 한 꼬치 굽기",
+            "zh-tw": "備長炭逐串燒烤"
+          },
+          "description": {
+            "ja": "一本ずつ丁寧に焼き上げることで、均一な火の通りを実現しています。",
+            "en": "By grilling each skewer individually with care, we achieve even, consistent cooking.",
+            "ko": "한 꼬치씩 정성껏 구워냄으로써 균일한 익힘을 실현하고 있습니다.",
+            "zh-tw": "逐串細心燒烤，實現均勻的熟度。"
+          },
+          "image": "https://images.unsplash.com/photo-1580651214613-f4692d6d138f?w=800&q=80"
+        },
+        {
+          "title": {
+            "ja": "厳選された銘柄鶏",
+            "en": "Carefully Selected Premium Chicken",
+            "ko": "엄선된 브랜드 닭",
+            "zh-tw": "嚴選品牌雞肉"
+          },
+          "description": {
+            "ja": "契約農場から届く新鮮な銘柄鶏のみを使用しています。",
+            "en": "We use only fresh, premium chicken delivered from our contracted farms.",
+            "ko": "계약 농장에서 들어오는 신선한 브랜드 닭만을 사용하고 있습니다.",
+            "zh-tw": "僅使用來自契約農場的新鮮品牌雞肉。"
+          },
+          "image": "https://images.unsplash.com/photo-1522336572468-97b06e8ef143?w=800&q=80"
+        },
+        {
+          "title": {
+            "ja": "秘伝のタレと塩",
+            "en": "Secret Sauce and Salt",
+            "ko": "비법 소스와 소금",
+            "zh-tw": "秘傳醬汁與鹽"
+          },
+          "description": {
+            "ja": "創業以来受け継がれる秘伝のタレと、厳選した塩で。",
+            "en": "Made with our secret sauce, passed down since our founding, and carefully selected salt.",
+            "ko": "창업 이래 이어져 온 비법 소스와 엄선된 소금으로.",
+            "zh-tw": "以創業以來傳承的秘傳醬汁與嚴選鹽調味。"
+          },
+          "image": "https://images.unsplash.com/photo-1544025162-d76694265947?w=800&q=80"
+        }
+      ]
+    },
+    "menu": {
+      "sectionTitle": {
+        "ja": "お品書き",
+        "en": "Menu",
+        "ko": "메뉴",
+        "zh-tw": "菜單"
+      },
+      "sectionSubtitle": {
+        "ja": "備長炭で焼き上げる、匠の一本",
+        "en": "Skillfully grilled over binchotan charcoal",
+        "ko": "비장탄으로 구워내는 장인의 한 꼬치",
+        "zh-tw": "以備長炭燒烤而成的職人一串"
+      },
+      "items": [
+        {
+          "name": {
+            "ja": "もも塩",
+            "en": "Salted Thigh",
+            "ko": "다리살 소금구이",
+            "zh-tw": "鹽味雞腿肉"
+          },
+          "description": {
+            "ja": "ジューシーなもも肉を塩でシンプルに。",
+            "en": "Juicy thigh meat, simply seasoned with salt.",
+            "ko": "육즙이 풍부한 다리살을 소금으로 심플하게.",
+            "zh-tw": "多汁雞腿肉，以鹽簡單調味。"
+          },
+          "image": "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=800&q=80",
+          "price": "¥180"
+        },
+        {
+          "name": {
+            "ja": "ねぎま",
+            "en": "Chicken and Leek Skewer",
+            "ko": "네기마",
+            "zh-tw": "蔥肉串"
+          },
+          "description": {
+            "ja": "鶏肉と葱を交互に刺した定番串。",
+            "en": "A classic skewer alternating chicken and leek.",
+            "ko": "닭고기와 파를 교대로 꽂은 기본 꼬치입니다.",
+            "zh-tw": "雞肉與蔥交替串起的經典串燒。"
+          },
+          "image": "https://images.unsplash.com/photo-1580651214613-f4692d6d138f?w=800&q=80",
+          "price": "¥180"
+        },
+        {
+          "name": {
+            "ja": "つくね",
+            "en": "Chicken Meatball",
+            "ko": "츠쿠네",
+            "zh-tw": "雞肉丸"
+          },
+          "description": {
+            "ja": "卵黄にくぐらせて食べる自家製つくね。",
+            "en": "Homemade chicken meatballs, dipped in egg yolk before eating.",
+            "ko": "계란 노른자에 담가 먹는 수제 츠쿠네입니다.",
+            "zh-tw": "沾蛋黃享用的自製雞肉丸。"
+          },
+          "image": "https://images.unsplash.com/photo-1522336572468-97b06e8ef143?w=800&q=80",
+          "price": "¥200"
+        },
+        {
+          "name": {
+            "ja": "砂肝",
+            "en": "Gizzard",
+            "ko": "닭모래주머니",
+            "zh-tw": "雞胗"
+          },
+          "description": {
+            "ja": "コリコリとした食感が楽しい砂肝。",
+            "en": "Gizzard with a fun, crunchy texture.",
+            "ko": "오독오독한 식감이 즐거운 모래주머니입니다.",
+            "zh-tw": "口感脆嫩有趣的雞胗。"
+          },
+          "image": "https://images.unsplash.com/photo-1544025162-d76694265947?w=800&q=80",
+          "price": "¥160"
+        },
+        {
+          "name": {
+            "ja": "軟骨",
+            "en": "Cartilage",
+            "ko": "연골",
+            "zh-tw": "軟骨"
+          },
+          "description": {
+            "ja": "香ばしく焼き上げた軟骨のコリコリ感。",
+            "en": "Crunchy cartilage, grilled to fragrant perfection.",
+            "ko": "고소하게 구워낸 연골의 오독오독한 식감입니다.",
+            "zh-tw": "烤得香氣四溢的軟骨脆感。"
+          },
+          "image": "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=800&q=80",
+          "price": "¥160"
+        },
+        {
+          "name": {
+            "ja": "皮",
+            "en": "Chicken Skin",
+            "ko": "닭껍질",
+            "zh-tw": "雞皮"
+          },
+          "description": {
+            "ja": "パリッと焼き上げた香ばしい皮。",
+            "en": "Chicken skin grilled to a fragrant crisp.",
+            "ko": "바삭하게 구운 고소한 껍질입니다.",
+            "zh-tw": "烤得酥脆香氣十足的雞皮。"
+          },
+          "image": "https://images.unsplash.com/photo-1580651214613-f4692d6d138f?w=800&q=80",
+          "price": "¥150"
+        },
+        {
+          "name": {
+            "ja": "ハツ",
+            "en": "Heart",
+            "ko": "닭심장",
+            "zh-tw": "雞心"
+          },
+          "description": {
+            "ja": "プリッとした歯応えが特徴のハツ。",
+            "en": "Chicken heart with a distinctive, satisfying bite.",
+            "ko": "탱탱한 씹는 맛이 특징인 하츠입니다.",
+            "zh-tw": "以彈牙口感為特色的雞心。"
+          },
+          "image": "https://images.unsplash.com/photo-1522336572468-97b06e8ef143?w=800&q=80",
+          "price": "¥170"
+        },
+        {
+          "name": {
+            "ja": "手羽先",
+            "en": "Chicken Wings",
+            "ko": "닭날개",
+            "zh-tw": "雞翅"
+          },
+          "description": {
+            "ja": "カリッと焼き上げた香ばしい手羽先。",
+            "en": "Chicken wings grilled to a fragrant crisp.",
+            "ko": "바삭하게 구운 고소한 닭날개입니다.",
+            "zh-tw": "烤得酥脆香氣十足的雞翅。"
+          },
+          "image": "https://images.unsplash.com/photo-1544025162-d76694265947?w=800&q=80",
+          "price": "¥220"
+        }
+      ]
+    },
+    "gallery": {
+      "sectionTitle": {
+        "ja": "ギャラリー",
+        "en": "Gallery",
+        "ko": "갤러리",
+        "zh-tw": "畫廊"
+      },
+      "sectionSubtitle": {
+        "ja": "炭火と一本一本の丁寧さを写真でお届け",
+        "en": "The care behind every skewer, captured in photos",
+        "ko": "숯불과 한 꼬치씩의 정성을 사진으로 전해드립니다",
+        "zh-tw": "透過照片傳達炭火與逐串的用心"
+      },
+      "categories": [
+        {
+          "ja": "すべて",
+          "en": "All",
+          "ko": "전체",
+          "zh-tw": "全部"
+        },
+        {
+          "ja": "料理",
+          "en": "Cuisine",
+          "ko": "요리",
+          "zh-tw": "料理"
+        },
+        {
+          "ja": "店内",
+          "en": "Interior",
+          "ko": "매장",
+          "zh-tw": "店內"
+        },
+        {
+          "ja": "イベント",
+          "en": "Events",
+          "ko": "이벤트",
+          "zh-tw": "活動"
+        }
+      ],
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=800&q=80",
+          "caption": {
+            "ja": "もも塩",
+            "en": "Salted Thigh",
+            "ko": "다리살 소금구이",
+            "zh-tw": "鹽味雞腿肉"
+          },
+          "category": {
+            "ja": "料理",
+            "en": "Cuisine",
+            "ko": "요리",
+            "zh-tw": "料理"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1580651214613-f4692d6d138f?w=800&q=80",
+          "caption": {
+            "ja": "焼き上げの様子",
+            "en": "The Grilling Process",
+            "ko": "굽는 모습",
+            "zh-tw": "燒烤情景"
+          },
+          "category": {
+            "ja": "料理",
+            "en": "Cuisine",
+            "ko": "요리",
+            "zh-tw": "料理"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1522336572468-97b06e8ef143?w=800&q=80",
+          "caption": {
+            "ja": "つくねの盛り付け",
+            "en": "Chicken Meatball Plating",
+            "ko": "츠쿠네 플레이팅",
+            "zh-tw": "雞肉丸擺盤"
+          },
+          "category": {
+            "ja": "料理",
+            "en": "Cuisine",
+            "ko": "요리",
+            "zh-tw": "料理"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1544025162-d76694265947?w=800&q=80",
+          "caption": {
+            "ja": "手羽先",
+            "en": "Chicken Wings",
+            "ko": "닭날개",
+            "zh-tw": "雞翅"
+          },
+          "category": {
+            "ja": "料理",
+            "en": "Cuisine",
+            "ko": "요리",
+            "zh-tw": "料理"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80",
+          "caption": {
+            "ja": "カウンター越しの炭火",
+            "en": "Charcoal Grill Behind the Counter",
+            "ko": "카운터 너머의 숯불",
+            "zh-tw": "吧台後方的炭火"
+          },
+          "category": {
+            "ja": "店内",
+            "en": "Interior",
+            "ko": "매장",
+            "zh-tw": "店內"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&q=80",
+          "caption": {
+            "ja": "落ち着いた店内",
+            "en": "Calm Interior",
+            "ko": "차분한 매장",
+            "zh-tw": "沉靜的店內"
+          },
+          "category": {
+            "ja": "店内",
+            "en": "Interior",
+            "ko": "매장",
+            "zh-tw": "店內"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80",
+          "caption": {
+            "ja": "小上がり席",
+            "en": "Tatami Seating",
+            "ko": "다다미석",
+            "zh-tw": "和式座位"
+          },
+          "category": {
+            "ja": "店内",
+            "en": "Interior",
+            "ko": "매장",
+            "zh-tw": "店內"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=600&q=80",
+          "caption": {
+            "ja": "串の並び",
+            "en": "Skewers in a Row",
+            "ko": "나란히 놓인 꼬치",
+            "zh-tw": "整排串燒"
+          },
+          "category": {
+            "ja": "料理",
+            "en": "Cuisine",
+            "ko": "요리",
+            "zh-tw": "料理"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1552566626-52f8b828add9?w=800&q=80",
+          "caption": {
+            "ja": "女子会シーン",
+            "en": "Girls' Night Out",
+            "ko": "여자들의 모임",
+            "zh-tw": "女子聚會場景"
+          },
+          "category": {
+            "ja": "イベント",
+            "en": "Events",
+            "ko": "이벤트",
+            "zh-tw": "活動"
+          }
+        }
+      ]
+    },
+    "staff": {
+      "sectionTitle": {
+        "ja": "スタッフ紹介",
+        "en": "Staff Introduction",
+        "ko": "직원 소개",
+        "zh-tw": "員工介紹"
+      },
+      "sectionSubtitle": {
+        "ja": "一本一本、心を込めて焼き上げます",
+        "en": "Every skewer, grilled with heart",
+        "ko": "한 꼬치 한 꼬치 정성을 담아 굽습니다",
+        "zh-tw": "每一串，皆用心燒烤"
+      },
+      "members": [
+        {
+          "name": {
+            "ja": "骨山 徹",
+            "en": "Toru Koneyama",
+            "ko": "고네야마 토루",
+            "zh-tw": "骨山徹"
+          },
+          "role": {
+            "ja": "焼き師",
+            "en": "Yakitori Master",
+            "ko": "야키토리 장인",
+            "zh-tw": "燒烤師"
+          },
+          "description": {
+            "ja": "焼き鳥一本で15年。串一本一本に真剣勝負しています。",
+            "en": "15 years dedicated solely to yakitori. He takes each skewer as a serious challenge.",
+            "ko": "야키토리 외길 15년. 꼬치 하나하나에 진지하게 승부합니다.",
+            "zh-tw": "專注燒鳥15年，對每一串都全力以赴。"
+          },
+          "image": "https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=600&q=80"
+        },
+        {
+          "name": {
+            "ja": "野田 恵",
+            "en": "Megumi Noda",
+            "ko": "노다 메구미",
+            "zh-tw": "野田惠"
+          },
+          "role": {
+            "ja": "女将",
+            "en": "Proprietress",
+            "ko": "여주인",
+            "zh-tw": "女主人"
+          },
+          "description": {
+            "ja": "お客様一人ひとりに合わせたおもてなしを心がけています。",
+            "en": "She strives to provide hospitality tailored to each individual guest.",
+            "ko": "고객 한 분 한 분에 맞춘 환대를 위해 노력하고 있습니다.",
+            "zh-tw": "致力於為每位顧客提供貼心的款待。"
+          },
+          "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&q=80"
+        },
+        {
+          "name": {
+            "ja": "川辺 光",
+            "en": "Ko Kawabe",
+            "ko": "가와베 코",
+            "zh-tw": "川邊光"
+          },
+          "role": {
+            "ja": "ホールスタッフ",
+            "en": "Hall Staff",
+            "ko": "홀 스태프",
+            "zh-tw": "外場人員"
+          },
+          "description": {
+            "ja": "日本酒にも詳しく、お料理に合う一杯をご提案します。",
+            "en": "Knowledgeable about sake, he suggests the perfect drink to pair with your meal.",
+            "ko": "일본 술에도 능통하여 요리에 어울리는 한 잔을 제안합니다.",
+            "zh-tw": "熟知日本酒，能為您搭配合適的美酒。"
+          },
+          "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80"
+        }
+      ]
+    },
+    "news": {
+      "sectionTitle": {
+        "ja": "お知らせ",
+        "en": "News",
+        "ko": "공지사항",
+        "zh-tw": "最新消息"
+      },
+      "sectionSubtitle": {
+        "ja": "最新情報をお届けします",
+        "en": "Latest updates",
+        "ko": "최신 정보를 전달합니다",
+        "zh-tw": "為您帶來最新消息"
+      },
+      "items": [
+        {
+          "date": "2024-12-03",
+          "category": "お知らせ",
+          "title": {
+            "ja": "年末年始の営業時間のご案内",
+            "en": "New Year's Business Hours",
+            "ko": "연말연시 영업시간 안내",
+            "zh-tw": "年末年初營業時間公告"
+          },
+          "content": {
+            "ja": "12月30日〜1月3日はお休みです。",
+            "en": "We will be closed from December 30 to January 3.",
+            "ko": "12월 30일~1월 3일은 휴무입니다.",
+            "zh-tw": "12月30日至1月3日公休。"
+          }
+        },
+        {
+          "date": "2024-11-12",
+          "category": "新メニュー",
+          "title": {
+            "ja": "季節限定串が登場",
+            "en": "Seasonal Limited Skewer Now Available",
+            "ko": "계절 한정 꼬치 등장",
+            "zh-tw": "季節限定串燒登場"
+          },
+          "content": {
+            "ja": "冬野菜を使った季節限定串をご用意しました。",
+            "en": "We've prepared a seasonal skewer using winter vegetables.",
+            "ko": "겨울 채소를 사용한 계절 한정 꼬치를 준비했습니다.",
+            "zh-tw": "使用冬季蔬菜的季節限定串燒。"
+          }
+        },
+        {
+          "date": "2024-10-18",
+          "category": "お知らせ",
+          "title": {
+            "ja": "日本酒の取り扱い拡充",
+            "en": "Expanded Sake Selection",
+            "ko": "일본 술 취급 확대",
+            "zh-tw": "日本酒品項擴充"
+          },
+          "content": {
+            "ja": "全国各地の地酒を新たに取り揃えました。",
+            "en": "We've newly added local sake from across Japan.",
+            "ko": "전국 각지의 지역 술을 새롭게 갖추었습니다.",
+            "zh-tw": "新增來自日本各地的地方酒。"
+          }
+        }
+      ]
+    },
+    "pricing": {
+      "sectionTitle": {
+        "ja": "コース・プラン",
+        "en": "Course Plans",
+        "ko": "코스 플랜",
+        "zh-tw": "課程方案"
+      },
+      "sectionSubtitle": {
+        "ja": "ご利用シーンに合わせた各種プラン",
+        "en": "Various plans tailored to your occasion",
+        "ko": "이용 상황에 맞춘 다양한 플랜",
+        "zh-tw": "依使用場景提供多種方案"
+      },
+      "plans": [
+        {
+          "name": {
+            "ja": "お手軽串コース",
+            "en": "Casual Skewer Course",
+            "ko": "캐주얼 꼬치 코스",
+            "zh-tw": "輕鬆串燒套餐"
+          },
+          "description": {
+            "ja": "人気の串を中心に楽しむ全6本コース。",
+            "en": "A 6-skewer course featuring our most popular items.",
+            "ko": "인기 꼬치를 중심으로 즐기는 전 6개 코스입니다.",
+            "zh-tw": "以人氣串燒為主的全6串套餐。"
+          },
+          "price": "¥2,200",
+          "features": [
+            {
+              "ja": "もも塩",
+              "en": "Salted Thigh",
+              "ko": "다리살 소금구이",
+              "zh-tw": "鹽味雞腿肉"
+            },
+            {
+              "ja": "ねぎま",
+              "en": "Chicken and Leek",
+              "ko": "네기마",
+              "zh-tw": "蔥肉串"
+            },
+            {
+              "ja": "つくね",
+              "en": "Chicken Meatball",
+              "ko": "츠쿠네",
+              "zh-tw": "雞肉丸"
+            },
+            {
+              "ja": "お通し",
+              "en": "Appetizer",
+              "ko": "기본 안주",
+              "zh-tw": "小菜"
+            },
+            {
+              "ja": "ドリンク1杯",
+              "en": "One Drink",
+              "ko": "음료 1잔",
+              "zh-tw": "一杯飲品"
+            }
+          ]
+        },
+        {
+          "name": {
+            "ja": "無骨おすすめコース",
+            "en": "BUKOU's Recommended Course",
+            "ko": "BUKOU 추천 코스",
+            "zh-tw": "無骨推薦套餐"
+          },
+          "description": {
+            "ja": "看板串を全て楽しめる一番人気コース。",
+            "en": "Our most popular course, featuring all our signature skewers.",
+            "ko": "대표 꼬치를 모두 즐기는 가장 인기 있는 코스입니다.",
+            "zh-tw": "享用所有招牌串燒的最受歡迎套餐。"
+          },
+          "price": "¥4,200",
+          "features": [
+            {
+              "ja": "串8種盛り合わせ",
+              "en": "Assorted 8 Skewers",
+              "ko": "꼬치 8종 모듬",
+              "zh-tw": "8種串燒拼盤"
+            },
+            {
+              "ja": "鶏刺し",
+              "en": "Chicken Sashimi",
+              "ko": "닭 사시미",
+              "zh-tw": "雞肉生魚片"
+            },
+            {
+              "ja": "だし巻き卵",
+              "en": "Dashi Rolled Omelette",
+              "ko": "다시마키 계란",
+              "zh-tw": "出汁蛋捲"
+            },
+            {
+              "ja": "お通し",
+              "en": "Appetizer",
+              "ko": "기본 안주",
+              "zh-tw": "小菜"
+            },
+            {
+              "ja": "デザート",
+              "en": "Dessert",
+              "ko": "디저트",
+              "zh-tw": "甜點"
+            }
+          ],
+          "isPopular": true
+        },
+        {
+          "name": {
+            "ja": "飲み放題付きコース",
+            "en": "Course with All-You-Can-Drink",
+            "ko": "음료 무제한 포함 코스",
+            "zh-tw": "含暢飲套餐"
+          },
+          "description": {
+            "ja": "串と飲み放題を両方満喫できるお得なコース。",
+            "en": "A great-value course that combines skewers with all-you-can-drink.",
+            "ko": "꼬치와 음료 무제한을 모두 만끽할 수 있는 알찬 코스입니다.",
+            "zh-tw": "同時享用串燒與無限暢飲的超值套餐。"
+          },
+          "price": "¥5,800",
+          "features": [
+            {
+              "ja": "串10種盛り合わせ",
+              "en": "Assorted 10 Skewers",
+              "ko": "꼬치 10종 모듬",
+              "zh-tw": "10種串燒拼盤"
+            },
+            {
+              "ja": "鶏刺し",
+              "en": "Chicken Sashimi",
+              "ko": "닭 사시미",
+              "zh-tw": "雞肉生魚片"
+            },
+            {
+              "ja": "焼きおにぎり",
+              "en": "Grilled Rice Ball",
+              "ko": "구운 주먹밥",
+              "zh-tw": "烤飯糰"
+            },
+            {
+              "ja": "2時間飲み放題",
+              "en": "2-Hour All-You-Can-Drink",
+              "ko": "2시간 음료 무제한",
+              "zh-tw": "2小時暢飲"
+            },
+            {
+              "ja": "デザート",
+              "en": "Dessert",
+              "ko": "디저트",
+              "zh-tw": "甜點"
+            }
+          ]
+        }
+      ]
+    },
+    "faq": {
+      "sectionTitle": {
+        "ja": "よくあるご質問",
+        "en": "Frequently Asked Questions",
+        "ko": "자주 묻는 질문",
+        "zh-tw": "常見問題"
+      },
+      "sectionSubtitle": {
+        "ja": "お客様からのご質問にお答えします",
+        "en": "We answer questions from our customers",
+        "ko": "고객님의 질문에 답변드립니다",
+        "zh-tw": "為您解答常見疑問"
+      },
+      "items": [
+        {
+          "question": {
+            "ja": "串の注文は1本から可能ですか？",
+            "en": "Can I order just one skewer?",
+            "ko": "꼬치는 1개부터 주문 가능한가요？",
+            "zh-tw": "串燒可以單點1串嗎？"
+          },
+          "answer": {
+            "ja": "はい、1本からご注文いただけます。",
+            "en": "Yes, you can order a single skewer.",
+            "ko": "네, 1개부터 주문 가능합니다.",
+            "zh-tw": "可以，最少可單點1串。"
+          }
+        },
+        {
+          "question": {
+            "ja": "タレと塩は選べますか？",
+            "en": "Can I choose sauce or salt?",
+            "ko": "소스와 소금을 선택할 수 있나요？",
+            "zh-tw": "可以選擇醬汁或鹽味嗎？"
+          },
+          "answer": {
+            "ja": "ほとんどの串でお選びいただけます。",
+            "en": "You can choose for most skewers.",
+            "ko": "대부분의 꼬치에서 선택 가능합니다.",
+            "zh-tw": "大部分串燒皆可選擇。"
+          }
+        },
+        {
+          "question": {
+            "ja": "カウンター席のみですか？",
+            "en": "Are there only counter seats?",
+            "ko": "카운터석만 있나요？",
+            "zh-tw": "只有吧台座位嗎？"
+          },
+          "answer": {
+            "ja": "小上がり席もご用意しております。",
+            "en": "We also have tatami seating available.",
+            "ko": "다다미석도 준비되어 있습니다.",
+            "zh-tw": "也設有和式座位。"
+          }
+        },
+        {
+          "question": {
+            "ja": "予約は必要ですか？",
+            "en": "Is a reservation required?",
+            "ko": "예약이 필요한가요？",
+            "zh-tw": "需要預約嗎？"
+          },
+          "answer": {
+            "ja": "週末は満席になりやすいためご予約をおすすめします。",
+            "en": "Reservations are recommended, especially on weekends.",
+            "ko": "주말은 만석이 되기 쉬우므로 예약을 권장합니다.",
+            "zh-tw": "週末容易滿席，建議提前預約。"
+          }
+        },
+        {
+          "question": {
+            "ja": "日本酒の種類は豊富ですか？",
+            "en": "Do you have a wide selection of sake?",
+            "ko": "일본 술 종류가 다양한가요？",
+            "zh-tw": "日本酒種類豐富嗎？"
+          },
+          "answer": {
+            "ja": "全国各地の地酒を20種類以上ご用意しております。",
+            "en": "We offer over 20 varieties of local sake from across Japan.",
+            "ko": "전국 각지의 지역 술을 20종류 이상 준비하고 있습니다.",
+            "zh-tw": "備有來自日本各地的地方酒20種以上。"
+          }
+        }
+      ]
+    },
+    "access": {
+      "sectionTitle": {
+        "ja": "アクセス",
+        "en": "Access",
+        "ko": "오시는 길",
+        "zh-tw": "交通資訊"
+      },
+      "sectionSubtitle": {
+        "ja": "店舗へのご案内",
+        "en": "Guide to the Store",
+        "ko": "매장 안내",
+        "zh-tw": "商店指南"
+      },
+      "address": {
+        "ja": "東京都台東区〇〇 4-6-8",
+        "en": "4-6-8, XX, Taito, Tokyo",
+        "ko": "도쿄도 다이토구 〇〇 4-6-8",
+        "zh-tw": "東京都台東區〇〇 4-6-8"
+      },
+      "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3579.1447437301044!2d127.68589831501648!3d26.21424098342371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34e56bd0b4a42ff1%3A0x36812e0e598f7d6b!2z54CP6Yar!5e0!3m2!1sja!2sjp!4v1234567890123!5m2!1sja!2sjp",
+      "parking": {
+        "title": {
+          "ja": "駐車場のご案内",
+          "en": "Parking Information",
+          "ko": "주차 정보",
+          "zh-tw": "停車資訊"
+        },
+        "description": {
+          "ja": "店舗専用駐車場はございません。近隣のパーキングをご利用ください。",
+          "en": "We do not have dedicated parking. Please use nearby parking facilities.",
+          "ko": "매장 전용 주차장은 없습니다. 인근 주차장을 이용해 주십시오.",
+          "zh-tw": "本店無專屬停車場，請使用附近的停車設施。"
+        },
+        "spaces": {
+          "ja": "近隣コインパーキングをご利用ください",
+          "en": "Please use nearby coin parking",
+          "ko": "인근 동전 주차장을 이용해 주세요",
+          "zh-tw": "請利用附近的投幣停車場"
+        },
+        "notes": {
+          "ja": "公共交通機関のご利用をおすすめします。",
+          "en": "We recommend using public transportation.",
+          "ko": "대중교통 이용을 권장합니다.",
+          "zh-tw": "建議搭乘大眾運輸前來。"
+        }
+      },
+      "transportation": {
+        "title": {
+          "ja": "公共交通機関をご利用の方",
+          "en": "For those using public transportation",
+          "ko": "대중교통을 이용하시는 분",
+          "zh-tw": "使用大眾運輸的顧客"
+        },
+        "methods": [
+          {
+            "type": {
+              "ja": "電車",
+              "en": "Train",
+              "ko": "기차",
+              "zh-tw": "電車"
+            },
+            "description": {
+              "ja": "〇〇線「××駅」より徒歩2分",
+              "en": "2 minutes on foot from XX Station",
+              "ko": "〇〇선 '××역'에서 도보 2분",
+              "zh-tw": "從〇〇線「××站」步行2分鐘"
+            }
+          },
+          {
+            "type": {
+              "ja": "バス",
+              "en": "Bus",
+              "ko": "버스",
+              "zh-tw": "巴士"
+            },
+            "description": {
+              "ja": "「△△」バス停より徒歩1分",
+              "en": "1 minute on foot from the △△ bus stop",
+              "ko": "'△△' 버스 정류장에서 도보 1분",
+              "zh-tw": "從「△△」巴士站步行1分鐘"
+            }
+          },
+          {
+            "type": {
+              "ja": "タクシー",
+              "en": "Taxi",
+              "ko": "택시",
+              "zh-tw": "計程車"
+            },
+            "description": {
+              "ja": "最寄り駅より約3分",
+              "en": "About 3 minutes from the nearest station",
+              "ko": "가까운 역에서 약 3분",
+              "zh-tw": "從最近車站約3分鐘"
+            }
+          }
+        ]
+      }
+    },
+    "storeInfo": {
+      "sectionTitle": {
+        "ja": "店舗情報",
+        "en": "Store Information",
+        "ko": "매장 정보",
+        "zh-tw": "店鋪資訊"
+      },
+      "mainImage": "https://images.unsplash.com/photo-1544025162-d76694265947?w=1200&q=80",
+      "mainImageCaption": {
+        "ja": "カウンター越しに、炭火の香りを感じてください",
+        "en": "Feel the aroma of charcoal right across the counter",
+        "ko": "카운터 너머로 숯불의 향을 느껴보세요",
+        "zh-tw": "在吧台前，感受炭火的香氣"
+      },
+      "items": [
+        {
+          "ja": "東京都台東区〇〇 4-6-8",
+          "en": "4-6-8, XX, Taito, Tokyo",
+          "ko": "도쿄도 다이토구 〇〇 4-6-8",
+          "zh-tw": "東京都台東區〇〇 4-6-8"
+        },
+        {
+          "ja": "17:00 - 23:30（L.O. 23:00）",
+          "en": "17:00 - 23:30 (L.O. 23:00)",
+          "ko": "17:00 - 23:30 (L.O. 23:00)",
+          "zh-tw": "17:00 - 23:30（最後點餐23:00）"
+        },
+        {
+          "ja": "03-ZZZZ-ZZZZ",
+          "en": "03-ZZZZ-ZZZZ",
+          "ko": "03-ZZZZ-ZZZZ",
+          "zh-tw": "03-ZZZZ-ZZZZ"
+        },
+        {
+          "ja": "info@bukou.example.com",
+          "en": "info@bukou.example.com",
+          "ko": "info@bukou.example.com",
+          "zh-tw": "info@bukou.example.com"
+        }
+      ]
+    },
+    "contact": {
+      "sectionTitle": {
+        "ja": "お問い合わせ",
+        "en": "Contact Us",
+        "ko": "문의하기",
+        "zh-tw": "聯絡我們"
+      },
+      "sectionSubtitle": {
+        "ja": "ご予約やご質問など、お気軽にお問い合わせください",
+        "en": "Please feel free to contact us for reservations or inquiries.",
+        "ko": "예약이나 문의 사항이 있으시면 언제든지 문의해 주세요.",
+        "zh-tw": "如需預約或詢問，請隨時與我們聯繫。"
+      },
+      "fields": {
+        "name": {
+          "ja": "お名前",
+          "en": "Name",
+          "ko": "이름",
+          "zh-tw": "姓名"
+        },
+        "email": {
+          "ja": "メールアドレス",
+          "en": "Email Address",
+          "ko": "이메일 주소",
+          "zh-tw": "電子郵件地址"
+        },
+        "subject": {
+          "ja": "件名",
+          "en": "Subject",
+          "ko": "제목",
+          "zh-tw": "主題"
+        },
+        "message": {
+          "ja": "お問い合わせ内容",
+          "en": "Message",
+          "ko": "문의 내용",
+          "zh-tw": "訊息內容"
+        }
+      },
+      "submitButton": {
+        "ja": "送信する",
+        "en": "Send",
+        "ko": "보내기",
+        "zh-tw": "發送"
+      }
+    },
+    "cta": {
+      "sectionTitle": {
+        "ja": "ご予約・お問い合わせ",
+        "en": "Reservations and Inquiries",
+        "ko": "예약 및 문의",
+        "zh-tw": "預約與詢問"
+      },
+      "sectionSubtitle": {
+        "ja": "皆様のご来店を心よりお待ちしております",
+        "en": "We sincerely look forward to your visit.",
+        "ko": "여러분의 방문을 진심으로 기다립니다.",
+        "zh-tw": "我們衷心期待您的光臨。"
+      },
+      "description": {
+        "ja": "女子会や日本酒好きの集まりなど、様々なシーンでご利用いただけます。",
+        "en": "Perfect for girls' nights out, sake lovers' gatherings, and more.",
+        "ko": "여자들의 모임이나 일본 술 애호가들의 모임 등 다양한 상황에서 이용하실 수 있습니다.",
+        "zh-tw": "適合女子聚會、日本酒愛好者聚會等各種場合。"
+      },
+      "backgroundImage": "https://images.unsplash.com/photo-1522336572468-97b06e8ef143?w=1600&q=80",
+      "buttons": [
+        {
+          "text": {
+            "ja": "お電話でご予約",
+            "en": "Reserve by Phone",
+            "ko": "전화로 예약하기",
+            "zh-tw": "電話預約"
+          },
+          "link": "#contact",
+          "type": "primary"
+        },
+        {
+          "text": {
+            "ja": "Webでお問い合わせ",
+            "en": "Inquire via Web",
+            "ko": "웹으로 문의하기",
+            "zh-tw": "網上詢問"
+          },
+          "link": "#contact",
+          "type": "secondary"
+        }
+      ]
+    },
+    "reviews": {
+      "sectionTitle": {
+        "ja": "お客様の声",
+        "en": "Customer Voices",
+        "ko": "고객의 목소리",
+        "zh-tw": "顧客的聲音"
+      },
+      "sectionSubtitle": {
+        "ja": "ご来店いただいたお客様からのメッセージ",
+        "en": "Messages from customers who visited us",
+        "ko": "방문한 고객의 메시지",
+        "zh-tw": "來店顧客的留言"
+      },
+      "reviews": [
+        {
+          "name": {
+            "ja": "松本 洋子",
+            "en": "Yoko Matsumoto",
+            "ko": "마츠모토 요코",
+            "zh-tw": "松本洋子"
+          },
+          "rating": 5,
+          "date": "2024-11-22",
+          "comment": {
+            "ja": "串の一本一本に丁寧さを感じました。日本酒との相性も抜群です。",
+            "en": "I could feel the care in every single skewer. It also pairs wonderfully with sake.",
+            "ko": "꼬치 하나하나에서 정성을 느꼈습니다. 일본 술과의 조합도 훌륭합니다.",
+            "zh-tw": "每一串都能感受到用心，與日本酒的搭配也非常出色。"
+          },
+          "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&q=80"
+        },
+        {
+          "name": {
+            "ja": "井上 直樹",
+            "en": "Naoki Inoue",
+            "ko": "이노우에 나오키",
+            "zh-tw": "井上直樹"
+          },
+          "rating": 5,
+          "date": "2024-11-14",
+          "comment": {
+            "ja": "カウンターで焼き師の技を見ながら食べるのが楽しかったです。",
+            "en": "It was fun to watch the yakitori master's skill while eating at the counter.",
+            "ko": "카운터에서 장인의 기술을 보며 먹는 것이 즐거웠습니다.",
+            "zh-tw": "在吧台一邊觀賞師傅的手藝一邊用餐，非常愉快。"
+          },
+          "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80"
+        },
+        {
+          "name": {
+            "ja": "藤田 恭子",
+            "en": "Kyoko Fujita",
+            "ko": "후지타 교코",
+            "zh-tw": "藤田恭子"
+          },
+          "rating": 4,
+          "date": "2024-10-25",
+          "comment": {
+            "ja": "つくねが絶品でした。また日本酒を飲みに来たいです。",
+            "en": "The chicken meatballs were exquisite. I want to come back for more sake.",
+            "ko": "츠쿠네가 일품이었습니다. 또 일본 술을 마시러 오고 싶습니다.",
+            "zh-tw": "雞肉丸絕品美味，還想再來喝日本酒。"
+          },
+          "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80"
+        }
+      ]
+    },
+    "company": {
+      "sectionTitle": {
+        "ja": "運営会社情報",
+        "en": "Company Information",
+        "ko": "운영 회사 정보",
+        "zh-tw": "運營公司資訊"
+      },
+      "sectionSubtitle": {
+        "ja": "食を通じて地域社会に貢献する",
+        "en": "Contributing to the local community through food",
+        "ko": "음식을 통해 지역 사회에 기여하기",
+        "zh-tw": "通過美食貢獻地方社區"
+      },
+      "philosophy": {
+        "title": {
+          "ja": "経営理念",
+          "en": "Management Philosophy",
+          "ko": "경영 철학",
+          "zh-tw": "經營理念"
+        },
+        "content": {
+          "ja": "「炭火焼鳥 無骨」は、素材への敬意と職人の技術、真心のこもったおもてなしを通じて、お客様に忘れられない一皿をお届けすることを使命としています。",
+          "en": "\"Charcoal Yakitori BUKOU\" is committed to delivering an unforgettable dish to every guest through respect for ingredients, skilled craftsmanship, and heartfelt hospitality.",
+          "ko": "'숯불 야키토리 BUKOU'는 재료에 대한 경의와 장인의 기술, 진심 어린 환대를 통해 손님에게 잊을 수 없는 한 그릇을 선사하는 것을 사명으로 하고 있습니다.",
+          "zh-tw": "「炭火燒鳥 無骨」秉持對食材的尊重、職人的技藝與真誠的款待，致力於為每位顧客獻上難忘的一餐。"
+        }
+      },
+      "history": {
+        "title": {
+          "ja": "沿革",
+          "en": "History",
+          "ko": "연혁",
+          "zh-tw": "沿革"
+        },
+        "timeline": [
+          {
+            "year": "2018年",
+            "event": {
+              "ja": "炭火焼鳥 無骨 創業",
+              "en": "Founding of Charcoal Yakitori BUKOU",
+              "ko": "숯불 야키토리 BUKOU 창업",
+              "zh-tw": "炭火燒鳥 無骨 創業"
+            }
+          },
+          {
+            "year": "2020年",
+            "event": {
+              "ja": "店舗を増築し、席数を拡大",
+              "en": "Expanded the restaurant and increased seating capacity",
+              "ko": "매장을 증축하여 좌석 수 확대",
+              "zh-tw": "擴建店舖並增加座位數"
+            }
+          },
+          {
+            "year": "2023年",
+            "event": {
+              "ja": "テイクアウト・デリバリー事業を開始",
+              "en": "Started takeout and delivery service",
+              "ko": "테이크아웃 및 배달 사업 시작",
+              "zh-tw": "開始外帶及外送服務"
+            }
+          }
+        ]
+      },
+      "companyInfo": {
+        "title": {
+          "ja": "会社概要",
+          "en": "Company Overview",
+          "ko": "회사 개요",
+          "zh-tw": "公司概況"
+        },
+        "items": [
+          {
+            "label": {
+              "ja": "屋号",
+              "en": "Store Name",
+              "ko": "상호",
+              "zh-tw": "店名"
+            },
+            "value": {
+              "ja": "炭火焼鳥 無骨",
+              "en": "Charcoal Yakitori BUKOU",
+              "ko": "숯불 야키토리 BUKOU",
+              "zh-tw": "炭火燒鳥 無骨"
+            }
+          },
+          {
+            "label": {
+              "ja": "設立",
+              "en": "Established",
+              "ko": "설립",
+              "zh-tw": "成立"
+            },
+            "value": {
+              "ja": "2018年3月",
+              "en": "3月 2018",
+              "ko": "2018년 3月",
+              "zh-tw": "2018年3月"
+            }
+          },
+          {
+            "label": {
+              "ja": "代表者",
+              "en": "Representative",
+              "ko": "대표자",
+              "zh-tw": "代表人"
+            },
+            "value": {
+              "ja": "骨山 徹",
+              "en": "Toru Koneyama",
+              "ko": "고네야마 토루",
+              "zh-tw": "骨山徹"
+            }
+          },
+          {
+            "label": {
+              "ja": "所在地",
+              "en": "Location",
+              "ko": "위치",
+              "zh-tw": "所在地"
+            },
+            "value": {
+              "ja": "東京都台東区〇〇 4-6-8",
+              "en": "4-6-8, XX, Taito, Tokyo",
+              "ko": "도쿄도 다이토구 〇〇 4-6-8",
+              "zh-tw": "東京都台東區〇〇 4-6-8"
+            }
+          },
+          {
+            "label": {
+              "ja": "事業内容",
+              "en": "Business Activities",
+              "ko": "사업 내용",
+              "zh-tw": "業務內容"
+            },
+            "value": {
+              "ja": "飲食店経営",
+              "en": "Restaurant management",
+              "ko": "식당 경영",
+              "zh-tw": "餐飲經營"
+            }
+          },
+          {
+            "label": {
+              "ja": "従業員数",
+              "en": "Number of Employees",
+              "ko": "직원 수",
+              "zh-tw": "員工人數"
+            },
+            "value": {
+              "ja": "約15名（パート・アルバイト含む）",
+              "en": "Approx. 15 (including part-time staff)",
+              "ko": "약 15명(파트타임 포함)",
+              "zh-tw": "約15人（含兼職員工）"
+            }
+          }
+        ]
+      }
+    },
+    "footer": {
+      "logo": {
+        "ja": "炭火焼鳥 無骨",
+        "en": "Charcoal Yakitori BUKOU",
+        "ko": "숯불 야키토리 BUKOU",
+        "zh-tw": "炭火燒鳥 無骨"
+      },
+      "description": {
+        "ja": "一本の串に、真心を込めて。",
+        "en": "Heartfelt care in every single skewer.",
+        "ko": "한 꼬치에 진심을 담아.",
+        "zh-tw": "在每一串中，注入真心。"
+      },
+      "businessHours": {
+        "title": {
+          "ja": "営業時間",
+          "en": "Business Hours",
+          "ko": "영업 시간",
+          "zh-tw": "營業時間"
+        },
+        "days": {
+          "ja": "月曜日 - 日曜日",
+          "en": "Monday - Sunday",
+          "ko": "월요일 - 일요일",
+          "zh-tw": "星期一 - 星期日"
+        },
+        "hours": {
+          "ja": "17:00 - 23:30",
+          "en": "17:00 - 23:30",
+          "ko": "17:00 - 23:30",
+          "zh-tw": "17:00 - 23:30"
+        },
+        "closedDay": {
+          "ja": "定休日: 不定休",
+          "en": "Closed: Irregular holidays",
+          "ko": "휴무일: 불규칙 휴무",
+          "zh-tw": "休息日: 不定期休假"
+        }
+      },
+      "social": {
+        "title": {
+          "ja": "SNSアカウント",
+          "en": "Social Media Accounts",
+          "ko": "소셜 미디어 계정",
+          "zh-tw": "社交媒體帳號"
+        },
+        "links": [
+          {
+            "platform": "Facebook",
+            "url": "#"
+          },
+          {
+            "platform": "Instagram",
+            "url": "#"
+          },
+          {
+            "platform": "Twitter",
+            "url": "#"
+          }
+        ]
+      },
+      "copyright": {
+        "ja": "© 2024 炭火焼鳥 無骨. All rights reserved.",
+        "en": "© 2024 Charcoal Yakitori BUKOU. All rights reserved.",
+        "ko": "© 2024 숯불 야키토리 BUKOU. All rights reserved.",
+        "zh-tw": "© 2024 炭火燒鳥 無骨. All rights reserved."
+      }
+    },
+    "templateId": "char",
+    "settings": {
+      "theme": "char"
+    }
+  }
+}

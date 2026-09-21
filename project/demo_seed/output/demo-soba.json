@@ -1,0 +1,1426 @@
+{
+  "store_id": "demo-soba",
+  "Subdomain": "demo-soba",
+  "RecordType": "LP_CONTENT",
+  "Status": "Published",
+  "CreatedAt": "2026-09-21T01:16:22.455Z",
+  "UpdatedAt": "2026-09-21T01:16:22.455Z",
+  "ContentData": {
+    "header": {
+      "logo": {
+        "text": {
+          "ja": "手打ちそば 静",
+          "en": "Handmade Soba SHIZUKA",
+          "ko": "손타작 소바 SHIZUKA",
+          "zh-tw": "手打蕎麥麵 靜"
+        }
+      },
+      "navigation": [
+        {
+          "id": "about",
+          "label": {
+            "ja": "コンセプト",
+            "en": "Concept",
+            "ko": "개념",
+            "zh-tw": "概念"
+          }
+        },
+        {
+          "id": "menu",
+          "label": {
+            "ja": "メニュー",
+            "en": "Menu",
+            "ko": "메뉴",
+            "zh-tw": "菜單"
+          }
+        },
+        {
+          "id": "pricing",
+          "label": {
+            "ja": "コース・プラン",
+            "en": "Course Plan",
+            "ko": "코스 플랜",
+            "zh-tw": "課程方案"
+          }
+        },
+        {
+          "id": "cta",
+          "label": {
+            "ja": "ご予約",
+            "en": "Reservation",
+            "ko": "예약",
+            "zh-tw": "預約"
+          }
+        },
+        {
+          "id": "gallery",
+          "label": {
+            "ja": "ギャラリー",
+            "en": "Gallery",
+            "ko": "갤러리",
+            "zh-tw": "畫廊"
+          }
+        },
+        {
+          "id": "staff",
+          "label": {
+            "ja": "スタッフ",
+            "en": "Staff",
+            "ko": "직원",
+            "zh-tw": "員工"
+          }
+        },
+        {
+          "id": "reviews",
+          "label": {
+            "ja": "お客様の声",
+            "en": "Customer Feedback",
+            "ko": "고객 후기",
+            "zh-tw": "客戶反饋"
+          }
+        },
+        {
+          "id": "news",
+          "label": {
+            "ja": "お知らせ",
+            "en": "Notice",
+            "ko": "공지사항",
+            "zh-tw": "最新消息"
+          }
+        },
+        {
+          "id": "storeInfo",
+          "label": {
+            "ja": "店舗情報",
+            "en": "Store Information",
+            "ko": "매장 정보",
+            "zh-tw": "店鋪資訊"
+          }
+        },
+        {
+          "id": "company",
+          "label": {
+            "ja": "運営会社",
+            "en": "Operating Company",
+            "ko": "운영 회사",
+            "zh-tw": "運營公司"
+          }
+        },
+        {
+          "id": "access",
+          "label": {
+            "ja": "アクセス",
+            "en": "Access",
+            "ko": "오시는 길",
+            "zh-tw": "交通資訊"
+          }
+        },
+        {
+          "id": "faq",
+          "label": {
+            "ja": "よくある質問",
+            "en": "FAQ",
+            "ko": "자주 묻는 질문",
+            "zh-tw": "常見問題"
+          }
+        },
+        {
+          "id": "contact",
+          "label": {
+            "ja": "お問い合わせ",
+            "en": "Contact Us",
+            "ko": "문의하기",
+            "zh-tw": "聯絡我們"
+          }
+        }
+      ]
+    },
+    "hero": {
+      "sectionTitle": {
+        "ja": "静けさの中で、\n一本の蕎麦を。",
+        "en": "In Quiet Stillness,\nA Single Strand of Soba.",
+        "ko": "고요함 속에서,\n한 그릇의 소바를.",
+        "zh-tw": "在寧靜之中，\n品味一碗蕎麥麵。"
+      },
+      "subtitle": {
+        "ja": "毎朝手打ちする十割そばの静かな専門店",
+        "en": "A quiet specialty shop offering 100% buckwheat soba, hand-made fresh every morning",
+        "ko": "매일 아침 손타작하는 100% 소바의 조용한 전문점",
+        "zh-tw": "每日清晨手打十割蕎麥麵的靜謐專門店"
+      },
+      "backgroundImage": "https://images.unsplash.com/photo-1591814468924-caf88d1232e1?w=1920&q=80"
+    },
+    "about": {
+      "sectionTitle": {
+        "ja": "私たちのこだわり",
+        "en": "Our Commitment",
+        "ko": "우리의 고집",
+        "zh-tw": "我們的堅持"
+      },
+      "features": [
+        {
+          "title": {
+            "ja": "毎朝の手打ち",
+            "en": "Handmade Every Morning",
+            "ko": "매일 아침 손타작",
+            "zh-tw": "每日清晨手打"
+          },
+          "description": {
+            "ja": "石臼で挽いた蕎麦粉を、毎朝一から手打ちしています。",
+            "en": "Buckwheat flour, stone-milled, is hand-kneaded fresh from scratch every morning.",
+            "ko": "돌절구로 갈아낸 소바 가루를 매일 아침 처음부터 손으로 반죽합니다.",
+            "zh-tw": "以石臼磨製的蕎麥粉，每日清晨從零開始手打製作。"
+          },
+          "image": "https://images.unsplash.com/photo-1623341214825-9f4f963727da?w=800&q=80"
+        },
+        {
+          "title": {
+            "ja": "十割そばへの誠実",
+            "en": "Devotion to 100% Buckwheat",
+            "ko": "100% 소바에 대한 성실함",
+            "zh-tw": "對十割蕎麥的堅持"
+          },
+          "description": {
+            "ja": "つなぎを使わない十割そばの、香りと喉越しを追求しています。",
+            "en": "We pursue the aroma and texture of 100% buckwheat soba, made without any binding flour.",
+            "ko": "연결재를 사용하지 않는 100% 소바의 향과 목넘김을 추구하고 있습니다.",
+            "zh-tw": "不使用麵粉黏合，追求純蕎麥麵的香氣與口感。"
+          },
+          "image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&q=80"
+        },
+        {
+          "title": {
+            "ja": "静かな時間",
+            "en": "A Quiet Moment",
+            "ko": "고요한 시간",
+            "zh-tw": "靜謐時光"
+          },
+          "description": {
+            "ja": "音を立てず、静かに蕎麦と向き合う時間をご提供します。",
+            "en": "We offer a quiet moment to sit and savor soba in stillness.",
+            "ko": "조용히 소바와 마주하는 시간을 제공합니다.",
+            "zh-tw": "提供靜靜面對蕎麥麵的寧靜時光。"
+          },
+          "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&q=80"
+        }
+      ]
+    },
+    "menu": {
+      "sectionTitle": {
+        "ja": "お品書き",
+        "en": "Menu",
+        "ko": "메뉴",
+        "zh-tw": "菜單"
+      },
+      "sectionSubtitle": {
+        "ja": "静けさの中で味わう、一本の蕎麦",
+        "en": "A single strand of soba, savored in quiet stillness",
+        "ko": "고요함 속에서 맛보는 한 그릇의 소바",
+        "zh-tw": "在寧靜之中品味的一碗蕎麥麵"
+      },
+      "items": [
+        {
+          "name": {
+            "ja": "もりそば",
+            "en": "Mori Soba (Cold Soba)",
+            "ko": "모리소바",
+            "zh-tw": "盛蕎麥麵"
+          },
+          "description": {
+            "ja": "十割そばの香りを味わうシンプルな一杯。",
+            "en": "A simple bowl that lets you savor the aroma of 100% buckwheat.",
+            "ko": "100% 소바의 향을 맛보는 심플한 한 그릇입니다.",
+            "zh-tw": "品味十割蕎麥香氣的簡約一碗。"
+          },
+          "image": "https://images.unsplash.com/photo-1591814468924-caf88d1232e1?w=800&q=80",
+          "price": "¥950"
+        },
+        {
+          "name": {
+            "ja": "かけそば",
+            "en": "Kake Soba (Hot Soba)",
+            "ko": "카케소바",
+            "zh-tw": "湯蕎麥麵"
+          },
+          "description": {
+            "ja": "温かい出汁でいただく優しい一杯。",
+            "en": "A gentle bowl served in a warm dashi broth.",
+            "ko": "따뜻한 육수로 즐기는 부드러운 한 그릇입니다.",
+            "zh-tw": "以溫熱高湯呈現的溫和一碗。"
+          },
+          "image": "https://images.unsplash.com/photo-1623341214825-9f4f963727da?w=800&q=80",
+          "price": "¥900"
+        },
+        {
+          "name": {
+            "ja": "天ぷらそば",
+            "en": "Tempura Soba",
+            "ko": "덴푸라 소바",
+            "zh-tw": "天婦羅蕎麥麵"
+          },
+          "description": {
+            "ja": "サクサクの天ぷらをのせた贅沢な一杯。",
+            "en": "A luxurious bowl topped with crispy tempura.",
+            "ko": "바삭한 튀김을 올린 호화로운 한 그릇입니다.",
+            "zh-tw": "鋪滿酥脆天婦羅的豪華一碗。"
+          },
+          "image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&q=80",
+          "price": "¥1,300"
+        },
+        {
+          "name": {
+            "ja": "鴨せいろ",
+            "en": "Duck Seiro Soba",
+            "ko": "오리 세이로",
+            "zh-tw": "鴨肉蕎麥麵"
+          },
+          "description": {
+            "ja": "鴨の旨味が溶け込んだ濃厚なつけ汁。",
+            "en": "A rich dipping broth infused with the flavor of duck.",
+            "ko": "오리의 감칠맛이 녹아든 진한 소스입니다.",
+            "zh-tw": "融入鴨肉鮮美的濃郁沾汁。"
+          },
+          "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&q=80",
+          "price": "¥1,500"
+        },
+        {
+          "name": {
+            "ja": "山かけそば",
+            "en": "Grated Yam Soba",
+            "ko": "야마카케 소바",
+            "zh-tw": "山藥泥蕎麥麵"
+          },
+          "description": {
+            "ja": "すりおろした山芋のとろみが特徴。",
+            "en": "Featuring the smooth, thick texture of grated mountain yam.",
+            "ko": "갈아낸 참마의 걸쭉함이 특징입니다.",
+            "zh-tw": "以磨泥山藥的濃滑口感為特色。"
+          },
+          "image": "https://images.unsplash.com/photo-1591814468924-caf88d1232e1?w=800&q=80",
+          "price": "¥1,100"
+        },
+        {
+          "name": {
+            "ja": "月見そば",
+            "en": "Tsukimi Soba (Egg Soba)",
+            "ko": "츠키미 소바",
+            "zh-tw": "月見蕎麥麵"
+          },
+          "description": {
+            "ja": "生卵をのせた見た目も楽しい一杯。",
+            "en": "A visually delightful bowl topped with a raw egg.",
+            "ko": "생계란을 올린 보기에도 즐거운 한 그릇입니다.",
+            "zh-tw": "鋪上生蛋，視覺與美味兼具的一碗。"
+          },
+          "image": "https://images.unsplash.com/photo-1623341214825-9f4f963727da?w=800&q=80",
+          "price": "¥1,000"
+        },
+        {
+          "name": {
+            "ja": "ざるそば",
+            "en": "Zaru Soba (Chilled Soba)",
+            "ko": "자루소바",
+            "zh-tw": "笊蕎麥麵"
+          },
+          "description": {
+            "ja": "海苔を添えた冷たいそばの定番。",
+            "en": "A classic chilled soba topped with nori seaweed.",
+            "ko": "곁들인 김이 특징인 차가운 소바의 정석입니다.",
+            "zh-tw": "撒上海苔的經典冷蕎麥麵。"
+          },
+          "image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&q=80",
+          "price": "¥1,050"
+        },
+        {
+          "name": {
+            "ja": "季節のそば",
+            "en": "Seasonal Soba",
+            "ko": "계절 소바",
+            "zh-tw": "季節蕎麥麵"
+          },
+          "description": {
+            "ja": "旬の食材を使った期間限定の一杯。",
+            "en": "A limited-time bowl made with seasonal ingredients.",
+            "ko": "제철 재료를 사용한 기간 한정 한 그릇입니다.",
+            "zh-tw": "使用當季食材的期間限定一碗。"
+          },
+          "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&q=80",
+          "price": "¥1,200"
+        }
+      ]
+    },
+    "gallery": {
+      "sectionTitle": {
+        "ja": "ギャラリー",
+        "en": "Gallery",
+        "ko": "갤러리",
+        "zh-tw": "畫廊"
+      },
+      "sectionSubtitle": {
+        "ja": "静けさと手打ちの技を写真でお届け",
+        "en": "Quiet stillness and the art of hand-making soba, captured in photos",
+        "ko": "고요함과 손타작의 기술을 사진으로 전해드립니다",
+        "zh-tw": "透過照片傳達靜謐與手打技藝"
+      },
+      "categories": [
+        {
+          "ja": "すべて",
+          "en": "All",
+          "ko": "전체",
+          "zh-tw": "全部"
+        },
+        {
+          "ja": "料理",
+          "en": "Cuisine",
+          "ko": "요리",
+          "zh-tw": "料理"
+        },
+        {
+          "ja": "店内",
+          "en": "Interior",
+          "ko": "매장",
+          "zh-tw": "店內"
+        },
+        {
+          "ja": "イベント",
+          "en": "Events",
+          "ko": "이벤트",
+          "zh-tw": "活動"
+        }
+      ],
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1591814468924-caf88d1232e1?w=800&q=80",
+          "caption": {
+            "ja": "もりそば",
+            "en": "Mori Soba",
+            "ko": "모리소바",
+            "zh-tw": "盛蕎麥麵"
+          },
+          "category": {
+            "ja": "料理",
+            "en": "Cuisine",
+            "ko": "요리",
+            "zh-tw": "料理"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1623341214825-9f4f963727da?w=800&q=80",
+          "caption": {
+            "ja": "天ぷらそば",
+            "en": "Tempura Soba",
+            "ko": "덴푸라 소바",
+            "zh-tw": "天婦羅蕎麥麵"
+          },
+          "category": {
+            "ja": "料理",
+            "en": "Cuisine",
+            "ko": "요리",
+            "zh-tw": "料理"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&q=80",
+          "caption": {
+            "ja": "蕎麦打ちの様子",
+            "en": "The Soba-Making Process",
+            "ko": "소바 반죽 모습",
+            "zh-tw": "打蕎麥麵情景"
+          },
+          "category": {
+            "ja": "料理",
+            "en": "Cuisine",
+            "ko": "요리",
+            "zh-tw": "料理"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&q=80",
+          "caption": {
+            "ja": "鴨せいろ",
+            "en": "Duck Seiro Soba",
+            "ko": "오리 세이로",
+            "zh-tw": "鴨肉蕎麥麵"
+          },
+          "category": {
+            "ja": "料理",
+            "en": "Cuisine",
+            "ko": "요리",
+            "zh-tw": "料理"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80",
+          "caption": {
+            "ja": "静かな店内",
+            "en": "A Quiet Interior",
+            "ko": "고요한 매장",
+            "zh-tw": "靜謐的店內"
+          },
+          "category": {
+            "ja": "店内",
+            "en": "Interior",
+            "ko": "매장",
+            "zh-tw": "店內"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&q=80",
+          "caption": {
+            "ja": "和の趣あるテーブル",
+            "en": "Japanese-style Table Seating",
+            "ko": "일본풍 테이블",
+            "zh-tw": "和風桌位"
+          },
+          "category": {
+            "ja": "店内",
+            "en": "Interior",
+            "ko": "매장",
+            "zh-tw": "店內"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80",
+          "caption": {
+            "ja": "坪庭のある空間",
+            "en": "A Space with a Courtyard Garden",
+            "ko": "坪庭이 있는 공간",
+            "zh-tw": "設有坪庭的空間"
+          },
+          "category": {
+            "ja": "店内",
+            "en": "Interior",
+            "ko": "매장",
+            "zh-tw": "店內"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1591814468924-caf88d1232e1?w=600&q=80",
+          "caption": {
+            "ja": "石臼挽きの粉",
+            "en": "Stone-Milled Flour",
+            "ko": "돌절구로 간 가루",
+            "zh-tw": "石臼磨製的麵粉"
+          },
+          "category": {
+            "ja": "料理",
+            "en": "Cuisine",
+            "ko": "요리",
+            "zh-tw": "料理"
+          }
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1552566626-52f8b828add9?w=800&q=80",
+          "caption": {
+            "ja": "蕎麦打ち体験会",
+            "en": "Soba-Making Workshop",
+            "ko": "소바 반죽 체험회",
+            "zh-tw": "蕎麥麵手打體驗會"
+          },
+          "category": {
+            "ja": "イベント",
+            "en": "Events",
+            "ko": "이벤트",
+            "zh-tw": "活動"
+          }
+        }
+      ]
+    },
+    "staff": {
+      "sectionTitle": {
+        "ja": "スタッフ紹介",
+        "en": "Staff Introduction",
+        "ko": "직원 소개",
+        "zh-tw": "員工介紹"
+      },
+      "sectionSubtitle": {
+        "ja": "静かな心で、お迎えいたします",
+        "en": "We welcome you with a quiet heart",
+        "ko": "고요한 마음으로 맞이합니다",
+        "zh-tw": "以靜謐之心迎接您"
+      },
+      "members": [
+        {
+          "name": {
+            "ja": "静谷 一雄",
+            "en": "Kazuo Shizutani",
+            "ko": "시즈타니 카즈오",
+            "zh-tw": "靜谷一雄"
+          },
+          "role": {
+            "ja": "蕎麦職人",
+            "en": "Soba Craftsman",
+            "ko": "소바 장인",
+            "zh-tw": "蕎麥麵職人"
+          },
+          "description": {
+            "ja": "蕎麦打ち一筋20年。毎朝の一打ちに集中しています。",
+            "en": "20 years dedicated to making soba. He focuses intently on every morning's preparation.",
+            "ko": "소바 반죽 외길 20년. 매일 아침 반죽에 집중하고 있습니다.",
+            "zh-tw": "專注打蕎麥麵20年，每日清晨全神貫注於製麵。"
+          },
+          "image": "https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=600&q=80"
+        },
+        {
+          "name": {
+            "ja": "音無 静香",
+            "en": "Shizuka Ononashi",
+            "ko": "오노나시 시즈카",
+            "zh-tw": "音無靜香"
+          },
+          "role": {
+            "ja": "女将",
+            "en": "Proprietress",
+            "ko": "여주인",
+            "zh-tw": "女主人"
+          },
+          "description": {
+            "ja": "静かで落ち着いた接客を心がけています。",
+            "en": "She strives to provide calm, quiet, and attentive service.",
+            "ko": "조용하고 차분한 서비스를 지향합니다.",
+            "zh-tw": "致力於提供靜謐沉穩的服務。"
+          },
+          "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&q=80"
+        },
+        {
+          "name": {
+            "ja": "秋山 湊",
+            "en": "Minato Akiyama",
+            "ko": "아키야마 미나토",
+            "zh-tw": "秋山湊"
+          },
+          "role": {
+            "ja": "ホールスタッフ",
+            "en": "Hall Staff",
+            "ko": "홀 스태프",
+            "zh-tw": "外場人員"
+          },
+          "description": {
+            "ja": "そばの美味しい食べ方をご案内しています。",
+            "en": "He guides guests on how to best enjoy their soba.",
+            "ko": "소바를 맛있게 먹는 방법을 안내하고 있습니다.",
+            "zh-tw": "為顧客介紹蕎麥麵的美味吃法。"
+          },
+          "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80"
+        }
+      ]
+    },
+    "news": {
+      "sectionTitle": {
+        "ja": "お知らせ",
+        "en": "News",
+        "ko": "공지사항",
+        "zh-tw": "最新消息"
+      },
+      "sectionSubtitle": {
+        "ja": "最新情報をお届けします",
+        "en": "Latest updates",
+        "ko": "최신 정보를 전달합니다",
+        "zh-tw": "為您帶來最新消息"
+      },
+      "items": [
+        {
+          "date": "2024-12-08",
+          "category": "お知らせ",
+          "title": {
+            "ja": "年末年始の営業時間のご案内",
+            "en": "New Year's Business Hours",
+            "ko": "연말연시 영업시간 안내",
+            "zh-tw": "年末年初營業時間公告"
+          },
+          "content": {
+            "ja": "12月31日〜1月3日はお休みです。",
+            "en": "We will be closed from December 31 to January 3.",
+            "ko": "12월 31일~1월 3일은 휴무입니다.",
+            "zh-tw": "12月31日至1月3日公休。"
+          }
+        },
+        {
+          "date": "2024-11-23",
+          "category": "新メニュー",
+          "title": {
+            "ja": "鴨せいろが冬季限定で登場",
+            "en": "Winter-Limited Duck Seiro Now Available",
+            "ko": "오리 세이로 겨울 한정 등장",
+            "zh-tw": "冬季限定鴨肉蕎麥麵登場"
+          },
+          "content": {
+            "ja": "冬季限定の鴨せいろをご用意しました。",
+            "en": "We've prepared a winter-limited duck seiro soba.",
+            "ko": "겨울 한정 오리 세이로를 준비했습니다.",
+            "zh-tw": "推出冬季限定鴨肉蕎麥麵。"
+          }
+        },
+        {
+          "date": "2024-10-27",
+          "category": "イベント",
+          "title": {
+            "ja": "蕎麦打ち体験会を開催",
+            "en": "Soba-Making Workshop Held",
+            "ko": "소바 반죽 체험회 개최",
+            "zh-tw": "舉辦蕎麥麵手打體驗會"
+          },
+          "content": {
+            "ja": "お客様向けの蕎麦打ち体験会を開催しました。",
+            "en": "We held a soba-making workshop for our guests.",
+            "ko": "고객님을 위한 소바 반죽 체험회를 개최했습니다.",
+            "zh-tw": "為顧客舉辦了蕎麥麵手打體驗會。"
+          }
+        }
+      ]
+    },
+    "pricing": {
+      "sectionTitle": {
+        "ja": "コース・プラン",
+        "en": "Course Plans",
+        "ko": "코스 플랜",
+        "zh-tw": "課程方案"
+      },
+      "sectionSubtitle": {
+        "ja": "ご利用シーンに合わせた各種プラン",
+        "en": "Various plans tailored to your occasion",
+        "ko": "이용 상황에 맞춘 다양한 플랜",
+        "zh-tw": "依使用場景提供多種方案"
+      },
+      "plans": [
+        {
+          "name": {
+            "ja": "お昼のそばセット",
+            "en": "Lunch Soba Set",
+            "ko": "낮의 소바 세트",
+            "zh-tw": "午間蕎麥麵套餐"
+          },
+          "description": {
+            "ja": "そばと小鉢がセットになったお手頃なランチ。",
+            "en": "An affordable lunch set with soba and a small side dish.",
+            "ko": "소바와 작은 반찬이 세트가 된 알맞은 런치입니다.",
+            "zh-tw": "蕎麥麵搭配小菜的實惠午餐。"
+          },
+          "price": "¥1,300",
+          "features": [
+            {
+              "ja": "そば1品選択",
+              "en": "Choice of One Soba",
+              "ko": "소바 1품 선택",
+              "zh-tw": "蕎麥麵一份"
+            },
+            {
+              "ja": "小鉢",
+              "en": "Small Side Dish",
+              "ko": "작은 반찬",
+              "zh-tw": "小菜"
+            },
+            {
+              "ja": "そば茶",
+              "en": "Soba Tea",
+              "ko": "소바차",
+              "zh-tw": "蕎麥茶"
+            }
+          ]
+        },
+        {
+          "name": {
+            "ja": "天ぷらそば御膳",
+            "en": "Tempura Soba Set Meal",
+            "ko": "덴푸라 소바 고젠",
+            "zh-tw": "天婦羅蕎麥麵御膳"
+          },
+          "description": {
+            "ja": "天ぷらそばに小鉢が付く一番人気のセット。",
+            "en": "Our most popular set, with tempura soba and a small side dish.",
+            "ko": "덴푸라 소바에 작은 반찬이 딸린 가장 인기 있는 세트입니다.",
+            "zh-tw": "天婦羅蕎麥麵搭配小菜的最受歡迎套餐。"
+          },
+          "price": "¥1,800",
+          "features": [
+            {
+              "ja": "天ぷらそば",
+              "en": "Tempura Soba",
+              "ko": "덴푸라 소바",
+              "zh-tw": "天婦羅蕎麥麵"
+            },
+            {
+              "ja": "小鉢2品",
+              "en": "2 Small Side Dishes",
+              "ko": "작은 반찬 2품",
+              "zh-tw": "2份小菜"
+            },
+            {
+              "ja": "そば茶",
+              "en": "Soba Tea",
+              "ko": "소바차",
+              "zh-tw": "蕎麥茶"
+            },
+            {
+              "ja": "そばがき",
+              "en": "Sobagaki (Buckwheat Dumpling)",
+              "ko": "소바가키",
+              "zh-tw": "蕎麥糕"
+            }
+          ],
+          "isPopular": true
+        },
+        {
+          "name": {
+            "ja": "蕎麦懐石コース",
+            "en": "Soba Kaiseki Course",
+            "ko": "소바 가이세키 코스",
+            "zh-tw": "蕎麥懷石套餐"
+          },
+          "description": {
+            "ja": "蕎麦を中心に構成した本格懐石コース。",
+            "en": "An authentic kaiseki course centered around soba.",
+            "ko": "소바를 중심으로 구성한 본격 가이세키 코스입니다.",
+            "zh-tw": "以蕎麥麵為主軸的正宗懷石套餐。"
+          },
+          "price": "¥4,500",
+          "features": [
+            {
+              "ja": "そば前(酒肴)",
+              "en": "Soba-mae Appetizers",
+              "ko": "소바마에(안주)",
+              "zh-tw": "蕎麥前菜"
+            },
+            {
+              "ja": "季節の天ぷら",
+              "en": "Seasonal Tempura",
+              "ko": "계절 튀김",
+              "zh-tw": "季節天婦羅"
+            },
+            {
+              "ja": "鴨せいろ",
+              "en": "Duck Seiro Soba",
+              "ko": "오리 세이로",
+              "zh-tw": "鴨肉蕎麥麵"
+            },
+            {
+              "ja": "そばがき",
+              "en": "Sobagaki",
+              "ko": "소바가키",
+              "zh-tw": "蕎麥糕"
+            },
+            {
+              "ja": "蕎麦団子デザート",
+              "en": "Soba Dumpling Dessert",
+              "ko": "소바 당고 디저트",
+              "zh-tw": "蕎麥丸子甜點"
+            }
+          ]
+        }
+      ]
+    },
+    "faq": {
+      "sectionTitle": {
+        "ja": "よくあるご質問",
+        "en": "Frequently Asked Questions",
+        "ko": "자주 묻는 질문",
+        "zh-tw": "常見問題"
+      },
+      "sectionSubtitle": {
+        "ja": "お客様からのご質問にお答えします",
+        "en": "We answer questions from our customers",
+        "ko": "고객님의 질문에 답변드립니다",
+        "zh-tw": "為您解答常見疑問"
+      },
+      "items": [
+        {
+          "question": {
+            "ja": "蕎麦アレルギーの対応はできますか？",
+            "en": "Can you accommodate buckwheat allergies?",
+            "ko": "소바 알레르기 대응이 가능한가요？",
+            "zh-tw": "可以應對蕎麥過敏嗎？"
+          },
+          "answer": {
+            "ja": "申し訳ございませんが、十割そばのため対応が難しい場合がございます。",
+            "en": "We apologize, but as our soba is 100% buckwheat, accommodation may be difficult.",
+            "ko": "죄송하지만 100% 소바이기 때문에 대응이 어려운 경우가 있습니다.",
+            "zh-tw": "非常抱歉，由於使用十割蕎麥，可能無法完全應對。"
+          }
+        },
+        {
+          "question": {
+            "ja": "お昼はいつも混みますか？",
+            "en": "Is lunchtime always crowded?",
+            "ko": "낮에는 항상 붐비나요？",
+            "zh-tw": "午間總是很多人嗎？"
+          },
+          "answer": {
+            "ja": "12時〜13時は混み合う傾向がございます。",
+            "en": "It tends to be busy between 12 PM and 1 PM.",
+            "ko": "12시~13시는 붐비는 경향이 있습니다.",
+            "zh-tw": "12點至13點通常較為繁忙。"
+          }
+        },
+        {
+          "question": {
+            "ja": "そば茶は無料ですか？",
+            "en": "Is soba tea free?",
+            "ko": "소바차는 무료인가요？",
+            "zh-tw": "蕎麥茶是免費的嗎？"
+          },
+          "answer": {
+            "ja": "はい、お食事のお客様には無料でご提供しております。",
+            "en": "Yes, it is provided free of charge to dining guests.",
+            "ko": "네, 식사하시는 고객님께는 무료로 제공하고 있습니다.",
+            "zh-tw": "是的，用餐顧客可免費享用。"
+          }
+        },
+        {
+          "question": {
+            "ja": "持ち帰りはできますか？",
+            "en": "Is takeout available?",
+            "ko": "포장이 가능한가요？",
+            "zh-tw": "可以外帶嗎？"
+          },
+          "answer": {
+            "ja": "生麺の販売のみ承っております。",
+            "en": "We only offer raw noodles for takeout.",
+            "ko": "생면 판매만 가능합니다.",
+            "zh-tw": "僅提供生麵外售。"
+          }
+        },
+        {
+          "question": {
+            "ja": "個室はありますか？",
+            "en": "Do you have private rooms?",
+            "ko": "개인실이 있나요？",
+            "zh-tw": "有包廂嗎？"
+          },
+          "answer": {
+            "ja": "坪庭を望む小さな個室が1室ございます。",
+            "en": "We have one small private room overlooking our courtyard garden.",
+            "ko": "坪庭이 보이는 작은 개인실이 1개 있습니다.",
+            "zh-tw": "設有一間可眺望坪庭的小型包廂。"
+          }
+        }
+      ]
+    },
+    "access": {
+      "sectionTitle": {
+        "ja": "アクセス",
+        "en": "Access",
+        "ko": "오시는 길",
+        "zh-tw": "交通資訊"
+      },
+      "sectionSubtitle": {
+        "ja": "店舗へのご案内",
+        "en": "Guide to the Store",
+        "ko": "매장 안내",
+        "zh-tw": "商店指南"
+      },
+      "address": {
+        "ja": "東京都文京区〇〇 9-11-13",
+        "en": "9-11-13, XX, Bunkyo, Tokyo",
+        "ko": "도쿄도 분쿄구 〇〇 9-11-13",
+        "zh-tw": "東京都文京區〇〇 9-11-13"
+      },
+      "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3579.1447437301044!2d127.68589831501648!3d26.21424098342371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34e56bd0b4a42ff1%3A0x36812e0e598f7d6b!2z54CP6Yar!5e0!3m2!1sja!2sjp!4v1234567890123!5m2!1sja!2sjp",
+      "parking": {
+        "title": {
+          "ja": "駐車場のご案内",
+          "en": "Parking Information",
+          "ko": "주차 정보",
+          "zh-tw": "停車資訊"
+        },
+        "description": {
+          "ja": "店舗専用駐車場を2台分ご用意しております。",
+          "en": "We have two dedicated parking spaces available.",
+          "ko": "매장 전용 주차장 2대분을 준비하고 있습니다.",
+          "zh-tw": "本店設有2個專屬停車位。"
+        },
+        "spaces": {
+          "ja": "専用駐車場 2台",
+          "en": "Dedicated parking, 2 spaces",
+          "ko": "전용 주차장 2대",
+          "zh-tw": "專屬停車場2位"
+        },
+        "notes": {
+          "ja": "満車の際は近隣のパーキングをご利用ください。",
+          "en": "If full, please use nearby parking facilities.",
+          "ko": "만차 시 인근 주차장을 이용해 주세요.",
+          "zh-tw": "車位滿時請利用附近停車場。"
+        }
+      },
+      "transportation": {
+        "title": {
+          "ja": "公共交通機関をご利用の方",
+          "en": "For those using public transportation",
+          "ko": "대중교통을 이용하시는 분",
+          "zh-tw": "使用大眾運輸的顧客"
+        },
+        "methods": [
+          {
+            "type": {
+              "ja": "電車",
+              "en": "Train",
+              "ko": "기차",
+              "zh-tw": "電車"
+            },
+            "description": {
+              "ja": "〇〇線「××駅」より徒歩7分",
+              "en": "7 minutes on foot from XX Station",
+              "ko": "〇〇선 '××역'에서 도보 7분",
+              "zh-tw": "從〇〇線「××站」步行7分鐘"
+            }
+          },
+          {
+            "type": {
+              "ja": "バス",
+              "en": "Bus",
+              "ko": "버스",
+              "zh-tw": "巴士"
+            },
+            "description": {
+              "ja": "「△△」バス停より徒歩3分",
+              "en": "3 minutes on foot from the △△ bus stop",
+              "ko": "'△△' 버스 정류장에서 도보 3분",
+              "zh-tw": "從「△△」巴士站步行3分鐘"
+            }
+          },
+          {
+            "type": {
+              "ja": "タクシー",
+              "en": "Taxi",
+              "ko": "택시",
+              "zh-tw": "計程車"
+            },
+            "description": {
+              "ja": "最寄り駅より約8分",
+              "en": "About 8 minutes from the nearest station",
+              "ko": "가까운 역에서 약 8분",
+              "zh-tw": "從最近車站約8分鐘"
+            }
+          }
+        ]
+      }
+    },
+    "storeInfo": {
+      "sectionTitle": {
+        "ja": "店舗情報",
+        "en": "Store Information",
+        "ko": "매장 정보",
+        "zh-tw": "店鋪資訊"
+      },
+      "mainImage": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1200&q=80",
+      "mainImageCaption": {
+        "ja": "静けさに包まれた空間で、一本の蕎麦をご堪能ください",
+        "en": "Enjoy a single strand of soba, enveloped in quiet stillness",
+        "ko": "고요함에 감싸인 공간에서 한 그릇의 소바를 만끽하세요",
+        "zh-tw": "在靜謐空間中，盡享一碗蕎麥麵"
+      },
+      "items": [
+        {
+          "ja": "東京都文京区〇〇 9-11-13",
+          "en": "9-11-13, XX, Bunkyo, Tokyo",
+          "ko": "도쿄도 분쿄구 〇〇 9-11-13",
+          "zh-tw": "東京都文京區〇〇 9-11-13"
+        },
+        {
+          "ja": "11:30 - 15:00（そばが売り切れ次第終了）",
+          "en": "11:30 - 15:00 (until sold out)",
+          "ko": "11:30 - 15:00 (소바 소진 시 종료)",
+          "zh-tw": "11:30 - 15:00（售完為止）"
+        },
+        {
+          "ja": "03-EEEE-EEEE",
+          "en": "03-EEEE-EEEE",
+          "ko": "03-EEEE-EEEE",
+          "zh-tw": "03-EEEE-EEEE"
+        },
+        {
+          "ja": "info@shizuka.example.com",
+          "en": "info@shizuka.example.com",
+          "ko": "info@shizuka.example.com",
+          "zh-tw": "info@shizuka.example.com"
+        }
+      ]
+    },
+    "contact": {
+      "sectionTitle": {
+        "ja": "お問い合わせ",
+        "en": "Contact Us",
+        "ko": "문의하기",
+        "zh-tw": "聯絡我們"
+      },
+      "sectionSubtitle": {
+        "ja": "ご予約やご質問など、お気軽にお問い合わせください",
+        "en": "Please feel free to contact us for reservations or inquiries.",
+        "ko": "예약이나 문의 사항이 있으시면 언제든지 문의해 주세요.",
+        "zh-tw": "如需預約或詢問，請隨時與我們聯繫。"
+      },
+      "fields": {
+        "name": {
+          "ja": "お名前",
+          "en": "Name",
+          "ko": "이름",
+          "zh-tw": "姓名"
+        },
+        "email": {
+          "ja": "メールアドレス",
+          "en": "Email Address",
+          "ko": "이메일 주소",
+          "zh-tw": "電子郵件地址"
+        },
+        "subject": {
+          "ja": "件名",
+          "en": "Subject",
+          "ko": "제목",
+          "zh-tw": "主題"
+        },
+        "message": {
+          "ja": "お問い合わせ内容",
+          "en": "Message",
+          "ko": "문의 내용",
+          "zh-tw": "訊息內容"
+        }
+      },
+      "submitButton": {
+        "ja": "送信する",
+        "en": "Send",
+        "ko": "보내기",
+        "zh-tw": "發送"
+      }
+    },
+    "cta": {
+      "sectionTitle": {
+        "ja": "ご予約・お問い合わせ",
+        "en": "Reservations and Inquiries",
+        "ko": "예약 및 문의",
+        "zh-tw": "預約與詢問"
+      },
+      "sectionSubtitle": {
+        "ja": "皆様のご来店を心よりお待ちしております",
+        "en": "We sincerely look forward to your visit.",
+        "ko": "여러분의 방문을 진심으로 기다립니다.",
+        "zh-tw": "我們衷心期待您的光臨。"
+      },
+      "description": {
+        "ja": "法事や会食など、静かなシーンでご利用いただけます。",
+        "en": "Perfect for memorial services, formal dinners, and other quiet occasions.",
+        "ko": "제사나 회식 등 조용한 상황에서 이용하실 수 있습니다.",
+        "zh-tw": "適合法事、聚餐等靜謐場合。"
+      },
+      "backgroundImage": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=1600&q=80",
+      "buttons": [
+        {
+          "text": {
+            "ja": "お電話でご予約",
+            "en": "Reserve by Phone",
+            "ko": "전화로 예약하기",
+            "zh-tw": "電話預約"
+          },
+          "link": "#contact",
+          "type": "primary"
+        },
+        {
+          "text": {
+            "ja": "Webでお問い合わせ",
+            "en": "Inquire via Web",
+            "ko": "웹으로 문의하기",
+            "zh-tw": "網上詢問"
+          },
+          "link": "#contact",
+          "type": "secondary"
+        }
+      ]
+    },
+    "reviews": {
+      "sectionTitle": {
+        "ja": "お客様の声",
+        "en": "Customer Voices",
+        "ko": "고객의 목소리",
+        "zh-tw": "顧客的聲音"
+      },
+      "sectionSubtitle": {
+        "ja": "ご来店いただいたお客様からのメッセージ",
+        "en": "Messages from customers who visited us",
+        "ko": "방문한 고객의 메시지",
+        "zh-tw": "來店顧客的留言"
+      },
+      "reviews": [
+        {
+          "name": {
+            "ja": "三浦 静雄",
+            "en": "Shizuo Miura",
+            "ko": "미우라 시즈오",
+            "zh-tw": "三浦靜雄"
+          },
+          "rating": 5,
+          "date": "2024-11-25",
+          "comment": {
+            "ja": "十割そばの香りに感動しました。静かな時間を過ごせました。",
+            "en": "I was moved by the aroma of the 100% buckwheat soba. I spent a truly quiet, peaceful time.",
+            "ko": "100% 소바의 향에 감동했습니다. 조용한 시간을 보낼 수 있었습니다.",
+            "zh-tw": "十割蕎麥的香氣令人感動，度過了寧靜的時光。"
+          },
+          "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&q=80"
+        },
+        {
+          "name": {
+            "ja": "北村 咲",
+            "en": "Saki Kitamura",
+            "ko": "기타무라 사키",
+            "zh-tw": "北村咲"
+          },
+          "rating": 5,
+          "date": "2024-11-15",
+          "comment": {
+            "ja": "鴨せいろが絶品でした。落ち着いた空間も魅力的です。",
+            "en": "The duck seiro soba was exquisite. The calm, quiet space was also lovely.",
+            "ko": "오리 세이로가 일품이었습니다. 차분한 공간도 매력적입니다.",
+            "zh-tw": "鴨肉蕎麥麵絕品美味，靜謐的空間也十分迷人。"
+          },
+          "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80"
+        },
+        {
+          "name": {
+            "ja": "西田 昌",
+            "en": "Sho Nishida",
+            "ko": "니시다 쇼",
+            "zh-tw": "西田昌"
+          },
+          "rating": 4,
+          "date": "2024-10-30",
+          "comment": {
+            "ja": "そばの喉越しが素晴らしく、また訪れたいと思いました。",
+            "en": "The texture of the soba going down was wonderful. I definitely want to visit again.",
+            "ko": "소바의 목넘김이 훌륭하여 또 방문하고 싶다고 생각했습니다.",
+            "zh-tw": "蕎麥麵的口感絕佳，讓我想再次造訪。"
+          },
+          "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80"
+        }
+      ]
+    },
+    "company": {
+      "sectionTitle": {
+        "ja": "運営会社情報",
+        "en": "Company Information",
+        "ko": "운영 회사 정보",
+        "zh-tw": "運營公司資訊"
+      },
+      "sectionSubtitle": {
+        "ja": "食を通じて地域社会に貢献する",
+        "en": "Contributing to the local community through food",
+        "ko": "음식을 통해 지역 사회에 기여하기",
+        "zh-tw": "通過美食貢獻地方社區"
+      },
+      "philosophy": {
+        "title": {
+          "ja": "経営理念",
+          "en": "Management Philosophy",
+          "ko": "경영 철학",
+          "zh-tw": "經營理念"
+        },
+        "content": {
+          "ja": "「手打ちそば 静」は、素材への敬意と職人の技術、真心のこもったおもてなしを通じて、お客様に忘れられない一皿をお届けすることを使命としています。",
+          "en": "\"Handmade Soba SHIZUKA\" is committed to delivering an unforgettable dish to every guest through respect for ingredients, skilled craftsmanship, and heartfelt hospitality.",
+          "ko": "'손타작 소바 SHIZUKA'는 재료에 대한 경의와 장인의 기술, 진심 어린 환대를 통해 손님에게 잊을 수 없는 한 그릇을 선사하는 것을 사명으로 하고 있습니다.",
+          "zh-tw": "「手打蕎麥麵 靜」秉持對食材的尊重、職人的技藝與真誠的款待，致力於為每位顧客獻上難忘的一餐。"
+        }
+      },
+      "history": {
+        "title": {
+          "ja": "沿革",
+          "en": "History",
+          "ko": "연혁",
+          "zh-tw": "沿革"
+        },
+        "timeline": [
+          {
+            "year": "2013年",
+            "event": {
+              "ja": "手打ちそば 静 創業",
+              "en": "Founding of Handmade Soba SHIZUKA",
+              "ko": "손타작 소바 SHIZUKA 창업",
+              "zh-tw": "手打蕎麥麵 靜 創業"
+            }
+          },
+          {
+            "year": "2015年",
+            "event": {
+              "ja": "店舗を増築し、席数を拡大",
+              "en": "Expanded the restaurant and increased seating capacity",
+              "ko": "매장을 증축하여 좌석 수 확대",
+              "zh-tw": "擴建店舖並增加座位數"
+            }
+          },
+          {
+            "year": "2018年",
+            "event": {
+              "ja": "テイクアウト・デリバリー事業を開始",
+              "en": "Started takeout and delivery service",
+              "ko": "테이크아웃 및 배달 사업 시작",
+              "zh-tw": "開始外帶及外送服務"
+            }
+          }
+        ]
+      },
+      "companyInfo": {
+        "title": {
+          "ja": "会社概要",
+          "en": "Company Overview",
+          "ko": "회사 개요",
+          "zh-tw": "公司概況"
+        },
+        "items": [
+          {
+            "label": {
+              "ja": "屋号",
+              "en": "Store Name",
+              "ko": "상호",
+              "zh-tw": "店名"
+            },
+            "value": {
+              "ja": "手打ちそば 静",
+              "en": "Handmade Soba SHIZUKA",
+              "ko": "손타작 소바 SHIZUKA",
+              "zh-tw": "手打蕎麥麵 靜"
+            }
+          },
+          {
+            "label": {
+              "ja": "設立",
+              "en": "Established",
+              "ko": "설립",
+              "zh-tw": "成立"
+            },
+            "value": {
+              "ja": "2013年4月",
+              "en": "4月 2013",
+              "ko": "2013년 4月",
+              "zh-tw": "2013年4月"
+            }
+          },
+          {
+            "label": {
+              "ja": "代表者",
+              "en": "Representative",
+              "ko": "대표자",
+              "zh-tw": "代表人"
+            },
+            "value": {
+              "ja": "静谷 一雄",
+              "en": "Kazuo Shizutani",
+              "ko": "시즈타니 카즈오",
+              "zh-tw": "靜谷一雄"
+            }
+          },
+          {
+            "label": {
+              "ja": "所在地",
+              "en": "Location",
+              "ko": "위치",
+              "zh-tw": "所在地"
+            },
+            "value": {
+              "ja": "東京都文京区〇〇 9-11-13",
+              "en": "9-11-13, XX, Bunkyo, Tokyo",
+              "ko": "도쿄도 분쿄구 〇〇 9-11-13",
+              "zh-tw": "東京都文京區〇〇 9-11-13"
+            }
+          },
+          {
+            "label": {
+              "ja": "事業内容",
+              "en": "Business Activities",
+              "ko": "사업 내용",
+              "zh-tw": "業務內容"
+            },
+            "value": {
+              "ja": "飲食店経営",
+              "en": "Restaurant management",
+              "ko": "식당 경영",
+              "zh-tw": "餐飲經營"
+            }
+          },
+          {
+            "label": {
+              "ja": "従業員数",
+              "en": "Number of Employees",
+              "ko": "직원 수",
+              "zh-tw": "員工人數"
+            },
+            "value": {
+              "ja": "約8名（パート・アルバイト含む）",
+              "en": "Approx. 8 (including part-time staff)",
+              "ko": "약 8명(파트타임 포함)",
+              "zh-tw": "約8人（含兼職員工）"
+            }
+          }
+        ]
+      }
+    },
+    "footer": {
+      "logo": {
+        "ja": "手打ちそば 静",
+        "en": "Handmade Soba SHIZUKA",
+        "ko": "손타작 소바 SHIZUKA",
+        "zh-tw": "手打蕎麥麵 靜"
+      },
+      "description": {
+        "ja": "静けさの中で、一本の蕎麦を。",
+        "en": "A single strand of soba, in quiet stillness.",
+        "ko": "고요함 속에서 한 그릇의 소바를.",
+        "zh-tw": "在寧靜之中，品味一碗蕎麥麵。"
+      },
+      "businessHours": {
+        "title": {
+          "ja": "営業時間",
+          "en": "Business Hours",
+          "ko": "영업 시간",
+          "zh-tw": "營業時間"
+        },
+        "days": {
+          "ja": "月曜日 - 日曜日",
+          "en": "Monday - Sunday",
+          "ko": "월요일 - 일요일",
+          "zh-tw": "星期一 - 星期日"
+        },
+        "hours": {
+          "ja": "11:30 - 15:00",
+          "en": "11:30 - 15:00",
+          "ko": "11:30 - 15:00",
+          "zh-tw": "11:30 - 15:00"
+        },
+        "closedDay": {
+          "ja": "定休日: 不定休",
+          "en": "Closed: Irregular holidays",
+          "ko": "휴무일: 불규칙 휴무",
+          "zh-tw": "休息日: 不定期休假"
+        }
+      },
+      "social": {
+        "title": {
+          "ja": "SNSアカウント",
+          "en": "Social Media Accounts",
+          "ko": "소셜 미디어 계정",
+          "zh-tw": "社交媒體帳號"
+        },
+        "links": [
+          {
+            "platform": "Facebook",
+            "url": "#"
+          },
+          {
+            "platform": "Instagram",
+            "url": "#"
+          },
+          {
+            "platform": "Twitter",
+            "url": "#"
+          }
+        ]
+      },
+      "copyright": {
+        "ja": "© 2024 手打ちそば 静. All rights reserved.",
+        "en": "© 2024 Handmade Soba SHIZUKA. All rights reserved.",
+        "ko": "© 2024 손타작 소바 SHIZUKA. All rights reserved.",
+        "zh-tw": "© 2024 手打蕎麥麵 靜. All rights reserved."
+      }
+    },
+    "templateId": "mist",
+    "settings": {
+      "theme": "mist"
+    }
+  }
+}

@@ -1,26 +1,30 @@
 ---
+import { readFileSync } from 'fs';
+import { join } from 'path';
 import Layout from '../../layouts/Layout.astro';
 import ThemeBrushStorePage from '../../components/ThemeBrushStorePage';
-import { headerData, heroData, aboutData, menuData, storeInfoData, contactData, footerData, galleryData, accessData, newsData, faqData, staffData, pricingData, companyData, ctaData } from '../../data/content';
 
-// Mock data
+const demoItem = JSON.parse(readFileSync(join(process.cwd(), 'demo_seed', 'output', 'demo-ramen.json'), 'utf-8'));
+const demoContent = demoItem.ContentData;
+
+// Demo data (demo-ramen: ラーメン専門店 麺や一徹)
 const mockData = {
   theme: 'brush',
-  header: headerData,
-  hero: heroData,
-  about: aboutData,
-  menu: menuData,
-  storeInfo: storeInfoData,
-  contact: contactData,
-  footer: footerData,
-  gallery: galleryData,
-  access: accessData,
-  news: newsData,
-  faq: faqData,
-  staff: staffData,
-  pricing: pricingData,
-  company: companyData,
-  cta: ctaData
+  header: demoContent.header,
+  hero: demoContent.hero,
+  about: demoContent.about,
+  menu: demoContent.menu,
+  storeInfo: demoContent.storeInfo,
+  contact: demoContent.contact,
+  footer: demoContent.footer,
+  gallery: demoContent.gallery,
+  access: demoContent.access,
+  news: demoContent.news,
+  faq: demoContent.faq,
+  staff: demoContent.staff,
+  pricing: demoContent.pricing,
+  company: demoContent.company,
+  cta: demoContent.cta
 };
 ---
 

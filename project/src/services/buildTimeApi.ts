@@ -162,8 +162,19 @@ export async function getStoreList(): Promise<StoreInfo[]> {
   (()=>{})('[BuildTime API] USE_STATIC_STORE_LIST:', process.env.USE_STATIC_STORE_LIST);
   (()=>{})('[BuildTime API] STORE_LIST:', process.env.STORE_LIST);
 
+  // Lambdaウォームアップ（コールドスタート対策）
+  console.log('[BuildTime API] Warming up Lambda...');
+  try {
+    await fetch(`${API_BASE_URL.replace('/content', '/stores')}`);
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    console.log('[BuildTime API] Lambda warmed up');
+  } catch (e) {
+    console.log('[BuildTime API] Warmup failed, continuing...');
+  }
+
   const useStaticList = process.env.USE_STATIC_STORE_LIST === 'true';
   (()=>{})('[BuildTime API] useStaticList:', useStaticList);
+
 
   if (useStaticList) {
     const storeListEnv = process.env.STORE_LIST || 'OKI1011';

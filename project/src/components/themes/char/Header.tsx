@@ -5,7 +5,7 @@ import { getLocalizedValue } from '../../../utils/i18n';
 
 export default function Header() {
   const headerData = useHeaderData();
-  const { language, setLanguage } = useLanguage();
+  const { language, basePath } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -45,7 +45,7 @@ export default function Header() {
             {(['ja', 'en', 'zh-tw', 'ko'] as const).map((lang) => (
               <button
                 key={lang}
-                onClick={() => setLanguage(lang)}
+                onClick={() => window.location.href = `${basePath}${lang === 'ja' ? '' : lang + '/'}`}
                 className="text-xs tracking-widest transition-colors duration-200 font-sans"
                 style={{ color: language === lang ? '#D4541A' : '#666666' }}
               >
@@ -85,7 +85,7 @@ export default function Header() {
             {(['ja', 'en', 'zh-tw', 'ko'] as const).map((lang) => (
               <button
                 key={lang}
-                onClick={() => setLanguage(lang)}
+                onClick={() => window.location.href = `${basePath}${lang === 'ja' ? '' : lang + '/'}`}
                 className="text-xs tracking-widest transition-colors font-sans"
                 style={{ color: language === lang ? '#D4541A' : '#666666' }}
               >

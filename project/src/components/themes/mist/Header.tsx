@@ -16,7 +16,7 @@ const languageNames: Record<Language, string> = {
 export default function Header() {
   const pageData = usePageData();
   const headerData = useHeaderData();
-  const { language } = useLanguage();
+  const { language, basePath } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -55,7 +55,6 @@ export default function Header() {
   };
 
   const logoText = getLocalizedValue(headerData.logo, 'text', language);
-  const basePath = typeof window !== 'undefined' ? window.location.pathname.replace(new RegExp(`/?${language}/?$`), '') : '';
 
   return (
     <header 
@@ -104,7 +103,7 @@ export default function Header() {
           <div className="flex items-center text-[#888888]">
             <select 
               value={language}
-              onChange={(e) => window.location.href = `${basePath}${e.target.value === 'ja' ? '' : '/' + e.target.value}`}
+              onChange={(e) => window.location.href = `${basePath}${e.target.value === 'ja' ? '' : e.target.value + '/'}`}
               className="bg-transparent text-xs font-sans font-light uppercase focus:outline-none cursor-pointer hover:text-[#222222] transition-colors duration-500"
             >
               {Object.keys(languageNames).map(lang => (
@@ -147,7 +146,7 @@ export default function Header() {
               <div className="pt-8 w-12 border-t border-[#EEEEEE] flex justify-center">
                 <select 
                   value={language}
-                  onChange={(e) => window.location.href = `${basePath}${e.target.value === 'ja' ? '' : '/' + e.target.value}`}
+                  onChange={(e) => window.location.href = `${basePath}${e.target.value === 'ja' ? '' : e.target.value + '/'}`}
                   className="bg-transparent text-xs font-sans font-light uppercase text-[#888888] focus:outline-none"
                 >
                   {Object.keys(languageNames).map(lang => (

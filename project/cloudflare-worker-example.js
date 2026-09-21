@@ -36,7 +36,7 @@ export default {
         const assetRequest = new Request(newUrl, request);
         const response = await env.ASSETS.fetch(assetRequest);
 
-        if (response.ok) {
+        if (response.ok || (response.status >= 300 && response.status < 400)) {
           return new Response(response.body, {
             status: response.status,
             headers: response.headers,

@@ -3,10 +3,12 @@ import { motion } from 'framer-motion';
 import { usePricingData } from '../../../contexts/PageDataContext';
 import { useLanguage } from '../../../contexts/LanguageContext';
 import { getLocalizedValue } from '../../../utils/i18n';
+import { useLocalize } from '../../../hooks/useLocalize';
 
 export default function Pricing() {
   const pricingData = usePricingData();
   const { language } = useLanguage();
+  const { getText } = useLocalize();
   const [activeTab, setActiveTab] = useState(0);
 
   if (!pricingData || !pricingData.plans || pricingData.plans.length === 0) return null;
@@ -74,7 +76,7 @@ export default function Pricing() {
                       {features.map((feat, i) => (
                         <li key={i} className="flex items-start text-lg font-bold">
                           <span className="text-[#DC2626] mr-3 font-black">X</span>
-                          {feat}
+                          {getText(feat)}
                         </li>
                       ))}
                     </ul>

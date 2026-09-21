@@ -7,6 +7,10 @@ import Theme2StorePage from '../../../components/Theme2StorePage';
 import Theme3StorePage from '../../../components/Theme3StorePage';
 import Theme4StorePage from '../../../components/Theme4StorePage';
 import Theme5StorePage from '../../../components/Theme5StorePage';
+import ThemeEmberStorePage from '../../../components/ThemeEmberStorePage';
+import ThemeWarmStorePage from '../../../components/ThemeWarmStorePage';
+import ThemeBlazeStorePage from '../../../components/ThemeBlazeStorePage';
+import ThemeCharStorePage from '../../../components/ThemeCharStorePage';
 import ThemeKuraStorePage from '../../../components/ThemeKuraStorePage';
 import ThemeShiroStorePage from '../../../components/ThemeShiroStorePage';
 import ThemeBrushStorePage from '../../../components/ThemeBrushStorePage';
@@ -97,6 +101,10 @@ const alternateLinks = [
   {currentTheme === 'theme3' && <Theme3StorePage client:only="react" pageData={pageData} initialLanguage="ja" basePath={currentPath} />}
   {currentTheme === 'theme4' && <Theme4StorePage client:only="react" pageData={pageData} initialLanguage="ja" basePath={currentPath} />}
   {currentTheme === 'theme5' && <Theme5StorePage client:only="react" pageData={pageData} initialLanguage="ja" basePath={currentPath} />}
+  {currentTheme === 'ember' && <ThemeEmberStorePage client:only="react" pageData={pageData} initialLanguage="ja" basePath={currentPath} />}
+  {currentTheme === 'warm' && <ThemeWarmStorePage client:only="react" pageData={pageData} initialLanguage="ja" basePath={currentPath} />}
+  {currentTheme === 'blaze' && <ThemeBlazeStorePage client:only="react" pageData={pageData} initialLanguage="ja" basePath={currentPath} />}
+  {currentTheme === 'char' && <ThemeCharStorePage client:only="react" pageData={pageData} initialLanguage="ja" basePath={currentPath} />}
   {currentTheme === 'kura' && <ThemeKuraStorePage client:only="react" pageData={pageData} initialLanguage="ja" basePath={currentPath} />}
   {currentTheme === 'shiro' && <ThemeShiroStorePage client:only="react" pageData={pageData} initialLanguage="ja" basePath={currentPath} />}
   {currentTheme === 'brush' && <ThemeBrushStorePage client:only="react" pageData={pageData} initialLanguage="ja" basePath={currentPath} />}

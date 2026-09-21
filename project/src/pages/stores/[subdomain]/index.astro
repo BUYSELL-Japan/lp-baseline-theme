@@ -22,41 +22,44 @@ export async function getStaticPaths() {
     const storeList = await getStoreList();
     console.log("Found stores:", storeList.length);
 
-  const paths = await Promise.all(
-    storeList.map(async ({ storeId, subdomain, contact_email, templateId }) => {
-      console.log(`Processing store: ${storeId}`);
-      const storeContent = await fetchStoreContentAtBuildTime(storeId);
-      if (!storeContent) {
-        console.log(`Skipping ${storeId} because storeContent is null`);
-        return null;
-      }
-      console.log(`Successfully processed ${storeId}`);
-      
-      const pageData = mapDynamoDBDataToPageData(storeContent);
 
-      // DynamoDB Stores テーブルの contact_email を注入
-      if (contact_email) {
-        pageData.contactEmail = contact_email;
-      }
+  const paths = [];
+  for (const { storeId, subdomain, contact_email, templateId } of storeList) {
+    console.log(`Processing store: ${storeId}`);
+    const storeContent = await fetchStoreContentAtBuildTime(storeId);
+    if (!storeContent) {
+      console.log(`Skipping ${storeId} because storeContent is null`);
+      await new Promise(resolve => setTimeout(resolve, 200));
+      continue;
+    }
+    console.log(`Successfully processed ${storeId}`);
 
-      // DynamoDB Stores テーブルの templateId を settings.theme に注入
-      // ContentData 内に templateId があればそちらを優先
-      const contentTemplateId = storeContent?.templateId || storeContent?.ContentData?.templateId;
-      const themeFromSettings = (pageData.settings as any)?.theme;
-      const resolvedTheme = contentTemplateId || templateId || (themeFromSettings && themeFromSettings !== 'theme1' ? themeFromSettings : null) || 'theme1';
+    const pageData = mapDynamoDBDataToPageData(storeContent);
 
-      if (!pageData.settings) {
-        pageData.settings = { theme: resolvedTheme } as any;
-      } else {
-        (pageData.settings as any).theme = resolvedTheme;
-      }
+    // DynamoDB Stores テーブルの contact_email を注入
+    if (contact_email) {
+      pageData.contactEmail = contact_email;
+    }
 
-      return {
-        params: { subdomain },
-        props: { pageData, storeId, subdomain },
-      };
-    })
-  );
+    // DynamoDB Stores テーブルの templateId を settings.theme に注入
+    // ContentData 内に templateId があればそちらを優先
+    const contentTemplateId = storeContent?.templateId || storeContent?.ContentData?.templateId;
+    const themeFromSettings = (pageData.settings as any)?.theme;
+    const resolvedTheme = contentTemplateId || templateId || (themeFromSettings && themeFromSettings !== 'theme1' ? themeFromSettings : null) || 'theme1';
+
+    if (!pageData.settings) {
+      pageData.settings = { theme: resolvedTheme } as any;
+    } else {
+      (pageData.settings as any).theme = resolvedTheme;
+    }
+
+    paths.push({
+      params: { subdomain },
+      props: { pageData, storeId, subdomain },
+    });
+
+    await new Promise(resolve => setTimeout(resolve, 200));
+  }
 
   const finalPaths = paths.filter(Boolean);
   console.log("Total generated paths:", finalPaths.length);

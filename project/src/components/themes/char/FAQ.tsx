@@ -14,8 +14,10 @@ export default function FAQ() {
   const sectionTitle = getLocalizedValue(faqData, 'sectionTitle', language);
   const items = faqData.items || [];
 
+  if (items.length === 0) return null;
+
   return (
-    <section id="faq" className="py-32 md:py-48 px-6" style={{ backgroundColor: '#111111', borderTop: '1px solid #D4541A' }}>
+    <section id="faq" className="scroll-mt-20 py-32 md:py-48 px-6" style={{ backgroundColor: '#111111', borderTop: '1px solid #D4541A' }}>
       <div className="max-w-5xl mx-auto">
         <div className="mb-24">
           <h2

@@ -58,7 +58,7 @@ export default function Contact() {
   const inputNormal = "border-[#FFBE0B]/30";
 
   return (
-    <section id="contact" className="bg-gradient-to-br from-[#FF006E] to-[#FB5607] py-16 sm:py-16 md:py-24 md:py-28 lg:py-32 px-4 sm:px-6">
+    <section id="contact" className="scroll-mt-20 relative overflow-hidden bg-gradient-to-br from-[#FF006E] to-[#FB5607] py-16 sm:py-16 md:py-24 md:py-28 lg:py-32 px-4 sm:px-6">
       {/* Glow accent */}
       <div className="absolute left-1/2 -translate-x-1/2 w-[600px] h-64 bg-[#7B2FBE]/5 rounded-full blur-[120px] pointer-events-none" />
 

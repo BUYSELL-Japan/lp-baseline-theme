@@ -10,7 +10,7 @@ export default function Staff() {
   const sectionTitle = getLocalizedValue(staffData, 'sectionTitle', language) || 'Staff';
 
   return (
-    <section id="staff" className="py-24 bg-[#0a0a0a] text-white">
+    <section id="staff" className="scroll-mt-20 py-24 bg-[#0a0a0a] text-white">
       <div className="max-w-7xl mx-auto px-6 mb-16">
         <h2 className="text-5xl md:text-7xl font-black text-center uppercase italic text-transparent bg-clip-text bg-gradient-to-r from-[#DC2626] to-[#EA580C]">
           {sectionTitle}

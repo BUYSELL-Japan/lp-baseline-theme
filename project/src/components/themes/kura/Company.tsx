@@ -21,7 +21,7 @@ export default function Company() {
   }
 
   return (
-    <section id="company" className="py-16 sm:py-32 md:py-48 md:py-28 lg:py-32 px-4 sm:px-6 bg-[#FFFFFF]">
+    <section id="company" className="scroll-mt-20 py-16 sm:py-32 md:py-48 md:py-28 lg:py-32 px-4 sm:px-6 bg-[#FFFFFF]">
       <div className="max-w-6xl mx-auto">
         {(sectionTitle || sectionSubtitle) && (
           <motion.div

@@ -18,7 +18,7 @@ export default function About() {
   }
 
   return (
-    <section id="about" className="relative py-24 md:py-32 bg-[#FFBE0B]">
+    <section id="about" className="scroll-mt-20 relative py-24 md:py-32 bg-[#FFBE0B]">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16 md:mb-24">
           <motion.div

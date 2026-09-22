@@ -26,7 +26,7 @@ export default function Reviews() {
           className="mb-16"
         >
           <div className="w-16 h-1 bg-[#8B0000] mb-8" />
-          <h2 className="text-5xl md:text-7xl font-serif font-bold tracking-wide text-white tracking-tighter mb-4 border-b-2 border-[#D4AF37] pb-4 inline-block mb-4">
+          <h2 className="text-5xl md:text-7xl font-serif font-bold tracking-wide text-white mb-4 border-b-2 border-[#D4AF37] pb-4 inline-block">
             {sectionTitle}
           </h2>
           {reviewsData.sectionSubtitle && (
@@ -67,7 +67,7 @@ export default function Reviews() {
                   </div>
                 )}
                 <div>
-                  <p className="text-white font-serif font-bold tracking-wide tracking-tight">{t(review, 'name')}</p>
+                  <p className="text-white font-serif font-bold tracking-wide">{t(review, 'name')}</p>
                   {review.date && <p className="text-gray-200 text-xs">{typeof review.date === 'string' ? review.date : t(review, 'date') as string}</p>}
                 </div>
               </div>

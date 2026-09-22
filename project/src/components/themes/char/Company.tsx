@@ -16,7 +16,7 @@ export default function Company() {
   const companyInfo = companyData.companyInfo;
 
   return (
-    <section id="company" className="py-32 md:py-48 px-6" style={{ backgroundColor: '#1C1C1C', borderTop: '1px solid #D4541A' }}>
+    <section id="company" className="scroll-mt-20 py-32 md:py-48 px-6" style={{ backgroundColor: '#1C1C1C', borderTop: '1px solid #D4541A' }}>
       <div className="max-w-5xl mx-auto">
         <div className="mb-24">
           <h2

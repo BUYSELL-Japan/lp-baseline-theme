@@ -17,7 +17,7 @@ export default function Contact() {
   const submitLabel = getLocalizedValue(contactData, 'submitButton', language) || 'SEND';
 
   return (
-    <section id="contact" className="py-24 md:py-32 px-6" style={{ backgroundColor: '#111111', borderTop: '1px solid #D4541A' }}>
+    <section id="contact" className="scroll-mt-20 py-24 md:py-32 px-6" style={{ backgroundColor: '#111111', borderTop: '1px solid #D4541A' }}>
       <div className="max-w-3xl mx-auto">
         <div className="mb-16">
           <h2

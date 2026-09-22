@@ -13,7 +13,7 @@ export default function FAQ() {
   const sectionTitle = getLocalizedValue(faqData, 'sectionTitle', language);
 
   return (
-    <section id="faq" className="bg-[#FFFFFF] py-32 md:py-48 px-6 border-b border-[#EEEEEE]">
+    <section id="faq" className="scroll-mt-20 bg-[#FFFFFF] py-32 md:py-48 px-6 border-b border-[#EEEEEE]">
       <div className="max-w-2xl mx-auto flex flex-col items-center">
         <motion.div
           initial={{ opacity: 0, y: 10 }}
@@ -23,7 +23,7 @@ export default function FAQ() {
           className="text-center mb-24"
         >
           <h2 className="text-xl md:text-2xl font-sans font-medium text-[#222222] tracking-[0.15em]">
-            {sectionTitle || 'よくある質問'}
+            {sectionTitle}
           </h2>
         </motion.div>
 

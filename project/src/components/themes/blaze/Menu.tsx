@@ -20,14 +20,14 @@ export default function Menu() {
   }));
 
   return (
-    <section id="menu" className="py-24 bg-[#0a0a0a] text-white relative z-10">
+    <section id="menu" className="scroll-mt-20 py-24 bg-[#0a0a0a] text-white relative z-10">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="text-center mb-20">
           <h2 className="text-5xl md:text-7xl font-sans font-black tracking-tighter uppercase italic text-transparent bg-clip-text bg-gradient-to-r from-[#DC2626] to-[#F59E0B]">
             {sectionTitle}
           </h2>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-x-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-x-12">
           {menuData.items.map((item, itemIndex) => {
             const itemName = getLocalizedValue(item, 'name', language);
             const itemDesc = getLocalizedValue(item, 'description', language);
@@ -50,13 +50,13 @@ export default function Menu() {
                 )}
                 <div className="p-8 bg-[#111]">
                   <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4 mb-4">
-                    <h4 className="text-2xl sm:text-3xl font-black tracking-tight">{itemName}</h4>
-                    <span className="text-3xl font-black text-[#F59E0B]">
+                    <h4 className="text-2xl sm:text-3xl font-black tracking-tight line-clamp-2">{itemName}</h4>
+                    <span className="text-3xl font-black text-[#F59E0B] shrink-0">
                       {item.price}
                     </span>
                   </div>
                   {itemDesc && (
-                    <p className="text-gray-400 font-bold leading-relaxed">{itemDesc}</p>
+                    <p className="text-gray-400 font-bold leading-relaxed line-clamp-3">{itemDesc}</p>
                   )}
                 </div>
               </div>

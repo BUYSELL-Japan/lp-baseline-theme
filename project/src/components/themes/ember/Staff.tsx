@@ -20,7 +20,7 @@ export default function Staff() {
   }
 
   return (
-    <section id="staff" className="py-16 sm:py-20 md:py-28 lg:py-32 px-4 sm:px-6 bg-[#0a0a0a]">
+    <section id="staff" className="scroll-mt-20 py-16 sm:py-20 md:py-28 lg:py-32 px-4 sm:px-6 bg-[#0a0a0a]">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -30,7 +30,7 @@ export default function Staff() {
           className="mb-16"
         >
           <div className="w-16 h-1 bg-[#8B0000] mb-8" />
-          <h2 className="text-5xl md:text-7xl font-serif font-bold tracking-wide text-white tracking-tighter mb-4 border-b-2 border-[#D4AF37] pb-4 inline-block mb-4">
+          <h2 className="text-5xl md:text-7xl font-serif font-bold tracking-wide text-white mb-4 border-b-2 border-[#D4AF37] pb-4 inline-block">
             {sectionTitle}
           </h2>
           {staffData.sectionSubtitle && (
@@ -68,7 +68,7 @@ export default function Staff() {
                 <p className="text-xs font-serif font-bold tracking-wide uppercase tracking-[0.3em] text-[#D4AF37] mb-2">
                   {t(member, 'role')}
                 </p>
-                <h3 className="text-2xl font-serif font-bold tracking-wide text-white tracking-tighter mb-4">
+                <h3 className="text-2xl font-serif font-bold tracking-wide text-white mb-4">
                   {t(member, 'name')}
                 </h3>
                 <p className="text-gray-400 leading-relaxed text-sm">

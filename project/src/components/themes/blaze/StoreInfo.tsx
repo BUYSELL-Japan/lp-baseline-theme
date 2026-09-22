@@ -23,7 +23,7 @@ export default function StoreInfo() {
   }
 
   return (
-    <section id="storeInfo" className="py-16 sm:py-12 md:py-28 lg:py-32 px-4 sm:px-6 bg-[#141414]">
+    <section id="storeInfo" className="scroll-mt-20 py-16 sm:py-20 md:py-28 lg:py-32 px-4 sm:px-6 bg-[#141414]">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -33,12 +33,12 @@ export default function StoreInfo() {
           className="mb-10"
         >
           <div className="w-16 h-1 bg-[#DC2626] mb-8" />
-          <h2 className="text-5xl md:text-7xl font-sans font-black tracking-tighter font-bold tracking-wide text-gray-100 tracking-tighter border-b-2 border-[#F59E0B] pb-4 inline-block mb-4">
+          <h2 className="text-5xl md:text-7xl font-sans font-black tracking-tighter text-gray-100 border-b-2 border-[#F59E0B] pb-4 inline-block mb-4">
             {sectionTitle}
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
           {storeInfoData.items.map((item, index) => {
             const iconKey = (item.icon || '').toLowerCase();
             const IconComponent = iconMap[iconKey] || HelpCircle;
@@ -57,7 +57,7 @@ export default function StoreInfo() {
                     <IconComponent className="w-6 h-6 text-[#F59E0B]" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-sans font-black tracking-tighter font-bold tracking-wide text-gray-100 mb-2">{t(item, 'title')}</h3>
+                    <h3 className="text-lg font-sans font-black tracking-tighter text-gray-100 mb-2">{t(item, 'title')}</h3>
                     <p className="text-gray-200 leading-relaxed">{t(item, 'content')}</p>
                   </div>
                 </div>
@@ -82,7 +82,7 @@ export default function StoreInfo() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/90 to-transparent" />
               <div className="absolute bottom-6 left-8 text-white">
-                <p className="text-2xl font-sans font-black tracking-tighter font-bold tracking-wide tracking-tighter">{t(storeInfoData, 'mainImageCaption')}</p>
+                <p className="text-2xl font-sans font-black tracking-tighter">{t(storeInfoData, 'mainImageCaption')}</p>
               </div>
             </div>
           </motion.div>

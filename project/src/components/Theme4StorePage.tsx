@@ -26,7 +26,7 @@ interface StorePageProps {
 
 export default function Theme4StorePage({ pageData, initialLanguage = 'ja', basePath = '/' }: StorePageProps) {
   return (
-    <ErrorBoundary>
+    <ErrorBoundary language={initialLanguage}>
       <LanguageProvider initialLanguage={initialLanguage} basePath={basePath}>
         <PageDataProvider data={pageData}>
           <div className="min-h-screen bg-amber-50 selection:bg-red-200 selection:text-red-900">

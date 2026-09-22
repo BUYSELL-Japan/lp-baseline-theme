@@ -30,7 +30,7 @@ export default function Menu() {
   }));
 
   return (
-    <section id="menu" className="relative py-24 md:py-32 bg-[#FFFFFF]">
+    <section id="menu" className="scroll-mt-20 relative py-24 md:py-32 bg-[#FFFFFF]">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16 md:mb-24">
           <h2 className="text-5xl md:text-7xl font-sans font-black text-[#1a1a1a] tracking-tight">
@@ -70,18 +70,18 @@ export default function Menu() {
                     />
                   )}
                   {/* Price Sticker */}
-                  <div className="absolute bottom-4 right-4 bg-[#FF006E] text-white font-black text-2xl px-4 py-2 rounded-xl rotate-[-5deg] shadow-lg border-2 border-white">
+                  <div className="absolute bottom-4 right-4 max-w-[75%] bg-[#FF006E] text-white font-black text-xl sm:text-2xl px-4 py-2 rounded-xl rotate-[-5deg] shadow-lg border-2 border-white truncate">
                     {item.price}
                   </div>
                 </div>
-                
+
                 {/* Text */}
                 <div className="p-6 flex-grow flex flex-col">
-                  <h3 className="text-2xl font-black text-[#1a1a1a] mb-3 leading-tight">
+                  <h3 className="text-2xl font-black text-[#1a1a1a] mb-3 leading-tight line-clamp-2 break-words">
                     {itemName}
                   </h3>
                   {item.description && (
-                    <p className="text-base text-[#1a1a1a]/80 font-bold leading-relaxed">
+                    <p className="text-base text-[#1a1a1a]/80 font-bold leading-relaxed line-clamp-3 break-words">
                       {getLocalizedValue(item, 'description', language)}
                     </p>
                   )}

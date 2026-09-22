@@ -25,7 +25,7 @@ export default function Pricing() {
   };
 
   return (
-    <section id="pricing" className="bg-[#FFFFFF] py-32 md:py-48 px-6 border-b border-[#EEEEEE]">
+    <section id="pricing" className="scroll-mt-20 bg-[#FFFFFF] py-32 md:py-48 px-6 border-b border-[#EEEEEE]">
       <div className="max-w-4xl mx-auto flex flex-col items-center">
         <motion.div
           initial={{ opacity: 0, y: 10 }}

@@ -15,7 +15,7 @@ export default function Pricing() {
   if (!getText(pricingData.sectionTitle)) return null;
 
   return (
-    <section id="pricing" className="py-16 sm:py-20 md:py-28 lg:py-32 px-4 sm:px-6 bg-[#141414] border-t border-[#D4AF37]/30">
+    <section id="pricing" className="scroll-mt-20 py-16 sm:py-20 md:py-28 lg:py-32 px-4 sm:px-6 bg-[#141414] border-t border-[#D4AF37]/30">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -24,7 +24,7 @@ export default function Pricing() {
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
-          <h2 className="text-5xl md:text-7xl font-serif font-bold tracking-wide text-gray-100 tracking-tighter mb-6 border-b-2 border-[#D4AF37] pb-4 inline-block mb-4">
+          <h2 className="text-5xl md:text-7xl font-serif font-bold tracking-wide text-gray-100 mb-6 border-b-2 border-[#D4AF37] pb-4 inline-block">
             {getText(pricingData.sectionTitle)}
           </h2>
           <div className="w-20 h-2 bg-[#8B0000] mx-auto mb-8" />
@@ -54,7 +54,7 @@ export default function Pricing() {
               )}
 
               <div className="mb-10 relative">
-                <h3 className={`text-2xl font-serif font-bold tracking-wide mb-2 tracking-tight ${plan.isPopular ? 'text-white' : 'text-gray-100'}`}>
+                <h3 className={`text-2xl font-serif font-bold tracking-wide mb-2 ${plan.isPopular ? 'text-white' : 'text-gray-100'}`}>
                   {getText(plan.name)}
                 </h3>
                 <p className={`text-sm font-medium ${plan.isPopular ? 'text-gray-100' : 'text-gray-200'}`}>
@@ -63,7 +63,7 @@ export default function Pricing() {
               </div>
 
               <div className="mb-10">
-                <div className={`text-5xl font-serif font-bold tracking-wide tracking-tighter ${plan.isPopular ? 'text-white' : 'text-[#D4AF37]'}`}>
+                <div className={`text-5xl font-serif font-bold tracking-wide ${plan.isPopular ? 'text-white' : 'text-[#D4AF37]'}`}>
                   {getText(plan.price)}
                 </div>
                 <div className={`text-xs font-serif font-bold uppercase tracking-widest mt-2 ${plan.isPopular ? 'text-gray-200' : 'text-gray-400'}`}>

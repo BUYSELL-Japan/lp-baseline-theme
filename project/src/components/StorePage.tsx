@@ -26,7 +26,7 @@ interface StorePageProps {
 
 export default function StorePage({ pageData, initialLanguage = 'ja', basePath = '/' }: StorePageProps) {
   return (
-    <ErrorBoundary>
+    <ErrorBoundary language={initialLanguage}>
       <LanguageProvider initialLanguage={initialLanguage} basePath={basePath}>
         <PageDataProvider data={pageData}>
           <div className="min-h-screen bg-white font-display">

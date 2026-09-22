@@ -25,7 +25,7 @@ export default function Menu() {
   }));
 
   return (
-    <section id="menu" className="bg-[#F8F8F8] py-20 px-6 border-b border-[#E5E5E5]">
+    <section id="menu" className="scroll-mt-20 bg-[#F8F8F8] py-20 px-6 border-b border-[#E5E5E5]">
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -51,7 +51,7 @@ export default function Menu() {
             {/* Category Header (Using sectionTitle to simulate category) */}
             <div className="bg-[#333333] px-6 py-4">
               <h3 className="text-xl font-sans font-bold text-white">
-                {sectionTitle || 'メニュー'}
+                {sectionTitle}
               </h3>
             </div>
 
@@ -81,12 +81,12 @@ export default function Menu() {
                   </div>
                   
                   {/* Details */}
-                  <div className="flex-1">
-                    <h4 className="font-sans font-bold text-[#333333] text-lg mb-1">
+                  <div className="flex-1 min-w-0">
+                    <h4 className="font-sans font-bold text-[#333333] text-lg mb-1 break-words">
                       {getLocalizedValue(item, 'name', language)}
                     </h4>
                     {item.description && (
-                      <p className="text-[#333333] text-sm hidden sm:block">
+                      <p className="text-[#333333] text-sm hidden sm:block break-words">
                         {getLocalizedValue(item, 'description', language)}
                       </p>
                     )}

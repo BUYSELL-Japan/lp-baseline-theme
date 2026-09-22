@@ -114,9 +114,10 @@ export default function Header() {
         </div>
 
         {/* Mobile Toggle */}
-        <button 
+        <button
           className="xl:hidden w-10 h-10 flex items-center justify-center text-[#333333] hover:bg-[#F8F8F8] rounded-none transition-colors"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label={mobileMenuOpen ? translate('mobileMenuClose', language) : translate('mobileMenuOpen', language)}
         >
           <div className="w-6 flex flex-col items-end gap-1.5">
             <span className={`block h-0.5 bg-current transition-all duration-300 ${mobileMenuOpen ? 'w-6 rotate-45 translate-y-2' : 'w-6'}`} />
@@ -139,6 +140,7 @@ export default function Header() {
             <button
               onClick={() => setMobileMenuOpen(false)}
               className="absolute top-6 right-6 w-10 h-10 flex flex-col items-center justify-center text-[#333333]"
+              aria-label={translate('mobileMenuClose', language)}
             >
               <span className="block h-0.5 w-6 bg-current rotate-45 translate-y-0.5" />
               <span className="block h-0.5 w-6 bg-current -rotate-45 -translate-y-0.5" />

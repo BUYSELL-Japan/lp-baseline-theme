@@ -58,7 +58,7 @@ export default function Contact() {
   const inputNormal = "border-[#D4AF37]/30";
 
   return (
-    <section id="contact" className="py-16 sm:py-20 md:py-28 lg:py-32 px-4 sm:px-6 bg-[#141414]">
+    <section id="contact" className="scroll-mt-20 py-16 sm:py-20 md:py-28 lg:py-32 px-4 sm:px-6 bg-[#141414]">
       {/* Glow accent */}
       <div className="absolute left-1/2 -translate-x-1/2 w-[600px] h-64 bg-[#8B0000]/5 rounded-full blur-[120px] pointer-events-none" />
 
@@ -71,7 +71,7 @@ export default function Contact() {
           className="text-center mb-16"
         >
           <div className="w-16 h-1 bg-[#8B0000] mx-auto mb-8" />
-          <h2 className="text-5xl md:text-7xl font-serif font-bold tracking-wide text-gray-100 tracking-tighter mb-6 border-b-2 border-[#D4AF37] pb-4 inline-block mb-4">
+          <h2 className="text-5xl md:text-7xl font-serif font-bold tracking-wide text-gray-100 mb-6 border-b-2 border-[#D4AF37] pb-4 inline-block">
             {t(contactData, 'sectionTitle')}
           </h2>
           <p className="text-xl text-gray-200">

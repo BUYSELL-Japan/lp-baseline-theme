@@ -14,7 +14,7 @@ export default function About() {
   const features = aboutData.features || [];
 
   return (
-    <section id="about" className="py-32 md:py-48 px-6" style={{ backgroundColor: '#111111', borderTop: '1px solid #D4541A' }}>
+    <section id="about" className="scroll-mt-20 py-32 md:py-48 px-6" style={{ backgroundColor: '#111111', borderTop: '1px solid #D4541A' }}>
       <div className="max-w-6xl mx-auto">
         <div className="mb-24">
           <h2

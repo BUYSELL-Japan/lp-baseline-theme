@@ -16,7 +16,7 @@ export default function News() {
   }
 
   return (
-    <section id="news" className="py-16 sm:py-20 md:py-28 lg:py-32 px-4 sm:px-6 bg-white">
+    <section id="news" className="scroll-mt-20 py-16 sm:py-20 md:py-28 lg:py-32 px-4 sm:px-6 bg-white">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -26,7 +26,7 @@ export default function News() {
           className="mb-16"
         >
           <div className="w-16 h-1 bg-[#92400E] mb-8" />
-          <h2 className="text-5xl md:text-7xl font-sans font-bold tracking-normal font-bold tracking-wide text-[#1C1917] tracking-tighter mb-4 border-b-2 border-[#D97706] pb-4 inline-block mb-4">
+          <h2 className="text-5xl md:text-7xl font-sans font-bold tracking-normal text-[#1C1917] mb-4 border-b-2 border-[#D97706] pb-4 inline-block">
             {sectionTitle}
           </h2>
           {newsData.sectionSubtitle && (
@@ -58,14 +58,14 @@ export default function News() {
                     </div>
                     <div>
                       <p className="text-sm text-[#1C1917] font-medium">{date}</p>
-                      <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#92400E] text-white text-xs font-sans font-bold tracking-normal font-bold tracking-wide uppercase tracking-widest rounded-lg mt-1">
+                      <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#92400E] text-white text-xs font-sans font-bold uppercase tracking-widest rounded-lg mt-1">
                         
                         {category}
                       </span>
                     </div>
                   </div>
                   <div className="flex-grow">
-                    <h3 className="text-xl font-sans font-bold tracking-normal font-bold tracking-wide text-[#1C1917] tracking-tight mb-2 group-hover:text-[#D97706] transition-colors">
+                    <h3 className="text-xl font-sans font-bold tracking-normal text-[#1C1917] mb-2 group-hover:text-[#D97706] transition-colors">
                       {title}
                     </h3>
                     <p className="text-[#1C1917] leading-relaxed text-sm">{content}</p>

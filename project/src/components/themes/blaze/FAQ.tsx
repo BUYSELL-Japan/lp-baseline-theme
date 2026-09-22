@@ -13,7 +13,7 @@ export default function FAQ() {
   const sectionTitle = getLocalizedValue(faqData, 'sectionTitle', language) || 'FAQ';
 
   return (
-    <section id="faq" className="py-24 bg-[#111] text-white">
+    <section id="faq" className="scroll-mt-20 py-24 bg-[#111] text-white">
       <div className="max-w-7xl mx-auto px-6">
         <h2 className="text-5xl md:text-7xl font-black mb-16 uppercase italic text-transparent bg-clip-text bg-gradient-to-r from-[#EA580C] to-[#F59E0B]">
           {sectionTitle}

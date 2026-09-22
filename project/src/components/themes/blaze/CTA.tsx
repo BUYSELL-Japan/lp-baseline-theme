@@ -17,7 +17,7 @@ export default function CTA() {
   }
 
   return (
-    <section className="relative py-16 sm:py-12 md:py-28 lg:py-32 px-4 sm:px-6 overflow-hidden bg-[#0a0a0a]">
+    <section className="relative py-16 sm:py-20 md:py-28 lg:py-32 px-4 sm:px-6 overflow-hidden bg-[#0a0a0a]">
       {/* Background image with dark overlay */}
       {ctaData.backgroundImage && (
         <div className="absolute inset-0 z-0">
@@ -40,11 +40,11 @@ export default function CTA() {
           {/* Decorative line */}
           <div className="w-16 h-1 bg-[#DC2626] mx-auto mb-8" />
 
-          <h2 className="text-5xl md:text-7xl font-sans font-black tracking-tighter font-bold tracking-wide text-white tracking-tighter mb-6 border-b-2 border-[#F59E0B] pb-4 inline-block mb-4">
+          <h2 className="text-5xl md:text-7xl font-sans font-black tracking-tighter text-white mb-6 border-b-2 border-[#F59E0B] pb-4 inline-block">
             {getText(ctaData.sectionTitle)}
           </h2>
           {ctaData.sectionSubtitle && (
-            <p className="text-xl text-[#F59E0B] font-sans font-black tracking-tighter font-bold mb-4">
+            <p className="text-xl text-[#F59E0B] font-sans font-black tracking-tighter mb-4">
               {getText(ctaData.sectionSubtitle)}
             </p>
           )}
@@ -61,7 +61,7 @@ export default function CTA() {
                 href={button.link}
                 whileHover={{ scale: 1.05, y: -3 }}
                 whileTap={{ scale: 0.97 }}
-                className={`inline-flex items-center gap-3 px-10 py-5 rounded-2xl text-lg font-sans font-black tracking-tighter font-bold tracking-wide transition-all shadow-2xl ${
+                className={`inline-flex items-center gap-3 px-10 py-5 rounded-2xl text-lg font-sans font-black tracking-tighter transition-all shadow-2xl ${
                   button.type === 'primary'
                     ? 'bg-[#DC2626] text-white hover:bg-[#DC2626] shadow-[#DC2626]/30'
                     : 'bg-[#2a2a2a]/80 text-white border border-slate-700 hover:bg-[#222222]'

@@ -18,7 +18,7 @@ export default function Gallery() {
   }));
 
   return (
-    <section id="gallery" className="py-32 md:py-48 bg-[#FAFAF7]">
+    <section id="gallery" className="scroll-mt-20 py-32 md:py-48 bg-[#FAFAF7]">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-24 md:mb-32">
           <h2 className="text-3xl md:text-5xl font-serif text-[#1a1a1a] tracking-[0.2em]">

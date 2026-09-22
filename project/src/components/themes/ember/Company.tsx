@@ -21,7 +21,7 @@ export default function Company() {
   }
 
   return (
-    <section id="company" className="py-16 sm:py-20 md:py-28 lg:py-32 px-4 sm:px-6 bg-[#0a0a0a]">
+    <section id="company" className="scroll-mt-20 py-16 sm:py-20 md:py-28 lg:py-32 px-4 sm:px-6 bg-[#0a0a0a]">
       <div className="max-w-6xl mx-auto">
         {(sectionTitle || sectionSubtitle) && (
           <motion.div
@@ -34,7 +34,7 @@ export default function Company() {
             {sectionTitle && (
               <>
                 <div className="w-16 h-1 bg-[#8B0000] mb-8" />
-                <h2 className="text-5xl md:text-7xl font-serif font-bold tracking-wide text-white tracking-tighter mb-4 border-b-2 border-[#D4AF37] pb-4 inline-block mb-4">
+                <h2 className="text-5xl md:text-7xl font-serif font-bold tracking-wide text-white mb-4 border-b-2 border-[#D4AF37] pb-4 inline-block">
                   {sectionTitle}
                 </h2>
               </>
@@ -57,7 +57,7 @@ export default function Company() {
                 <div className="bg-[#8B0000]/20 border border-[#D4AF37]/30 p-4 rounded-2xl">
                   <Heart className="w-7 h-7 text-[#D4AF37]" />
                 </div>
-                <h3 className="text-4xl font-serif font-bold tracking-wide text-white tracking-tighter">
+                <h3 className="text-4xl font-serif font-bold tracking-wide text-white">
                   {getText(companyData.philosophy.title)}
                 </h3>
               </div>
@@ -80,7 +80,7 @@ export default function Company() {
                 <div className="bg-[#8B0000]/20 border border-[#D4AF37]/30 p-4 rounded-2xl">
                   <History className="w-7 h-7 text-[#D4AF37]" />
                 </div>
-                <h3 className="text-4xl font-serif font-bold tracking-wide text-white tracking-tighter">
+                <h3 className="text-4xl font-serif font-bold tracking-wide text-white">
                   {getText(companyData.history.title)}
                 </h3>
               </div>
@@ -123,7 +123,7 @@ export default function Company() {
                 <div className="bg-[#8B0000]/20 border border-[#D4AF37]/30 p-4 rounded-2xl">
                   <Building2 className="w-7 h-7 text-[#D4AF37]" />
                 </div>
-                <h3 className="text-4xl font-serif font-bold tracking-wide text-white tracking-tighter">
+                <h3 className="text-4xl font-serif font-bold tracking-wide text-white">
                   {getText(companyData.companyInfo.title)}
                 </h3>
               </div>
@@ -137,7 +137,7 @@ export default function Company() {
                     transition={{ duration: 0.5, delay: index * 0.05 }}
                     className="flex flex-col md:flex-row md:items-start gap-2 py-3 border-b border-[#D4AF37]/20"
                   >
-                    <div className="font-serif font-bold tracking-wide text-[#D4AF37] text-sm uppercase tracking-widest min-w-[120px]">
+                    <div className="font-serif font-bold text-[#D4AF37] text-sm uppercase tracking-widest min-w-[120px]">
                       {getText(item.label)}
                     </div>
                     <div className="text-gray-300 flex-1">{getText(item.value)}</div>

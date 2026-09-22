@@ -18,7 +18,7 @@ export default function StoreInfo() {
   const imageCaption = t(storeInfoData, 'mainImageCaption', language);
 
   return (
-    <section id="storeInfo" className="bg-[#FFFFFF] py-20 px-6 border-b border-[#E5E5E5]">
+    <section id="storeInfo" className="scroll-mt-20 bg-[#FFFFFF] py-20 px-6 border-b border-[#E5E5E5]">
       <div className="max-w-5xl mx-auto">
         {(sectionTitle || sectionSubtitle) && (
           <motion.div

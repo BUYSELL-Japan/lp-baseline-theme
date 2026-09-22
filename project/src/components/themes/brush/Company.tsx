@@ -22,7 +22,7 @@ export default function Company() {
   }
 
   return (
-    <section id="company" className="bg-[#1a1a1a] text-white py-24 md:py-32 px-4 sm:px-6">
+    <section id="company" className="scroll-mt-20 bg-[#1a1a1a] text-white py-24 md:py-32 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
         {(sectionTitle || sectionSubtitle) && (
           <motion.div

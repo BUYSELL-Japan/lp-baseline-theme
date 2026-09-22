@@ -60,7 +60,7 @@ export default function Gallery() {
   if (!sectionTitle || galleryData.images.length === 0) return null;
 
   return (
-    <section id="gallery" className="py-16 sm:py-20 md:py-28 lg:py-32 px-4 sm:px-6 bg-[#141414]">
+    <section id="gallery" className="scroll-mt-20 py-16 sm:py-20 md:py-28 lg:py-32 px-4 sm:px-6 bg-[#141414]">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -70,7 +70,7 @@ export default function Gallery() {
           className="mb-16"
         >
           <div className="w-16 h-1 bg-[#8B0000] mb-8" />
-          <h2 className="text-5xl md:text-7xl font-serif font-bold tracking-wide text-gray-100 tracking-tighter mb-4 border-b-2 border-[#D4AF37] pb-4 inline-block mb-4">
+          <h2 className="text-5xl md:text-7xl font-serif font-bold tracking-wide text-gray-100 mb-4 border-b-2 border-[#D4AF37] pb-4 inline-block">
             {sectionTitle}
           </h2>
           {sectionSubtitle && <p className="text-xl text-gray-200">{sectionSubtitle}</p>}
@@ -132,8 +132,8 @@ export default function Gallery() {
                 <img src={image.url} alt={getText(image.caption)} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/90 via-[#0a0a0a]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <p className="text-white font-serif font-bold tracking-wide text-lg tracking-tighter">{getText(image.caption)}</p>
-                    <span className="inline-block mt-2 px-3 py-1 bg-[#8B0000] text-white text-xs font-serif font-bold tracking-wide uppercase tracking-widest rounded-lg">
+                    <p className="text-white font-serif font-bold tracking-wide text-lg">{getText(image.caption)}</p>
+                    <span className="inline-block mt-2 px-3 py-1 bg-[#8B0000] text-white text-xs font-serif font-bold uppercase tracking-widest rounded-lg">
                       {getText(image.category)}
                     </span>
                   </div>

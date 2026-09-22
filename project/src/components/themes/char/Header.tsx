@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useHeaderData } from '../../../contexts/PageDataContext';
 import { useLanguage } from '../../../contexts/LanguageContext';
-import { getLocalizedValue } from '../../../utils/i18n';
+import { getLocalizedValue, translate } from '../../../utils/i18n';
 
 export default function Header() {
   const headerData = useHeaderData();
@@ -14,6 +14,15 @@ export default function Header() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [menuOpen]);
 
   if (!headerData) return null;
 
@@ -59,6 +68,7 @@ export default function Header() {
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="md:hidden flex flex-col space-y-1.5 p-2"
+          aria-label={menuOpen ? translate('mobileMenuClose', language) : translate('mobileMenuOpen', language)}
         >
           <span className="block w-6 h-px transition-all duration-300" style={{ backgroundColor: menuOpen ? '#D4541A' : '#BBBBBB' }}></span>
           <span className="block w-6 h-px transition-all duration-300" style={{ backgroundColor: menuOpen ? '#D4541A' : '#BBBBBB' }}></span>
@@ -68,7 +78,7 @@ export default function Header() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden px-6 pb-6 pt-2 border-t border-[#D4541A]/30" style={{ backgroundColor: '#111111' }}>
+        <div className="md:hidden px-6 pb-6 pt-2 border-t border-[#D4541A]/30 max-h-[calc(100vh-4rem)] overflow-y-auto" style={{ backgroundColor: '#111111' }}>
           <nav className="flex flex-col space-y-4">
             {navItems.map((item) => (
               <a

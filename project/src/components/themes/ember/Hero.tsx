@@ -17,7 +17,7 @@ export default function Hero() {
 
   return (
     <section
-      className="relative min-h-[90svh] sm:min-h-screen flex items-end sm:items-center bg-cover bg-center bg-fixed bg-no-repeat"
+      className="relative min-h-[90svh] sm:min-h-screen flex items-end sm:items-center bg-cover bg-center bg-scroll sm:bg-fixed bg-no-repeat"
       style={heroData.backgroundImage ? { backgroundImage: `url(${heroData.backgroundImage})` } : undefined}
     >
       {/* Dark overlay for Ember's heavy feel (60% opacity) */}

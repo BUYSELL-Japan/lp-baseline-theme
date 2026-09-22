@@ -23,7 +23,7 @@ export default function Gallery() {
   }));
 
   return (
-    <section id="gallery" className="py-24 md:py-32 px-6" style={{ backgroundColor: '#1C1C1C', borderTop: '1px solid #D4541A' }}>
+    <section id="gallery" className="scroll-mt-20 py-24 md:py-32 px-6" style={{ backgroundColor: '#1C1C1C', borderTop: '1px solid #D4541A' }}>
       <div className="max-w-6xl mx-auto">
         <div className="mb-16">
           <h2

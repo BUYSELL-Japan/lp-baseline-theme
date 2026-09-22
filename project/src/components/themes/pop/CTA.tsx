@@ -22,7 +22,7 @@ export default function CTA() {
       {ctaData.backgroundImage && (
         <div className="absolute inset-0 z-0">
           <img src={ctaData.backgroundImage} alt="Background" className="w-full h-full object-cover opacity-45" />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-[#0a0a0a]/50 to-slate-950/75" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#FF006E]/80 via-[#7B2FBE]/60 to-[#FB5607]/85" />
         </div>
       )}
 

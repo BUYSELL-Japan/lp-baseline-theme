@@ -22,7 +22,7 @@ export default function Gallery() {
   }));
 
   return (
-    <section id="gallery" className="bg-[#F5F5F3] py-32 md:py-48 px-4 md:px-0 border-b border-[#EEEEEE]">
+    <section id="gallery" className="scroll-mt-20 bg-[#F5F5F3] py-32 md:py-48 px-4 md:px-0 border-b border-[#EEEEEE]">
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -31,7 +31,7 @@ export default function Gallery() {
         className="text-center mb-24"
       >
         <h2 className="text-xl md:text-2xl font-sans font-medium text-[#222222] tracking-[0.15em]">
-          {sectionTitle || 'ギャラリー'}
+          {sectionTitle}
         </h2>
       </motion.div>
 

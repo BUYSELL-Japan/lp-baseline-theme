@@ -13,7 +13,7 @@ export default function StoreInfo() {
   const sectionTitle = getLocalizedValue(storeInfoData, 'sectionTitle', language);
 
   return (
-    <section id="storeInfo" className="bg-[#FFFFFF] py-32 md:py-48 px-6 border-b border-[#EEEEEE]">
+    <section id="storeInfo" className="scroll-mt-20 bg-[#FFFFFF] py-32 md:py-48 px-6 border-b border-[#EEEEEE]">
       <div className="max-w-2xl mx-auto flex flex-col items-center">
         <motion.div
           initial={{ opacity: 0, y: 10 }}
@@ -23,7 +23,7 @@ export default function StoreInfo() {
           className="text-center mb-24"
         >
           <h2 className="text-xl md:text-2xl font-sans font-medium text-[#222222] tracking-[0.15em]">
-            {sectionTitle || '店舗情報'}
+            {sectionTitle}
           </h2>
         </motion.div>
 

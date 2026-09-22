@@ -25,7 +25,7 @@ export default function Menu() {
   }));
 
   return (
-    <section id="menu" className="py-24 sm:py-32 px-4 sm:px-6 bg-[#141414] border-t border-[#D4AF37]/20 overflow-hidden">
+    <section id="menu" className="scroll-mt-20 py-24 sm:py-32 px-4 sm:px-6 bg-[#141414] border-t border-[#D4AF37]/20 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

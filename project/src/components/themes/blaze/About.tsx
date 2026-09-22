@@ -12,7 +12,7 @@ export default function About() {
   const title = getLocalizedValue(aboutData, 'sectionTitle', language);
 
   return (
-    <section id="about" className="py-20 bg-[#0a0a0a] text-white">
+    <section id="about" className="scroll-mt-20 py-20 bg-[#0a0a0a] text-white">
       <div className="max-w-7xl mx-auto px-6 mb-20">
         {title && (
           <h2 className="text-5xl md:text-7xl font-black uppercase italic mb-8 border-l-8 border-[#DC2626] pl-6 text-transparent bg-clip-text bg-gradient-to-r from-[#DC2626] to-[#F59E0B]">

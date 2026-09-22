@@ -21,7 +21,7 @@ export default function Gallery() {
   const images = galleryData.images;
 
   return (
-    <section id="gallery" className="bg-[#F8F8F8] py-20 px-6 border-b border-[#E5E5E5]">
+    <section id="gallery" className="scroll-mt-20 bg-[#F8F8F8] py-20 px-6 border-b border-[#E5E5E5]">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -76,7 +76,7 @@ export default function Header() {
           <div className="w-10 h-10 shrink-0 bg-[#8B0000] rounded-xl flex items-center justify-center shadow-lg shadow-[#8B0000]/30 group-hover:bg-[#8B0000] transition-colors">
             <BarChart3 className="text-white w-6 h-6 rotate-12" />
           </div>
-          <div className="text-sm sm:text-xl font-serif font-bold tracking-wide tracking-tighter text-white line-clamp-2 leading-tight">
+          <div className="text-sm sm:text-xl font-serif font-bold tracking-wide text-white line-clamp-2 leading-tight">
             {logoText}
           </div>
         </motion.div>
@@ -141,7 +141,7 @@ export default function Header() {
                 <motion.button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="block w-full text-left py-4 text-2xl font-serif font-bold tracking-wide tracking-tighter text-white hover:text-[#D4AF37] transition-colors border-b border-[#D4AF37]/20"
+                  className="block w-full text-left py-4 text-2xl font-serif font-bold tracking-wide text-white hover:text-[#D4AF37] transition-colors border-b border-[#D4AF37]/20"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.25, delay: index * 0.05 }}

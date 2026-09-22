@@ -23,7 +23,7 @@ export default function Menu() {
   }));
 
   return (
-    <section id="menu" className="py-24 md:py-32 px-6" style={{ backgroundColor: '#1C1C1C', borderTop: '1px solid #D4541A' }}>
+    <section id="menu" className="scroll-mt-20 py-24 md:py-32 px-6" style={{ backgroundColor: '#1C1C1C', borderTop: '1px solid #D4541A' }}>
       <div className="max-w-5xl mx-auto">
         <div className="mb-16">
           <h2

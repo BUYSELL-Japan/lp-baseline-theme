@@ -34,7 +34,7 @@ export default function ThemeWarmStorePage({ pageData, initialLanguage = 'ja', b
         @import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap');
         .font-maru, .font-maru * { font-family: 'Zen Maru Gothic', sans-serif !important; }
       `}</style>
-    <ErrorBoundary>
+    <ErrorBoundary language={initialLanguage}>
       <LanguageProvider initialLanguage={initialLanguage} basePath={basePath}>
         <PageDataProvider data={pageData}>
           <div className="relative w-full min-h-screen bg-[#FFFBF0] text-[#1C1917] selection:bg-blue-500/30 font-sans font-maru overflow-x-clip">

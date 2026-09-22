@@ -40,7 +40,7 @@ export default function CTA() {
           {/* Decorative line */}
           <div className="w-16 h-1 bg-[#8B0000] mx-auto mb-8" />
 
-          <h2 className="text-5xl md:text-7xl font-serif font-bold tracking-wide text-white tracking-tighter mb-6 border-b-2 border-[#D4AF37] pb-4 inline-block mb-4">
+          <h2 className="text-5xl md:text-7xl font-serif font-bold tracking-wide text-white mb-6 border-b-2 border-[#D4AF37] pb-4 inline-block">
             {getText(ctaData.sectionTitle)}
           </h2>
           {ctaData.sectionSubtitle && (

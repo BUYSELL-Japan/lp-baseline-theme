@@ -14,7 +14,7 @@ export default function News() {
   }
 
   return (
-    <section id="news" className="bg-[#FFFFFF] py-20 px-6 border-b border-[#E5E5E5]">
+    <section id="news" className="scroll-mt-20 bg-[#FFFFFF] py-20 px-6 border-b border-[#E5E5E5]">
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

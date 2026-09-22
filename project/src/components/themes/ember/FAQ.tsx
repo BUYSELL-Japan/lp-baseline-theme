@@ -18,7 +18,7 @@ export default function FAQ() {
   }
 
   return (
-    <section id="faq" className="py-16 sm:py-20 md:py-28 lg:py-32 px-4 sm:px-6 bg-[#141414]">
+    <section id="faq" className="scroll-mt-20 py-16 sm:py-20 md:py-28 lg:py-32 px-4 sm:px-6 bg-[#141414]">
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -28,7 +28,7 @@ export default function FAQ() {
           className="mb-16"
         >
           <div className="w-16 h-1 bg-[#8B0000] mb-8" />
-          <h2 className="text-5xl md:text-7xl font-serif font-bold tracking-wide text-gray-100 tracking-tighter mb-4 border-b-2 border-[#D4AF37] pb-4 inline-block mb-4">
+          <h2 className="text-5xl md:text-7xl font-serif font-bold tracking-wide text-gray-100 mb-4 border-b-2 border-[#D4AF37] pb-4 inline-block">
             {sectionTitle}
           </h2>
           {faqData.sectionSubtitle && (
@@ -50,7 +50,7 @@ export default function FAQ() {
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
                 className="w-full p-6 flex items-center justify-between text-left"
               >
-                <h3 className="text-lg font-serif font-bold tracking-wide text-gray-100 tracking-tight pr-4">
+                <h3 className="text-lg font-serif font-bold tracking-wide text-gray-100 pr-4">
                   {getText(item.question)}
                 </h3>
                 <motion.div

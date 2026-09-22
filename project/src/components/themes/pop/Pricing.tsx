@@ -17,7 +17,7 @@ export default function Pricing() {
   const rotations = [-2, 1, -1];
 
   return (
-    <section id="pricing" className="relative py-24 md:py-32 bg-white">
+    <section id="pricing" className="scroll-mt-20 relative py-24 md:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-6 relative z-30">
         <div className="text-center mb-16 md:mb-24">
           <motion.div
@@ -48,7 +48,7 @@ export default function Pricing() {
               transition={{ type: 'spring', stiffness: 200, damping: 15, delay: index * 0.1 }}
               whileHover={{ scale: 1.05, y: -10, rotate: 0 }}
               style={{ rotate: `${rot}deg` }}
-              className={`p-8 md:p-10 flex flex-col h-full border-4 rounded-[24px] shadow-[8px_8px_0_0_#1a1a1a] bg-white text-[#1a1a1a] ${
+              className={`relative p-8 md:p-10 flex flex-col h-full border-4 rounded-[24px] shadow-[8px_8px_0_0_#1a1a1a] bg-white text-[#1a1a1a] ${
                 plan.isPopular ? 'border-[#FF006E]' : 'border-[#1a1a1a]'
               }`}
             >

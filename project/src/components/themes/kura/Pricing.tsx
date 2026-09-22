@@ -15,7 +15,7 @@ export default function Pricing() {
   if (!getText(pricingData.sectionTitle)) return null;
 
   return (
-    <section id="pricing" className="py-32 md:py-48 bg-[#FAFAF7]">
+    <section id="pricing" className="scroll-mt-20 py-32 md:py-48 bg-[#FAFAF7]">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

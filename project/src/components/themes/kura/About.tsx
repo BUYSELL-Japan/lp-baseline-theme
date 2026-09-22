@@ -19,7 +19,7 @@ export default function About() {
   }
 
   return (
-    <section id="about" className="py-32 md:py-48 bg-[#FFFFFF]">
+    <section id="about" className="scroll-mt-20 py-32 md:py-48 bg-[#FFFFFF]">
       <div className="max-w-5xl mx-auto px-6">
         <div className="text-center mb-32 md:mb-48">
           <h2 className="text-3xl md:text-5xl font-serif text-[#1a1a1a] tracking-[0.2em]">

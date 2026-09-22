@@ -13,7 +13,7 @@ export default function Access() {
   const sectionTitle = getLocalizedValue(accessData, 'sectionTitle', language);
 
   return (
-    <section id="access" className="bg-[#F5F5F3] py-32 md:py-48 px-6 border-b border-[#EEEEEE]">
+    <section id="access" className="scroll-mt-20 bg-[#F5F5F3] py-32 md:py-48 px-6 border-b border-[#EEEEEE]">
       <div className="max-w-3xl mx-auto flex flex-col items-center">
         <motion.div
           initial={{ opacity: 0, y: 10 }}
@@ -23,7 +23,7 @@ export default function Access() {
           className="text-center mb-24"
         >
           <h2 className="text-xl md:text-2xl font-sans font-medium text-[#222222] tracking-[0.15em]">
-            {sectionTitle || 'アクセス'}
+            {sectionTitle}
           </h2>
         </motion.div>
 
@@ -45,7 +45,7 @@ export default function Access() {
           </div>
           
           <div className="w-full border-t border-[#EEEEEE] pt-12">
-            <h3 className="font-sans font-medium text-[#444444] mb-4 text-sm tracking-widest">{translate('address', language) || '所在地'}</h3>
+            <h3 className="font-sans font-medium text-[#444444] mb-4 text-sm tracking-widest">{translate('address', language)}</h3>
             <p className="text-[#888888] font-light text-sm leading-loose tracking-widest mb-12">
               {getLocalizedValue(accessData, 'address', language)}
             </p>
@@ -53,7 +53,7 @@ export default function Access() {
             {accessData.transportation && accessData.transportation.methods && (
               <>
                 <h3 className="font-sans font-medium text-[#444444] mb-4 text-sm tracking-widest">
-                  {getLocalizedValue(accessData.transportation, 'title', language) || translate('access', language) || 'アクセス'}
+                  {getLocalizedValue(accessData.transportation, 'title', language) || translate('access', language)}
                 </h3>
                 <div className="text-[#888888] font-light text-sm leading-loose tracking-widest flex flex-col space-y-2">
                   {accessData.transportation.methods.map((method, index) => (

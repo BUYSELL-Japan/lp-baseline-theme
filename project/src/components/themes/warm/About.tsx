@@ -19,7 +19,7 @@ export default function About() {
   }
 
   return (
-    <section id="about" className="py-24 bg-[#FEF3C7]">
+    <section id="about" className="scroll-mt-20 py-24 bg-[#FEF3C7]">
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-black text-[#92400E] mb-6 inline-block relative">

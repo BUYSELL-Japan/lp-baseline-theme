@@ -94,7 +94,7 @@ export default function Hero() {
           </motion.h2>
           
           {subtitle && (
-            <motion.p variants={bounceVariants} className="text-lg md:text-xl lg:text-2xl font-sans font-bold text-white drop-shadow-md leading-snug whitespace-nowrap">
+            <motion.p variants={bounceVariants} className="text-lg md:text-xl lg:text-2xl font-sans font-bold text-white drop-shadow-md leading-snug break-words max-w-full">
               {subtitle}
             </motion.p>
           )}
@@ -117,7 +117,7 @@ export default function Hero() {
         >
           <div className="relative">
             {/* Main Image */}
-            <div className="relative z-10 w-[300px] h-[300px] sm:w-[450px] sm:h-[450px] md:w-[500px] md:h-[500px] lg:w-[600px] lg:h-[600px] rounded-full border-[8px] border-white shadow-2xl overflow-hidden bg-white/20">
+            <div className="relative z-10 w-[300px] h-[300px] sm:w-[380px] sm:h-[380px] md:w-[300px] md:h-[300px] lg:w-[440px] lg:h-[440px] xl:w-[560px] xl:h-[560px] rounded-full border-[8px] border-white shadow-2xl overflow-hidden bg-white/20">
               {heroData.backgroundImage ? (
                 <img 
                   src={heroData.backgroundImage} 

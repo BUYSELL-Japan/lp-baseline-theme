@@ -24,7 +24,7 @@ export default function Menu() {
   }));
 
   return (
-    <section id="menu" className="w-full bg-[#F5F0E8] py-24 md:py-32">
+    <section id="menu" className="scroll-mt-20 w-full bg-[#F5F0E8] py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-6 relative z-10 mb-20 text-center">
         <motion.h2 
           initial={{ opacity: 0, y: 30 }}

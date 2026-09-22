@@ -58,7 +58,7 @@ export default function Contact() {
   const inputNormal = "border-[#D97706]/30";
 
   return (
-    <section id="contact" className="py-16 sm:py-20 md:py-28 lg:py-32 px-4 sm:px-6 bg-white">
+    <section id="contact" className="scroll-mt-20 py-16 sm:py-20 md:py-28 lg:py-32 px-4 sm:px-6 bg-white">
       {/* Glow accent */}
       <div className="absolute left-1/2 -translate-x-1/2 w-[600px] h-64 bg-[#92400E]/5 rounded-full blur-[120px] pointer-events-none" />
 
@@ -71,7 +71,7 @@ export default function Contact() {
           className="text-center mb-16"
         >
           <div className="w-16 h-1 bg-[#92400E] mx-auto mb-8" />
-          <h2 className="text-5xl md:text-7xl font-sans font-bold tracking-normal font-bold tracking-wide text-[#1C1917] tracking-tighter mb-6 border-b-2 border-[#D97706] pb-4 inline-block mb-4">
+          <h2 className="text-5xl md:text-7xl font-sans font-bold tracking-normal text-[#1C1917] mb-6 border-b-2 border-[#D97706] pb-4 inline-block">
             {t(contactData, 'sectionTitle')}
           </h2>
           <p className="text-xl text-[#1C1917]">
@@ -95,7 +95,7 @@ export default function Contact() {
           <div className="space-y-6">
             {/* Name */}
             <div>
-              <label htmlFor="name-t2" className="block text-sm font-sans font-bold tracking-normal font-bold text-[#1C1917] uppercase tracking-widest mb-2">
+              <label htmlFor="name-t2" className="block text-sm font-sans font-bold tracking-normal text-[#1C1917] uppercase tracking-widest mb-2">
                 {t(contactData.fields, 'name')}
               </label>
               <input
@@ -110,7 +110,7 @@ export default function Contact() {
 
             {/* Email */}
             <div>
-              <label htmlFor="email-t2" className="block text-sm font-sans font-bold tracking-normal font-bold text-[#1C1917] uppercase tracking-widest mb-2">
+              <label htmlFor="email-t2" className="block text-sm font-sans font-bold tracking-normal text-[#1C1917] uppercase tracking-widest mb-2">
                 {t(contactData.fields, 'email')}
               </label>
               <input
@@ -125,7 +125,7 @@ export default function Contact() {
 
             {/* Subject */}
             <div>
-              <label htmlFor="subject-t2" className="block text-sm font-sans font-bold tracking-normal font-bold text-[#1C1917] uppercase tracking-widest mb-2">
+              <label htmlFor="subject-t2" className="block text-sm font-sans font-bold tracking-normal text-[#1C1917] uppercase tracking-widest mb-2">
                 {t(contactData.fields, 'subject')}
               </label>
               <input
@@ -140,7 +140,7 @@ export default function Contact() {
 
             {/* Message */}
             <div>
-              <label htmlFor="message-t2" className="block text-sm font-sans font-bold tracking-normal font-bold text-[#1C1917] uppercase tracking-widest mb-2">
+              <label htmlFor="message-t2" className="block text-sm font-sans font-bold tracking-normal text-[#1C1917] uppercase tracking-widest mb-2">
                 {t(contactData.fields, 'message')}
               </label>
               <textarea
@@ -156,7 +156,7 @@ export default function Contact() {
             {/* Submit */}
             <motion.button
               type="submit" disabled={isDisabled}
-              className="w-full bg-[#92400E] hover:bg-[#92400E] text-white py-5 rounded-2xl font-sans font-bold tracking-normal font-bold tracking-wide text-lg shadow-2xl shadow-[#92400E]/30 flex items-center justify-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed transition-colors"
+              className="w-full bg-[#92400E] hover:bg-[#92400E] text-white py-5 rounded-2xl font-sans font-bold tracking-normal text-lg shadow-2xl shadow-[#92400E]/30 flex items-center justify-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed transition-colors"
               whileHover={!isDisabled ? { scale: 1.02, y: -2 } : {}}
               whileTap={!isDisabled ? { scale: 0.98 } : {}}
             >
@@ -171,7 +171,7 @@ export default function Contact() {
                   className="flex items-center gap-3 p-4 bg-[#FFFBF0] border border-[#D97706] rounded-xl text-[#D97706]"
                 >
                   
-                  <span className="text-sm font-sans font-bold tracking-normal font-bold">{translate('contactSuccess')}</span>
+                  <span className="text-sm font-sans font-bold tracking-normal">{translate('contactSuccess')}</span>
                 </motion.div>
               )}
               {submitStatus === 'error' && (
@@ -180,7 +180,7 @@ export default function Contact() {
                   className="flex items-center gap-3 p-4 bg-red-50 border border-red-200 rounded-xl text-red-700"
                 >
                   
-                  <span className="text-sm font-sans font-bold tracking-normal font-bold">{translate('contactError')}</span>
+                  <span className="text-sm font-sans font-bold tracking-normal">{translate('contactError')}</span>
                 </motion.div>
               )}
             </AnimatePresence>

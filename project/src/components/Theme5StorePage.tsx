@@ -26,7 +26,7 @@ interface StorePageProps {
 
 export default function Theme5StorePage({ pageData, initialLanguage = 'ja', basePath = '/' }: StorePageProps) {
   return (
-    <ErrorBoundary>
+    <ErrorBoundary language={initialLanguage}>
       <LanguageProvider initialLanguage={initialLanguage} basePath={basePath}>
         <PageDataProvider data={pageData}>
           <div className="min-h-screen bg-gray-100 selection:bg-[#D4AF37]/30 selection:text-gray-900">

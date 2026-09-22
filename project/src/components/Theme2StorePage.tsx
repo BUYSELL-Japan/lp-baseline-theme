@@ -29,7 +29,7 @@ interface StorePageProps {
 
 export default function Theme2StorePage({ pageData, initialLanguage = 'ja', basePath = '/' }: StorePageProps) {
   return (
-    <ErrorBoundary>
+    <ErrorBoundary language={initialLanguage}>
       <LanguageProvider initialLanguage={initialLanguage} basePath={basePath}>
         <PageDataProvider data={pageData}>
           <div className="relative w-full min-h-screen bg-slate-950 text-slate-50 selection:bg-blue-500/30 font-sans overflow-x-clip">

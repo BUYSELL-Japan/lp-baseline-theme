@@ -17,7 +17,7 @@ export default function Gallery() {
   }));
 
   return (
-    <section id="gallery" className="py-24 bg-[#FFFBF0] overflow-hidden">
+    <section id="gallery" className="scroll-mt-20 py-24 bg-[#FFFBF0] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 mb-12 text-center">
         <h2 className="text-4xl md:text-5xl font-black text-[#92400E] inline-block relative">
           {sectionTitle}

@@ -15,7 +15,7 @@ export default function Pricing() {
   const sectionTitle = getLocalizedValue(pricingData, 'sectionTitle', language) || 'Plans';
 
   return (
-    <section id="pricing" className="py-24 bg-[#111] text-white">
+    <section id="pricing" className="scroll-mt-20 py-24 bg-[#111] text-white">
       <div className="max-w-7xl mx-auto px-6">
         <h2 className="text-5xl md:text-7xl font-black mb-16 border-l-8 border-[#DC2626] pl-6 uppercase italic">
           {sectionTitle}

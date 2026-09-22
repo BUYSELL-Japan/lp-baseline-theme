@@ -22,7 +22,7 @@ export default function CTA() {
       {ctaData.backgroundImage && (
         <div className="absolute inset-0 z-0">
           <img src={ctaData.backgroundImage} alt="Background" className="w-full h-full object-cover opacity-45" />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-[#0a0a0a]/50 to-slate-950/75" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#1C1917] via-[#78350F]/60 to-[#1C1917]/80" />
         </div>
       )}
 
@@ -40,11 +40,11 @@ export default function CTA() {
           {/* Decorative line */}
           <div className="w-16 h-1 bg-[#92400E] mx-auto mb-8" />
 
-          <h2 className="text-5xl md:text-7xl font-sans font-bold tracking-normal font-bold tracking-wide text-[#1C1917] tracking-tighter mb-6 border-b-2 border-[#D97706] pb-4 inline-block mb-4">
+          <h2 className="text-5xl md:text-7xl font-sans font-bold tracking-normal text-[#1C1917] mb-6 border-b-2 border-[#D97706] pb-4 inline-block">
             {getText(ctaData.sectionTitle)}
           </h2>
           {ctaData.sectionSubtitle && (
-            <p className="text-xl text-[#D97706] font-sans font-bold tracking-normal font-bold mb-4">
+            <p className="text-xl text-[#D97706] font-sans font-bold tracking-normal mb-4">
               {getText(ctaData.sectionSubtitle)}
             </p>
           )}
@@ -61,7 +61,7 @@ export default function CTA() {
                 href={button.link}
                 whileHover={{ scale: 1.05, y: -3 }}
                 whileTap={{ scale: 0.97 }}
-                className={`inline-flex items-center gap-3 px-10 py-5 rounded-2xl text-lg font-sans font-bold tracking-normal font-bold tracking-wide transition-all shadow-2xl ${
+                className={`inline-flex items-center gap-3 px-10 py-5 rounded-2xl text-lg font-sans font-bold tracking-normal transition-all shadow-2xl ${
                   button.type === 'primary'
                     ? 'bg-[#92400E] text-white hover:bg-[#92400E] shadow-[#92400E]/30'
                     : 'bg-[#FEF3C7]/80 text-[#1C1917] border border-[#D97706]/30 hover:bg-[#FFFBF0]'

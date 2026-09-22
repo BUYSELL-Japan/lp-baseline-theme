@@ -15,7 +15,7 @@ export default function About() {
   const features = aboutData.features || [];
 
   return (
-    <section id="about" className="bg-[#FFFFFF] py-32 md:py-48 px-6 border-b border-[#EEEEEE]">
+    <section id="about" className="scroll-mt-20 bg-[#FFFFFF] py-32 md:py-48 px-6 border-b border-[#EEEEEE]">
       <div className="max-w-2xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 10 }}

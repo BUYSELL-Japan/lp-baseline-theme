@@ -12,7 +12,7 @@ export default function Contact() {
   if (!contactData) return <SectionError sectionName="Contact" error="No contact data available" data={contactData} />;
 
   return (
-    <section id="contact" className="bg-[#FFFFFF] py-20 px-6 border-b border-[#E5E5E5]">
+    <section id="contact" className="scroll-mt-20 bg-[#FFFFFF] py-20 px-6 border-b border-[#E5E5E5]">
       <div className="max-w-3xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

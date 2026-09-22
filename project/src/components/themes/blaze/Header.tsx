@@ -76,7 +76,7 @@ export default function Header() {
           <div className="w-10 h-10 shrink-0 bg-[#DC2626] rounded-xl flex items-center justify-center shadow-lg shadow-[#DC2626]/30 group-hover:bg-[#DC2626] transition-colors">
             <BarChart3 className="text-white w-6 h-6 rotate-12" />
           </div>
-          <div className="text-sm sm:text-xl font-sans font-black tracking-tighter font-bold tracking-wide tracking-tighter text-white line-clamp-2 leading-tight">
+          <div className="text-sm sm:text-xl font-sans font-black tracking-tighter text-white line-clamp-2 leading-tight">
             {logoText}
           </div>
         </motion.div>
@@ -87,7 +87,7 @@ export default function Header() {
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className="text-xs font-sans font-black tracking-tighter font-bold uppercase tracking-widest text-gray-400 hover:text-[#F59E0B] transition-colors whitespace-nowrap"
+              className="text-xs font-sans font-black uppercase tracking-widest text-gray-400 hover:text-[#F59E0B] transition-colors whitespace-nowrap"
             >
               {getLocalizedValue(item, 'label', language)}
             </button>
@@ -97,10 +97,10 @@ export default function Header() {
         {/* Language Switcher — always visible */}
         <div className="flex items-center gap-2 text-gray-400">
           <Globe className="w-4 h-4" />
-          <select 
+          <select
             value={language}
             onChange={(e) => window.location.href = `${basePath}${e.target.value === 'ja' ? '' : e.target.value + '/'}`}
-            className="bg-transparent text-xs font-sans font-black tracking-tighter font-bold uppercase tracking-tight focus:outline-none cursor-pointer hover:text-white"
+            className="bg-transparent text-xs font-sans font-black uppercase tracking-tight focus:outline-none cursor-pointer hover:text-white"
           >
             {Object.keys(languageNames).map(lang => (
               <option key={lang} value={lang} className="bg-[#1a1a1a]">{languageNames[lang as Language]}</option>
@@ -141,7 +141,7 @@ export default function Header() {
                 <motion.button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="block w-full text-left py-4 text-2xl font-sans font-black tracking-tighter font-bold tracking-wide tracking-tighter text-white hover:text-[#F59E0B] transition-colors border-b border-[#F59E0B]/20"
+                  className="block w-full text-left py-4 text-2xl font-sans font-black tracking-tighter text-white hover:text-[#F59E0B] transition-colors border-b border-[#F59E0B]/20"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.25, delay: index * 0.05 }}
@@ -152,13 +152,13 @@ export default function Header() {
             </div>
             
             <div className="px-8 py-6 border-t border-[#F59E0B]/20">
-              <p className="text-xs font-sans font-black tracking-tighter font-bold text-gray-200 uppercase tracking-widest mb-3">{translate('languageLabel', language)}</p>
+              <p className="text-xs font-sans font-black text-gray-200 uppercase tracking-widest mb-3">{translate('languageLabel', language)}</p>
               <div className="grid grid-cols-2 gap-2">
                 {Object.keys(languageNames).map(lang => (
-                  <a 
-                    key={lang} 
+                  <a
+                    key={lang}
                     href={`${basePath}${lang === 'ja' ? '' : lang + '/'}`}
-                    className={`px-4 py-3 rounded-xl font-sans font-black tracking-tighter font-bold text-center text-sm transition-colors ${language === lang ? 'bg-[#DC2626] text-white' : 'bg-[#2a2a2a] text-gray-300 hover:bg-[#222222]'}`}
+                    className={`px-4 py-3 rounded-xl font-sans font-black tracking-tighter text-center text-sm transition-colors ${language === lang ? 'bg-[#DC2626] text-white' : 'bg-[#2a2a2a] text-gray-300 hover:bg-[#222222]'}`}
                   >
                     {languageNames[lang as Language]}
                   </a>

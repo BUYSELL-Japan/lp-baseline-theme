@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-
+import { Menu, X, Globe } from 'lucide-react';
 import { useHeaderData, usePageData } from '../../../contexts/PageDataContext';
 import { useLanguage, languageNames, type Language } from '../../../contexts/LanguageContext';
 import { getLocalizedValue, translate } from '../../../utils/i18n';
@@ -76,7 +76,7 @@ export default function Header() {
           <div className="w-10 h-10 shrink-0 bg-[#92400E] rounded-xl flex items-center justify-center shadow-lg shadow-[#92400E]/30 group-hover:bg-[#92400E] transition-colors">
             
           </div>
-          <div className="text-sm sm:text-xl font-sans font-bold tracking-normal font-bold tracking-wide tracking-tighter text-[#1C1917] line-clamp-2 leading-tight">
+          <div className="text-sm sm:text-xl font-sans font-bold tracking-normal text-[#1C1917] line-clamp-2 leading-tight">
             {logoText}
           </div>
         </motion.div>
@@ -87,7 +87,7 @@ export default function Header() {
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className="text-xs font-sans font-bold tracking-normal font-bold uppercase tracking-widest text-amber-900/80 hover:text-[#D97706] transition-colors whitespace-nowrap"
+              className="text-xs font-sans font-bold uppercase tracking-widest text-amber-900/80 hover:text-[#D97706] transition-colors whitespace-nowrap"
             >
               {getLocalizedValue(item, 'label', language)}
             </button>
@@ -96,11 +96,11 @@ export default function Header() {
 
         {/* Language Switcher — always visible */}
         <div className="flex items-center gap-2 text-amber-900/80">
-          
-          <select 
+          <Globe className="w-4 h-4" />
+          <select
             value={language}
             onChange={(e) => window.location.href = `${basePath}${e.target.value === 'ja' ? '' : e.target.value + '/'}`}
-            className="bg-transparent text-xs font-sans font-bold tracking-normal font-bold uppercase tracking-tight focus:outline-none cursor-pointer hover:text-[#1C1917]"
+            className="bg-transparent text-xs font-sans font-bold uppercase tracking-tight focus:outline-none cursor-pointer hover:text-[#1C1917]"
           >
             {Object.keys(languageNames).map(lang => (
               <option key={lang} value={lang} className="bg-[#FFFBF0]">{languageNames[lang as Language]}</option>
@@ -109,12 +109,12 @@ export default function Header() {
         </div>
 
         {/* Mobile Toggle */}
-        <button 
+        <button
           className="xl:hidden w-10 h-10 flex items-center justify-center text-[#1C1917] hover:bg-[#92400E]/10 rounded-lg transition-colors"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label={mobileMenuOpen ? translate('mobileMenuClose', language) : translate('mobileMenuOpen', language)}
         >
-          {mobileMenuOpen ? translate('mobileMenuClose', language) : translate('mobileMenuOpen', language)}
+          {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
 
@@ -134,14 +134,14 @@ export default function Header() {
               className="absolute top-5 right-5 p-2 text-[#1C1917] hover:bg-[#92400E]/10 rounded-lg transition-colors"
               aria-label={translate('mobileMenuClose', language)}
             >
-              {translate('mobileMenuClose', language)}
+              <X className="w-7 h-7" />
             </button>
             <div className="flex-1 overflow-y-auto px-8 py-6 space-y-2">
               {navigation.map((item, index) => (
                 <motion.button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="block w-full text-left py-4 text-2xl font-sans font-bold tracking-normal font-bold tracking-wide tracking-tighter text-[#1C1917] hover:text-[#D97706] transition-colors border-b border-[#D97706]/20"
+                  className="block w-full text-left py-4 text-2xl font-sans font-bold tracking-normal text-[#1C1917] hover:text-[#D97706] transition-colors border-b border-[#D97706]/20"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.25, delay: index * 0.05 }}
@@ -150,15 +150,15 @@ export default function Header() {
                 </motion.button>
               ))}
             </div>
-            
+
             <div className="px-8 py-6 border-t border-[#D97706]/20">
-              <p className="text-xs font-sans font-bold tracking-normal font-bold text-[#1C1917] uppercase tracking-widest mb-3">{translate('languageLabel', language)}</p>
+              <p className="text-xs font-sans font-bold text-[#1C1917] uppercase tracking-widest mb-3">{translate('languageLabel', language)}</p>
               <div className="grid grid-cols-2 gap-2">
                 {Object.keys(languageNames).map(lang => (
-                  <a 
-                    key={lang} 
+                  <a
+                    key={lang}
                     href={`${basePath}${lang === 'ja' ? '' : lang + '/'}`}
-                    className={`px-4 py-3 rounded-xl font-sans font-bold tracking-normal font-bold text-center text-sm transition-colors ${language === lang ? 'bg-[#92400E] text-white' : 'bg-[#FEF3C7] text-[#92400E] hover:bg-[#FFFBF0]'}`}
+                    className={`px-4 py-3 rounded-xl font-sans font-bold text-center text-sm transition-colors ${language === lang ? 'bg-[#92400E] text-white' : 'bg-[#FEF3C7] text-[#92400E] hover:bg-[#FFFBF0]'}`}
                   >
                     {languageNames[lang as Language]}
                   </a>

@@ -28,7 +28,7 @@ export default function Menu() {
   }));
 
   return (
-    <section id="menu" className="py-32 md:py-48 bg-[#FAFAF7]">
+    <section id="menu" className="scroll-mt-20 py-32 md:py-48 bg-[#FAFAF7]">
       <div className="w-full px-6 md:px-0">
         <div className="text-center mb-32 md:mb-48">
           <h2 className="text-3xl md:text-5xl font-serif text-[#1a1a1a] tracking-[0.2em]">

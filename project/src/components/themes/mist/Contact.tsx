@@ -18,7 +18,7 @@ export default function Contact() {
   const submitText = getLocalizedValue(contactData, 'submitButton', language) || 'Submit';
 
   return (
-    <section id="contact" className="bg-[#F5F5F3] py-32 md:py-48 px-6 border-b border-[#EEEEEE]">
+    <section id="contact" className="scroll-mt-20 bg-[#F5F5F3] py-32 md:py-48 px-6 border-b border-[#EEEEEE]">
       <div className="max-w-2xl mx-auto flex flex-col items-center">
         <motion.div
           initial={{ opacity: 0, y: 10 }}

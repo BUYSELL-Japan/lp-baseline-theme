@@ -13,7 +13,7 @@ export default function About() {
   if (!aboutData || !aboutData.features || aboutData.features.length === 0) return null;
 
   return (
-    <section id="about" className="py-24 md:py-32 bg-[#1a1a1a] text-white">
+    <section id="about" className="scroll-mt-20 py-24 md:py-32 bg-[#1a1a1a] text-white">
       <div className="max-w-7xl mx-auto px-6 mb-20 text-center">
         <motion.h2 
           initial={{ opacity: 0, y: 30 }}

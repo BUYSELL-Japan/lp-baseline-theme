@@ -29,7 +29,7 @@ interface StorePageProps {
 
 export default function ThemeEmberStorePage({ pageData, initialLanguage = 'ja', basePath = '/' }: StorePageProps) {
   return (
-    <ErrorBoundary>
+    <ErrorBoundary language={initialLanguage}>
       <LanguageProvider initialLanguage={initialLanguage} basePath={basePath}>
         <PageDataProvider data={pageData}>
           <div className="relative w-full min-h-screen bg-[#0a0a0a] text-gray-100 selection:bg-blue-500/30 font-sans overflow-x-clip">

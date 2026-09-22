@@ -28,14 +28,14 @@ export default function Footer() {
     <footer className="bg-[#0a0a0a] text-white pt-16 sm:pt-20 lg:pt-24 pb-10 sm:pb-12 px-4 sm:px-6 border-t border-slate-900">
       <div className="max-w-7xl mx-auto">
         {/* Grid: Logo + sections */}
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-16 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
           {/* Logo & description */}
-          <div className="lg:col-span-2">
+          <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-8 group">
               <div className="w-12 h-12 bg-[#8B0000] rounded-2xl flex items-center justify-center rotate-12 group-hover:rotate-0 transition-transform duration-500">
                 <BarChart3 className="text-white w-7 h-7" />
               </div>
-              <span className="text-4xl font-serif font-bold tracking-wide tracking-tighter uppercase">{logoText}</span>
+              <span className="text-4xl font-serif font-bold tracking-wide uppercase">{logoText}</span>
             </div>
             <p className="text-gray-200 text-lg leading-relaxed max-w-md font-medium">
               {description}
@@ -45,7 +45,7 @@ export default function Footer() {
           {/* Business hours */}
           {footerData.businessHours && (
             <div>
-              <h3 className="text-sm font-serif font-bold tracking-wide uppercase tracking-[0.2em] text-[#D4AF37] mb-8">
+              <h3 className="text-sm font-serif font-bold uppercase tracking-[0.2em] text-[#D4AF37] mb-8">
                 {getText(footerData.businessHours.title)}
               </h3>
               <div className="space-y-4">
@@ -64,7 +64,7 @@ export default function Footer() {
             if (validLinks.length === 0) return null;
             return (
               <div>
-                <h3 className="text-sm font-serif font-bold tracking-wide uppercase tracking-[0.2em] text-[#D4AF37] mb-8">
+                <h3 className="text-sm font-serif font-bold uppercase tracking-[0.2em] text-[#D4AF37] mb-8">
                   {getText(footerData.social.title)}
                 </h3>
                 <div className="flex flex-wrap gap-4">

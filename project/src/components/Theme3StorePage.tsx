@@ -29,7 +29,7 @@ interface StorePageProps {
 
 export default function Theme3StorePage({ pageData, initialLanguage = 'ja', basePath = '/' }: StorePageProps) {
   return (
-    <ErrorBoundary>
+    <ErrorBoundary language={initialLanguage}>
       <LanguageProvider initialLanguage={initialLanguage} basePath={basePath}>
         <PageDataProvider data={pageData}>
           <div className="min-h-screen bg-stone-50 text-stone-800">

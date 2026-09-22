@@ -21,7 +21,7 @@ export default function Gallery() {
   const overlayColors = ['bg-[#FF006E]', 'bg-[#FB5607]', 'bg-[#FFBE0B]', 'bg-[#8ECAE6]', 'bg-[#7B2FBE]'];
 
   return (
-    <section id="gallery" className="py-24 md:py-32 bg-[#FFFFFF]">
+    <section id="gallery" className="scroll-mt-20 py-24 md:py-32 bg-[#FFFFFF]">
       <div className="max-w-7xl mx-auto px-4 md:px-6">
         <div className="text-center mb-16 md:mb-24">
           <h2 className="text-5xl md:text-7xl font-sans font-black text-[#1a1a1a] tracking-tight">

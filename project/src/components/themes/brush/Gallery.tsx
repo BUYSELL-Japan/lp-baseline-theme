@@ -21,7 +21,7 @@ export default function Gallery() {
   }));
 
   return (
-    <section id="gallery" className="py-24 md:py-32 bg-[#F5F0E8]">
+    <section id="gallery" className="scroll-mt-20 py-24 md:py-32 bg-[#F5F0E8]">
       <div className="max-w-7xl mx-auto px-6 mb-16 md:mb-24 text-center">
         <motion.h2 
           initial={{ opacity: 0, y: 30 }}

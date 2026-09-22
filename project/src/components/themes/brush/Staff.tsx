@@ -24,7 +24,7 @@ export default function Staff() {
   }
 
   return (
-    <section id="staff" className="bg-[#F5F0E8] text-[#1a1a1a] py-24 md:py-32 px-4 sm:px-6">
+    <section id="staff" className="scroll-mt-20 bg-[#F5F0E8] text-[#1a1a1a] py-24 md:py-32 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

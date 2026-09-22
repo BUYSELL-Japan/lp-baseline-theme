@@ -18,7 +18,7 @@ export default function StoreInfo() {
   }
 
   return (
-    <section id="storeInfo" className="bg-[#FFE4E6] py-16 sm:py-16 md:py-24 md:py-28 lg:py-32 px-4 sm:px-6">
+    <section id="storeInfo" className="scroll-mt-20 bg-[#FFE4E6] py-16 sm:py-16 md:py-24 md:py-28 lg:py-32 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

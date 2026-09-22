@@ -27,23 +27,23 @@ export default function ThemeBrushStorePage({ initialData, initialLanguage, show
               Theme Demo: Brush (和の力強さ・筆文字)
             </div>
           )}
-          <Header />
+          {initialData.header && <Header />}
           <main className={showDemoBanner ? "pt-10" : ""}>
-            <Hero />
-            <Menu />
-            <About />
-            <Gallery />
-            <Pricing />
-            <Staff />
-            <Company />
-            <StoreInfo />
-            <Access />
-            <FAQ />
-            <News />
-            <Contact />
-            <CTA />
+            {initialData.hero && <Hero />}
+            {initialData.menu && <Menu />}
+            {initialData.about && <About />}
+            {initialData.gallery && <Gallery />}
+            {initialData.pricing && <Pricing />}
+            {initialData.staff && <Staff />}
+            {initialData.company && <Company />}
+            {initialData.storeInfo && <StoreInfo />}
+            {initialData.access && <Access />}
+            {initialData.faq && <FAQ />}
+            {initialData.news && <News />}
+            {initialData.contact && <Contact />}
+            {initialData.cta && <CTA />}
           </main>
-          <Footer />
+          {initialData.footer && <Footer />}
         </div>
       </PageDataProvider>
     </LanguageProvider>

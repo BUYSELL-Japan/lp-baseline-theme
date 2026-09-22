@@ -26,7 +26,7 @@ export default function Reviews() {
           className="mb-10"
         >
           <div className="w-16 h-1 bg-[#DC2626] mb-8" />
-          <h2 className="text-5xl md:text-7xl font-sans font-black tracking-tighter font-bold tracking-wide text-white tracking-tighter mb-4 border-b-2 border-[#F59E0B] pb-4 inline-block mb-4">
+          <h2 className="text-5xl md:text-7xl font-sans font-black tracking-tighter text-white mb-4 border-b-2 border-[#F59E0B] pb-4 inline-block">
             {sectionTitle}
           </h2>
           {reviewsData.sectionSubtitle && (
@@ -63,11 +63,11 @@ export default function Reviews() {
                   <img src={review.avatar} alt={t(review, 'name')} className="w-12 h-12 rounded-full object-cover border-2 border-slate-700" />
                 ) : (
                   <div className="w-12 h-12 rounded-full bg-[#DC2626]/20 border-2 border-[#F59E0B]/40 flex items-center justify-center">
-                    <span className="text-[#F59E0B] font-sans font-black tracking-tighter font-bold tracking-wide text-lg">{(t(review, 'name') || '?')[0]}</span>
+                    <span className="text-[#F59E0B] font-sans font-black tracking-tighter text-lg">{(t(review, 'name') || '?')[0]}</span>
                   </div>
                 )}
                 <div>
-                  <p className="text-white font-sans font-black tracking-tighter font-bold tracking-wide tracking-tight">{t(review, 'name')}</p>
+                  <p className="text-white font-sans font-black tracking-tighter">{t(review, 'name')}</p>
                   {review.date && <p className="text-gray-200 text-xs">{typeof review.date === 'string' ? review.date : t(review, 'date') as string}</p>}
                 </div>
               </div>

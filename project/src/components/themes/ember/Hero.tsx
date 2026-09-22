@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useHeroData } from '../../../contexts/PageDataContext';
 import { useLanguage } from '../../../contexts/LanguageContext';
-import { getLocalizedValue } from '../../../utils/i18n';
+import { getLocalizedValue, translate } from '../../../utils/i18n';
 
 export default function Hero() {
   const heroData = useHeroData();
@@ -50,7 +50,7 @@ export default function Hero() {
             href="#menu"
             className="inline-block bg-[#8B0000] hover:bg-[#C0392B] text-white px-10 py-4 text-lg font-bold transition-all duration-300 shadow-[0_4px_20px_rgba(139,0,0,0.5)] border border-[#D4AF37]/50"
           >
-            メニューを見る
+            {translate('viewMenu', language)}
           </a>
         </motion.div>
       </div>

@@ -130,7 +130,7 @@ export default function Header() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.5, ease: 'easeInOut' }}
-            className="fixed inset-x-0 top-full bg-[#FFFFFF]/95 backdrop-blur-md border-b border-[#EEEEEE] xl:hidden overflow-y-auto max-h-[calc(100vh-80px)]"
+            className="absolute inset-x-0 top-full bg-[#FFFFFF]/95 backdrop-blur-md border-b border-[#EEEEEE] xl:hidden overflow-y-auto max-h-[calc(100vh-80px)]"
           >
             <nav className="flex flex-col py-12 px-8 space-y-8 items-center">
               {navigation.map((item) => (

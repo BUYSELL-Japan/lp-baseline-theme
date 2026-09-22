@@ -55,6 +55,12 @@ export const staticTranslations: Record<string, Record<Language, string>> = {
     'zh-tw': '菜單',
     ko: '메뉴',
   },
+  viewMenu: {
+    ja: 'メニューを見る',
+    en: 'View Menu',
+    'zh-tw': '查看菜單',
+    ko: '메뉴 보기',
+  },
   image: {
     ja: '画像',
     en: 'Image',

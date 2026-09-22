@@ -114,7 +114,7 @@ export default function Header() {
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label={mobileMenuOpen ? translate('mobileMenuClose', language) : translate('mobileMenuOpen', language)}
         >
-          {mobileMenuOpen ? '閉じる' : 'メニュー'}
+          {mobileMenuOpen ? translate('mobileMenuClose', language) : translate('mobileMenuOpen', language)}
         </button>
       </div>
 
@@ -134,7 +134,7 @@ export default function Header() {
               className="absolute top-5 right-5 p-2 text-[#1C1917] hover:bg-[#92400E]/10 rounded-lg transition-colors"
               aria-label={translate('mobileMenuClose', language)}
             >
-              閉じる
+              {translate('mobileMenuClose', language)}
             </button>
             <div className="flex-1 overflow-y-auto px-8 py-6 space-y-2">
               {navigation.map((item, index) => (

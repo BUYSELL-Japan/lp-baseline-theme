@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useHeroData, useStoreInfoData } from '../../../contexts/PageDataContext';
 import { useLanguage } from '../../../contexts/LanguageContext';
-import { getLocalizedValue } from '../../../utils/i18n';
+import { getLocalizedValue, translate } from '../../../utils/i18n';
 import SectionError from '../../SectionError';
 
 export default function Hero() {
@@ -104,7 +104,7 @@ export default function Hero() {
             href="#menu" 
             className="mt-10 bg-gradient-to-r from-[#FF006E] to-[#FB5607] text-white font-sans font-black px-10 py-5 rounded-full text-xl md:text-2xl shadow-xl hover:translate-y-1 hover:shadow-2xl transition-all"
           >
-            メニューを見る
+            {translate('viewMenu', language)}
           </motion.a>
         </motion.div>
 

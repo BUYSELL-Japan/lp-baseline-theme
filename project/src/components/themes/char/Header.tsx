@@ -47,7 +47,7 @@ export default function Header() {
               href={`#${item.id}`}
               className="text-[#BBBBBB] hover:text-[#D4541A] text-xs tracking-[0.2em] uppercase transition-colors duration-300 font-sans"
             >
-              {item.label}
+              {getLocalizedValue(item, 'label', language)}
             </a>
           ))}
           <div className="flex items-center space-x-3 ml-4 border-l border-[#333333] pl-4">
@@ -87,7 +87,7 @@ export default function Header() {
                 onClick={() => setMenuOpen(false)}
                 className="text-[#BBBBBB] hover:text-[#D4541A] text-xs tracking-[0.2em] uppercase transition-colors font-sans"
               >
-                {item.label}
+                {getLocalizedValue(item, 'label', language)}
               </a>
             ))}
           </nav>

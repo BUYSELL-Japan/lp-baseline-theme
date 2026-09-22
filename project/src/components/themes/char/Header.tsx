@@ -26,7 +26,7 @@ export default function Header() {
 
   if (!headerData) return null;
 
-  const logoText = headerData.logo?.text || '';
+  const logoText = getLocalizedValue(headerData.logo, 'text', language) || '';
   const navItems = (headerData.navigation || []).filter(item => item.id !== 'reviews');
 
   return (

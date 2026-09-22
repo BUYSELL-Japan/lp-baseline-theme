@@ -9,7 +9,7 @@ export default function Footer() {
 
   if (!footerData) return null;
 
-  const logo = footerData.logo || '';
+  const logo = typeof footerData.logo === 'string' ? footerData.logo : (getLocalizedValue(footerData, 'logo', language) || '');
   const description = getLocalizedValue(footerData, 'description', language);
   const copyright = getLocalizedValue(footerData, 'copyright', language);
   const hoursTitle = getLocalizedValue(footerData.businessHours, 'title', language);
@@ -65,7 +65,9 @@ export default function Footer() {
                 {getLocalizedValue(footerData.social, 'title', language) || 'FOLLOW'}
               </div>
               <div className="flex flex-col space-y-2">
-                {footerData.social.links.map((link, index) => (
+                {footerData.social.links.map((link, index) => {
+                  const platformName = typeof link.platform === 'string' ? link.platform : (getLocalizedValue(link, 'platform', language) || '');
+                  return (
                   <a
                     key={index}
                     href={link.url}
@@ -76,9 +78,10 @@ export default function Footer() {
                     onMouseEnter={(e) => (e.currentTarget.style.color = '#D4541A')}
                     onMouseLeave={(e) => (e.currentTarget.style.color = '#666666')}
                   >
-                    {link.platform}
+                    {platformName}
                   </a>
-                ))}
+                  );
+                })}
               </div>
             </div>
           )}

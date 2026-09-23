@@ -90,7 +90,7 @@ export default function Header() {
               className="h-6 md:h-8 object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-500"
             />
           ) : (
-            <span className="text-base md:text-lg font-sans font-medium text-[#222222] tracking-[0.2em] group-hover:text-[#6B8F71] transition-colors duration-500">
+            <span className="text-base md:text-lg font-sans font-medium text-[#222222] tracking-[0.2em] group-hover:text-[#6B8F71] transition-colors duration-500 break-words">
               {logoText}
             </span>
           )}

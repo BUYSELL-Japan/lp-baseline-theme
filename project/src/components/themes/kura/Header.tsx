@@ -69,14 +69,14 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between gap-4">
         {/* Logo */}
         <motion.div 
-          className="flex items-center gap-2 cursor-pointer group min-w-0 shrink max-w-[60%] xl:max-w-none mr-4"
+          className="flex items-center gap-2 cursor-pointer group min-w-0 shrink max-w-[75%] xl:max-w-none mr-4"
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           whileHover={{ scale: 1.02 }}
         >
           <div className="w-10 h-10 shrink-0 bg-[#1a1a1a] rounded-xl flex items-center justify-center shadow-lg shadow-[#1a1a1a]/30 group-hover:bg-[#1a1a1a] transition-colors">
             
           </div>
-          <div className="text-sm sm:text-xl font-serif tracking-widest text-[#2D2D2D] line-clamp-2 leading-tight">
+          <div className="text-sm sm:text-xl font-serif tracking-widest text-[#2D2D2D] break-words leading-tight">
             {logoText}
           </div>
         </motion.div>

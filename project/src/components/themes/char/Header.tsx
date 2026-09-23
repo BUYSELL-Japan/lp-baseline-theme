@@ -35,7 +35,7 @@ export default function Header() {
       style={{ backgroundColor: scrolled ? 'rgba(17,17,17,0.95)' : 'rgba(17,17,17,0.6)', borderBottom: scrolled ? '1px solid #D4541A' : '1px solid transparent' }}
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#" className="text-[#FFFFFF] font-bold text-sm tracking-[0.2em] uppercase font-sans" style={{ fontFamily: "'Noto Sans JP', sans-serif", fontWeight: 900 }}>
+        <a href="#" className="text-[#FFFFFF] font-bold text-sm tracking-[0.2em] uppercase font-sans min-w-0 shrink break-words max-w-[75%] xl:max-w-none mr-4" style={{ fontFamily: "'Noto Sans JP', sans-serif", fontWeight: 900 }}>
           {logoText}
         </a>
 

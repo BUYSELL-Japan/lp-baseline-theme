@@ -82,7 +82,7 @@ export default function Header() {
               />
             </div>
           )}
-          <div className="text-base sm:text-lg md:text-2xl font-serif font-black tracking-widest text-[#1a1a1a] line-clamp-1">
+          <div className="text-sm sm:text-lg md:text-2xl font-serif font-black tracking-widest text-[#1a1a1a] break-words">
             {logoText}
           </div>
         </a>

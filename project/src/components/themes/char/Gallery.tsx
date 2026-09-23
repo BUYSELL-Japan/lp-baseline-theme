@@ -19,7 +19,7 @@ export default function Gallery() {
   const images = galleryData.images;
   const lightboxImages = images.map((img) => ({
     src: img.url,
-    alt: img.caption || '',
+    alt: getLocalizedValue(img, 'caption', language) || '',
   }));
 
   return (
@@ -54,7 +54,7 @@ export default function Gallery() {
             >
               <img
                 src={img.url}
-                alt={img.caption || ''}
+                alt={getLocalizedValue(img, 'caption', language) || ''}
                 className="w-full h-full object-cover transition-transform duration-500"
                 style={{ transform: hoveredIndex === index ? 'scale(1.05)' : 'scale(1)' }}
               />

@@ -12,7 +12,7 @@ export default function Hero() {
 
   if (!heroData) return <SectionError sectionName="Hero" error="No hero data available" data={heroData} />;
 
-  const title = getLocalizedValue(heroData, 'title', language);
+  const title = getLocalizedValue(heroData, 'sectionTitle', language);
   const subtitle = getLocalizedValue(heroData, 'subtitle', language);
   const storeName = storeInfo ? getLocalizedValue(storeInfo, 'name', language) : '';
 

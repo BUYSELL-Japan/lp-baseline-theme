@@ -19,7 +19,7 @@ export interface NavigationItem {
 }
 
 export interface HeroData {
-  title: string;
+  sectionTitle: string;
   subtitle: string;
   backgroundImage: string;
 }

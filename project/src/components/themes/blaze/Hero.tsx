@@ -10,7 +10,7 @@ export default function Hero() {
 
   if (!heroData) return null;
 
-  const title = getLocalizedValue(heroData, 'title', language);
+  const title = getLocalizedValue(heroData, 'sectionTitle', language);
   const subtitle = getLocalizedValue(heroData, 'subtitle', language);
 
   if (!title && !subtitle && !heroData.backgroundImage) return null;

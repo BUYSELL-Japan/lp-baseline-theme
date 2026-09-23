@@ -71,18 +71,18 @@ export default function Header() {
         <a 
           href="#" 
           onClick={(e) => { e.preventDefault(); scrollToSection('hero'); }}
-          className="flex items-center gap-2 cursor-pointer group min-w-0 shrink max-w-[60%] xl:max-w-none mr-4"
+          className="flex items-center gap-2 cursor-pointer group min-w-0 shrink max-w-[80%] xl:max-w-none mr-4"
         >
           {headerData.logo.image && (
             <div className="w-10 h-10 shrink-0 bg-[#1a1a1a] rounded-sm flex items-center justify-center group-hover:bg-[#C0392B] transition-colors">
-              <img 
-                src={headerData.logo.image} 
+              <img
+                src={headerData.logo.image}
                 alt={logoText || 'Logo'}
-                className="w-6 h-6 object-contain filter brightness-0 invert" 
+                className="w-6 h-6 object-contain filter brightness-0 invert"
               />
             </div>
           )}
-          <div className="text-xl md:text-2xl font-serif font-black tracking-widest text-[#1a1a1a] line-clamp-1">
+          <div className="text-base sm:text-lg md:text-2xl font-serif font-black tracking-widest text-[#1a1a1a] line-clamp-1">
             {logoText}
           </div>
         </a>

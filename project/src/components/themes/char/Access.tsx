@@ -77,7 +77,7 @@ export default function Access() {
                 <div className="md:col-span-2 font-sans text-base text-[#BBBBBB] leading-loose tracking-wider" style={{ fontFamily: 'monospace' }}>
                   {getLocalizedValue(accessData.parking, 'description', language)}
                   {accessData.parking.spaces && (
-                    <span className="ml-2" style={{ color: '#D4541A' }}>({accessData.parking.spaces})</span>
+                    <span className="ml-2" style={{ color: '#D4541A' }}>({getLocalizedValue(accessData.parking, 'spaces', language)})</span>
                   )}
                 </div>
               </div>

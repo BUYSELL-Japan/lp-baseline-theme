@@ -5,6 +5,9 @@ const CONTENTS_TABLE = process.env.TABLE_NAME || 'LP_Contents';
 const STORES_TABLE = process.env.STORES_TABLE_NAME || 'Stores';
 const REGION = process.env.AWS_REGION || 'ap-southeast-2';
 
+// LP_StripeWebhook の HIDDEN_STATUSES と揃える
+const HIDDEN_STATUSES = ['unpaid', 'canceled'];
+
 const client = new DynamoDBClient({ region: REGION });
 const ddb = DynamoDBDocumentClient.from(client);
 
@@ -49,7 +52,7 @@ export const handler = async (event) => {
                 [STORES_TABLE]: {
                     Keys: batchKeys,
                     // ★ templateId を追加
-                    ProjectionExpression: 'store_id, contact_email, templateId'
+                    ProjectionExpression: 'store_id, contact_email, templateId, subscription_status'
                 }
             }
         };
@@ -62,7 +65,19 @@ export const handler = async (event) => {
             return acc;
         }, {});
 
-        const stores = result.Items.map(item => {
+        // 未払い（unpaid）・解約（canceled）の店舗は公開しない。past_due（再請求中）は公開を続ける。
+        // デモ店舗（store_id が demo- で始まる）は常に公開する
+        const isPublishable = (item) => {
+            if (String(item.store_id).startsWith('demo-')) return true;
+            const status = storeInfoMap[item.store_id]?.subscription_status;
+            if (HIDDEN_STATUSES.includes(status)) {
+                console.log(`Excluding store ${item.store_id} (subscription_status: ${status})`);
+                return false;
+            }
+            return true;
+        };
+
+        const stores = result.Items.filter(isPublishable).map(item => {
             const storeInfo = storeInfoMap[item.store_id] || {};
             return {
                 storeId:       item.store_id,

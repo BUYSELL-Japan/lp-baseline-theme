@@ -1,3 +1,15 @@
+import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
+import { DynamoDBDocumentClient } from "@aws-sdk/lib-dynamodb";
+import { authorizeStoreAccess, getBearerToken } from "./cognitoAuth.mjs";
+
+const ddb = DynamoDBDocumentClient.from(new DynamoDBClient({ region: process.env.AWS_REGION || "ap-southeast-2" }));
+
+// AUTH_MODE=migration の間はトークンなしのリクエストも通す（警告ログのみ）。それ以外はトークン必須
+const AUTH_MODE = process.env.AUTH_MODE === "migration" ? "migration" : "enforce";
+
+// 1回の翻訳で受け付ける入力の上限（JSON文字列の長さ）。admin-ui はセクション・アイテム単位で送ってくる
+const MAX_INPUT_CHARS = 20000;
+
 export const handler = async (event) => {
     const CORS_HEADERS = {
         'Access-Control-Allow-Origin': 'https://admin-lp.global-reaches.com',
@@ -19,6 +31,22 @@ export const handler = async (event) => {
 
         if (!contentData || Object.keys(contentData).length === 0) {
             throw new Error("Empty content.");
+        }
+
+        // Cognito IDトークンを検証し、この店舗の所有者か確認する
+        const storeId = body.storeId;
+        if (AUTH_MODE === "migration" && !getBearerToken(event.headers || {})) {
+            console.warn(`[AUTH_MIGRATION] translate without token (storeId: ${storeId})`);
+        } else {
+            const auth = await authorizeStoreAccess(event, storeId, ddb);
+            if (!auth.ok) {
+                return { statusCode: auth.statusCode, headers: CORS_HEADERS, body: JSON.stringify({ message: auth.message }) };
+            }
+        }
+
+        const inputLength = JSON.stringify(contentData).length;
+        if (inputLength > MAX_INPUT_CHARS) {
+            return { statusCode: 413, headers: CORS_HEADERS, body: JSON.stringify({ message: `Content too large (${inputLength} > ${MAX_INPUT_CHARS} chars).` }) };
         }
 
         // プロンプト：Bolt側の「アイテム単位マージ」と「確実な翻訳」を成功させるための厳格なルール

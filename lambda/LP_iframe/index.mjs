@@ -1,8 +1,35 @@
 import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
 import { DynamoDBDocumentClient, GetCommand, UpdateCommand, ScanCommand } from "@aws-sdk/lib-dynamodb";
+import { authorizeStoreAccess } from "./cognitoAuth.mjs";
 
 const ddbClient = new DynamoDBClient({ region: "ap-southeast-2" });
 const ddbDoc = DynamoDBDocumentClient.from(ddbClient);
+
+const CONTENTS_TABLE = "LP_Contents";
+
+// lp-baseline-theme の店舗ページが描画できるテーマ（src/pages/stores/[subdomain]/index.astro と揃える）
+const VALID_THEMES = [
+    "theme1", "theme2", "theme3", "theme4", "theme5",
+    "ember", "blaze", "char", "warm", "kura", "shiro", "brush", "mist", "pop"
+];
+
+// テーマ変更を公開中のLPに反映させるため、LP_SaveContent と同じ Cloudflare の Deploy Hook を叩く
+const CLOUDFLARE_WEBHOOK_URL = process.env.CLOUDFLARE_WEBHOOK_URL;
+
+const triggerCloudflareWebhook = async () => {
+    if (!CLOUDFLARE_WEBHOOK_URL) {
+        console.error("CLOUDFLARE_WEBHOOK_URL is not set. Skipping deploy hook.");
+        return false;
+    }
+    try {
+        const res = await fetch(CLOUDFLARE_WEBHOOK_URL, { method: "POST" });
+        console.log(`Cloudflare webhook triggered: ${res.status}`);
+        return res.ok;
+    } catch (err) {
+        console.error("Cloudflare webhook error:", err);
+        return false;
+    }
+};
 
 export const handler = async (event) => {
     console.log("Received event:", JSON.stringify(event, null, 2));
@@ -44,27 +71,71 @@ export const handler = async (event) => {
                 };
             }
 
-            const validThemes = ["theme1", "theme2", "theme3"];
-            if (!validThemes.includes(templateId)) {
+            if (!VALID_THEMES.includes(templateId)) {
                 return {
                     statusCode: 400,
                     headers: CORS_HEADERS,
-                    body: JSON.stringify({ message: `templateId must be one of: ${validThemes.join(", ")}` })
+                    body: JSON.stringify({ message: `templateId must be one of: ${VALID_THEMES.join(", ")}` })
                 };
             }
 
-            await ddbDoc.send(new UpdateCommand({
-                TableName: "Stores",
-                Key: { store_id: storeId },
-                UpdateExpression: "SET templateId = :templateId",
-                ExpressionAttributeValues: { ":templateId": templateId }
-            }));
+            // Cognito IDトークンを検証し、この店舗の所有者か確認する
+            const auth = await authorizeStoreAccess(event, storeId, ddbDoc);
+            if (!auth.ok) {
+                return {
+                    statusCode: auth.statusCode,
+                    headers: CORS_HEADERS,
+                    body: JSON.stringify({ message: auth.message })
+                };
+            }
 
-            console.log(`templateId updated: ${storeId} → ${templateId}`);
+            try {
+                await ddbDoc.send(new UpdateCommand({
+                    TableName: "Stores",
+                    Key: { store_id: storeId },
+                    UpdateExpression: "SET templateId = :templateId",
+                    ConditionExpression: "attribute_exists(store_id)",
+                    ExpressionAttributeValues: { ":templateId": templateId }
+                }));
+            } catch (err) {
+                if (err.name === "ConditionalCheckFailedException") {
+                    return {
+                        statusCode: 404,
+                        headers: CORS_HEADERS,
+                        body: JSON.stringify({ message: "Store not found: " + storeId })
+                    };
+                }
+                throw err;
+            }
+
+            // 店舗ページは ContentData.templateId → Stores.templateId の順に優先するため、
+            // ContentData 側に値があれば同じテーマに揃える（無い店舗は Stores.templateId だけで反映される）
+            try {
+                await ddbDoc.send(new UpdateCommand({
+                    TableName: CONTENTS_TABLE,
+                    Key: { store_id: storeId },
+                    UpdateExpression: "SET ContentData.templateId = :templateId",
+                    ConditionExpression: "attribute_exists(ContentData.templateId)",
+                    ExpressionAttributeValues: { ":templateId": templateId }
+                }));
+            } catch (err) {
+                if (err.name !== "ConditionalCheckFailedException") throw err;
+            }
+
+            // 公開中のLPなら再ビルドして反映する
+            const { Item: content } = await ddbDoc.send(new GetCommand({
+                TableName: CONTENTS_TABLE,
+                Key: { store_id: storeId },
+                ProjectionExpression: "#s",
+                ExpressionAttributeNames: { "#s": "Status" }
+            }));
+            const deployTriggered = content?.Status === "Published" ? await triggerCloudflareWebhook() : false;
+
+            console.log(`templateId updated: ${storeId} → ${templateId} (deployTriggered: ${deployTriggered})`);
             return {
                 statusCode: 200,
                 headers: CORS_HEADERS,
-                body: JSON.stringify({ success: true, templateId })
+                body: JSON.stringify({ success: true, templateId, deployTriggered })
             };
         } catch (error) {
             console.error("Update Error:", error);

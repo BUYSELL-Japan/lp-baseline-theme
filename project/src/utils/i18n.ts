@@ -136,13 +136,13 @@ export const staticTranslations: Record<string, Record<Language, string>> = {
   sectionCompany: {
     ja: '運営会社',
     en: 'Company',
-    'zh-tw': '公司資訊',
-    ko: '회사 정보',
+    'zh-tw': '營運公司',
+    ko: '운영사',
   },
   sectionStoreInfo: {
     ja: '店舗情報',
     en: 'Store Info',
-    'zh-tw': '店家資訊',
+    'zh-tw': '店鋪資訊',
     ko: '매장 정보',
   },
   sectionAccess: {

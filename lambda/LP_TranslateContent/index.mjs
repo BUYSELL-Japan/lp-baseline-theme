@@ -10,6 +10,71 @@ const AUTH_MODE = process.env.AUTH_MODE === "migration" ? "migration" : "enforce
 // 1回の翻訳で受け付ける入力の上限（JSON文字列の長さ）。admin-ui はセクション・アイテム単位で送ってくる
 const MAX_INPUT_CHARS = 20000;
 
+// UI の定型文。AI に訳させず、この訳で固定する（値が完全に一致したときだけ）
+const UI_FIXED_TERMS = {
+    "コース・プラン": { "en": "Course / Plan", "zh-tw": "套餐方案", "ko": "코스 플랜" },
+    "アクセス": { "en": "Access", "zh-tw": "交通方式", "ko": "오시는 길" },
+    "店舗情報": { "en": "Store Info", "zh-tw": "店鋪資訊", "ko": "매장 정보" },
+    "運営会社": { "en": "Company", "zh-tw": "營運公司", "ko": "운영사" },
+    "運営会社情報": { "en": "Company Info", "zh-tw": "營運公司資訊", "ko": "운영사 정보" },
+    "メニュー": { "en": "Menu", "zh-tw": "菜單", "ko": "메뉴" },
+};
+
+// 料理名などの用語集。文中に出てきたときもこの訳を使うようプロンプトで指示し、
+// 値がこの語と完全に一致したときは AI の結果に関係なくこの訳で固定する
+const GLOSSARY = {
+    "沖縄そば": { "en": "Okinawa Soba", "zh-tw": "沖繩蕎麥麵", "ko": "오키나와 소바" },
+    "ゴーヤチャンプルー": { "en": "Goya Champuru (Bitter Melon Stir-fry)", "zh-tw": "苦瓜炒豆腐", "ko": "고야 참푸루" },
+    "ラフテー": { "en": "Rafute (Braised Pork Belly)", "zh-tw": "沖繩紅燒豬肉", "ko": "라후테" },
+    "御膳": { "en": "Set Meal", "zh-tw": "套餐", "ko": "정식" },
+    "八寸": { "en": "Hassun (Appetizer Assortment)", "zh-tw": "八寸前菜", "ko": "핫순" },
+    "和牛": { "en": "Wagyu Beef", "zh-tw": "和牛", "ko": "와규" },
+    "土鍋ごはん": { "en": "Donabe Rice", "zh-tw": "土鍋飯", "ko": "돌솥밥" },
+    "沖縄ぜんざい": { "en": "Okinawa Zenzai (Sweet Red Bean Dessert)", "zh-tw": "沖繩紅豆湯", "ko": "오키나와 젠자이" },
+};
+
+const FIXED_TERMS = { ...GLOSSARY, ...UI_FIXED_TERMS };
+
+function fixedTranslation(text) {
+    if (typeof text !== "string") return null;
+    const fixed = FIXED_TERMS[text.trim()];
+    return fixed ? { ja: text, ...fixed } : null;
+}
+
+// 入力のうち辞書と完全一致する文字列を、先に多言語オブジェクトへ置き換える（AI に訳させない）
+function applyFixedToInput(node) {
+    if (typeof node === "string") return fixedTranslation(node) ?? node;
+    if (Array.isArray(node)) return node.map(applyFixedToInput);
+    if (node && typeof node === "object") {
+        return Object.fromEntries(Object.entries(node).map(([k, v]) => [k, applyFixedToInput(v)]));
+    }
+    return node;
+}
+
+// AI の出力でも、日本語が辞書と完全一致する多言語オブジェクトは辞書の訳で上書きする（念のための保証）
+function applyFixedToOutput(node) {
+    if (Array.isArray(node)) return node.map(applyFixedToOutput);
+    if (node && typeof node === "object") {
+        const fixed = fixedTranslation(node.ja);
+        if (fixed) return { ...node, ...fixed };
+        return Object.fromEntries(Object.entries(node).map(([k, v]) => [k, applyFixedToOutput(v)]));
+    }
+    return node;
+}
+
+const glossaryLine = ([ja, t]) => `   - ${ja} → en: "${t.en}" / zh-tw: "${t["zh-tw"]}" / ko: "${t.ko}"`;
+const GLOSSARY_LINES = Object.entries(GLOSSARY).map(glossaryLine).join("\n");
+
+// 入力に実際に出てくる用語だけを、文中でも置き換えるよう念押しする（文中の用語が無視されやすいため）
+function glossaryReminder(contentData) {
+    const text = JSON.stringify(contentData);
+    const found = Object.entries(GLOSSARY).filter(([ja]) => text.includes(ja));
+    if (found.length === 0) return "";
+    return `IMPORTANT: This input contains the following glossary terms. Every time they appear, including in the middle of a sentence, write exactly the glossary translation in each language (never a transliteration or another word):
+${found.map(glossaryLine).join("\n")}
+`;
+}
+
 export const handler = async (event) => {
     const CORS_HEADERS = {
         'Access-Control-Allow-Origin': 'https://admin-lp.global-reaches.com',
@@ -71,9 +136,16 @@ CRITICAL RULES:
    Leave them as plain strings.
 5. Structure: Maintain the exact same flat or nested structure provided in the input.
 6. Output ONLY the resulting valid JSON object.
+7. FIXED TRANSLATIONS: Some values in the input are already objects with "ja", "en", "zh-tw" and "ko" keys. These are fixed dictionary translations. Copy them to the output exactly as they are. Do NOT change them.
+8. GLOSSARY: Whenever the Japanese text contains one of the following terms (also inside longer sentences), you MUST use exactly these translations:
+${GLOSSARY_LINES}
+9. CHINESE: "zh-tw" MUST be Traditional Chinese as used in Taiwan, with Taiwanese vocabulary. Simplified Chinese characters and mainland Chinese expressions are forbidden (e.g. use 資訊 not 信息, 影片 not 視頻, 品質 not 質量).
+10. PROPER NOUNS: In English ("en"), write store names, person names and other Japanese proper nouns in Latin letters that follow the Japanese reading faithfully (e.g. 一徹 = ITTETSU, 花子 = HANAKO). Do NOT translate their meaning. In "zh-tw", keep proper nouns written in kanji as they are. In "ko", write proper nouns in Hangul following the Japanese reading, never in Latin letters (e.g. 一徹 = 잇테쓰, 花子 = 하나코).
+11. NUMBERS: Numbers, prices and numbers of people MUST be exactly the same as in the original. Do NOT change, round, convert or omit them.
 
+${glossaryReminder(contentData)}
 Input JSON:
-${JSON.stringify(contentData)}`;
+${JSON.stringify(applyFixedToInput(contentData))}`;
 
         const response = await fetch("https://api.openai.com/v1/chat/completions", {
             method: "POST",
@@ -112,7 +184,7 @@ ${JSON.stringify(contentData)}`;
         }
 
         // 翻訳結果をパース
-        const translatedItem = JSON.parse(gptData.choices[0].message.content);
+        const translatedItem = applyFixedToOutput(JSON.parse(gptData.choices[0].message.content));
 
         // ✅ 修正箇所：success と translatedData ラッパーを削除
         return {

@@ -6,9 +6,11 @@ interface Props {
   description?: string;
   lang?: string;
   alternateLinks?: { lang: string; href: string }[];
+  canonical?: string;
+  jsonLd?: string; // jsonLdString() で文字列化済みのもの
 }
 
-const { title, description = '', lang = 'ja', alternateLinks = [] } = Astro.props;
+const { title, description = '', lang = 'ja', alternateLinks = [], canonical, jsonLd } = Astro.props;
 ---
 
 <!doctype html>
@@ -28,6 +30,8 @@ const { title, description = '', lang = 'ja', alternateLinks = [] } = Astro.prop
       <link rel="alternate" hreflang={link.lang} href={link.href} />
     ))}
     {alternateLinks.length > 0 && <link rel="alternate" hreflang="x-default" href={alternateLinks.find(l => l.lang === 'ja')?.href || alternateLinks[0].href} />}
+    {canonical && <link rel="canonical" href={canonical} />}
+    {jsonLd && <script is:inline type="application/ld+json" set:html={jsonLd} />}
   </head>
   <body>
     <slot />

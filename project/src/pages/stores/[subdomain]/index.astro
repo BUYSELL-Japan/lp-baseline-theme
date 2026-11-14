@@ -16,6 +16,7 @@ import ThemeShiroStorePage from '../../../components/ThemeShiroStorePage';
 import ThemeBrushStorePage from '../../../components/ThemeBrushStorePage';
 import ThemeMistStorePage from '../../../components/ThemeMistStorePage';
 import ThemePopStorePage from '../../../components/ThemePopStorePage';
+import { alternateLinksFor, buildJsonLd, isAiSeoEnabled, jsonLdString, pageUrl } from '../../../utils/seo';
 
 export async function getStaticPaths() {
   try {
@@ -90,16 +91,19 @@ const aboutDesc = getLocalText(pageData.about?.features?.[0]?.description, 'ja')
 const metaDescription = `${heroDesc ? heroDesc + '。' : ''}${aboutDesc}`.substring(0, 150);
 
 const currentPath = `/`;
-const alternateLinks = [
-  { lang: 'ja', href: currentPath },
-  { lang: 'en', href: `${currentPath}en/` },
-  { lang: 'ko', href: `${currentPath}ko/` },
-  { lang: 'zh-tw', href: `${currentPath}zh-tw/` },
-];
+// hreflang は Google の仕様どおり絶対URLにする（全店舗）
+const alternateLinks = alternateLinksFor(subdomain);
+
+// フェーズ1: 対象店舗だけ、本文の静的HTML出力・canonical・JSON-LD を有効にする
+const aiSeo = isAiSeoEnabled(subdomain);
+const jsonLdData = aiSeo ? buildJsonLd(pageData, subdomain, 'ja') : null;
+const jsonLd = jsonLdData ? jsonLdString(jsonLdData) : undefined;
+const canonical = aiSeo ? pageUrl(subdomain, 'ja') : undefined;
 ---
 
-<Layout title={metaTitle} description={metaDescription} lang="ja" alternateLinks={alternateLinks}>
-  {currentTheme === 'theme1' && <StorePage client:only="react" pageData={pageData} initialLanguage="ja" basePath={currentPath} />}
+<Layout title={metaTitle} description={metaDescription} lang="ja" alternateLinks={alternateLinks} canonical={canonical} jsonLd={jsonLd}>
+  {currentTheme === 'theme1' && aiSeo && <StorePage client:load pageData={pageData} initialLanguage="ja" basePath={currentPath} />}
+  {currentTheme === 'theme1' && !aiSeo && <StorePage client:only="react" pageData={pageData} initialLanguage="ja" basePath={currentPath} />}
   {currentTheme === 'theme2' && <Theme2StorePage client:only="react" pageData={pageData} initialLanguage="ja" basePath={currentPath} />}
   {currentTheme === 'theme3' && <Theme3StorePage client:only="react" pageData={pageData} initialLanguage="ja" basePath={currentPath} />}
   {currentTheme === 'theme4' && <Theme4StorePage client:only="react" pageData={pageData} initialLanguage="ja" basePath={currentPath} />}
